@@ -1,139 +1,109 @@
-import { useDeferredValue, useMemo, useState, useTransition } from "react";
+import { useMemo, useState, useTransition } from "react";
 import { AnimatePresence, motion as Motion } from "framer-motion";
 import {
   ArrowRight,
   BadgeCheck,
-  BarChart3,
   ChevronDown,
-  Clock3,
-  Images,
-  Layers3,
-  MessagesSquare,
+  LayoutTemplate,
   PanelsTopLeft,
-  Play,
-  Rocket,
-  Search,
-  ShieldCheck,
   Sparkles,
   SwatchBook,
   Workflow,
 } from "lucide-react";
 import {
   faqs,
-  featureCards,
+  galleryCards,
+  galleryTracks,
+  highlights,
   metrics,
-  operatingSignals,
-  partnerMarks,
-  planCards,
+  packageCards,
+  processSteps,
   product,
-  proofPoints,
-  styleCards,
-  styleTracks,
-  testimonials,
-  workflowSteps,
+  serviceCards,
 } from "./content/siteContent";
 import { imageBlueprints } from "./lib/imageBlueprints";
 
-const featureIcons = [Workflow, SwatchBook, ShieldCheck];
+const featureIcons = [LayoutTemplate, SwatchBook, Workflow];
 
-const revealTransition = {
-  duration: 0.55,
-  ease: [0.16, 1, 0.3, 1],
-};
-
-function SectionReveal({ children, delay = 0, className = "" }) {
+function Reveal({ children, delay = 0, className = "" }) {
   return (
     <Motion.div
       className={className}
-      initial={{ opacity: 0, y: 34 }}
+      initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.18 }}
-      transition={{ ...revealTransition, delay }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.5, delay, ease: [0.16, 1, 0.3, 1] }}
     >
       {children}
     </Motion.div>
   );
 }
 
-function SectionHeader({ eyebrow, title, description, align = "left" }) {
+function SectionHead({ eyebrow, title, description }) {
   return (
-    <div className={`section-header section-header--${align}`}>
-      <span className="section-header__eyebrow">{eyebrow}</span>
+    <div className="section-head">
+      <span className="section-head__eyebrow">{eyebrow}</span>
       <h2>{title}</h2>
       <p>{description}</p>
     </div>
   );
 }
 
-function Pill({ children }) {
-  return <span className="pill">{children}</span>;
-}
-
-function GeneratedVisualCard({ blueprint, index = 0, priority = false, compact = false }) {
+function ImageCard({ blueprint, compact = false, priority = false }) {
   const [loaded, setLoaded] = useState(false);
   const src = `/generated/${blueprint.fileName}`;
 
   return (
-    <Motion.article
-      whileHover={{ y: -8 }}
-      transition={{ type: "spring", stiffness: 240, damping: 18 }}
-      className={`visual-card ${compact ? "visual-card--compact" : ""}`}
-    >
-      <div className="visual-card__media">
-        <div className={`visual-placeholder visual-placeholder--tone-${index % 4}`}>
-          <div className="visual-placeholder__grid" />
-          <div className="visual-placeholder__orb visual-placeholder__orb--one" />
-          <div className="visual-placeholder__orb visual-placeholder__orb--two" />
-          <div className="visual-placeholder__panel visual-placeholder__panel--primary" />
-          <div className="visual-placeholder__panel visual-placeholder__panel--secondary" />
-          <div className="visual-placeholder__label">{blueprint.label}</div>
+    <article className={`image-card ${compact ? "image-card--compact" : ""}`}>
+      <div className="image-card__media">
+        <div className="image-card__fallback">
+          <div className="image-card__mesh" />
+          <div className="image-card__orb image-card__orb--one" />
+          <div className="image-card__orb image-card__orb--two" />
+          <div className="image-card__panel image-card__panel--main" />
+          <div className="image-card__panel image-card__panel--mini" />
         </div>
         <img
           src={src}
           alt={blueprint.title}
           loading={priority ? "eager" : "lazy"}
-          className={`visual-card__image ${loaded ? "visual-card__image--visible" : ""}`}
+          className={`image-card__img ${loaded ? "image-card__img--visible" : ""}`}
           onLoad={() => setLoaded(true)}
           onError={() => setLoaded(false)}
         />
-        <span className={`visual-card__state ${loaded ? "visual-card__state--ready" : ""}`}>
-          {loaded ? "Generated asset" : "Gemini-ready slot"}
-        </span>
+        <span className="image-card__badge">{blueprint.label}</span>
       </div>
-      <div className="visual-card__body">
-        <div className="visual-card__eyebrow">{blueprint.label}</div>
+      <div className="image-card__body">
         <h3>{blueprint.title}</h3>
         <p>{blueprint.caption}</p>
       </div>
-    </Motion.article>
+    </article>
   );
 }
 
-function FeatureCard({ feature, index }) {
+function ServiceCard({ item, index }) {
   const Icon = featureIcons[index];
 
   return (
-    <SectionReveal delay={index * 0.08}>
-      <Motion.article
-        whileHover={{ y: -8 }}
-        transition={{ type: "spring", stiffness: 240, damping: 18 }}
-        className="feature-card"
-      >
-        <div className="feature-card__icon">
-          <Icon size={20} />
-        </div>
-        <div className="feature-card__eyebrow">{feature.eyebrow}</div>
-        <h3>{feature.title}</h3>
-        <p>{feature.description}</p>
-      </Motion.article>
-    </SectionReveal>
+    <Motion.article
+      whileHover={{ y: -6 }}
+      transition={{ type: "spring", stiffness: 220, damping: 20 }}
+      className="service-card"
+    >
+      <div className="service-card__icon">
+        <Icon size={20} />
+      </div>
+      <span className="service-card__eyebrow">{item.eyebrow}</span>
+      <h3>{item.title}</h3>
+      <p>{item.description}</p>
+    </Motion.article>
   );
 }
 
 function FaqItem({ item, open, onToggle }) {
   return (
     <Motion.article layout className={`faq-item ${open ? "faq-item--open" : ""}`}>
-      <button className="faq-item__button" onClick={onToggle} type="button">
+      <button type="button" className="faq-item__button" onClick={onToggle}>
         <span>{item.question}</span>
         <Motion.span animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.2 }}>
           <ChevronDown size={18} />
@@ -146,8 +116,8 @@ function FaqItem({ item, open, onToggle }) {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.24, ease: "easeOut" }}
-            className="faq-item__content-wrap"
+            transition={{ duration: 0.22, ease: "easeOut" }}
+            className="faq-item__wrap"
           >
             <div className="faq-item__content">{item.answer}</div>
           </Motion.div>
@@ -157,426 +127,280 @@ function FaqItem({ item, open, onToggle }) {
   );
 }
 
-function App() {
-  const [activeTrack, setActiveTrack] = useState("All");
-  const [query, setQuery] = useState("");
+export default function App() {
+  const [activeTrack, setActiveTrack] = useState("전체");
   const [openFaq, setOpenFaq] = useState(0);
   const [isPending, startTransition] = useTransition();
-  const deferredQuery = useDeferredValue(query);
 
-  const filteredStyles = useMemo(() => {
-    const normalizedQuery = deferredQuery.trim().toLowerCase();
+  const blueprintMap = useMemo(
+    () => Object.fromEntries(imageBlueprints.map((item) => [item.id, item])),
+    [],
+  );
 
-    return styleCards.filter((card) => {
-      const trackMatch = activeTrack === "All" || card.track === activeTrack;
-      if (!trackMatch) {
-        return false;
-      }
+  const filteredGallery = useMemo(() => {
+    if (activeTrack === "전체") {
+      return galleryCards;
+    }
 
-      if (!normalizedQuery) {
-        return true;
-      }
-
-      const haystack = [card.name, card.korean, card.summary, card.badge, card.track]
-        .join(" ")
-        .toLowerCase();
-
-      return haystack.includes(normalizedQuery);
-    });
-  }, [activeTrack, deferredQuery]);
+    return galleryCards.filter((item) => item.tag === activeTrack);
+  }, [activeTrack]);
 
   return (
-    <div className="page-shell">
-      <div className="page-noise" />
+    <div className="page">
       <header className="topbar">
-        <a className="brandmark" href="#hero">
-          <span className="brandmark__chip">
+        <a href="#hero" className="brand">
+          <span className="brand__chip">
             <Sparkles size={14} />
           </span>
           <span>{product.name}</span>
         </a>
+
         <nav className="topnav" aria-label="Primary">
-          <a href="#platform">Platform</a>
-          <a href="#visuals">Visuals</a>
-          <a href="#templates">Templates</a>
-          <a href="#pricing">Pricing</a>
+          <a href="#samples">샘플</a>
+          <a href="#service">서비스</a>
+          <a href="#pricing">가격</a>
+          <a href="#faq">FAQ</a>
         </nav>
-        <a className="topbar__cta" href="#pricing">
-          Launch stack
+
+        <a href="#pricing" className="topbar__cta">
+          가격 보기
         </a>
       </header>
 
       <main>
-        <section className="hero-section" id="hero">
-          <div className="hero-copy">
-            <SectionReveal>
-              <div className="hero-copy__intro">
-                <Pill>{product.label}</Pill>
-                <div className="hero-copy__status">
-                  <BadgeCheck size={16} />
-                  Gemini 3.1 image slot ready
-                </div>
-              </div>
-            </SectionReveal>
+        <section className="hero" id="hero">
+          <div className="hero__copy">
+            <Reveal>
+              <span className="hero__label">{product.label}</span>
+            </Reveal>
 
-            <SectionReveal delay={0.06}>
+            <Reveal delay={0.05}>
               <h1>{product.title}</h1>
-            </SectionReveal>
+            </Reveal>
 
-            <SectionReveal delay={0.1}>
-              <p className="hero-copy__description">{product.description}</p>
-            </SectionReveal>
+            <Reveal delay={0.1}>
+              <p className="hero__description">{product.description}</p>
+            </Reveal>
 
-            <SectionReveal delay={0.14}>
-              <div className="hero-actions">
-                <a className="button button--primary" href="#visuals">
-                  비주얼 구조 보기
+            <Reveal delay={0.15}>
+              <div className="hero__actions">
+                <a href="#samples" className="button button--primary">
+                  샘플 보기
                   <ArrowRight size={18} />
                 </a>
-                <a className="button button--secondary" href="#templates">
-                  <Play size={16} />
-                  스타일팩 탐색
+                <a href="#pricing" className="button button--secondary">
+                  패키지 확인
                 </a>
               </div>
-            </SectionReveal>
+            </Reveal>
 
-            <SectionReveal delay={0.18}>
-              <ul className="proof-list">
-                {proofPoints.map((item) => (
+            <Reveal delay={0.2}>
+              <ul className="hero__highlights">
+                {highlights.map((item) => (
                   <li key={item}>
                     <BadgeCheck size={16} />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-            </SectionReveal>
+            </Reveal>
           </div>
 
-          <SectionReveal delay={0.08} className="hero-visual">
-            <div className="hero-visual__frame">
-              <GeneratedVisualCard blueprint={imageBlueprints[0]} index={0} priority />
-              <div className="hero-visual__overlay hero-visual__overlay--stats">
-                <div className="hero-visual__overlay-label">Launch signal</div>
-                <strong>{metrics[1].value}</strong>
-                <span>{metrics[1].label}</span>
+          <Reveal delay={0.08} className="hero__visual">
+            <div className="hero__visual-frame">
+              <ImageCard blueprint={imageBlueprints[0]} priority />
+              <div className="hero__float hero__float--left">
+                <strong>{metrics[0].value}</strong>
+                <span>{metrics[0].label}</span>
               </div>
-              <div className="hero-visual__overlay hero-visual__overlay--queue">
-                <Clock3 size={16} />
-                <span>Approval queue 03</span>
-              </div>
-              <div className="hero-visual__dock">
-                {operatingSignals.slice(0, 3).map((item) => (
-                  <div key={item.title} className="hero-visual__dock-item">
-                    <span>{item.title}</span>
-                    <strong>{item.detail}</strong>
-                  </div>
-                ))}
+              <div className="hero__float hero__float--right">
+                <strong>{metrics[3].value}</strong>
+                <span>{metrics[3].label}</span>
               </div>
             </div>
-          </SectionReveal>
+          </Reveal>
         </section>
 
-        <section className="logo-strip">
-          <span className="logo-strip__label">Used for launch flows by design-minded teams</span>
-          <div className="logo-strip__marquee">
-            {[...partnerMarks, ...partnerMarks].map((item, index) => (
-              <span key={`${item}-${index}`}>{item}</span>
-            ))}
-          </div>
-        </section>
-
-        <section className="metrics-grid">
+        <section className="metrics">
           {metrics.map((item, index) => (
-            <SectionReveal key={item.label} delay={index * 0.05}>
+            <Reveal key={item.label} delay={index * 0.04}>
               <article className="metric-card">
-                <div className="metric-card__value">{item.value}</div>
-                <div className="metric-card__label">{item.label}</div>
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
               </article>
-            </SectionReveal>
+            </Reveal>
           ))}
         </section>
 
-        <section className="section-block" id="platform">
-          <SectionReveal>
-            <SectionHeader
-              eyebrow="Platform"
-              title="예쁜 시안 모음이 아니라 실제 운영팀이 쓰는 랜딩 제작 흐름으로 재구성"
-              description="원본 코드는 스타일 샘플을 전시하는 구조였습니다. 여기서는 그 장점을 유지하면서, 비주얼 생성과 승인 루프를 포함한 서비스형 랜딩 플랫폼 구조로 바꿨습니다."
+        <section className="section" id="samples">
+          <Reveal>
+            <SectionHead
+              eyebrow="Samples"
+              title="먼저 보고 결정할 수 있게 샘플부터 보여드립니다"
+              description="브랜드형, 전환형, 프로모션형 중 어떤 방향이 맞는지 빠르게 비교할 수 있도록 실제 랜딩 분위기로 정리했습니다."
             />
-          </SectionReveal>
+          </Reveal>
 
-          <div className="feature-grid">
-            {featureCards.map((feature, index) => (
-              <FeatureCard key={feature.title} feature={feature} index={index} />
+          <div className="sample-toolbar">
+            {galleryTracks.map((track) => (
+              <button
+                key={track}
+                type="button"
+                className={`chip ${activeTrack === track ? "chip--active" : ""}`}
+                onClick={() => startTransition(() => setActiveTrack(track))}
+              >
+                {track}
+              </button>
             ))}
           </div>
 
-          <div className="platform-board">
-            <SectionReveal delay={0.04} className="platform-board__content">
-              <div className="platform-board__copy">
-                <span className="section-header__eyebrow">Operating model</span>
-                <h3>브리프 입력부터 승인 완료까지 누가 무엇을 해야 하는지 보이게 만듭니다.</h3>
-                <p>
-                  디자인 톤 비교, 자산 생성, 검토 로그, 런치 전 체크포인트를 한 대시보드 리듬으로
-                  묶었습니다.
-                </p>
-              </div>
-              <div className="platform-board__signals">
-                {operatingSignals.map((item, index) => (
-                  <Motion.article
-                    key={item.title}
-                    whileHover={{ y: -6 }}
-                    transition={{ type: "spring", stiffness: 240, damping: 18 }}
-                    className="signal-card"
-                  >
-                    <span className="signal-card__index">0{index + 1}</span>
-                    <strong>{item.title}</strong>
-                    <p>{item.detail}</p>
-                  </Motion.article>
-                ))}
-              </div>
-            </SectionReveal>
-          </div>
-        </section>
-
-        <section className="section-block workflow-section">
-          <SectionReveal>
-            <SectionHeader
-              eyebrow="Workflow"
-              title="Gemini 이미지 생성이 실제 랜딩 제작 공정에 들어가는 위치"
-              description="Gemini는 페이지 안에서 직접 키를 들고 호출하지 않고, 자산 생성 파이프라인으로 연결하는 편이 안전합니다. 이 구조를 기준으로 랜딩을 설계했습니다."
-            />
-          </SectionReveal>
-
-          <div className="workflow-grid">
-            {workflowSteps.map((item, index) => (
-              <SectionReveal key={item.step} delay={index * 0.07}>
-                <article className="workflow-card">
-                  <div className="workflow-card__step">{item.step}</div>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </article>
-              </SectionReveal>
-            ))}
-          </div>
-        </section>
-
-        <section className="section-block" id="visuals">
-          <SectionReveal>
-            <SectionHeader
-              eyebrow="Gemini Visuals"
-              title="실제 생성 자산이 들어갈 슬롯을 먼저 설계해 둔 비주얼 섹션"
-              description="이미지 파일이 아직 없더라도 페이지는 완성형으로 보이고, `public/generated`에 같은 파일명이 들어오면 자동으로 비주얼이 교체됩니다."
-            />
-          </SectionReveal>
-
-          <div className="visual-grid">
-            {imageBlueprints.map((blueprint, index) => (
-              <SectionReveal key={blueprint.id} delay={index * 0.07}>
-                <GeneratedVisualCard blueprint={blueprint} index={index} compact={index > 0} />
-              </SectionReveal>
-            ))}
-          </div>
-        </section>
-
-        <section className="section-block" id="templates">
-          <SectionReveal>
-            <SectionHeader
-              eyebrow="Style Lab"
-              title="원본 14개 스타일 쇼케이스의 장점을 템플릿 탐색 영역으로 흡수"
-              description="전체 페이지를 스타일 데모 갤러리로 두는 대신, 실제 서비스 안에서 바로 비교 가능한 스타일팩 탐색 영역으로 재배치했습니다."
-            />
-          </SectionReveal>
-
-          <div className="template-toolbar">
-            <div className="template-toolbar__chips">
-              {styleTracks.map((track) => (
-                <button
-                  key={track}
-                  type="button"
-                  className={`chip-button ${activeTrack === track ? "chip-button--active" : ""}`}
-                  onClick={() => startTransition(() => setActiveTrack(track))}
-                >
-                  {track}
-                </button>
-              ))}
-            </div>
-
-            <label className="search-field">
-              <Search size={16} />
-              <input
-                type="search"
-                placeholder="스타일 이름이나 요약 검색"
-                value={query}
-                onChange={(event) => setQuery(event.target.value)}
-              />
-            </label>
-          </div>
-
-          <div className={`template-grid ${isPending ? "template-grid--pending" : ""}`}>
-            {filteredStyles.map((card, index) => (
-              <SectionReveal key={card.name} delay={index * 0.04}>
+          <div className={`sample-grid ${isPending ? "sample-grid--pending" : ""}`}>
+            {filteredGallery.map((card, index) => (
+              <Reveal key={card.id} delay={index * 0.05}>
                 <Motion.article
-                  whileHover={{ y: -8 }}
-                  transition={{ type: "spring", stiffness: 240, damping: 18 }}
-                  className="template-card"
+                  whileHover={{ y: -6 }}
+                  transition={{ type: "spring", stiffness: 220, damping: 20 }}
+                  className="sample-card"
                 >
-                  <div className="template-card__top">
-                    <Pill>{card.badge}</Pill>
-                    <span className="template-card__track">{card.track}</span>
-                  </div>
-                  <div className="template-card__art" data-track={card.track.toLowerCase()}>
-                    <div className="template-card__art-block template-card__art-block--main" />
-                    <div className="template-card__art-block template-card__art-block--side" />
-                    <div className="template-card__art-chip">{card.korean}</div>
-                  </div>
-                  <div className="template-card__body">
-                    <h3>{card.name}</h3>
-                    <strong>{card.korean}</strong>
+                  <ImageCard blueprint={blueprintMap[card.id]} compact />
+                  <div className="sample-card__body">
+                    <div className="sample-card__top">
+                      <span className="sample-card__tag">{card.tag}</span>
+                      <span className="sample-card__name">{card.name}</span>
+                    </div>
                     <p>{card.summary}</p>
                   </div>
                 </Motion.article>
-              </SectionReveal>
+              </Reveal>
             ))}
           </div>
         </section>
 
-        <section className="section-block pricing-section" id="pricing">
-          <SectionReveal>
-            <SectionHeader
-              eyebrow="Pricing"
-              title="스타일 실험부터 운영 자동화까지 확장 가능한 플랜"
-              description="랜딩페이지를 한번 예쁘게 만드는 데서 끝나지 않고, 반복 런치와 승인 프로세스까지 다룰 수 있게 가격 구조를 잡았습니다."
+        <section className="section" id="service">
+          <Reveal>
+            <SectionHead
+              eyebrow="Service"
+              title="상담 전에 필요한 판단이 끝나도록 구성했습니다"
+              description="무드만 예쁘게 보여주는 페이지가 아니라, 실제로 무엇을 맡길 수 있는지 이해가 되도록 서비스 구조를 단순하게 정리했습니다."
             />
-          </SectionReveal>
+          </Reveal>
+
+          <div className="service-grid">
+            {serviceCards.map((item, index) => (
+              <Reveal key={item.title} delay={index * 0.06}>
+                <ServiceCard item={item} index={index} />
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        <section className="section">
+          <Reveal>
+            <SectionHead
+              eyebrow="Process"
+              title="진행 방식도 복잡하지 않게"
+              description="샘플 선택, 브리프 전달, 시안 제작 시작. 필요한 단계만 남겨서 바로 움직일 수 있게 했습니다."
+            />
+          </Reveal>
+
+          <div className="process-grid">
+            {processSteps.map((item, index) => (
+              <Reveal key={item.step} delay={index * 0.06}>
+                <article className="process-card">
+                  <span className="process-card__step">{item.step}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        <section className="section" id="pricing">
+          <Reveal>
+            <SectionHead
+              eyebrow="Pricing"
+              title="범위에 따라 바로 고를 수 있는 패키지"
+              description="간단한 소개형부터 실제 판매용 랜딩까지, 필요한 수준에 맞게 바로 선택할 수 있도록 정리했습니다."
+            />
+          </Reveal>
 
           <div className="pricing-grid">
-            {planCards.map((plan, index) => (
-              <SectionReveal key={plan.name} delay={index * 0.06}>
+            {packageCards.map((item, index) => (
+              <Reveal key={item.name} delay={index * 0.06}>
                 <Motion.article
-                  whileHover={{ y: -8 }}
-                  transition={{ type: "spring", stiffness: 240, damping: 18 }}
-                  className={`pricing-card ${plan.highlight ? "pricing-card--highlight" : ""}`}
+                  whileHover={{ y: -6 }}
+                  transition={{ type: "spring", stiffness: 220, damping: 20 }}
+                  className={`pricing-card ${item.highlight ? "pricing-card--highlight" : ""}`}
                 >
-                  <div className="pricing-card__top">
+                  <div className="pricing-card__head">
                     <div>
-                      <span className="pricing-card__name">{plan.name}</span>
-                      <p>{plan.description}</p>
+                      <span className="pricing-card__label">{item.name}</span>
+                      <h3>{item.price}</h3>
                     </div>
-                    {plan.highlight ? <Pill>Recommended</Pill> : null}
+                    {item.highlight ? <span className="pricing-card__pill">추천</span> : null}
                   </div>
-                  <div className="pricing-card__price">{plan.price}</div>
+                  <p className="pricing-card__description">{item.description}</p>
                   <ul className="pricing-card__list">
-                    {plan.items.map((item) => (
-                      <li key={item}>
+                    {item.items.map((entry) => (
+                      <li key={entry}>
                         <BadgeCheck size={16} />
-                        <span>{item}</span>
+                        <span>{entry}</span>
                       </li>
                     ))}
                   </ul>
-                  <a className="button button--ghost" href="#hero">
-                    시작하기
+                  <a href="#faq" className="button button--secondary pricing-card__button">
+                    문의 전 확인
                     <ArrowRight size={18} />
                   </a>
                 </Motion.article>
-              </SectionReveal>
+              </Reveal>
             ))}
           </div>
         </section>
 
-        <section className="section-block bottom-grid">
-          <div className="bottom-grid__left">
-            <SectionReveal>
-              <SectionHeader
-                eyebrow="Voices"
-                title="디자인 톤과 운영 속도를 같이 본다는 점이 차별점"
-                description="트렌디함만 남기면 실제 작업에서는 오래 못 갑니다. 그래서 팀이 반복해서 쓰는 구조와 피드백이 함께 보이도록 설계했습니다."
+        <section className="section faq-section" id="faq">
+          <Reveal>
+            <SectionHead
+              eyebrow="FAQ"
+              title="문의 전에 많이 보는 질문"
+              description="필요한 기준만 짧게 남겼습니다. 페이지를 보고 바로 판단할 수 있게 복잡한 설명은 뺐습니다."
+            />
+          </Reveal>
+
+          <div className="faq-list">
+            {faqs.map((item, index) => (
+              <FaqItem
+                key={item.question}
+                item={item}
+                open={openFaq === index}
+                onToggle={() => setOpenFaq((current) => (current === index ? -1 : index))}
               />
-            </SectionReveal>
-
-            <div className="testimonial-grid">
-              {testimonials.map((item, index) => (
-                <SectionReveal key={item.name} delay={index * 0.06}>
-                  <Motion.article
-                    whileHover={{ y: -6 }}
-                    transition={{ type: "spring", stiffness: 240, damping: 18 }}
-                    className="testimonial-card"
-                  >
-                    <div className="testimonial-card__icon">
-                      <MessagesSquare size={18} />
-                    </div>
-                    <p>{item.quote}</p>
-                    <strong>{item.name}</strong>
-                    <span>{item.role}</span>
-                  </Motion.article>
-                </SectionReveal>
-              ))}
-            </div>
-          </div>
-
-          <div className="bottom-grid__right">
-            <SectionReveal>
-              <SectionHeader
-                eyebrow="FAQ"
-                title="실제 적용 전에 많이 묻는 부분"
-                description="Gemini 키 처리와 이미지 생성 위치를 포함해, 이 구조를 바로 이어서 쓸 때 필요한 기준만 남겼습니다."
-              />
-            </SectionReveal>
-
-            <div className="faq-list">
-              {faqs.map((item, index) => (
-                <FaqItem
-                  key={item.question}
-                  item={item}
-                  open={openFaq === index}
-                  onToggle={() => setOpenFaq((current) => (current === index ? -1 : index))}
-                />
-              ))}
-            </div>
+            ))}
           </div>
         </section>
       </main>
 
       <footer className="footer-cta">
-        <SectionReveal>
-          <div className="footer-cta__card">
-            <div className="footer-cta__copy">
-              <span className="section-header__eyebrow">Ready to wire images</span>
-              <h2>Gemini 3.1 자산만 넣으면 바로 실제 랜딩으로 전환되는 상태까지 구성했습니다.</h2>
-              <p>
-                키를 로컬 환경 변수로 설정한 뒤 이미지 생성 스크립트를 실행하면, 현재 페이지 슬롯에
-                실자산이 자동으로 연결됩니다.
-              </p>
+        <Reveal>
+          <div className="footer-cta__box">
+            <div>
+              <span className="footer-cta__eyebrow">Ready to start</span>
+              <h2>원하는 분위기만 고르면 바로 다음 단계로 넘어갈 수 있게 만들었습니다.</h2>
+              <p>샘플 확인 후 패키지 범위를 고르고, 필요한 정보만 보내면 제작을 시작하는 구조입니다.</p>
             </div>
             <div className="footer-cta__actions">
-              <a className="button button--primary" href="#visuals">
-                비주얼 슬롯 확인
-                <Images size={18} />
-              </a>
-              <a className="button button--secondary" href="#platform">
-                구현 구조 보기
+              <a href="#samples" className="button button--primary">
+                샘플 다시 보기
                 <PanelsTopLeft size={18} />
               </a>
-            </div>
-            <div className="footer-cta__meta">
-              <span>
-                <Layers3 size={16} />
-                Service-platform layout
-              </span>
-              <span>
-                <Rocket size={16} />
-                Gemini asset pipeline
-              </span>
-              <span>
-                <BarChart3 size={16} />
-                Launch-ready sections
-              </span>
+              <a href="#pricing" className="button button--secondary">
+                가격 확인
+              </a>
             </div>
           </div>
-        </SectionReveal>
+        </Reveal>
       </footer>
     </div>
   );
 }
-
-export default App;

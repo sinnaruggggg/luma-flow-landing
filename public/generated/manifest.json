@@ -1,0 +1,41 @@
+{
+  "generatedAt": "2026-04-10T16:30:52.079Z",
+  "model": "gemini-3.1-flash-image-preview",
+  "imageConfig": {
+    "aspectRatio": "16:9",
+    "imageSize": "2K"
+  },
+  "items": [
+    {
+      "id": "hero-studio",
+      "fileName": "hero-studio.png",
+      "status": "skipped",
+      "prompt": "Use case: stylized-concept\nAsset type: premium landing page hero image\nPrimary request: Create a premium hero visual for a landing page design studio service called LUMA FLOW.\nScene/backdrop: Bright editorial workspace with a large desktop screen, a phone mockup, layered landing page sections, subtle studio props, and clean creative-desk styling.\nSubject: A modern landing page shown across desktop and mobile with strong hierarchy, polished typography blocks, clear CTA areas, and a premium digital product mood.\nStyle/medium: High-end 3D editorial render with realistic materials and polished UI composition.\nComposition/framing: Wide 16:9 layout with clean negative space and the visual weighted to the right.\nLighting/mood: Warm daylight, calm, premium, design-forward.\nColor palette: Ivory, black ink, soft coral, sage, warm sand.\nMaterials/textures: Frosted glass, brushed aluminum, paper texture, soft shadows.\nText (verbatim): \"\"\nConstraints: No watermark, no visible logos, no human faces, no clutter, suitable for a real service landing page.\nAvoid: Cyberpunk, purple-heavy palette, noisy layout, cheap stock-photo look.",
+      "path": "C:\\www\\mypages\\public\\generated\\hero-studio.png"
+    },
+    {
+      "id": "style-compare",
+      "fileName": "style-compare.png",
+      "status": "generated",
+      "prompt": "Use case: ui-mockup\nAsset type: showcase section image\nPrimary request: Create a clean showcase visual for a landing page service where multiple design directions can be compared at a glance.\nScene/backdrop: One large display board featuring four different landing page directions arranged in a refined editorial layout.\nSubject: Distinct landing page mood samples with consistent product positioning but different visual systems.\nStyle/medium: Product mockup mixed with editorial graphic design.\nComposition/framing: 16:9 landscape composition, clear overview, balanced spacing.\nLighting/mood: Crisp studio light, sharp, curated, easy to scan.\nColor palette: Warm neutrals with black, coral, soft yellow, and muted green accents.\nMaterials/textures: Smooth display surface, paper cards, subtle reflections.\nText (verbatim): \"\"\nConstraints: No logos, no unreadable text clutter, no people, no watermark.\nAvoid: Busy collage chaos, gamer aesthetic, dark neon.",
+      "path": "C:\\www\\mypages\\public\\generated\\style-compare.png",
+      "notes": []
+    },
+    {
+      "id": "conversion-board",
+      "fileName": "conversion-board.png",
+      "status": "generated",
+      "prompt": "Use case: ui-mockup\nAsset type: feature section image\nPrimary request: Create a premium dashboard-like visual showing a conversion-focused landing page layout system.\nScene/backdrop: Floating layout cards, CTA blocks, analytics snippets, and product explanation panels arranged on a clean studio background.\nSubject: A structured landing page system emphasizing headline, benefit blocks, proof, pricing, and CTA flow.\nStyle/medium: Isometric product visualization with tactile UI layers and realistic depth.\nComposition/framing: 16:9 wide composition, centered, very readable visual hierarchy.\nLighting/mood: Clear daylight, sharp and trustworthy.\nColor palette: Off-white, charcoal, soft teal, warm coral.\nMaterials/textures: Matte cards, thin glass panels, subtle grain.\nText (verbatim): \"\"\nConstraints: No watermark, no human figures, no brand logos, no dense text paragraphs.\nAvoid: Dark mode overload, loud gradients, poster-like chaos.",
+      "path": "C:\\www\\mypages\\public\\generated\\conversion-board.png",
+      "notes": []
+    },
+    {
+      "id": "mobile-editorial",
+      "fileName": "mobile-editorial.png",
+      "status": "generated",
+      "prompt": "Use case: product-mockup\nAsset type: mobile landing preview image\nPrimary request: Create a polished mobile-first landing page visual for a brand and campaign design service.\nScene/backdrop: A premium tabletop scene with two mobile devices, layered cards, and neatly arranged brand materials.\nSubject: Mobile landing screens with strong typography, bold CTA, visual-led storytelling, and premium spacing.\nStyle/medium: Editorial product photography mixed with interface mockup realism.\nComposition/framing: 16:9 horizontal scene with mobile devices as hero objects and supporting cards around them.\nLighting/mood: Soft studio light, refined, modern, confident.\nColor palette: Cream, graphite, muted green, pale gold, coral accent.\nMaterials/textures: Metal edge devices, textured paper, glass reflections, soft shadow.\nText (verbatim): \"\"\nConstraints: No watermark, no people, no visible third-party brands, suitable for customer-facing website use.\nAvoid: Cluttered desk, exaggerated sci-fi glow, low-end template feel.",
+      "path": "C:\\www\\mypages\\public\\generated\\mobile-editorial.png",
+      "notes": []
+    }
+  ]
+}

@@ -1,83 +1,83 @@
 export const imageBlueprints = [
   {
-    id: "hero-orchestra",
-    fileName: "hero-orchestra.png",
-    label: "Hero Canvas",
-    title: "AI 크리에이티브 오케스트라",
-    caption: "히어로 메인 비주얼. 데스크 위 디바이스와 유리 UI 패널이 함께 보이는 프리미엄 장면.",
+    id: "hero-studio",
+    fileName: "hero-studio.png",
+    label: "Main Visual",
+    title: "대표 랜딩 시안",
+    caption: "브랜드 첫인상과 제품 구조를 함께 보여주는 대표 화면",
     prompt: `Use case: stylized-concept
-Asset type: SaaS landing page hero image
-Primary request: Create a premium hero visual for an AI landing page platform called LUMA FLOW.
-Scene/backdrop: A bright editorial studio desk with soft sculptural light, layered devices, floating translucent interface panels, art-directed stationery, and a refined creative workspace feeling.
-Subject: A campaign planning dashboard blended with tactile brand boards, image placeholders, approval chips, and performance graphs.
-Style/medium: High-end 3D editorial render with realistic materials and subtle cinematic polish.
-Composition/framing: Wide 16:9 composition with generous negative space on the left for headline copy, main visual weight on the right.
-Lighting/mood: Morning light, crisp but warm, premium and confident.
-Color palette: Warm ivory, seafoam, coral, pale citrus, graphite.
-Materials/textures: Frosted glass, matte aluminum, textured paper, soft shadows.
+Asset type: premium landing page hero image
+Primary request: Create a premium hero visual for a landing page design studio service called LUMA FLOW.
+Scene/backdrop: Bright editorial workspace with a large desktop screen, a phone mockup, layered landing page sections, subtle studio props, and clean creative-desk styling.
+Subject: A modern landing page shown across desktop and mobile with strong hierarchy, polished typography blocks, clear CTA areas, and a premium digital product mood.
+Style/medium: High-end 3D editorial render with realistic materials and polished UI composition.
+Composition/framing: Wide 16:9 layout with clean negative space and the visual weighted to the right.
+Lighting/mood: Warm daylight, calm, premium, design-forward.
+Color palette: Ivory, black ink, soft coral, sage, warm sand.
+Materials/textures: Frosted glass, brushed aluminum, paper texture, soft shadows.
 Text (verbatim): ""
-Constraints: No watermark, no legible UI brand names, no gibberish text blocks, no people faces, suitable for a modern landing page.
-Avoid: Dark cyberpunk look, purple dominant palette, cluttered composition, stock-photo feel.`,
+Constraints: No watermark, no visible logos, no human faces, no clutter, suitable for a real service landing page.
+Avoid: Cyberpunk, purple-heavy palette, noisy layout, cheap stock-photo look.`,
   },
   {
-    id: "campaign-board",
-    fileName: "campaign-board.png",
-    label: "Campaign Board",
-    title: "캠페인 보드 비주얼",
-    caption: "기획 보드, 우선순위 카드, 실험 지표가 한 패널 안에 정리된 장면.",
+    id: "style-compare",
+    fileName: "style-compare.png",
+    label: "Style Preview",
+    title: "스타일 비교 화면",
+    caption: "여러 방향을 한눈에 비교하고 빠르게 선택할 수 있는 구성",
     prompt: `Use case: ui-mockup
-Asset type: feature section visual
-Primary request: Create a modern dashboard scene that represents campaign planning, approval, and launch analytics in one workspace.
-Scene/backdrop: Clean studio backdrop with one large floating board and stacked supporting cards.
-Subject: Modular blocks for brief, AI copy, image requests, approval states, and analytics.
-Style/medium: Polished isometric product mockup with realistic depth and tactile UI surfaces.
-Composition/framing: 16:9 landscape, centered composition, readable block hierarchy.
-Lighting/mood: Soft daylight with subtle highlights and confident startup energy.
-Color palette: Sand, teal, black ink, coral accents, soft mint.
-Materials/textures: Matte surfaces, frosted acrylic, card shadows, subtle grain.
+Asset type: showcase section image
+Primary request: Create a clean showcase visual for a landing page service where multiple design directions can be compared at a glance.
+Scene/backdrop: One large display board featuring four different landing page directions arranged in a refined editorial layout.
+Subject: Distinct landing page mood samples with consistent product positioning but different visual systems.
+Style/medium: Product mockup mixed with editorial graphic design.
+Composition/framing: 16:9 landscape composition, clear overview, balanced spacing.
+Lighting/mood: Crisp studio light, sharp, curated, easy to scan.
+Color palette: Warm neutrals with black, coral, soft yellow, and muted green accents.
+Materials/textures: Smooth display surface, paper cards, subtle reflections.
 Text (verbatim): ""
-Constraints: No visible brand logos, no unreadable tiny text, no hands, no watermark.
-Avoid: Excess neon, game UI, heavy dark mode, chaotic charts.`,
+Constraints: No logos, no unreadable text clutter, no people, no watermark.
+Avoid: Busy collage chaos, gamer aesthetic, dark neon.`,
   },
   {
-    id: "brand-kit",
-    fileName: "brand-kit.png",
-    label: "Brand Kit",
-    title: "브랜드 스타일팩 장면",
-    caption: "타이포 샘플, 컬러칩, 모바일 프레임이 아트보드처럼 정리된 감도형 비주얼.",
-    prompt: `Use case: stylized-concept
-Asset type: brand system showcase image
-Primary request: Create an art-directed tabletop composition showing a landing page style pack system for a creative SaaS platform.
-Scene/backdrop: Neutral warm surface with layered paper samples, color swatches, a phone mockup, typography strips, and layout cards.
-Subject: A cohesive style kit for landing page design with tactile editorial arrangement.
-Style/medium: Premium product photography mixed with graphic design collage.
-Composition/framing: 16:9 top-down or slight angle composition with clean spacing and rhythm.
-Lighting/mood: Bright editorial studio light, fresh and design-forward.
-Color palette: Cream, moss green, chrome silver, coral red, charcoal.
-Materials/textures: Paper grain, glossy card, metal clip, soft shadow.
+    id: "conversion-board",
+    fileName: "conversion-board.png",
+    label: "Conversion Layout",
+    title: "전환 중심 보드",
+    caption: "설명과 CTA 우선순위가 분명한 상품형 랜딩 예시",
+    prompt: `Use case: ui-mockup
+Asset type: feature section image
+Primary request: Create a premium dashboard-like visual showing a conversion-focused landing page layout system.
+Scene/backdrop: Floating layout cards, CTA blocks, analytics snippets, and product explanation panels arranged on a clean studio background.
+Subject: A structured landing page system emphasizing headline, benefit blocks, proof, pricing, and CTA flow.
+Style/medium: Isometric product visualization with tactile UI layers and realistic depth.
+Composition/framing: 16:9 wide composition, centered, very readable visual hierarchy.
+Lighting/mood: Clear daylight, sharp and trustworthy.
+Color palette: Off-white, charcoal, soft teal, warm coral.
+Materials/textures: Matte cards, thin glass panels, subtle grain.
 Text (verbatim): ""
-Constraints: No watermark, no actual brand trademarks, no messy clutter, no hands.
-Avoid: Flat corporate stock look, low contrast mud, purple heavy gradients.`,
+Constraints: No watermark, no human figures, no brand logos, no dense text paragraphs.
+Avoid: Dark mode overload, loud gradients, poster-like chaos.`,
   },
   {
-    id: "team-review",
-    fileName: "team-review.png",
-    label: "Review Loop",
-    title: "팀 승인 루프 장면",
-    caption: "실제 사람 대신 손이나 얼굴 없이, 리뷰 보드와 코멘트 흐름 자체를 보여주는 승인 장면.",
+    id: "mobile-editorial",
+    fileName: "mobile-editorial.png",
+    label: "Mobile Focus",
+    title: "모바일 중심 시안",
+    caption: "작은 화면에서도 브랜드 인상이 선명하게 보이는 모바일 구성",
     prompt: `Use case: product-mockup
-Asset type: proof section visual
-Primary request: Create a cinematic workspace scene that represents team review and approval loops for a landing page platform.
-Scene/backdrop: Large screen on desk, floating comment cards, version chips, and approval stamps in an elegant creative office environment.
-Subject: A polished review system with annotations, revision markers, and launch readiness cues.
-Style/medium: Photorealistic editorial product scene with soft depth of field.
-Composition/framing: 16:9 horizontal composition, hero object centered with layered supporting notes around it.
-Lighting/mood: Warm afternoon light, focused, collaborative, premium.
-Color palette: Oat, graphite, pale teal, burnt coral, off-white.
-Materials/textures: Screen glow, paper notes, soft fabric, metal desk accessories.
+Asset type: mobile landing preview image
+Primary request: Create a polished mobile-first landing page visual for a brand and campaign design service.
+Scene/backdrop: A premium tabletop scene with two mobile devices, layered cards, and neatly arranged brand materials.
+Subject: Mobile landing screens with strong typography, bold CTA, visual-led storytelling, and premium spacing.
+Style/medium: Editorial product photography mixed with interface mockup realism.
+Composition/framing: 16:9 horizontal scene with mobile devices as hero objects and supporting cards around them.
+Lighting/mood: Soft studio light, refined, modern, confident.
+Color palette: Cream, graphite, muted green, pale gold, coral accent.
+Materials/textures: Metal edge devices, textured paper, glass reflections, soft shadow.
 Text (verbatim): ""
-Constraints: No visible human faces or readable long text, no watermark, suitable for website use.
-Avoid: Messy office, generic business handshake, dark moody thriller look.`,
+Constraints: No watermark, no people, no visible third-party brands, suitable for customer-facing website use.
+Avoid: Cluttered desk, exaggerated sci-fi glow, low-end template feel.`,
   },
 ];
 
