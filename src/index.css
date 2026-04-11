@@ -740,6 +740,48 @@ p {
   transform: scale(1.02);
 }
 
+.gallery-card__phone {
+  position: absolute;
+  right: 18px;
+  bottom: 22px;
+  z-index: 2;
+  width: 98px;
+  height: 196px;
+  padding: 9px 8px 10px;
+  border-radius: 28px;
+  background: rgba(10, 10, 16, 0.92);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.32);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+}
+
+.gallery-card__phone img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.gallery-card__phone-notch {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 42px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.gallery-card__phone-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.18), transparent 35%, transparent 70%, rgba(255, 255, 255, 0.08));
+  pointer-events: none;
+}
+
 .gallery-card__veil {
   position: absolute;
   inset: 0;
@@ -789,7 +831,7 @@ p {
 .gallery-card__brand {
   position: absolute;
   left: 18px;
-  right: 18px;
+  right: 124px;
   bottom: 18px;
   display: grid;
   gap: 6px;
@@ -1111,10 +1153,71 @@ p {
   color: var(--page-button-text);
 }
 
+.page-topbar__tools {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-view-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+  border: 1px solid var(--page-line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--page-surface) 76%, transparent);
+}
+
+.page-view-switch button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: transparent;
+  border-radius: 999px;
+  color: var(--page-muted);
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.page-view-switch button:hover {
+  transform: translateY(-1px);
+}
+
+.page-view-switch button.is-active {
+  background: var(--page-accent);
+  color: var(--page-button-text);
+}
+
 .page-main {
   display: grid;
   gap: 28px;
   margin-top: 28px;
+}
+
+.page-view__device {
+  width: 100%;
+}
+
+.page-view__device--mobile {
+  position: relative;
+  width: min(430px, calc(100vw - 28px));
+  margin: 0 auto;
+  padding: 18px 12px 28px;
+  border-radius: 40px;
+  border: 1px solid var(--page-line);
+  background: color-mix(in srgb, var(--page-panel) 90%, white 10%);
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.2), var(--page-shadow);
+}
+
+.page-view__device-notch {
+  width: 92px;
+  height: 12px;
+  margin: 0 auto 16px;
+  border-radius: 999px;
+  background: rgba(17, 17, 17, 0.16);
 }
 
 .hero-layout {
@@ -1153,6 +1256,143 @@ p {
 .hero-layout--pipeline,
 .hero-layout--editorial {
   grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
+}
+
+.page-view[data-view="mobile"] .page-main {
+  gap: 20px;
+  margin-top: 18px;
+}
+
+.page-view[data-view="mobile"] .page-topbar {
+  top: 10px;
+  padding: 12px;
+  border-radius: 28px;
+  gap: 10px;
+}
+
+.page-view[data-view="mobile"] .page-topbar__back,
+.page-view[data-view="mobile"] .page-topbar__cta {
+  min-height: 38px;
+  padding: 0 12px;
+  font-size: 0.76rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.page-view[data-view="mobile"] .page-topbar__brand strong {
+  font-size: 0.94rem;
+}
+
+.page-view[data-view="mobile"] .page-topbar__brand span {
+  font-size: 0.68rem;
+}
+
+.page-view[data-view="mobile"] .page-topbar__tools {
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.page-view[data-view="mobile"] .page-view-switch {
+  padding: 3px;
+}
+
+.page-view[data-view="mobile"] .page-view-switch button {
+  width: 32px;
+  height: 32px;
+}
+
+.page-view[data-view="mobile"] .page-routebar {
+  padding: 12px;
+}
+
+.page-view[data-view="mobile"] .nav-row {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.page-view[data-view="mobile"] .nav-row button {
+  flex: 0 0 auto;
+  min-height: 32px;
+  padding: 0 12px;
+  font-size: 0.74rem;
+}
+
+.page-view[data-view="mobile"] .hero-layout,
+.page-view[data-view="mobile"] .hero-layout--festival,
+.page-view[data-view="mobile"] .hero-layout--pipeline,
+.page-view[data-view="mobile"] .hero-layout--editorial,
+.page-view[data-view="mobile"] .hero-layout--clinic,
+.page-view[data-view="mobile"] .hero-layout--hotel,
+.page-view[data-view="mobile"] .hero-layout--compare,
+.page-view[data-view="mobile"] .hero-layout--setup,
+.page-view[data-view="mobile"] .hero-layout--club,
+.page-view[data-view="mobile"] .hero-layout--shelf,
+.page-view[data-view="mobile"] .hero-layout--scent,
+.page-view[data-view="mobile"] .hero-layout--luxury,
+.page-view[data-view="mobile"] .hero-layout--drop,
+.page-view[data-view="mobile"] .hero-layout--routine,
+.page-view[data-view="mobile"] .hero-layout--booking,
+.page-view[data-view="mobile"] .hero-layout--dashboard,
+.page-view[data-view="mobile"] .hero-layout--sale,
+.page-view[data-view="mobile"] .hero-layout--menu,
+.page-view[data-view="mobile"] .hero-layout--room,
+.page-view[data-view="mobile"] .hero-layout--look,
+.page-view[data-view="mobile"] .hero-layout--kit,
+.page-view[data-view="mobile"] .split-zone,
+.page-view[data-view="mobile"] .split-zone--compact,
+.page-view[data-view="mobile"] .image-deck--split,
+.page-view[data-view="mobile"] .image-deck--triple,
+.page-view[data-view="mobile"] .mosaic-grid,
+.page-view[data-view="mobile"] .price-deck {
+  grid-template-columns: 1fr;
+}
+
+.page-view[data-view="mobile"] .hero-lead,
+.page-view[data-view="mobile"] .section-block,
+.page-view[data-view="mobile"] .mini-panel,
+.page-view[data-view="mobile"] .image-card,
+.page-view[data-view="mobile"] .price-card {
+  border-radius: 24px;
+}
+
+.page-view[data-view="mobile"] .hero-lead {
+  gap: 14px;
+  padding: 22px 18px;
+}
+
+.page-view[data-view="mobile"] .hero-lead h1,
+.page-view[data-view="mobile"] .section-block__head h2 {
+  font-size: clamp(2rem, 9vw, 3.4rem);
+  max-width: none;
+}
+
+.page-view[data-view="mobile"] .hero-lead p,
+.page-view[data-view="mobile"] .section-copy {
+  max-width: none;
+  font-size: 0.9rem;
+}
+
+.page-view[data-view="mobile"] .action-row {
+  gap: 10px;
+}
+
+.page-view[data-view="mobile"] .action-button {
+  width: 100%;
+  justify-content: center;
+}
+
+.page-view[data-view="mobile"] .stat-strip {
+  grid-template-columns: 1fr;
+}
+
+.page-view[data-view="mobile"] .hero-visual {
+  gap: 16px;
+}
+
+.page-view[data-view="mobile"] .image-card--hero {
+  min-height: 280px;
 }
 
 .hero-lead,

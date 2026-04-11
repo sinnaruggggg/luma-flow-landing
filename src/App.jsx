@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion as Motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, ChevronRight, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronRight, Monitor, Smartphone, Sparkles } from "lucide-react";
 import { showcasePages } from "./content/showcasePages";
 
 const siteProfiles = {
@@ -617,6 +617,10 @@ function getPrimaryRoute(profile) {
   );
 }
 
+function mobilePreviewSrc(page) {
+  return page.images.scene || page.images.product || page.images.hero;
+}
+
 function SceneBackdrop({ tone }) {
   return (
     <div className="scene-backdrop" data-style={tone}>
@@ -775,7 +779,7 @@ function RouteLead({ page, profile, route }) {
   );
 }
 
-function PageTopbar({ page, profile, route, onBack, onNavigate }) {
+function PageTopbar({ page, profile, route, viewMode, onViewChange, onBack, onNavigate }) {
   const primaryRoute = getPrimaryRoute(profile);
 
   return (
@@ -789,13 +793,33 @@ function PageTopbar({ page, profile, route, onBack, onNavigate }) {
           <strong>{page.brand}</strong>
           <span>{page.industry}</span>
         </div>
-        <button
-          type="button"
-          className="page-topbar__cta"
-          onClick={() => onNavigate(buildSitePath(page.id, primaryRoute.slug))}
-        >
-          {primaryAction(primaryRoute, page)}
-        </button>
+        <div className="page-topbar__tools">
+          <div className="page-view-switch" aria-label="뷰 전환">
+            <button
+              type="button"
+              className={viewMode === "desktop" ? "is-active" : ""}
+              aria-pressed={viewMode === "desktop"}
+              onClick={() => onViewChange("desktop")}
+            >
+              <Monitor size={16} />
+            </button>
+            <button
+              type="button"
+              className={viewMode === "mobile" ? "is-active" : ""}
+              aria-pressed={viewMode === "mobile"}
+              onClick={() => onViewChange("mobile")}
+            >
+              <Smartphone size={16} />
+            </button>
+          </div>
+          <button
+            type="button"
+            className="page-topbar__cta"
+            onClick={() => onNavigate(buildSitePath(page.id, primaryRoute.slug))}
+          >
+            {primaryAction(primaryRoute, page)}
+          </button>
+        </div>
       </div>
       <section className="section-block page-routebar">
         <div className="nav-row">
@@ -819,6 +843,8 @@ function PageTopbar({ page, profile, route, onBack, onNavigate }) {
 }
 
 function GalleryCard({ page, profile, onOpen }) {
+  const mobilePreview = mobilePreviewSrc(page);
+
   return (
     <Motion.button
       type="button"
@@ -832,6 +858,11 @@ function GalleryCard({ page, profile, onOpen }) {
     >
       <div className="gallery-card__visual">
         <img src={page.images.hero} alt={page.brand} />
+        <div className="gallery-card__phone" aria-hidden="true">
+          <div className="gallery-card__phone-notch" />
+          <img src={mobilePreview} alt="" />
+          <div className="gallery-card__phone-shine" />
+        </div>
         <div className="gallery-card__veil" />
         <span className="gallery-card__eyebrow">{page.card.eyebrow}</span>
         <div className="gallery-card__widgets">
@@ -1461,7 +1492,7 @@ function renderSiteRoute(page, route, profile) {
   }
 }
 
-function SiteView({ page, route, onBack, onNavigate }) {
+function SiteView({ page, route, viewMode, onViewChange, onBack, onNavigate }) {
   const profile = siteProfiles[page.id];
   const [pointerStyle, onPointerMove] = useBackdropPointer();
 
@@ -1470,14 +1501,26 @@ function SiteView({ page, route, onBack, onNavigate }) {
       className="page-view"
       data-tone={page.backdrop}
       data-page={page.id}
+      data-view={viewMode}
       style={{ ...themeStyle(page.theme), ...pointerStyle }}
       onPointerMove={onPointerMove}
     >
       <SceneBackdrop tone={page.backdrop} />
       <div className="page-view__content">
-        <div className="page-main">
-          <PageTopbar page={page} profile={profile} route={route} onBack={onBack} onNavigate={onNavigate} />
-          {renderSiteRoute(page, route, profile)}
+        <div className={`page-view__device ${viewMode === "mobile" ? "page-view__device--mobile" : ""}`}>
+          {viewMode === "mobile" ? <div className="page-view__device-notch" aria-hidden="true" /> : null}
+          <div className="page-main">
+            <PageTopbar
+              page={page}
+              profile={profile}
+              route={route}
+              viewMode={viewMode}
+              onViewChange={onViewChange}
+              onBack={onBack}
+              onNavigate={onNavigate}
+            />
+            {renderSiteRoute(page, route, profile)}
+          </div>
         </div>
       </div>
     </div>
@@ -1509,10 +1552,17 @@ function NotFoundView({ onHome }) {
 
 export default function App() {
   const [pathname, setPathname] = useState(() => window.location.pathname || "/");
+  const [viewMode, setViewMode] = useState("desktop");
   const pagesById = useMemo(() => Object.fromEntries(showcasePages.map((page) => [page.id, page])), []);
 
   useEffect(() => {
-    const onPopState = () => setPathname(window.location.pathname || "/");
+    const onPopState = () => {
+      const nextPath = window.location.pathname || "/";
+      if (nextPath === "/") {
+        setViewMode("desktop");
+      }
+      setPathname(nextPath);
+    };
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
   }, []);
@@ -1520,6 +1570,9 @@ export default function App() {
   const navigate = (nextPath) => {
     const normalized = nextPath || "/";
     if (normalized === pathname) return;
+    if (normalized === "/") {
+      setViewMode("desktop");
+    }
     window.history.pushState({}, "", normalized);
     window.scrollTo(0, 0);
     setPathname(normalized);
@@ -1553,6 +1606,8 @@ export default function App() {
           <SiteView
             page={page}
             route={routeState.route}
+            viewMode={viewMode}
+            onViewChange={setViewMode}
             onBack={() => navigate("/")}
             onNavigate={navigate}
           />
