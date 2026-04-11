@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { AnimatePresence, motion as Motion } from "framer-motion";
 import {
   ArrowLeft,
@@ -8,6 +8,7 @@ import {
   ChevronDown,
   ChevronRight,
   LayoutGrid,
+  MessageCircle,
   ShoppingBag,
   Sparkles,
 } from "lucide-react";
@@ -21,14 +22,15 @@ import {
   studioMetrics,
 } from "./content/siteContent";
 import { styleSamples } from "./content/styleSamples";
+import { buildIndustryExperience, getIndustryImageSpecs } from "./lib/sampleExperience";
 
 const modeMeta = {
-  commerce: { offersTitle: "대표 상품", panelTitle: "구매 패널" },
-  booking: { offersTitle: "대표 프로그램", panelTitle: "예약 패널" },
-  membership: { offersTitle: "멤버십 구성", panelTitle: "가입 패널" },
-  ticketing: { offersTitle: "티켓 옵션", panelTitle: "예매 패널" },
-  saas: { offersTitle: "핵심 기능", panelTitle: "도입 패널" },
-  consulting: { offersTitle: "대표 서비스", panelTitle: "문의 패널" },
+  commerce: { label: "구매형", cta: "장바구니 / 구매 흐름" },
+  booking: { label: "예약형", cta: "상담 / 예약 흐름" },
+  membership: { label: "가입형", cta: "가입 / 멤버십 흐름" },
+  ticketing: { label: "예매형", cta: "티켓 / 일정 흐름" },
+  saas: { label: "도입형", cta: "데모 / 도입 상담" },
+  consulting: { label: "문의형", cta: "프로젝트 문의 흐름" },
 };
 
 function SectionHeader({ eyebrow, title, description }) {
@@ -41,55 +43,72 @@ function SectionHeader({ eyebrow, title, description }) {
   );
 }
 
-function SampleVisual({ sample, compact = false }) {
+function Reveal({ children, delay = 0, className = "" }) {
   return (
-    <article
-      className={`sample-visual ${compact ? "sample-visual--compact" : ""}`}
-      style={{
-        "--card-accent": sample.theme.accent,
-        "--card-soft": sample.theme.accentSoft,
-      }}
+    <Motion.div
+      className={className}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.45, delay, ease: [0.16, 1, 0.3, 1] }}
     >
-      <div className="sample-visual__media">
-        <img src={`/generated/${sample.asset}`} alt={`${sample.name} preview`} />
-        <div className="sample-visual__veil" />
-        <div className="sample-visual__chips">
-          <span className="sample-visual__chip">{sample.badge}</span>
-          <span className="sample-visual__chip sample-visual__chip--ghost">{sample.en}</span>
-        </div>
-        <div className="sample-visual__title">
-          <strong>{sample.name}</strong>
-          <span>{sample.summary}</span>
+      {children}
+    </Motion.div>
+  );
+}
+
+function getPrimaryPreviewImage(sample) {
+  const primary = sample.industries[0];
+  const generated = getIndustryImageSpecs(sample, primary)[0];
+  return generated?.src ?? `/generated/${sample.asset}`;
+}
+
+function StyleThumb({ sample }) {
+  return (
+    <div className="style-thumb" data-style={sample.preview}>
+      <div className="style-thumb__chrome" />
+      <div className="style-thumb__surface">
+        <img src={getPrimaryPreviewImage(sample)} alt={`${sample.name} preview`} />
+        <div className="style-thumb__overlay" />
+        <div className="style-thumb__frame style-thumb__frame--a" />
+        <div className="style-thumb__frame style-thumb__frame--b" />
+        <div className="style-thumb__frame style-thumb__frame--c" />
+        <div className="style-thumb__copy">
+          <span>{sample.badge}</span>
+          <strong>{sample.en}</strong>
         </div>
       </div>
-      {!compact ? (
-        <div className="sample-visual__footer">
-          {sample.industries.map((industry) => (
-            <span key={industry.id}>{industry.label}</span>
-          ))}
-        </div>
-      ) : null}
-    </article>
+    </div>
   );
 }
 
 function HomeCard({ sample, onOpen }) {
+  const primaryIndustry = sample.industries[0];
+  const mode = modeMeta[primaryIndustry.mode] ?? modeMeta.consulting;
+
   return (
     <Motion.article
-      whileHover={{ y: -6 }}
-      transition={{ type: "spring", stiffness: 220, damping: 22 }}
+      whileHover={{ y: -8, scale: 1.01 }}
+      transition={{ type: "spring", stiffness: 220, damping: 20 }}
       className="home-card"
+      data-style={sample.preview}
     >
-      <SampleVisual sample={sample} />
+      <StyleThumb sample={sample} />
       <div className="home-card__body">
         <div className="home-card__meta">
           <span className="pill pill--dark">{sample.badge}</span>
           <span className="pill">{sample.category}</span>
+          <span className="pill">{mode.label}</span>
         </div>
         <h3>{sample.name}</h3>
         <p>{sample.summary}</p>
+        <div className="home-card__industries">
+          {sample.industries.map((industry) => (
+            <span key={industry.id}>{industry.company}</span>
+          ))}
+        </div>
         <button type="button" className="inline-action" onClick={() => onOpen(sample.id)}>
-          실제 서비스형 상세 보기
+          실제 서비스 페이지 보기
           <ChevronRight size={18} />
         </button>
       </div>
@@ -151,18 +170,18 @@ function HomePage({ onOpen }) {
 
       <main id="top">
         <section className="hero">
-          <div className="hero__copy">
+          <Reveal className="hero__copy">
             <span className="hero__label">{product.label}</span>
             <h1>{product.title}</h1>
             <p className="hero__description">{product.description}</p>
 
             <div className="hero__actions">
               <a href="#samples" className="button button--primary">
-                샘플 보기
+                샘플 고르기
                 <ArrowRight size={18} />
               </a>
               <a href="#pricing" className="button button--secondary">
-                패키지 확인
+                패키지 보기
               </a>
             </div>
 
@@ -174,113 +193,127 @@ function HomePage({ onOpen }) {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
 
-          <div className="hero__visual">
-            <div className="hero__visual-stack">
-              <SampleVisual sample={styleSamples[0]} compact />
-              <SampleVisual sample={styleSamples[3]} compact />
-              <SampleVisual sample={styleSamples[9]} compact />
+          <Reveal className="hero__visual" delay={0.08}>
+            <div className="hero__visual-grid">
+              <StyleThumb sample={styleSamples[0]} />
+              <StyleThumb sample={styleSamples[3]} />
+              <StyleThumb sample={styleSamples[9]} />
             </div>
-
             <div className="hero__visual-note">
-              <strong>10개 메인 스타일과 30개 상세 시나리오</strong>
-              <span>메인에서 고르고, 상세에서 업종을 바꾸며 실제 페이지처럼 판단합니다.</span>
+              <strong>10개 스타일 모두 다른 화면 언어</strong>
+              <span>상세에 들어가면 회사 소개, 상품·서비스, 현장 사진, 제품 사진, AI 기능, 문의 흐름까지 실제 사이트처럼 확인할 수 있습니다.</span>
             </div>
-          </div>
+          </Reveal>
         </section>
 
         <section className="metric-grid">
-          {studioMetrics.map((item) => (
-            <article key={item.label} className="metric-card">
-              <strong>{item.value}</strong>
-              <span>{item.label}</span>
-            </article>
+          {studioMetrics.map((item, index) => (
+            <Reveal key={item.label} delay={index * 0.04}>
+              <article className="metric-card">
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
+              </article>
+            </Reveal>
           ))}
         </section>
 
         <section className="section" id="samples">
-          <SectionHeader
-            eyebrow="Samples"
-            title="이전 버전의 톤으로 다시 정리한 메인 샘플 갤러리"
-            description="과장된 스타일 장식은 빼고, 동일한 플랫폼 안에서 비교하는 느낌으로 정리했습니다. 각 카드에 들어가면 업종 3개를 바꿔볼 수 있습니다."
-          />
-
+          <Reveal>
+            <SectionHeader
+              eyebrow="Samples"
+              title="메인 카드부터 전부 다른 스타일로 비교합니다"
+              description="같은 카드 틀을 반복하지 않고, 스타일마다 전혀 다른 시각 언어를 써서 첫 단계에서부터 구분이 명확하게 보이도록 바꿨습니다."
+            />
+          </Reveal>
           <div className="sample-grid">
-            {styleSamples.map((sample) => (
-              <HomeCard key={sample.id} sample={sample} onOpen={onOpen} />
+            {styleSamples.map((sample, index) => (
+              <Reveal key={sample.id} delay={index * 0.03}>
+                <HomeCard sample={sample} onOpen={onOpen} />
+              </Reveal>
             ))}
           </div>
         </section>
 
         <section className="section" id="process">
-          <SectionHeader
-            eyebrow="Process"
-            title="판단 순서는 그대로 유지합니다"
-            description="스타일 선택, 업종 전환, 실제 서비스 흐름 확인의 구조는 유지하고, 보이는 방식만 이전 버전 톤으로 되돌립니다."
-          />
-
+          <Reveal>
+            <SectionHeader
+              eyebrow="Process"
+              title="메인에서 고르고 상세에서 실제 서비스 흐름을 봅니다"
+              description="상세 페이지 안에서는 내부 메뉴, 회사 소개, 제품·프로그램, 현장 이미지, AI 기능, 문의 패널까지 사이트처럼 움직입니다."
+            />
+          </Reveal>
           <div className="process-grid">
-            {processSteps.map((item) => (
-              <article key={item.step} className="process-card">
-                <span className="process-card__step">{item.step}</span>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </article>
+            {processSteps.map((item, index) => (
+              <Reveal key={item.step} delay={index * 0.05}>
+                <article className="process-card">
+                  <span className="process-card__step">{item.step}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </article>
+              </Reveal>
             ))}
           </div>
         </section>
 
         <section className="section">
-          <SectionHeader
-            eyebrow="AI Ideas"
-            title="실서비스에 붙일 AI 기능도 같은 구조로 유지합니다"
-            description="가상 착용, 추천, 배치 미리보기, 챗봇 같은 기능 구조는 그대로 두고 표현만 단정하게 묶습니다."
-          />
-
+          <Reveal>
+            <SectionHeader
+              eyebrow="AI Ideas"
+              title="실제 운영용으로 넣을 만한 기능도 업종별로 잡았습니다"
+              description="가상 착용, 공간 배치, 추천, 챗봇 같은 기능은 이제 상세 페이지 안에서 업종에 맞게 바로 읽히도록 배치합니다."
+            />
+          </Reveal>
           <div className="idea-grid">
-            {aiRecommendations.map((item) => (
-              <article key={item.title} className="idea-card">
-                <div className="idea-card__icon">
-                  <Bot size={18} />
-                </div>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </article>
+            {aiRecommendations.map((item, index) => (
+              <Reveal key={item.title} delay={index * 0.05}>
+                <article className="idea-card">
+                  <div className="idea-card__icon">
+                    <Bot size={18} />
+                  </div>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </article>
+              </Reveal>
             ))}
           </div>
         </section>
 
         <section className="section" id="pricing">
-          <SectionHeader
-            eyebrow="Pricing"
-            title="가격 섹션도 이전 버전의 톤으로 단순하게 유지합니다"
-            description="메인 화면에서 바로 판단할 수 있게 가격과 범위는 짧고 분명하게 유지합니다."
-          />
-
+          <Reveal>
+            <SectionHeader
+              eyebrow="Pricing"
+              title="패키지 구간은 빠르게 판단할 수 있게 유지합니다"
+              description="메인 페이지에서는 가격 판단을 방해하지 않도록 간결하게 두고, 상세에서 각 업종 흐름을 깊게 보도록 분리합니다."
+            />
+          </Reveal>
           <div className="pricing-grid">
-            {packageCards.map((item) => (
-              <article key={item.name} className={`pricing-card ${item.highlight ? "pricing-card--highlight" : ""}`}>
-                <span className="pill">{item.name}</span>
-                <h3>{item.price}</h3>
-                <p>{item.description}</p>
-                <ul className="pricing-card__list">
-                  {item.items.map((entry) => (
-                    <li key={entry}>{entry}</li>
-                  ))}
-                </ul>
-              </article>
+            {packageCards.map((item, index) => (
+              <Reveal key={item.name} delay={index * 0.05}>
+                <article className={`pricing-card ${item.highlight ? "pricing-card--highlight" : ""}`}>
+                  <span className="pill">{item.name}</span>
+                  <h3>{item.price}</h3>
+                  <p>{item.description}</p>
+                  <ul className="pricing-card__list">
+                    {item.items.map((entry) => (
+                      <li key={entry}>{entry}</li>
+                    ))}
+                  </ul>
+                </article>
+              </Reveal>
             ))}
           </div>
         </section>
 
         <section className="section" id="faq">
-          <SectionHeader
-            eyebrow="FAQ"
-            title="샘플 성격과 실제 사용 가능 범위를 먼저 설명합니다"
-            description="여기서 보는 건 단순 디자인 카드가 아니라 실제 기능 흐름까지 들어간 서비스형 샘플이라는 점을 분명하게 남깁니다."
-          />
-
+          <Reveal>
+            <SectionHeader
+              eyebrow="FAQ"
+              title="이제 단순 무드보드가 아니라 실제 운용형 샘플입니다"
+              description="상세 페이지 내부에 이미지, 섹션 메뉴, 전환 패널, 문의·구매 흐름이 모두 있는지 기준으로 검증 가능한 상태로 만들겠습니다."
+            />
+          </Reveal>
           <div className="faq-list">
             {faqs.map((item, index) => (
               <FaqItem key={item.question} item={item} open={openFaq === index} onToggle={() => setOpenFaq(openFaq === index ? -1 : index)} />
@@ -293,17 +326,12 @@ function HomePage({ onOpen }) {
 }
 
 function DetailPage({ sample, industry, onBack, onSelectIndustry }) {
-  const currentMode = modeMeta[industry.mode] ?? modeMeta.consulting;
+  const experience = buildIndustryExperience(sample, industry);
+  const gallery = experience.gallery;
+  const mode = modeMeta[industry.mode] ?? modeMeta.consulting;
 
   return (
-    <div
-      className="detail-shell"
-      style={{
-        "--sample-accent": sample.theme.accent,
-        "--sample-soft": sample.theme.accentSoft,
-        "--sample-button-text": sample.theme.buttonText,
-      }}
-    >
+    <div className="detail-shell" data-style={sample.preview}>
       <header className="detail-topbar">
         <button type="button" className="back-button" onClick={onBack}>
           <ArrowLeft size={18} />
@@ -315,21 +343,28 @@ function DetailPage({ sample, industry, onBack, onSelectIndustry }) {
           <strong>{industry.company}</strong>
         </div>
 
-        <span className="pill pill--dark">{industry.label}</span>
+        <span className="pill pill--dark">{mode.label}</span>
       </header>
 
       <main className="detail-page">
-        <section className="detail-hero">
-          <div className="detail-hero__copy">
-            <div className="detail-hero__meta">
+        <section className="detail-overview" id="overview">
+          <div className="detail-overview__intro">
+            <div className="detail-overview__badges">
               <span className="pill pill--dark">{sample.badge}</span>
               <span className="pill">{industry.label}</span>
+              <span className="pill">{industry.company}</span>
+            </div>
+
+            <div className="detail-overview__site-nav">
+              {industry.nav.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
             </div>
 
             <h1>{industry.title}</h1>
             <p>{industry.desc}</p>
 
-            <div className="detail-hero__actions">
+            <div className="detail-overview__actions">
               <button type="button" className="button button--primary">
                 {industry.panel.primary}
                 <ArrowRight size={18} />
@@ -339,24 +374,37 @@ function DetailPage({ sample, industry, onBack, onSelectIndustry }) {
               </button>
             </div>
 
-            <div className="detail-nav">
-              {industry.nav.map((item) => (
-                <span key={item}>{item}</span>
+            <div className="detail-subnav">
+              {experience.sectionNav.map((item) => (
+                <a key={item.id} href={`#${item.id}`}>
+                  {item.label}
+                </a>
               ))}
             </div>
           </div>
 
-          <div className="detail-hero__aside">
-            <SampleVisual sample={sample} compact />
-
-            <div className="detail-panel">
+          <div className="detail-overview__visual">
+            <Reveal className="detail-media-card detail-media-card--hero" delay={0.05}>
+              <img src={gallery[0].src} alt={`${industry.company} ${gallery[0].title}`} />
+              <div className="detail-media-card__copy">
+                <strong>{gallery[0].title}</strong>
+                <span>{gallery[0].caption}</span>
+              </div>
+            </Reveal>
+            <Reveal className="detail-media-card detail-media-card--secondary" delay={0.1}>
+              <img src={gallery[1].src} alt={`${industry.company} ${gallery[1].title}`} />
+              <div className="detail-media-card__copy">
+                <strong>{gallery[1].title}</strong>
+                <span>{gallery[1].caption}</span>
+              </div>
+            </Reveal>
+            <Reveal className="detail-panel" delay={0.15}>
               <span className="detail-panel__eyebrow">
                 <LayoutGrid size={15} />
-                {currentMode.panelTitle}
+                {industry.panel.badge}
               </span>
               <h3>{industry.panel.title}</h3>
               <p>{industry.panel.text}</p>
-
               <div className="detail-panel__rows">
                 {industry.panel.rows.map(([label, value]) => (
                   <div key={label} className="detail-panel__row">
@@ -365,7 +413,7 @@ function DetailPage({ sample, industry, onBack, onSelectIndustry }) {
                   </div>
                 ))}
               </div>
-            </div>
+            </Reveal>
           </div>
         </section>
 
@@ -384,76 +432,159 @@ function DetailPage({ sample, industry, onBack, onSelectIndustry }) {
         </section>
 
         <section className="detail-stats">
-          {industry.stats.map(([value, label]) => (
-            <article key={label} className="detail-stat">
-              <strong>{value}</strong>
-              <span>{label}</span>
-            </article>
+          {industry.stats.map(([value, label], index) => (
+            <Reveal key={label} delay={index * 0.05}>
+              <article className="detail-stat">
+                <strong>{value}</strong>
+                <span>{label}</span>
+              </article>
+            </Reveal>
           ))}
         </section>
 
-        <section className="detail-section detail-section--split">
-          <article className="story-card">
-            <span className="detail-section__eyebrow">Company Intro</span>
-            <h2>{industry.company}</h2>
-            <p>{industry.story}</p>
-          </article>
+        <section className="detail-section detail-section--split" id="about">
+          <Reveal>
+            <article className="story-card">
+              <span className="detail-section__eyebrow">Company Intro</span>
+              <h2>{industry.company}</h2>
+              <p>{industry.story}</p>
+
+              <div className="story-card__facts">
+                {experience.quickFacts.map(([label, value]) => (
+                  <div key={label} className="story-card__fact">
+                    <span>{label}</span>
+                    <strong>{value}</strong>
+                  </div>
+                ))}
+              </div>
+            </article>
+          </Reveal>
 
           <div className="value-grid">
-            {industry.values.map(([title, text]) => (
-              <article key={title} className="value-card">
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </article>
+            {industry.values.map(([title, text], index) => (
+              <Reveal key={title} delay={index * 0.05}>
+                <article className="value-card">
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              </Reveal>
             ))}
           </div>
         </section>
 
-        <section className="detail-section">
-          <div className="detail-section__head">
-            <span className="detail-section__eyebrow">
-              <ShoppingBag size={15} />
-              {currentMode.offersTitle}
-            </span>
-            <h2>실제 서비스 구간처럼 보이는 핵심 섹션</h2>
-          </div>
+        <section className="detail-section" id="catalog">
+          <Reveal>
+            <div className="detail-section__head">
+              <span className="detail-section__eyebrow">
+                <ShoppingBag size={15} />
+                {mode.cta}
+              </span>
+              <h2>실제 서비스처럼 읽히는 핵심 상품·프로그램 섹션</h2>
+              <p>가격, 구성, 선택 이유가 한 번에 읽히도록 구성했습니다.</p>
+            </div>
+          </Reveal>
 
-          <div className="offer-grid">
-            {industry.offers.map(([name, info, price]) => (
-              <article key={name} className="offer-card">
-                <h3>{name}</h3>
-                <p>{info}</p>
-                <strong>{price}</strong>
-              </article>
+          <div className="catalog-layout">
+            <div className="offer-grid">
+              {industry.offers.map(([name, info, price], index) => (
+                <Reveal key={name} delay={index * 0.05}>
+                  <article className="offer-card">
+                    <h3>{name}</h3>
+                    <p>{info}</p>
+                    <strong>{price}</strong>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+
+            <Reveal className="detail-media-card detail-media-card--catalog" delay={0.1}>
+              <img src={gallery[1].src} alt={`${industry.company} catalog visual`} />
+              <div className="detail-media-card__copy">
+                <strong>{gallery[1].title}</strong>
+                <span>{gallery[1].caption}</span>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        <section className="detail-section" id="gallery">
+          <Reveal>
+            <div className="detail-section__head">
+              <span className="detail-section__eyebrow">
+                <Sparkles size={15} />
+                Visual Assets
+              </span>
+              <h2>제품 컷, 콘셉트 컷, 현장 컷을 전부 별도 자산으로 구성했습니다</h2>
+              <p>겉핥기용 카드가 아니라 실제 상세 페이지 안에 쓰는 이미지 구간처럼 보이도록 분리했습니다.</p>
+            </div>
+          </Reveal>
+
+          <div className="gallery-grid">
+            {gallery.map((item, index) => (
+              <Reveal key={item.key} delay={index * 0.06}>
+                <article className="detail-media-card detail-media-card--gallery">
+                  <img src={item.src} alt={`${industry.company} ${item.title}`} />
+                  <div className="detail-media-card__copy">
+                    <strong>{item.title}</strong>
+                    <span>{item.caption}</span>
+                  </div>
+                </article>
+              </Reveal>
             ))}
           </div>
         </section>
 
-        <section className="detail-section">
-          <div className="detail-section__head">
-            <span className="detail-section__eyebrow">
-              <Bot size={15} />
-              AI Experience
-            </span>
-            <h2>업종에 맞게 붙인 AI 기능 흐름</h2>
-          </div>
+        <section className="detail-section" id="ai">
+          <Reveal>
+            <div className="detail-section__head">
+              <span className="detail-section__eyebrow">
+                <Bot size={15} />
+                AI Experience
+              </span>
+              <h2>이 업종에 실제로 붙일 만한 AI 기능 흐름</h2>
+              <p>상담형, 구매형, 예약형에 따라 체감 기능이 다르게 보이도록 업종별로 다르게 배치했습니다.</p>
+            </div>
+          </Reveal>
 
           <div className="tool-grid">
-            {industry.tools.map(([title, text]) => (
-              <article key={title} className="tool-card">
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </article>
+            {industry.tools.map(([title, text], index) => (
+              <Reveal key={title} delay={index * 0.05}>
+                <article className="tool-card">
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              </Reveal>
             ))}
           </div>
         </section>
 
-        <section className="detail-section">
-          <article className="quote-card">
-            <span className="detail-section__eyebrow">Brand Voice</span>
-            <blockquote>{industry.quote}</blockquote>
-            <p>{industry.author}</p>
-          </article>
+        <section className="detail-section detail-section--contact" id="contact">
+          <Reveal>
+            <article className="contact-card">
+              <div className="contact-card__copy">
+                <span className="detail-section__eyebrow">
+                  <MessageCircle size={15} />
+                  Contact Flow
+                </span>
+                <h2>{experience.contact.title}</h2>
+                <p>{experience.contact.body}</p>
+                <div className="contact-card__rows">
+                  {experience.contact.rows.map(([label, value]) => (
+                    <div key={label} className="contact-card__row">
+                      <span>{label}</span>
+                      <strong>{value}</strong>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="quote-card">
+                <span className="detail-section__eyebrow">Brand Voice</span>
+                <blockquote>{industry.quote}</blockquote>
+                <p>{industry.author}</p>
+              </div>
+            </article>
+          </Reveal>
         </section>
       </main>
     </div>
@@ -464,11 +595,18 @@ export default function App() {
   const [selectedStyleId, setSelectedStyleId] = useState(null);
   const [selectedIndustryId, setSelectedIndustryId] = useState(null);
 
-  const selectedSample = styleSamples.find((sample) => sample.id === selectedStyleId) ?? null;
-  const selectedIndustry =
-    selectedSample?.industries.find((industry) => industry.id === selectedIndustryId) ??
-    selectedSample?.industries[0] ??
-    null;
+  const selectedSample = useMemo(
+    () => styleSamples.find((sample) => sample.id === selectedStyleId) ?? null,
+    [selectedStyleId],
+  );
+
+  const selectedIndustry = useMemo(
+    () =>
+      selectedSample?.industries.find((industry) => industry.id === selectedIndustryId) ??
+      selectedSample?.industries[0] ??
+      null,
+    [selectedIndustryId, selectedSample],
+  );
 
   const handleOpenSample = (sampleId) => {
     const sample = styleSamples.find((entry) => entry.id === sampleId);
@@ -479,7 +617,7 @@ export default function App() {
   return (
     <AnimatePresence mode="wait">
       {selectedSample && selectedIndustry ? (
-        <Motion.div key={selectedSample.id} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -16 }} transition={{ duration: 0.3 }}>
+        <Motion.div key={`${selectedSample.id}-${selectedIndustry.id}`} initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -14 }} transition={{ duration: 0.3 }}>
           <DetailPage
             sample={selectedSample}
             industry={selectedIndustry}
@@ -491,7 +629,7 @@ export default function App() {
           />
         </Motion.div>
       ) : (
-        <Motion.div key="home" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -16 }} transition={{ duration: 0.3 }}>
+        <Motion.div key="home" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -14 }} transition={{ duration: 0.3 }}>
           <HomePage onOpen={handleOpenSample} />
         </Motion.div>
       )}

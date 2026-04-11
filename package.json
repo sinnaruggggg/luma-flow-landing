@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "generate:images": "node scripts/generate-gemini-images.mjs"
+    "generate:images": "node scripts/generate-gemini-images.mjs",
+    "generate:industry-images": "node scripts/generate-industry-images.mjs"
   },
   "dependencies": {
     "@google/genai": "^1.28.0",
