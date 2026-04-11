@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion as Motion } from "framer-motion";
 import {
   ArrowLeft,
@@ -54,6 +54,68 @@ function Reveal({ children, delay = 0, className = "" }) {
     >
       {children}
     </Motion.div>
+  );
+}
+
+function usePointerBackdrop() {
+  const ref = useRef(null);
+
+  const updatePointer = (clientX, clientY) => {
+    const node = ref.current;
+    if (!node) return;
+
+    const rect = node.getBoundingClientRect();
+    const x = ((clientX - rect.left) / rect.width) * 100;
+    const y = ((clientY - rect.top) / rect.height) * 100;
+
+    node.style.setProperty("--pointer-x", `${Math.max(0, Math.min(100, x))}%`);
+    node.style.setProperty("--pointer-y", `${Math.max(0, Math.min(100, y))}%`);
+  };
+
+  return {
+    containerRef: ref,
+    handlePointerMove: (event) => updatePointer(event.clientX, event.clientY),
+    handlePointerLeave: () => {
+      const node = ref.current;
+      if (!node) return;
+      node.style.setProperty("--pointer-x", "50%");
+      node.style.setProperty("--pointer-y", "20%");
+    },
+  };
+}
+
+function SceneBackdrop({ variant, scope = "detail" }) {
+  return (
+    <div className="scene-backdrop" data-style={variant} data-scope={scope} aria-hidden="true">
+      <Motion.div
+        className="scene-backdrop__orb scene-backdrop__orb--a"
+        animate={{ x: [0, 36, -18, 0], y: [0, -28, 22, 0], scale: [1, 1.08, 0.96, 1] }}
+        transition={{ duration: 17, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <Motion.div
+        className="scene-backdrop__orb scene-backdrop__orb--b"
+        animate={{ x: [0, -32, 20, 0], y: [0, 18, -24, 0], scale: [1, 0.94, 1.06, 1] }}
+        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+      />
+      <Motion.div
+        className="scene-backdrop__orb scene-backdrop__orb--c"
+        animate={{ x: [0, 22, -24, 0], y: [0, -18, 20, 0], rotate: [0, 10, -8, 0] }}
+        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+      />
+      <Motion.div
+        className="scene-backdrop__ribbon scene-backdrop__ribbon--a"
+        animate={{ rotate: [0, 10, -6, 0], x: [0, -24, 14, 0], y: [0, 20, -14, 0] }}
+        transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <Motion.div
+        className="scene-backdrop__ribbon scene-backdrop__ribbon--b"
+        animate={{ rotate: [0, -12, 8, 0], x: [0, 18, -18, 0], y: [0, -20, 16, 0] }}
+        transition={{ duration: 19, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
+      />
+      <div className="scene-backdrop__mesh" />
+      <div className="scene-backdrop__cursor" />
+      <div className="scene-backdrop__grain" />
+    </div>
   );
 }
 
@@ -145,9 +207,12 @@ function FaqItem({ item, open, onToggle }) {
 
 function HomePage({ onOpen }) {
   const [openFaq, setOpenFaq] = useState(0);
+  const { containerRef, handlePointerMove, handlePointerLeave } = usePointerBackdrop();
 
   return (
-    <div className="page-shell">
+    <div className="page-shell page-shell--home" ref={containerRef} onPointerMove={handlePointerMove} onPointerLeave={handlePointerLeave}>
+      <SceneBackdrop variant="gallery" scope="home" />
+      <div className="page-shell__content">
       <header className="site-header">
         <a href="#top" className="brand-mark">
           <span className="brand-mark__icon">
@@ -321,6 +386,7 @@ function HomePage({ onOpen }) {
           </div>
         </section>
       </main>
+      </div>
     </div>
   );
 }
@@ -329,9 +395,12 @@ function DetailPage({ sample, industry, onBack, onSelectIndustry }) {
   const experience = buildIndustryExperience(sample, industry);
   const gallery = experience.gallery;
   const mode = modeMeta[industry.mode] ?? modeMeta.consulting;
+  const { containerRef, handlePointerMove, handlePointerLeave } = usePointerBackdrop();
 
   return (
-    <div className="detail-shell" data-style={sample.preview}>
+    <div className="detail-shell" data-style={sample.preview} ref={containerRef} onPointerMove={handlePointerMove} onPointerLeave={handlePointerLeave}>
+      <SceneBackdrop variant={sample.preview} />
+      <div className="detail-shell__content">
       <header className="detail-topbar">
         <button type="button" className="back-button" onClick={onBack}>
           <ArrowLeft size={18} />
@@ -587,6 +656,7 @@ function DetailPage({ sample, industry, onBack, onSelectIndustry }) {
           </Reveal>
         </section>
       </main>
+      </div>
     </div>
   );
 }
