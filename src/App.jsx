@@ -754,8 +754,8 @@ function PortfolioSubpage({ page, config }) {
   );
 }
 
-function renderSubpageContent(page, pageSlug) {
-  const config = subpageConfigs[page.id]?.[pageSlug];
+function renderSubpageContent(page, pageSlug, providedConfig = null) {
+  const config = providedConfig ?? subpageConfigs[page.id]?.[pageSlug];
   if (!config) return null;
 
   switch (config.variant) {
@@ -781,6 +781,61 @@ function renderSubpageContent(page, pageSlug) {
       return <PortfolioSubpage page={page} config={config} />;
     default:
       return null;
+  }
+}
+
+function buildHomeConfig(page) {
+  const base = {
+    eyebrow: page.hero.eyebrow,
+    title: page.hero.title,
+    subtitle: page.hero.subtitle,
+    primary: page.hero.primary,
+    secondary: page.hero.secondary,
+  };
+
+  switch (page.id) {
+    case "sneaker-drop":
+      return { ...base, variant: "catalog", itemsKey: "drops", chipsKey: "quickTools", mediaKey: "hero", secondaryMediaKey: "product", headingClass: "v3-heading--slam" };
+    case "supplement-brand":
+      return { ...base, variant: "catalog", itemsKey: "routines", chipsKey: "plans", mediaKey: "hero", secondaryMediaKey: "product" };
+    case "boxing-gym":
+      return { ...base, variant: "booking", itemsKey: "plans", chipsKey: "classSlots", mediaKey: "hero", summaryKey: "coaches", headingClass: "v3-heading--impact" };
+    case "wealth-app":
+      return { ...base, variant: "dashboard", itemsKey: "goals", chipsKey: "boards", mediaKey: "hero", summaryKey: "cards" };
+    case "skin-clinic":
+      return { ...base, variant: "booking", itemsKey: "programs", chipsKey: "slots", mediaKey: "hero", summaryKey: "doctors", headingClass: "v3-heading--serif" };
+    case "arch-studio":
+      return { ...base, variant: "portfolio", itemsKey: "works", chipsKey: "process", mediaKey: "hero", gallery: ["product", "scene"], headingClass: "v3-heading--serif" };
+    case "beauty-flash-sale":
+      return { ...base, variant: "catalog", itemsKey: "kits", chipsKey: "checkout", mediaKey: "hero", secondaryMediaKey: "product" };
+    case "festival-page":
+      return { ...base, variant: "timeline", itemsKey: "tickets", chipsKey: "lineup", scheduleKey: "timetable", mediaKey: "hero", headingClass: "v3-heading--poster" };
+    case "creator-club":
+      return { ...base, variant: "feed", itemsKey: "passes", chipsKey: "posts", listKey: "perks", mediaKey: "hero" };
+    case "ev-mobility":
+      return { ...base, variant: "compare", tableHeaders: ["모델", "핵심", "가격"], tableKey: "models", chipsKey: "specs", mediaKey: "hero" };
+    case "gaming-gear":
+      return { ...base, variant: "catalog", itemsKey: "gear", chipsKey: "specs", mediaKey: "hero", secondaryMediaKey: "product" };
+    case "ai-saas":
+      return { ...base, variant: "dashboard", itemsKey: "useCases", chipsKey: "flows", mediaKey: "hero", summaryKey: "kpis" };
+    case "indie-bookstore":
+      return { ...base, variant: "catalog", itemsKey: "picks", chipsKey: "shelf", mediaKey: "hero", secondaryMediaKey: "scene", headingClass: "v3-heading--serif" };
+    case "stationery-shop":
+      return { ...base, variant: "catalog", itemsKey: "kits", chipsKey: "basket", mediaKey: "hero", secondaryMediaKey: "product" };
+    case "local-cafe":
+      return { ...base, variant: "catalog", itemsKey: "menus", chipsKey: "seats", mediaKey: "hero", secondaryMediaKey: "product", headingClass: "v3-heading--serif" };
+    case "boutique-hotel":
+      return { ...base, variant: "catalog", itemsKey: "rooms", chipsKey: "dates", mediaKey: "hero", secondaryMediaKey: "scene", headingClass: "v3-heading--serif" };
+    case "perfume-house":
+      return { ...base, variant: "story", chipsKey: "notes", statsKey: "stats", mediaKey: "hero", gallery: ["product", "scene"], headingClass: "v3-heading--serif" };
+    case "furniture-store":
+      return { ...base, variant: "catalog", itemsKey: "bundles", chipsKey: "rooms", mediaKey: "hero", secondaryMediaKey: "scene", headingClass: "v3-heading--soft" };
+    case "youth-fashion":
+      return { ...base, variant: "story", chipsKey: "sizes", statsKey: "stats", mediaKey: "hero", gallery: ["product", "scene"], headingClass: "v3-heading--shout" };
+    case "jewelry-brand":
+      return { ...base, variant: "catalog", itemsKey: "collections", chipsKey: "bespoke", mediaKey: "hero", secondaryMediaKey: "product", headingClass: "v3-heading--chrome" };
+    default:
+      return { ...base, variant: "story", mediaKey: "hero" };
   }
 }
 
@@ -1416,7 +1471,7 @@ const pageComponents = {
 
 function LiveSubpage({ page, pageSlug, onBack }) {
   const design = pageDesigns[page.id];
-  const routeConfig = subpageConfigs[page.id]?.[pageSlug];
+  const routeConfig = pageSlug === "home" ? buildHomeConfig(page) : subpageConfigs[page.id]?.[pageSlug];
 
   if (!routeConfig) return null;
 
@@ -1431,7 +1486,7 @@ function LiveSubpage({ page, pageSlug, onBack }) {
           </button>
         }
       />
-      {renderSubpageContent(page, pageSlug)}
+      {renderSubpageContent(page, pageSlug, routeConfig)}
     </PageFrame>
   );
 }
@@ -1512,11 +1567,7 @@ export default function App() {
           transition={{ duration: 0.32, ease: "easeOut" }}
         >
           <SiteRouteContext.Provider value={routeContextValue}>
-            {route.pageSlug === "home" && CurrentPage ? (
-              <CurrentPage page={selectedPage} onBack={goHome} />
-            ) : (
-              <LiveSubpage page={selectedPage} pageSlug={route.pageSlug} onBack={goHome} />
-            )}
+            <LiveSubpage page={selectedPage} pageSlug={route.pageSlug} onBack={goHome} />
           </SiteRouteContext.Provider>
         </Motion.div>
       ) : (

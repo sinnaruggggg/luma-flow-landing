@@ -700,17 +700,18 @@
   padding: 8px 13px;
   border-radius: 999px;
   border: 1px solid var(--page-line);
-  background: rgba(255, 255, 255, 0.4);
-  color: inherit;
+  background: color-mix(in srgb, var(--page-panel) 84%, white 16%);
+  color: var(--page-text);
   font-size: 0.76rem;
   font-weight: 800;
-  opacity: 0.7;
+  opacity: 0.94;
   transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease, border-color 0.18s ease;
 }
 
 .v3-routeButton:hover {
   opacity: 1;
   transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--page-accent) 34%, var(--page-line));
 }
 
 .v3-routeButton.is-active {
@@ -1680,6 +1681,16 @@
 .v3-page[data-page="jewelry-brand"] .v3-stageCard__hero,
 .v3-page[data-page="ev-mobility"] .v3-stageCard__hero {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.12));
+}
+
+.v3-page[data-page="boxing-gym"] .v3-routeButton {
+  background: rgba(255, 255, 255, 0.06);
+  color: #f5f7fb;
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.v3-page[data-page="boxing-gym"] .v3-routeButton.is-active {
+  color: #111111;
 }
 
 .v3-page[data-page="festival-page"] .v3-heading--poster,
