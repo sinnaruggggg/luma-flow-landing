@@ -1059,6 +1059,10 @@ p {
 }
 
 .page-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
   position: sticky;
   top: 12px;
   z-index: 10;
@@ -1089,6 +1093,7 @@ p {
 }
 
 .page-topbar__brand {
+  display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -1211,6 +1216,14 @@ p {
   line-height: 1.56;
 }
 
+.section-copy {
+  margin: 0;
+  color: var(--page-muted);
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
 .nav-row span,
 .token-rail span {
   display: inline-flex;
@@ -1223,6 +1236,34 @@ p {
   color: var(--page-muted);
   font-size: 0.8rem;
   font-weight: 800;
+}
+
+.page-routebar {
+  padding: 16px 18px;
+}
+
+.nav-row button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 14px;
+  border: 1px solid var(--page-line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--page-surface) 70%, transparent);
+  color: var(--page-muted);
+  font-size: 0.8rem;
+  font-weight: 800;
+  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.nav-row button:hover {
+  transform: translateY(-1px);
+}
+
+.nav-row button.is-active {
+  background: var(--page-accent);
+  color: var(--page-button-text);
+  border-color: transparent;
 }
 
 .action-row {
@@ -1636,7 +1677,8 @@ p {
 .page-view[data-tone="retro"] .compare-table__head span,
 .page-view[data-tone="retro"] .compare-table__row span,
 .page-view[data-tone="retro"] .token-rail span,
-.page-view[data-tone="retro"] .nav-row span {
+.page-view[data-tone="retro"] .nav-row span,
+.page-view[data-tone="retro"] .nav-row button {
   background: rgba(8, 19, 37, 0.72);
   color: inherit;
   border-color: rgba(57, 213, 255, 0.2);
@@ -1651,6 +1693,7 @@ p {
 .page-view[data-tone="retro"] .stat-card span,
 .page-view[data-tone="retro"] .mini-panel__row span,
 .page-view[data-tone="retro"] .nav-row span,
+.page-view[data-tone="retro"] .nav-row button,
 .page-view[data-tone="retro"] .token-rail span {
   color: rgba(203, 241, 255, 0.76);
 }
@@ -1683,6 +1726,7 @@ p {
 .page-view[data-tone="max"] .image-card,
 .page-view[data-tone="max"] .token-rail span,
 .page-view[data-tone="max"] .nav-row span,
+.page-view[data-tone="max"] .nav-row button,
 .page-view[data-tone="max"] .stat-card {
   background: rgba(255, 255, 255, 0.1);
   color: inherit;
@@ -1739,7 +1783,8 @@ p {
 .page-view[data-tone="organic"] .image-card,
 .page-view[data-tone="organic"] .page-topbar,
 .page-view[data-tone="organic"] .token-rail span,
-.page-view[data-tone="organic"] .nav-row span {
+.page-view[data-tone="organic"] .nav-row span,
+.page-view[data-tone="organic"] .nav-row button {
   border-radius: 42px 26px 40px 24px;
 }
 
@@ -1762,6 +1807,7 @@ p {
 .page-view[data-tone="chrome"] .image-card,
 .page-view[data-tone="chrome"] .token-rail span,
 .page-view[data-tone="chrome"] .nav-row span,
+.page-view[data-tone="chrome"] .nav-row button,
 .page-view[data-tone="chrome"] .stat-card {
   border-color: rgba(255, 255, 255, 0.58);
   background:
@@ -1782,6 +1828,13 @@ p {
   -webkit-background-clip: text;
   color: transparent;
   animation: chromeShift 8s ease-in-out infinite;
+}
+
+.page-view .nav-row button.is-active {
+  background: var(--page-accent);
+  color: var(--page-button-text);
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .page-view[data-page="festival-page"] .hero-lead h1,
