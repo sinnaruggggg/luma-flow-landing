@@ -182,17 +182,13 @@
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
   align-items: start;
 }
 
 .v3-home__cell {
-  grid-column: span 4;
-}
-
-.v3-home__cell--wide {
-  grid-column: span 8;
+  min-width: 0;
 }
 
 .v3-card {
@@ -227,6 +223,17 @@
 
 .v3-home__cell--tall .v3-card__stage {
   aspect-ratio: 10 / 13;
+}
+
+.v3-home__cell .v3-card__stage {
+  aspect-ratio: 16 / 11;
+}
+
+.v3-home__grid .v3-card[data-preview="poster"] .v3-card__stage,
+.v3-home__grid .v3-card[data-preview="drop"] .v3-card__stage,
+.v3-home__grid .v3-card[data-preview="fashion"] .v3-card__stage,
+.v3-home__grid .v3-card[data-preview="chrome"] .v3-card__stage {
+  aspect-ratio: 16 / 11;
 }
 
 .v3-card__image,
@@ -676,9 +683,41 @@
   justify-content: center;
 }
 
+.v3-siteHeader__nav--interactive {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
 .v3-siteHeader__right {
   display: flex;
   justify-content: flex-end;
+}
+
+.v3-routeButton {
+  min-height: 34px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  border: 1px solid var(--page-line);
+  background: rgba(255, 255, 255, 0.4);
+  color: inherit;
+  font-size: 0.76rem;
+  font-weight: 800;
+  opacity: 0.7;
+  transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+
+.v3-routeButton:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.v3-routeButton.is-active {
+  opacity: 1;
+  background: var(--page-accent);
+  color: var(--page-button-text);
+  border-color: transparent;
 }
 
 .v3-siteHeader--editorial strong,
@@ -873,6 +912,14 @@
   font-size: 1rem;
   line-height: 1.8;
   color: var(--page-muted);
+}
+
+.v3-routeTitle {
+  max-width: 10ch;
+  margin: 0;
+  font-size: clamp(2.5rem, 4.6vw, 5.2rem);
+  line-height: 0.9;
+  letter-spacing: -0.07em;
 }
 
 .v3-chipStrip {
@@ -1145,6 +1192,100 @@
 
 .v3-gridSection {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.v3-subHero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.v3-subHero__copy,
+.v3-panelStack,
+.v3-bookingPanel,
+.v3-notFound {
+  display: grid;
+  gap: 18px;
+}
+
+.v3-subHero__media {
+  min-height: 420px;
+}
+
+.v3-checkoutPanel {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+  border: 1px solid var(--page-line);
+  border-radius: 34px;
+  background: var(--page-panel);
+  box-shadow: var(--page-shadow);
+}
+
+.v3-checkoutPanel__media {
+  min-height: 260px;
+}
+
+.v3-orderList,
+.v3-formStack {
+  display: grid;
+  gap: 10px;
+}
+
+.v3-orderList__row,
+.v3-formStack span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 46px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  border: 1px solid var(--page-line);
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.v3-orderList__row span,
+.v3-formStack span {
+  font-size: 0.86rem;
+  color: var(--page-muted);
+}
+
+.v3-orderList__row strong {
+  font-size: 0.92rem;
+}
+
+.v3-bookingPanel {
+  padding: 18px;
+  border: 1px solid var(--page-line);
+  border-radius: 34px;
+  background: var(--page-panel);
+  box-shadow: var(--page-shadow);
+}
+
+.v3-notFound {
+  position: relative;
+  z-index: 1;
+  width: min(560px, 100%);
+  margin: 12vh auto 0;
+  padding: 36px;
+  border-radius: 32px;
+  border: 1px solid rgba(18, 18, 18, 0.1);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 24px 80px rgba(18, 18, 18, 0.12);
+}
+
+.v3-notFound h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+}
+
+.v3-notFound p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(18, 18, 18, 0.62);
 }
 
 .v3-duo {
@@ -1690,6 +1831,7 @@
     grid-column: span 1;
   }
 
+  .v3-subHero,
   .v3-gridSection,
   .v3-duo,
   .v3-scene--drop,
@@ -1791,6 +1933,10 @@
     justify-content: flex-start;
   }
 
+  .v3-siteHeader__nav--interactive {
+    justify-content: flex-start;
+  }
+
   .v3-heading,
   .v3-heading--slam,
   .v3-heading--impact,
@@ -1837,4 +1983,13 @@
   .v3-mosaic {
     grid-template-columns: 1fr;
   }
+
+  .v3-notFound {
+    margin-top: 8vh;
+    padding: 24px;
+  }
+}
+
+.v3-home__grid .v3-card__stage {
+  aspect-ratio: 16 / 11 !important;
 }
