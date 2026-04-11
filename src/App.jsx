@@ -1,88 +1,32 @@
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import { AnimatePresence, motion as Motion } from "framer-motion";
-import {
-  ArrowLeft,
-  ArrowRight,
-  ChevronRight,
-  Sparkles,
-} from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronRight, Sparkles } from "lucide-react";
 import { showcasePages } from "./content/showcasePages";
+import { EffectStage } from "./components/interactiveEffects";
+import "./app-v3.css";
 
-function Reveal({ children, delay = 0, className = "" }) {
-  return (
-    <Motion.div
-      className={className}
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.12 }}
-      transition={{ duration: 0.42, delay, ease: [0.16, 1, 0.3, 1] }}
-    >
-      {children}
-    </Motion.div>
-  );
-}
-
-function usePointerBackdrop() {
-  const nodeRef = useRef(null);
-
-  const updatePointer = (clientX, clientY) => {
-    const node = nodeRef.current;
-    if (!node) return;
-
-    const rect = node.getBoundingClientRect();
-    const x = ((clientX - rect.left) / rect.width) * 100;
-    const y = ((clientY - rect.top) / rect.height) * 100;
-
-    node.style.setProperty("--pointer-x", `${Math.max(0, Math.min(100, x))}%`);
-    node.style.setProperty("--pointer-y", `${Math.max(0, Math.min(100, y))}%`);
-  };
-
-  return {
-    containerRef: nodeRef,
-    onPointerMove: (event) => updatePointer(event.clientX, event.clientY),
-    onPointerLeave: () => {
-      const node = nodeRef.current;
-      if (!node) return;
-      node.style.setProperty("--pointer-x", "50%");
-      node.style.setProperty("--pointer-y", "20%");
-    },
-  };
-}
-
-function SceneBackdrop({ variant, scope = "detail" }) {
-  return (
-    <div className="scene-backdrop" data-style={variant} data-scope={scope} aria-hidden="true">
-      <Motion.div
-        className="scene-backdrop__orb scene-backdrop__orb--a"
-        animate={{ x: [0, 36, -18, 0], y: [0, -28, 22, 0], scale: [1, 1.08, 0.96, 1] }}
-        transition={{ duration: 17, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <Motion.div
-        className="scene-backdrop__orb scene-backdrop__orb--b"
-        animate={{ x: [0, -32, 20, 0], y: [0, 18, -24, 0], scale: [1, 0.94, 1.06, 1] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-      />
-      <Motion.div
-        className="scene-backdrop__orb scene-backdrop__orb--c"
-        animate={{ x: [0, 22, -24, 0], y: [0, -18, 20, 0], rotate: [0, 10, -8, 0] }}
-        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-      />
-      <Motion.div
-        className="scene-backdrop__ribbon scene-backdrop__ribbon--a"
-        animate={{ rotate: [0, 10, -6, 0], x: [0, -24, 14, 0], y: [0, 20, -14, 0] }}
-        transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <Motion.div
-        className="scene-backdrop__ribbon scene-backdrop__ribbon--b"
-        animate={{ rotate: [0, -12, 8, 0], x: [0, 18, -18, 0], y: [0, -20, 16, 0] }}
-        transition={{ duration: 19, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-      />
-      <div className="scene-backdrop__mesh" />
-      <div className="scene-backdrop__cursor" />
-      <div className="scene-backdrop__grain" />
-    </div>
-  );
-}
+const pageDesigns = {
+  "sneaker-drop": { effect: "magnetic", preview: "drop", header: "ticker", hero: "drop" },
+  "supplement-brand": { effect: "rain", preview: "product", header: "capsule", hero: "routine" },
+  "boxing-gym": { effect: "links", preview: "gym", header: "score", hero: "training" },
+  "wealth-app": { effect: "lens", preview: "dashboard", header: "ledger", hero: "dashboard" },
+  "skin-clinic": { effect: "wave", preview: "clinic", header: "clean", hero: "clinic" },
+  "arch-studio": { effect: "parallax", preview: "editorial", header: "editorial", hero: "studio" },
+  "beauty-flash-sale": { effect: "fluid", preview: "sale", header: "promo", hero: "sale" },
+  "festival-page": { effect: "rails", preview: "poster", header: "poster", hero: "poster" },
+  "creator-club": { effect: "mesh", preview: "club", header: "club", hero: "feed" },
+  "ev-mobility": { effect: "boxes", preview: "compare", header: "tech", hero: "compare" },
+  "gaming-gear": { effect: "glitch", preview: "setup", header: "console", hero: "setup" },
+  "ai-saas": { effect: "lines", preview: "bento", header: "glass", hero: "pipeline" },
+  "indie-bookstore": { effect: "ink", preview: "shelf", header: "editorial", hero: "shelf" },
+  "stationery-shop": { effect: "sand", preview: "paper", header: "paper", hero: "paper" },
+  "local-cafe": { effect: "smoke", preview: "warm", header: "warm", hero: "menu" },
+  "boutique-hotel": { effect: "jelly", preview: "stay", header: "luxe", hero: "stay" },
+  "perfume-house": { effect: "slime", preview: "scent", header: "luxe", hero: "scent" },
+  "furniture-store": { effect: "cloud", preview: "room", header: "organic", hero: "room" },
+  "youth-fashion": { effect: "wind", preview: "fashion", header: "play", hero: "fashion" },
+  "jewelry-brand": { effect: "hole", preview: "chrome", header: "chrome", hero: "jewelry" },
+};
 
 function themeStyle(theme) {
   return {
@@ -99,49 +43,29 @@ function themeStyle(theme) {
   };
 }
 
-function Badge({ children, dark = false }) {
-  return <span className={`badge ${dark ? "badge--dark" : ""}`}>{children}</span>;
+function Pill({ children, dark = false, className = "" }) {
+  return <span className={`v3-pill ${dark ? "v3-pill--dark" : ""} ${className}`}>{children}</span>;
 }
 
-function BadgeRow({ items = [] }) {
+function ActionRow({ primary, secondary, className = "" }) {
   return (
-    <div className="badge-row">
-      {items.map((item) => (
-        <Badge key={item}>{item}</Badge>
-      ))}
-    </div>
-  );
-}
-
-function NavRow({ items = [] }) {
-  return (
-    <div className="nav-row">
-      {items.map((item) => (
-        <span key={item}>{item}</span>
-      ))}
-    </div>
-  );
-}
-
-function ActionRow({ primary, secondary }) {
-  return (
-    <div className="action-row">
-      <button type="button" className="action-button action-button--primary">
+    <div className={`v3-actions ${className}`}>
+      <button type="button" className="v3-button v3-button--primary">
         {primary}
-        <ArrowRight size={18} />
+        <ArrowRight size={17} />
       </button>
-      <button type="button" className="action-button action-button--secondary">
+      <button type="button" className="v3-button v3-button--ghost">
         {secondary}
       </button>
     </div>
   );
 }
 
-function StatStrip({ items = [] }) {
+function StatRail({ items = [], className = "" }) {
   return (
-    <div className="stat-strip">
+    <div className={`v3-stats ${className}`}>
       {items.map(([value, label]) => (
-        <article key={`${value}-${label}`} className="stat-card">
+        <article key={`${value}-${label}`} className="v3-stat">
           <strong>{value}</strong>
           <span>{label}</span>
         </article>
@@ -150,35 +74,11 @@ function StatStrip({ items = [] }) {
   );
 }
 
-function SectionBlock({ label, title, className = "", children }) {
+function PriceTiles({ items = [], className = "", compact = false }) {
   return (
-    <section className={`section-block ${className}`}>
-      <div className="section-block__head">
-        <span>{label}</span>
-        <h2>{title}</h2>
-      </div>
-      {children}
-    </section>
-  );
-}
-
-function ImageCard({ src, label, title, className = "" }) {
-  return (
-    <article className={`image-card ${className}`}>
-      <img src={src} alt={title} />
-      <div className="image-card__copy">
-        <span>{label}</span>
-        <strong>{title}</strong>
-      </div>
-    </article>
-  );
-}
-
-function PriceDeck({ items = [], className = "" }) {
-  return (
-    <div className={`price-deck ${className}`}>
+    <div className={`v3-priceTiles ${compact ? "v3-priceTiles--compact" : ""} ${className}`}>
       {items.map(([title, meta, value]) => (
-        <article key={`${title}-${value}`} className="price-card">
+        <article key={`${title}-${value}`} className="v3-priceTile">
           <span>{meta}</span>
           <strong>{title}</strong>
           <em>{value}</em>
@@ -188,9 +88,9 @@ function PriceDeck({ items = [], className = "" }) {
   );
 }
 
-function TokenRail({ items = [], className = "" }) {
+function ChipStrip({ items = [], className = "" }) {
   return (
-    <div className={`token-rail ${className}`}>
+    <div className={`v3-chipStrip ${className}`}>
       {items.map((item) => (
         <span key={item}>{item}</span>
       ))}
@@ -198,83 +98,96 @@ function TokenRail({ items = [], className = "" }) {
   );
 }
 
-function MiniPanel({ title, rows = [], className = "" }) {
+function MediaCard({ src, label, title, className = "" }) {
   return (
-    <article className={`mini-panel ${className}`}>
-      <strong className="mini-panel__title">{title}</strong>
-      <div className="mini-panel__rows">
-        {rows.map((row) =>
-          Array.isArray(row) ? (
-            <div key={`${title}-${row[0]}`} className="mini-panel__row">
-              <span>{row[0]}</span>
-              <b>{row[1]}</b>
-            </div>
-          ) : (
-            <div key={`${title}-${row}`} className="mini-panel__chip">
-              {row}
-            </div>
-          ),
-        )}
-      </div>
-    </article>
+    <figure className={`v3-media ${className}`}>
+      <img src={src} alt={title} />
+      <figcaption>
+        <span>{label}</span>
+        <strong>{title}</strong>
+      </figcaption>
+    </figure>
   );
 }
 
-function CompareTable({ headers = [], rows = [] }) {
+function SiteHeader({ page, variant = "", right = null, center = null }) {
   return (
-    <div className="compare-table">
-      <div className="compare-table__head">
-        {headers.map((item) => (
-          <span key={item}>{item}</span>
-        ))}
+    <header className={`v3-siteHeader v3-siteHeader--${variant}`}>
+      <div className="v3-siteHeader__brand">
+        <span>{page.industry}</span>
+        <strong>{page.brand}</strong>
       </div>
-      {rows.map((row) => (
-        <div key={row.join("-")} className="compare-table__row">
-          {row.map((cell) => (
-            <span key={cell}>{cell}</span>
-          ))}
-        </div>
-      ))}
+      {center ? <div className="v3-siteHeader__center">{center}</div> : <ChipStrip items={page.nav} className="v3-siteHeader__nav" />}
+      <div className="v3-siteHeader__right">{right ?? <button type="button" className="v3-inlineButton">{page.hero.primary}</button>}</div>
+    </header>
+  );
+}
+
+function IntroBlock({ page, className = "", headingClass = "" }) {
+  return (
+    <div className={`v3-intro ${className}`}>
+      <div className="v3-intro__top">
+        <Pill>{page.hero.eyebrow}</Pill>
+        <ChipStrip items={page.hero.badges} className="v3-intro__badges" />
+      </div>
+      <h1 className={`v3-heading ${headingClass}`}>{page.hero.title}</h1>
+      <p className="v3-subcopy">{page.hero.subtitle}</p>
+      <ActionRow primary={page.hero.primary} secondary={page.hero.secondary} />
+    </div>
+  );
+}
+
+function SectionHeading({ label, title, className = "" }) {
+  return (
+    <div className={`v3-sectionHeading ${className}`}>
+      <span>{label}</span>
+      <h2>{title}</h2>
     </div>
   );
 }
 
 function GalleryCard({ page, onOpen }) {
+  const design = pageDesigns[page.id];
+
   return (
     <Motion.button
       type="button"
-      className="gallery-card"
-      data-tone={page.card.tone}
+      className="v3-card"
+      data-preview={design.preview}
       data-size={page.card.size}
       onClick={() => onOpen(page.id)}
-      whileHover={{ y: -8, scale: 1.01 }}
-      transition={{ type: "spring", stiffness: 220, damping: 20 }}
+      whileHover={{ y: -8 }}
+      transition={{ type: "spring", stiffness: 180, damping: 18 }}
     >
-      <div className="gallery-card__visual">
-        <img src={page.images.hero} alt={`${page.brand} 미리보기`} />
-        <div className="gallery-card__veil" />
-        <span className="gallery-card__eyebrow">{page.card.eyebrow}</span>
-        <div className="gallery-card__widgets">
-          {page.card.widgets.map((item) => (
-            <span key={item}>{item}</span>
-          ))}
+      <div className="v3-card__stage">
+        <EffectStage kind={design.effect} density="card" />
+        <img className="v3-card__image" src={page.images.hero} alt={`${page.brand} 미리보기`} />
+        <div className="v3-card__mask" />
+        <div className="v3-card__chips">
+          <Pill className="v3-card__eyebrow" dark={design.preview === "poster" || design.preview === "chrome"}>
+            {page.card.eyebrow}
+          </Pill>
+          <div className="v3-card__metrics">
+            {page.card.widgets.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
         </div>
-        <div className="gallery-card__brand">
+        <div className="v3-card__brand">
           <strong>{page.brand}</strong>
           <span>{page.industry}</span>
         </div>
       </div>
-
-      <div className="gallery-card__body">
-        <div className="gallery-card__nav">
+      <div className="v3-card__body">
+        <div className="v3-card__nav">
           {page.nav.slice(0, 3).map((item) => (
             <span key={item}>{item}</span>
           ))}
         </div>
         <h3>{page.card.title}</h3>
         <p>{page.summary}</p>
-        <span className="gallery-card__action">
-          페이지 보기
+        <span className="v3-card__action">
+          사이트 보기
           <ChevronRight size={18} />
         </span>
       </div>
@@ -283,39 +196,39 @@ function GalleryCard({ page, onOpen }) {
 }
 
 function GalleryHome({ pages, onOpen }) {
-  const { containerRef, onPointerMove, onPointerLeave } = usePointerBackdrop();
-
   return (
-    <div className="gallery-home" ref={containerRef} onPointerMove={onPointerMove} onPointerLeave={onPointerLeave}>
-      <SceneBackdrop variant="gallery" scope="home" />
-      <div className="gallery-home__content">
-        <header className="gallery-topbar">
-          <div className="gallery-topbar__brand">
-            <span className="gallery-topbar__dot">
+    <div className="v3-app">
+      <div className="v3-home">
+        <div className="v3-home__halo" />
+        <header className="v3-home__topbar">
+          <div className="v3-home__brand">
+            <span className="v3-home__spark">
               <Sparkles size={14} />
             </span>
             <strong>LUMA FLOW</strong>
           </div>
-          <div className="gallery-topbar__meta">
-            <span>20개</span>
-            <span>독립 페이지</span>
-            <span>한글 중심</span>
+          <div className="v3-home__meta">
+            <span>20개 독립 사이트</span>
+            <span>실무형 14 / 실험형 6</span>
+            <span>Spline + 인터랙션 참고</span>
           </div>
         </header>
-
-        <section className="gallery-hero">
-          <Reveal>
-            <BadgeRow items={["20개 샘플", "단일 페이지", "설명 최소"]} />
-            <h1>바로 고르고 바로 비교하는 20개의 독립 홈페이지</h1>
-            <p>카드 하나가 사이트 하나입니다.</p>
-          </Reveal>
+        <section className="v3-home__hero">
+          <Pill>실전 레이아웃 샘플</Pill>
+          <h1>이미지 몇 장 바꾼 템플릿이 아니라 다른 사이트 20개</h1>
+          <p>쇼핑, 예약, SaaS, 티켓, 포트폴리오, 럭셔리 브랜드를 각각 다른 웹 문법으로 다시 풀었습니다.</p>
         </section>
-
-        <section className="gallery-grid">
+        <section className="v3-home__grid">
           {pages.map((page, index) => (
-            <Reveal key={page.id} delay={index * 0.02}>
+            <Motion.div
+              key={page.id}
+              className={`v3-home__cell v3-home__cell--${page.card.size}`}
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.02 }}
+            >
               <GalleryCard page={page} onOpen={onOpen} />
-            </Reveal>
+            </Motion.div>
           ))}
         </section>
       </div>
@@ -323,559 +236,614 @@ function GalleryHome({ pages, onOpen }) {
   );
 }
 
-function PageShell({ page, onBack, children }) {
-  const { containerRef, onPointerMove, onPointerLeave } = usePointerBackdrop();
+function PageFrame({ page, onBack, children }) {
+  const design = pageDesigns[page.id];
 
   return (
-    <div
-      className="page-view"
-      data-tone={page.backdrop}
-      data-page={page.id}
-      style={themeStyle(page.theme)}
-      ref={containerRef}
-      onPointerMove={onPointerMove}
-      onPointerLeave={onPointerLeave}
-    >
-      <SceneBackdrop variant={page.backdrop} />
-      <div className="page-view__content">
-        <header className="page-topbar">
-          <button type="button" className="page-topbar__back" onClick={onBack}>
-            <ArrowLeft size={18} />
-            샘플 목록
-          </button>
-
-          <div className="page-topbar__brand">
-            <span>{page.industry}</span>
-            <strong>{page.brand}</strong>
-          </div>
-
-          <button type="button" className="page-topbar__cta">
-            {page.hero.primary}
-          </button>
-        </header>
-
-        <main className="page-main">{children}</main>
+    <div className="v3-page" data-page={page.id} data-tone={page.backdrop} data-preview={design.preview} style={themeStyle(page.theme)}>
+      <div className="v3-page__ambient">
+        <div className="v3-page__glow" />
+        <div className="v3-page__grain" />
       </div>
-    </div>
-  );
-}
-
-function HeroLead({ page }) {
-  return (
-    <div className="hero-lead">
-      <BadgeRow items={page.hero.badges} />
-      <span className="hero-lead__eyebrow">{page.hero.eyebrow}</span>
-      <h1>{page.hero.title}</h1>
-      <p>{page.hero.subtitle}</p>
-      <NavRow items={page.nav} />
-      <ActionRow primary={page.hero.primary} secondary={page.hero.secondary} />
-      <StatStrip items={page.stats} />
+      <button type="button" className="v3-back" onClick={onBack}>
+        <ArrowLeft size={16} />
+        샘플 목록
+      </button>
+      <div className="v3-page__inner">{children}</div>
     </div>
   );
 }
 
 function SneakerDropPage({ page, onBack }) {
   return (
-    <PageShell page={page} onBack={onBack}>
-      <section className="hero-layout hero-layout--drop">
-        <HeroLead page={page} />
-        <div className="hero-visual hero-visual--drop">
-          <ImageCard src={page.images.hero} label="오늘 드롭" title={page.brand} className="image-card--hero" />
-          <MiniPanel title="바로 고르기" rows={page.miniPanels} className="mini-panel--accent" />
-          <ImageCard src={page.images.product} label="신규 룩" title="Aero Runner" className="image-card--float" />
+    <PageFrame page={page} onBack={onBack}>
+      <SiteHeader page={page} variant="ticker" right={<Pill dark>DROP 20:00</Pill>} />
+      <section className="v3-scene v3-scene--drop">
+        <IntroBlock page={page} headingClass="v3-heading--slam" />
+        <div className="v3-stageCard v3-stageCard--drop">
+          <EffectStage kind={pageDesigns[page.id].effect} density="hero" />
+          <MediaCard src={page.images.hero} label="오늘 드롭" title={page.brand} className="v3-stageCard__hero" />
+          <div className="v3-floatingInfo">
+            {page.miniPanels.map(([label, value]) => (
+              <div key={label}>
+                <span>{label}</span>
+                <strong>{value}</strong>
+              </div>
+            ))}
+          </div>
+          <MediaCard src={page.images.product} label="신규 룩" title="Aero Runner" className="v3-stageCard__float" />
         </div>
       </section>
-
-      <SectionBlock label="드롭" title="바로 담는 구성">
-        <PriceDeck items={page.drops} />
-      </SectionBlock>
-
-      <section className="split-zone">
-        <MiniPanel title="AI 사이즈" rows={page.miniPanels} />
-        <MiniPanel title="빠른 기능" rows={page.quickTools} />
+      <section className="v3-strip">
+        <SectionHeading label="드롭" title="지금 담는 구성" />
+        <PriceTiles items={page.drops} />
       </section>
-
-      <SectionBlock label="룩북" title="지금 화면">
-        <div className="image-deck image-deck--triple">
-          <ImageCard src={page.images.product} label="제품" title="드롭 컷" />
-          <ImageCard src={page.images.scene} label="현장" title="매장 컷" />
-          <ImageCard src={page.images.hero} label="메인" title="히어로 컷" />
+      <section className="v3-duo">
+        <div className="v3-callout v3-callout--sharp">
+          <span>빠른 기능</span>
+          <ChipStrip items={page.quickTools} />
         </div>
-      </SectionBlock>
-    </PageShell>
+        <MediaCard src={page.images.scene} label="매장 컷" title="현장 룩" />
+      </section>
+    </PageFrame>
   );
 }
 
 function SupplementBrandPage({ page, onBack }) {
   return (
-    <PageShell page={page} onBack={onBack}>
-      <section className="hero-layout hero-layout--routine">
-        <HeroLead page={page} />
-        <div className="hero-visual hero-visual--routine">
-          <ImageCard src={page.images.hero} label="루틴" title={page.brand} className="image-card--hero" />
-          <PriceDeck items={page.routines} className="price-deck--stack" />
+    <PageFrame page={page} onBack={onBack}>
+      <SiteHeader page={page} variant="capsule" right={<Pill dark>구독 ON</Pill>} />
+      <section className="v3-scene v3-scene--routine">
+        <div className="v3-stackPanel">
+          <IntroBlock page={page} />
+          <StatRail items={page.stats} />
+        </div>
+        <div className="v3-stageCard v3-stageCard--routine">
+          <EffectStage kind={pageDesigns[page.id].effect} density="hero" />
+          <MediaCard src={page.images.hero} label="루틴 빌더" title={page.brand} className="v3-stageCard__hero" />
+          <PriceTiles items={page.routines} compact className="v3-stageCard__dock" />
         </div>
       </section>
-
-      <SectionBlock label="비교" title="성분 한 줄 비교">
-        <CompareTable headers={["항목", "퍼포먼스", "회복"]} rows={page.compareRows} />
-      </SectionBlock>
-
-      <section className="split-zone split-zone--compact">
-        <ImageCard src={page.images.product} label="제품" title="오늘 조합" />
-        <MiniPanel title="구독" rows={page.plans} />
+      <section className="v3-gridSection">
+        <div className="v3-compareBox">
+          <SectionHeading label="성분" title="한 줄 비교" />
+          <div className="v3-compareTable">
+            <div className="v3-compareTable__head">
+              <span>항목</span>
+              <span>퍼포먼스</span>
+              <span>회복</span>
+            </div>
+            {page.compareRows.map((row) => (
+              <div key={row.join("-")} className="v3-compareTable__row">
+                {row.map((cell) => (
+                  <span key={cell}>{cell}</span>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="v3-callout">
+          <span>구독 플랜</span>
+          <ChipStrip items={page.plans} />
+          <MediaCard src={page.images.product} label="추천 세트" title="오늘 조합" />
+        </div>
       </section>
-    </PageShell>
+    </PageFrame>
   );
 }
 
 function BoxingGymPage({ page, onBack }) {
   return (
-    <PageShell page={page} onBack={onBack}>
-      <section className="hero-layout hero-layout--booking">
-        <HeroLead page={page} />
-        <div className="hero-visual hero-visual--booking">
-          <ImageCard src={page.images.hero} label="체험 등록" title={page.brand} className="image-card--hero" />
-          <MiniPanel title="오늘 수업" rows={page.classSlots} className="mini-panel--accent" />
+    <PageFrame page={page} onBack={onBack}>
+      <SiteHeader page={page} variant="score" right={<Pill dark>{page.classSlots[0]}</Pill>} />
+      <section className="v3-scene v3-scene--training">
+        <div className="v3-scoreHero">
+          <IntroBlock page={page} headingClass="v3-heading--impact" />
+          <StatRail items={page.stats} className="v3-stats--boxed" />
+        </div>
+        <div className="v3-trainingBoard">
+          <EffectStage kind={pageDesigns[page.id].effect} density="hero" />
+          <div className="v3-trainingBoard__slots">
+            {page.classSlots.map((slot) => (
+              <span key={slot}>{slot}</span>
+            ))}
+          </div>
+          <MediaCard src={page.images.hero} label="체험 등록" title={page.brand} />
         </div>
       </section>
-
-      <SectionBlock label="코치" title="바로 고르는 코치">
-        <TokenRail items={page.coaches} className="token-rail--wide" />
-      </SectionBlock>
-
-      <SectionBlock label="요금" title="체험부터 정규반까지">
-        <PriceDeck items={page.plans} />
-      </SectionBlock>
-
-      <div className="image-deck image-deck--split">
-        <ImageCard src={page.images.product} label="프로그램" title="클래스 컷" />
-        <ImageCard src={page.images.scene} label="현장" title="체육관 컷" />
-      </div>
-    </PageShell>
+      <section className="v3-gridSection">
+        <div className="v3-callout v3-callout--sharp">
+          <span>코치</span>
+          <ChipStrip items={page.coaches} />
+        </div>
+        <PriceTiles items={page.plans} />
+      </section>
+      <MediaCard src={page.images.scene} label="현장" title="체육관 컷" className="v3-fullMedia" />
+    </PageFrame>
   );
 }
 
 function WealthAppPage({ page, onBack }) {
   return (
-    <PageShell page={page} onBack={onBack}>
-      <section className="hero-layout hero-layout--dashboard">
-        <HeroLead page={page} />
-        <div className="hero-visual hero-visual--dashboard">
-          <ImageCard src={page.images.hero} label="대시보드" title="이번 달" className="image-card--hero" />
-          <MiniPanel title="목표 보드" rows={page.boards} />
+    <PageFrame page={page} onBack={onBack}>
+      <SiteHeader page={page} variant="ledger" right={<Pill>무료 시작</Pill>} />
+      <section className="v3-dashboardHero">
+        <aside className="v3-dashboardHero__aside">
+          <IntroBlock page={page} />
+          <div className="v3-railPanel">
+            {page.boards.map((board) => (
+              <span key={board}>{board}</span>
+            ))}
+          </div>
+        </aside>
+        <div className="v3-dashboardHero__main">
+          <div className="v3-dashboardShell">
+            <EffectStage kind={pageDesigns[page.id].effect} density="hero" />
+            <MediaCard src={page.images.hero} label="대시보드" title="이번 달" className="v3-dashboardShell__hero" />
+            <StatRail items={page.stats} className="v3-dashboardShell__stats" />
+          </div>
+          <PriceTiles items={page.goals} compact />
         </div>
       </section>
-
-      <SectionBlock label="목표" title="지금 진행 중">
-        <PriceDeck items={page.goals} />
-      </SectionBlock>
-
-      <section className="split-zone">
-        <ImageCard src={page.images.product} label="리포트" title="주간 요약" />
-        <MiniPanel title="추천 카드" rows={page.cards} />
+      <section className="v3-gridSection">
+        <MediaCard src={page.images.product} label="리포트" title="주간 요약" />
+        <div className="v3-callout">
+          <span>추천 카드</span>
+          <ChipStrip items={page.cards} />
+        </div>
       </section>
-    </PageShell>
+    </PageFrame>
   );
 }
 
 function SkinClinicPage({ page, onBack }) {
   return (
-    <PageShell page={page} onBack={onBack}>
-      <section className="hero-layout hero-layout--clinic">
-        <HeroLead page={page} />
-        <div className="hero-visual hero-visual--clinic">
-          <MiniPanel title="AI 스캔" rows={page.slots.slice(0, 3)} className="mini-panel--accent" />
-          <ImageCard src={page.images.hero} label="상담실" title={page.brand} className="image-card--hero" />
+    <PageFrame page={page} onBack={onBack}>
+      <SiteHeader page={page} variant="clean" right={<Pill>예약 가능</Pill>} />
+      <section className="v3-clinicHero">
+        <div className="v3-clinicHero__copy">
+          <IntroBlock page={page} headingClass="v3-heading--serif" />
+          <div className="v3-bookingWidget">
+            <EffectStage kind={pageDesigns[page.id].effect} density="hero" />
+            <span>AI 스캔</span>
+            {page.slots.slice(0, 3).map((slot) => (
+              <strong key={slot}>{slot}</strong>
+            ))}
+          </div>
+        </div>
+        <MediaCard src={page.images.hero} label="상담실" title={page.brand} className="v3-clinicHero__media" />
+      </section>
+      <PriceTiles items={page.programs} />
+      <section className="v3-gridSection">
+        <div className="v3-callout">
+          <span>의료진</span>
+          <ChipStrip items={page.doctors} />
+        </div>
+        <div className="v3-callout">
+          <span>예약 가능</span>
+          <ChipStrip items={page.slots} />
         </div>
       </section>
-
-      <SectionBlock label="프로그램" title="오늘 추천 구성">
-        <PriceDeck items={page.programs} />
-      </SectionBlock>
-
-      <section className="split-zone split-zone--compact">
-        <MiniPanel title="의료진" rows={page.doctors} />
-        <MiniPanel title="예약 가능" rows={page.slots} />
-      </section>
-    </PageShell>
+    </PageFrame>
   );
 }
 
 function ArchStudioPage({ page, onBack }) {
   return (
-    <PageShell page={page} onBack={onBack}>
-      <section className="hero-layout hero-layout--editorial">
-        <div className="hero-lead">
-          <BadgeRow items={page.hero.badges} />
-          <span className="hero-lead__eyebrow">{page.hero.eyebrow}</span>
-          <h1>{page.hero.title}</h1>
-          <p>{page.hero.subtitle}</p>
-          <TokenRail items={page.nav} />
-          <ActionRow primary={page.hero.primary} secondary={page.hero.secondary} />
+    <PageFrame page={page} onBack={onBack}>
+      <SiteHeader page={page} variant="editorial" right={<Pill>브리프 접수</Pill>} />
+      <section className="v3-editorialHero">
+        <div className="v3-editorialHero__copy">
+          <IntroBlock page={page} headingClass="v3-heading--serif" />
+          <ChipStrip items={page.works} />
         </div>
-        <div className="mosaic-grid">
-          <ImageCard src={page.images.hero} label="작업" title="메인 프로젝트" className="image-card--hero" />
-          <ImageCard src={page.images.product} label="도면" title="제안 컷" />
-          <ImageCard src={page.images.scene} label="현장" title="오픈 컷" />
+        <div className="v3-mosaic">
+          <EffectStage kind={pageDesigns[page.id].effect} density="hero" />
+          <MediaCard src={page.images.hero} label="프로젝트" title="메인 작업" className="v3-mosaic__large" />
+          <MediaCard src={page.images.product} label="도면" title="제안 컷" />
+          <MediaCard src={page.images.scene} label="현장" title="오픈 컷" />
         </div>
       </section>
-
-      <SectionBlock label="작업" title="지금 보는 유형">
-        <TokenRail items={page.works} className="token-rail--wide" />
-      </SectionBlock>
-
-      <section className="split-zone">
-        <MiniPanel title="진행" rows={page.process} />
-        <MiniPanel title="브리프" rows={page.briefRows} />
+      <section className="v3-gridSection">
+        <div className="v3-callout">
+          <span>진행</span>
+          <ChipStrip items={page.process} />
+        </div>
+        <div className="v3-callout">
+          <span>브리프</span>
+          {page.briefRows.map(([label, value]) => (
+            <div key={label} className="v3-metaLine">
+              <span>{label}</span>
+              <strong>{value}</strong>
+            </div>
+          ))}
+        </div>
       </section>
-    </PageShell>
+    </PageFrame>
   );
 }
 
 function BeautyFlashSalePage({ page, onBack }) {
   return (
-    <PageShell page={page} onBack={onBack}>
-      <section className="hero-layout hero-layout--sale">
-        <HeroLead page={page} />
-        <div className="hero-visual hero-visual--sale">
-          <ImageCard src={page.images.hero} label="핫딜" title={page.brand} className="image-card--hero" />
-          <MiniPanel title="체크아웃" rows={page.checkout} className="mini-panel--accent" />
+    <PageFrame page={page} onBack={onBack}>
+      <SiteHeader page={page} variant="promo" right={<Pill dark>FLASH SALE</Pill>} />
+      <section className="v3-saleHero">
+        <div className="v3-saleHero__copy">
+          <IntroBlock page={page} />
+          <ChipStrip items={page.checkout} className="v3-chipStrip--bold" />
+        </div>
+        <div className="v3-stageCard v3-stageCard--sale">
+          <EffectStage kind={pageDesigns[page.id].effect} density="hero" />
+          <MediaCard src={page.images.hero} label="핫딜" title={page.brand} className="v3-salePoster__main" />
+          <MediaCard src={page.images.product} label="발색" title="컬러 컷" className="v3-salePoster__side" />
         </div>
       </section>
-
-      <SectionBlock label="세트" title="가장 빨리 담는 구성">
-        <PriceDeck items={page.kits} />
-      </SectionBlock>
-
-      <SectionBlock label="발색" title="색상 먼저">
-        <TokenRail items={page.shades} className="token-rail--color" />
-      </SectionBlock>
-
-      <div className="image-deck image-deck--split">
-        <ImageCard src={page.images.product} label="발색" title="제품 컷" />
-        <ImageCard src={page.images.scene} label="현장" title="캠페인 컷" />
-      </div>
-    </PageShell>
+      <PriceTiles items={page.kits} />
+      <section className="v3-callout v3-callout--soft">
+        <span>컬러 먼저</span>
+        <ChipStrip items={page.shades} className="v3-chipStrip--color" />
+      </section>
+    </PageFrame>
   );
 }
 
 function FestivalPage({ page, onBack }) {
   return (
-    <PageShell page={page} onBack={onBack}>
-      <section className="hero-layout hero-layout--festival">
-        <div className="hero-lead">
-          <BadgeRow items={page.hero.badges} />
-          <span className="hero-lead__eyebrow">{page.hero.eyebrow}</span>
-          <h1>{page.hero.title}</h1>
-          <p>{page.hero.subtitle}</p>
-          <ActionRow primary={page.hero.primary} secondary={page.hero.secondary} />
-          <StatStrip items={page.stats} />
+    <PageFrame page={page} onBack={onBack}>
+      <SiteHeader page={page} variant="poster" right={<button type="button" className="v3-inlineButton v3-inlineButton--accent">티켓 구매</button>} />
+      <section className="v3-posterHero">
+        <div className="v3-posterHero__copy">
+          <IntroBlock page={page} headingClass="v3-heading--poster" />
+          <StatRail items={page.stats} />
         </div>
-        <div className="hero-visual hero-visual--festival">
-          <MiniPanel title="라인업" rows={page.lineup} className="mini-panel--accent" />
-          <ImageCard src={page.images.hero} label="메인 스테이지" title={page.brand} className="image-card--hero" />
+        <div className="v3-stageCard v3-stageCard--poster">
+          <EffectStage kind={pageDesigns[page.id].effect} density="hero" />
+          <div className="v3-lineupRail">
+            {page.lineup.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
+          <MediaCard src={page.images.hero} label="메인 스테이지" title={page.brand} className="v3-posterHero__media" />
         </div>
       </section>
-
-      <SectionBlock label="시간표" title="오늘 동선">
-        <TokenRail items={page.timetable} className="token-rail--wide" />
-      </SectionBlock>
-
-      <SectionBlock label="티켓" title="입장 옵션">
-        <PriceDeck items={page.tickets} />
-      </SectionBlock>
-    </PageShell>
+      <section className="v3-callout v3-callout--dark">
+        <SectionHeading label="시간표" title="오늘 동선" />
+        <ChipStrip items={page.timetable} className="v3-chipStrip--wide" />
+      </section>
+      <PriceTiles items={page.tickets} />
+    </PageFrame>
   );
 }
 
 function CreatorClubPage({ page, onBack }) {
   return (
-    <PageShell page={page} onBack={onBack}>
-      <section className="hero-layout hero-layout--club">
-        <HeroLead page={page} />
-        <div className="hero-visual hero-visual--club">
-          <PriceDeck items={page.passes} className="price-deck--stack" />
-          <ImageCard src={page.images.hero} label="멤버십" title={page.brand} className="image-card--hero" />
+    <PageFrame page={page} onBack={onBack}>
+      <SiteHeader page={page} variant="club" right={<Pill dark>월 39,000원</Pill>} />
+      <section className="v3-feedHero">
+        <div className="v3-feedHero__left">
+          <IntroBlock page={page} />
+          <PriceTiles items={page.passes} compact />
+        </div>
+        <div className="v3-feedHero__right">
+          <div className="v3-feedBoard">
+            <EffectStage kind={pageDesigns[page.id].effect} density="hero" />
+            <MediaCard src={page.images.hero} label="멤버십" title={page.brand} className="v3-feedBoard__hero" />
+            <div className="v3-feedBoard__posts">
+              {page.posts.map((post) => (
+                <span key={post}>{post}</span>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
-
-      <section className="split-zone">
-        <MiniPanel title="혜택" rows={page.perks} />
-        <MiniPanel title="피드" rows={page.posts} />
-      </section>
-
-      <div className="image-deck image-deck--split">
-        <ImageCard src={page.images.product} label="워크룸" title="멤버 컷" />
-        <ImageCard src={page.images.scene} label="이벤트" title="커뮤니티 컷" />
+      <div className="v3-gridSection">
+        <div className="v3-callout v3-callout--soft">
+          <span>혜택</span>
+          <ChipStrip items={page.perks} />
+        </div>
+        <MediaCard src={page.images.scene} label="이벤트" title="커뮤니티 컷" />
       </div>
-    </PageShell>
+    </PageFrame>
   );
 }
 
 function EvMobilityPage({ page, onBack }) {
   return (
-    <PageShell page={page} onBack={onBack}>
-      <section className="hero-layout hero-layout--compare">
-        <HeroLead page={page} />
-        <div className="hero-visual hero-visual--compare">
-          <ImageCard src={page.images.hero} label="시승 예약" title={page.brand} className="image-card--hero" />
-          <MiniPanel title="핵심 사양" rows={page.specs} />
+    <PageFrame page={page} onBack={onBack}>
+      <SiteHeader page={page} variant="tech" right={<Pill>다음 시승 토 11:00</Pill>} />
+      <section className="v3-compareHero">
+        <div className="v3-compareHero__copy">
+          <IntroBlock page={page} />
+          <ChipStrip items={page.specs} className="v3-chipStrip--tech" />
+        </div>
+        <div className="v3-stageCard v3-stageCard--compare">
+          <EffectStage kind={pageDesigns[page.id].effect} density="hero" />
+          <MediaCard src={page.images.hero} label="시승 예약" title={page.brand} className="v3-stageCard__hero" />
+          <div className="v3-plannerDock">
+            {page.planner.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
         </div>
       </section>
-
-      <SectionBlock label="모델" title="바로 비교">
-        <PriceDeck items={page.models} />
-      </SectionBlock>
-
-      <section className="split-zone">
-        <ImageCard src={page.images.product} label="모델" title="차량 컷" />
-        <MiniPanel title="플래너" rows={page.planner} className="mini-panel--accent" />
-      </section>
-    </PageShell>
+      <PriceTiles items={page.models} />
+    </PageFrame>
   );
 }
 
 function GamingGearPage({ page, onBack }) {
   return (
-    <PageShell page={page} onBack={onBack}>
-      <section className="hero-layout hero-layout--setup">
-        <HeroLead page={page} />
-        <div className="hero-visual hero-visual--setup">
-          <ImageCard src={page.images.hero} label="셋업" title={page.brand} className="image-card--hero" />
-          <MiniPanel title="카트" rows={page.cartRows} className="mini-panel--accent" />
+    <PageFrame page={page} onBack={onBack}>
+      <SiteHeader page={page} variant="console" right={<Pill dark>Cart 3</Pill>} />
+      <section className="v3-setupHero">
+        <div className="v3-stageCard v3-stageCard--setup">
+          <EffectStage kind={pageDesigns[page.id].effect} density="hero" />
+          <MediaCard src={page.images.hero} label="셋업" title={page.brand} className="v3-stageCard__hero" />
+        </div>
+        <div className="v3-setupHero__side">
+          <IntroBlock page={page} />
+          <div className="v3-callout v3-callout--dark">
+            <span>카트</span>
+            <ChipStrip items={page.cartRows} />
+          </div>
         </div>
       </section>
-
-      <SectionBlock label="기어" title="바로 담는 조합">
-        <PriceDeck items={page.gear} />
-      </SectionBlock>
-
-      <SectionBlock label="사양" title="핵심 체크">
-        <TokenRail items={page.specs} className="token-rail--wide" />
-      </SectionBlock>
-
-      <ImageCard src={page.images.scene} label="현장" title="셋업 컷" />
-    </PageShell>
+      <section className="v3-gridSection">
+        <PriceTiles items={page.gear} />
+        <div className="v3-callout v3-callout--dark">
+          <span>핵심 사양</span>
+          <ChipStrip items={page.specs} />
+        </div>
+      </section>
+    </PageFrame>
   );
 }
 
 function AiSaasPage({ page, onBack }) {
   return (
-    <PageShell page={page} onBack={onBack}>
-      <section className="hero-layout hero-layout--pipeline">
-        <div className="hero-lead">
-          <BadgeRow items={page.hero.badges} />
-          <span className="hero-lead__eyebrow">{page.hero.eyebrow}</span>
-          <h1>{page.hero.title}</h1>
-          <p>{page.hero.subtitle}</p>
-          <ActionRow primary={page.hero.primary} secondary={page.hero.secondary} />
-          <TokenRail items={page.flows} className="token-rail--wide" />
+    <PageFrame page={page} onBack={onBack}>
+      <SiteHeader page={page} variant="glass" right={<Pill>Demo Live</Pill>} />
+      <section className="v3-bentoHero">
+        <div className="v3-bentoHero__copy">
+          <IntroBlock page={page} />
+          <ChipStrip items={page.flows} className="v3-chipStrip--tech" />
         </div>
-        <div className="hero-visual hero-visual--pipeline">
-          <ImageCard src={page.images.hero} label="실시간 데모" title={page.brand} className="image-card--hero" />
-          <MiniPanel title="사용 사례" rows={page.useCases} />
+        <div className="v3-stageCard v3-stageCard--bento">
+          <EffectStage kind={pageDesigns[page.id].effect} density="hero" />
+          <MediaCard src={page.images.hero} label="실시간 데모" title={page.brand} className="v3-stageCard__hero" />
+          <div className="v3-miniBento">
+            {page.useCases.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
         </div>
       </section>
-
-      <SectionBlock label="성과" title="팀이 먼저 보는 숫자">
-        <TokenRail items={page.kpis} className="token-rail--wide" />
-      </SectionBlock>
-
-      <div className="image-deck image-deck--split">
-        <ImageCard src={page.images.product} label="제품" title="플로우 컷" />
-        <ImageCard src={page.images.scene} label="팀" title="사용 장면" />
+      <section className="v3-callout v3-callout--dark">
+        <SectionHeading label="성과" title="팀이 먼저 보는 숫자" />
+        <ChipStrip items={page.kpis} className="v3-chipStrip--wide" />
+      </section>
+      <div className="v3-gridSection">
+        <MediaCard src={page.images.product} label="제품" title="플로우 컷" />
+        <MediaCard src={page.images.scene} label="팀" title="사용 장면" />
       </div>
-    </PageShell>
+    </PageFrame>
   );
 }
 
 function IndieBookstorePage({ page, onBack }) {
   return (
-    <PageShell page={page} onBack={onBack}>
-      <section className="hero-layout hero-layout--shelf">
-        <HeroLead page={page} />
-        <div className="hero-visual hero-visual--shelf">
-          <ImageCard src={page.images.hero} label="이번 주 셀렉션" title={page.brand} className="image-card--hero" />
-          <MiniPanel title="메모" rows={page.notes} />
+    <PageFrame page={page} onBack={onBack}>
+      <SiteHeader page={page} variant="editorial" right={<Pill>메모 카드 무료</Pill>} />
+      <section className="v3-shelfHero">
+        <aside className="v3-shelfHero__rail">
+          <IntroBlock page={page} headingClass="v3-heading--serif" />
+          <ChipStrip items={page.shelf} className="v3-chipStrip--paper" />
+        </aside>
+        <div className="v3-stageCard v3-stageCard--shelf">
+          <EffectStage kind={pageDesigns[page.id].effect} density="hero" />
+          <MediaCard src={page.images.hero} label="이번 주 셀렉션" title={page.brand} className="v3-stageCard__hero" />
+          <div className="v3-noteStack">
+            {page.notes.map((note) => (
+              <span key={note}>{note}</span>
+            ))}
+          </div>
         </div>
       </section>
-
-      <SectionBlock label="큐레이션" title="선반 전체">
-        <TokenRail items={page.shelf} className="token-rail--wide" />
-      </SectionBlock>
-
-      <SectionBlock label="선물" title="바로 고르는 구성">
-        <PriceDeck items={page.picks} />
-      </SectionBlock>
-    </PageShell>
+      <PriceTiles items={page.picks} />
+    </PageFrame>
   );
 }
 
 function StationeryShopPage({ page, onBack }) {
   return (
-    <PageShell page={page} onBack={onBack}>
-      <section className="hero-layout hero-layout--kit">
-        <HeroLead page={page} />
-        <div className="hero-visual hero-visual--kit">
-          <ImageCard src={page.images.hero} label="데스크 키트" title={page.brand} className="image-card--hero" />
-          <MiniPanel title="바스켓" rows={page.basket} />
+    <PageFrame page={page} onBack={onBack}>
+      <SiteHeader page={page} variant="paper" right={<Pill>Gift Ready</Pill>} />
+      <section className="v3-paperHero">
+        <div className="v3-paperHero__copy">
+          <IntroBlock page={page} />
+        </div>
+        <div className="v3-paperBoard">
+          <EffectStage kind={pageDesigns[page.id].effect} density="hero" />
+          <MediaCard src={page.images.hero} label="데스크 키트" title={page.brand} className="v3-paperBoard__hero" />
+          <div className="v3-paperBoard__basket">
+            {page.basket.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
         </div>
       </section>
-
-      <SectionBlock label="키트" title="바로 만드는 조합">
-        <PriceDeck items={page.kits} />
-      </SectionBlock>
-
-      <SectionBlock label="컬러" title="지금 고르는 색">
-        <TokenRail items={page.colors} className="token-rail--color" />
-      </SectionBlock>
-    </PageShell>
+      <section className="v3-gridSection">
+        <PriceTiles items={page.kits} />
+        <div className="v3-callout v3-callout--paper">
+          <span>컬러</span>
+          <ChipStrip items={page.colors} className="v3-chipStrip--color" />
+        </div>
+      </section>
+    </PageFrame>
   );
 }
 
 function LocalCafePage({ page, onBack }) {
   return (
-    <PageShell page={page} onBack={onBack}>
-      <section className="hero-layout hero-layout--menu">
-        <HeroLead page={page} />
-        <div className="hero-visual hero-visual--menu">
-          <ImageCard src={page.images.hero} label="오늘 메뉴" title={page.brand} className="image-card--hero" />
-          <MiniPanel title="좌석" rows={page.seats} className="mini-panel--accent" />
+    <PageFrame page={page} onBack={onBack}>
+      <SiteHeader page={page} variant="warm" right={<Pill>창가 4석</Pill>} />
+      <section className="v3-menuHero">
+        <div className="v3-menuHero__board">
+          <IntroBlock page={page} headingClass="v3-heading--serif" />
+          <PriceTiles items={page.menus} compact />
+        </div>
+        <div className="v3-stageCard v3-stageCard--menu">
+          <EffectStage kind={pageDesigns[page.id].effect} density="hero" />
+          <MediaCard src={page.images.hero} label="오늘 메뉴" title={page.brand} className="v3-stageCard__hero" />
+          <div className="v3-seatDock">
+            {page.seats.map((seat) => (
+              <span key={seat}>{seat}</span>
+            ))}
+          </div>
         </div>
       </section>
-
-      <SectionBlock label="메뉴" title="바로 고르는 메뉴">
-        <PriceDeck items={page.menus} />
-      </SectionBlock>
-
-      <SectionBlock label="매장" title="기본 정보">
-        <TokenRail items={page.storeRows} className="token-rail--wide" />
-      </SectionBlock>
-    </PageShell>
+      <section className="v3-callout v3-callout--paper">
+        <SectionHeading label="매장" title="기본 정보" />
+        <ChipStrip items={page.storeRows} className="v3-chipStrip--wide" />
+      </section>
+    </PageFrame>
   );
 }
 
 function BoutiqueHotelPage({ page, onBack }) {
   return (
-    <PageShell page={page} onBack={onBack}>
-      <section className="hero-layout hero-layout--hotel">
-        <HeroLead page={page} />
-        <div className="hero-visual hero-visual--hotel">
-          <ImageCard src={page.images.hero} label="객실 선택" title={page.brand} className="image-card--hero" />
-          <MiniPanel title="날짜" rows={page.dates} className="mini-panel--accent" />
+    <PageFrame page={page} onBack={onBack}>
+      <SiteHeader page={page} variant="luxe" right={<button type="button" className="v3-inlineButton v3-inlineButton--accent">예약하기</button>} />
+      <section className="v3-stayHero">
+        <div className="v3-stayHero__copy">
+          <IntroBlock page={page} headingClass="v3-heading--serif" />
+          <div className="v3-bookingDock">
+            {page.dates.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
+        </div>
+        <div className="v3-stayHero__visual">
+          <EffectStage kind={pageDesigns[page.id].effect} density="hero" />
+          <MediaCard src={page.images.hero} label="객실 선택" title={page.brand} className="v3-stageCard__hero" />
         </div>
       </section>
-
-      <SectionBlock label="객실" title="바로 고르는 타입">
-        <PriceDeck items={page.rooms} />
-      </SectionBlock>
-
-      <SectionBlock label="포함" title="기본 제공">
-        <TokenRail items={page.perks} className="token-rail--wide" />
-      </SectionBlock>
-
-      <ImageCard src={page.images.scene} label="현장" title="스테이 컷" />
-    </PageShell>
+      <PriceTiles items={page.rooms} />
+      <section className="v3-callout">
+        <SectionHeading label="포함" title="기본 제공" />
+        <ChipStrip items={page.perks} className="v3-chipStrip--wide" />
+      </section>
+      <MediaCard src={page.images.scene} label="현장" title="스테이 컷" className="v3-fullMedia" />
+    </PageFrame>
   );
 }
 
 function PerfumeHousePage({ page, onBack }) {
   return (
-    <PageShell page={page} onBack={onBack}>
-      <section className="hero-layout hero-layout--scent">
-        <HeroLead page={page} />
-        <div className="hero-visual hero-visual--scent">
-          <ImageCard src={page.images.hero} label="시그니처" title={page.brand} className="image-card--hero" />
-          <MiniPanel title="노트" rows={page.notes} />
+    <PageFrame page={page} onBack={onBack}>
+      <SiteHeader page={page} variant="luxe" right={<Pill>Discovery Set</Pill>} />
+      <section className="v3-scentHero">
+        <div className="v3-scentHero__copy">
+          <IntroBlock page={page} headingClass="v3-heading--serif" />
+          <ChipStrip items={page.notes} className="v3-chipStrip--paper" />
+        </div>
+        <div className="v3-scentHero__visual">
+          <EffectStage kind={pageDesigns[page.id].effect} density="hero" />
+          <MediaCard src={page.images.hero} label="시그니처" title={page.brand} className="v3-stageCard__hero" />
         </div>
       </section>
-
-      <SectionBlock label="세트" title="먼저 고르는 구성">
-        <PriceDeck items={page.sets} />
-      </SectionBlock>
-
-      <SectionBlock label="선택" title="자주 쓰는 흐름">
-        <TokenRail items={page.matches} className="token-rail--wide" />
-      </SectionBlock>
-    </PageShell>
+      <section className="v3-gridSection">
+        <PriceTiles items={page.sets} />
+        <div className="v3-callout">
+          <span>자주 쓰는 흐름</span>
+          <ChipStrip items={page.matches} />
+          <MediaCard src={page.images.product} label="디테일" title="노트 컷" />
+        </div>
+      </section>
+    </PageFrame>
   );
 }
 
 function FurnitureStorePage({ page, onBack }) {
   return (
-    <PageShell page={page} onBack={onBack}>
-      <section className="hero-layout hero-layout--room">
-        <HeroLead page={page} />
-        <div className="hero-visual hero-visual--room">
-          <ImageCard src={page.images.hero} label="룸 기준" title={page.brand} className="image-card--hero" />
-          <MiniPanel title="배치" rows={page.placement} className="mini-panel--accent" />
+    <PageFrame page={page} onBack={onBack}>
+      <SiteHeader page={page} variant="organic" right={<Pill>배치 보기</Pill>} />
+      <section className="v3-roomHero">
+        <div className="v3-roomHero__copy">
+          <IntroBlock page={page} headingClass="v3-heading--soft" />
+          <ChipStrip items={page.rooms} />
+        </div>
+        <div className="v3-roomHero__planner">
+          <EffectStage kind={pageDesigns[page.id].effect} density="hero" />
+          <MediaCard src={page.images.hero} label="룸 기준" title={page.brand} className="v3-stageCard__hero" />
+          <div className="v3-plannerDock">
+            {page.placement.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
         </div>
       </section>
-
-      <SectionBlock label="룸" title="먼저 고를 공간">
-        <TokenRail items={page.rooms} className="token-rail--wide" />
-      </SectionBlock>
-
-      <SectionBlock label="세트" title="바로 사는 조합">
-        <PriceDeck items={page.bundles} />
-      </SectionBlock>
-    </PageShell>
+      <PriceTiles items={page.bundles} />
+    </PageFrame>
   );
 }
 
 function YouthFashionPage({ page, onBack }) {
   return (
-    <PageShell page={page} onBack={onBack}>
-      <section className="hero-layout hero-layout--look">
-        <HeroLead page={page} />
-        <div className="hero-visual hero-visual--look">
-          <ImageCard src={page.images.hero} label="룩 먼저" title={page.brand} className="image-card--hero" />
-          <MiniPanel title="장바구니" rows={page.cartRows} className="mini-panel--accent" />
+    <PageFrame page={page} onBack={onBack}>
+      <SiteHeader page={page} variant="play" right={<Pill dark>AI 착용</Pill>} />
+      <section className="v3-fashionHero">
+        <div className="v3-fashionHero__copy">
+          <IntroBlock page={page} headingClass="v3-heading--shout" />
+          <ChipStrip items={page.sizes} className="v3-chipStrip--bold" />
+        </div>
+        <div className="v3-fashionHero__stack">
+          <EffectStage kind={pageDesigns[page.id].effect} density="hero" />
+          <MediaCard src={page.images.hero} label="룩 먼저" title={page.brand} className="v3-fashionHero__main" />
+          <div className="v3-fashionHero__cart">
+            {page.cartRows.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
         </div>
       </section>
-
-      <SectionBlock label="룩" title="바로 담는 조합">
-        <PriceDeck items={page.looks} />
-      </SectionBlock>
-
-      <SectionBlock label="사이즈" title="가상 착용 전 선택">
-        <TokenRail items={page.sizes} className="token-rail--wide" />
-      </SectionBlock>
-
-      <div className="image-deck image-deck--split">
-        <ImageCard src={page.images.product} label="제품" title="상세 컷" />
-        <ImageCard src={page.images.scene} label="현장" title="룩북 컷" />
+      <PriceTiles items={page.looks} />
+      <div className="v3-gridSection">
+        <MediaCard src={page.images.product} label="제품" title="상세 컷" />
+        <MediaCard src={page.images.scene} label="룩북" title="현장 컷" />
       </div>
-    </PageShell>
+    </PageFrame>
   );
 }
 
 function JewelryBrandPage({ page, onBack }) {
   return (
-    <PageShell page={page} onBack={onBack}>
-      <section className="hero-layout hero-layout--luxury">
-        <HeroLead page={page} />
-        <div className="hero-visual hero-visual--luxury">
-          <ImageCard src={page.images.hero} label="컬렉션" title={page.brand} className="image-card--hero" />
-          <MiniPanel title="상담" rows={page.consultRows} className="mini-panel--accent" />
+    <PageFrame page={page} onBack={onBack}>
+      <SiteHeader page={page} variant="chrome" right={<button type="button" className="v3-inlineButton v3-inlineButton--accent">상담 예약</button>} />
+      <section className="v3-jewelryHero">
+        <div className="v3-jewelryHero__copy">
+          <IntroBlock page={page} headingClass="v3-heading--chrome" />
+          <ChipStrip items={page.bespoke} className="v3-chipStrip--wide" />
+        </div>
+        <div className="v3-stageCard v3-stageCard--jewelry">
+          <EffectStage kind={pageDesigns[page.id].effect} density="hero" />
+          <MediaCard src={page.images.hero} label="컬렉션" title={page.brand} className="v3-stageCard__hero" />
+          <div className="v3-consultDock">
+            {page.consultRows.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
         </div>
       </section>
-
-      <SectionBlock label="컬렉션" title="바로 보는 제품">
-        <PriceDeck items={page.collections} />
-      </SectionBlock>
-
-      <SectionBlock label="맞춤" title="진행 순서">
-        <TokenRail items={page.bespoke} className="token-rail--wide" />
-      </SectionBlock>
-
-      <ImageCard src={page.images.product} label="제품" title="디테일 컷" />
-    </PageShell>
+      <section className="v3-gridSection">
+        <PriceTiles items={page.collections} />
+        <MediaCard src={page.images.product} label="디테일" title="제품 컷" />
+      </section>
+    </PageFrame>
   );
 }
 
-const pageMap = {
+const pageComponents = {
   "sneaker-drop": SneakerDropPage,
   "supplement-brand": SupplementBrandPage,
   "boxing-gym": BoxingGymPage,
@@ -906,6 +874,8 @@ export default function App() {
     [selectedPageId],
   );
 
+  const CurrentPage = selectedPage ? pageComponents[selectedPage.id] : null;
+
   const openPage = (pageId) => {
     setSelectedPageId(pageId);
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -916,16 +886,26 @@ export default function App() {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   };
 
-  const CurrentPage = selectedPage ? pageMap[selectedPage.id] : null;
-
   return (
     <AnimatePresence mode="wait">
       {selectedPage && CurrentPage ? (
-        <Motion.div key={selectedPage.id} initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -14 }} transition={{ duration: 0.28 }}>
+        <Motion.div
+          key={selectedPage.id}
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.32, ease: "easeOut" }}
+        >
           <CurrentPage page={selectedPage} onBack={closePage} />
         </Motion.div>
       ) : (
-        <Motion.div key="gallery" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -14 }} transition={{ duration: 0.28 }}>
+        <Motion.div
+          key="gallery"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.28, ease: "easeOut" }}
+        >
           <GalleryHome pages={showcasePages} onOpen={openPage} />
         </Motion.div>
       )}
