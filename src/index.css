@@ -1362,16 +1362,47 @@ p {
   padding: 22px 18px;
 }
 
-.page-view[data-view="mobile"] .hero-lead h1,
+.page-view[data-view="mobile"] .section-block,
+.page-view[data-view="mobile"] .mini-panel,
+.page-view[data-view="mobile"] .price-card {
+  gap: 14px;
+  padding: 18px;
+}
+
+.page-view[data-view="mobile"] .hero-lead h1 {
+  font-size: clamp(1.9rem, 7.6vw, 2.7rem);
+  line-height: 0.98;
+  max-width: 10.5ch;
+}
+
 .page-view[data-view="mobile"] .section-block__head h2 {
-  font-size: clamp(2rem, 9vw, 3.4rem);
-  max-width: none;
+  font-size: clamp(1.28rem, 5vw, 1.8rem);
+  line-height: 1.06;
+  max-width: 14ch;
 }
 
 .page-view[data-view="mobile"] .hero-lead p,
 .page-view[data-view="mobile"] .section-copy {
   max-width: none;
   font-size: 0.9rem;
+}
+
+.page-view[data-view="mobile"] .route-lead {
+  gap: 12px;
+  padding: 16px;
+}
+
+.page-view[data-view="mobile"] .route-lead .section-block__head h2 {
+  font-size: clamp(1.18rem, 4.6vw, 1.55rem);
+  max-width: 15ch;
+}
+
+.page-view[data-view="mobile"] .route-lead .section-copy {
+  font-size: 0.82rem;
+}
+
+.page-view[data-view="mobile"] .route-lead .action-row {
+  flex-direction: column;
 }
 
 .page-view[data-view="mobile"] .action-row {
@@ -1392,7 +1423,34 @@ p {
 }
 
 .page-view[data-view="mobile"] .image-card--hero {
-  min-height: 280px;
+  min-height: 240px;
+}
+
+.page-view[data-view="mobile"] .image-card__copy {
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  padding: 12px 14px;
+}
+
+.page-view[data-view="mobile"] .image-card__copy strong {
+  font-size: 0.95rem;
+}
+
+.page-view[data-view="mobile"] .compare-table__head,
+.page-view[data-view="mobile"] .compare-table__row {
+  gap: 8px;
+}
+
+.page-view[data-view="mobile"] .compare-table__head span,
+.page-view[data-view="mobile"] .compare-table__row span {
+  min-height: 44px;
+  padding: 0 10px;
+  font-size: 0.74rem;
+}
+
+.page-view[data-view="mobile"] .mosaic-grid > :first-child {
+  grid-row: auto;
 }
 
 .hero-lead,
@@ -1441,6 +1499,9 @@ p {
   font-family: var(--font-display);
   line-height: 0.92;
   letter-spacing: -0.07em;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  hyphens: none;
 }
 
 .hero-lead h1 {
@@ -1462,6 +1523,31 @@ p {
   font-size: 0.98rem;
   font-weight: 700;
   line-height: 1.6;
+  word-break: keep-all;
+}
+
+.route-lead {
+  gap: 14px;
+  padding: 20px 24px;
+}
+
+.route-lead .section-block__head {
+  gap: 6px;
+}
+
+.route-lead .section-block__head h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1;
+  max-width: 14ch;
+}
+
+.route-lead .section-copy {
+  font-size: 0.92rem;
+}
+
+.route-lead .action-button {
+  min-height: 46px;
+  padding: 0 18px;
 }
 
 .nav-row span,

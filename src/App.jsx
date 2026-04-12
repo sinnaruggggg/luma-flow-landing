@@ -621,6 +621,34 @@ function mobilePreviewSrc(page) {
   return page.images.scene || page.images.product || page.images.hero;
 }
 
+function detectMobileClient() {
+  if (typeof window === "undefined") return false;
+  return window.matchMedia("(max-width: 820px), (pointer: coarse)").matches;
+}
+
+function useIsMobileClient() {
+  const [isMobileClient, setIsMobileClient] = useState(() => detectMobileClient());
+
+  useEffect(() => {
+    if (typeof window === "undefined") return undefined;
+
+    const mediaQuery = window.matchMedia("(max-width: 820px), (pointer: coarse)");
+    const update = () => setIsMobileClient(mediaQuery.matches);
+
+    update();
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", update);
+      return () => mediaQuery.removeEventListener("change", update);
+    }
+
+    mediaQuery.addListener(update);
+    return () => mediaQuery.removeListener(update);
+  }, []);
+
+  return isMobileClient;
+}
+
 function SceneBackdrop({ tone }) {
   return (
     <div className="scene-backdrop" data-style={tone}>
@@ -768,7 +796,7 @@ function CompareTable({ headers, rows }) {
 
 function RouteLead({ page, profile, route }) {
   return (
-    <section className="section-block">
+    <section className="section-block route-lead">
       <div className="section-block__head">
         <span>{page.brand}</span>
         <h2>{routeTitle(page, route, profile)}</h2>
@@ -812,6 +840,71 @@ function PageTopbar({ page, profile, route, viewMode, onViewChange, onBack, onNa
               <Smartphone size={16} />
             </button>
           </div>
+          <button
+            type="button"
+            className="page-topbar__cta"
+            onClick={() => onNavigate(buildSitePath(page.id, primaryRoute.slug))}
+          >
+            {primaryAction(primaryRoute, page)}
+          </button>
+        </div>
+      </div>
+      <section className="section-block page-routebar">
+        <div className="nav-row">
+          {profile.routes.map((entry) => {
+            const active = entry.slug === route.slug;
+            return (
+              <button
+                key={entry.slug}
+                type="button"
+                className={active ? "is-active" : ""}
+                onClick={() => onNavigate(buildSitePath(page.id, entry.slug))}
+              >
+                {entry.label}
+              </button>
+            );
+          })}
+        </div>
+      </section>
+    </>
+  );
+}
+
+function MobileAwarePageTopbar({ page, profile, route, viewMode, showViewSwitch, onViewChange, onBack, onNavigate }) {
+  const primaryRoute = getPrimaryRoute(profile);
+
+  return (
+    <>
+      <div className="page-topbar">
+        <button type="button" className="page-topbar__back" onClick={onBack}>
+          <ArrowLeft size={16} />
+          전체 보기
+        </button>
+        <div className="page-topbar__brand">
+          <strong>{page.brand}</strong>
+          <span>{page.industry}</span>
+        </div>
+        <div className="page-topbar__tools">
+          {showViewSwitch ? (
+            <div className="page-view-switch" aria-label="뷰 전환">
+              <button
+                type="button"
+                className={viewMode === "desktop" ? "is-active" : ""}
+                aria-pressed={viewMode === "desktop"}
+                onClick={() => onViewChange("desktop")}
+              >
+                <Monitor size={16} />
+              </button>
+              <button
+                type="button"
+                className={viewMode === "mobile" ? "is-active" : ""}
+                aria-pressed={viewMode === "mobile"}
+                onClick={() => onViewChange("mobile")}
+              >
+                <Smartphone size={16} />
+              </button>
+            </div>
+          ) : null}
           <button
             type="button"
             className="page-topbar__cta"
@@ -1492,9 +1585,10 @@ function renderSiteRoute(page, route, profile) {
   }
 }
 
-function SiteView({ page, route, viewMode, onViewChange, onBack, onNavigate }) {
+function SiteView({ page, route, viewMode, isMobileClient, onViewChange, onBack, onNavigate }) {
   const profile = siteProfiles[page.id];
   const [pointerStyle, onPointerMove] = useBackdropPointer();
+  const framedMobilePreview = viewMode === "mobile" && !isMobileClient;
 
   return (
     <div
@@ -1507,14 +1601,15 @@ function SiteView({ page, route, viewMode, onViewChange, onBack, onNavigate }) {
     >
       <SceneBackdrop tone={page.backdrop} />
       <div className="page-view__content">
-        <div className={`page-view__device ${viewMode === "mobile" ? "page-view__device--mobile" : ""}`}>
-          {viewMode === "mobile" ? <div className="page-view__device-notch" aria-hidden="true" /> : null}
+        <div className={`page-view__device ${framedMobilePreview ? "page-view__device--mobile" : ""}`}>
+          {framedMobilePreview ? <div className="page-view__device-notch" aria-hidden="true" /> : null}
           <div className="page-main">
-            <PageTopbar
+            <MobileAwarePageTopbar
               page={page}
               profile={profile}
               route={route}
               viewMode={viewMode}
+              showViewSwitch={!isMobileClient}
               onViewChange={onViewChange}
               onBack={onBack}
               onNavigate={onNavigate}
@@ -1553,6 +1648,7 @@ function NotFoundView({ onHome }) {
 export default function App() {
   const [pathname, setPathname] = useState(() => window.location.pathname || "/");
   const [viewMode, setViewMode] = useState("desktop");
+  const isMobileClient = useIsMobileClient();
   const pagesById = useMemo(() => Object.fromEntries(showcasePages.map((page) => [page.id, page])), []);
 
   useEffect(() => {
@@ -1606,7 +1702,8 @@ export default function App() {
           <SiteView
             page={page}
             route={routeState.route}
-            viewMode={viewMode}
+            viewMode={isMobileClient ? "mobile" : viewMode}
+            isMobileClient={isMobileClient}
             onViewChange={setViewMode}
             onBack={() => navigate("/")}
             onNavigate={navigate}
