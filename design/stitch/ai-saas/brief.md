@@ -1,21 +1,11 @@
 # SIGNAL GRID
 
-- 사이트 ID: `ai-saas`
-- 업종: AI 워크플로 SaaS
-- 요약: 파이프라인 · 사용 사례 · 데모
-- 디자인 계열: 워크플로 SaaS
-- 히어로: 실제 사용 흐름과 자동화 보드가 먼저 보이는 홈
-- 배경: 이미지보다 유체형 메시와 섬세한 포인터 반응
-- 모션: 플로우 노드와 KPI 패널이 연결되며 등장
-
-## 금지 패턴
-- 공통 히어로 템플릿 금지
-- 공통 섹션 조립기 금지
-- 같은 이미지 박스 + 설명 박스 + CTA 반복 금지
-
-## 페이지 구조
-- 홈 (`home`): 실제 운영 중인 서비스 홈처럼 보이게 만들고, 상단 메뉴는 고정한다. 첫 화면 문법이 이 사이트만의 구조로 보이게 만들고, 공통 히어로 템플릿이나 반복 섹션 조립기처럼 보이면 안 된다.
-- 플로우 (`flows`): 기능 소개 페이지다. 제품 흐름, 기능 블록, 미리보기 화면을 중심으로 구성한다.
-- 사례 (`cases`): 활용 사례 페이지다. 실제 사용 흐름, 수치, 도입 효과를 카드와 시각화 중심으로 보여준다.
-- 요금 (`pricing`): 요금 페이지다. 플랜 비교, 핵심 차이, CTA를 명확하게 보여준다.
-- 문의 (`contact`): 문의/데모 페이지다. 짧은 폼, 핵심 CTA, 응답 시간, 담당 방식이 보이게 만든다.
+- Site ID: ai-saas
+- Industry: AI Workflow SaaS
+- Summary: Workflow automation SaaS structured around flow boards, use cases, and pricing clarity.
+- Home grammar: Workflow board
+- Design family: AI product board
+- First screen: Workflow-board homepage with logic nodes, KPI tiles, and action chips.
+- Background: Responsive mesh and aura depth rather than stock imagery.
+- Motion: Node clusters, metric chips, and CTA rails animate at different layers with restraint.
+- Mobile rule: Foreground workflow states, KPI cards, and a single product CTA instead of shrinking the desktop board.

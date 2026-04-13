@@ -1,38 +1,43 @@
 {
   "siteId": "local-cafe",
   "brand": "TABLE WARM",
-  "industry": "로컬 카페",
-  "summary": "메뉴 · 좌석 · 예약",
+  "industry": "Cafe Reservation",
+  "summary": "A cafe site focused on today's menu, seat availability, and direct reservation entry.",
   "blueprint": {
-    "designFamily": "로컬 스몰비즈니스",
-    "heroMode": "매장 사진과 오늘 메뉴가 같이 보이는 따뜻한 홈",
-    "motion": "메뉴 카드와 예약 박스가 아래에서 천천히 떠오름",
-    "background": "대형 매장 사진과 낮은 강도의 패럴랙스"
+    "family": "Warm storefront booking",
+    "heroMode": "Storefront hero with today's menu board and reservation module visible immediately.",
+    "background": "Big cafe imagery, paper menu notes, and gentle hand-crafted depth.",
+    "motion": "Menu plates and reservation notes lift softly over the storefront image.",
+    "keywords": [
+      "cafe reservation",
+      "storefront layout",
+      "menu board"
+    ]
   },
   "routes": [
     {
       "slug": "home",
-      "label": "홈",
+      "label": "Home",
       "kind": "home"
     },
     {
       "slug": "menu",
-      "label": "메뉴",
+      "label": "Menu",
       "kind": "browse"
     },
     {
       "slug": "visit",
-      "label": "매장",
+      "label": "Visit",
       "kind": "detail"
     },
     {
       "slug": "reserve",
-      "label": "예약",
+      "label": "Reserve",
       "kind": "reserve"
     },
     {
       "slug": "info",
-      "label": "안내",
+      "label": "Info",
       "kind": "guide"
     }
   ]

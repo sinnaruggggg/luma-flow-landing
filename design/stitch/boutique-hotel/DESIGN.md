@@ -1,45 +1,46 @@
 # Design System: HOTEL STILL
 **Site ID:** boutique-hotel
 
-## 1. Visual Theme & Atmosphere
-- 핵심 톤: 호스피탈리티 예약형
-- 첫 화면 문법: 객실 풀블리드 이미지와 예약 위젯이 바로 보이는 홈
-- 배경 규칙: 고화질 객실 사진과 부드러운 스크롤 시차
-- 인터랙션 톤: 객실 카드와 오퍼 블록이 레이어처럼 포개짐
-- 시각 성격: 필름 그레인, 절제된 럭셔리, 사진 중심 에디토리얼 화면
+## 1. Identity
+- Industry: Boutique Hotel
+- Summary: A boutique hotel site driven by room imagery, stay finder, and package selection.
+- Home grammar: Stay finder hero
+- Mobile rule: Show the room photo first but keep the stay finder and offer CTA immediately attached to it.
 
-## 2. Color Palette & Roles
-- Primary Action (#3c2c20): 핵심 CTA와 활성 상태에 사용한다.
-- Accent Soft (#d6c3b2): 보조 태그, 하이라이트 패널, 그래프 포인트에 사용한다.
-- Surface (#f8f2ea): 카드, 패널, 정보 블록의 기본 바탕에 사용한다.
-- Background (#e8ddd0): 페이지 전체 무드와 깊이를 결정하는 바탕에 사용한다.
-- Text (#2c231d) / Muted (#6b5f53): 제목과 짧은 설명의 위계를 분리한다.
+## 2. Visual Direction
+- Family: Boutique stay booking
+- First screen: Large room photography with the stay finder layered directly on top.
+- Background: High-resolution room imagery and floating blocks that rise over the photo on scroll.
+- Motion: Package cards and room details reveal as overlapping sheets.
+- Atmosphere: Editorial luxury with soft grain and cinematic image depth.
 
-## 3. Typography Rules
-- 제목은 고급스럽고 느리게, 설명은 아주 짧게 쓴다.
-- 본문은 길게 쓰지 않고, 화면이 기능을 설명하게 한다.
-- 영어는 브랜드명, 짧은 라벨, 스타일 포인트에만 제한적으로 사용한다.
+## 3. Palette
+- Background: #e8ddd0
+- Surface: #f8f2ea
+- Panel: rgba(248, 242, 234, 0.84)
+- Text: #2c231d
+- Muted: #6b5f53
+- Accent: #3c2c20
+- Accent soft: #d6c3b2
 
-## 4. Component Stylings
-- 레이어는 부드럽게 떠오르게 하고 유리 패널은 최소화한다.
-- 공통화는 버튼, 배지, 입력, 기본 카드 정도까지만 허용한다.
-- 리스트와 표는 실제 운영 사이트처럼 바로 행동으로 이어지게 구성한다.
+## 4. Typography
+- Use elegant type with quiet supporting copy.
+- Keep copy short and functional.
+- Use Korean as the default content language.
 
-## 5. Home Screen Rules
-- 다른 사이트와 같은 첫 화면 구문으로 보이면 안 된다.
-- 데스크톱은 큰 비주얼 또는 강한 정보 구조가 먼저 보이게 만든다.
-- 모바일은 축소판이 아니라 전용 모바일 레이아웃으로 다시 설계한다.
-- 이미지형 사이트는 큰 대표컷과 떠오르는 레이어를 사용한다.
-- 비이미지형 사이트는 포인터/스크롤 반응형 메시 또는 오로라 배경을 사용한다.
+## 5. Components
+- Panels should appear as layered sheets over imagery.
+- Shared primitives are limited to buttons, badges, inputs, and simple cards.
+- The first screen grammar must be unique to this site.
 
 ## 6. Prohibited Patterns
-- 공통 히어로 템플릿 금지
-- 공통 섹션 조립기 금지
-- 같은 이미지 박스 + 설명 박스 + CTA 반복 금지
+- No shared hero template.
+- No shared section assembler.
+- No repetitive image box + text box + CTA blocks.
 
 ## 7. Route Targets
-- 홈 (`home`): 실제 운영 중인 서비스 홈처럼 보이게 만들고, 상단 메뉴는 고정한다. 첫 화면 문법이 이 사이트만의 구조로 보이게 만들고, 공통 히어로 템플릿이나 반복 섹션 조립기처럼 보이면 안 된다.
-- 객실 (`rooms`): 탐색/목록 페이지다. 필터, 카테고리, 리스트, 빠른 진입 구조를 직관적으로 보여준다.
-- 오퍼 (`offers`): 상세 설명 페이지다. 비교, 디테일, 기능, 컬러, 노트, 배치처럼 깊이 있는 정보를 중심으로 구성한다.
-- 예약 (`booking`): 예약/신청 페이지다. 일정, 슬롯, 상담 또는 시승/예약 폼이 핵심이다.
-- 안내 (`guide`): 안내 페이지다. 방문 전 알아야 할 내용, 운영 정보, 규정, 준비물, FAQ를 정리한다.
+- Home (home): This is the operating homepage. Build a complete landing surface, not a cover page.
+- Rooms (rooms): Use a browse or catalog structure with filtering, category anchors, and fast exploration.
+- Offers (offers): Lead with product, room, program, or service depth. Make the decision points obvious.
+- Booking (booking): Design around booking or request flow, availability, and frictionless form completion.
+- Guide (guide): Organize operational guidance, visit rules, maps, FAQ, and preparation details clearly.

@@ -1,38 +1,43 @@
 {
   "siteId": "boutique-hotel",
   "brand": "HOTEL STILL",
-  "industry": "부티크 호텔",
-  "summary": "객실 · 날짜 선택 · 예약",
+  "industry": "Boutique Hotel",
+  "summary": "A boutique hotel site driven by room imagery, stay finder, and package selection.",
   "blueprint": {
-    "designFamily": "호스피탈리티 예약형",
-    "heroMode": "객실 풀블리드 이미지와 예약 위젯이 바로 보이는 홈",
-    "motion": "객실 카드와 오퍼 블록이 레이어처럼 포개짐",
-    "background": "고화질 객실 사진과 부드러운 스크롤 시차"
+    "family": "Boutique stay booking",
+    "heroMode": "Large room photography with the stay finder layered directly on top.",
+    "background": "High-resolution room imagery and floating blocks that rise over the photo on scroll.",
+    "motion": "Package cards and room details reveal as overlapping sheets.",
+    "keywords": [
+      "hotel booking",
+      "room image first",
+      "floating stay finder"
+    ]
   },
   "routes": [
     {
       "slug": "home",
-      "label": "홈",
+      "label": "Home",
       "kind": "home"
     },
     {
       "slug": "rooms",
-      "label": "객실",
+      "label": "Rooms",
       "kind": "browse"
     },
     {
       "slug": "offers",
-      "label": "오퍼",
+      "label": "Offers",
       "kind": "detail"
     },
     {
       "slug": "booking",
-      "label": "예약",
+      "label": "Booking",
       "kind": "reserve"
     },
     {
       "slug": "guide",
-      "label": "안내",
+      "label": "Guide",
       "kind": "guide"
     }
   ]

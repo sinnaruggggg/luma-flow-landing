@@ -1,38 +1,43 @@
 {
   "siteId": "perfume-house",
   "brand": "MOSS & AMBER",
-  "industry": "니치 향수 브랜드",
-  "summary": "향 노트 · 디스커버리 세트 · 구매",
+  "industry": "Perfume House",
+  "summary": "A perfume site built around mood imagery, note structure, and curated set purchase.",
   "blueprint": {
-    "designFamily": "무드형 럭셔리 브랜드",
-    "heroMode": "향수 병 디테일과 무드 이미지가 먼저 보이는 홈",
-    "motion": "노트 카드와 세트 카드가 느리게 스르륵 등장",
-    "background": "소프트 포커스 이미지와 안개 같은 오라"
+    "family": "Mood-led perfume house",
+    "heroMode": "Editorial mood canvas with layered note cards and direct set entry.",
+    "background": "Cinematic fragrance visuals with soft blur, depth, and quiet layered reveals.",
+    "motion": "Note cards and scent descriptors drift in layered motion over the hero visual.",
+    "keywords": [
+      "perfume editorial",
+      "note cards",
+      "mood commerce"
+    ]
   },
   "routes": [
     {
       "slug": "home",
-      "label": "홈",
+      "label": "Home",
       "kind": "home"
     },
     {
       "slug": "sets",
-      "label": "세트",
+      "label": "Sets",
       "kind": "browse"
     },
     {
       "slug": "notes",
-      "label": "노트",
+      "label": "Notes",
       "kind": "detail"
     },
     {
       "slug": "gift",
-      "label": "선물",
+      "label": "Gift",
       "kind": "checkout"
     },
     {
       "slug": "brand",
-      "label": "브랜드",
+      "label": "Brand",
       "kind": "brand"
     }
   ]

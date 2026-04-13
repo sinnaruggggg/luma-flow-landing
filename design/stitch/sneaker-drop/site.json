@@ -1,38 +1,43 @@
 {
   "siteId": "sneaker-drop",
   "brand": "RIFT/01",
-  "industry": "스니커즈 드롭 스토어",
-  "summary": "오늘 드롭 · AI 사이즈 · 장바구니",
+  "industry": "Sneaker Commerce",
+  "summary": "Limited sneaker commerce with launch countdown and fast cart entry.",
   "blueprint": {
-    "designFamily": "스트리트 드롭 커머스",
-    "heroMode": "대형 제품 컷과 카운트다운이 먼저 보이는 하이컨트라스트 히어로",
-    "motion": "드롭 카드와 출시 시간 배지가 아래에서 떠오르듯 겹쳐 등장",
-    "background": "풀블리드 캠페인 이미지와 원색 포인트 그래픽"
+    "family": "Street launch lab",
+    "heroMode": "Poster-led hero with price strip and side countdown.",
+    "background": "Big campaign photo with layered panels rising over it.",
+    "motion": "Countdown plate and size rail land at different depths.",
+    "keywords": [
+      "poster commerce",
+      "drop countdown",
+      "bold sticker UI"
+    ]
   },
   "routes": [
     {
       "slug": "home",
-      "label": "홈",
+      "label": "Home",
       "kind": "home"
     },
     {
       "slug": "drops",
-      "label": "드롭",
+      "label": "Drops",
       "kind": "browse"
     },
     {
       "slug": "styles",
-      "label": "스타일",
+      "label": "Styles",
       "kind": "detail"
     },
     {
       "slug": "cart",
-      "label": "장바구니",
+      "label": "Cart",
       "kind": "checkout"
     },
     {
       "slug": "brand",
-      "label": "브랜드",
+      "label": "Brand",
       "kind": "brand"
     }
   ]

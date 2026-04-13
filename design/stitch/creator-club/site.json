@@ -1,38 +1,43 @@
 {
   "siteId": "creator-club",
   "brand": "RALLY HOUSE",
-  "industry": "크리에이터 멤버십 클럽",
-  "summary": "가입 플랜 · 혜택 · 커뮤니티",
+  "industry": "Creator Community",
+  "summary": "A creator community site with live feed energy, membership perks, and join flow.",
   "blueprint": {
-    "designFamily": "커뮤니티 허브",
-    "heroMode": "커뮤니티 활동량과 멤버십 카드가 함께 보이는 홈",
-    "motion": "피드 모듈과 혜택 카드가 밀도 있게 겹쳐 올라옴",
-    "background": "이미지 대신 깊이감 있는 다크 메시와 반응형 글로우"
+    "family": "Pop community platform",
+    "heroMode": "Feed-led first screen with live activity modules and join CTA beside it.",
+    "background": "No photo-first hero. Use mesh, aura, and soft physics-driven motion.",
+    "motion": "Feed cards and pass labels appear on different depth planes.",
+    "keywords": [
+      "community feed",
+      "membership join",
+      "aurora mesh"
+    ]
   },
   "routes": [
     {
       "slug": "home",
-      "label": "홈",
+      "label": "Home",
       "kind": "home"
     },
     {
       "slug": "feed",
-      "label": "피드",
+      "label": "Feed",
       "kind": "feed"
     },
     {
       "slug": "perks",
-      "label": "혜택",
+      "label": "Perks",
       "kind": "perks"
     },
     {
       "slug": "join",
-      "label": "가입",
+      "label": "Join",
       "kind": "join"
     },
     {
       "slug": "guide",
-      "label": "안내",
+      "label": "Guide",
       "kind": "guide"
     }
   ]

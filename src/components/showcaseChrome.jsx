@@ -1,9 +1,19 @@
-import { ArrowLeft, ChevronRight, Monitor, Smartphone } from "lucide-react";
+﻿import { ArrowLeft, CheckCircle2, ChevronRight, Layers3, Monitor, Smartphone } from "lucide-react";
 import { buildSitePath, siteRegistry } from "../content/siteRegistry";
-import { getSiteLinks, themeStyle, useBackdropPointer } from "../lib/showcaseUtils";
-import { HomeScene } from "./homeLayouts";
-import { RouteScene } from "./routeLayouts";
+import { themeStyle, useBackdropPointer } from "../lib/showcaseUtils";
 import { HubMark, SceneBackdrop, ShowcasePhone } from "./showcaseAtoms";
+
+function totals() {
+  const routes = siteRegistry.reduce((sum, site) => sum + site.gallery.totalRoutes, 0);
+  const staged = siteRegistry.reduce((sum, site) => sum + site.gallery.stitchedRoutes, 0);
+  return { sites: siteRegistry.length, routes, staged };
+}
+
+function coverageLabel(site) {
+  if (site.gallery.fullRoutes === site.gallery.totalRoutes) return "Full Stitch";
+  if (site.gallery.stitchedRoutes > 0) return `${site.gallery.stitchedRoutes}/${site.gallery.totalRoutes} staged`;
+  return "Fallback preview";
+}
 
 function GalleryCard({ site, onOpen }) {
   return (
@@ -14,15 +24,15 @@ function GalleryCard({ site, onOpen }) {
       </div>
       <div className="hub-card__body">
         <div className="hub-card__meta">
-          <span>{site.presentation.firstScreenMode}</span>
-          <span>{site.blueprint.designFamily}</span>
+          <span>{site.homeMode}</span>
+          <span>{coverageLabel(site)}</span>
         </div>
         <strong>{site.brand}</strong>
-        <p>{site.blueprint.heroMode}</p>
+        <p>{site.summary}</p>
         <div className="hub-card__footer">
           <span>{site.industry}</span>
           <span className="hub-card__action">
-            사이트 진입
+            Enter site
             <ChevronRight size={16} />
           </span>
         </div>
@@ -32,6 +42,8 @@ function GalleryCard({ site, onOpen }) {
 }
 
 export function GalleryHome({ onOpen }) {
+  const summary = totals();
+
   return (
     <div className="hub-page">
       <SceneBackdrop tone="gallery" />
@@ -41,22 +53,22 @@ export function GalleryHome({ onOpen }) {
             <HubMark />
             <div>
               <strong>20 Independent Sample Sites</strong>
-              <span>메인 카드는 같고, 안으로 들어가면 완전히 다른 사이트처럼 보이게 구성했습니다.</span>
+              <span>Same-sized cards. Direct entry into each site home. Five-route structure per site.</span>
             </div>
           </div>
           <div className="hub-topbar__meta">
-            <span>메인 카드 20개</span>
-            <span>/{`{siteId}`} 바로 진입</span>
-            <span>PC / Mobile 별도 설계</span>
+            <span>{summary.sites} sites</span>
+            <span>{summary.routes} routes</span>
+            <span>{summary.staged} stitched routes</span>
           </div>
         </header>
 
         <section className="hub-hero">
-          <span className="hub-hero__eyebrow">Showcase Hub</span>
-          <h1>같은 템플릿 변주가 아니라, 20개의 실제 다른 사이트처럼 다시 구성한 허브</h1>
+          <span className="hub-hero__eyebrow">Stitch-first Gallery</span>
+          <h1>Twenty sites that enter as sites, not as one family of layout variations.</h1>
           <p>
-            카드는 모두 같은 크기로 정리하되, 각 카드를 열면 소개 페이지 없이 곧바로 해당 사이트 홈으로 진입합니다. 홈 화면 문법은 사이트마다
-            다르게 만들고, 모바일은 축소가 아니라 전용 레이아웃 기준으로 보이게 구성했습니다.
+            Every card opens straight into <code>/{'{'}siteId{'}'}</code>. The viewer prefers local Stitch HTML, then local Stitch screenshots,
+            then the existing fallback previews until each route is staged.
           </p>
         </section>
 
@@ -91,66 +103,124 @@ function SiteTopbar({ site, route, viewMode, isMobileClient, onViewChange, onNav
       <div className="site-topbar__start">
         <button type="button" className="site-topbar__back" onClick={onBack}>
           <ArrowLeft size={18} />
-          허브
+          Gallery
         </button>
         <div className="site-topbar__brand">
           <strong>{site.brand}</strong>
-          <span>{site.blueprint.designFamily}</span>
+          <span>{site.blueprint.family}</span>
         </div>
       </div>
-
       <nav className="site-nav" aria-label={`${site.brand} routes`}>
         {site.routes.map((item) => (
-          <button
-            key={item.slug}
-            type="button"
-            className={item.slug === route.slug ? "is-active" : ""}
-            onClick={() => onNavigate(buildSitePath(site.id, item.slug))}
-          >
+          <button key={item.slug} type="button" className={item.slug === route.slug ? "is-active" : ""} onClick={() => onNavigate(buildSitePath(site.id, item.slug))}>
             {item.label}
           </button>
         ))}
       </nav>
-
-      <div className="site-topbar__end">
-        {!isMobileClient ? <DeviceSwitch viewMode={viewMode} onViewChange={onViewChange} /> : null}
-      </div>
+      <div className="site-topbar__end">{!isMobileClient ? <DeviceSwitch viewMode={viewMode} onViewChange={onViewChange} /> : null}</div>
     </header>
+  );
+}
+
+function StatusBadge({ stage }) {
+  const label = stage.source === "stitch-html" ? "Stitch HTML" : stage.source === "stitch-image" ? "Stitch PNG" : "Fallback preview";
+  return (
+    <span className={`status-pill status-pill--${stage.source}`}>
+      {stage.stitched ? <CheckCircle2 size={14} /> : <Layers3 size={14} />}
+      {label}
+    </span>
+  );
+}
+
+function ScreenStage({ site, route, actualView, isMobileClient }) {
+  const stage = site.routeAssets[route.slug][actualView];
+  const frameClass = actualView === "mobile" && !isMobileClient ? "screen-stage__frame screen-stage__frame--phone" : "screen-stage__frame";
+
+  return (
+    <section className="screen-stage">
+      <div className="screen-stage__head">
+        <div>
+          <span className="screen-stage__eyebrow">{route.label}</span>
+          <h1>{site.brand}</h1>
+        </div>
+        <StatusBadge stage={stage} />
+      </div>
+      <div className={frameClass} style={{ "--stage-height": `${stage.stageHeight}px` }}>
+        {actualView === "mobile" && !isMobileClient ? <span className="screen-stage__notch" aria-hidden="true" /> : null}
+        {stage.html ? <iframe title={`${site.brand} ${route.label}`} src={stage.html} loading="lazy" /> : <img src={stage.image} alt={stage.alt} />}
+      </div>
+    </section>
+  );
+}
+
+function Panel({ eyebrow, title, children }) {
+  return (
+    <section className="info-panel">
+      <span className="info-panel__eyebrow">{eyebrow}</span>
+      <h3>{title}</h3>
+      {children}
+    </section>
+  );
+}
+
+function RouteRows({ rows }) {
+  return (
+    <div className="info-panel__rows">
+      {rows.map((row) => (
+        <div key={`${row.label}-${row.value}`} className="info-panel__row">
+          <span>{row.label}</span>
+          <strong>{row.value}</strong>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function SidePanels({ site, route, actualView, onNavigate }) {
+  const stage = site.routeAssets[route.slug][actualView];
+  const homeLink = site.routes[0];
+  const nextRoutes = site.routes.filter((item) => item.slug !== route.slug).slice(0, 3);
+
+  return (
+    <aside className="site-side">
+      <Panel eyebrow="Intent" title={route.description}>
+        <p>{site.summary}</p>
+        <div className="tag-rail">{site.chips.map((chip) => <span key={chip}>{chip}</span>)}</div>
+      </Panel>
+      <Panel eyebrow="Design DNA" title={site.homeMode}>
+        <RouteRows rows={[{ label: "First screen", value: site.blueprint.heroMode }, { label: "Background", value: site.blueprint.background }, { label: "Motion", value: site.blueprint.motion }, { label: actualView === "mobile" ? "Mobile" : "Desktop", value: actualView === "mobile" ? site.mobileRule : "Keep the opening frame spacious and layered." }]} />
+      </Panel>
+      <Panel eyebrow="Stats" title={`${site.industry} signals`}>
+        <RouteRows rows={site.stats} />
+      </Panel>
+      <Panel eyebrow="Routes" title="Move through the site">
+        <div className="route-links">
+          {homeLink.slug !== route.slug ? <button type="button" className="route-link" onClick={() => onNavigate(buildSitePath(site.id, homeLink.slug))}>Home</button> : null}
+          {nextRoutes.map((item) => (
+            <button key={item.slug} type="button" className="route-link" onClick={() => onNavigate(buildSitePath(site.id, item.slug))}>
+              {item.label}
+            </button>
+          ))}
+          <span className="route-note">{stage.html ? "Live Stitch HTML is active for this route." : "This route is still using a static preview until Stitch output is staged."}</span>
+        </div>
+      </Panel>
+    </aside>
   );
 }
 
 export function SiteView({ site, route, viewMode, isMobileClient, onViewChange, onNavigate, onBack }) {
   const actualView = isMobileClient ? "mobile" : viewMode;
   const [pointerStyle, onPointerMove] = useBackdropPointer();
-  const links = getSiteLinks(site);
 
   return (
-    <div
-      className="site-shell"
-      data-tone={site.backdrop}
-      data-view={actualView}
-      style={{ ...themeStyle(site.theme), ...pointerStyle }}
-      onPointerMove={onPointerMove}
-    >
+    <div className="site-shell" data-tone={site.backdrop} data-view={actualView} style={{ ...themeStyle(site.theme), ...pointerStyle }} onPointerMove={onPointerMove}>
       <SceneBackdrop tone={site.backdrop} />
       <div className="site-shell__content">
-        <div className={`site-shell__frame ${actualView === "mobile" ? "site-shell__frame--mobile" : ""}`}>
-          {actualView === "mobile" && !isMobileClient ? <span className="site-shell__notch" aria-hidden="true" /> : null}
-          <SiteTopbar
-            site={site}
-            route={route}
-            viewMode={actualView}
-            isMobileClient={isMobileClient}
-            onViewChange={onViewChange}
-            onNavigate={onNavigate}
-            onBack={onBack}
-          />
+        <div className="site-shell__frame">
+          <SiteTopbar site={site} route={route} viewMode={actualView} isMobileClient={isMobileClient} onViewChange={onViewChange} onNavigate={onNavigate} onBack={onBack} />
           <main className="site-main">
-            {route.kind === "home" ? (
-              <HomeScene site={site} isMobileView={actualView === "mobile"} onNavigate={onNavigate} primaryRoute={links.browse} />
-            ) : (
-              <RouteScene site={site} route={route} isMobileView={actualView === "mobile"} onNavigate={onNavigate} />
-            )}
+            <ScreenStage site={site} route={route} actualView={actualView} isMobileClient={isMobileClient} />
+            <SidePanels site={site} route={route} actualView={actualView} onNavigate={onNavigate} />
           </main>
         </div>
       </div>
@@ -165,11 +235,9 @@ export function NotFound({ onHome }) {
       <div className="hub-page__content">
         <section className="missing-card">
           <span>Route not found</span>
-          <h1>해당 경로는 아직 준비되지 않았습니다.</h1>
-          <p>메인 허브로 돌아가 다른 사이트를 바로 탐색할 수 있습니다.</p>
-          <button type="button" className="cta cta--primary" onClick={onHome}>
-            허브로 이동
-          </button>
+          <h1>This route is not staged yet.</h1>
+          <p>Return to the gallery and enter another site.</p>
+          <button type="button" className="cta cta--primary" onClick={onHome}>Back to gallery</button>
         </section>
       </div>
     </div>

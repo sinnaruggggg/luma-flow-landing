@@ -1,21 +1,11 @@
 # VOID ARC
 
-- 사이트 ID: `gaming-gear`
-- 업종: 게이밍 기어 스토어
-- 요약: 셋업 · 번들 · 장바구니
-- 디자인 계열: 셋업 중심 게이밍 커머스
-- 히어로: 셋업 장면과 번들 카드가 강하게 보이는 홈
-- 배경: RGB 톤의 다크 배경과 포인터 반응형 라인
-- 모션: 기어 패널이 UI처럼 빠르게 스냅 인
-
-## 금지 패턴
-- 공통 히어로 템플릿 금지
-- 공통 섹션 조립기 금지
-- 같은 이미지 박스 + 설명 박스 + CTA 반복 금지
-
-## 페이지 구조
-- 홈 (`home`): 실제 운영 중인 서비스 홈처럼 보이게 만들고, 상단 메뉴는 고정한다. 첫 화면 문법이 이 사이트만의 구조로 보이게 만들고, 공통 히어로 템플릿이나 반복 섹션 조립기처럼 보이면 안 된다.
-- 기어 (`gear`): 탐색/목록 페이지다. 필터, 카테고리, 리스트, 빠른 진입 구조를 직관적으로 보여준다.
-- 번들 (`bundle`): 상세 설명 페이지다. 비교, 디테일, 기능, 컬러, 노트, 배치처럼 깊이 있는 정보를 중심으로 구성한다.
-- 장바구니 (`cart`): 전환 페이지다. 구매, 장바구니, 세트 선택, 상담 신청, 선물 구성처럼 바로 결정을 내리게 만든다.
-- 지원 (`support`): 브랜드 신뢰 형성 페이지다. 브랜드 스토리, 가치, 제작 배경, 지원 정보를 짧고 세련되게 보여준다.
+- Site ID: gaming-gear
+- Industry: Gaming Gear
+- Summary: Gaming hardware commerce organized around setup bundles, specs, and aggressive cart entry.
+- Home grammar: Setup command center
+- Design family: Setup command commerce
+- First screen: A setup-control first screen with hardware visuals, spec modules, and bundle CTA.
+- Background: Dark desk setup imagery with RGB atmosphere and reactive line work.
+- Motion: Spec panels and cart chips animate like a command interface.
+- Mobile rule: Bring bundle spec, price, and cart action ahead of community or editorial blocks.

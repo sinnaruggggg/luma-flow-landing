@@ -1,9 +1,9 @@
-import fs from "node:fs/promises";
+﻿import fs from "node:fs/promises";
 import fsSync from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { showcasePages } from "../src/content/showcasePages.js";
+import { siteCatalog } from "../src/content/siteCatalog.js";
 import { buildPrompt, buildSiteBrief, buildSiteDesignMd, getBlueprintForSite, getRoutesForSite } from "./stitch-blueprints.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -15,23 +15,18 @@ const truthy = new Set(["1", "true", "yes", "on"]);
 
 export function parseArgs(argv = process.argv.slice(2)) {
   const args = {};
-
   for (let index = 0; index < argv.length; index += 1) {
     const value = argv[index];
     if (!value.startsWith("--")) continue;
-
     const key = value.slice(2);
     const next = argv[index + 1];
-
     if (!next || next.startsWith("--")) {
       args[key] = true;
       continue;
     }
-
     args[key] = next;
     index += 1;
   }
-
   return args;
 }
 
@@ -51,7 +46,7 @@ export async function exists(filePath) {
 export async function readJson(filePath, fallback = null) {
   try {
     const raw = await fs.readFile(filePath, "utf8");
-    return JSON.parse(raw);
+    return JSON.parse(raw.replace(/^\uFEFF/, ""));
   } catch {
     return fallback;
   }
@@ -82,15 +77,12 @@ export function deviceSuffix(deviceType) {
 
 export function loadEnvFiles() {
   const inheritedKeys = new Set(Object.keys(process.env));
-  const files = [".env", ".env.local"];
-
-  for (const name of files) {
+  for (const name of [".env", ".env.local"]) {
     const filePath = path.join(rootDir, name);
     try {
       const raw = requireEnvFile(filePath);
       for (const [key, value] of Object.entries(raw)) {
-        if (inheritedKeys.has(key)) continue;
-        process.env[key] = value;
+        if (!inheritedKeys.has(key)) process.env[key] = value;
       }
     } catch {
       // Ignore missing env files.
@@ -101,18 +93,15 @@ export function loadEnvFiles() {
 function requireEnvFile(filePath) {
   const content = fsSync.readFileSync(filePath, "utf8");
   const parsed = {};
-
   for (const line of content.split(/\r?\n/)) {
     const trimmed = line.trim();
     if (!trimmed || trimmed.startsWith("#")) continue;
     const eqIndex = trimmed.indexOf("=");
     if (eqIndex === -1) continue;
-
     const key = trimmed.slice(0, eqIndex).trim();
     const rawValue = trimmed.slice(eqIndex + 1).trim();
     parsed[key] = stripQuotes(rawValue);
   }
-
   return parsed;
 }
 
@@ -125,66 +114,51 @@ function stripQuotes(value) {
 
 export function ensureStitchAuth() {
   loadEnvFiles();
-
   const hasApiKey = Boolean(process.env.STITCH_API_KEY);
   const hasOAuth = Boolean(process.env.STITCH_ACCESS_TOKEN && (process.env.STITCH_PROJECT_ID || process.env.GOOGLE_CLOUD_PROJECT));
 
   if (!hasApiKey && !hasOAuth) {
-    throw new Error(
-      [
-        "Stitch 인증 정보가 없습니다.",
-        "STITCH_API_KEY를 .env 또는 현재 셸에 설정하거나,",
-        "`npx @_davideast/stitch-mcp init` 으로 인증을 먼저 완료하세요.",
-      ].join(" "),
-    );
+    throw new Error([
+      "Missing Stitch credentials.",
+      "Set STITCH_API_KEY in .env/.env.local, or provide Stitch OAuth credentials.",
+      "You can initialize auth with `npx @_davideast/stitch-mcp init`.",
+    ].join(" "));
   }
 }
 
 export function getSiteOrThrow(siteId) {
-  const site = showcasePages.find((entry) => entry.id === siteId);
-  if (!site) {
-    throw new Error(`알 수 없는 siteId 입니다: ${siteId}`);
-  }
+  const site = siteCatalog.find((entry) => entry.id === siteId);
+  if (!site) throw new Error(`Unknown siteId: ${siteId}`);
   return site;
 }
 
 export function getRouteOrThrow(siteId, pageSlug) {
-  const routes = getRoutesForSite(siteId);
-  const route = routes.find((entry) => entry.slug === pageSlug);
-  if (!route) {
-    throw new Error(`알 수 없는 page slug 입니다: ${pageSlug}`);
-  }
+  const route = getRoutesForSite(siteId).find((entry) => entry.slug === pageSlug);
+  if (!route) throw new Error(`Unknown page slug for ${siteId}: ${pageSlug}`);
   return route;
 }
 
 export function getSiteDir(siteId) {
   return path.join(designRoot, siteId);
 }
-
 export function getSiteManifestPath(siteId) {
   return path.join(getSiteDir(siteId), "site.json");
 }
-
 export function getSiteBriefPath(siteId) {
   return path.join(getSiteDir(siteId), "brief.md");
 }
-
 export function getSiteMetadataPath(siteId) {
   return path.join(getSiteDir(siteId), "metadata.json");
 }
-
 export function getSiteDesignPath(siteId) {
   return path.join(getSiteDir(siteId), "DESIGN.md");
 }
-
 export function getPromptPath(siteId, pageSlug, deviceType) {
   return path.join(getSiteDir(siteId), "prompts", `${pageSlug}-${deviceSuffix(deviceType)}.md`);
 }
-
 export function getScreenHtmlPath(siteId, pageSlug, deviceType) {
   return path.join(getSiteDir(siteId), "screens", `${pageSlug}-${deviceSuffix(deviceType)}.html`);
 }
-
 export function getScreenImagePath(siteId, pageSlug, deviceType) {
   return path.join(getSiteDir(siteId), "screens", `${pageSlug}-${deviceSuffix(deviceType)}.png`);
 }
@@ -205,26 +179,23 @@ export async function scaffoldSite(site) {
   await ensureDir(siteDir);
   await ensureDir(path.join(siteDir, "prompts"));
   await ensureDir(path.join(siteDir, "screens"));
-
   await writeJson(getSiteManifestPath(site.id), buildSiteManifest(site));
   await fs.writeFile(getSiteBriefPath(site.id), `${buildSiteBrief(site)}\n`, "utf8");
-  await writeIfMissing(getSiteDesignPath(site.id), `${buildSiteDesignMd(site)}\n`);
+  await fs.writeFile(getSiteDesignPath(site.id), `${buildSiteDesignMd(site)}\n`, "utf8");
 }
 
 export async function downloadToFile(url, destinationPath, mode = "text") {
   const response = await fetch(url);
   if (!response.ok) {
-    throw new Error(`다운로드 실패: ${response.status} ${response.statusText} (${url})`);
+    throw new Error(`Download failed: ${response.status} ${response.statusText} (${url})`);
   }
 
   await ensureDir(path.dirname(destinationPath));
-
   if (mode === "binary") {
     const buffer = Buffer.from(await response.arrayBuffer());
     await fs.writeFile(destinationPath, buffer);
     return;
   }
-
   await fs.writeFile(destinationPath, await response.text(), "utf8");
 }
 

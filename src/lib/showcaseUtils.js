@@ -40,8 +40,3 @@ export function useBackdropPointer() {
 
   return [style, onPointerMove];
 }
-
-export function getSiteLinks(site) {
-  const [, browse, detail, action, info] = site.routes;
-  return { browse, detail, action, info };
-}

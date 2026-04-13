@@ -1,38 +1,43 @@
 {
   "siteId": "furniture-store",
   "brand": "MOSS HOME",
-  "industry": "가구 스토어",
-  "summary": "룸별 탐색 · 배치 미리보기 · 구매",
+  "industry": "Furniture Commerce",
+  "summary": "A furniture site centered on room planning, bundle shopping, and spatial exploration.",
   "blueprint": {
-    "designFamily": "공간 스타일링 커머스",
-    "heroMode": "완성된 공간 사진과 룸별 탐색 버튼 중심",
-    "motion": "배치 카드와 번들 상품이 층층이 올라옴",
-    "background": "풀스크린 인테리어 이미지와 느린 패럴랙스"
+    "family": "Spatial planning commerce",
+    "heroMode": "Room planner-led homepage with room selectors and bundle CTA visible immediately.",
+    "background": "Large interior imagery, soft organic gradients, and layered planner panels.",
+    "motion": "Room tags and planner cards float in like layout sheets.",
+    "keywords": [
+      "furniture planner",
+      "room-based commerce",
+      "organic depth"
+    ]
   },
   "routes": [
     {
       "slug": "home",
-      "label": "홈",
+      "label": "Home",
       "kind": "home"
     },
     {
       "slug": "rooms",
-      "label": "룸별",
+      "label": "Rooms",
       "kind": "browse"
     },
     {
       "slug": "planner",
-      "label": "배치",
+      "label": "Planner",
       "kind": "detail"
     },
     {
       "slug": "cart",
-      "label": "구매",
+      "label": "Cart",
       "kind": "checkout"
     },
     {
       "slug": "service",
-      "label": "서비스",
+      "label": "Service",
       "kind": "brand"
     }
   ]

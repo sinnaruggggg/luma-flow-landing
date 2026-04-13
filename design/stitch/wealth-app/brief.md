@@ -1,21 +1,11 @@
 # CLARO
 
-- 사이트 ID: `wealth-app`
-- 업종: 자산관리 SaaS
-- 요약: 대시보드 · 목표 플랜 · 데모
-- 디자인 계열: 핀테크 미니멀 SaaS
-- 히어로: 대시보드 미리보기와 핵심 KPI가 즉시 보이는 홈
-- 배경: 이미지 대신 조용한 메시 그라디언트와 포인터 하이라이트
-- 모션: 숫자 카드와 차트가 차례대로 겹쳐 올라옴
-
-## 금지 패턴
-- 공통 히어로 템플릿 금지
-- 공통 섹션 조립기 금지
-- 같은 이미지 박스 + 설명 박스 + CTA 반복 금지
-
-## 페이지 구조
-- 홈 (`home`): 실제 운영 중인 서비스 홈처럼 보이게 만들고, 상단 메뉴는 고정한다. 첫 화면 문법이 이 사이트만의 구조로 보이게 만들고, 공통 히어로 템플릿이나 반복 섹션 조립기처럼 보이면 안 된다.
-- 기능 (`features`): 기능 소개 페이지다. 제품 흐름, 기능 블록, 미리보기 화면을 중심으로 구성한다.
-- 활용 (`cases`): 활용 사례 페이지다. 실제 사용 흐름, 수치, 도입 효과를 카드와 시각화 중심으로 보여준다.
-- 요금 (`pricing`): 요금 페이지다. 플랜 비교, 핵심 차이, CTA를 명확하게 보여준다.
-- 문의 (`contact`): 문의/데모 페이지다. 짧은 폼, 핵심 CTA, 응답 시간, 담당 방식이 보이게 만든다.
+- Site ID: wealth-app
+- Industry: Wealth SaaS
+- Summary: A personal wealth SaaS focused on dashboard confidence, goal tracking, and portfolio clarity.
+- Home grammar: Dashboard bento
+- Design family: Quiet finance OS
+- First screen: Dashboard-led first screen with KPI tiles and small charts.
+- Background: No photo hero. Use responsive mesh gradients and restrained depth.
+- Motion: Charts and target cards reveal with subtle layered motion.
+- Mobile rule: Prioritize KPI modules, target progress, and a single conversion path to start.

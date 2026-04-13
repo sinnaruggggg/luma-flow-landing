@@ -1,21 +1,11 @@
 # PLAIN GRID
 
-- 사이트 ID: `arch-studio`
-- 업종: 건축 · 인테리어 스튜디오
-- 요약: 포트폴리오 · 프로세스 · 브리프
-- 디자인 계열: 에디토리얼 포트폴리오
-- 히어로: 대형 공간 사진과 편집형 타이포가 중심인 홈
-- 배경: 풀스크린 현장 사진과 느린 패럴랙스
-- 모션: 프로젝트 블록이 잡지 레이아웃처럼 교차 등장
-
-## 금지 패턴
-- 공통 히어로 템플릿 금지
-- 공통 섹션 조립기 금지
-- 같은 이미지 박스 + 설명 박스 + CTA 반복 금지
-
-## 페이지 구조
-- 홈 (`home`): 실제 운영 중인 서비스 홈처럼 보이게 만들고, 상단 메뉴는 고정한다. 첫 화면 문법이 이 사이트만의 구조로 보이게 만들고, 공통 히어로 템플릿이나 반복 섹션 조립기처럼 보이면 안 된다.
-- 프로젝트 (`works`): 프로젝트 목록 페이지다. 썸네일, 카테고리, 사례 분류와 진입 흐름이 중요하다.
-- 서비스 (`services`): 제공 서비스 페이지다. 패키지, 범위, 산출물, 프로세스를 한눈에 이해하게 만든다.
-- 브리프 (`brief`): 브리프 제출 페이지다. 입력 폼, 첨부, 일정 선택, 예상 범위를 단순하고 고급스럽게 보여준다.
-- 문의 (`contact`): 문의/데모 페이지다. 짧은 폼, 핵심 CTA, 응답 시간, 담당 방식이 보이게 만든다.
+- Site ID: arch-studio
+- Industry: Architecture Studio
+- Summary: Editorial architecture portfolio that should feel like a real studio commission site.
+- Home grammar: Editorial canvas
+- Design family: Editorial studio portfolio
+- First screen: Image-led editorial spread with type anchored beside the photo.
+- Background: Large architecture photography with grain and paper warmth.
+- Motion: Blocks rise as layered editorial sheets and overlap on scroll.
+- Mobile rule: Mobile should read like a visual brief deck with project cards and inquiry entry.

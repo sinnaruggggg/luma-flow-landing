@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SIGNAL GRID | AI Workflow SaaS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#44474e",
+                    "primary-fixed": "#dde1ff",
+                    "on-secondary-container": "#00616d",
+                    "surface-variant": "#333539",
+                    "on-primary": "#002682",
+                    "tertiary-container": "#23005b",
+                    "secondary-container": "#00e3fd",
+                    "background": "#111318",
+                    "surface-tint": "#b7c4ff",
+                    "on-surface-variant": "#c4c6cf",
+                    "error": "#ffb4ab",
+                    "surface-container-lowest": "#0c0e12",
+                    "inverse-surface": "#e2e2e8",
+                    "on-secondary-fixed": "#001f24",
+                    "tertiary-fixed-dim": "#d1bcff",
+                    "primary": "#b7c4ff",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed-variant": "#5700c9",
+                    "tertiary": "#d1bcff",
+                    "secondary": "#bdf4ff",
+                    "on-background": "#e2e2e8",
+                    "primary-fixed-dim": "#b7c4ff",
+                    "primary-container": "#001451",
+                    "on-secondary": "#00363d",
+                    "tertiary-fixed": "#e9ddff",
+                    "error-container": "#93000a",
+                    "surface-container-high": "#282a2e",
+                    "on-tertiary-fixed": "#23005b",
+                    "inverse-primary": "#004ced",
+                    "surface": "#111318",
+                    "surface-container-low": "#1a1c20",
+                    "on-primary-fixed": "#001452",
+                    "surface-container-highest": "#333539",
+                    "on-secondary-fixed-variant": "#004f58",
+                    "secondary-fixed-dim": "#00daf3",
+                    "on-tertiary-container": "#9565ff",
+                    "on-primary-fixed-variant": "#0038b6",
+                    "surface-dim": "#111318",
+                    "surface-bright": "#37393e",
+                    "on-tertiary": "#3c0090",
+                    "on-surface": "#e2e2e8",
+                    "outline": "#8e9099",
+                    "secondary-fixed": "#9cf0ff",
+                    "inverse-on-surface": "#2f3035",
+                    "surface-container": "#1e2024",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-container": "#5479ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .aura-mesh {
+            background: radial-gradient(circle at 50% 0%, #001451 0%, #111318 70%);
+        }
+        .technical-glow {
+            box-shadow: 0 0 40px 0 rgba(0, 227, 253, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#111318]/80 backdrop-blur-xl border-b border-[#44474e]/15 shadow-[0_4px_40px_0_rgba(0,227,253,0.05)] flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform text-[#c4c6cf] hover:text-[#bdf4ff] transition-colors duration-300">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="text-xl font-bold tracking-widest text-[#bdf4ff] uppercase font-['Space_Grotesk']">ETHÉREO</span>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="minimalist professional user profile avatar with clean tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWQlbrQjt8x7fbRsPkBVvH4wtY8NE5DgnmrThV5mIvdCYAW_HcV9Xpf7Z7uMbUpiF_MBTLORbYqsyzTvh0OxD9uuWbYIERhvAj7vY4Fz0qXNF39gwedII6MFeXrbr18lYsW6Nk3VgT6eTRgrqXw-Flh7MBzlm1YMaLwXno8BpgndTOAe9Vp-cthrtMef_bt7iYosumJPgnNjBSP9D22c0Glt8YrNsqqCpG2cfpAPjZUPNfJDRVicAdPvutfcz6W6T-hCkia7_-rHk"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 pb-24 aura-mesh min-h-screen overflow-x-hidden">
+<!-- Hero Section -->
+<section class="px-6 pt-12 pb-16 flex flex-col items-center text-center">
+<!-- Mobile Optimized Workflow State Visual -->
+<div class="relative w-full max-w-[280px] h-64 mb-12 flex items-center justify-center">
+<div class="absolute inset-0 bg-secondary-container/5 blur-3xl rounded-full"></div>
+<!-- Node 1 -->
+<div class="z-10 bg-surface-container border border-outline-variant/20 p-4 rounded-xl shadow-2xl flex flex-col items-start gap-2 -translate-x-4 -translate-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">bolt</span>
+<span class="text-[10px] font-label tracking-widest uppercase text-outline">TRIGGER</span>
+</div>
+<span class="text-sm font-semibold">API Webhook</span>
+</div>
+<!-- Connector Path -->
+<svg class="absolute w-32 h-32 text-primary-container/40" viewbox="0 0 100 100">
+<path d="M 20 20 Q 50 50 80 80" fill="transparent" stroke="currentColor" stroke-dasharray="4 2" stroke-width="2"></path>
+</svg>
+<!-- Node 2 (Processing) -->
+<div class="z-20 bg-primary-container border border-secondary-fixed/30 p-4 rounded-xl shadow-[0_0_20px_rgba(189,244,255,0.2)] flex flex-col items-start gap-2 translate-x-8 translate-y-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-sm animate-pulse">psychology</span>
+<span class="text-[10px] font-label tracking-widest uppercase text-secondary-fixed/70">PROCESSING</span>
+</div>
+<span class="text-sm font-semibold text-secondary-fixed">LLM Analyzer</span>
+</div>
+</div>
+<h1 class="text-4xl font-headline font-bold leading-tight tracking-tight mb-4 text-on-surface">
+                AI 워크플로우의 정점,<br/>
+<span class="text-secondary">SIGNAL GRID</span>
+</h1>
+<p class="text-lg text-on-surface-variant font-light mb-10 max-w-[320px] leading-relaxed">
+                복잡한 비즈니스 로직을 시각화하고 자동화하세요.
+            </p>
+<button class="w-full max-w-[280px] bg-primary text-on-primary font-bold py-4 rounded-lg shadow-lg active:scale-95 transition-transform">
+                지금 시작하기
+            </button>
+</section>
+<!-- KPI Cards Section (Bento Style) -->
+<section class="px-6 py-12 grid grid-cols-2 gap-4">
+<div class="col-span-2 bg-surface-container-low p-6 rounded-lg border border-outline-variant/10">
+<span class="text-outline text-xs font-label uppercase tracking-widest mb-1 block">Reliability</span>
+<h3 class="text-3xl font-headline font-bold text-secondary">99.9%</h3>
+<p class="text-on-surface-variant text-sm mt-2">가동률 보장</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-lg border border-outline-variant/10">
+<span class="text-outline text-xs font-label uppercase tracking-widest mb-1 block">Latency</span>
+<h3 class="text-2xl font-headline font-bold text-primary">1.2s</h3>
+<p class="text-on-surface-variant text-xs mt-1">처리 속도</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-lg border border-outline-variant/10">
+<span class="text-outline text-xs font-label uppercase tracking-widest mb-1 block">Throughput</span>
+<h3 class="text-2xl font-headline font-bold text-primary">8.4M+</h3>
+<p class="text-on-surface-variant text-xs mt-1">일간 시그널</p>
+</div>
+</section>
+<!-- Key Features List -->
+<section class="px-6 py-16">
+<h2 class="text-2xl font-headline font-bold mb-10 border-l-4 border-secondary pl-4">KEY FEATURES</h2>
+<div class="space-y-8">
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 shrink-0 bg-surface-bright flex items-center justify-center rounded-full ring-2 ring-secondary-fixed/20">
+<span class="material-symbols-outlined text-secondary">account_tree</span>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-2">시각적 데이터 모델링</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">복잡한 데이터 구조를 드래그 앤 드롭으로 설계하고 실시간으로 시각화합니다.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 shrink-0 bg-surface-bright flex items-center justify-center rounded-full ring-2 ring-secondary-fixed/20">
+<span class="material-symbols-outlined text-secondary">api</span>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-2">API 트리거</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">어떤 외부 시스템과도 즉각적으로 연동되는 강력한 웹훅 및 API 커넥터를 제공합니다.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 shrink-0 bg-surface-bright flex items-center justify-center rounded-full ring-2 ring-secondary-fixed/20">
+<span class="material-symbols-outlined text-secondary">model_training</span>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-2">LLM Integration</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">최신 언어 모델을 워크플로우의 핵심 노드로 사용하여 지능형 결정을 자동화합니다.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Preview Card -->
+<section class="px-6 py-16">
+<div class="bg-surface-container-high rounded-xl p-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<span class="bg-secondary/10 text-secondary text-[10px] px-2 py-1 rounded font-bold uppercase tracking-widest border border-secondary/20">Popular</span>
+</div>
+<h3 class="text-xl font-headline font-bold mb-2">Professional Plan</h3>
+<div class="flex items-baseline gap-2 mb-6">
+<span class="text-4xl font-headline font-bold text-on-surface">$49</span>
+<span class="text-outline text-sm">/mo</span>
+</div>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-secondary text-base">check_circle</span>
+<span>무제한 워크플로우 설계</span>
+</li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-secondary text-base">check_circle</span>
+<span>고급 AI 모델 라이브러리</span>
+</li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-secondary text-base">check_circle</span>
+<span>실시간 대시보드 및 분석</span>
+</li>
+</ul>
+<button class="w-full py-4 rounded-lg border border-outline text-on-surface font-semibold hover:bg-surface-container-highest transition-colors">
+                    자세히 알아보기
+                </button>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="px-6 py-20 text-center relative">
+<div class="absolute inset-0 aura-mesh opacity-50 -z-10 rotate-180"></div>
+<h2 class="text-3xl font-headline font-bold mb-6">지금 미래의 워크플로우를<br/>구축하세요.</h2>
+<p class="text-on-surface-variant mb-10">무료 체험 기간 동안 모든 프리미엄 기능을 경험해보세요.</p>
+<div class="flex flex-col gap-4">
+<button class="bg-primary text-on-primary py-5 rounded-lg font-bold text-lg shadow-[0_0_30px_rgba(183,196,255,0.3)] active:scale-95 transition-transform">
+                    무료로 시작하기
+                </button>
+<button class="text-outline font-semibold py-4">
+                    영업팀과 상담하기
+                </button>
+</div>
+</section>
+</main>
+<!-- NavigationDrawer (Mobile Focus) -->
+<div class="fixed inset-y-0 left-0 z-[60] flex flex-col h-full w-64 rounded-r-lg bg-[#1a1c20] shadow-2xl shadow-black -translate-x-full transition-transform duration-300 group">
+<div class="px-6 py-8 flex items-center justify-between">
+<span class="text-[#bdf4ff] font-black font-['Space_Grotesk'] uppercase tracking-tighter">COMMAND_CENTER</span>
+</div>
+<nav class="flex flex-col mt-4 font-['Space_Grotesk'] uppercase tracking-tighter">
+<a class="bg-[#001451] text-[#bdf4ff] border-l-4 border-[#bdf4ff] px-6 py-4 flex items-center gap-4 transition-colors" href="#">
+<span class="material-symbols-outlined">bolt</span>
+<span>Engine</span>
+</a>
+<a class="text-[#8e9099] px-6 py-4 flex items-center gap-4 hover:bg-[#282a2e] transition-colors" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+<span>Workflows</span>
+</a>
+<a class="text-[#8e9099] px-6 py-4 flex items-center gap-4 hover:bg-[#282a2e] transition-colors" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span>Analytics</span>
+</a>
+<a class="text-[#8e9099] px-6 py-4 flex items-center gap-4 hover:bg-[#282a2e] transition-colors" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span>Documentation</span>
+</a>
+<a class="text-[#8e9099] px-6 py-4 flex items-center gap-4 hover:bg-[#282a2e] transition-colors mt-auto mb-10" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+<!-- Footer -->
+<footer class="bg-[#0c0e12] flex flex-col items-center gap-4 px-8 w-full py-8 mt-auto font-['Inter'] text-[10px] uppercase tracking-[0.2em]">
+<div class="bg-[#1e2024] h-1 w-full mb-8"></div>
+<div class="flex gap-6 text-[#44474e]">
+<a class="hover:text-white transition-opacity" href="#">Security</a>
+<a class="hover:text-white transition-opacity" href="#">Terms</a>
+<a class="hover:text-white transition-opacity" href="#">Contact</a>
+</div>
+<p class="text-[#44474e] mt-4">© 2024 ETHÉREO AI. VER_2.0.4</p>
+</footer>
+<!-- Mobile Navigation Bar (Always visible on mobile bottom) -->
+<nav class="md:hidden fixed bottom-0 w-full bg-surface-container-lowest/90 backdrop-blur-lg flex justify-around items-center py-4 border-t border-outline-variant/10 z-50">
+<div class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[9px] font-bold">HOME</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-outline">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="text-[9px] font-bold">FLOWS</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-outline">
+<span class="material-symbols-outlined">insights</span>
+<span class="text-[9px] font-bold">DATA</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-outline">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[9px] font-bold">USER</span>
+</div>
+</nav>
+</body></html>

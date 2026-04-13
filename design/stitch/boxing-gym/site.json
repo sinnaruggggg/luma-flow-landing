@@ -1,38 +1,43 @@
 {
   "siteId": "boxing-gym",
   "brand": "UPPERCUT CLUB",
-  "industry": "복싱짐 멤버십",
-  "summary": "체험 예약 · 코치 매칭 · 수업 시간표",
+  "industry": "Boxing Gym",
+  "summary": "A high-energy boxing gym site where trial booking sits ahead of program browsing.",
   "blueprint": {
-    "designFamily": "다크 에너지 예약형",
-    "heroMode": "강한 인물 사진과 예약 위젯이 동시에 보이는 체육관 첫 화면",
-    "motion": "시간표와 코치 카드가 글로우와 함께 슬라이드 업",
-    "background": "어두운 링 공간, 얇은 빛줄기, 포인터 반응형 오라"
+    "family": "Fight club booking",
+    "heroMode": "Massive gym photography with floating booking card.",
+    "background": "Dark ring photography with neon haze and subtle scan-line mesh.",
+    "motion": "Booking card rises over the photo while coach chips land later.",
+    "keywords": [
+      "boxing booking",
+      "immersive sports hero",
+      "floating reservation card"
+    ]
   },
   "routes": [
     {
       "slug": "home",
-      "label": "홈",
+      "label": "Home",
       "kind": "home"
     },
     {
       "slug": "classes",
-      "label": "수업",
+      "label": "Classes",
       "kind": "browse"
     },
     {
       "slug": "coaches",
-      "label": "코치",
+      "label": "Coaches",
       "kind": "detail"
     },
     {
       "slug": "join",
-      "label": "등록",
+      "label": "Join",
       "kind": "reserve"
     },
     {
       "slug": "guide",
-      "label": "안내",
+      "label": "Guide",
       "kind": "guide"
     }
   ]

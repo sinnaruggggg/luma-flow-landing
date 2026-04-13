@@ -1,38 +1,43 @@
 {
   "siteId": "festival-page",
   "brand": "NOISE WAVE",
-  "industry": "페스티벌 티켓 페이지",
-  "summary": "라인업 · 타임테이블 · 티켓",
+  "industry": "Festival Event",
+  "summary": "Festival site built around lineup discovery, timetable clarity, and ticket purchase.",
   "blueprint": {
-    "designFamily": "포스터형 이벤트 사이트",
-    "heroMode": "라인업 포스터와 티켓 CTA가 즉시 보이는 몰입형 히어로",
-    "motion": "라인업, 일정, 티켓 카드가 무대 레이어처럼 차례로 등장",
-    "background": "네온 포스터 비주얼과 스크롤 반응형 광선"
+    "family": "Poster event system",
+    "heroMode": "Poster-led hero with lineup blocks, date stamp, and immediate ticket CTA.",
+    "background": "Large event imagery, spotlight gradients, and neon schedule cues.",
+    "motion": "Lineup cards and timing rails stack and rise like layered festival posters.",
+    "keywords": [
+      "festival poster",
+      "lineup discovery",
+      "ticket matrix"
+    ]
   },
   "routes": [
     {
       "slug": "home",
-      "label": "홈",
+      "label": "Home",
       "kind": "home"
     },
     {
       "slug": "lineup",
-      "label": "라인업",
+      "label": "Lineup",
       "kind": "lineup"
     },
     {
       "slug": "schedule",
-      "label": "시간표",
+      "label": "Schedule",
       "kind": "schedule"
     },
     {
       "slug": "tickets",
-      "label": "티켓",
+      "label": "Tickets",
       "kind": "tickets"
     },
     {
       "slug": "guide",
-      "label": "가이드",
+      "label": "Guide",
       "kind": "guide"
     }
   ]

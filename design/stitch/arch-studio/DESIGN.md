@@ -1,45 +1,46 @@
 # Design System: PLAIN GRID
 **Site ID:** arch-studio
 
-## 1. Visual Theme & Atmosphere
-- 핵심 톤: 에디토리얼 포트폴리오
-- 첫 화면 문법: 대형 공간 사진과 편집형 타이포가 중심인 홈
-- 배경 규칙: 풀스크린 현장 사진과 느린 패럴랙스
-- 인터랙션 톤: 프로젝트 블록이 잡지 레이아웃처럼 교차 등장
-- 시각 성격: 필름 그레인, 절제된 럭셔리, 사진 중심 에디토리얼 화면
+## 1. Identity
+- Industry: Architecture Studio
+- Summary: Editorial architecture portfolio that should feel like a real studio commission site.
+- Home grammar: Editorial canvas
+- Mobile rule: Mobile should read like a visual brief deck with project cards and inquiry entry.
 
-## 2. Color Palette & Roles
-- Primary Action (#2e241c): 핵심 CTA와 활성 상태에 사용한다.
-- Accent Soft (#d9ccb8): 보조 태그, 하이라이트 패널, 그래프 포인트에 사용한다.
-- Surface (#fcf9f5): 카드, 패널, 정보 블록의 기본 바탕에 사용한다.
-- Background (#efe9df): 페이지 전체 무드와 깊이를 결정하는 바탕에 사용한다.
-- Text (#221d18) / Muted (#65594b): 제목과 짧은 설명의 위계를 분리한다.
+## 2. Visual Direction
+- Family: Editorial studio portfolio
+- First screen: Image-led editorial spread with type anchored beside the photo.
+- Background: Large architecture photography with grain and paper warmth.
+- Motion: Blocks rise as layered editorial sheets and overlap on scroll.
+- Atmosphere: Editorial luxury with soft grain and cinematic image depth.
 
-## 3. Typography Rules
-- 제목은 고급스럽고 느리게, 설명은 아주 짧게 쓴다.
-- 본문은 길게 쓰지 않고, 화면이 기능을 설명하게 한다.
-- 영어는 브랜드명, 짧은 라벨, 스타일 포인트에만 제한적으로 사용한다.
+## 3. Palette
+- Background: #efe9df
+- Surface: #fcf9f5
+- Panel: rgba(252, 249, 245, 0.88)
+- Text: #221d18
+- Muted: #65594b
+- Accent: #2e241c
+- Accent soft: #d9ccb8
 
-## 4. Component Stylings
-- 레이어는 부드럽게 떠오르게 하고 유리 패널은 최소화한다.
-- 공통화는 버튼, 배지, 입력, 기본 카드 정도까지만 허용한다.
-- 리스트와 표는 실제 운영 사이트처럼 바로 행동으로 이어지게 구성한다.
+## 4. Typography
+- Use elegant type with quiet supporting copy.
+- Keep copy short and functional.
+- Use Korean as the default content language.
 
-## 5. Home Screen Rules
-- 다른 사이트와 같은 첫 화면 구문으로 보이면 안 된다.
-- 데스크톱은 큰 비주얼 또는 강한 정보 구조가 먼저 보이게 만든다.
-- 모바일은 축소판이 아니라 전용 모바일 레이아웃으로 다시 설계한다.
-- 이미지형 사이트는 큰 대표컷과 떠오르는 레이어를 사용한다.
-- 비이미지형 사이트는 포인터/스크롤 반응형 메시 또는 오로라 배경을 사용한다.
+## 5. Components
+- Panels should appear as layered sheets over imagery.
+- Shared primitives are limited to buttons, badges, inputs, and simple cards.
+- The first screen grammar must be unique to this site.
 
 ## 6. Prohibited Patterns
-- 공통 히어로 템플릿 금지
-- 공통 섹션 조립기 금지
-- 같은 이미지 박스 + 설명 박스 + CTA 반복 금지
+- No shared hero template.
+- No shared section assembler.
+- No repetitive image box + text box + CTA blocks.
 
 ## 7. Route Targets
-- 홈 (`home`): 실제 운영 중인 서비스 홈처럼 보이게 만들고, 상단 메뉴는 고정한다. 첫 화면 문법이 이 사이트만의 구조로 보이게 만들고, 공통 히어로 템플릿이나 반복 섹션 조립기처럼 보이면 안 된다.
-- 프로젝트 (`works`): 프로젝트 목록 페이지다. 썸네일, 카테고리, 사례 분류와 진입 흐름이 중요하다.
-- 서비스 (`services`): 제공 서비스 페이지다. 패키지, 범위, 산출물, 프로세스를 한눈에 이해하게 만든다.
-- 브리프 (`brief`): 브리프 제출 페이지다. 입력 폼, 첨부, 일정 선택, 예상 범위를 단순하고 고급스럽게 보여준다.
-- 문의 (`contact`): 문의/데모 페이지다. 짧은 폼, 핵심 CTA, 응답 시간, 담당 방식이 보이게 만든다.
+- Home (home): This is the operating homepage. Build a complete landing surface, not a cover page.
+- Works (works): Treat the page as a project index with filters, featured work, and quick case entry.
+- Services (services): Frame service scope, deliverables, and process with confidence and specificity.
+- Brief (brief): Design a compact but premium brief intake flow with structured fields and expectations.
+- Contact (contact): Focus on inquiry, demo request, response expectations, and business trust signals.

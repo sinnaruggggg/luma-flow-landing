@@ -1,21 +1,11 @@
 # ORBIT E
 
-- 사이트 ID: `ev-mobility`
-- 업종: EV 모빌리티 브랜드
-- 요약: 모델 비교 · 시승 예약 · 충전
-- 디자인 계열: 테크 비교형 모빌리티
-- 히어로: 차량 히어로 컷과 모델 비교 패널이 동시에 보이는 홈
-- 배경: 대형 차량 이미지와 금속성 쉬머
-- 모션: 충전, 주행거리, 시승 카드가 정교하게 스택됨
-
-## 금지 패턴
-- 공통 히어로 템플릿 금지
-- 공통 섹션 조립기 금지
-- 같은 이미지 박스 + 설명 박스 + CTA 반복 금지
-
-## 페이지 구조
-- 홈 (`home`): 실제 운영 중인 서비스 홈처럼 보이게 만들고, 상단 메뉴는 고정한다. 첫 화면 문법이 이 사이트만의 구조로 보이게 만들고, 공통 히어로 템플릿이나 반복 섹션 조립기처럼 보이면 안 된다.
-- 모델 (`models`): 탐색/목록 페이지다. 필터, 카테고리, 리스트, 빠른 진입 구조를 직관적으로 보여준다.
-- 충전 (`charge`): 상세 설명 페이지다. 비교, 디테일, 기능, 컬러, 노트, 배치처럼 깊이 있는 정보를 중심으로 구성한다.
-- 시승 (`drive`): 예약/신청 페이지다. 일정, 슬롯, 상담 또는 시승/예약 폼이 핵심이다.
-- 지원 (`support`): 안내 페이지다. 방문 전 알아야 할 내용, 운영 정보, 규정, 준비물, FAQ를 정리한다.
+- Site ID: ev-mobility
+- Industry: EV Mobility
+- Summary: An EV mobility site centered on model comparison, charge depth, and test-drive booking.
+- Home grammar: Model compare dashboard
+- Design family: Future mobility compare
+- First screen: Comparison-led first screen with specs, range badges, and test-drive card visible at once.
+- Background: Hero vehicle imagery mixed with metallic reflections and responsive mesh depth.
+- Motion: Spec chips and compare rows glide in with measured technical precision.
+- Mobile rule: Surface compare rows, charge logic, and test-drive CTA without burying them under brand copy.

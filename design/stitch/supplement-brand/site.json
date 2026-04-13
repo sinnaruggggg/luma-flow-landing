@@ -1,38 +1,43 @@
 {
   "siteId": "supplement-brand",
   "brand": "PUNCH FUEL",
-  "industry": "퍼포먼스 보충제 브랜드",
-  "summary": "루틴 빌더 · 성분 비교 · 구독",
+  "industry": "Supplement Commerce",
+  "summary": "DTC supplement brand centered on routine composition and subscription bundles.",
   "blueprint": {
-    "designFamily": "DTC 퍼포먼스 브랜드",
-    "heroMode": "제품과 루틴 구성이 동시에 보이는 기능형 히어로",
-    "motion": "성분 카드와 구독 박스가 레이어처럼 밀려 올라옴",
-    "background": "깨끗한 제품 배경과 미세한 빛 번짐"
+    "family": "Performance DTC brand",
+    "heroMode": "Routine builder on one side, product macro on the other.",
+    "background": "Sharp product macro with sporty gradient blocks.",
+    "motion": "Routine chips and dosage cards clip onto the canvas in layers.",
+    "keywords": [
+      "routine commerce",
+      "stack configurator",
+      "macro product shot"
+    ]
   },
   "routes": [
     {
       "slug": "home",
-      "label": "홈",
+      "label": "Home",
       "kind": "home"
     },
     {
       "slug": "routine",
-      "label": "루틴",
+      "label": "Routine",
       "kind": "browse"
     },
     {
       "slug": "compare",
-      "label": "비교",
+      "label": "Compare",
       "kind": "detail"
     },
     {
       "slug": "subscribe",
-      "label": "구독",
+      "label": "Subscribe",
       "kind": "checkout"
     },
     {
       "slug": "brand",
-      "label": "브랜드",
+      "label": "Brand",
       "kind": "brand"
     }
   ]

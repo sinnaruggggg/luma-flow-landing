@@ -1,21 +1,11 @@
 # MOSS & AMBER
 
-- 사이트 ID: `perfume-house`
-- 업종: 니치 향수 브랜드
-- 요약: 향 노트 · 디스커버리 세트 · 구매
-- 디자인 계열: 무드형 럭셔리 브랜드
-- 히어로: 향수 병 디테일과 무드 이미지가 먼저 보이는 홈
-- 배경: 소프트 포커스 이미지와 안개 같은 오라
-- 모션: 노트 카드와 세트 카드가 느리게 스르륵 등장
-
-## 금지 패턴
-- 공통 히어로 템플릿 금지
-- 공통 섹션 조립기 금지
-- 같은 이미지 박스 + 설명 박스 + CTA 반복 금지
-
-## 페이지 구조
-- 홈 (`home`): 실제 운영 중인 서비스 홈처럼 보이게 만들고, 상단 메뉴는 고정한다. 첫 화면 문법이 이 사이트만의 구조로 보이게 만들고, 공통 히어로 템플릿이나 반복 섹션 조립기처럼 보이면 안 된다.
-- 세트 (`sets`): 탐색/목록 페이지다. 필터, 카테고리, 리스트, 빠른 진입 구조를 직관적으로 보여준다.
-- 노트 (`notes`): 상세 설명 페이지다. 비교, 디테일, 기능, 컬러, 노트, 배치처럼 깊이 있는 정보를 중심으로 구성한다.
-- 선물 (`gift`): 전환 페이지다. 구매, 장바구니, 세트 선택, 상담 신청, 선물 구성처럼 바로 결정을 내리게 만든다.
-- 브랜드 (`brand`): 브랜드 신뢰 형성 페이지다. 브랜드 스토리, 가치, 제작 배경, 지원 정보를 짧고 세련되게 보여준다.
+- Site ID: perfume-house
+- Industry: Perfume House
+- Summary: A perfume site built around mood imagery, note structure, and curated set purchase.
+- Home grammar: Scent mood film
+- Design family: Mood-led perfume house
+- First screen: Editorial mood canvas with layered note cards and direct set entry.
+- Background: Cinematic fragrance visuals with soft blur, depth, and quiet layered reveals.
+- Motion: Note cards and scent descriptors drift in layered motion over the hero visual.
+- Mobile rule: Turn notes, set price, and gift CTA into touch-ready cards instead of shrinking a mood canvas.

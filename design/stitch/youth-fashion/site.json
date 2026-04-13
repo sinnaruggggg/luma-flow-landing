@@ -1,38 +1,43 @@
 {
   "siteId": "youth-fashion",
   "brand": "BOP BOP",
-  "industry": "영패션 브랜드",
-  "summary": "룩 탐색 · 가상 착용 · 장바구니",
+  "industry": "Youth Fashion",
+  "summary": "A youth fashion site built as a lookbook rail with strong image sequencing and fast shop entry.",
   "blueprint": {
-    "designFamily": "룩북 중심 패션 커머스",
-    "heroMode": "대형 룩북 사진과 쇼핑 진입 CTA가 동시에 보이는 홈",
-    "motion": "룩 카드와 상품 카드가 리듬 있게 겹쳐 등장",
-    "background": "캠페인 이미지와 강한 타이포 오버레이"
+    "family": "Lookbook commerce",
+    "heroMode": "Lookbook-led hero where images and shop CTAs live in the same visual rail.",
+    "background": "Campaign imagery, bright typography, and playful layers rather than minimalist white space.",
+    "motion": "Looks and tags glide like a fast-moving editorial rail.",
+    "keywords": [
+      "lookbook fashion",
+      "type-led commerce",
+      "image rail"
+    ]
   },
   "routes": [
     {
       "slug": "home",
-      "label": "홈",
+      "label": "Home",
       "kind": "home"
     },
     {
       "slug": "looks",
-      "label": "룩북",
+      "label": "Looks",
       "kind": "browse"
     },
     {
       "slug": "shop",
-      "label": "쇼핑",
+      "label": "Shop",
       "kind": "detail"
     },
     {
       "slug": "cart",
-      "label": "장바구니",
+      "label": "Cart",
       "kind": "checkout"
     },
     {
       "slug": "brand",
-      "label": "브랜드",
+      "label": "Brand",
       "kind": "brand"
     }
   ]

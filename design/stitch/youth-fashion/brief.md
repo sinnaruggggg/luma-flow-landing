@@ -1,21 +1,11 @@
 # BOP BOP
 
-- 사이트 ID: `youth-fashion`
-- 업종: 영패션 브랜드
-- 요약: 룩 탐색 · 가상 착용 · 장바구니
-- 디자인 계열: 룩북 중심 패션 커머스
-- 히어로: 대형 룩북 사진과 쇼핑 진입 CTA가 동시에 보이는 홈
-- 배경: 캠페인 이미지와 강한 타이포 오버레이
-- 모션: 룩 카드와 상품 카드가 리듬 있게 겹쳐 등장
-
-## 금지 패턴
-- 공통 히어로 템플릿 금지
-- 공통 섹션 조립기 금지
-- 같은 이미지 박스 + 설명 박스 + CTA 반복 금지
-
-## 페이지 구조
-- 홈 (`home`): 실제 운영 중인 서비스 홈처럼 보이게 만들고, 상단 메뉴는 고정한다. 첫 화면 문법이 이 사이트만의 구조로 보이게 만들고, 공통 히어로 템플릿이나 반복 섹션 조립기처럼 보이면 안 된다.
-- 룩북 (`looks`): 탐색/목록 페이지다. 필터, 카테고리, 리스트, 빠른 진입 구조를 직관적으로 보여준다.
-- 쇼핑 (`shop`): 상세 설명 페이지다. 비교, 디테일, 기능, 컬러, 노트, 배치처럼 깊이 있는 정보를 중심으로 구성한다.
-- 장바구니 (`cart`): 전환 페이지다. 구매, 장바구니, 세트 선택, 상담 신청, 선물 구성처럼 바로 결정을 내리게 만든다.
-- 브랜드 (`brand`): 브랜드 신뢰 형성 페이지다. 브랜드 스토리, 가치, 제작 배경, 지원 정보를 짧고 세련되게 보여준다.
+- Site ID: youth-fashion
+- Industry: Youth Fashion
+- Summary: A youth fashion site built as a lookbook rail with strong image sequencing and fast shop entry.
+- Home grammar: Lookbook rail
+- Design family: Lookbook commerce
+- First screen: Lookbook-led hero where images and shop CTAs live in the same visual rail.
+- Background: Campaign imagery, bright typography, and playful layers rather than minimalist white space.
+- Motion: Looks and tags glide like a fast-moving editorial rail.
+- Mobile rule: Transform the lookbook into swipeable outfit stacks with a direct shop CTA on each block.

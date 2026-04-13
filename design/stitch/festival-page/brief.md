@@ -1,21 +1,11 @@
 # NOISE WAVE
 
-- 사이트 ID: `festival-page`
-- 업종: 페스티벌 티켓 페이지
-- 요약: 라인업 · 타임테이블 · 티켓
-- 디자인 계열: 포스터형 이벤트 사이트
-- 히어로: 라인업 포스터와 티켓 CTA가 즉시 보이는 몰입형 히어로
-- 배경: 네온 포스터 비주얼과 스크롤 반응형 광선
-- 모션: 라인업, 일정, 티켓 카드가 무대 레이어처럼 차례로 등장
-
-## 금지 패턴
-- 공통 히어로 템플릿 금지
-- 공통 섹션 조립기 금지
-- 같은 이미지 박스 + 설명 박스 + CTA 반복 금지
-
-## 페이지 구조
-- 홈 (`home`): 실제 운영 중인 서비스 홈처럼 보이게 만들고, 상단 메뉴는 고정한다. 첫 화면 문법이 이 사이트만의 구조로 보이게 만들고, 공통 히어로 템플릿이나 반복 섹션 조립기처럼 보이면 안 된다.
-- 라인업 (`lineup`): 출연진/라인업 페이지다. 아티스트 카드, 날짜, 장르, 대표 비주얼이 핵심이다.
-- 시간표 (`schedule`): 타임테이블 페이지다. 시간표, 스테이지, 동선, 구역 정보를 명확히 정리한다.
-- 티켓 (`tickets`): 티켓 구매 페이지다. 좌석/티켓 종류, 가격, 혜택, 구매 버튼이 핵심이다.
-- 가이드 (`guide`): 안내 페이지다. 방문 전 알아야 할 내용, 운영 정보, 규정, 준비물, FAQ를 정리한다.
+- Site ID: festival-page
+- Industry: Festival Event
+- Summary: Festival site built around lineup discovery, timetable clarity, and ticket purchase.
+- Home grammar: Festival poster stack
+- Design family: Poster event system
+- First screen: Poster-led hero with lineup blocks, date stamp, and immediate ticket CTA.
+- Background: Large event imagery, spotlight gradients, and neon schedule cues.
+- Motion: Lineup cards and timing rails stack and rise like layered festival posters.
+- Mobile rule: Open directly into lineup highlights, date, and ticket choice instead of long intro copy.

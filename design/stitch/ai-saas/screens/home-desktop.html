@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SIGNAL GRID | AI 워크플로우의 정점</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#333539",
+                        "on-secondary-container": "#00616d",
+                        "primary-fixed": "#dde1ff",
+                        "outline-variant": "#44474e",
+                        "surface-tint": "#b7c4ff",
+                        "background": "#111318",
+                        "tertiary-container": "#23005b",
+                        "secondary-container": "#00e3fd",
+                        "on-primary": "#002682",
+                        "primary": "#b7c4ff",
+                        "on-error": "#690005",
+                        "tertiary-fixed-dim": "#d1bcff",
+                        "on-secondary-fixed": "#001f24",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#c4c6cf",
+                        "inverse-surface": "#e2e2e8",
+                        "surface-container-lowest": "#0c0e12",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-tertiary-fixed-variant": "#5700c9",
+                        "on-background": "#e2e2e8",
+                        "secondary": "#bdf4ff",
+                        "tertiary": "#d1bcff",
+                        "tertiary-fixed": "#e9ddff",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#23005b",
+                        "surface-container-high": "#282a2e",
+                        "on-secondary": "#00363d",
+                        "primary-container": "#001451",
+                        "surface": "#111318",
+                        "surface-container-highest": "#333539",
+                        "surface-container-low": "#1a1c20",
+                        "on-primary-fixed": "#001452",
+                        "inverse-primary": "#004ced",
+                        "on-tertiary-container": "#9565ff",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "secondary-fixed-dim": "#00daf3",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "surface-dim": "#111318",
+                        "surface-bright": "#37393e",
+                        "surface-container": "#1e2024",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-container": "#5479ff",
+                        "on-surface": "#e2e2e8",
+                        "on-tertiary": "#3c0090",
+                        "inverse-on-surface": "#2f3035",
+                        "secondary-fixed": "#9cf0ff",
+                        "outline": "#8e9099"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #111318;
+            color: #e2e2e8;
+            font-family: 'Inter', sans-serif;
+        }
+        .mesh-gradient {
+            background: radial-gradient(circle at 50% 0%, #001451 0%, #111318 70%);
+        }
+        .technical-glow {
+            box-shadow: 0 4px 40px 0 rgba(0, 227, 253, 0.05);
+        }
+        .glass-panel {
+            background: rgba(12, 14, 18, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="mesh-gradient min-h-screen">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#111318]/80 backdrop-blur-xl border-b border-[#44474e]/15 shadow-[0_4px_40px_0_rgba(0,227,253,0.05)] flex justify-between items-center px-8 h-20 w-full max-w-none">
+<div class="text-2xl font-bold tracking-tighter text-[#b7c4ff] font-headline">SIGNAL GRID</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-space-grotesk tracking-tight text-[#bdf4ff] border-b-2 border-[#bdf4ff] pb-1" href="#">Home</a>
+<a class="font-space-grotesk tracking-tight text-[#c4c6cf] hover:text-[#e2e2e8] transition-colors" href="#">Flows</a>
+<a class="font-space-grotesk tracking-tight text-[#c4c6cf] hover:text-[#e2e2e8] transition-colors" href="#">Cases</a>
+<a class="font-space-grotesk tracking-tight text-[#c4c6cf] hover:text-[#e2e2e8] transition-colors" href="#">Pricing</a>
+<a class="font-space-grotesk tracking-tight text-[#c4c6cf] hover:text-[#e2e2e8] transition-colors" href="#">Contact</a>
+</div>
+<div class="flex items-center space-x-6">
+<div class="hidden lg:flex space-x-4">
+<button class="p-2 text-[#c4c6cf] hover:bg-[#1e2024] rounded-lg transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="p-2 text-[#c4c6cf] hover:bg-[#1e2024] rounded-lg transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+<button class="bg-[#b7c4ff] text-[#002682] px-6 py-2.5 rounded-lg font-bold hover:opacity-90 active:scale-95 transition-all">
+                Sign In
+            </button>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 lg:px-12 max-w-7xl mx-auto overflow-hidden">
+<!-- Hero Section -->
+<section class="relative grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[716px]">
+<div class="z-10">
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-primary-container text-on-primary-container text-xs font-medium mb-6">
+<span class="w-2 h-2 rounded-full bg-secondary mr-2"></span>
+                    V0.9-Alpha Release
+                </div>
+<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter text-on-background mb-8 leading-tight">
+                    AI 워크플로우의 <span class="text-secondary">정점</span>,<br/>SIGNAL GRID
+                </h1>
+<p class="text-on-surface-variant text-xl md:text-2xl font-body leading-relaxed max-w-xl mb-12">
+                    복잡한 비즈니스 로직을 시각화하고 자동화하세요. 정교한 시그널 그리드로 무한한 가능성을 연결합니다.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-lg text-lg font-bold shadow-lg hover:shadow-primary/20 transition-all active:scale-95">
+                        지금 시작하기
+                    </button>
+<button class="border border-outline-variant text-on-surface px-10 py-4 rounded-lg text-lg font-bold hover:bg-surface-container transition-all active:scale-95">
+                        데모 보기
+                    </button>
+</div>
+</div>
+<!-- Workflow Visualizer -->
+<div class="relative h-[500px] bg-surface-container-low rounded-xl border border-outline-variant/15 overflow-hidden shadow-2xl">
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#b7c4ff 1px, transparent 1px); background-size: 32px 32px;"></div>
+<!-- Floating Nodes -->
+<div class="absolute top-1/4 left-1/4 glass-panel p-4 border border-outline-variant/30 rounded-xl technical-glow">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="hub">hub</span>
+</div>
+<div>
+<div class="text-xs text-on-surface-variant">Trigger</div>
+<div class="text-sm font-bold">Webook Signal</div>
+</div>
+</div>
+</div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 glass-panel p-6 border border-secondary/30 rounded-xl technical-glow scale-110">
+<div class="flex flex-col items-center">
+<div class="w-14 h-14 rounded-full bg-surface-bright border-2 border-secondary-fixed flex items-center justify-center mb-3 shadow-[0_0_15px_rgba(156,240,255,0.4)]">
+<span class="material-symbols-outlined text-secondary" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="text-center">
+<div class="text-xs text-secondary font-bold tracking-widest uppercase mb-1">AI Node</div>
+<div class="text-lg font-bold">LLM Processor</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-1/4 right-1/4 glass-panel p-4 border border-outline-variant/30 rounded-xl technical-glow">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="data_object">data_object</span>
+</div>
+<div>
+<div class="text-xs text-on-surface-variant">Output</div>
+<div class="text-sm font-bold">JSON Data</div>
+</div>
+</div>
+</div>
+<!-- SVG Connection Lines (Visual Decor) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none opacity-40" viewbox="0 0 500 500">
+<path d="M125 125 Q 250 125 250 250" fill="none" stroke="#b7c4ff" stroke-dasharray="8 4" stroke-width="2"></path>
+<path d="M250 250 Q 250 375 375 375" fill="none" stroke="#9cf0ff" stroke-dasharray="8 4" stroke-width="2"></path>
+</svg>
+</div>
+</section>
+<!-- KPI Section -->
+<section class="mt-24 py-12 border-y border-outline-variant/15 overflow-x-auto whitespace-nowrap no-scrollbar">
+<div class="flex justify-between min-w-[800px] gap-8">
+<div class="flex items-center space-x-4 bg-surface-container p-6 rounded-xl border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="bolt">bolt</span>
+<div>
+<div class="text-on-surface-variant text-sm font-medium">실시간 가동률</div>
+<div class="text-3xl font-headline font-bold text-on-surface">99.9%</div>
+</div>
+</div>
+<div class="flex items-center space-x-4 bg-surface-container p-6 rounded-xl border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="speed">speed</span>
+<div>
+<div class="text-on-surface-variant text-sm font-medium">평균 처리 속도</div>
+<div class="text-3xl font-headline font-bold text-on-surface">1.2s</div>
+</div>
+</div>
+<div class="flex items-center space-x-4 bg-surface-container p-6 rounded-xl border border-outline-variant/10">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="shield_check">shield</span>
+<div>
+<div class="text-on-surface-variant text-sm font-medium">일간 처리 시그널</div>
+<div class="text-3xl font-headline font-bold text-on-surface">8.4M+</div>
+</div>
+</div>
+<div class="flex items-center space-x-4 bg-surface-container p-6 rounded-xl border border-outline-variant/10">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl" data-icon="group">group</span>
+<div>
+<div class="text-on-surface-variant text-sm font-medium">활성 워크플로우</div>
+<div class="text-3xl font-headline font-bold text-on-surface">250,000+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="mt-32">
+<div class="mb-16">
+<h2 class="text-4xl font-headline font-bold text-on-surface mb-4">인텔리전트 인터페이스</h2>
+<p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed">복잡한 데이터 파이프라인부터 LLM 기반의 에이전트까지, 코드 한 줄 없이 직관적으로 구축하세요.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Feature Card 1 -->
+<div class="md:col-span-2 bg-surface-container-low p-8 rounded-lg border border-outline-variant/15 relative overflow-hidden group">
+<div class="relative z-10">
+<div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="account_tree">account_tree</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">시각적 데이터 모델링</h3>
+<p class="text-on-surface-variant leading-relaxed max-w-md">드래그 앤 드롭 방식으로 엔드 투 엔드 비즈니스 로직을 연결합니다. 모든 노드는 실시간으로 상태를 모니터링합니다.</p>
+</div>
+<img class="absolute -right-20 -bottom-20 w-1/2 opacity-30 group-hover:opacity-50 transition-opacity" data-alt="abstract visual representation of a digital network of interconnected light nodes in deep blue dark space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiXba5-6T8FnrHocRh4MgB2l5OwDIsMqkMCihiF5daa1nQQwEkLbX7veO8qiI5PDJMcrUH0NlDKWmm-mvSJMMkVgerkujzPsbR9xzYMym3_yft81zIUz2zUaLtFKD6Yth0rNVc587nnQPR2i_zfNRugi_UZ7qkZ4-89G0lNClWPtoW_X_--UBKaAKIzWGzO7UVV79Zrs4EofC7l7RvyF0Vw99RZPDQE36F3dL60T30xsoKVuMdDsNgQrxm3PAlMlpQrhd0wmxbjyM"/>
+</div>
+<!-- Feature Card 2 -->
+<div class="bg-surface-container-low p-8 rounded-lg border border-outline-variant/15">
+<div class="w-12 h-12 bg-secondary-container/20 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary" data-icon="terminal">terminal</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">API 트리거</h3>
+<p class="text-on-surface-variant leading-relaxed">REST API, Webhooks, 그리고 외부 SDK와의 완벽한 통합을 지원합니다.</p>
+</div>
+<!-- Feature Card 3 -->
+<div class="bg-surface-container-low p-8 rounded-lg border border-outline-variant/15">
+<div class="w-12 h-12 bg-tertiary-container rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-tertiary" data-icon="psychology">psychology</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">LLM Integration</h3>
+<p class="text-on-surface-variant leading-relaxed">GPT-4, Claude 3 등 최신 AI 모델을 워크플로우 중간 단계에 즉시 삽입하세요.</p>
+</div>
+<!-- Feature Card 4 -->
+<div class="md:col-span-2 bg-surface-container-low p-8 rounded-lg border border-outline-variant/15 relative overflow-hidden group">
+<div class="relative z-10">
+<div class="w-12 h-12 bg-on-secondary-container/20 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary-fixed-dim" data-icon="query_stats">query_stats</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">실시간 분석 대시보드</h3>
+<p class="text-on-surface-variant leading-relaxed max-w-md">모든 워크플로우의 실행 성공률, 처리 속도, 그리고 리소스 소모량을 한눈에 파악할 수 있습니다.</p>
+</div>
+<div class="absolute bottom-0 right-0 w-2/3 h-2/3 bg-gradient-to-tl from-secondary/10 to-transparent"></div>
+</div>
+</div>
+</section>
+<!-- Pricing Preview -->
+<section class="mt-40 text-center">
+<h2 class="text-4xl font-headline font-bold mb-4">성장을 위한 투명한 요금제</h2>
+<p class="text-on-surface-variant mb-16">필요한 기능에 따라 최적의 플랜을 선택하세요.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+<div class="bg-surface-container-low p-10 rounded-xl border border-outline-variant/15 flex flex-col items-start hover:border-primary/40 transition-all">
+<div class="text-sm font-bold text-primary mb-2">Starter</div>
+<div class="text-4xl font-headline font-bold mb-6">29,900원<span class="text-sm font-body font-normal text-on-surface-variant">/월</span></div>
+<ul class="space-y-4 mb-10 text-left w-full">
+<li class="flex items-center text-sm text-on-surface-variant"><span class="material-symbols-outlined text-xs mr-2" data-icon="check">check</span>5개 워크플로우</li>
+<li class="flex items-center text-sm text-on-surface-variant"><span class="material-symbols-outlined text-xs mr-2" data-icon="check">check</span>기본 AI 노드 지원</li>
+<li class="flex items-center text-sm text-on-surface-variant"><span class="material-symbols-outlined text-xs mr-2" data-icon="check">check</span>7일간의 히스토리 저장</li>
+</ul>
+<button class="w-full py-3 border border-outline-variant rounded-lg font-bold hover:bg-surface-container transition-all">시작하기</button>
+</div>
+<div class="bg-surface-container-high p-10 rounded-xl border-2 border-primary technical-glow flex flex-col items-start relative scale-105 z-10">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-4 py-1 rounded-full text-xs font-bold uppercase">Popular</div>
+<div class="text-sm font-bold text-secondary mb-2">Professional</div>
+<div class="text-4xl font-headline font-bold mb-6">89,000원<span class="text-sm font-body font-normal text-on-surface-variant">/월</span></div>
+<ul class="space-y-4 mb-10 text-left w-full">
+<li class="flex items-center text-sm text-on-surface"><span class="material-symbols-outlined text-xs mr-2 text-secondary" data-icon="check">check</span>무제한 워크플로우</li>
+<li class="flex items-center text-sm text-on-surface"><span class="material-symbols-outlined text-xs mr-2 text-secondary" data-icon="check">check</span>고급 LLM 라이브러리</li>
+<li class="flex items-center text-sm text-on-surface"><span class="material-symbols-outlined text-xs mr-2 text-secondary" data-icon="check">check</span>실시간 커스텀 대시보드</li>
+<li class="flex items-center text-sm text-on-surface"><span class="material-symbols-outlined text-xs mr-2 text-secondary" data-icon="check">check</span>24/7 우선 기술 지원</li>
+</ul>
+<button class="w-full py-3 bg-primary text-on-primary rounded-lg font-bold hover:opacity-90 transition-all">Professional 시작</button>
+</div>
+<div class="bg-surface-container-low p-10 rounded-xl border border-outline-variant/15 flex flex-col items-start hover:border-primary/40 transition-all">
+<div class="text-sm font-bold text-tertiary mb-2">Enterprise</div>
+<div class="text-4xl font-headline font-bold mb-6">문의하기</div>
+<ul class="space-y-4 mb-10 text-left w-full">
+<li class="flex items-center text-sm text-on-surface-variant"><span class="material-symbols-outlined text-xs mr-2" data-icon="check">check</span>프라이빗 클라우드 구축</li>
+<li class="flex items-center text-sm text-on-surface-variant"><span class="material-symbols-outlined text-xs mr-2" data-icon="check">check</span>커스텀 노드 개발 지원</li>
+<li class="flex items-center text-sm text-on-surface-variant"><span class="material-symbols-outlined text-xs mr-2" data-icon="check">check</span>SLA 보장</li>
+</ul>
+<button class="w-full py-3 border border-outline-variant rounded-lg font-bold hover:bg-surface-container transition-all">영업팀 문의</button>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="mt-48 text-center bg-primary-container/30 border border-primary/20 rounded-2xl py-20 px-8 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-secondary/5 to-transparent pointer-events-none"></div>
+<div class="relative z-10">
+<h2 class="text-4xl md:text-5xl font-headline font-bold mb-8 tracking-tighter">당신의 비즈니스에<br/>지능형 시그널을 입히세요.</h2>
+<div class="flex flex-col md:flex-row justify-center gap-4">
+<button class="bg-primary text-on-primary px-12 py-4 rounded-lg text-lg font-bold hover:shadow-primary/30 transition-all">무료 체험 시작</button>
+<button class="bg-surface-container-highest px-12 py-4 rounded-lg text-lg font-bold hover:bg-surface-bright transition-all">도입 가이드 다운로드</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/15 py-20 px-8 mt-24">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="md:col-span-1">
+<div class="text-xl font-bold tracking-tighter text-[#b7c4ff] font-headline mb-6">SIGNAL GRID</div>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">
+                    글로벌 AI 워크플로우 플랫폼의 미래를 선도합니다. 복잡함을 제거하고 가치에 집중하세요.
+                </p>
+<div class="flex space-x-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors" data-icon="public">public</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors" data-icon="mail">mail</span>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-on-surface">제품</h4>
+<ul class="space-y-4 text-sm text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">기능 살펴보기</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">워크플로우 템플릿</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">통합 가이드</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">릴리즈 노트</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-on-surface">리소스</h4>
+<ul class="space-y-4 text-sm text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">도큐멘테이션</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">API 레퍼런스</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">커뮤니티</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">블로그</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-on-surface">회사</h4>
+<ul class="space-y-4 text-sm text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">소개</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">채용</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">문의하기</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">개인정보처리방침</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto border-t border-outline-variant/10 mt-16 pt-8 text-center text-xs text-on-surface-variant">
+            © 2024 SIGNAL GRID. All Rights Reserved. Designed for the Intelligent Era.
+        </div>
+</footer>
+</body></html>

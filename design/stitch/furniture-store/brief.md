@@ -1,21 +1,11 @@
 # MOSS HOME
 
-- 사이트 ID: `furniture-store`
-- 업종: 가구 스토어
-- 요약: 룸별 탐색 · 배치 미리보기 · 구매
-- 디자인 계열: 공간 스타일링 커머스
-- 히어로: 완성된 공간 사진과 룸별 탐색 버튼 중심
-- 배경: 풀스크린 인테리어 이미지와 느린 패럴랙스
-- 모션: 배치 카드와 번들 상품이 층층이 올라옴
-
-## 금지 패턴
-- 공통 히어로 템플릿 금지
-- 공통 섹션 조립기 금지
-- 같은 이미지 박스 + 설명 박스 + CTA 반복 금지
-
-## 페이지 구조
-- 홈 (`home`): 실제 운영 중인 서비스 홈처럼 보이게 만들고, 상단 메뉴는 고정한다. 첫 화면 문법이 이 사이트만의 구조로 보이게 만들고, 공통 히어로 템플릿이나 반복 섹션 조립기처럼 보이면 안 된다.
-- 룸별 (`rooms`): 탐색/목록 페이지다. 필터, 카테고리, 리스트, 빠른 진입 구조를 직관적으로 보여준다.
-- 배치 (`planner`): 상세 설명 페이지다. 비교, 디테일, 기능, 컬러, 노트, 배치처럼 깊이 있는 정보를 중심으로 구성한다.
-- 구매 (`cart`): 전환 페이지다. 구매, 장바구니, 세트 선택, 상담 신청, 선물 구성처럼 바로 결정을 내리게 만든다.
-- 서비스 (`service`): 브랜드 신뢰 형성 페이지다. 브랜드 스토리, 가치, 제작 배경, 지원 정보를 짧고 세련되게 보여준다.
+- Site ID: furniture-store
+- Industry: Furniture Commerce
+- Summary: A furniture site centered on room planning, bundle shopping, and spatial exploration.
+- Home grammar: Room planner
+- Design family: Spatial planning commerce
+- First screen: Room planner-led homepage with room selectors and bundle CTA visible immediately.
+- Background: Large interior imagery, soft organic gradients, and layered planner panels.
+- Motion: Room tags and planner cards float in like layout sheets.
+- Mobile rule: Surface room choices and planner CTA as the main behavior, not as secondary footer content.

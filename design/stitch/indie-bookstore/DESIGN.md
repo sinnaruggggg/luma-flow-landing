@@ -1,45 +1,46 @@
 # Design System: PAPER NOOK
 **Site ID:** indie-bookstore
 
-## 1. Visual Theme & Atmosphere
-- 핵심 톤: 편집형 독립서점
-- 첫 화면 문법: 큐레이션 서가 이미지와 짧은 편집형 타이틀 중심
-- 배경 규칙: 종이 질감과 사진 오버랩
-- 인터랙션 톤: 추천 섹션이 카드보다 에디토리얼 블록처럼 올라옴
-- 시각 성격: 종이 질감과 편집형 레이어가 느껴지는 수공예 콜라주 화면
+## 1. Identity
+- Industry: Independent Bookstore
+- Summary: A curated bookstore site that should feel like an editorial shelf, not a mass retailer.
+- Home grammar: Shelf editorial
+- Mobile rule: Treat picks, notes, and gift CTA like a magazine deck rather than a compressed grid.
 
-## 2. Color Palette & Roles
-- Primary Action (#f5c24f): 핵심 CTA와 활성 상태에 사용한다.
-- Accent Soft (#9fd7f6): 보조 태그, 하이라이트 패널, 그래프 포인트에 사용한다.
-- Surface (#fffaf2): 카드, 패널, 정보 블록의 기본 바탕에 사용한다.
-- Background (#f7f1e6): 페이지 전체 무드와 깊이를 결정하는 바탕에 사용한다.
-- Text (#231d17) / Muted (#6d6154): 제목과 짧은 설명의 위계를 분리한다.
+## 2. Visual Direction
+- Family: Paper editorial commerce
+- First screen: Shelf-and-note first screen with editorial snippets and gift cues.
+- Background: Paper texture, torn edges, and warm photography rather than polished commerce blocks.
+- Motion: Book notes and shelf cards float like clipped paper pieces.
+- Atmosphere: Paper texture, editorial warmth, and tactile composition.
 
-## 3. Typography Rules
-- 짧은 제목과 메모형 라벨 위주로 편집적으로 배치한다.
-- 본문은 길게 쓰지 않고, 화면이 기능을 설명하게 한다.
-- 영어는 브랜드명, 짧은 라벨, 스타일 포인트에만 제한적으로 사용한다.
+## 3. Palette
+- Background: #f7f1e6
+- Surface: #fffaf2
+- Panel: rgba(255, 250, 242, 0.9)
+- Text: #231d17
+- Muted: #6d6154
+- Accent: #f5c24f
+- Accent soft: #9fd7f6
 
-## 4. Component Stylings
-- 카드 모서리와 배경은 과하게 정리하지 않고 손맛을 남긴다.
-- 공통화는 버튼, 배지, 입력, 기본 카드 정도까지만 허용한다.
-- 리스트와 표는 실제 운영 사이트처럼 바로 행동으로 이어지게 구성한다.
+## 4. Typography
+- Type should feel curated, note-like, and slightly hand-placed.
+- Keep copy short and functional.
+- Use Korean as the default content language.
 
-## 5. Home Screen Rules
-- 다른 사이트와 같은 첫 화면 구문으로 보이면 안 된다.
-- 데스크톱은 큰 비주얼 또는 강한 정보 구조가 먼저 보이게 만든다.
-- 모바일은 축소판이 아니라 전용 모바일 레이아웃으로 다시 설계한다.
-- 이미지형 사이트는 큰 대표컷과 떠오르는 레이어를 사용한다.
-- 비이미지형 사이트는 포인터/스크롤 반응형 메시 또는 오로라 배경을 사용한다.
+## 5. Components
+- Use collage overlap and clipped-paper behavior.
+- Shared primitives are limited to buttons, badges, inputs, and simple cards.
+- The first screen grammar must be unique to this site.
 
 ## 6. Prohibited Patterns
-- 공통 히어로 템플릿 금지
-- 공통 섹션 조립기 금지
-- 같은 이미지 박스 + 설명 박스 + CTA 반복 금지
+- No shared hero template.
+- No shared section assembler.
+- No repetitive image box + text box + CTA blocks.
 
 ## 7. Route Targets
-- 홈 (`home`): 실제 운영 중인 서비스 홈처럼 보이게 만들고, 상단 메뉴는 고정한다. 첫 화면 문법이 이 사이트만의 구조로 보이게 만들고, 공통 히어로 템플릿이나 반복 섹션 조립기처럼 보이면 안 된다.
-- 큐레이션 (`shelf`): 탐색/목록 페이지다. 필터, 카테고리, 리스트, 빠른 진입 구조를 직관적으로 보여준다.
-- 추천 (`picks`): 상세 설명 페이지다. 비교, 디테일, 기능, 컬러, 노트, 배치처럼 깊이 있는 정보를 중심으로 구성한다.
-- 선물 (`gift`): 전환 페이지다. 구매, 장바구니, 세트 선택, 상담 신청, 선물 구성처럼 바로 결정을 내리게 만든다.
-- 브랜드 (`brand`): 브랜드 신뢰 형성 페이지다. 브랜드 스토리, 가치, 제작 배경, 지원 정보를 짧고 세련되게 보여준다.
+- Home (home): This is the operating homepage. Build a complete landing surface, not a cover page.
+- Shelf (shelf): Use a browse or catalog structure with filtering, category anchors, and fast exploration.
+- Picks (picks): Lead with product, room, program, or service depth. Make the decision points obvious.
+- Gift (gift): Show an intentional conversion flow with options, quantity, summary, and next action.
+- Brand (brand): Present the brand world, trust layer, and operating context rather than generic about text.

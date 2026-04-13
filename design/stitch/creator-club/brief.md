@@ -1,21 +1,11 @@
 # RALLY HOUSE
 
-- 사이트 ID: `creator-club`
-- 업종: 크리에이터 멤버십 클럽
-- 요약: 가입 플랜 · 혜택 · 커뮤니티
-- 디자인 계열: 커뮤니티 허브
-- 히어로: 커뮤니티 활동량과 멤버십 카드가 함께 보이는 홈
-- 배경: 이미지 대신 깊이감 있는 다크 메시와 반응형 글로우
-- 모션: 피드 모듈과 혜택 카드가 밀도 있게 겹쳐 올라옴
-
-## 금지 패턴
-- 공통 히어로 템플릿 금지
-- 공통 섹션 조립기 금지
-- 같은 이미지 박스 + 설명 박스 + CTA 반복 금지
-
-## 페이지 구조
-- 홈 (`home`): 실제 운영 중인 서비스 홈처럼 보이게 만들고, 상단 메뉴는 고정한다. 첫 화면 문법이 이 사이트만의 구조로 보이게 만들고, 공통 히어로 템플릿이나 반복 섹션 조립기처럼 보이면 안 된다.
-- 피드 (`feed`): 커뮤니티 피드 페이지다. 최신 활동, 추천 글, 멤버 반응이 중심이다.
-- 혜택 (`perks`): 혜택 페이지다. 가입 혜택, 오프라인/온라인 보상, 멤버 전용 기능을 간결하게 보여준다.
-- 가입 (`join`): 가입 페이지다. 플랜 비교, 폼, 결제/신청 버튼을 분명하게 보여준다.
-- 안내 (`guide`): 안내 페이지다. 방문 전 알아야 할 내용, 운영 정보, 규정, 준비물, FAQ를 정리한다.
+- Site ID: creator-club
+- Industry: Creator Community
+- Summary: A creator community site with live feed energy, membership perks, and join flow.
+- Home grammar: Community live feed
+- Design family: Pop community platform
+- First screen: Feed-led first screen with live activity modules and join CTA beside it.
+- Background: No photo-first hero. Use mesh, aura, and soft physics-driven motion.
+- Motion: Feed cards and pass labels appear on different depth planes.
+- Mobile rule: Lead with live updates, pass options, and join entry before community explanation.

@@ -1,45 +1,46 @@
 # Design System: MELT POP
 **Site ID:** beauty-flash-sale
 
-## 1. Visual Theme & Atmosphere
-- 핵심 톤: 세일 중심 뷰티 커머스
-- 첫 화면 문법: 컬러 풀한 세일 배너와 빠른 구매 박스가 먼저 보이는 홈
-- 배경 규칙: 선명한 캠페인 배경 이미지와 팝 컬러 오브젝트
-- 인터랙션 톤: 세트 카드와 할인 태그가 통통 튀듯 올라옴
-- 시각 성격: 팝 캠페인처럼 강한 색과 정보 밀도가 동시에 보이는 하이 에너지 화면
+## 1. Identity
+- Industry: Beauty Flash Commerce
+- Summary: High-tempo beauty commerce centered on kits, sale urgency, and palette-led shopping.
+- Home grammar: Sale poster board
+- Mobile rule: Show the hero price, kit choice, and checkout path before campaign storytelling.
 
-## 2. Color Palette & Roles
-- Primary Action (#ffd84d): 핵심 CTA와 활성 상태에 사용한다.
-- Accent Soft (#ff7ccf): 보조 태그, 하이라이트 패널, 그래프 포인트에 사용한다.
-- Surface (#2d1b46): 카드, 패널, 정보 블록의 기본 바탕에 사용한다.
-- Background (#221537): 페이지 전체 무드와 깊이를 결정하는 바탕에 사용한다.
-- Text (#ffffff) / Muted (rgba(255, 255, 255, 0.74)): 제목과 짧은 설명의 위계를 분리한다.
+## 2. Visual Direction
+- Family: Campaign-sale beauty
+- First screen: Poster-style first screen with giant price typography and layered kit cards.
+- Background: High-gloss campaign imagery with color stickers and overlapping sale tags.
+- Motion: Sale tags, swatches, and price strips float upward and cross each other.
+- Atmosphere: Loud, glossy, and campaign-driven without losing clarity.
 
-## 3. Typography Rules
-- 볼드한 제목과 짧은 판매 문구를 크게 사용한다.
-- 본문은 길게 쓰지 않고, 화면이 기능을 설명하게 한다.
-- 영어는 브랜드명, 짧은 라벨, 스타일 포인트에만 제한적으로 사용한다.
+## 3. Palette
+- Background: #221537
+- Surface: #2d1b46
+- Panel: rgba(255, 255, 255, 0.12)
+- Text: #ffffff
+- Muted: rgba(255, 255, 255, 0.74)
+- Accent: #ffd84d
+- Accent soft: #ff7ccf
 
-## 4. Component Stylings
-- 세일 태그, 가격, 라벨이 눈에 띄게 겹쳐 등장하도록 만든다.
-- 공통화는 버튼, 배지, 입력, 기본 카드 정도까지만 허용한다.
-- 리스트와 표는 실제 운영 사이트처럼 바로 행동으로 이어지게 구성한다.
+## 4. Typography
+- Use oversized display text and sharp support labels.
+- Keep copy short and functional.
+- Use Korean as the default content language.
 
-## 5. Home Screen Rules
-- 다른 사이트와 같은 첫 화면 구문으로 보이면 안 된다.
-- 데스크톱은 큰 비주얼 또는 강한 정보 구조가 먼저 보이게 만든다.
-- 모바일은 축소판이 아니라 전용 모바일 레이아웃으로 다시 설계한다.
-- 이미지형 사이트는 큰 대표컷과 떠오르는 레이어를 사용한다.
-- 비이미지형 사이트는 포인터/스크롤 반응형 메시 또는 오로라 배경을 사용한다.
+## 5. Components
+- Let tags, pricing, and badges compete visually in a controlled way.
+- Shared primitives are limited to buttons, badges, inputs, and simple cards.
+- The first screen grammar must be unique to this site.
 
 ## 6. Prohibited Patterns
-- 공통 히어로 템플릿 금지
-- 공통 섹션 조립기 금지
-- 같은 이미지 박스 + 설명 박스 + CTA 반복 금지
+- No shared hero template.
+- No shared section assembler.
+- No repetitive image box + text box + CTA blocks.
 
 ## 7. Route Targets
-- 홈 (`home`): 실제 운영 중인 서비스 홈처럼 보이게 만들고, 상단 메뉴는 고정한다. 첫 화면 문법이 이 사이트만의 구조로 보이게 만들고, 공통 히어로 템플릿이나 반복 섹션 조립기처럼 보이면 안 된다.
-- 쇼핑 (`shop`): 탐색/목록 페이지다. 필터, 카테고리, 리스트, 빠른 진입 구조를 직관적으로 보여준다.
-- 컬러 (`shades`): 상세 설명 페이지다. 비교, 디테일, 기능, 컬러, 노트, 배치처럼 깊이 있는 정보를 중심으로 구성한다.
-- 장바구니 (`cart`): 전환 페이지다. 구매, 장바구니, 세트 선택, 상담 신청, 선물 구성처럼 바로 결정을 내리게 만든다.
-- 브랜드 (`brand`): 브랜드 신뢰 형성 페이지다. 브랜드 스토리, 가치, 제작 배경, 지원 정보를 짧고 세련되게 보여준다.
+- Home (home): This is the operating homepage. Build a complete landing surface, not a cover page.
+- Shop (shop): Use a browse or catalog structure with filtering, category anchors, and fast exploration.
+- Shades (shades): Lead with product, room, program, or service depth. Make the decision points obvious.
+- Cart (cart): Show an intentional conversion flow with options, quantity, summary, and next action.
+- Brand (brand): Present the brand world, trust layer, and operating context rather than generic about text.

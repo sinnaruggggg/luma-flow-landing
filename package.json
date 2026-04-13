@@ -12,7 +12,8 @@
     "generate:industry-images": "node scripts/generate-industry-images.mjs",
     "stitch:init": "node scripts/stitch-init.mjs",
     "stitch:generate": "node scripts/stitch-generate.mjs",
-    "stitch:pull": "node scripts/stitch-pull.mjs"
+    "stitch:pull": "node scripts/stitch-pull.mjs",
+    "stitch:batch": "node scripts/stitch-batch.mjs"
   },
   "dependencies": {
     "@google/genai": "^1.28.0",

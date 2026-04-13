@@ -1,38 +1,43 @@
 {
   "siteId": "skin-clinic",
   "brand": "ATELIER SKIN",
-  "industry": "프리미엄 스킨 클리닉",
-  "summary": "AI 스캔 · 프로그램 선택 · 예약",
+  "industry": "Skin Clinic",
+  "summary": "Premium skin clinic with diagnosis-led booking, treatment programs, and medical trust cues.",
   "blueprint": {
-    "designFamily": "프리미엄 클리닉 예약형",
-    "heroMode": "클리닉 공간 사진과 예약 패널이 같이 보이는 럭셔리 히어로",
-    "motion": "프로그램 카드가 부드럽게 겹쳐 올라오고 예약 슬롯이 고정 노출",
-    "background": "고급 공간 사진과 아주 은은한 빛 이동"
+    "family": "Premium clinical booking",
+    "heroMode": "Treatment space photo with diagnosis CTA column and open-slot widget.",
+    "background": "Large clinic photography with soft shadowed cards floating upward.",
+    "motion": "Treatment cards and booking rows appear as layered translucent sheets.",
+    "keywords": [
+      "clinic booking",
+      "diagnosis-led",
+      "soft layered panels"
+    ]
   },
   "routes": [
     {
       "slug": "home",
-      "label": "홈",
+      "label": "Home",
       "kind": "home"
     },
     {
       "slug": "programs",
-      "label": "프로그램",
+      "label": "Programs",
       "kind": "browse"
     },
     {
       "slug": "scan",
-      "label": "AI 진단",
+      "label": "AI Scan",
       "kind": "detail"
     },
     {
       "slug": "booking",
-      "label": "예약",
+      "label": "Booking",
       "kind": "reserve"
     },
     {
       "slug": "clinic",
-      "label": "클리닉",
+      "label": "Clinic",
       "kind": "guide"
     }
   ]

@@ -1,21 +1,11 @@
 # UPPERCUT CLUB
 
-- 사이트 ID: `boxing-gym`
-- 업종: 복싱짐 멤버십
-- 요약: 체험 예약 · 코치 매칭 · 수업 시간표
-- 디자인 계열: 다크 에너지 예약형
-- 히어로: 강한 인물 사진과 예약 위젯이 동시에 보이는 체육관 첫 화면
-- 배경: 어두운 링 공간, 얇은 빛줄기, 포인터 반응형 오라
-- 모션: 시간표와 코치 카드가 글로우와 함께 슬라이드 업
-
-## 금지 패턴
-- 공통 히어로 템플릿 금지
-- 공통 섹션 조립기 금지
-- 같은 이미지 박스 + 설명 박스 + CTA 반복 금지
-
-## 페이지 구조
-- 홈 (`home`): 실제 운영 중인 서비스 홈처럼 보이게 만들고, 상단 메뉴는 고정한다. 첫 화면 문법이 이 사이트만의 구조로 보이게 만들고, 공통 히어로 템플릿이나 반복 섹션 조립기처럼 보이면 안 된다.
-- 수업 (`classes`): 탐색/목록 페이지다. 필터, 카테고리, 리스트, 빠른 진입 구조를 직관적으로 보여준다.
-- 코치 (`coaches`): 상세 설명 페이지다. 비교, 디테일, 기능, 컬러, 노트, 배치처럼 깊이 있는 정보를 중심으로 구성한다.
-- 등록 (`join`): 예약/신청 페이지다. 일정, 슬롯, 상담 또는 시승/예약 폼이 핵심이다.
-- 안내 (`guide`): 안내 페이지다. 방문 전 알아야 할 내용, 운영 정보, 규정, 준비물, FAQ를 정리한다.
+- Site ID: boxing-gym
+- Industry: Boxing Gym
+- Summary: A high-energy boxing gym site where trial booking sits ahead of program browsing.
+- Home grammar: Booking widget first
+- Design family: Fight club booking
+- First screen: Massive gym photography with floating booking card.
+- Background: Dark ring photography with neon haze and subtle scan-line mesh.
+- Motion: Booking card rises over the photo while coach chips land later.
+- Mobile rule: Surface the trial schedule, coach snapshot, and join CTA in the first viewport.

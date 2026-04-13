@@ -1,0 +1,25 @@
+{
+  "siteId": "ai-saas",
+  "brand": "SIGNAL GRID",
+  "projectId": "2675822646159988702",
+  "projectTitle": "SIGNAL GRID Stitch",
+  "updatedAt": "2026-04-13T14:07:47.886Z",
+  "screens": {
+    "home:desktop": {
+      "screenId": "eb348f0c068242d986ffe43581b74f83",
+      "pageSlug": "home",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/ai-saas/screens/home-desktop.html",
+      "imagePath": "design/stitch/ai-saas/screens/home-desktop.png",
+      "updatedAt": "2026-04-13T14:07:47.887Z"
+    },
+    "home:mobile": {
+      "screenId": "2c2ee34a29c247eda37291b26093a17b",
+      "pageSlug": "home",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/ai-saas/screens/home-mobile.html",
+      "imagePath": "design/stitch/ai-saas/screens/home-mobile.png",
+      "updatedAt": "2026-04-13T14:10:00.000Z"
+    }
+  }
+}

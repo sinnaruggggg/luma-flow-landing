@@ -1,38 +1,43 @@
 {
   "siteId": "gaming-gear",
   "brand": "VOID ARC",
-  "industry": "게이밍 기어 스토어",
-  "summary": "셋업 · 번들 · 장바구니",
+  "industry": "Gaming Gear",
+  "summary": "Gaming hardware commerce organized around setup bundles, specs, and aggressive cart entry.",
   "blueprint": {
-    "designFamily": "셋업 중심 게이밍 커머스",
-    "heroMode": "셋업 장면과 번들 카드가 강하게 보이는 홈",
-    "motion": "기어 패널이 UI처럼 빠르게 스냅 인",
-    "background": "RGB 톤의 다크 배경과 포인터 반응형 라인"
+    "family": "Setup command commerce",
+    "heroMode": "A setup-control first screen with hardware visuals, spec modules, and bundle CTA.",
+    "background": "Dark desk setup imagery with RGB atmosphere and reactive line work.",
+    "motion": "Spec panels and cart chips animate like a command interface.",
+    "keywords": [
+      "gaming setup",
+      "bundle commerce",
+      "spec UI"
+    ]
   },
   "routes": [
     {
       "slug": "home",
-      "label": "홈",
+      "label": "Home",
       "kind": "home"
     },
     {
       "slug": "gear",
-      "label": "기어",
+      "label": "Gear",
       "kind": "browse"
     },
     {
       "slug": "bundle",
-      "label": "번들",
+      "label": "Bundle",
       "kind": "detail"
     },
     {
       "slug": "cart",
-      "label": "장바구니",
+      "label": "Cart",
       "kind": "checkout"
     },
     {
       "slug": "support",
-      "label": "지원",
+      "label": "Support",
       "kind": "brand"
     }
   ]
