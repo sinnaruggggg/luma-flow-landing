@@ -1,0 +1,39 @@
+{
+  "siteId": "local-cafe",
+  "brand": "TABLE WARM",
+  "industry": "로컬 카페",
+  "summary": "메뉴 · 좌석 · 예약",
+  "blueprint": {
+    "designFamily": "로컬 스몰비즈니스",
+    "heroMode": "매장 사진과 오늘 메뉴가 같이 보이는 따뜻한 홈",
+    "motion": "메뉴 카드와 예약 박스가 아래에서 천천히 떠오름",
+    "background": "대형 매장 사진과 낮은 강도의 패럴랙스"
+  },
+  "routes": [
+    {
+      "slug": "home",
+      "label": "홈",
+      "kind": "home"
+    },
+    {
+      "slug": "menu",
+      "label": "메뉴",
+      "kind": "browse"
+    },
+    {
+      "slug": "visit",
+      "label": "매장",
+      "kind": "detail"
+    },
+    {
+      "slug": "reserve",
+      "label": "예약",
+      "kind": "reserve"
+    },
+    {
+      "slug": "info",
+      "label": "안내",
+      "kind": "guide"
+    }
+  ]
+}

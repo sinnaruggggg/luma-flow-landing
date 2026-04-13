@@ -1,0 +1,39 @@
+{
+  "siteId": "creator-club",
+  "brand": "RALLY HOUSE",
+  "industry": "크리에이터 멤버십 클럽",
+  "summary": "가입 플랜 · 혜택 · 커뮤니티",
+  "blueprint": {
+    "designFamily": "커뮤니티 허브",
+    "heroMode": "커뮤니티 활동량과 멤버십 카드가 함께 보이는 홈",
+    "motion": "피드 모듈과 혜택 카드가 밀도 있게 겹쳐 올라옴",
+    "background": "이미지 대신 깊이감 있는 다크 메시와 반응형 글로우"
+  },
+  "routes": [
+    {
+      "slug": "home",
+      "label": "홈",
+      "kind": "home"
+    },
+    {
+      "slug": "feed",
+      "label": "피드",
+      "kind": "feed"
+    },
+    {
+      "slug": "perks",
+      "label": "혜택",
+      "kind": "perks"
+    },
+    {
+      "slug": "join",
+      "label": "가입",
+      "kind": "join"
+    },
+    {
+      "slug": "guide",
+      "label": "안내",
+      "kind": "guide"
+    }
+  ]
+}

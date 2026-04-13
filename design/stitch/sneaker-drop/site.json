@@ -1,0 +1,39 @@
+{
+  "siteId": "sneaker-drop",
+  "brand": "RIFT/01",
+  "industry": "스니커즈 드롭 스토어",
+  "summary": "오늘 드롭 · AI 사이즈 · 장바구니",
+  "blueprint": {
+    "designFamily": "스트리트 드롭 커머스",
+    "heroMode": "대형 제품 컷과 카운트다운이 먼저 보이는 하이컨트라스트 히어로",
+    "motion": "드롭 카드와 출시 시간 배지가 아래에서 떠오르듯 겹쳐 등장",
+    "background": "풀블리드 캠페인 이미지와 원색 포인트 그래픽"
+  },
+  "routes": [
+    {
+      "slug": "home",
+      "label": "홈",
+      "kind": "home"
+    },
+    {
+      "slug": "drops",
+      "label": "드롭",
+      "kind": "browse"
+    },
+    {
+      "slug": "styles",
+      "label": "스타일",
+      "kind": "detail"
+    },
+    {
+      "slug": "cart",
+      "label": "장바구니",
+      "kind": "checkout"
+    },
+    {
+      "slug": "brand",
+      "label": "브랜드",
+      "kind": "brand"
+    }
+  ]
+}

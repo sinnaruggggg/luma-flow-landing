@@ -1,0 +1,39 @@
+{
+  "siteId": "indie-bookstore",
+  "brand": "PAPER NOOK",
+  "industry": "인디 북스토어",
+  "summary": "큐레이션 · 선물 세트 · 추천",
+  "blueprint": {
+    "designFamily": "편집형 독립서점",
+    "heroMode": "큐레이션 서가 이미지와 짧은 편집형 타이틀 중심",
+    "motion": "추천 섹션이 카드보다 에디토리얼 블록처럼 올라옴",
+    "background": "종이 질감과 사진 오버랩"
+  },
+  "routes": [
+    {
+      "slug": "home",
+      "label": "홈",
+      "kind": "home"
+    },
+    {
+      "slug": "shelf",
+      "label": "큐레이션",
+      "kind": "browse"
+    },
+    {
+      "slug": "picks",
+      "label": "추천",
+      "kind": "detail"
+    },
+    {
+      "slug": "gift",
+      "label": "선물",
+      "kind": "checkout"
+    },
+    {
+      "slug": "brand",
+      "label": "브랜드",
+      "kind": "brand"
+    }
+  ]
+}

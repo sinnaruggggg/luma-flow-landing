@@ -1,0 +1,39 @@
+{
+  "siteId": "ev-mobility",
+  "brand": "ORBIT E",
+  "industry": "EV 모빌리티 브랜드",
+  "summary": "모델 비교 · 시승 예약 · 충전",
+  "blueprint": {
+    "designFamily": "테크 비교형 모빌리티",
+    "heroMode": "차량 히어로 컷과 모델 비교 패널이 동시에 보이는 홈",
+    "motion": "충전, 주행거리, 시승 카드가 정교하게 스택됨",
+    "background": "대형 차량 이미지와 금속성 쉬머"
+  },
+  "routes": [
+    {
+      "slug": "home",
+      "label": "홈",
+      "kind": "home"
+    },
+    {
+      "slug": "models",
+      "label": "모델",
+      "kind": "browse"
+    },
+    {
+      "slug": "charge",
+      "label": "충전",
+      "kind": "detail"
+    },
+    {
+      "slug": "drive",
+      "label": "시승",
+      "kind": "reserve"
+    },
+    {
+      "slug": "support",
+      "label": "지원",
+      "kind": "guide"
+    }
+  ]
+}

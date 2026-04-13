@@ -1,0 +1,122 @@
+[
+  {
+    "siteId": "sneaker-drop",
+    "brand": "RIFT/01",
+    "industry": "스니커즈 드롭 스토어",
+    "dir": "design/stitch/sneaker-drop"
+  },
+  {
+    "siteId": "supplement-brand",
+    "brand": "PUNCH FUEL",
+    "industry": "퍼포먼스 보충제 브랜드",
+    "dir": "design/stitch/supplement-brand"
+  },
+  {
+    "siteId": "boxing-gym",
+    "brand": "UPPERCUT CLUB",
+    "industry": "복싱짐 멤버십",
+    "dir": "design/stitch/boxing-gym"
+  },
+  {
+    "siteId": "wealth-app",
+    "brand": "CLARO",
+    "industry": "자산관리 SaaS",
+    "dir": "design/stitch/wealth-app"
+  },
+  {
+    "siteId": "skin-clinic",
+    "brand": "ATELIER SKIN",
+    "industry": "프리미엄 스킨 클리닉",
+    "dir": "design/stitch/skin-clinic"
+  },
+  {
+    "siteId": "arch-studio",
+    "brand": "PLAIN GRID",
+    "industry": "건축 · 인테리어 스튜디오",
+    "dir": "design/stitch/arch-studio"
+  },
+  {
+    "siteId": "beauty-flash-sale",
+    "brand": "MELT POP",
+    "industry": "뷰티 플래시세일 스토어",
+    "dir": "design/stitch/beauty-flash-sale"
+  },
+  {
+    "siteId": "festival-page",
+    "brand": "NOISE WAVE",
+    "industry": "페스티벌 티켓 페이지",
+    "dir": "design/stitch/festival-page"
+  },
+  {
+    "siteId": "creator-club",
+    "brand": "RALLY HOUSE",
+    "industry": "크리에이터 멤버십 클럽",
+    "dir": "design/stitch/creator-club"
+  },
+  {
+    "siteId": "ev-mobility",
+    "brand": "ORBIT E",
+    "industry": "EV 모빌리티 브랜드",
+    "dir": "design/stitch/ev-mobility"
+  },
+  {
+    "siteId": "gaming-gear",
+    "brand": "VOID ARC",
+    "industry": "게이밍 기어 스토어",
+    "dir": "design/stitch/gaming-gear"
+  },
+  {
+    "siteId": "ai-saas",
+    "brand": "SIGNAL GRID",
+    "industry": "AI 워크플로 SaaS",
+    "dir": "design/stitch/ai-saas"
+  },
+  {
+    "siteId": "indie-bookstore",
+    "brand": "PAPER NOOK",
+    "industry": "인디 북스토어",
+    "dir": "design/stitch/indie-bookstore"
+  },
+  {
+    "siteId": "stationery-shop",
+    "brand": "CUT & NOTE",
+    "industry": "문구 스토어",
+    "dir": "design/stitch/stationery-shop"
+  },
+  {
+    "siteId": "local-cafe",
+    "brand": "TABLE WARM",
+    "industry": "로컬 카페",
+    "dir": "design/stitch/local-cafe"
+  },
+  {
+    "siteId": "boutique-hotel",
+    "brand": "HOTEL STILL",
+    "industry": "부티크 호텔",
+    "dir": "design/stitch/boutique-hotel"
+  },
+  {
+    "siteId": "perfume-house",
+    "brand": "MOSS & AMBER",
+    "industry": "니치 향수 브랜드",
+    "dir": "design/stitch/perfume-house"
+  },
+  {
+    "siteId": "furniture-store",
+    "brand": "MOSS HOME",
+    "industry": "가구 스토어",
+    "dir": "design/stitch/furniture-store"
+  },
+  {
+    "siteId": "youth-fashion",
+    "brand": "BOP BOP",
+    "industry": "영패션 브랜드",
+    "dir": "design/stitch/youth-fashion"
+  },
+  {
+    "siteId": "jewelry-brand",
+    "brand": "LUNE FORM",
+    "industry": "주얼리 브랜드",
+    "dir": "design/stitch/jewelry-brand"
+  }
+]

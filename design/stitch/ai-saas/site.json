@@ -1,0 +1,39 @@
+{
+  "siteId": "ai-saas",
+  "brand": "SIGNAL GRID",
+  "industry": "AI 워크플로 SaaS",
+  "summary": "파이프라인 · 사용 사례 · 데모",
+  "blueprint": {
+    "designFamily": "워크플로 SaaS",
+    "heroMode": "실제 사용 흐름과 자동화 보드가 먼저 보이는 홈",
+    "motion": "플로우 노드와 KPI 패널이 연결되며 등장",
+    "background": "이미지보다 유체형 메시와 섬세한 포인터 반응"
+  },
+  "routes": [
+    {
+      "slug": "home",
+      "label": "홈",
+      "kind": "home"
+    },
+    {
+      "slug": "flows",
+      "label": "플로우",
+      "kind": "features"
+    },
+    {
+      "slug": "cases",
+      "label": "사례",
+      "kind": "cases"
+    },
+    {
+      "slug": "pricing",
+      "label": "요금",
+      "kind": "pricing"
+    },
+    {
+      "slug": "contact",
+      "label": "문의",
+      "kind": "contact"
+    }
+  ]
+}

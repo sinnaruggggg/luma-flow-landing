@@ -1,0 +1,39 @@
+{
+  "siteId": "beauty-flash-sale",
+  "brand": "MELT POP",
+  "industry": "뷰티 플래시세일 스토어",
+  "summary": "컬러 비교 · 세트 구매 · 한정 할인",
+  "blueprint": {
+    "designFamily": "세일 중심 뷰티 커머스",
+    "heroMode": "컬러 풀한 세일 배너와 빠른 구매 박스가 먼저 보이는 홈",
+    "motion": "세트 카드와 할인 태그가 통통 튀듯 올라옴",
+    "background": "선명한 캠페인 배경 이미지와 팝 컬러 오브젝트"
+  },
+  "routes": [
+    {
+      "slug": "home",
+      "label": "홈",
+      "kind": "home"
+    },
+    {
+      "slug": "shop",
+      "label": "쇼핑",
+      "kind": "browse"
+    },
+    {
+      "slug": "shades",
+      "label": "컬러",
+      "kind": "detail"
+    },
+    {
+      "slug": "cart",
+      "label": "장바구니",
+      "kind": "checkout"
+    },
+    {
+      "slug": "brand",
+      "label": "브랜드",
+      "kind": "brand"
+    }
+  ]
+}

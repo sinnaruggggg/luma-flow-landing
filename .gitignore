@@ -27,3 +27,12 @@ dist-ssr
 *.sw?
 
 .vercel
+.env*.local
+
+# Stitch local artifacts
+.stitch/designs/
+design/stitch/*/screens/
+design/stitch/*/metadata.json
+
+.vercel
+.env*.local

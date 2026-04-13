@@ -1,0 +1,39 @@
+{
+  "siteId": "stationery-shop",
+  "brand": "CUT & NOTE",
+  "industry": "문구 스토어",
+  "summary": "키트 빌더 · 컬러 조합 · 장바구니",
+  "blueprint": {
+    "designFamily": "콜라주 문구 커머스",
+    "heroMode": "키트 구성과 종이 레이어가 먼저 보이는 홈",
+    "motion": "오려 붙인 카드가 가볍게 겹쳐 올라옴",
+    "background": "질감 배경과 작은 물리 반응형 오브젝트"
+  },
+  "routes": [
+    {
+      "slug": "home",
+      "label": "홈",
+      "kind": "home"
+    },
+    {
+      "slug": "kits",
+      "label": "키트",
+      "kind": "browse"
+    },
+    {
+      "slug": "colors",
+      "label": "컬러",
+      "kind": "detail"
+    },
+    {
+      "slug": "basket",
+      "label": "바스켓",
+      "kind": "checkout"
+    },
+    {
+      "slug": "brand",
+      "label": "브랜드",
+      "kind": "brand"
+    }
+  ]
+}

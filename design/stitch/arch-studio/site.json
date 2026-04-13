@@ -1,0 +1,39 @@
+{
+  "siteId": "arch-studio",
+  "brand": "PLAIN GRID",
+  "industry": "건축 · 인테리어 스튜디오",
+  "summary": "포트폴리오 · 프로세스 · 브리프",
+  "blueprint": {
+    "designFamily": "에디토리얼 포트폴리오",
+    "heroMode": "대형 공간 사진과 편집형 타이포가 중심인 홈",
+    "motion": "프로젝트 블록이 잡지 레이아웃처럼 교차 등장",
+    "background": "풀스크린 현장 사진과 느린 패럴랙스"
+  },
+  "routes": [
+    {
+      "slug": "home",
+      "label": "홈",
+      "kind": "home"
+    },
+    {
+      "slug": "works",
+      "label": "프로젝트",
+      "kind": "works"
+    },
+    {
+      "slug": "services",
+      "label": "서비스",
+      "kind": "services"
+    },
+    {
+      "slug": "brief",
+      "label": "브리프",
+      "kind": "brief"
+    },
+    {
+      "slug": "contact",
+      "label": "문의",
+      "kind": "contact"
+    }
+  ]
+}

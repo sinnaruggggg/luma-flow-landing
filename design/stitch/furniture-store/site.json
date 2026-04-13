@@ -1,0 +1,39 @@
+{
+  "siteId": "furniture-store",
+  "brand": "MOSS HOME",
+  "industry": "가구 스토어",
+  "summary": "룸별 탐색 · 배치 미리보기 · 구매",
+  "blueprint": {
+    "designFamily": "공간 스타일링 커머스",
+    "heroMode": "완성된 공간 사진과 룸별 탐색 버튼 중심",
+    "motion": "배치 카드와 번들 상품이 층층이 올라옴",
+    "background": "풀스크린 인테리어 이미지와 느린 패럴랙스"
+  },
+  "routes": [
+    {
+      "slug": "home",
+      "label": "홈",
+      "kind": "home"
+    },
+    {
+      "slug": "rooms",
+      "label": "룸별",
+      "kind": "browse"
+    },
+    {
+      "slug": "planner",
+      "label": "배치",
+      "kind": "detail"
+    },
+    {
+      "slug": "cart",
+      "label": "구매",
+      "kind": "checkout"
+    },
+    {
+      "slug": "service",
+      "label": "서비스",
+      "kind": "brand"
+    }
+  ]
+}

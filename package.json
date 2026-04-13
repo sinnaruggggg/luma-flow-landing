@@ -9,10 +9,14 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "generate:images": "node scripts/generate-gemini-images.mjs",
-    "generate:industry-images": "node scripts/generate-industry-images.mjs"
+    "generate:industry-images": "node scripts/generate-industry-images.mjs",
+    "stitch:init": "node scripts/stitch-init.mjs",
+    "stitch:generate": "node scripts/stitch-generate.mjs",
+    "stitch:pull": "node scripts/stitch-pull.mjs"
   },
   "dependencies": {
     "@google/genai": "^1.28.0",
+    "@google/stitch-sdk": "^0.1.0",
     "framer-motion": "^12.23.24",
     "lucide-react": "^0.542.0",
     "react": "^19.2.4",

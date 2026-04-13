@@ -1,0 +1,39 @@
+{
+  "siteId": "boutique-hotel",
+  "brand": "HOTEL STILL",
+  "industry": "부티크 호텔",
+  "summary": "객실 · 날짜 선택 · 예약",
+  "blueprint": {
+    "designFamily": "호스피탈리티 예약형",
+    "heroMode": "객실 풀블리드 이미지와 예약 위젯이 바로 보이는 홈",
+    "motion": "객실 카드와 오퍼 블록이 레이어처럼 포개짐",
+    "background": "고화질 객실 사진과 부드러운 스크롤 시차"
+  },
+  "routes": [
+    {
+      "slug": "home",
+      "label": "홈",
+      "kind": "home"
+    },
+    {
+      "slug": "rooms",
+      "label": "객실",
+      "kind": "browse"
+    },
+    {
+      "slug": "offers",
+      "label": "오퍼",
+      "kind": "detail"
+    },
+    {
+      "slug": "booking",
+      "label": "예약",
+      "kind": "reserve"
+    },
+    {
+      "slug": "guide",
+      "label": "안내",
+      "kind": "guide"
+    }
+  ]
+}

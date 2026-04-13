@@ -1,0 +1,39 @@
+{
+  "siteId": "boxing-gym",
+  "brand": "UPPERCUT CLUB",
+  "industry": "복싱짐 멤버십",
+  "summary": "체험 예약 · 코치 매칭 · 수업 시간표",
+  "blueprint": {
+    "designFamily": "다크 에너지 예약형",
+    "heroMode": "강한 인물 사진과 예약 위젯이 동시에 보이는 체육관 첫 화면",
+    "motion": "시간표와 코치 카드가 글로우와 함께 슬라이드 업",
+    "background": "어두운 링 공간, 얇은 빛줄기, 포인터 반응형 오라"
+  },
+  "routes": [
+    {
+      "slug": "home",
+      "label": "홈",
+      "kind": "home"
+    },
+    {
+      "slug": "classes",
+      "label": "수업",
+      "kind": "browse"
+    },
+    {
+      "slug": "coaches",
+      "label": "코치",
+      "kind": "detail"
+    },
+    {
+      "slug": "join",
+      "label": "등록",
+      "kind": "reserve"
+    },
+    {
+      "slug": "guide",
+      "label": "안내",
+      "kind": "guide"
+    }
+  ]
+}
