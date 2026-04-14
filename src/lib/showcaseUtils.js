@@ -29,13 +29,23 @@ export function useIsMobileClient() {
 }
 
 export function useBackdropPointer() {
-  const [style, setStyle] = useState({ "--cursor-x": "54%", "--cursor-y": "18%" });
+  const [style, setStyle] = useState({
+    "--cursor-x": "54%",
+    "--cursor-y": "18%",
+    "--pointer-shift-x": "0",
+    "--pointer-shift-y": "0",
+  });
 
   const onPointerMove = (event) => {
     const rect = event.currentTarget.getBoundingClientRect();
     const x = ((event.clientX - rect.left) / rect.width) * 100;
     const y = ((event.clientY - rect.top) / rect.height) * 100;
-    setStyle({ "--cursor-x": `${x}%`, "--cursor-y": `${y}%` });
+    setStyle({
+      "--cursor-x": `${x}%`,
+      "--cursor-y": `${y}%`,
+      "--pointer-shift-x": `${x - 50}`,
+      "--pointer-shift-y": `${y - 50}`,
+    });
   };
 
   return [style, onPointerMove];

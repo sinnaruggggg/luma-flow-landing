@@ -1,7 +1,9 @@
 import { ArrowLeft, ChevronRight, Clock3, Monitor, Smartphone } from "lucide-react";
 import { buildSitePath, siteRegistry } from "../content/siteRegistry";
 import { themeStyle, useBackdropPointer } from "../lib/showcaseUtils";
-import { HubMark, SceneBackdrop, ShowcasePhone } from "./showcaseAtoms";
+import { ConstellationField, HubMark, SceneBackdrop, ShowcasePhone } from "./showcaseAtoms";
+
+const PRIORITY_SITE_IDS = ["indie-bookstore", "stationery-shop", "local-cafe", "boutique-hotel"];
 
 function totals() {
   const totalRoutes = siteRegistry.reduce((sum, site) => sum + site.gallery.totalRoutes, 0);
@@ -11,6 +13,23 @@ function totals() {
   return { sites: siteRegistry.length, totalRoutes, readyRoutes, readySites, liveHomes };
 }
 
+function orderSites(sites) {
+  const rank = new Map(PRIORITY_SITE_IDS.map((siteId, index) => [siteId, index]));
+
+  return [...sites].sort((left, right) => {
+    const leftRank = rank.get(left.id);
+    const rightRank = rank.get(right.id);
+
+    if (leftRank !== undefined || rightRank !== undefined) {
+      if (leftRank === undefined) return 1;
+      if (rightRank === undefined) return -1;
+      return leftRank - rightRank;
+    }
+
+    return left.brand.localeCompare(right.brand);
+  });
+}
+
 function coverageLabel(site) {
   if (site.gallery.publicReady) return "5페이지 완성";
   if (site.gallery.homeReady) return `홈 공개 · ${site.gallery.readyRoutes}/${site.gallery.totalRoutes}`;
@@ -18,14 +37,57 @@ function coverageLabel(site) {
   return "준비 중";
 }
 
+function PreviewSurface({ stage, title, className = "", loading = "lazy" }) {
+  return (
+    <div className={`preview-surface ${className}`.trim()}>
+      {stage.html ? <iframe title={title} src={stage.html} loading={loading} tabIndex={-1} /> : <img src={stage.image} alt={stage.alt} loading={loading} />}
+    </div>
+  );
+}
+
+function HeroMontage({ sites }) {
+  return (
+    <div className="hub-hero__media" aria-hidden="true">
+      {sites.map((site, index) => (
+        <div key={site.id} className={`hub-hero__panel hub-hero__panel--${index + 1}`}>
+          <PreviewSurface stage={site.routeAssets.home.desktop} title={`${site.brand} 홈 미리보기`} className="hub-hero__preview" loading="eager" />
+        </div>
+      ))}
+      <div className="hub-hero__phones">
+        {sites.slice(0, 2).map((site, index) => (
+          <div key={`${site.id}-phone`} className={`hub-hero__phone hub-hero__phone--${index + 1}`}>
+            <ShowcasePhone
+              src={site.routeAssets.home.mobile.image}
+              html={site.routeAssets.home.mobile.html}
+              alt={`${site.brand} 모바일 미리보기`}
+              title={`${site.brand} 모바일 홈`}
+            />
+          </div>
+        ))}
+      </div>
+      <ConstellationField className="hub-hero__constellation" />
+      <div className="hub-hero__wash" />
+    </div>
+  );
+}
+
 function GalleryCard({ site, onOpen }) {
   const canOpen = site.gallery.homeReady;
+  const desktopStage = site.routeAssets.home.desktop;
+  const mobileStage = site.routeAssets.home.mobile;
 
   return (
-    <button type="button" className={`hub-card ${canOpen ? "" : "hub-card--disabled"}`.trim()} onClick={() => onOpen(buildSitePath(site.id))} disabled={!canOpen}>
+    <article className={`hub-card ${canOpen ? "" : "hub-card--disabled"}`.trim()}>
+      <button
+        type="button"
+        className="hub-card__hit"
+        onClick={() => onOpen(buildSitePath(site.id))}
+        disabled={!canOpen}
+        aria-label={`${site.brand} 사이트 보기`}
+      />
       <div className="hub-card__visual">
-        <img src={site.gallery.desktop} alt={`${site.brand} PC 미리보기`} />
-        <ShowcasePhone src={site.gallery.mobile} />
+        <PreviewSurface stage={desktopStage} title={`${site.brand} PC 미리보기`} className="hub-card__desktop-shot" />
+        <ShowcasePhone src={mobileStage.image} html={mobileStage.html} alt={`${site.brand} 모바일 미리보기`} title={`${site.brand} 모바일 홈`} />
       </div>
       <div className="hub-card__body">
         <div className="hub-card__meta">
@@ -42,23 +104,26 @@ function GalleryCard({ site, onOpen }) {
           </span>
         </div>
       </div>
-    </button>
+    </article>
   );
 }
 
 export function GalleryHome({ onOpen }) {
   const summary = totals();
+  const orderedSites = orderSites(siteRegistry);
+  const featuredSites = orderedSites.slice(0, 4);
+  const [pointerStyle, onPointerMove] = useBackdropPointer();
 
   return (
-    <div className="hub-page">
+    <div className="hub-page" style={pointerStyle} onPointerMove={onPointerMove}>
       <SceneBackdrop tone="gallery" />
       <div className="hub-page__content">
         <header className="hub-topbar">
           <div className="hub-topbar__brand">
             <HubMark />
             <div>
-              <strong>20개 독립 샘플 사이트</strong>
-              <span>메인 카드에서 바로 진입하고, 각 사이트는 홈 포함 5개 페이지 구조로 이어집니다.</span>
+              <strong>샘플 사이트 쇼룸</strong>
+              <span>운영하실 사이트와 가까운 샘플을 고르고, 원하는 무드가 보이면 그 이름으로 문의해 주세요.</span>
             </div>
           </div>
           <div className="hub-topbar__meta">
@@ -70,13 +135,21 @@ export function GalleryHome({ onOpen }) {
         </header>
 
         <section className="hub-hero">
-          <span className="hub-hero__eyebrow">Stitch 기반 갤러리</span>
-          <h1>메인에서 고르고, 들어가면 바로 실제 사이트처럼 보이게 보여줍니다.</h1>
-          <p>상세에서는 설명 패널 없이 사이트 화면 자체만 크게 보여줍니다. 데스크톱에서는 PC와 모바일을 전환해서 보고, 모바일 기기에서는 모바일 레이아웃만 바로 확인할 수 있습니다.</p>
+          <HeroMontage sites={featuredSites} />
+          <div className="hub-hero__content">
+            <span className="hub-hero__eyebrow">브랜드 샘플 갤러리</span>
+            <h1>운영하실 사이트와 가장 가까운 샘플을 선택해 둘러보시고, 원하는 스타일이 있으면 그 이름으로 문의해 주세요.</h1>
+            <p>병원, 카페, 호텔, 포트폴리오, 이벤트, 커머스, SaaS까지 실제 운영형 화면으로 준비했습니다. 카드에서 바로 들어가 PC와 모바일 화면을 직관적으로 확인하실 수 있습니다.</p>
+            <div className="hub-hero__chips">
+              {featuredSites.map((site) => (
+                <span key={site.id}>{site.brand}</span>
+              ))}
+            </div>
+          </div>
         </section>
 
         <section className="hub-grid">
-          {siteRegistry.map((site) => (
+          {orderedSites.map((site) => (
             <GalleryCard key={site.id} site={site} onOpen={onOpen} />
           ))}
         </section>
@@ -100,6 +173,21 @@ function DeviceSwitch({ viewMode, onViewChange }) {
   );
 }
 
+function RoutePicker({ site, route, onNavigate }) {
+  return (
+    <label className="route-picker">
+      <span className="route-picker__label">페이지</span>
+      <select value={route.slug} aria-label={`${site.brand} 페이지 선택`} onChange={(event) => onNavigate(buildSitePath(site.id, event.target.value))}>
+        {site.routes.map((item) => (
+          <option key={item.slug} value={item.slug} disabled={!item.ready}>
+            {item.label}
+          </option>
+        ))}
+      </select>
+    </label>
+  );
+}
+
 function SiteTopbar({ site, route, viewMode, isMobileClient, onViewChange, onNavigate, onBack }) {
   return (
     <header className="site-topbar">
@@ -113,19 +201,9 @@ function SiteTopbar({ site, route, viewMode, isMobileClient, onViewChange, onNav
           <span>{site.industry}</span>
         </div>
       </div>
-      <nav className="site-nav" aria-label={`${site.brand} 메뉴`}>
-        {site.routes.map((item) => (
-          <button
-            key={item.slug}
-            type="button"
-            className={item.slug === route.slug ? "is-active" : ""}
-            onClick={() => onNavigate(buildSitePath(site.id, item.slug))}
-            disabled={!item.ready}
-          >
-            {item.label}
-          </button>
-        ))}
-      </nav>
+      <div className="site-topbar__middle">
+        <RoutePicker site={site} route={route} onNavigate={onNavigate} />
+      </div>
       <div className="site-topbar__end">{!isMobileClient ? <DeviceSwitch viewMode={viewMode} onViewChange={onViewChange} /> : null}</div>
     </header>
   );
