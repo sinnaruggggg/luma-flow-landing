@@ -7,7 +7,6 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -87,13 +86,11 @@
         .technical-glow {
             box-shadow: 0 0 40px 0 rgba(0, 227, 253, 0.05);
         }
+        body {
+            min-height: max(884px, 100dvh);
+        }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
+</head>
 <body class="bg-background text-on-background font-body selection:bg-secondary-container selection:text-on-secondary-container">
 <!-- TopAppBar -->
 <header class="fixed top-0 w-full z-50 bg-[#111318]/80 backdrop-blur-xl border-b border-[#44474e]/15 shadow-[0_4px_40px_0_rgba(0,227,253,0.05)] flex justify-between items-center px-6 py-4 w-full">
@@ -101,7 +98,7 @@
 <button class="active:scale-95 transition-transform text-[#c4c6cf] hover:text-[#bdf4ff] transition-colors duration-300">
 <span class="material-symbols-outlined">menu</span>
 </button>
-<span class="text-xl font-bold tracking-widest text-[#bdf4ff] uppercase font-['Space_Grotesk']">ETHÉREO</span>
+<span class="text-xl font-bold tracking-widest text-[#bdf4ff] uppercase font-['Space_Grotesk']">SIGNAL GRID</span>
 </div>
 <div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30">
 <img class="w-full h-full object-cover" data-alt="minimalist professional user profile avatar with clean tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWQlbrQjt8x7fbRsPkBVvH4wtY8NE5DgnmrThV5mIvdCYAW_HcV9Xpf7Z7uMbUpiF_MBTLORbYqsyzTvh0OxD9uuWbYIERhvAj7vY4Fz0qXNF39gwedII6MFeXrbr18lYsW6Nk3VgT6eTRgrqXw-Flh7MBzlm1YMaLwXno8BpgndTOAe9Vp-cthrtMef_bt7iYosumJPgnNjBSP9D22c0Glt8YrNsqqCpG2cfpAPjZUPNfJDRVicAdPvutfcz6W6T-hCkia7_-rHk"/>
@@ -135,7 +132,7 @@
 <span class="text-sm font-semibold text-secondary-fixed">LLM Analyzer</span>
 </div>
 </div>
-<h1 class="text-4xl font-headline font-bold leading-tight tracking-tight mb-4 text-on-surface">
+<h1 class="text-3xl font-headline font-bold leading-tight tracking-tight mb-4 text-on-surface">
                 AI 워크플로우의 정점,<br/>
 <span class="text-secondary">SIGNAL GRID</span>
 </h1>
@@ -150,23 +147,23 @@
 <section class="px-6 py-12 grid grid-cols-2 gap-4">
 <div class="col-span-2 bg-surface-container-low p-6 rounded-lg border border-outline-variant/10">
 <span class="text-outline text-xs font-label uppercase tracking-widest mb-1 block">Reliability</span>
-<h3 class="text-3xl font-headline font-bold text-secondary">99.9%</h3>
+<h3 class="text-3xl font-headline font-bold text-secondary">신뢰성 99.9%</h3>
 <p class="text-on-surface-variant text-sm mt-2">가동률 보장</p>
 </div>
 <div class="bg-surface-container-low p-6 rounded-lg border border-outline-variant/10">
 <span class="text-outline text-xs font-label uppercase tracking-widest mb-1 block">Latency</span>
 <h3 class="text-2xl font-headline font-bold text-primary">1.2s</h3>
-<p class="text-on-surface-variant text-xs mt-1">처리 속도</p>
+<p class="text-on-surface-variant text-xs mt-1">응답 시간</p>
 </div>
 <div class="bg-surface-container-low p-6 rounded-lg border border-outline-variant/10">
 <span class="text-outline text-xs font-label uppercase tracking-widest mb-1 block">Throughput</span>
 <h3 class="text-2xl font-headline font-bold text-primary">8.4M+</h3>
-<p class="text-on-surface-variant text-xs mt-1">일간 시그널</p>
+<p class="text-on-surface-variant text-xs mt-1">처리량</p>
 </div>
 </section>
-<!-- Key Features List -->
+<!-- Key 기능 List -->
 <section class="px-6 py-16">
-<h2 class="text-2xl font-headline font-bold mb-10 border-l-4 border-secondary pl-4">KEY FEATURES</h2>
+<h2 class="text-2xl font-headline font-bold mb-10 border-l-4 border-secondary pl-4">주요 기능</h2>
 <div class="space-y-8">
 <div class="flex gap-6 items-start">
 <div class="w-12 h-12 shrink-0 bg-surface-bright flex items-center justify-center rounded-full ring-2 ring-secondary-fixed/20">
@@ -191,22 +188,21 @@
 <span class="material-symbols-outlined text-secondary">model_training</span>
 </div>
 <div>
-<h4 class="text-lg font-semibold mb-2">LLM Integration</h4>
+<h4 class="text-lg font-semibold mb-2">LLM 연동</h4>
 <p class="text-on-surface-variant text-sm leading-relaxed">최신 언어 모델을 워크플로우의 핵심 노드로 사용하여 지능형 결정을 자동화합니다.</p>
 </div>
 </div>
 </div>
 </section>
-<!-- Pricing Preview Card -->
+<!-- 요금 Preview Card -->
 <section class="px-6 py-16">
 <div class="bg-surface-container-high rounded-xl p-8 relative overflow-hidden">
 <div class="absolute top-0 right-0 p-4">
-<span class="bg-secondary/10 text-secondary text-[10px] px-2 py-1 rounded font-bold uppercase tracking-widest border border-secondary/20">Popular</span>
+<span class="bg-secondary/10 text-secondary text-[10px] px-2 py-1 rounded font-bold uppercase tracking-widest border border-secondary/20">인기</span>
 </div>
-<h3 class="text-xl font-headline font-bold mb-2">Professional Plan</h3>
+<h3 class="text-xl font-headline font-bold mb-2">프로페셔널 플랜</h3>
 <div class="flex items-baseline gap-2 mb-6">
-<span class="text-4xl font-headline font-bold text-on-surface">$49</span>
-<span class="text-outline text-sm">/mo</span>
+<span class="text-3xl font-headline font-bold text-on-surface">월 49,000원</span>
 </div>
 <ul class="space-y-4 mb-8">
 <li class="flex items-center gap-3 text-sm">
@@ -230,7 +226,7 @@
 <!-- Final CTA -->
 <section class="px-6 py-20 text-center relative">
 <div class="absolute inset-0 aura-mesh opacity-50 -z-10 rotate-180"></div>
-<h2 class="text-3xl font-headline font-bold mb-6">지금 미래의 워크플로우를<br/>구축하세요.</h2>
+<h2 class="text-2xl font-headline font-bold mb-6 leading-tight">지금 미래의 워크플로우를<br/>구축하세요.</h2>
 <p class="text-on-surface-variant mb-10">무료 체험 기간 동안 모든 프리미엄 기능을 경험해보세요.</p>
 <div class="flex flex-col gap-4">
 <button class="bg-primary text-on-primary py-5 rounded-lg font-bold text-lg shadow-[0_0_30px_rgba(183,196,255,0.3)] active:scale-95 transition-transform">
@@ -245,28 +241,28 @@
 <!-- NavigationDrawer (Mobile Focus) -->
 <div class="fixed inset-y-0 left-0 z-[60] flex flex-col h-full w-64 rounded-r-lg bg-[#1a1c20] shadow-2xl shadow-black -translate-x-full transition-transform duration-300 group">
 <div class="px-6 py-8 flex items-center justify-between">
-<span class="text-[#bdf4ff] font-black font-['Space_Grotesk'] uppercase tracking-tighter">COMMAND_CENTER</span>
+<span class="text-[#bdf4ff] font-black font-['Space_Grotesk'] uppercase tracking-tighter">메뉴</span>
 </div>
-<nav class="flex flex-col mt-4 font-['Space_Grotesk'] uppercase tracking-tighter">
+<nav class="flex flex-col mt-4 font-['Inter']">
 <a class="bg-[#001451] text-[#bdf4ff] border-l-4 border-[#bdf4ff] px-6 py-4 flex items-center gap-4 transition-colors" href="#">
-<span class="material-symbols-outlined">bolt</span>
-<span>Engine</span>
+<span class="material-symbols-outlined">home</span>
+<span>홈</span>
 </a>
 <a class="text-[#8e9099] px-6 py-4 flex items-center gap-4 hover:bg-[#282a2e] transition-colors" href="#">
 <span class="material-symbols-outlined">account_tree</span>
-<span>Workflows</span>
+<span>플로우</span>
 </a>
 <a class="text-[#8e9099] px-6 py-4 flex items-center gap-4 hover:bg-[#282a2e] transition-colors" href="#">
-<span class="material-symbols-outlined">insights</span>
-<span>Analytics</span>
+<span class="material-symbols-outlined">visibility</span>
+<span>사례</span>
 </a>
 <a class="text-[#8e9099] px-6 py-4 flex items-center gap-4 hover:bg-[#282a2e] transition-colors" href="#">
-<span class="material-symbols-outlined">menu_book</span>
-<span>Documentation</span>
+<span class="material-symbols-outlined">payments</span>
+<span>요금</span>
 </a>
 <a class="text-[#8e9099] px-6 py-4 flex items-center gap-4 hover:bg-[#282a2e] transition-colors mt-auto mb-10" href="#">
-<span class="material-symbols-outlined">settings</span>
-<span>Settings</span>
+<span class="material-symbols-outlined">mail</span>
+<span>문의</span>
 </a>
 </nav>
 </div>
@@ -274,29 +270,29 @@
 <footer class="bg-[#0c0e12] flex flex-col items-center gap-4 px-8 w-full py-8 mt-auto font-['Inter'] text-[10px] uppercase tracking-[0.2em]">
 <div class="bg-[#1e2024] h-1 w-full mb-8"></div>
 <div class="flex gap-6 text-[#44474e]">
-<a class="hover:text-white transition-opacity" href="#">Security</a>
-<a class="hover:text-white transition-opacity" href="#">Terms</a>
-<a class="hover:text-white transition-opacity" href="#">Contact</a>
+<a class="hover:text-white transition-opacity" href="#">보안</a>
+<a class="hover:text-white transition-opacity" href="#">약관</a>
+<a class="hover:text-white transition-opacity" href="#">문의</a>
 </div>
-<p class="text-[#44474e] mt-4">© 2024 ETHÉREO AI. VER_2.0.4</p>
+<p class="text-[#44474e] mt-4">© 2024 SIGNAL GRID. VER_2.0.4</p>
 </footer>
 <!-- Mobile Navigation Bar (Always visible on mobile bottom) -->
 <nav class="md:hidden fixed bottom-0 w-full bg-surface-container-lowest/90 backdrop-blur-lg flex justify-around items-center py-4 border-t border-outline-variant/10 z-50">
 <div class="flex flex-col items-center gap-1 text-secondary">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
-<span class="text-[9px] font-bold">HOME</span>
+<span class="text-[9px] font-bold">홈</span>
 </div>
 <div class="flex flex-col items-center gap-1 text-outline">
 <span class="material-symbols-outlined">account_tree</span>
-<span class="text-[9px] font-bold">FLOWS</span>
+<span class="text-[9px] font-bold">플로우</span>
 </div>
 <div class="flex flex-col items-center gap-1 text-outline">
-<span class="material-symbols-outlined">insights</span>
-<span class="text-[9px] font-bold">DATA</span>
+<span class="material-symbols-outlined">visibility</span>
+<span class="text-[9px] font-bold">사례</span>
 </div>
 <div class="flex flex-col items-center gap-1 text-outline">
 <span class="material-symbols-outlined">person</span>
-<span class="text-[9px] font-bold">USER</span>
+<span class="text-[9px] font-bold">마이페이지</span>
 </div>
 </nav>
 </body></html>

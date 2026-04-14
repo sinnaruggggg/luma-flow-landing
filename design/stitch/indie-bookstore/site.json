@@ -1,8 +1,8 @@
 {
   "siteId": "indie-bookstore",
   "brand": "PAPER NOOK",
-  "industry": "Independent Bookstore",
-  "summary": "A curated bookstore site that should feel like an editorial shelf, not a mass retailer.",
+  "industry": "독립 서점",
+  "summary": "대형 서점이 아니라 큐레이션 서가처럼 느껴지는 에디토리얼 서점 사이트.",
   "blueprint": {
     "family": "Paper editorial commerce",
     "heroMode": "Shelf-and-note first screen with editorial snippets and gift cues.",
@@ -17,28 +17,33 @@
   "routes": [
     {
       "slug": "home",
-      "label": "Home",
-      "kind": "home"
+      "label": "홈",
+      "kind": "home",
+      "legacyLabel": "Home"
     },
     {
       "slug": "shelf",
-      "label": "Shelf",
-      "kind": "browse"
+      "label": "서가",
+      "kind": "browse",
+      "legacyLabel": "Shelf"
     },
     {
       "slug": "picks",
-      "label": "Picks",
-      "kind": "detail"
+      "label": "추천",
+      "kind": "detail",
+      "legacyLabel": "Picks"
     },
     {
       "slug": "gift",
-      "label": "Gift",
-      "kind": "checkout"
+      "label": "선물",
+      "kind": "checkout",
+      "legacyLabel": "Gift"
     },
     {
       "slug": "brand",
-      "label": "Brand",
-      "kind": "brand"
+      "label": "브랜드",
+      "kind": "brand",
+      "legacyLabel": "Brand"
     }
   ]
 }

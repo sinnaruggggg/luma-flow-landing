@@ -1,8 +1,8 @@
 {
   "siteId": "ev-mobility",
   "brand": "ORBIT E",
-  "industry": "EV Mobility",
-  "summary": "An EV mobility site centered on model comparison, charge depth, and test-drive booking.",
+  "industry": "EV 모빌리티",
+  "summary": "모델 비교, 충전 정보, 시승 예약을 제품 콘솔처럼 보여주는 EV 사이트.",
   "blueprint": {
     "family": "Future mobility compare",
     "heroMode": "Comparison-led first screen with specs, range badges, and test-drive card visible at once.",
@@ -17,28 +17,33 @@
   "routes": [
     {
       "slug": "home",
-      "label": "Home",
-      "kind": "home"
+      "label": "홈",
+      "kind": "home",
+      "legacyLabel": "Home"
     },
     {
       "slug": "models",
-      "label": "Models",
-      "kind": "browse"
+      "label": "모델",
+      "kind": "browse",
+      "legacyLabel": "Models"
     },
     {
       "slug": "charge",
-      "label": "Charge",
-      "kind": "detail"
+      "label": "충전",
+      "kind": "detail",
+      "legacyLabel": "Charge"
     },
     {
       "slug": "drive",
-      "label": "Drive",
-      "kind": "reserve"
+      "label": "시승",
+      "kind": "reserve",
+      "legacyLabel": "Drive"
     },
     {
       "slug": "support",
-      "label": "Support",
-      "kind": "guide"
+      "label": "안내",
+      "kind": "guide",
+      "legacyLabel": "Support"
     }
   ]
 }

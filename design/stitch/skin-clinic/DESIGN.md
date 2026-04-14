@@ -1,46 +1,46 @@
-# Design System: ATELIER SKIN
-**Site ID:** skin-clinic
+# 디자인 시스템: ATELIER SKIN
+**사이트 ID:** skin-clinic
 
-## 1. Identity
-- Industry: Skin Clinic
-- Summary: Premium skin clinic with diagnosis-led booking, treatment programs, and medical trust cues.
-- Home grammar: Clinic stack
-- Mobile rule: Pin diagnosis CTA and open consult slots above every editorial section.
+## 1. 정체성
+- 업종: 스킨 클리닉 예약
+- 요약: 진단형 예약과 시술 프로그램, 의료 신뢰 요소를 함께 보여주는 프리미엄 클리닉 사이트.
+- 첫 화면 문법: 클리닉 스택
+- 모바일 규칙: 모든 에디토리얼 섹션보다 진단 CTA와 예약 슬롯을 먼저 고정한다.
 
-## 2. Visual Direction
-- Family: Premium clinical booking
-- First screen: Treatment space photo with diagnosis CTA column and open-slot widget.
-- Background: Large clinic photography with soft shadowed cards floating upward.
-- Motion: Treatment cards and booking rows appear as layered translucent sheets.
-- Atmosphere: Restrained, premium, quiet, and service-led.
+## 2. 비주얼 방향
+- 계열: Premium clinical booking
+- 첫 화면: Treatment space photo with diagnosis CTA column and open-slot widget.
+- 배경: Large clinic photography with soft shadowed cards floating upward.
+- 모션: Treatment cards and booking rows appear as layered translucent sheets.
+- 분위기: 절제되고 프리미엄이며 조용한 서비스 톤.
 
-## 3. Palette
-- Background: #f5f3ef
-- Surface: #ffffff
-- Panel: rgba(255, 255, 255, 0.9)
-- Text: #161b26
-- Muted: #6c7689
-- Accent: #1d2939
-- Accent soft: #d5dde8
+## 3. 팔레트
+- 배경: #f5f3ef
+- 표면: #ffffff
+- 패널: rgba(255, 255, 255, 0.9)
+- 본문: #161b26
+- 보조: #6c7689
+- 강조: #1d2939
+- 보조 강조: #d5dde8
 
-## 4. Typography
-- Use clean typography with controlled spacing and minimal copy.
-- Keep copy short and functional.
-- Use Korean as the default content language.
+## 4. 타이포그래피
+- 여백과 간격이 통제된 깔끔한 타이포를 사용한다.
+- 카피는 짧고 기능적으로 유지한다.
+- 기본 콘텐츠 언어는 한국어다.
 
-## 5. Components
-- Cards should feel calm and product-grade.
-- Shared primitives are limited to buttons, badges, inputs, and simple cards.
-- The first screen grammar must be unique to this site.
+## 5. 컴포넌트
+- 카드는 차분하고 제품급 완성도로 보여야 한다.
+- 공용 primitive는 버튼, 배지, 입력, 단순 카드 정도로 제한한다.
+- 첫 화면 문법은 이 사이트만의 구조여야 한다.
 
-## 6. Prohibited Patterns
-- No shared hero template.
-- No shared section assembler.
-- No repetitive image box + text box + CTA blocks.
+## 6. 금지 패턴
+- 공통 히어로 템플릿 금지.
+- 공통 섹션 조립기 금지.
+- 반복적인 이미지 박스 + 텍스트 박스 + CTA 블록 금지.
 
-## 7. Route Targets
-- Home (home): This is the operating homepage. Build a complete landing surface, not a cover page.
-- Programs (programs): Use a browse or catalog structure with filtering, category anchors, and fast exploration.
-- AI Scan (scan): Lead with product, room, program, or service depth. Make the decision points obvious.
-- Booking (booking): Design around booking or request flow, availability, and frictionless form completion.
-- Clinic (clinic): Organize operational guidance, visit rules, maps, FAQ, and preparation details clearly.
+## 7. 라우트 목표
+- 홈 (home): 운영형 홈페이지처럼 설계한다. 커버 페이지가 아니라 실제 사용 흐름이 바로 보여야 한다.
+- 프로그램 (programs): 필터, 카테고리, 빠른 탐색이 가능한 목록형 구조로 설계한다.
+- AI 진단 (scan): 상품, 객실, 프로그램, 서비스의 핵심 판단 정보가 첫 화면에서 보여야 한다.
+- 예약 (booking): 예약 흐름, 가능 시간, 선택 옵션, 신청 행동이 위쪽에서 바로 보여야 한다.
+- 클리닉 (clinic): 방문 안내, 규칙, FAQ, 맵, 준비 사항을 스캔하기 쉽게 정리한다.

@@ -6,7 +6,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<title>PLAIN GRID - 서비스 (모바일)</title>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -77,24 +77,20 @@
         }
     </script>
 <style>
-        body { font-family: 'Manrope', sans-serif; background-color: #fff9ee; color: #151616; margin: 0; }
+        body { font-family: 'Manrope', sans-serif; background-color: #fff9ee; color: #151616; margin: 0; word-break: keep-all; }
         .serif { font-family: 'Noto Serif KR', serif; }
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
         .glass-nav { background: rgba(255, 249, 238, 0.8); backdrop-filter: blur(12px); }
         .no-scrollbar::-webkit-scrollbar { display: none; }
+        h1, h2, h3, h4 { line-height: 1.4; }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
+</head>
 <body class="bg-surface text-primary selection:bg-primary-container selection:text-surface overflow-x-hidden">
 <!-- TopAppBar -->
 <header class="fixed top-0 w-full z-50 bg-[#fff9ee]/80 dark:bg-[#151616]/80 backdrop-blur-md text-[#151616] dark:text-[#fff9ee]">
 <div class="flex items-center justify-between px-6 h-16 w-full">
 <span class="material-symbols-outlined hover:opacity-70 transition-opacity duration-300 active:scale-95 transition-transform" data-icon="menu">menu</span>
-<h1 class="font-['Noto_Serif'] uppercase tracking-widest text-lg font-bold tracking-tighter">PLAIN GRID</h1>
+<h1 class="font-['Noto_Serif'] uppercase tracking-widest text-lg font-bold">PLAIN GRID</h1>
 <span class="material-symbols-outlined hover:opacity-70 transition-opacity duration-300 active:scale-95 transition-transform" data-icon="search">search</span>
 </div>
 </header>
@@ -102,17 +98,17 @@
 <!-- Hero Section -->
 <section class="relative w-full h-[751px] flex flex-col justify-end px-6 pb-12 overflow-hidden">
 <div class="absolute inset-0 z-0">
-<img alt="Architectural Hero" class="w-full h-full object-cover filter contrast-125 grayscale" data-alt="dramatic low angle shot of a modernist concrete building with sharp shadows and grainy film texture under high contrast lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpsr3CTggO49TtndYd2J-g9aN6DlyNad8V12ZVf2MByhSJ0O4jkkjeeU8O9mKPSwb4vQZB7RiEPOuUERmWlQpWSLHUJ1seYrEilNA23Tk1GvCN_ZEGBdZP96w7iG6G99vDI_72_mGPVL4TsoegHY-euYOEGH-vxyhUjgVAhArwtu2E_7fiLXGqJ5KcPvLp-Je_2_ClNIVp1dburUrMymes7YTGdHUVgEKXJVAV2j25x-pbEYwH40FM5sIX3N6VfEEZu6NLSx-NF7I"/>
+<img alt="건축 영감" class="w-full h-full object-cover filter contrast-125 grayscale" data-alt="dramatic low angle shot of a modernist concrete building with sharp shadows and grainy film texture under high contrast lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpsr3CTggO49TtndYd2J-g9aN6DlyNad8V12ZVf2MByhSJ0O4jkkjeeU8O9mKPSwb4vQZB7RiEPOuUERmWlQpWSLHUJ1seYrEilNA23Tk1GvCN_ZEGBdZP96w7iG6G99vDI_72_mGPVL4TsoegHY-euYOEGH-vxyhUjgVAhArwtu2E_7fiLXGqJ5KcPvLp-Je_2_ClNIVp1dburUrMymes7YTGdHUVgEKXJVAV2j25x-pbEYwH40FM5sIX3N6VfEEZu6NLSx-NF7I"/>
 <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
 </div>
 <div class="relative z-10">
-<p class="font-label uppercase tracking-[0.3em] text-[10px] text-surface/80 mb-2">SERVICES</p>
+<p class="font-label uppercase tracking-[0.3em] text-[10px] text-surface/80 mb-2">서비스</p>
 <h2 class="serif text-5xl font-bold text-surface leading-tight tracking-tighter mb-4">
                     건축 여정
                 </h2>
 <div class="w-12 h-[1px] bg-surface mb-8"></div>
 <button class="bg-surface text-primary px-8 py-4 font-label text-xs tracking-widest font-bold hover:bg-surface-container transition-colors">
-                    START YOUR BRIEF
+                    상담 시작하기
                 </button>
 </div>
 </section>
@@ -122,7 +118,7 @@
 <span class="font-label text-[10px] uppercase tracking-[0.4em] text-primary/40">OUR EXPERTISE</span>
 </div>
 <div class="space-y-8">
-<h3 class="serif text-3xl leading-snug">
+<h3 class="serif text-3xl leading-[1.4]">
                     우리는 단순한 건물을 넘어서, <span class="italic font-normal">시간이 흐를수록 깊어지는</span> 공간의 철학을 구축합니다.
                 </h3>
 <p class="font-body text-sm leading-relaxed text-on-surface-variant max-w-sm">
@@ -139,12 +135,12 @@
 <div class="relative z-10 px-6 transform translate-y-0 shadow-sm">
 <div class="bg-surface-container-low p-8 border-l-4 border-primary">
 <span class="font-label text-[10px] text-primary/30 mb-2 block">PHASE 01</span>
-<h4 class="serif text-2xl mb-6">Research &amp; Context</h4>
+<h4 class="serif text-2xl mb-6">리서치 및 맥락 분석</h4>
 <p class="font-body text-sm text-on-surface-variant leading-relaxed">
                         대지가 품고 있는 역사와 환경을 분석합니다. 우리는 보이지 않는 연결고리를 찾아내어 프로젝트의 근간이 될 단단한 논리를 형성합니다.
                     </p>
 <div class="mt-8">
-<img alt="Research" class="w-full h-48 object-cover grayscale opacity-80" data-alt="monochrome top-down view of architectural site plans and sketches with mechanical pencils and measuring tools" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCppyJszsfzQj95ULYQwZkiVC2az3oxYV_i_rpDO0sI1MuL5rmfpkcL_qiQgWc58BUv4Yvd4-mCj92cXOxDG85jljqFObwKTbO9KGH4T43ZqEt6rQWwv64ptgddT-fafmjsSXkXFE9GxW29Q1UVbysR2Nep4Yak7XzPSR4x8g107v4xeH-3JiJfbGttxIGTLRYsdVjcLan_RFZ6KqPvYeTAHT0qndcFLpmtfRVLTYzY5JehchFl4iMEbPVklj8_B3-RxO9MxiIjh6w"/>
+<img alt="리서치 과정" class="w-full h-48 object-cover grayscale opacity-80" data-alt="monochrome top-down view of architectural site plans and sketches with mechanical pencils and measuring tools" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCppyJszsfzQj95ULYQwZkiVC2az3oxYV_i_rpDO0sI1MuL5rmfpkcL_qiQgWc58BUv4Yvd4-mCj92cXOxDG85jljqFObwKTbO9KGH4T43ZqEt6rQWwv64ptgddT-fafmjsSXkXFE9GxW29Q1UVbysR2Nep4Yak7XzPSR4x8g107v4xeH-3JiJfbGttxIGTLRYsdVjcLan_RFZ6KqPvYeTAHT0qndcFLpmtfRVLTYzY5JehchFl4iMEbPVklj8_B3-RxO9MxiIjh6w"/>
 </div>
 </div>
 </div>
@@ -152,12 +148,12 @@
 <div class="relative z-20 px-8 transform translate-y-0">
 <div class="bg-surface-container p-8 shadow-xl">
 <span class="font-label text-[10px] text-primary/30 mb-2 block">PHASE 02</span>
-<h4 class="serif text-2xl mb-6">Conceptual Design</h4>
+<h4 class="serif text-2xl mb-6">개념 설계</h4>
 <p class="font-body text-sm text-on-surface-variant leading-relaxed">
                         추상적인 아이디어를 구체적인 공간의 언어로 번안합니다. 매스와 보이드의 균형을 통해 독창적인 미학을 제안합니다.
                     </p>
 <div class="mt-8">
-<img alt="Design" class="w-full h-48 object-cover grayscale brightness-90" data-alt="detail of a minimalist white architectural model showing play of light and shadows on geometric planes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFkYmKImcbEaaV0doAMpgOx5-S-X_1G6o8HEJRgif8M2CZi5ecTfO8hdXUo4RmFr9ysu-22isu60p-Z4TcFI51dueOLcvaXjfJkRH-B8sKCpCo09li7OjZ1JK05HbyeR9RJSBRtpTdQ7CF16YzICOlFXaHFAnTEb-WHv83itmLjO1Hfhj66RAOM91W8BoKIz4Lus9YZviRSFrIhSVihzeVAlhUFZMo3tQVMpozLYzpUt1lQvI_QqRtYeI2PrqF6zccEYoIW7Gl-Xs"/>
+<img alt="설계 모델" class="w-full h-48 object-cover grayscale brightness-90" data-alt="detail of a minimalist white architectural model showing play of light and shadows on geometric planes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFkYmKImcbEaaV0doAMpgOx5-S-X_1G6o8HEJRgif8M2CZi5ecTfO8hdXUo4RmFr9ysu-22isu60p-Z4TcFI51dueOLcvaXjfJkRH-B8sKCpCo09li7OjZ1JK05HbyeR9RJSBRtpTdQ7CF16YzICOlFXaHFAnTEb-WHv83itmLjO1Hfhj66RAOM91W8BoKIz4Lus9YZviRSFrIhSVihzeVAlhUFZMo3tQVMpozLYzpUt1lQvI_QqRtYeI2PrqF6zccEYoIW7Gl-Xs"/>
 </div>
 </div>
 </div>
@@ -165,7 +161,7 @@
 <div class="relative z-30 px-6 transform translate-y-0">
 <div class="bg-primary text-surface p-8 shadow-2xl">
 <span class="font-label text-[10px] text-surface/30 mb-2 block text-white/50">PHASE 03</span>
-<h4 class="serif text-2xl mb-6 text-white">Construction &amp; Craft</h4>
+<h4 class="serif text-2xl mb-6 text-white">시공 및 공예</h4>
 <p class="font-body text-sm text-white/70 leading-relaxed">
                         도면 너머의 물성을 실현합니다. 장인정신을 바탕으로 세밀한 디테일까지 완벽하게 구현하여 영속성을 부여합니다.
                     </p>
@@ -185,22 +181,22 @@
 <!-- Item 1 -->
 <div class="bg-surface p-6 flex flex-col items-center text-center">
 <span class="material-symbols-outlined text-primary mb-4" data-icon="draw">draw</span>
-<p class="font-label text-[10px] uppercase tracking-widest font-bold">Architectural<br/>Drawings</p>
+<p class="font-label text-[10px] uppercase tracking-widest font-bold">건축 도면<br/>Drawings</p>
 </div>
 <!-- Item 2 -->
 <div class="bg-surface p-6 flex flex-col items-center text-center">
 <span class="material-symbols-outlined text-primary mb-4" data-icon="layers">layers</span>
-<p class="font-label text-[10px] uppercase tracking-widest font-bold">Physical<br/>Models</p>
+<p class="font-label text-[10px] uppercase tracking-widest font-bold">물리적 모델<br/>모델</p>
 </div>
 <!-- Item 3 -->
 <div class="bg-surface p-6 flex flex-col items-center text-center">
 <span class="material-symbols-outlined text-primary mb-4" data-icon="palette">palette</span>
-<p class="font-label text-[10px] uppercase tracking-widest font-bold">Material<br/>Board</p>
+<p class="font-label text-[10px] uppercase tracking-widest font-bold">자재 보드<br/>Materials</p>
 </div>
 <!-- Item 4 -->
 <div class="bg-surface p-6 flex flex-col items-center text-center">
 <span class="material-symbols-outlined text-primary mb-4" data-icon="video_library">video_library</span>
-<p class="font-label text-[10px] uppercase tracking-widest font-bold">Digital<br/>Walkthrough</p>
+<p class="font-label text-[10px] uppercase tracking-widest font-bold">디지털 워크스루<br/>Walkthrough</p>
 </div>
 </div>
 </section>
@@ -211,7 +207,7 @@
                 우리는 귀하의 비전을 건축적 실체로 변환할 준비가 되어 있습니다. 지금 브리프를 시작해보세요.
             </p>
 <a class="inline-block bg-primary text-surface px-10 py-5 font-label text-xs tracking-widest font-bold hover:bg-primary-container transition-all active:scale-95" href="#">
-                START YOUR BRIEF
+                상담 시작하기
             </a>
 </section>
 </main>
@@ -219,19 +215,19 @@
 <nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#fff9ee]/90 dark:bg-[#151616]/90 backdrop-blur-xl z-50 shadow-[0_-12px_40px_rgba(29,27,22,0.05)]">
 <a class="flex flex-col items-center justify-center text-[#151616]/40 dark:text-[#fff9ee]/40 pt-2 hover:text-[#151616] dark:hover:text-[#fff9ee] transition-colors active:translate-y-[-2px] transition-transform duration-200" href="#">
 <span class="material-symbols-outlined" data-icon="architecture">architecture</span>
-<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-medium mt-1">Works</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-medium mt-1">작품</span>
 </a>
 <a class="flex flex-col items-center justify-center text-[#151616]/40 dark:text-[#fff9ee]/40 pt-2 hover:text-[#151616] dark:hover:text-[#fff9ee] transition-colors active:translate-y-[-2px] transition-transform duration-200" href="#">
 <span class="material-symbols-outlined" data-icon="domain">domain</span>
-<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-medium mt-1">Studio</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-medium mt-1">스튜디오</span>
 </a>
 <a class="flex flex-col items-center justify-center text-[#151616]/40 dark:text-[#fff9ee]/40 pt-2 hover:text-[#151616] dark:hover:text-[#fff9ee] transition-colors active:translate-y-[-2px] transition-transform duration-200" href="#">
 <span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
-<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-medium mt-1">Archive</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-medium mt-1">아카이브</span>
 </a>
 <a class="flex flex-col items-center justify-center text-[#151616] dark:text-[#fff9ee] border-t-2 border-[#151616] dark:border-[#fff9ee] pt-2 active:translate-y-[-2px] transition-transform duration-200" href="#">
 <span class="material-symbols-outlined" data-icon="edit_note" style="font-variation-settings: 'FILL' 1;">edit_note</span>
-<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-medium mt-1">Brief</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-medium mt-1">문의</span>
 </a>
 </nav>
 </body></html>

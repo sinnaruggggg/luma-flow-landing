@@ -16,30 +16,272 @@ const themes = {
   cafeWarm: { bg: "#f4ead9", surface: "#fff8ef", panel: "rgba(255, 248, 239, 0.86)", text: "#2b221a", muted: "#6a5c4f", accent: "#5d3b24", accentSoft: "#e8c498", line: "rgba(43, 34, 26, 0.1)", shadow: "0 20px 34px rgba(43, 34, 26, 0.1)", buttonText: "#ffffff" },
 };
 
-const route = (slug, label, kind) => ({ slug, label, kind });
+const routeLabels = {
+  home: "홈",
+  drops: "드롭",
+  styles: "스타일",
+  cart: "장바구니",
+  brand: "브랜드",
+  routine: "루틴",
+  compare: "비교",
+  subscribe: "구독",
+  classes: "프로그램",
+  coaches: "코치",
+  join: "가입",
+  guide: "안내",
+  features: "기능",
+  cases: "사례",
+  pricing: "요금",
+  contact: "문의",
+  programs: "프로그램",
+  scan: "AI 진단",
+  booking: "예약",
+  clinic: "클리닉",
+  works: "프로젝트",
+  services: "서비스",
+  brief: "브리프",
+  shop: "쇼핑",
+  shades: "컬러",
+  lineup: "라인업",
+  schedule: "시간표",
+  tickets: "티켓",
+  feed: "피드",
+  perks: "혜택",
+  models: "모델",
+  charge: "충전",
+  drive: "시승",
+  gear: "장비",
+  bundle: "번들",
+  support: "안내",
+  flows: "플로우",
+  shelf: "서가",
+  picks: "추천",
+  gift: "선물",
+  kits: "키트",
+  colors: "컬러",
+  menu: "메뉴",
+  visit: "방문",
+  reserve: "예약",
+  info: "정보",
+  rooms: "객실",
+  offers: "오퍼",
+  sets: "세트",
+  notes: "노트",
+  planner: "플래너",
+  service: "서비스",
+  looks: "룩북",
+  collection: "컬렉션",
+  bespoke: "비스포크",
+  consult: "상담",
+};
+
+const localizedSites = {
+  "sneaker-drop": {
+    industry: "스니커 커머스",
+    summary: "한 번에 하나의 핵심 드롭에 집중하는 한정판 스니커 커머스 사이트.",
+    homeMode: "포스터 드롭 월",
+    mobileRule: "첫 화면에서 사이즈 선택, 가격, 구매 버튼이 바로 보여야 한다.",
+  },
+  "supplement-brand": {
+    industry: "영양제 커머스",
+    summary: "루틴 조합과 정기구독 번들을 중심으로 설계된 D2C 영양제 사이트.",
+    homeMode: "루틴 빌더 스플릿",
+    mobileRule: "긴 설명보다 루틴 선택, 플랜 가격, 구독 CTA를 먼저 보여준다.",
+  },
+  "boxing-gym": {
+    industry: "복싱짐 예약",
+    summary: "프로그램 소개보다 체험 예약이 먼저 열리는 고밀도 복싱짐 사이트.",
+    homeMode: "예약 위젯 선행형",
+    mobileRule: "첫 화면에 체험 일정, 코치 요약, 등록 CTA가 함께 보여야 한다.",
+  },
+  "wealth-app": {
+    industry: "자산관리 SaaS",
+    summary: "목표 추적과 포트폴리오 가시성을 대시보드 중심으로 보여주는 자산관리 SaaS.",
+    homeMode: "대시보드 벤토",
+    mobileRule: "모바일 첫 화면에서 KPI, 목표 진행률, 시작 CTA를 우선 노출한다.",
+  },
+  "skin-clinic": {
+    industry: "스킨 클리닉 예약",
+    summary: "진단형 예약과 시술 프로그램, 의료 신뢰 요소를 함께 보여주는 프리미엄 클리닉 사이트.",
+    homeMode: "클리닉 스택",
+    mobileRule: "모든 에디토리얼 섹션보다 진단 CTA와 예약 슬롯을 먼저 고정한다.",
+  },
+  "arch-studio": {
+    industry: "건축 스튜디오",
+    summary: "실제 건축 스튜디오 의뢰 사이트처럼 보이도록 구성한 에디토리얼 포트폴리오.",
+    homeMode: "에디토리얼 캔버스",
+    mobileRule: "모바일은 프로젝트 카드와 문의 진입이 먼저 보이는 비주얼 브리프 덱처럼 설계한다.",
+  },
+  "beauty-flash-sale": {
+    industry: "뷰티 플래시 세일",
+    summary: "키트 구매, 세일 긴급감, 컬러 탐색을 빠르게 연결하는 고속 뷰티 커머스 사이트.",
+    homeMode: "세일 포스터 보드",
+    mobileRule: "캠페인 설명보다 히어로 가격, 키트 선택, 결제 경로를 먼저 보여준다.",
+  },
+  "festival-page": {
+    industry: "페스티벌 이벤트",
+    summary: "라인업 탐색, 시간표 가독성, 티켓 구매가 바로 이어지는 페스티벌 사이트.",
+    homeMode: "페스티벌 포스터 스택",
+    mobileRule: "긴 소개문 없이 라인업 하이라이트, 날짜, 티켓 선택이 바로 보여야 한다.",
+  },
+  "creator-club": {
+    industry: "크리에이터 커뮤니티",
+    summary: "실시간 활동감, 멤버십 혜택, 가입 흐름을 한 화면 안에서 느끼게 하는 커뮤니티 사이트.",
+    homeMode: "커뮤니티 라이브 피드",
+    mobileRule: "커뮤니티 설명보다 실시간 업데이트, 패스 옵션, 가입 진입을 먼저 보여준다.",
+  },
+  "ev-mobility": {
+    industry: "EV 모빌리티",
+    summary: "모델 비교, 충전 정보, 시승 예약을 제품 콘솔처럼 보여주는 EV 사이트.",
+    homeMode: "모델 비교 대시보드",
+    mobileRule: "브랜드 카피보다 비교표, 충전 정보, 시승 CTA가 먼저 나와야 한다.",
+  },
+  "gaming-gear": {
+    industry: "게이밍 기어",
+    summary: "번들 스펙과 빠른 장바구니 진입을 중심으로 구성한 게이밍 하드웨어 커머스 사이트.",
+    homeMode: "셋업 커맨드 센터",
+    mobileRule: "커뮤니티나 브랜드 설명보다 번들 스펙, 가격, 구매 버튼을 먼저 노출한다.",
+  },
+  "ai-saas": {
+    industry: "AI 워크플로 SaaS",
+    summary: "플로우 보드, 활용 사례, 요금 비교가 한 흐름으로 이어지는 워크플로 자동화 SaaS.",
+    homeMode: "워크플로 보드",
+    mobileRule: "데스크톱 보드를 줄이지 말고 상태 카드, KPI, 주 CTA를 모바일 전용 순서로 재배치한다.",
+  },
+  "indie-bookstore": {
+    industry: "독립 서점",
+    summary: "대형 서점이 아니라 큐레이션 서가처럼 느껴지는 에디토리얼 서점 사이트.",
+    homeMode: "서가 에디토리얼",
+    mobileRule: "선정 도서와 선물 CTA를 압축 그리드가 아니라 잡지형 카드 흐름으로 보여준다.",
+  },
+  "stationery-shop": {
+    industry: "문구점",
+    summary: "키트 조합, 색상 팔레트, 종이 질감을 중심으로 구성한 문구 커머스 사이트.",
+    homeMode: "페이퍼 키트 보드",
+    mobileRule: "긴 브랜드 설명보다 키트 구성, 컬러 조합, 장바구니 진입을 먼저 보여준다.",
+  },
+  "local-cafe": {
+    industry: "카페 예약",
+    summary: "오늘의 메뉴와 좌석 현황, 예약 진입이 실제 매장처럼 바로 보이는 카페 사이트.",
+    homeMode: "카페 윈도우",
+    mobileRule: "첫 두 블록 안에서 오늘의 메뉴와 좌석 예약을 바로 처리할 수 있어야 한다.",
+  },
+  "boutique-hotel": {
+    industry: "부티크 호텔",
+    summary: "객실 이미지와 예약 위젯이 동시에 열리는 실제 운영형 호텔 사이트.",
+    homeMode: "스테이 파인더 히어로",
+    mobileRule: "객실 사진 아래로 예약 위젯과 오퍼 CTA가 바로 이어져야 한다.",
+  },
+  "perfume-house": {
+    industry: "퍼퓸 하우스",
+    summary: "향 노트와 세트 구매를 에디토리얼 무드 속에서 이해하게 하는 향수 사이트.",
+    homeMode: "센트 무드 필름",
+    mobileRule: "무드 캔버스를 줄이지 말고 노트 카드, 세트 가격, 선물 CTA를 터치형 카드로 재구성한다.",
+  },
+  "furniture-store": {
+    industry: "가구 커머스",
+    summary: "공간 선택과 번들 쇼핑을 룸 플래너처럼 다루는 가구 커머스 사이트.",
+    homeMode: "룸 플래너",
+    mobileRule: "브랜드 스토리보다 공간 선택과 플래너 CTA를 핵심 동작으로 먼저 보여준다.",
+  },
+  "youth-fashion": {
+    industry: "영 패션",
+    summary: "룩북 흐름과 빠른 쇼핑 진입이 연결된 이미지 중심 패션 사이트.",
+    homeMode: "룩북 레일",
+    mobileRule: "룩북을 단순 축소하지 않고 룩 단위 스와이프 카드와 구매 CTA로 재구성한다.",
+  },
+  "jewelry-brand": {
+    industry: "주얼리 브랜드",
+    summary: "컬렉션 공개와 상담 전환을 동시에 다루는 갤러리형 주얼리 사이트.",
+    homeMode: "컬렉션 갤러리",
+    mobileRule: "컬렉션 이미지를 깔끔한 스택 카드로 바꾸고 상담 진입을 바로 붙인다.",
+  },
+};
+
+const statLabels = {
+  "Drop opens": "드롭 오픈",
+  "Focus size": "주력 사이즈",
+  "Heat meter": "인기 지수",
+  "Monthly plan": "월간 플랜",
+  "Stack slots": "스택 슬롯",
+  "Repeat rate": "재구매율",
+  "Open rings": "오픈 링",
+  "Trial pass": "체험 패스",
+  "Member score": "회원 평점",
+  "Setup time": "설정 시간",
+  "Goal hit": "목표 달성",
+  "Diagnosis fee": "진단 비용",
+  "Consult type": "상담 방식",
+  "Return rate": "재방문율",
+  "Built projects": "완료 프로젝트",
+  "Avg lead": "평균 리드",
+  Focus: "주력 분야",
+  "Flash price": "플래시 특가",
+  "Shade count": "컬러 수",
+  "Ends in": "종료까지",
+  "Day pass": "일일권",
+  Artists: "아티스트",
+  "Gate opens": "입장 시작",
+  "Monthly pass": "월간 패스",
+  "Live rooms": "라이브 룸",
+  "Drop nights": "드롭 나이트",
+  Range: "주행 거리",
+  "Charge time": "충전 시간",
+  "Test wait": "시승 대기",
+  "Bundle price": "번들 가격",
+  "Launch window": "출시 기간",
+  "Mouse weight": "마우스 무게",
+  Starter: "스타터",
+  "Saved hours": "절감 시간",
+  "Close rate": "전환율",
+  "Shelf edits": "큐레이션 선반",
+  "Gift set": "선물 세트",
+  "Weekly notes": "주간 노트",
+  "Kit price": "키트 가격",
+  "Palette sets": "팔레트 세트",
+  "Wrap option": "포장 옵션",
+  "Open seats": "남은 좌석",
+  "Table hold": "좌석 홀드",
+  "Set menu": "세트 메뉴",
+  "Night rate": "1박 요금",
+  "Check-in": "체크인",
+  Packages: "패키지",
+  "Set price": "세트 가격",
+  "Core notes": "핵심 노트",
+  "Gift wrap": "선물 포장",
+  "Bundle options": "번들 옵션",
+  "Lead time": "리드 타임",
+  "Room sets": "공간 세트",
+  "Size range": "사이즈",
+  "Drop sale": "드롭 세일",
+  "Entry price": "시작가",
+  "Entry piece": "입문 가격",
+};
+
+const route = (slug, label, kind) => ({ slug, label: routeLabels[slug] ?? label, kind, legacyLabel: label });
 const stat = (label, value) => ({ label, value });
 
 const routeKindDescriptions = {
-  home: "This is the operating homepage. Build a complete landing surface, not a cover page.",
-  browse: "Use a browse or catalog structure with filtering, category anchors, and fast exploration.",
-  detail: "Lead with product, room, program, or service depth. Make the decision points obvious.",
-  checkout: "Show an intentional conversion flow with options, quantity, summary, and next action.",
-  brand: "Present the brand world, trust layer, and operating context rather than generic about text.",
-  reserve: "Design around booking or request flow, availability, and frictionless form completion.",
-  guide: "Organize operational guidance, visit rules, maps, FAQ, and preparation details clearly.",
-  features: "Explain product capabilities through productized modules, diagrams, and proof points.",
-  cases: "Focus on real use cases, metrics, teams, outcomes, and before or after patterns.",
-  pricing: "Make plans, pricing differences, and commitment decisions easy to compare.",
-  contact: "Focus on inquiry, demo request, response expectations, and business trust signals.",
-  works: "Treat the page as a project index with filters, featured work, and quick case entry.",
-  services: "Frame service scope, deliverables, and process with confidence and specificity.",
-  brief: "Design a compact but premium brief intake flow with structured fields and expectations.",
-  lineup: "Build the page around talent cards, dates, stages, and discovery rather than prose.",
-  schedule: "Make timeline, stage movement, and time slots immediately legible.",
-  tickets: "Present ticket classes, pricing, perks, and purchase CTA with low friction.",
-  feed: "Create a living activity feed for the community with clear recency and member energy.",
-  perks: "Show benefits, exclusive value, and membership depth in a concise visual structure.",
-  join: "Focus on membership signup, plan choice, and the reasons to commit today.",
+  home: "운영형 홈페이지처럼 설계한다. 커버 페이지가 아니라 실제 사용 흐름이 바로 보여야 한다.",
+  browse: "필터, 카테고리, 빠른 탐색이 가능한 목록형 구조로 설계한다.",
+  detail: "상품, 객실, 프로그램, 서비스의 핵심 판단 정보가 첫 화면에서 보여야 한다.",
+  checkout: "옵션, 수량, 요약, 다음 행동이 선명한 전환형 페이지로 만든다.",
+  brand: "흔한 소개문이 아니라 브랜드 세계관과 신뢰 근거가 드러나야 한다.",
+  reserve: "예약 흐름, 가능 시간, 선택 옵션, 신청 행동이 위쪽에서 바로 보여야 한다.",
+  guide: "방문 안내, 규칙, FAQ, 맵, 준비 사항을 스캔하기 쉽게 정리한다.",
+  features: "기능은 제품 모듈, 다이어그램, 흐름 단위로 설명한다.",
+  cases: "실제 활용 사례, 성과 수치, 팀 맥락, 전후 비교를 중심으로 보여준다.",
+  pricing: "플랜 차이와 선택 기준이 바로 비교되도록 만든다.",
+  contact: "문의 흐름, 응답 기대치, 신뢰 요소가 함께 보이는 고신뢰 문의 페이지로 만든다.",
+  works: "프로젝트 인덱스와 큐레이션 구조가 분명한 포트폴리오 페이지로 만든다.",
+  services: "서비스 범위, 산출물, 진행 방식이 자신 있게 보이도록 설계한다.",
+  brief: "고급스럽지만 간결한 브리프 접수 흐름과 구조화된 입력 필드를 만든다.",
+  lineup: "긴 설명보다 출연진 카드, 날짜, 무대 정보 중심으로 설계한다.",
+  schedule: "시간대, 동선, 핵심 슬롯이 즉시 읽히는 시간표 구조를 만든다.",
+  tickets: "티켓 등급, 가격, 혜택, 구매 CTA가 빠르게 이해되어야 한다.",
+  feed: "지금 움직이는 커뮤니티처럼 느껴지는 활동 피드 구조를 만든다.",
+  perks: "멤버십 가치와 독점 혜택을 짧고 강하게 보여준다.",
+  join: "가입 이유, 플랜 선택, 오늘 행동해야 하는 이유가 선명해야 한다.",
 };
 
 const stageHeights = {
@@ -389,15 +631,21 @@ const rawSites = [
   },
 ];
 
-export const siteCatalog = rawSites.map((site) => ({
-  ...site,
-  theme: themes[site.themeKey],
-  images: {
-    brand: buildImage(site.imageStyle, site.id, "brand"),
-    product: buildImage(site.imageStyle, site.id, "product"),
-    scene: buildImage(site.imageStyle, site.id, "scene"),
-  },
-}));
+export const siteCatalog = rawSites.map((site) => {
+  const localized = localizedSites[site.id] ?? {};
+
+  return {
+    ...site,
+    ...localized,
+    stats: site.stats.map((item) => ({ ...item, label: statLabels[item.label] ?? item.label })),
+    theme: themes[site.themeKey],
+    images: {
+      brand: buildImage(site.imageStyle, site.id, "brand"),
+      product: buildImage(site.imageStyle, site.id, "product"),
+      scene: buildImage(site.imageStyle, site.id, "scene"),
+    },
+  };
+});
 
 export const siteCatalogById = Object.fromEntries(siteCatalog.map((site) => [site.id, site]));
 
@@ -411,16 +659,16 @@ export function getRoutesForSite(siteId) {
 
 export function getBlueprintForSite(siteId) {
   return getSiteCatalogEntry(siteId)?.design ?? {
-    family: "Independent digital brand",
-    heroMode: "First screen should immediately explain the service without a generic hero stack.",
-    background: "Use either a high-resolution image world or a restrained responsive mesh background.",
-    motion: "Use layered reveals with depth, but keep the content readable.",
-    keywords: ["independent website", "non-template layout"],
+    family: "독립형 디지털 브랜드",
+    heroMode: "첫 화면만 봐도 서비스가 이해되는 구조여야 하며 흔한 히어로 스택을 쓰지 않는다.",
+    background: "고해상도 이미지 월드 혹은 절제된 반응형 메시 배경 중 하나를 사용한다.",
+    motion: "깊이감 있는 레이어 연출을 쓰되 콘텐츠 가독성을 해치지 않는다.",
+    keywords: ["독립 사이트", "비템플릿 레이아웃"],
   };
 }
 
 export function getRouteDescription(kind) {
-  return routeKindDescriptions[kind] ?? "Design the page like a real operating page with direct user action.";
+  return routeKindDescriptions[kind] ?? "직접 행동이 바로 이어지는 실제 운영형 페이지처럼 설계한다.";
 }
 
 export function getStageHeight(kind, device) {

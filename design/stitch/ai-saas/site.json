@@ -1,8 +1,8 @@
 {
   "siteId": "ai-saas",
   "brand": "SIGNAL GRID",
-  "industry": "AI Workflow SaaS",
-  "summary": "Workflow automation SaaS structured around flow boards, use cases, and pricing clarity.",
+  "industry": "AI 워크플로 SaaS",
+  "summary": "플로우 보드, 활용 사례, 요금 비교가 한 흐름으로 이어지는 워크플로 자동화 SaaS.",
   "blueprint": {
     "family": "AI product board",
     "heroMode": "Workflow-board homepage with logic nodes, KPI tiles, and action chips.",
@@ -17,28 +17,33 @@
   "routes": [
     {
       "slug": "home",
-      "label": "Home",
-      "kind": "home"
+      "label": "홈",
+      "kind": "home",
+      "legacyLabel": "Home"
     },
     {
       "slug": "flows",
-      "label": "Flows",
-      "kind": "features"
+      "label": "플로우",
+      "kind": "features",
+      "legacyLabel": "Flows"
     },
     {
       "slug": "cases",
-      "label": "Cases",
-      "kind": "cases"
+      "label": "사례",
+      "kind": "cases",
+      "legacyLabel": "Cases"
     },
     {
       "slug": "pricing",
-      "label": "Pricing",
-      "kind": "pricing"
+      "label": "요금",
+      "kind": "pricing",
+      "legacyLabel": "Pricing"
     },
     {
       "slug": "contact",
-      "label": "Contact",
-      "kind": "contact"
+      "label": "문의",
+      "kind": "contact",
+      "legacyLabel": "Contact"
     }
   ]
 }

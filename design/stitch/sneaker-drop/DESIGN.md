@@ -1,46 +1,46 @@
-# Design System: RIFT/01
-**Site ID:** sneaker-drop
+# 디자인 시스템: RIFT/01
+**사이트 ID:** sneaker-drop
 
-## 1. Identity
-- Industry: Sneaker Commerce
-- Summary: Limited sneaker commerce with launch countdown and fast cart entry.
-- Home grammar: Poster drop wall
-- Mobile rule: Put size choice, price, and buy action in the first viewport.
+## 1. 정체성
+- 업종: 스니커 커머스
+- 요약: 한 번에 하나의 핵심 드롭에 집중하는 한정판 스니커 커머스 사이트.
+- 첫 화면 문법: 포스터 드롭 월
+- 모바일 규칙: 첫 화면에서 사이즈 선택, 가격, 구매 버튼이 바로 보여야 한다.
 
-## 2. Visual Direction
-- Family: Street launch lab
-- First screen: Poster-led hero with price strip and side countdown.
-- Background: Big campaign photo with layered panels rising over it.
-- Motion: Countdown plate and size rail land at different depths.
-- Atmosphere: Punchy contrast, visible shapes, and immediate commerce energy.
+## 2. 비주얼 방향
+- 계열: Street launch lab
+- 첫 화면: Poster-led hero with price strip and side countdown.
+- 배경: Big campaign photo with layered panels rising over it.
+- 모션: Countdown plate and size rail land at different depths.
+- 분위기: 강한 대비, 또렷한 형태, 즉시 구매를 유도하는 에너지.
 
-## 3. Palette
-- Background: #f7e45d
-- Surface: #fffdf4
-- Panel: rgba(255, 252, 241, 0.84)
-- Text: #121212
-- Muted: #5d5649
-- Accent: #ff6b6b
-- Accent soft: #7dd3fc
+## 3. 팔레트
+- 배경: #f7e45d
+- 표면: #fffdf4
+- 패널: rgba(255, 252, 241, 0.84)
+- 본문: #121212
+- 보조: #5d5649
+- 강조: #ff6b6b
+- 보조 강조: #7dd3fc
 
-## 4. Typography
-- Bold display type and blunt supporting labels.
-- Keep copy short and functional.
-- Use Korean as the default content language.
+## 4. 타이포그래피
+- 볼드한 디스플레이 타이포와 짧고 직설적인 보조 라벨을 사용한다.
+- 카피는 짧고 기능적으로 유지한다.
+- 기본 콘텐츠 언어는 한국어다.
 
-## 5. Components
-- Use strong borders, stickers, and tactile blocks.
-- Shared primitives are limited to buttons, badges, inputs, and simple cards.
-- The first screen grammar must be unique to this site.
+## 5. 컴포넌트
+- 굵은 보더, 스티커, 촉각적인 블록을 적극적으로 사용한다.
+- 공용 primitive는 버튼, 배지, 입력, 단순 카드 정도로 제한한다.
+- 첫 화면 문법은 이 사이트만의 구조여야 한다.
 
-## 6. Prohibited Patterns
-- No shared hero template.
-- No shared section assembler.
-- No repetitive image box + text box + CTA blocks.
+## 6. 금지 패턴
+- 공통 히어로 템플릿 금지.
+- 공통 섹션 조립기 금지.
+- 반복적인 이미지 박스 + 텍스트 박스 + CTA 블록 금지.
 
-## 7. Route Targets
-- Home (home): This is the operating homepage. Build a complete landing surface, not a cover page.
-- Drops (drops): Use a browse or catalog structure with filtering, category anchors, and fast exploration.
-- Styles (styles): Lead with product, room, program, or service depth. Make the decision points obvious.
-- Cart (cart): Show an intentional conversion flow with options, quantity, summary, and next action.
-- Brand (brand): Present the brand world, trust layer, and operating context rather than generic about text.
+## 7. 라우트 목표
+- 홈 (home): 운영형 홈페이지처럼 설계한다. 커버 페이지가 아니라 실제 사용 흐름이 바로 보여야 한다.
+- 드롭 (drops): 필터, 카테고리, 빠른 탐색이 가능한 목록형 구조로 설계한다.
+- 스타일 (styles): 상품, 객실, 프로그램, 서비스의 핵심 판단 정보가 첫 화면에서 보여야 한다.
+- 장바구니 (cart): 옵션, 수량, 요약, 다음 행동이 선명한 전환형 페이지로 만든다.
+- 브랜드 (brand): 흔한 소개문이 아니라 브랜드 세계관과 신뢰 근거가 드러나야 한다.

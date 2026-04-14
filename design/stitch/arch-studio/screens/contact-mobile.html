@@ -3,9 +3,9 @@
 <html class="light" lang="ko"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PLAIN GRID - 문의 (모바일)</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&amp;family=Manrope:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
@@ -69,8 +69,8 @@
                     },
                     "fontFamily": {
                         "headline": ["Noto Serif KR"],
-                        "body": ["Manrope"],
-                        "label": ["Manrope"]
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
                     }
                 },
             },
@@ -80,7 +80,7 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
-        body { font-family: 'Manrope', sans-serif; background-color: #fff9ee; color: #151616; overflow-x: hidden; }
+        body { font-family: 'Manrope', 'Noto Sans KR', sans-serif; background-color: #fff9ee; color: #151616; overflow-x: hidden; }
         h1, h2, h3 { font-family: 'Noto Serif KR', serif; }
         .paper-grain {
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
@@ -89,54 +89,54 @@
         }
     </style>
 <style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
 <body class="bg-surface text-on-surface">
 <div class="fixed inset-0 paper-grain z-50"></div>
 <!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 bg-[#fff9ee]/80 backdrop-blur-md dark:bg-[#151616]/80 flex justify-between items-center px-6 py-4 w-full">
+<header class="fixed top-0 w-full z-50 bg-[#fff9ee]/80 backdrop-blur-md dark:bg-[#151616]/80 flex justify-between items-center px-6 py-4">
 <div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-[#151616] dark:text-[#fff9ee] hover:opacity-70 transition-opacity duration-300 cursor-pointer active:scale-95 transition-transform" data-icon="menu">menu</span>
+<span class="material-symbols-outlined text-[#151616] dark:text-[#fff9ee] hover:opacity-70 transition-opacity duration-300 cursor-pointer active:scale-95" data-icon="menu">menu</span>
 <span class="font-['Noto_Serif_KR'] text-xl font-bold tracking-widest text-[#151616] dark:text-[#fff9ee] uppercase">PLAIN GRID</span>
 </div>
 <div class="flex items-center">
-<span class="material-symbols-outlined text-[#151616] dark:text-[#fff9ee] hover:opacity-70 transition-opacity duration-300 cursor-pointer active:scale-95 transition-transform" data-icon="drafts">drafts</span>
+<span class="material-symbols-outlined text-[#151616] dark:text-[#fff9ee] hover:opacity-70 transition-opacity duration-300 cursor-pointer active:scale-95" data-icon="mail">mail</span>
 </div>
 </header>
 <main class="pt-16 pb-32">
 <!-- Hero Section -->
 <section class="relative h-[707px] w-full overflow-hidden flex items-end">
 <div class="absolute inset-0 bg-primary-container">
-<img alt="Minimalist architectural concrete structure" class="w-full h-full object-cover opacity-60 grayscale brightness-75" data-alt="abstract architectural close-up of raw concrete walls and shadows in a minimalist brutalist style with dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADjomMDoV6Ws-uSvgpHt6tL8glaE-h8O2ap1c6X70T6B7OSRfeAiStiwXZQ2Hbq8nhghj_21THE3cXD80Wo0eJbIAlbBQBslgtrusMXNn-oBTJDwlt9Gk-CRisOG0T12KV8t2AUs2Ic_AurxW8336PzNDPAprl0ZsyOnZsYdY7tJFkZZoDxXBDx87wT9tw3ol1kH0BYAFnL1u0ePpl04GAnS9P95NneXfKD0BeRU7ByS8OXzMiu4vLEeowU-optzh51EAXz24hB7I"/>
+<img alt="건축적 콘크리트 구조물의 추상적 클로즈업" class="w-full h-full object-cover opacity-60 grayscale brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADjomMDoV6Ws-uSvgpHt6tL8glaE-h8O2ap1c6X70T6B7OSRfeAiStiwXZQ2Hbq8nhghj_21THE3cXD80Wo0eJbIAlbBQBslgtrusMXNn-oBTJDwlt9Gk-CRisOG0T12KV8t2AUs2Ic_AurxW8336PzNDPAprl0ZsyOnZsYdY7tJFkZZoDxXBDx87wT9tw3ol1kH0BYAFnL1u0ePpl04GAnS9P95NneXfKD0BeRU7ByS8OXzMiu4vLEeowU-optzh51EAXz24hB7I"/>
 </div>
 <div class="relative z-10 ml-6 mb-12 mr-12 bg-surface p-10 shadow-[0_-12px_40px_rgba(29,27,22,0.05)] w-4/5 max-w-md">
 <p class="font-label text-xs tracking-[0.3em] uppercase mb-4 text-on-surface-variant">Project Inquiries</p>
-<h1 class="font-headline text-5xl font-black tracking-tighter text-primary">CONTACT</h1>
+<h1 class="font-headline text-5xl font-black tracking-tighter text-primary">문의</h1>
 <div class="mt-8 h-px bg-outline-variant/30 w-12"></div>
 <p class="mt-8 font-body text-sm leading-relaxed text-on-surface-variant">플레인 그리드는 공간의 본질을 탐구합니다. 당신의 상상을 현실의 구축으로 전환하는 첫 걸음을 함께하십시오.</p>
 </div>
 </section>
-<!-- Studio Archive (Contact Info) -->
+<!-- Studio Archive (문의 정보) -->
 <section class="px-6 py-24 bg-surface-container-low">
 <div class="max-w-2xl mx-auto">
 <span class="font-label text-[10px] uppercase tracking-[0.4em] text-on-surface-variant block mb-12">01 / Studio Archive</span>
 <div class="space-y-16">
 <div class="group">
-<h3 class="font-headline text-2xl mb-4 text-primary">Location</h3>
+<h3 class="font-headline text-2xl mb-4 text-primary">오시는 길</h3>
 <p class="font-body text-lg leading-relaxed text-on-surface">서울특별시 강남구 도산대로 45길<br/>건축 아카이브 빌딩 4층</p>
 </div>
 <div class="group">
-<h3 class="font-headline text-2xl mb-4 text-primary">Direct Lines</h3>
+<h3 class="font-headline text-2xl mb-4 text-primary">연락처</h3>
 <div class="space-y-2">
 <p class="font-body text-lg text-on-surface flex items-center gap-4">
-<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant w-12">T</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant w-12">TEL</span>
                                 02-543-9876
                             </p>
 <p class="font-body text-lg text-on-surface flex items-center gap-4">
-<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant w-12">E</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant w-12">EMAIL</span>
                                 studio@plaingrid.kr
                             </p>
 </div>
@@ -148,7 +148,7 @@
 <section class="px-6 py-24 bg-surface">
 <div class="max-w-2xl mx-auto">
 <span class="font-label text-[10px] uppercase tracking-[0.4em] text-on-surface-variant block mb-12">02 / Process &amp; Policy</span>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-8">
 <div class="p-8 border-l border-outline-variant/20 bg-surface-container-lowest">
 <h4 class="font-headline text-xl mb-6">48시간 이내 회신</h4>
 <p class="font-body text-sm leading-relaxed text-on-surface-variant">모든 문의사항은 검토 후 영업일 기준 48시간 이내에 담당 건축가가 직접 답변 드립니다. 긴급한 프로젝트의 경우 유선 문의를 권장합니다.</p>
@@ -160,24 +160,24 @@
 </div>
 </div>
 </section>
-<!-- Quick Brief (Form) -->
+<!-- 간단 브리프 (Form) -->
 <section class="px-6 py-24 bg-surface-container">
 <div class="max-w-2xl mx-auto">
 <div class="mb-16 text-center">
-<span class="font-label text-[10px] uppercase tracking-[0.4em] text-on-surface-variant block mb-4">03 / Quick Brief</span>
+<span class="font-label text-[10px] uppercase tracking-[0.4em] text-on-surface-variant block mb-4">03 / 간단 브리프</span>
 <h2 class="font-headline text-3xl">의뢰하기</h2>
 </div>
 <form class="space-y-12">
 <div class="relative group">
-<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-2">Full Name</label>
-<input class="w-full bg-transparent border-0 border-b border-outline-variant/30 px-0 py-3 focus:ring-0 focus:border-primary transition-colors font-body text-lg placeholder:text-on-surface/20" placeholder="성함 또는 기업명" type="text"/>
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-2">성함 / 기업명</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/30 px-0 py-3 focus:ring-0 focus:border-primary transition-colors font-body text-lg placeholder:text-on-surface/20" placeholder="성함 또는 기업명을 입력해주세요" type="text"/>
 </div>
 <div class="relative group">
-<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-2">Email Address</label>
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-2">이메일 주소</label>
 <input class="w-full bg-transparent border-0 border-b border-outline-variant/30 px-0 py-3 focus:ring-0 focus:border-primary transition-colors font-body text-lg placeholder:text-on-surface/20" placeholder="example@email.com" type="email"/>
 </div>
 <div class="relative group">
-<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-2">Project Type</label>
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-2">프로젝트 유형</label>
 <select class="w-full bg-transparent border-0 border-b border-outline-variant/30 px-0 py-3 focus:ring-0 focus:border-primary transition-colors font-body text-lg appearance-none">
 <option>주거 건축 (Residential)</option>
 <option>상업 공간 (Commercial)</option>
@@ -187,12 +187,12 @@
 </select>
 </div>
 <div class="relative group">
-<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-2">Brief Message</label>
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-2">상세 문의 내용</label>
 <textarea class="w-full bg-transparent border-0 border-b border-outline-variant/30 px-0 py-3 focus:ring-0 focus:border-primary transition-colors font-body text-lg placeholder:text-on-surface/20 resize-none" placeholder="프로젝트의 규모, 위치, 주요 희망 사항을 자유롭게 기재해 주세요." rows="4"></textarea>
 </div>
 <div class="pt-8 flex justify-center">
-<button class="bg-primary text-on-primary px-12 py-5 font-label text-xs tracking-[0.2em] uppercase hover:bg-primary-container active:scale-95 transition-all w-full md:w-auto" type="submit">
-                            Submit Inquiry
+<button class="bg-primary text-on-primary px-12 py-5 font-label text-xs tracking-[0.2em] uppercase hover:bg-primary-container active:scale-95 transition-all w-full" type="submit">
+                            문의하기 (Submit)
                         </button>
 </div>
 </form>
@@ -206,7 +206,7 @@
 <a class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors" href="#">LinkedIn</a>
 <a class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors" href="#">Pinterest</a>
 </div>
-<p class="font-label text-[9px] tracking-widest uppercase text-on-surface-variant/60">© 2024 PLAIN GRID ARCHITECTURE STUDIO. All rights reserved.</p>
+<p class="font-label text-[9px] tracking-widest uppercase text-on-surface-variant/60 text-center">© 2024 PLAIN GRID ARCHITECTURE STUDIO. All rights reserved.</p>
 </div>
 </footer>
 </main>
@@ -214,7 +214,7 @@
 <nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-8 pt-2 bg-[#fff9ee]/90 backdrop-blur-xl dark:bg-[#151616]/90 z-50 border-t border-[#151616]/5 shadow-[0_-12px_40px_rgba(29,27,22,0.05)]">
 <div class="flex flex-col items-center justify-center text-[#151616]/40 dark:text-[#fff9ee]/40 pt-2 hover:text-[#151616] dark:hover:text-[#fff9ee] transition-colors cursor-pointer active:scale-90 duration-200">
 <span class="material-symbols-outlined" data-icon="architecture">architecture</span>
-<span class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] font-medium mt-1">Works</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] font-medium mt-1">프로젝트</span>
 </div>
 <div class="flex flex-col items-center justify-center text-[#151616]/40 dark:text-[#fff9ee]/40 pt-2 hover:text-[#151616] dark:hover:text-[#fff9ee] transition-colors cursor-pointer active:scale-90 duration-200">
 <span class="material-symbols-outlined" data-icon="domain">domain</span>
@@ -226,7 +226,7 @@
 </div>
 <div class="flex flex-col items-center justify-center text-[#151616] dark:text-[#fff9ee] font-bold border-t-2 border-[#151616] dark:border-[#fff9ee] pt-2 cursor-pointer active:scale-90 duration-200">
 <span class="material-symbols-outlined" data-icon="edit_note" style="font-variation-settings: 'FILL' 1;">edit_note</span>
-<span class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] font-medium mt-1">Brief</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] font-medium mt-1">브리프</span>
 </div>
 </nav>
 </body></html>

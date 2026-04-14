@@ -1,8 +1,8 @@
 {
   "siteId": "jewelry-brand",
   "brand": "LUNE FORM",
-  "industry": "Jewelry Brand",
-  "summary": "A jewelry site structured around collection reveals, bespoke inquiry, and gallery-level image treatment.",
+  "industry": "주얼리 브랜드",
+  "summary": "컬렉션 공개와 상담 전환을 동시에 다루는 갤러리형 주얼리 사이트.",
   "blueprint": {
     "family": "Collection gallery commerce",
     "heroMode": "Gallery-led hero with macro product imagery and a clean consult CTA block.",
@@ -17,28 +17,33 @@
   "routes": [
     {
       "slug": "home",
-      "label": "Home",
-      "kind": "home"
+      "label": "홈",
+      "kind": "home",
+      "legacyLabel": "Home"
     },
     {
       "slug": "collection",
-      "label": "Collection",
-      "kind": "browse"
+      "label": "컬렉션",
+      "kind": "browse",
+      "legacyLabel": "Collection"
     },
     {
       "slug": "bespoke",
-      "label": "Bespoke",
-      "kind": "detail"
+      "label": "비스포크",
+      "kind": "detail",
+      "legacyLabel": "Bespoke"
     },
     {
       "slug": "consult",
-      "label": "Consult",
-      "kind": "checkout"
+      "label": "상담",
+      "kind": "checkout",
+      "legacyLabel": "Consult"
     },
     {
       "slug": "brand",
-      "label": "Brand",
-      "kind": "brand"
+      "label": "브랜드",
+      "kind": "brand",
+      "legacyLabel": "Brand"
     }
   ]
 }

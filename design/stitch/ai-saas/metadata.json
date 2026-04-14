@@ -3,87 +3,87 @@
   "brand": "SIGNAL GRID",
   "projectId": "2675822646159988702",
   "projectTitle": "SIGNAL GRID Stitch",
-  "updatedAt": "2026-04-14T02:15:02.712Z",
+  "updatedAt": "2026-04-14T05:45:14.070Z",
   "screens": {
     "home:desktop": {
-      "screenId": "eb348f0c068242d986ffe43581b74f83",
+      "screenId": "6aa287d6251246eab3498a08fe303385",
       "pageSlug": "home",
       "deviceType": "DESKTOP",
       "htmlPath": "design/stitch/ai-saas/screens/home-desktop.html",
       "imagePath": "design/stitch/ai-saas/screens/home-desktop.png",
-      "updatedAt": "2026-04-13T14:07:47.887Z"
+      "updatedAt": "2026-04-14T05:45:05.658Z"
     },
     "home:mobile": {
-      "screenId": "2c2ee34a29c247eda37291b26093a17b",
+      "screenId": "e53deb6bf4ff44999222bec5df6f11c6",
       "pageSlug": "home",
       "deviceType": "MOBILE",
       "htmlPath": "design/stitch/ai-saas/screens/home-mobile.html",
       "imagePath": "design/stitch/ai-saas/screens/home-mobile.png",
-      "updatedAt": "2026-04-13T14:10:00.000Z"
+      "updatedAt": "2026-04-14T05:45:04.581Z"
     },
     "flows:desktop": {
-      "screenId": "a8e5ffe33a724238944799fc686c59fb",
+      "screenId": "82a4c77ca8df4a5dae3185b63830f513",
       "pageSlug": "flows",
       "deviceType": "DESKTOP",
       "htmlPath": "design/stitch/ai-saas/screens/flows-desktop.html",
       "imagePath": "design/stitch/ai-saas/screens/flows-desktop.png",
-      "updatedAt": "2026-04-14T02:05:56.262Z"
+      "updatedAt": "2026-04-14T05:45:06.604Z"
     },
     "flows:mobile": {
-      "screenId": "4478ec2099ee44829fbe2c30a6c49aa3",
+      "screenId": "e81e0581218d49e5b4ec932d9cc9ed66",
       "pageSlug": "flows",
       "deviceType": "MOBILE",
       "htmlPath": "design/stitch/ai-saas/screens/flows-mobile.html",
       "imagePath": "design/stitch/ai-saas/screens/flows-mobile.png",
-      "updatedAt": "2026-04-14T02:07:08.205Z"
+      "updatedAt": "2026-04-14T05:45:07.562Z"
     },
     "cases:desktop": {
-      "screenId": "37469b9c3a1843ca8d96151323ad3d4b",
+      "screenId": "f6ba9ecc671045b58c3d0af77afa05cb",
       "pageSlug": "cases",
       "deviceType": "DESKTOP",
       "htmlPath": "design/stitch/ai-saas/screens/cases-desktop.html",
       "imagePath": "design/stitch/ai-saas/screens/cases-desktop.png",
-      "updatedAt": "2026-04-14T02:08:35.645Z"
+      "updatedAt": "2026-04-14T05:45:08.713Z"
     },
     "cases:mobile": {
-      "screenId": "10f77fee601e468eaf2cdaf27c65d41e",
+      "screenId": "93f6f0d3a0924620ac82f92f383e02c6",
       "pageSlug": "cases",
       "deviceType": "MOBILE",
       "htmlPath": "design/stitch/ai-saas/screens/cases-mobile.html",
       "imagePath": "design/stitch/ai-saas/screens/cases-mobile.png",
-      "updatedAt": "2026-04-14T02:09:48.797Z"
+      "updatedAt": "2026-04-14T05:45:09.696Z"
     },
     "pricing:desktop": {
-      "screenId": "8494da4289044ed9a2eb40f4704f4f88",
+      "screenId": "564da858b4ee4b0aada0dd5289d925ed",
       "pageSlug": "pricing",
       "deviceType": "DESKTOP",
       "htmlPath": "design/stitch/ai-saas/screens/pricing-desktop.html",
       "imagePath": "design/stitch/ai-saas/screens/pricing-desktop.png",
-      "updatedAt": "2026-04-14T02:11:14.888Z"
+      "updatedAt": "2026-04-14T05:45:10.781Z"
     },
     "pricing:mobile": {
-      "screenId": "001ffb4b1b9e47c2b2a001b135bddbbd",
+      "screenId": "91a2f2dc6f164ca2baf20fee525bd319",
       "pageSlug": "pricing",
       "deviceType": "MOBILE",
       "htmlPath": "design/stitch/ai-saas/screens/pricing-mobile.html",
       "imagePath": "design/stitch/ai-saas/screens/pricing-mobile.png",
-      "updatedAt": "2026-04-14T02:12:26.096Z"
+      "updatedAt": "2026-04-14T05:45:11.863Z"
     },
     "contact:desktop": {
-      "screenId": "e906d9e4ddd4475381c15b1a16255bd6",
+      "screenId": "1bb68cc80d8e4e85b21f02dbe00bb9a3",
       "pageSlug": "contact",
       "deviceType": "DESKTOP",
       "htmlPath": "design/stitch/ai-saas/screens/contact-desktop.html",
       "imagePath": "design/stitch/ai-saas/screens/contact-desktop.png",
-      "updatedAt": "2026-04-14T02:13:43.119Z"
+      "updatedAt": "2026-04-14T05:45:12.970Z"
     },
     "contact:mobile": {
-      "screenId": "5b4f8a8947e04f5fa37bba6641a8791b",
+      "screenId": "68949db2c07d43e886963c6a276f5e1f",
       "pageSlug": "contact",
       "deviceType": "MOBILE",
       "htmlPath": "design/stitch/ai-saas/screens/contact-mobile.html",
       "imagePath": "design/stitch/ai-saas/screens/contact-mobile.png",
-      "updatedAt": "2026-04-14T02:15:02.713Z"
+      "updatedAt": "2026-04-14T05:45:14.070Z"
     }
   }
 }

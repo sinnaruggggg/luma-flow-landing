@@ -1,46 +1,46 @@
-# Design System: UPPERCUT CLUB
-**Site ID:** boxing-gym
+# 디자인 시스템: UPPERCUT CLUB
+**사이트 ID:** boxing-gym
 
-## 1. Identity
-- Industry: Boxing Gym
-- Summary: A high-energy boxing gym site where trial booking sits ahead of program browsing.
-- Home grammar: Booking widget first
-- Mobile rule: Surface the trial schedule, coach snapshot, and join CTA in the first viewport.
+## 1. 정체성
+- 업종: 복싱짐 예약
+- 요약: 프로그램 소개보다 체험 예약이 먼저 열리는 고밀도 복싱짐 사이트.
+- 첫 화면 문법: 예약 위젯 선행형
+- 모바일 규칙: 첫 화면에 체험 일정, 코치 요약, 등록 CTA가 함께 보여야 한다.
 
-## 2. Visual Direction
-- Family: Fight club booking
-- First screen: Massive gym photography with floating booking card.
-- Background: Dark ring photography with neon haze and subtle scan-line mesh.
-- Motion: Booking card rises over the photo while coach chips land later.
-- Atmosphere: Technical glow, mesh depth, and dark future-console energy.
+## 2. 비주얼 방향
+- 계열: Fight club booking
+- 첫 화면: Massive gym photography with floating booking card.
+- 배경: Dark ring photography with neon haze and subtle scan-line mesh.
+- 모션: Booking card rises over the photo while coach chips land later.
+- 분위기: 기술적 글로우, 메시 깊이, 다크 콘솔 감성.
 
-## 3. Palette
-- Background: #0b0b12
-- Surface: #151520
-- Panel: rgba(18, 18, 28, 0.84)
-- Text: #f5f7fb
-- Muted: rgba(225, 232, 244, 0.72)
-- Accent: #ff6b6b
-- Accent soft: #8b5cf6
+## 3. 팔레트
+- 배경: #0b0b12
+- 표면: #151520
+- 패널: rgba(18, 18, 28, 0.84)
+- 본문: #f5f7fb
+- 보조: rgba(225, 232, 244, 0.72)
+- 강조: #ff6b6b
+- 보조 강조: #8b5cf6
 
-## 4. Typography
-- Use assertive headlines with precise technical labeling.
-- Keep copy short and functional.
-- Use Korean as the default content language.
+## 4. 타이포그래피
+- 정밀한 기술 라벨과 단호한 헤드라인을 사용한다.
+- 카피는 짧고 기능적으로 유지한다.
+- 기본 콘텐츠 언어는 한국어다.
 
-## 5. Components
-- Panels should feel like instruments, not generic cards.
-- Shared primitives are limited to buttons, badges, inputs, and simple cards.
-- The first screen grammar must be unique to this site.
+## 5. 컴포넌트
+- 패널은 카드가 아니라 장비 계기판처럼 느껴져야 한다.
+- 공용 primitive는 버튼, 배지, 입력, 단순 카드 정도로 제한한다.
+- 첫 화면 문법은 이 사이트만의 구조여야 한다.
 
-## 6. Prohibited Patterns
-- No shared hero template.
-- No shared section assembler.
-- No repetitive image box + text box + CTA blocks.
+## 6. 금지 패턴
+- 공통 히어로 템플릿 금지.
+- 공통 섹션 조립기 금지.
+- 반복적인 이미지 박스 + 텍스트 박스 + CTA 블록 금지.
 
-## 7. Route Targets
-- Home (home): This is the operating homepage. Build a complete landing surface, not a cover page.
-- Classes (classes): Use a browse or catalog structure with filtering, category anchors, and fast exploration.
-- Coaches (coaches): Lead with product, room, program, or service depth. Make the decision points obvious.
-- Join (join): Design around booking or request flow, availability, and frictionless form completion.
-- Guide (guide): Organize operational guidance, visit rules, maps, FAQ, and preparation details clearly.
+## 7. 라우트 목표
+- 홈 (home): 운영형 홈페이지처럼 설계한다. 커버 페이지가 아니라 실제 사용 흐름이 바로 보여야 한다.
+- 프로그램 (classes): 필터, 카테고리, 빠른 탐색이 가능한 목록형 구조로 설계한다.
+- 코치 (coaches): 상품, 객실, 프로그램, 서비스의 핵심 판단 정보가 첫 화면에서 보여야 한다.
+- 가입 (join): 예약 흐름, 가능 시간, 선택 옵션, 신청 행동이 위쪽에서 바로 보여야 한다.
+- 안내 (guide): 방문 안내, 규칙, FAQ, 맵, 준비 사항을 스캔하기 쉽게 정리한다.

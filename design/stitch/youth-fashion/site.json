@@ -1,8 +1,8 @@
 {
   "siteId": "youth-fashion",
   "brand": "BOP BOP",
-  "industry": "Youth Fashion",
-  "summary": "A youth fashion site built as a lookbook rail with strong image sequencing and fast shop entry.",
+  "industry": "영 패션",
+  "summary": "룩북 흐름과 빠른 쇼핑 진입이 연결된 이미지 중심 패션 사이트.",
   "blueprint": {
     "family": "Lookbook commerce",
     "heroMode": "Lookbook-led hero where images and shop CTAs live in the same visual rail.",
@@ -17,28 +17,33 @@
   "routes": [
     {
       "slug": "home",
-      "label": "Home",
-      "kind": "home"
+      "label": "홈",
+      "kind": "home",
+      "legacyLabel": "Home"
     },
     {
       "slug": "looks",
-      "label": "Looks",
-      "kind": "browse"
+      "label": "룩북",
+      "kind": "browse",
+      "legacyLabel": "Looks"
     },
     {
       "slug": "shop",
-      "label": "Shop",
-      "kind": "detail"
+      "label": "쇼핑",
+      "kind": "detail",
+      "legacyLabel": "Shop"
     },
     {
       "slug": "cart",
-      "label": "Cart",
-      "kind": "checkout"
+      "label": "장바구니",
+      "kind": "checkout",
+      "legacyLabel": "Cart"
     },
     {
       "slug": "brand",
-      "label": "Brand",
-      "kind": "brand"
+      "label": "브랜드",
+      "kind": "brand",
+      "legacyLabel": "Brand"
     }
   ]
 }

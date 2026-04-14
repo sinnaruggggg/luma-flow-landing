@@ -3,8 +3,8 @@
 <html class="light" lang="ko"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PLAIN GRID - 프로젝트</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&amp;family=Manrope:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
@@ -88,14 +88,14 @@
 <body class="bg-background text-on-surface selection:bg-primary-fixed selection:text-primary">
 <!-- TopNavBar Shell -->
 <nav class="fixed top-0 w-full z-50 bg-[#fff9ee]/80 dark:bg-zinc-950/80 backdrop-blur-xl flex justify-between items-center px-12 py-8 w-full no-border tonal-shift flat no shadows">
-<div class="text-2xl font-bold tracking-tighter text-[#151616] dark:text-zinc-100">THE ARCHIVE</div>
+<div class="text-2xl font-bold tracking-tighter text-[#151616] dark:text-zinc-100">PLAIN GRID</div>
 <div class="hidden md:flex space-x-12">
-<a class="font-['Noto_Serif'] uppercase tracking-[0.2em] text-sm text-[#151616] dark:text-zinc-100 border-b border-[#151616] dark:border-zinc-100 pb-1 hover:text-[#151616] dark:hover:text-zinc-100 transition-colors duration-300" href="#">Projects</a>
-<a class="font-['Noto_Serif'] uppercase tracking-[0.2em] text-sm text-[#151616]/60 dark:text-zinc-400 hover:text-[#151616] dark:hover:text-zinc-100 transition-colors duration-300" href="#">Studio</a>
-<a class="font-['Noto_Serif'] uppercase tracking-[0.2em] text-sm text-[#151616]/60 dark:text-zinc-400 hover:text-[#151616] dark:hover:text-zinc-100 transition-colors duration-300" href="#">Journal</a>
-<a class="font-['Noto_Serif'] uppercase tracking-[0.2em] text-sm text-[#151616]/60 dark:text-zinc-400 hover:text-[#151616] dark:hover:text-zinc-100 transition-colors duration-300" href="#">Contact</a>
+<a class="font-['Noto_Serif_KR'] uppercase tracking-[0.2em] text-sm text-[#151616] dark:text-zinc-100 border-b border-[#151616] dark:border-zinc-100 pb-1 hover:text-[#151616] dark:hover:text-zinc-100 transition-colors duration-300" href="#">프로젝트</a>
+<a class="font-['Noto_Serif_KR'] uppercase tracking-[0.2em] text-sm text-[#151616]/60 dark:text-zinc-400 hover:text-[#151616] dark:hover:text-zinc-100 transition-colors duration-300" href="#">스튜디오</a>
+<a class="font-['Noto_Serif_KR'] uppercase tracking-[0.2em] text-sm text-[#151616]/60 dark:text-zinc-400 hover:text-[#151616] dark:hover:text-zinc-100 transition-colors duration-300" href="#">저널</a>
+<a class="font-['Noto_Serif_KR'] uppercase tracking-[0.2em] text-sm text-[#151616]/60 dark:text-zinc-400 hover:text-[#151616] dark:hover:text-zinc-100 transition-colors duration-300" href="#">문의</a>
 </div>
-<div class="font-['Noto_Serif'] uppercase tracking-[0.2em] text-sm text-[#151616] dark:text-zinc-100 cursor-pointer">Inquiry</div>
+<div class="font-['Noto_Serif_KR'] uppercase tracking-[0.2em] text-sm text-[#151616] dark:text-zinc-100 cursor-pointer">프로젝트 의뢰</div>
 </nav>
 <main class="relative">
 <!-- First Viewport: Hero -->
@@ -106,7 +106,7 @@
 <!-- Hero Overlay/Label -->
 <div class="relative z-10 w-full px-12 mt-20 flex flex-col items-start">
 <div class="bg-surface/80 backdrop-blur-md px-6 py-3 mb-8 inline-block editorial-shadow">
-<span class="font-body text-[10px] tracking-[0.4em] uppercase text-on-surface">Selected Works</span>
+<span class="font-body text-[10px] tracking-[0.4em] uppercase text-on-surface">대표 프로젝트</span>
 </div>
 <h1 class="serif-text text-6xl md:text-8xl text-ink leading-tight tracking-tighter">
                     고요의 여백<br/>
@@ -114,7 +114,7 @@
 </h1>
 <div class="mt-12 flex items-center space-x-4 group cursor-pointer">
 <div class="w-12 h-[1px] bg-primary group-hover:w-20 transition-all duration-500"></div>
-<span class="font-label text-xs uppercase tracking-widest text-primary">View Project Index</span>
+<span class="font-label text-xs uppercase tracking-widest text-primary">프로젝트 목록 보기</span>
 </div>
 </div>
 </section>
@@ -123,12 +123,12 @@
 <!-- Filter System -->
 <div class="flex flex-col md:flex-row justify-between items-baseline mb-32 border-b border-outline-variant/20 pb-8">
 <h2 class="serif-text text-4xl mb-8 md:mb-0">프로젝트 아카이브</h2>
-<div class="flex flex-wrap gap-x-10 gap-y-4 font-label text-[10px] tracking-[0.3em] uppercase text-on-surface/60">
-<a class="text-primary border-b border-primary pb-1" href="#">All</a>
-<a class="hover:text-primary transition-colors" href="#">Residential</a>
-<a class="hover:text-primary transition-colors" href="#">Commercial</a>
-<a class="hover:text-primary transition-colors" href="#">Cultural</a>
-<a class="hover:text-primary transition-colors" href="#">Research</a>
+<div class="flex flex-wrap gap-x-10 gap-y-4 font-label text-[11px] tracking-[0.3em] uppercase text-on-surface/60">
+<a class="text-primary border-b border-primary pb-1" href="#">전체</a>
+<a class="hover:text-primary transition-colors" href="#">주거</a>
+<a class="hover:text-primary transition-colors" href="#">상업</a>
+<a class="hover:text-primary transition-colors" href="#">문화</a>
+<a class="hover:text-primary transition-colors" href="#">연구</a>
 </div>
 </div>
 <!-- Grid Layout (Asymmetric) -->
@@ -140,7 +140,7 @@
 </div>
 <div class="mt-8 flex justify-between items-start">
 <div>
-<p class="font-label text-[10px] tracking-widest uppercase text-on-tertiary-container mb-2">Residential — Seoul, KR</p>
+<p class="font-label text-[10px] tracking-widest uppercase text-on-tertiary-container mb-2">주거 — 대한민국 서울</p>
 <h3 class="serif-text text-3xl">연희동 주택 : 흐르는 선</h3>
 </div>
 <span class="font-body text-xs text-on-surface/40">2023</span>
@@ -152,7 +152,7 @@
 <img alt="Architectural detail" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-editorial duration-[1500ms]" data-alt="Detailed close-up of a textured white plaster wall meeting a dark grey stone floor in sharp sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWFPGhg4ljG44ksZkxK0u9_FXfMf8OQiDcI4sXSzyuCcnAvs72KGYFkqcLOzt6PDh2Exnqsj-7QMntxCrB_MMOyOzrKp_pPN77k0k5qMbNs_FLjXCvlFhcyTpby-dcXuwaidw3Y7J_KWpfuzTmx6k9wrZDYIs2xvXxChcbJp5S1ljcY4Ch271r7f7z4zg0KQ0HMxxty1-c-u5uFhCnNrZamoch0oifm801GyOi-NSLOlTP1dvaCxvTj-8lgi-4cgk0p__we_RddIo"/>
 </div>
 <div class="mt-8">
-<p class="font-label text-[10px] tracking-widest uppercase text-on-tertiary-container mb-2">Commercial — Jeju, KR</p>
+<p class="font-label text-[10px] tracking-widest uppercase text-on-tertiary-container mb-2">상업 — 대한민국 제주</p>
 <h3 class="serif-text text-2xl">스테이 무우</h3>
 </div>
 </div>
@@ -163,13 +163,13 @@
 </div>
 <div class="md:w-1/3 mb-12">
 <div class="bg-surface-container p-12 editorial-shadow -ml-20 relative z-10">
-<p class="font-label text-[10px] tracking-widest uppercase text-on-tertiary-container mb-4">Cultural — Paju, KR</p>
+<p class="font-label text-[10px] tracking-widest uppercase text-on-tertiary-container mb-4">문화 — 대한민국 파주</p>
 <h3 class="serif-text text-4xl mb-6">파주 출판단지 도서관</h3>
 <p class="font-body text-sm leading-relaxed text-on-surface-variant opacity-80">
                                 대지의 고유한 성격을 보존하며 책의 숲을 형상화한 건축. 수직적 질서와 빛의 중첩을 통해 사유의 공간을 제안합니다.
                             </p>
 <div class="mt-10">
-<a class="text-xs uppercase tracking-[0.2em] border-b border-primary pb-1 font-bold" href="#">Details</a>
+<a class="text-xs uppercase tracking-[0.2em] border-b border-primary pb-1 font-bold" href="#">자세히 보기</a>
 </div>
 </div>
 </div>
@@ -180,7 +180,7 @@
 <img alt="Luxury apartment interior" class="w-full h-full object-cover transition-editorial duration-[1500ms]" data-alt="Minimalist living room with a large white sofa and a floor-to-ceiling glass wall looking out to a misty garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9id_zpFDOmHtUvz4BHVZlZwFMMuu4FurYg4wXpJsB-raGO4bXPezi8gZ77vCn5GOxsxjmi93oIYBxPJrICzkUi1QEBSO_NivL3hqaZCssOjn4Ygr0jZcey5jVY8C0L2nRWbdOVdQ62fU95VEg2VhAxg8dVyBvtKLinm6raF5AUmg1slGAgVqUranSUoGOXuEgu5wmOBbQJIY1Pk2q7h4PPr5faJKX1Ui9Ui2g8RZh0MP0EqvjAnZL-uIHDQ1chH5265CFSZZphbg"/>
 </div>
 <div class="mt-8">
-<p class="font-label text-[10px] tracking-widest uppercase text-on-tertiary-container mb-2">Residential — Busan, KR</p>
+<p class="font-label text-[10px] tracking-widest uppercase text-on-tertiary-container mb-2">주거 — 대한민국 부산</p>
 <h3 class="serif-text text-2xl">해운대 펜트하우스</h3>
 </div>
 </div>
@@ -190,7 +190,7 @@
 <img alt="Shadow on floor" class="w-full h-full object-cover transition-editorial duration-[2000ms]" data-alt="Abstract architectural shot of a narrow hallway with a single beam of light falling on a concrete floor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALpkDCzHWQDd5knVtOsPXgflurv9dN7yb_WGWevEa6-7YV0nvXbNH3LYa7w6jCgme2nj6_TRKyY_KqKWOpT-Ycc1iDDSetAHU3944jnu7gbYsNcEhZaRbtjGqb58q7r_KTgV7IJNcSfWuPLYMOaeqalERpNhdlbWkDXsD8B65GtD7KJuSnx9_O8QKExUkrb1P--m_KdndMrvDVotnBU5BqOQwvL3Kmc4ognuEggudXn-Kocft8b_RRz3JuOcA7b2fURF1BzrLhYYE"/>
 </div>
 <div class="mt-8">
-<p class="font-label text-[10px] tracking-widest uppercase text-on-tertiary-container mb-2">Research — Archive</p>
+<p class="font-label text-[10px] tracking-widest uppercase text-on-tertiary-container mb-2">연구 — 아카이브</p>
 <h3 class="serif-text text-2xl">건축의 현상학적 탐구</h3>
 </div>
 </div>
@@ -198,11 +198,11 @@
 <!-- Load More Interaction -->
 <div class="mt-60 flex justify-center">
 <button class="px-16 py-6 bg-primary text-on-primary font-label text-[10px] tracking-[0.4em] uppercase hover:bg-primary-container transition-all">
-                    Load Archive
+                    아카이브 더보기
                 </button>
 </div>
 </section>
-<!-- Overlapping Contact Section -->
+<!-- Overlapping 문의 Section -->
 <section class="relative z-30 bg-surface-container-low py-40 px-12 border-t border-outline-variant/10">
 <div class="max-w-4xl mx-auto text-center">
 <h2 class="serif-text text-5xl md:text-7xl mb-12">당신의 공간을 함께 고민합니다</h2>
@@ -216,14 +216,14 @@
 <!-- Footer -->
 <footer class="w-full py-20 bg-[#fff9ee] dark:bg-zinc-950 flex flex-col md:flex-row justify-between items-end px-12 w-full tonal-shift bg-zinc-100 dark:bg-zinc-900 flat no shadows">
 <div class="flex flex-col space-y-6">
-<div class="text-lg font-bold text-[#151616] dark:text-zinc-100">THE ARCHIVE</div>
-<p class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#151616]/40 dark:text-zinc-500">© 2024 THE ARCHIVE. ALL RIGHTS RESERVED.</p>
+<div class="text-lg font-bold text-[#151616] dark:text-zinc-100 uppercase tracking-tighter">PLAIN GRID</div>
+<p class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#151616]/40 dark:text-zinc-500">© 2024 PLAIN GRID. ALL RIGHTS RESERVED.</p>
 </div>
 <div class="mt-12 md:mt-0 flex flex-col md:flex-row md:space-x-12 space-y-4 md:space-y-0">
-<a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#151616]/40 dark:text-zinc-500 hover:underline transition-all underline-offset-4" href="#">Privacy Policy</a>
-<a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#151616]/40 dark:text-zinc-500 hover:underline transition-all underline-offset-4" href="#">Terms of Service</a>
-<a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#151616]/40 dark:text-zinc-500 hover:underline transition-all underline-offset-4" href="#">Instagram</a>
-<a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#151616]/40 dark:text-zinc-500 hover:underline transition-all underline-offset-4" href="#">LinkedIn</a>
+<a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#151616]/40 dark:text-zinc-500 hover:underline transition-all underline-offset-4" href="#">개인정보 처리방침</a>
+<a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#151616]/40 dark:text-zinc-500 hover:underline transition-all underline-offset-4" href="#">이용약관</a>
+<a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#151616]/40 dark:text-zinc-500 hover:underline transition-all underline-offset-4" href="#">인스타그램</a>
+<a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#151616]/40 dark:text-zinc-500 hover:underline transition-all underline-offset-4" href="#">링크드인</a>
 </div>
 </footer>
 </body></html>

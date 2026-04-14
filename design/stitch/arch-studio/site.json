@@ -1,8 +1,8 @@
 {
   "siteId": "arch-studio",
   "brand": "PLAIN GRID",
-  "industry": "Architecture Studio",
-  "summary": "Editorial architecture portfolio that should feel like a real studio commission site.",
+  "industry": "건축 스튜디오",
+  "summary": "실제 건축 스튜디오 의뢰 사이트처럼 보이도록 구성한 에디토리얼 포트폴리오.",
   "blueprint": {
     "family": "Editorial studio portfolio",
     "heroMode": "Image-led editorial spread with type anchored beside the photo.",
@@ -17,28 +17,33 @@
   "routes": [
     {
       "slug": "home",
-      "label": "Home",
-      "kind": "home"
+      "label": "홈",
+      "kind": "home",
+      "legacyLabel": "Home"
     },
     {
       "slug": "works",
-      "label": "Works",
-      "kind": "works"
+      "label": "프로젝트",
+      "kind": "works",
+      "legacyLabel": "Works"
     },
     {
       "slug": "services",
-      "label": "Services",
-      "kind": "services"
+      "label": "서비스",
+      "kind": "services",
+      "legacyLabel": "Services"
     },
     {
       "slug": "brief",
-      "label": "Brief",
-      "kind": "brief"
+      "label": "브리프",
+      "kind": "brief",
+      "legacyLabel": "Brief"
     },
     {
       "slug": "contact",
-      "label": "Contact",
-      "kind": "contact"
+      "label": "문의",
+      "kind": "contact",
+      "legacyLabel": "Contact"
     }
   ]
 }

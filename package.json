@@ -13,7 +13,9 @@
     "stitch:init": "node scripts/stitch-init.mjs",
     "stitch:generate": "node scripts/stitch-generate.mjs",
     "stitch:pull": "node scripts/stitch-pull.mjs",
-    "stitch:batch": "node scripts/stitch-batch.mjs"
+    "stitch:batch": "node scripts/stitch-batch.mjs",
+    "stitch:localize:ko": "node scripts/stitch-localize-korean.mjs",
+    "html:localize:ko": "node scripts/localize-html-korean.mjs"
   },
   "dependencies": {
     "@google/genai": "^1.28.0",

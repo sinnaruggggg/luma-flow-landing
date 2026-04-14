@@ -1,8 +1,8 @@
 {
   "siteId": "supplement-brand",
   "brand": "PUNCH FUEL",
-  "industry": "Supplement Commerce",
-  "summary": "DTC supplement brand centered on routine composition and subscription bundles.",
+  "industry": "영양제 커머스",
+  "summary": "루틴 조합과 정기구독 번들을 중심으로 설계된 D2C 영양제 사이트.",
   "blueprint": {
     "family": "Performance DTC brand",
     "heroMode": "Routine builder on one side, product macro on the other.",
@@ -17,28 +17,33 @@
   "routes": [
     {
       "slug": "home",
-      "label": "Home",
-      "kind": "home"
+      "label": "홈",
+      "kind": "home",
+      "legacyLabel": "Home"
     },
     {
       "slug": "routine",
-      "label": "Routine",
-      "kind": "browse"
+      "label": "루틴",
+      "kind": "browse",
+      "legacyLabel": "Routine"
     },
     {
       "slug": "compare",
-      "label": "Compare",
-      "kind": "detail"
+      "label": "비교",
+      "kind": "detail",
+      "legacyLabel": "Compare"
     },
     {
       "slug": "subscribe",
-      "label": "Subscribe",
-      "kind": "checkout"
+      "label": "구독",
+      "kind": "checkout",
+      "legacyLabel": "Subscribe"
     },
     {
       "slug": "brand",
-      "label": "Brand",
-      "kind": "brand"
+      "label": "브랜드",
+      "kind": "brand",
+      "legacyLabel": "Brand"
     }
   ]
 }

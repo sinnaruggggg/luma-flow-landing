@@ -1,8 +1,8 @@
 {
   "siteId": "perfume-house",
   "brand": "MOSS & AMBER",
-  "industry": "Perfume House",
-  "summary": "A perfume site built around mood imagery, note structure, and curated set purchase.",
+  "industry": "퍼퓸 하우스",
+  "summary": "향 노트와 세트 구매를 에디토리얼 무드 속에서 이해하게 하는 향수 사이트.",
   "blueprint": {
     "family": "Mood-led perfume house",
     "heroMode": "Editorial mood canvas with layered note cards and direct set entry.",
@@ -17,28 +17,33 @@
   "routes": [
     {
       "slug": "home",
-      "label": "Home",
-      "kind": "home"
+      "label": "홈",
+      "kind": "home",
+      "legacyLabel": "Home"
     },
     {
       "slug": "sets",
-      "label": "Sets",
-      "kind": "browse"
+      "label": "세트",
+      "kind": "browse",
+      "legacyLabel": "Sets"
     },
     {
       "slug": "notes",
-      "label": "Notes",
-      "kind": "detail"
+      "label": "노트",
+      "kind": "detail",
+      "legacyLabel": "Notes"
     },
     {
       "slug": "gift",
-      "label": "Gift",
-      "kind": "checkout"
+      "label": "선물",
+      "kind": "checkout",
+      "legacyLabel": "Gift"
     },
     {
       "slug": "brand",
-      "label": "Brand",
-      "kind": "brand"
+      "label": "브랜드",
+      "kind": "brand",
+      "legacyLabel": "Brand"
     }
   ]
 }

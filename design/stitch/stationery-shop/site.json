@@ -1,8 +1,8 @@
 {
   "siteId": "stationery-shop",
   "brand": "CUT & NOTE",
-  "industry": "Stationery Shop",
-  "summary": "A stationery commerce site built around kits, palette combinations, and tactile paper detail.",
+  "industry": "문구점",
+  "summary": "키트 조합, 색상 팔레트, 종이 질감을 중심으로 구성한 문구 커머스 사이트.",
   "blueprint": {
     "family": "Tactile collage commerce",
     "heroMode": "A board of stationery pieces, taped notes, and visible kit assembly.",
@@ -17,28 +17,33 @@
   "routes": [
     {
       "slug": "home",
-      "label": "Home",
-      "kind": "home"
+      "label": "홈",
+      "kind": "home",
+      "legacyLabel": "Home"
     },
     {
       "slug": "kits",
-      "label": "Kits",
-      "kind": "browse"
+      "label": "키트",
+      "kind": "browse",
+      "legacyLabel": "Kits"
     },
     {
       "slug": "colors",
-      "label": "Colors",
-      "kind": "detail"
+      "label": "컬러",
+      "kind": "detail",
+      "legacyLabel": "Colors"
     },
     {
       "slug": "basket",
       "label": "Basket",
-      "kind": "checkout"
+      "kind": "checkout",
+      "legacyLabel": "Basket"
     },
     {
       "slug": "brand",
-      "label": "Brand",
-      "kind": "brand"
+      "label": "브랜드",
+      "kind": "brand",
+      "legacyLabel": "Brand"
     }
   ]
 }

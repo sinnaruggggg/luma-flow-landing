@@ -1,8 +1,8 @@
 {
   "siteId": "boutique-hotel",
   "brand": "HOTEL STILL",
-  "industry": "Boutique Hotel",
-  "summary": "A boutique hotel site driven by room imagery, stay finder, and package selection.",
+  "industry": "부티크 호텔",
+  "summary": "객실 이미지와 예약 위젯이 동시에 열리는 실제 운영형 호텔 사이트.",
   "blueprint": {
     "family": "Boutique stay booking",
     "heroMode": "Large room photography with the stay finder layered directly on top.",
@@ -17,28 +17,33 @@
   "routes": [
     {
       "slug": "home",
-      "label": "Home",
-      "kind": "home"
+      "label": "홈",
+      "kind": "home",
+      "legacyLabel": "Home"
     },
     {
       "slug": "rooms",
-      "label": "Rooms",
-      "kind": "browse"
+      "label": "객실",
+      "kind": "browse",
+      "legacyLabel": "Rooms"
     },
     {
       "slug": "offers",
-      "label": "Offers",
-      "kind": "detail"
+      "label": "오퍼",
+      "kind": "detail",
+      "legacyLabel": "Offers"
     },
     {
       "slug": "booking",
-      "label": "Booking",
-      "kind": "reserve"
+      "label": "예약",
+      "kind": "reserve",
+      "legacyLabel": "Booking"
     },
     {
       "slug": "guide",
-      "label": "Guide",
-      "kind": "guide"
+      "label": "안내",
+      "kind": "guide",
+      "legacyLabel": "Guide"
     }
   ]
 }

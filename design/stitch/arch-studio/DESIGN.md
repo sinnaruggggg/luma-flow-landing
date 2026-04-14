@@ -1,46 +1,46 @@
-# Design System: PLAIN GRID
-**Site ID:** arch-studio
+# 디자인 시스템: PLAIN GRID
+**사이트 ID:** arch-studio
 
-## 1. Identity
-- Industry: Architecture Studio
-- Summary: Editorial architecture portfolio that should feel like a real studio commission site.
-- Home grammar: Editorial canvas
-- Mobile rule: Mobile should read like a visual brief deck with project cards and inquiry entry.
+## 1. 정체성
+- 업종: 건축 스튜디오
+- 요약: 실제 건축 스튜디오 의뢰 사이트처럼 보이도록 구성한 에디토리얼 포트폴리오.
+- 첫 화면 문법: 에디토리얼 캔버스
+- 모바일 규칙: 모바일은 프로젝트 카드와 문의 진입이 먼저 보이는 비주얼 브리프 덱처럼 설계한다.
 
-## 2. Visual Direction
-- Family: Editorial studio portfolio
-- First screen: Image-led editorial spread with type anchored beside the photo.
-- Background: Large architecture photography with grain and paper warmth.
-- Motion: Blocks rise as layered editorial sheets and overlap on scroll.
-- Atmosphere: Editorial luxury with soft grain and cinematic image depth.
+## 2. 비주얼 방향
+- 계열: Editorial studio portfolio
+- 첫 화면: Image-led editorial spread with type anchored beside the photo.
+- 배경: Large architecture photography with grain and paper warmth.
+- 모션: Blocks rise as layered editorial sheets and overlap on scroll.
+- 분위기: 부드러운 그레인과 영화적 깊이를 가진 에디토리얼 럭셔리.
 
-## 3. Palette
-- Background: #efe9df
-- Surface: #fcf9f5
-- Panel: rgba(252, 249, 245, 0.88)
-- Text: #221d18
-- Muted: #65594b
-- Accent: #2e241c
-- Accent soft: #d9ccb8
+## 3. 팔레트
+- 배경: #efe9df
+- 표면: #fcf9f5
+- 패널: rgba(252, 249, 245, 0.88)
+- 본문: #221d18
+- 보조: #65594b
+- 강조: #2e241c
+- 보조 강조: #d9ccb8
 
-## 4. Typography
-- Use elegant type with quiet supporting copy.
-- Keep copy short and functional.
-- Use Korean as the default content language.
+## 4. 타이포그래피
+- 조용하지만 고급스러운 타이포를 사용한다.
+- 카피는 짧고 기능적으로 유지한다.
+- 기본 콘텐츠 언어는 한국어다.
 
-## 5. Components
-- Panels should appear as layered sheets over imagery.
-- Shared primitives are limited to buttons, badges, inputs, and simple cards.
-- The first screen grammar must be unique to this site.
+## 5. 컴포넌트
+- 패널은 이미지 위에 겹쳐 올라오는 시트처럼 보여야 한다.
+- 공용 primitive는 버튼, 배지, 입력, 단순 카드 정도로 제한한다.
+- 첫 화면 문법은 이 사이트만의 구조여야 한다.
 
-## 6. Prohibited Patterns
-- No shared hero template.
-- No shared section assembler.
-- No repetitive image box + text box + CTA blocks.
+## 6. 금지 패턴
+- 공통 히어로 템플릿 금지.
+- 공통 섹션 조립기 금지.
+- 반복적인 이미지 박스 + 텍스트 박스 + CTA 블록 금지.
 
-## 7. Route Targets
-- Home (home): This is the operating homepage. Build a complete landing surface, not a cover page.
-- Works (works): Treat the page as a project index with filters, featured work, and quick case entry.
-- Services (services): Frame service scope, deliverables, and process with confidence and specificity.
-- Brief (brief): Design a compact but premium brief intake flow with structured fields and expectations.
-- Contact (contact): Focus on inquiry, demo request, response expectations, and business trust signals.
+## 7. 라우트 목표
+- 홈 (home): 운영형 홈페이지처럼 설계한다. 커버 페이지가 아니라 실제 사용 흐름이 바로 보여야 한다.
+- 프로젝트 (works): 프로젝트 인덱스와 큐레이션 구조가 분명한 포트폴리오 페이지로 만든다.
+- 서비스 (services): 서비스 범위, 산출물, 진행 방식이 자신 있게 보이도록 설계한다.
+- 브리프 (brief): 고급스럽지만 간결한 브리프 접수 흐름과 구조화된 입력 필드를 만든다.
+- 문의 (contact): 문의 흐름, 응답 기대치, 신뢰 요소가 함께 보이는 고신뢰 문의 페이지로 만든다.

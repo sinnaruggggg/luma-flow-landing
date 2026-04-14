@@ -1,46 +1,46 @@
-# Design System: CLARO
-**Site ID:** wealth-app
+# 디자인 시스템: CLARO
+**사이트 ID:** wealth-app
 
-## 1. Identity
-- Industry: Wealth SaaS
-- Summary: A personal wealth SaaS focused on dashboard confidence, goal tracking, and portfolio clarity.
-- Home grammar: Dashboard bento
-- Mobile rule: Prioritize KPI modules, target progress, and a single conversion path to start.
+## 1. 정체성
+- 업종: 자산관리 SaaS
+- 요약: 목표 추적과 포트폴리오 가시성을 대시보드 중심으로 보여주는 자산관리 SaaS.
+- 첫 화면 문법: 대시보드 벤토
+- 모바일 규칙: 모바일 첫 화면에서 KPI, 목표 진행률, 시작 CTA를 우선 노출한다.
 
-## 2. Visual Direction
-- Family: Quiet finance OS
-- First screen: Dashboard-led first screen with KPI tiles and small charts.
-- Background: No photo hero. Use responsive mesh gradients and restrained depth.
-- Motion: Charts and target cards reveal with subtle layered motion.
-- Atmosphere: Restrained, premium, quiet, and service-led.
+## 2. 비주얼 방향
+- 계열: Quiet finance OS
+- 첫 화면: Dashboard-led first screen with KPI tiles and small charts.
+- 배경: No photo hero. Use responsive mesh gradients and restrained depth.
+- 모션: Charts and target cards reveal with subtle layered motion.
+- 분위기: 절제되고 프리미엄이며 조용한 서비스 톤.
 
-## 3. Palette
-- Background: #f3f0e8
-- Surface: #ffffff
-- Panel: rgba(255, 255, 255, 0.86)
-- Text: #101828
-- Muted: #667085
-- Accent: #111827
-- Accent soft: #e7ebf0
+## 3. 팔레트
+- 배경: #f3f0e8
+- 표면: #ffffff
+- 패널: rgba(255, 255, 255, 0.86)
+- 본문: #101828
+- 보조: #667085
+- 강조: #111827
+- 보조 강조: #e7ebf0
 
-## 4. Typography
-- Use clean typography with controlled spacing and minimal copy.
-- Keep copy short and functional.
-- Use Korean as the default content language.
+## 4. 타이포그래피
+- 여백과 간격이 통제된 깔끔한 타이포를 사용한다.
+- 카피는 짧고 기능적으로 유지한다.
+- 기본 콘텐츠 언어는 한국어다.
 
-## 5. Components
-- Cards should feel calm and product-grade.
-- Shared primitives are limited to buttons, badges, inputs, and simple cards.
-- The first screen grammar must be unique to this site.
+## 5. 컴포넌트
+- 카드는 차분하고 제품급 완성도로 보여야 한다.
+- 공용 primitive는 버튼, 배지, 입력, 단순 카드 정도로 제한한다.
+- 첫 화면 문법은 이 사이트만의 구조여야 한다.
 
-## 6. Prohibited Patterns
-- No shared hero template.
-- No shared section assembler.
-- No repetitive image box + text box + CTA blocks.
+## 6. 금지 패턴
+- 공통 히어로 템플릿 금지.
+- 공통 섹션 조립기 금지.
+- 반복적인 이미지 박스 + 텍스트 박스 + CTA 블록 금지.
 
-## 7. Route Targets
-- Home (home): This is the operating homepage. Build a complete landing surface, not a cover page.
-- Features (features): Explain product capabilities through productized modules, diagrams, and proof points.
-- Cases (cases): Focus on real use cases, metrics, teams, outcomes, and before or after patterns.
-- Pricing (pricing): Make plans, pricing differences, and commitment decisions easy to compare.
-- Contact (contact): Focus on inquiry, demo request, response expectations, and business trust signals.
+## 7. 라우트 목표
+- 홈 (home): 운영형 홈페이지처럼 설계한다. 커버 페이지가 아니라 실제 사용 흐름이 바로 보여야 한다.
+- 기능 (features): 기능은 제품 모듈, 다이어그램, 흐름 단위로 설명한다.
+- 사례 (cases): 실제 활용 사례, 성과 수치, 팀 맥락, 전후 비교를 중심으로 보여준다.
+- 요금 (pricing): 플랜 차이와 선택 기준이 바로 비교되도록 만든다.
+- 문의 (contact): 문의 흐름, 응답 기대치, 신뢰 요소가 함께 보이는 고신뢰 문의 페이지로 만든다.

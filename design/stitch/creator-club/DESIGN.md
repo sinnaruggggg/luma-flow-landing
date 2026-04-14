@@ -1,46 +1,46 @@
-# Design System: RALLY HOUSE
-**Site ID:** creator-club
+# 디자인 시스템: RALLY HOUSE
+**사이트 ID:** creator-club
 
-## 1. Identity
-- Industry: Creator Community
-- Summary: A creator community site with live feed energy, membership perks, and join flow.
-- Home grammar: Community live feed
-- Mobile rule: Lead with live updates, pass options, and join entry before community explanation.
+## 1. 정체성
+- 업종: 크리에이터 커뮤니티
+- 요약: 실시간 활동감, 멤버십 혜택, 가입 흐름을 한 화면 안에서 느끼게 하는 커뮤니티 사이트.
+- 첫 화면 문법: 커뮤니티 라이브 피드
+- 모바일 규칙: 커뮤니티 설명보다 실시간 업데이트, 패스 옵션, 가입 진입을 먼저 보여준다.
 
-## 2. Visual Direction
-- Family: Pop community platform
-- First screen: Feed-led first screen with live activity modules and join CTA beside it.
-- Background: No photo-first hero. Use mesh, aura, and soft physics-driven motion.
-- Motion: Feed cards and pass labels appear on different depth planes.
-- Atmosphere: Loud, glossy, and campaign-driven without losing clarity.
+## 2. 비주얼 방향
+- 계열: Pop community platform
+- 첫 화면: Feed-led first screen with live activity modules and join CTA beside it.
+- 배경: No photo-first hero. Use mesh, aura, and soft physics-driven motion.
+- 모션: Feed cards and pass labels appear on different depth planes.
+- 분위기: 화려하고 글로시하지만 흐리지 않은 캠페인 무드.
 
-## 3. Palette
-- Background: #221537
-- Surface: #2d1b46
-- Panel: rgba(255, 255, 255, 0.12)
-- Text: #ffffff
-- Muted: rgba(255, 255, 255, 0.74)
-- Accent: #ffd84d
-- Accent soft: #ff7ccf
+## 3. 팔레트
+- 배경: #221537
+- 표면: #2d1b46
+- 패널: rgba(255, 255, 255, 0.12)
+- 본문: #ffffff
+- 보조: rgba(255, 255, 255, 0.74)
+- 강조: #ffd84d
+- 보조 강조: #ff7ccf
 
-## 4. Typography
-- Use oversized display text and sharp support labels.
-- Keep copy short and functional.
-- Use Korean as the default content language.
+## 4. 타이포그래피
+- 큰 디스플레이 서체와 날카로운 보조 라벨을 쓴다.
+- 카피는 짧고 기능적으로 유지한다.
+- 기본 콘텐츠 언어는 한국어다.
 
-## 5. Components
-- Let tags, pricing, and badges compete visually in a controlled way.
-- Shared primitives are limited to buttons, badges, inputs, and simple cards.
-- The first screen grammar must be unique to this site.
+## 5. 컴포넌트
+- 태그, 가격, 배지가 경쟁하되 통제된 질서를 유지한다.
+- 공용 primitive는 버튼, 배지, 입력, 단순 카드 정도로 제한한다.
+- 첫 화면 문법은 이 사이트만의 구조여야 한다.
 
-## 6. Prohibited Patterns
-- No shared hero template.
-- No shared section assembler.
-- No repetitive image box + text box + CTA blocks.
+## 6. 금지 패턴
+- 공통 히어로 템플릿 금지.
+- 공통 섹션 조립기 금지.
+- 반복적인 이미지 박스 + 텍스트 박스 + CTA 블록 금지.
 
-## 7. Route Targets
-- Home (home): This is the operating homepage. Build a complete landing surface, not a cover page.
-- Feed (feed): Create a living activity feed for the community with clear recency and member energy.
-- Perks (perks): Show benefits, exclusive value, and membership depth in a concise visual structure.
-- Join (join): Focus on membership signup, plan choice, and the reasons to commit today.
-- Guide (guide): Organize operational guidance, visit rules, maps, FAQ, and preparation details clearly.
+## 7. 라우트 목표
+- 홈 (home): 운영형 홈페이지처럼 설계한다. 커버 페이지가 아니라 실제 사용 흐름이 바로 보여야 한다.
+- 피드 (feed): 지금 움직이는 커뮤니티처럼 느껴지는 활동 피드 구조를 만든다.
+- 혜택 (perks): 멤버십 가치와 독점 혜택을 짧고 강하게 보여준다.
+- 가입 (join): 가입 이유, 플랜 선택, 오늘 행동해야 하는 이유가 선명해야 한다.
+- 안내 (guide): 방문 안내, 규칙, FAQ, 맵, 준비 사항을 스캔하기 쉽게 정리한다.

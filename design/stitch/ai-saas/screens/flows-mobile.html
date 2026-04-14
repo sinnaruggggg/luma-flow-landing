@@ -3,10 +3,9 @@
 <html class="dark" lang="ko"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>SIGNAL GRID - Flows</title>
+<title>SIGNAL GRID - 플로우</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
@@ -92,13 +91,11 @@
             width: 100%;
             opacity: 0.3;
         }
+        body {
+            min-height: max(884px, 100dvh);
+        }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
+</head>
 <body class="font-body text-on-surface selection:bg-secondary/30">
 <!-- Mesh Background Anchor -->
 <div class="mesh-gradient"></div>
@@ -122,7 +119,7 @@
 <!-- Workflow Visual Module -->
 <div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/15 shadow-2xl relative overflow-hidden">
 <div class="absolute top-0 right-0 p-4">
-<div class="bg-primary-container text-on-primary-container px-2 py-1 rounded text-[10px] font-bold tracking-tighter uppercase">0.02ms Latency</div>
+<div class="bg-primary-container text-on-primary-container px-2 py-1 rounded text-[10px] font-bold tracking-tighter uppercase">0.02ms 지연시간</div>
 </div>
 <!-- Abstract Node Graph -->
 <div class="flex flex-col gap-10 relative">
@@ -132,7 +129,7 @@
 <span class="material-symbols-outlined text-secondary" data-icon="psychology">psychology</span>
 </div>
 <div>
-<p class="text-sm font-bold text-on-surface">LLM Analyzer</p>
+<p class="text-sm font-bold text-on-surface">LLM 분석기</p>
 <p class="text-[10px] text-outline uppercase tracking-widest">Processing Layer</p>
 </div>
 </div>
@@ -144,7 +141,7 @@
 <span class="material-symbols-outlined text-primary" data-icon="webhook">webhook</span>
 </div>
 <div>
-<p class="text-sm font-bold text-on-surface">API Webhook</p>
+<p class="text-sm font-bold text-on-surface">API 웹훅</p>
 <p class="text-[10px] text-outline uppercase tracking-widest">External Hook</p>
 </div>
 </div>
@@ -156,7 +153,7 @@
 <span class="material-symbols-outlined text-[#ff6fe4]" data-icon="memory">memory</span>
 </div>
 <div>
-<p class="text-sm font-bold text-on-surface">Decision Engine</p>
+<p class="text-sm font-bold text-on-surface">의사결정 엔진</p>
 <p class="text-[10px] text-outline uppercase tracking-widest">Execution Core</p>
 </div>
 </div>
@@ -197,8 +194,8 @@
 </div>
 <p class="text-on-surface-variant text-sm leading-relaxed">복잡한 조건부 로직과 브랜칭을 시각적으로 설계하십시오. 각 노드는 AI 모델의 실시간 판단에 따라 데이터 흐름을 최적화합니다.</p>
 <div class="mt-4 flex gap-2">
-<span class="bg-surface-container-high px-3 py-1 rounded-full text-[10px] font-medium border border-outline-variant/20 text-on-surface">Auto-Scaling</span>
-<span class="bg-surface-container-high px-3 py-1 rounded-full text-[10px] font-medium border border-outline-variant/20 text-on-surface">Self-Healing</span>
+<span class="bg-surface-container-high px-3 py-1 rounded-full text-[10px] font-medium border border-outline-variant/20 text-on-surface">자동 스케일링</span>
+<span class="bg-surface-container-high px-3 py-1 rounded-full text-[10px] font-medium border border-outline-variant/20 text-on-surface">자가 치유</span>
 </div>
 </div>
 </section>
@@ -267,22 +264,22 @@
 </main>
 <!-- BottomNavBar -->
 <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#0c0e12]/90 backdrop-blur-2xl rounded-t-2xl border-t border-[#44474e]/10 shadow-[0_-10px_40px_rgba(0,20,81,0.3)]">
-<!-- Active Item: Flows -->
+<!-- Active Item: 플로우 -->
 <a class="flex flex-col items-center justify-center text-[#bdf4ff] bg-[#001451] rounded-xl px-3 py-1.5 shadow-[0_0_15px_rgba(0,227,253,0.2)] tap-highlight-transparent" href="#">
 <span class="material-symbols-outlined" data-icon="account_tree" style="font-variation-settings: 'FILL' 1;">account_tree</span>
-<span class="font-['Inter'] text-[10px] font-medium tracking-wide">Flows</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide">플로우</span>
 </a>
 <a class="flex flex-col items-center justify-center text-[#8e9099] opacity-70 hover:opacity-100 tap-highlight-transparent" href="#">
 <span class="material-symbols-outlined" data-icon="Blur_on">blur_on</span>
-<span class="font-['Inter'] text-[10px] font-medium tracking-wide">Nodes</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide">노드</span>
 </a>
 <a class="flex flex-col items-center justify-center text-[#8e9099] opacity-70 hover:opacity-100 tap-highlight-transparent" href="#">
 <span class="material-symbols-outlined" data-icon="database">database</span>
-<span class="font-['Inter'] text-[10px] font-medium tracking-wide">Data</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide">데이터</span>
 </a>
 <a class="flex flex-col items-center justify-center text-[#8e9099] opacity-70 hover:opacity-100 tap-highlight-transparent" href="#">
 <span class="material-symbols-outlined" data-icon="hub">hub</span>
-<span class="font-['Inter'] text-[10px] font-medium tracking-wide">Alerts</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide">알림</span>
 </a>
 </nav>
 </body></html>

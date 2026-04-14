@@ -1,8 +1,8 @@
 {
   "siteId": "local-cafe",
   "brand": "TABLE WARM",
-  "industry": "Cafe Reservation",
-  "summary": "A cafe site focused on today's menu, seat availability, and direct reservation entry.",
+  "industry": "카페 예약",
+  "summary": "오늘의 메뉴와 좌석 현황, 예약 진입이 실제 매장처럼 바로 보이는 카페 사이트.",
   "blueprint": {
     "family": "Warm storefront booking",
     "heroMode": "Storefront hero with today's menu board and reservation module visible immediately.",
@@ -17,28 +17,33 @@
   "routes": [
     {
       "slug": "home",
-      "label": "Home",
-      "kind": "home"
+      "label": "홈",
+      "kind": "home",
+      "legacyLabel": "Home"
     },
     {
       "slug": "menu",
-      "label": "Menu",
-      "kind": "browse"
+      "label": "메뉴",
+      "kind": "browse",
+      "legacyLabel": "Menu"
     },
     {
       "slug": "visit",
-      "label": "Visit",
-      "kind": "detail"
+      "label": "방문",
+      "kind": "detail",
+      "legacyLabel": "Visit"
     },
     {
       "slug": "reserve",
-      "label": "Reserve",
-      "kind": "reserve"
+      "label": "예약",
+      "kind": "reserve",
+      "legacyLabel": "Reserve"
     },
     {
       "slug": "info",
-      "label": "Info",
-      "kind": "guide"
+      "label": "정보",
+      "kind": "guide",
+      "legacyLabel": "Info"
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "siteId": "beauty-flash-sale",
   "brand": "MELT POP",
-  "industry": "Beauty Flash Commerce",
-  "summary": "High-tempo beauty commerce centered on kits, sale urgency, and palette-led shopping.",
+  "industry": "뷰티 플래시 세일",
+  "summary": "키트 구매, 세일 긴급감, 컬러 탐색을 빠르게 연결하는 고속 뷰티 커머스 사이트.",
   "blueprint": {
     "family": "Campaign-sale beauty",
     "heroMode": "Poster-style first screen with giant price typography and layered kit cards.",
@@ -17,28 +17,33 @@
   "routes": [
     {
       "slug": "home",
-      "label": "Home",
-      "kind": "home"
+      "label": "홈",
+      "kind": "home",
+      "legacyLabel": "Home"
     },
     {
       "slug": "shop",
-      "label": "Shop",
-      "kind": "browse"
+      "label": "쇼핑",
+      "kind": "browse",
+      "legacyLabel": "Shop"
     },
     {
       "slug": "shades",
-      "label": "Shades",
-      "kind": "detail"
+      "label": "컬러",
+      "kind": "detail",
+      "legacyLabel": "Shades"
     },
     {
       "slug": "cart",
-      "label": "Cart",
-      "kind": "checkout"
+      "label": "장바구니",
+      "kind": "checkout",
+      "legacyLabel": "Cart"
     },
     {
       "slug": "brand",
-      "label": "Brand",
-      "kind": "brand"
+      "label": "브랜드",
+      "kind": "brand",
+      "legacyLabel": "Brand"
     }
   ]
 }

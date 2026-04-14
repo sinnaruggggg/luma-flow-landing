@@ -1,8 +1,8 @@
 {
   "siteId": "wealth-app",
   "brand": "CLARO",
-  "industry": "Wealth SaaS",
-  "summary": "A personal wealth SaaS focused on dashboard confidence, goal tracking, and portfolio clarity.",
+  "industry": "자산관리 SaaS",
+  "summary": "목표 추적과 포트폴리오 가시성을 대시보드 중심으로 보여주는 자산관리 SaaS.",
   "blueprint": {
     "family": "Quiet finance OS",
     "heroMode": "Dashboard-led first screen with KPI tiles and small charts.",
@@ -17,28 +17,33 @@
   "routes": [
     {
       "slug": "home",
-      "label": "Home",
-      "kind": "home"
+      "label": "홈",
+      "kind": "home",
+      "legacyLabel": "Home"
     },
     {
       "slug": "features",
-      "label": "Features",
-      "kind": "features"
+      "label": "기능",
+      "kind": "features",
+      "legacyLabel": "Features"
     },
     {
       "slug": "cases",
-      "label": "Cases",
-      "kind": "cases"
+      "label": "사례",
+      "kind": "cases",
+      "legacyLabel": "Cases"
     },
     {
       "slug": "pricing",
-      "label": "Pricing",
-      "kind": "pricing"
+      "label": "요금",
+      "kind": "pricing",
+      "legacyLabel": "Pricing"
     },
     {
       "slug": "contact",
-      "label": "Contact",
-      "kind": "contact"
+      "label": "문의",
+      "kind": "contact",
+      "legacyLabel": "Contact"
     }
   ]
 }

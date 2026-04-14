@@ -3,10 +3,9 @@
 <html class="light" lang="ko"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>PLAIN GRID | Brief</title>
+<title>PLAIN GRID - 브리프 (모바일)</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&amp;family=Manrope:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
       tailwind.config = {
@@ -88,16 +87,14 @@
             white-space: nowrap;
             direction: ltr;
         }
-        body { font-family: 'Manrope', sans-serif; background-color: #fff9ee; }
+        body { font-family: 'Manrope', 'Noto Serif KR', sans-serif; background-color: #fff9ee; }
         h1, h2, h3 { font-family: 'Noto Serif KR', serif; }
         .paper-shadow { box-shadow: 0 12px 40px rgba(29, 27, 22, 0.05); }
+        body {
+          min-height: max(884px, 100dvh);
+        }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
+</head>
 <body class="text-on-surface selection:bg-primary-container selection:text-on-primary-container">
 <!-- TopAppBar -->
 <header class="fixed top-0 w-full z-50 bg-[#fff9ee]/80 dark:bg-[#151616]/80 backdrop-blur-md text-[#151616] dark:text-[#fff9ee] no-border transition-colors duration-300">
@@ -111,7 +108,7 @@
 <!-- Hero Section -->
 <section class="relative h-[751px] w-full bg-surface">
 <div class="absolute inset-0 overflow-hidden">
-<img alt="Minimalist architectural model detail" class="w-full h-full object-cover" data-alt="Close-up of a minimalist white architectural model showing clean geometric lines and soft shadows on a warm paper background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkdsTKTFj8Hq0F4L2ChGze49MjMzFonSOm5gv7y_MIxZBHTyJwC1HcvETfc-YYw0aTo92vdaUejxjZgfQ0j1LoFQrpxCokkIxTwYlgEa0rApIG0gDKKHFiBWMupuT39SRXh1jgDc5CYfJYvTy9S22AG521TeCaWGnFXLMO6s60gbFBKT8CJx0Q2oJfmgeiyUySoaowG_pyz_3kgJzxaqPIvQlrEdPzLDEZWkFWvudZd-xlAJI_vWcRoIM1eDyCDPxFbTkREq_pxD0"/>
+<img alt="건축 모델 디테일" class="w-full h-full object-cover" data-alt="건축 모델의 기하학적 선과 그림자가 드러난 근접 촬영 이미지" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkdsTKTFj8Hq0F4L2ChGze49MjMzFonSOm5gv7y_MIxZBHTyJwC1HcvETfc-YYw0aTo92vdaUejxjZgfQ0j1LoFQrpxCokkIxTwYlgEa0rApIG0gDKKHFiBWMupuT39SRXh1jgDc5CYfJYvTy9S22AG521TeCaWGnFXLMO6s60gbFBKT8CJx0Q2oJfmgeiyUySoaowG_pyz_3kgJzxaqPIvQlrEdPzLDEZWkFWvudZd-xlAJI_vWcRoIM1eDyCDPxFbTkREq_pxD0"/>
 <div class="absolute inset-0 bg-primary/10"></div>
 </div>
 <div class="absolute bottom-12 left-6 right-6 p-8 bg-surface-container-lowest paper-shadow z-10 border-none">
@@ -124,7 +121,7 @@
                 </p>
 </div>
 </section>
-<!-- The Intake Flow (Editorial Cards) -->
+<!-- The Intake Flow -->
 <div class="px-4 -mt-6 relative z-20 space-y-4">
 <!-- Section 1: The Site -->
 <section class="bg-surface-container-low p-8 paper-shadow transform translate-y-0">
@@ -134,12 +131,12 @@
 </div>
 <div class="space-y-10">
 <div class="relative">
-<label class="block font-label text-[10px] uppercase tracking-widest text-primary/60 mb-2">Location (프로젝트 위치)</label>
-<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 px-0 py-2 font-body transition-colors" placeholder="City, District" type="text"/>
+<label class="block font-label text-[10px] uppercase tracking-widest text-primary/60 mb-2">프로젝트 위치</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 px-0 py-2 font-body transition-colors" placeholder="예: 서울특별시 종로구" type="text"/>
 </div>
 <div class="relative">
-<label class="block font-label text-[10px] uppercase tracking-widest text-primary/60 mb-2">Land Area (대지 면적)</label>
-<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 px-0 py-2 font-body transition-colors" placeholder="m² / Pyeong" type="text"/>
+<label class="block font-label text-[10px] uppercase tracking-widest text-primary/60 mb-2">대지 면적</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 px-0 py-2 font-body transition-colors" placeholder="m² 또는 평 단위" type="text"/>
 </div>
 </div>
 </section>
@@ -151,17 +148,17 @@
 </div>
 <div class="space-y-10">
 <div class="relative">
-<label class="block font-label text-[10px] uppercase tracking-widest text-primary/60 mb-2">Program (용도)</label>
+<label class="block font-label text-[10px] uppercase tracking-widest text-primary/60 mb-2">프로젝트 용도</label>
 <select class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 px-0 py-2 font-body transition-colors appearance-none">
-<option>Residential</option>
-<option>Commercial</option>
-<option>Cultural / Gallery</option>
-<option>Renovation</option>
+<option>단독주택 / 공동주택</option>
+<option>상업시설 / 오피스</option>
+<option>문화시설 / 갤러리</option>
+<option>리노베이션</option>
 </select>
 </div>
 <div class="relative">
-<label class="block font-label text-[10px] uppercase tracking-widest text-primary/60 mb-2">Core Value (핵심 가치)</label>
-<textarea class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 px-0 py-2 font-body transition-colors resize-none" placeholder="Space for meditation, family, or light..." rows="3"></textarea>
+<label class="block font-label text-[10px] uppercase tracking-widest text-primary/60 mb-2">핵심 가치</label>
+<textarea class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 px-0 py-2 font-body transition-colors resize-none" placeholder="명상, 가족, 또는 빛의 조화 등 프로젝트를 통해 이루고자 하는 가치를 들려주세요." rows="3"></textarea>
 </div>
 </div>
 </section>
@@ -173,12 +170,12 @@
 </div>
 <div class="space-y-10">
 <div class="relative">
-<label class="block font-label text-[10px] uppercase tracking-widest text-primary/60 mb-2">Completion Date (희망 완공 시기)</label>
+<label class="block font-label text-[10px] uppercase tracking-widest text-primary/60 mb-2">희망 완공 시기</label>
 <input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 px-0 py-2 font-body transition-colors" placeholder="YYYY . MM" type="text"/>
 </div>
 <div class="relative">
-<label class="block font-label text-[10px] uppercase tracking-widest text-primary/60 mb-2">Budget (희망 예산 범위)</label>
-<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 px-0 py-2 font-body transition-colors" placeholder="Estimated Range (KRW)" type="text"/>
+<label class="block font-label text-[10px] uppercase tracking-widest text-primary/60 mb-2">희망 예산 범위</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 px-0 py-2 font-body transition-colors" placeholder="단위: 원 (예: 5억 - 7억)" type="text"/>
 </div>
 </div>
 </section>
@@ -189,21 +186,21 @@
 <li class="flex items-start gap-4">
 <span class="font-body text-xs font-bold border-b border-primary pt-1">01</span>
 <div class="space-y-1">
-<h4 class="font-headline text-sm font-bold">Review</h4>
+<h4 class="font-headline text-sm font-bold">검토 (Review)</h4>
 <p class="font-body text-[11px] leading-tight text-secondary">보내주신 브리프를 검토하여 스튜디오의 지향점과 부합하는지 확인합니다. (3-5일 소요)</p>
 </div>
 </li>
 <li class="flex items-start gap-4">
 <span class="font-body text-xs font-bold border-b border-primary pt-1">02</span>
 <div class="space-y-1">
-<h4 class="font-headline text-sm font-bold">Consultation</h4>
+<h4 class="font-headline text-sm font-bold">상담</h4>
 <p class="font-body text-[11px] leading-tight text-secondary">대면 혹은 화상 미팅을 통해 프로젝트의 구체적인 비전과 요구사항을 나눕니다.</p>
 </div>
 </li>
 <li class="flex items-start gap-4">
 <span class="font-body text-xs font-bold border-b border-primary pt-1">03</span>
 <div class="space-y-1">
-<h4 class="font-headline text-sm font-bold">Proposal</h4>
+<h4 class="font-headline text-sm font-bold">제안 (Proposal)</h4>
 <p class="font-body text-[11px] leading-tight text-secondary">건축적 제안과 함께 설계 계약 및 향후 일정에 대한 정식 제안서를 전달합니다.</p>
 </div>
 </li>
@@ -212,7 +209,7 @@
 <!-- Submission Button -->
 <div class="pb-16 pt-4 px-2">
 <button class="w-full bg-primary text-on-primary font-label font-bold py-6 px-10 tracking-[0.2em] text-xs transition-all hover:bg-primary-container active:scale-[0.98] paper-shadow">
-                    SUBMIT BRIEF
+                    브리프 제출하기
                 </button>
 <p class="text-center mt-6 font-label text-[10px] text-primary/40 uppercase tracking-widest">Designing the Archive of Your Life</p>
 </div>
@@ -222,7 +219,7 @@
 <nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#fff9ee]/90 dark:bg-[#151616]/90 backdrop-blur-xl shadow-[0_-12px_40px_rgba(29,27,22,0.05)] z-50">
 <a class="flex flex-col items-center justify-center text-[#151616]/40 dark:text-[#fff9ee]/40 pt-2 hover:text-[#151616] dark:hover:text-[#fff9ee] transition-colors ease-in-out duration-300" href="#">
 <span class="material-symbols-outlined mb-1" data-icon="grid_view">grid_view</span>
-<span class="font-['Manrope'] text-[10px] uppercase tracking-tighter font-semibold">Works</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-tighter font-semibold">프로젝트</span>
 </a>
 <a class="flex flex-col items-center justify-center text-[#151616]/40 dark:text-[#fff9ee]/40 pt-2 hover:text-[#151616] dark:hover:text-[#fff9ee] transition-colors ease-in-out duration-300" href="#">
 <span class="material-symbols-outlined mb-1" data-icon="architecture">architecture</span>
@@ -234,7 +231,7 @@
 </a>
 <a class="flex flex-col items-center justify-center text-[#151616] dark:text-[#fff9ee] border-t-2 border-[#151616] dark:border-[#fff9ee] pt-2 hover:text-[#151616] dark:hover:text-[#fff9ee] transition-colors ease-in-out duration-300" href="#">
 <span class="material-symbols-outlined mb-1" data-icon="edit_note" style="font-variation-settings: 'FILL' 1;">edit_note</span>
-<span class="font-['Manrope'] text-[10px] uppercase tracking-tighter font-semibold">Brief</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-tighter font-semibold">브리프</span>
 </a>
 </nav>
 </body></html>

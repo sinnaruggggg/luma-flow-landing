@@ -12,10 +12,10 @@ function totals() {
 }
 
 function coverageLabel(site) {
-  if (site.gallery.publicReady) return "Full Stitch";
-  if (site.gallery.homeReady) return `${site.gallery.readyRoutes}/${site.gallery.totalRoutes} live`;
-  if (site.gallery.stitchedRoutes > 0) return `${site.gallery.stitchedRoutes}/${site.gallery.totalRoutes} staged`;
-  return "Stitch staging";
+  if (site.gallery.publicReady) return "전체 공개";
+  if (site.gallery.homeReady) return `${site.gallery.readyRoutes}/${site.gallery.totalRoutes} 공개`;
+  if (site.gallery.stitchedRoutes > 0) return `${site.gallery.stitchedRoutes}/${site.gallery.totalRoutes} 준비`;
+  return "스티치 준비 중";
 }
 
 function GalleryCard({ site, onOpen }) {
@@ -37,7 +37,7 @@ function GalleryCard({ site, onOpen }) {
         <div className="hub-card__footer">
           <span>{site.industry}</span>
           <span className="hub-card__action">
-            {canOpen ? "Enter site" : "Staging"}
+            {canOpen ? "사이트 입장" : "준비 중"}
             {canOpen ? <ChevronRight size={16} /> : <Clock3 size={16} />}
           </span>
         </div>
@@ -57,24 +57,24 @@ export function GalleryHome({ onOpen }) {
           <div className="hub-topbar__brand">
             <HubMark />
             <div>
-              <strong>20 Independent Sample Sites</strong>
-              <span>Same-sized cards. Direct entry into each site home. Five-route structure per site.</span>
+              <strong>20개 독립 샘플 사이트</strong>
+              <span>같은 크기 카드로 나열하고, 클릭하면 각 사이트 홈으로 바로 진입합니다. 사이트마다 5개 라우트 구조를 가집니다.</span>
             </div>
           </div>
           <div className="hub-topbar__meta">
-            <span>{summary.sites} sites</span>
-            <span>{summary.liveHomes} homes live</span>
-            <span>{summary.readyRoutes}/{summary.totalRoutes} routes live</span>
-            <span>{summary.readySites} full sites</span>
+            <span>사이트 {summary.sites}개</span>
+            <span>홈 공개 {summary.liveHomes}개</span>
+            <span>라우트 공개 {summary.readyRoutes}/{summary.totalRoutes}</span>
+            <span>전체 공개 {summary.readySites}개</span>
           </div>
         </header>
 
         <section className="hub-hero">
-          <span className="hub-hero__eyebrow">Stitch-first Gallery</span>
-          <h1>Twenty sites that enter as sites, not as one family of layout variations.</h1>
+          <span className="hub-hero__eyebrow">스티치 우선 갤러리</span>
+          <h1>하나의 템플릿 변주가 아니라, 20개의 실제 다른 사이트처럼 바로 들어가게 만듭니다.</h1>
           <p>
-            Cards stay visible for all twenty sites, but only homes with real desktop and mobile Stitch output can open.
-            Fallback previews are no longer used as public routes.
+            카드 슬롯은 20개를 모두 유지하되, 실제 데스크톱과 모바일 Stitch 산출물이 있는 홈만 열립니다.
+            fallback 미리보기는 공개 라우트로 쓰지 않습니다.
           </p>
         </section>
 
@@ -109,11 +109,11 @@ function SiteTopbar({ site, route, viewMode, isMobileClient, onViewChange, onNav
       <div className="site-topbar__start">
         <button type="button" className="site-topbar__back" onClick={onBack}>
           <ArrowLeft size={18} />
-          Gallery
+          갤러리
         </button>
         <div className="site-topbar__brand">
           <strong>{site.brand}</strong>
-          <span>{site.blueprint.family}</span>
+          <span>{site.industry}</span>
         </div>
       </div>
       <nav className="site-nav" aria-label={`${site.brand} routes`}>
@@ -135,7 +135,7 @@ function SiteTopbar({ site, route, viewMode, isMobileClient, onViewChange, onNav
 }
 
 function StatusBadge({ stage }) {
-  const label = stage.source === "stitch-html" ? "Stitch HTML" : stage.source === "stitch-image" ? "Stitch PNG" : "Fallback preview";
+  const label = stage.source === "stitch-html" ? "Stitch HTML" : stage.source === "stitch-image" ? "Stitch PNG" : "대체 미리보기";
   return (
     <span className={`status-pill status-pill--${stage.source}`}>
       {stage.stitched ? <CheckCircle2 size={14} /> : <Layers3 size={14} />}
@@ -195,26 +195,25 @@ function SidePanels({ site, route, actualView, onNavigate }) {
 
   return (
     <aside className="site-side">
-      <Panel eyebrow="Intent" title={route.description}>
+      <Panel eyebrow="의도" title={route.description}>
         <p>{site.summary}</p>
-        <div className="tag-rail">{site.chips.map((chip) => <span key={chip}>{chip}</span>)}</div>
       </Panel>
-      <Panel eyebrow="Design DNA" title={site.homeMode}>
-        <RouteRows rows={[{ label: "First screen", value: site.blueprint.heroMode }, { label: "Background", value: site.blueprint.background }, { label: "Motion", value: site.blueprint.motion }, { label: actualView === "mobile" ? "Mobile" : "Desktop", value: actualView === "mobile" ? site.mobileRule : "Keep the opening frame spacious and layered." }]} />
+      <Panel eyebrow="구조" title={site.homeMode}>
+        <RouteRows rows={[{ label: "첫 화면", value: site.homeMode }, { label: actualView === "mobile" ? "모바일 우선 규칙" : "데스크톱 포인트", value: actualView === "mobile" ? site.mobileRule : "첫 화면이 넓고 깊이감 있게 열려 사이트 문법이 바로 보여야 한다." }]} />
       </Panel>
-      <Panel eyebrow="Stats" title={`${site.industry} signals`}>
+      <Panel eyebrow="운영 지표" title={`${site.industry} 핵심 수치`}>
         <RouteRows rows={site.stats} />
       </Panel>
-      <Panel eyebrow="Routes" title="Move through the site">
+      <Panel eyebrow="이동" title="사이트 안에서 이동">
         <div className="route-links">
-          {homeLink.slug !== route.slug ? <button type="button" className="route-link" onClick={() => onNavigate(buildSitePath(site.id, homeLink.slug))} disabled={!homeLink.ready}>Home</button> : null}
+          {homeLink.slug !== route.slug ? <button type="button" className="route-link" onClick={() => onNavigate(buildSitePath(site.id, homeLink.slug))} disabled={!homeLink.ready}>홈</button> : null}
           {nextRoutes.map((item) => (
             <button key={item.slug} type="button" className="route-link" onClick={() => onNavigate(buildSitePath(site.id, item.slug))} disabled={!item.ready}>
               {item.label}
             </button>
           ))}
           <span className="route-note">
-            {stage.html ? "Live Stitch HTML is active for this route." : "This route is using a stitched screenshot while HTML capture is still being refined."}
+            {stage.html ? "이 라우트는 실제 Stitch HTML이 연결되어 있습니다." : "이 라우트는 Stitch 스크린샷을 사용 중이며 HTML 캡처는 아직 정리 중입니다."}
           </span>
         </div>
       </Panel>
@@ -248,19 +247,19 @@ export function SiteStaging({ site, route, onHome, onOpenHome }) {
       <SceneBackdrop tone={site.backdrop} />
       <div className="hub-page__content">
         <section className="missing-card">
-          <span>Stitch staging</span>
-          <h1>{site.brand} {route.label} is not ready for public entry yet.</h1>
+          <span>스티치 준비 중</span>
+          <h1>{site.brand} {route.label} 페이지는 아직 공개 준비가 끝나지 않았습니다.</h1>
           <p>
-            This route stays blocked until both desktop and mobile Stitch outputs are saved locally.
-            Current coverage: {site.gallery.readyRoutes}/{site.gallery.totalRoutes} routes live.
+            데스크톱과 모바일 Stitch 산출물이 모두 로컬에 저장되기 전까지는 이 라우트를 막아둡니다.
+            현재 공개 범위: {site.gallery.readyRoutes}/{site.gallery.totalRoutes} 라우트.
           </p>
           <div className="tag-rail">
             <span>{site.homeMode}</span>
             <span>{site.industry}</span>
-            <span>{site.gallery.stitchedScreens} stitched screens</span>
+            <span>생성 화면 {site.gallery.stitchedScreens}개</span>
           </div>
-          {site.gallery.homeReady ? <button type="button" className="cta cta--primary" onClick={onOpenHome}>Open live home</button> : null}
-          <button type="button" className="cta cta--secondary" onClick={onHome}>Back to gallery</button>
+          {site.gallery.homeReady ? <button type="button" className="cta cta--primary" onClick={onOpenHome}>홈 열기</button> : null}
+          <button type="button" className="cta cta--secondary" onClick={onHome}>갤러리로 돌아가기</button>
         </section>
       </div>
     </div>
@@ -273,10 +272,10 @@ export function NotFound({ onHome }) {
       <SceneBackdrop tone="gallery" />
       <div className="hub-page__content">
         <section className="missing-card">
-          <span>Route not found</span>
-          <h1>This route does not exist in the staged site map.</h1>
-          <p>Return to the gallery and enter another site.</p>
-          <button type="button" className="cta cta--primary" onClick={onHome}>Back to gallery</button>
+          <span>라우트를 찾을 수 없음</span>
+          <h1>이 경로는 현재 준비된 사이트 맵에 없습니다.</h1>
+          <p>갤러리로 돌아가 다른 사이트를 열어주세요.</p>
+          <button type="button" className="cta cta--primary" onClick={onHome}>갤러리로 돌아가기</button>
         </section>
       </div>
     </div>

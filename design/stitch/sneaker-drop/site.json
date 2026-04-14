@@ -1,8 +1,8 @@
 {
   "siteId": "sneaker-drop",
   "brand": "RIFT/01",
-  "industry": "Sneaker Commerce",
-  "summary": "Limited sneaker commerce with launch countdown and fast cart entry.",
+  "industry": "스니커 커머스",
+  "summary": "한 번에 하나의 핵심 드롭에 집중하는 한정판 스니커 커머스 사이트.",
   "blueprint": {
     "family": "Street launch lab",
     "heroMode": "Poster-led hero with price strip and side countdown.",
@@ -17,28 +17,33 @@
   "routes": [
     {
       "slug": "home",
-      "label": "Home",
-      "kind": "home"
+      "label": "홈",
+      "kind": "home",
+      "legacyLabel": "Home"
     },
     {
       "slug": "drops",
-      "label": "Drops",
-      "kind": "browse"
+      "label": "드롭",
+      "kind": "browse",
+      "legacyLabel": "Drops"
     },
     {
       "slug": "styles",
-      "label": "Styles",
-      "kind": "detail"
+      "label": "스타일",
+      "kind": "detail",
+      "legacyLabel": "Styles"
     },
     {
       "slug": "cart",
-      "label": "Cart",
-      "kind": "checkout"
+      "label": "장바구니",
+      "kind": "checkout",
+      "legacyLabel": "Cart"
     },
     {
       "slug": "brand",
-      "label": "Brand",
-      "kind": "brand"
+      "label": "브랜드",
+      "kind": "brand",
+      "legacyLabel": "Brand"
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "siteId": "creator-club",
   "brand": "RALLY HOUSE",
-  "industry": "Creator Community",
-  "summary": "A creator community site with live feed energy, membership perks, and join flow.",
+  "industry": "크리에이터 커뮤니티",
+  "summary": "실시간 활동감, 멤버십 혜택, 가입 흐름을 한 화면 안에서 느끼게 하는 커뮤니티 사이트.",
   "blueprint": {
     "family": "Pop community platform",
     "heroMode": "Feed-led first screen with live activity modules and join CTA beside it.",
@@ -17,28 +17,33 @@
   "routes": [
     {
       "slug": "home",
-      "label": "Home",
-      "kind": "home"
+      "label": "홈",
+      "kind": "home",
+      "legacyLabel": "Home"
     },
     {
       "slug": "feed",
-      "label": "Feed",
-      "kind": "feed"
+      "label": "피드",
+      "kind": "feed",
+      "legacyLabel": "Feed"
     },
     {
       "slug": "perks",
-      "label": "Perks",
-      "kind": "perks"
+      "label": "혜택",
+      "kind": "perks",
+      "legacyLabel": "Perks"
     },
     {
       "slug": "join",
-      "label": "Join",
-      "kind": "join"
+      "label": "가입",
+      "kind": "join",
+      "legacyLabel": "Join"
     },
     {
       "slug": "guide",
-      "label": "Guide",
-      "kind": "guide"
+      "label": "안내",
+      "kind": "guide",
+      "legacyLabel": "Guide"
     }
   ]
 }

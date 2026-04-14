@@ -1,8 +1,8 @@
 {
   "siteId": "boxing-gym",
   "brand": "UPPERCUT CLUB",
-  "industry": "Boxing Gym",
-  "summary": "A high-energy boxing gym site where trial booking sits ahead of program browsing.",
+  "industry": "복싱짐 예약",
+  "summary": "프로그램 소개보다 체험 예약이 먼저 열리는 고밀도 복싱짐 사이트.",
   "blueprint": {
     "family": "Fight club booking",
     "heroMode": "Massive gym photography with floating booking card.",
@@ -17,28 +17,33 @@
   "routes": [
     {
       "slug": "home",
-      "label": "Home",
-      "kind": "home"
+      "label": "홈",
+      "kind": "home",
+      "legacyLabel": "Home"
     },
     {
       "slug": "classes",
-      "label": "Classes",
-      "kind": "browse"
+      "label": "프로그램",
+      "kind": "browse",
+      "legacyLabel": "Classes"
     },
     {
       "slug": "coaches",
-      "label": "Coaches",
-      "kind": "detail"
+      "label": "코치",
+      "kind": "detail",
+      "legacyLabel": "Coaches"
     },
     {
       "slug": "join",
-      "label": "Join",
-      "kind": "reserve"
+      "label": "가입",
+      "kind": "reserve",
+      "legacyLabel": "Join"
     },
     {
       "slug": "guide",
-      "label": "Guide",
-      "kind": "guide"
+      "label": "안내",
+      "kind": "guide",
+      "legacyLabel": "Guide"
     }
   ]
 }
