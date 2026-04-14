@@ -1,0 +1,89 @@
+{
+  "siteId": "jewelry-brand",
+  "brand": "LUNE FORM",
+  "projectId": "16598137237316106206",
+  "projectTitle": "LUNE FORM Stitch",
+  "updatedAt": "2026-04-14T03:57:38.126Z",
+  "screens": {
+    "home:desktop": {
+      "screenId": "3633ed627fef4134925326ecc93bc964",
+      "pageSlug": "home",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/jewelry-brand/screens/home-desktop.html",
+      "imagePath": "design/stitch/jewelry-brand/screens/home-desktop.png",
+      "updatedAt": "2026-04-13T23:37:26.848Z"
+    },
+    "home:mobile": {
+      "screenId": "64545a192b8e458688f85cd64b155352",
+      "pageSlug": "home",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/jewelry-brand/screens/home-mobile.html",
+      "imagePath": "design/stitch/jewelry-brand/screens/home-mobile.png",
+      "updatedAt": "2026-04-13T23:38:38.204Z"
+    },
+    "collection:desktop": {
+      "screenId": "4635b46a435942c1b10a19f3a223343d",
+      "pageSlug": "collection",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/jewelry-brand/screens/collection-desktop.html",
+      "imagePath": "design/stitch/jewelry-brand/screens/collection-desktop.png",
+      "updatedAt": "2026-04-14T03:47:21.664Z"
+    },
+    "collection:mobile": {
+      "screenId": "aeda3faa82644e32b77a066dee715e11",
+      "pageSlug": "collection",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/jewelry-brand/screens/collection-mobile.html",
+      "imagePath": "design/stitch/jewelry-brand/screens/collection-mobile.png",
+      "updatedAt": "2026-04-14T03:48:47.450Z"
+    },
+    "bespoke:desktop": {
+      "screenId": "232ac0e5c5504b37ac4593b101f84a9b",
+      "pageSlug": "bespoke",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/jewelry-brand/screens/bespoke-desktop.html",
+      "imagePath": "design/stitch/jewelry-brand/screens/bespoke-desktop.png",
+      "updatedAt": "2026-04-14T03:50:23.270Z"
+    },
+    "bespoke:mobile": {
+      "screenId": "a69f6b51a4c34a80804fb62598d1948a",
+      "pageSlug": "bespoke",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/jewelry-brand/screens/bespoke-mobile.html",
+      "imagePath": "design/stitch/jewelry-brand/screens/bespoke-mobile.png",
+      "updatedAt": "2026-04-14T03:51:50.160Z"
+    },
+    "consult:desktop": {
+      "screenId": "0f21df98197c437593262b83211b3a42",
+      "pageSlug": "consult",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/jewelry-brand/screens/consult-desktop.html",
+      "imagePath": "design/stitch/jewelry-brand/screens/consult-desktop.png",
+      "updatedAt": "2026-04-14T03:53:09.391Z"
+    },
+    "consult:mobile": {
+      "screenId": "1e82653e71e1476199abc677c82e5874",
+      "pageSlug": "consult",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/jewelry-brand/screens/consult-mobile.html",
+      "imagePath": "design/stitch/jewelry-brand/screens/consult-mobile.png",
+      "updatedAt": "2026-04-14T03:54:29.292Z"
+    },
+    "brand:desktop": {
+      "screenId": "9d772c7e0b4c4400aa2fd4ba15fdab0e",
+      "pageSlug": "brand",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/jewelry-brand/screens/brand-desktop.html",
+      "imagePath": "design/stitch/jewelry-brand/screens/brand-desktop.png",
+      "updatedAt": "2026-04-14T03:56:01.580Z"
+    },
+    "brand:mobile": {
+      "screenId": "b74a63f255364c00836df221d9de5e8d",
+      "pageSlug": "brand",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/jewelry-brand/screens/brand-mobile.html",
+      "imagePath": "design/stitch/jewelry-brand/screens/brand-mobile.png",
+      "updatedAt": "2026-04-14T03:57:38.128Z"
+    }
+  }
+}

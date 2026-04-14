@@ -1,0 +1,89 @@
+{
+  "siteId": "skin-clinic",
+  "brand": "ATELIER SKIN",
+  "projectId": "8531387011018034869",
+  "projectTitle": "ATELIER SKIN Stitch",
+  "updatedAt": "2026-04-14T01:36:07.925Z",
+  "screens": {
+    "home:desktop": {
+      "screenId": "4ea255a91df544d6aa7f6d69490f08d4",
+      "pageSlug": "home",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/skin-clinic/screens/home-desktop.html",
+      "imagePath": "design/stitch/skin-clinic/screens/home-desktop.png",
+      "updatedAt": "2026-04-13T23:45:46.995Z"
+    },
+    "home:mobile": {
+      "screenId": "9b7668d8c9bb4153b76c00c6ed2abe8b",
+      "pageSlug": "home",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/skin-clinic/screens/home-mobile.html",
+      "imagePath": "design/stitch/skin-clinic/screens/home-mobile.png",
+      "updatedAt": "2026-04-13T23:46:52.075Z"
+    },
+    "programs:desktop": {
+      "screenId": "b5083c1682aa426c9dbf0208f7131b6b",
+      "pageSlug": "programs",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/skin-clinic/screens/programs-desktop.html",
+      "imagePath": "design/stitch/skin-clinic/screens/programs-desktop.png",
+      "updatedAt": "2026-04-14T01:26:42.986Z"
+    },
+    "programs:mobile": {
+      "screenId": "a1b2a20589ff44e8b352b5f0bb145eb4",
+      "pageSlug": "programs",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/skin-clinic/screens/programs-mobile.html",
+      "imagePath": "design/stitch/skin-clinic/screens/programs-mobile.png",
+      "updatedAt": "2026-04-14T01:27:50.743Z"
+    },
+    "scan:desktop": {
+      "screenId": "b5a2f2b6e5a94f4cbd444675cad1c323",
+      "pageSlug": "scan",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/skin-clinic/screens/scan-desktop.html",
+      "imagePath": "design/stitch/skin-clinic/screens/scan-desktop.png",
+      "updatedAt": "2026-04-14T01:29:03.430Z"
+    },
+    "scan:mobile": {
+      "screenId": "90e363b1affd4f7ba78972e9480eeced",
+      "pageSlug": "scan",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/skin-clinic/screens/scan-mobile.html",
+      "imagePath": "design/stitch/skin-clinic/screens/scan-mobile.png",
+      "updatedAt": "2026-04-14T01:30:14.536Z"
+    },
+    "booking:desktop": {
+      "screenId": "d424505bc46c4a388533da39676a39d7",
+      "pageSlug": "booking",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/skin-clinic/screens/booking-desktop.html",
+      "imagePath": "design/stitch/skin-clinic/screens/booking-desktop.png",
+      "updatedAt": "2026-04-14T01:31:46.003Z"
+    },
+    "booking:mobile": {
+      "screenId": "a0c29fb9221d4099b9324f7657083700",
+      "pageSlug": "booking",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/skin-clinic/screens/booking-mobile.html",
+      "imagePath": "design/stitch/skin-clinic/screens/booking-mobile.png",
+      "updatedAt": "2026-04-14T01:33:14.471Z"
+    },
+    "clinic:desktop": {
+      "screenId": "e47b175d60854b8a8817d1ae8f77b18f",
+      "pageSlug": "clinic",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/skin-clinic/screens/clinic-desktop.html",
+      "imagePath": "design/stitch/skin-clinic/screens/clinic-desktop.png",
+      "updatedAt": "2026-04-14T01:34:53.691Z"
+    },
+    "clinic:mobile": {
+      "screenId": "5bd2614eeb404e46bcaae5c6f6e93c8e",
+      "pageSlug": "clinic",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/skin-clinic/screens/clinic-mobile.html",
+      "imagePath": "design/stitch/skin-clinic/screens/clinic-mobile.png",
+      "updatedAt": "2026-04-14T01:36:07.926Z"
+    }
+  }
+}

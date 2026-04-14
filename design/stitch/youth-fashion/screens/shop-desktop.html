@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BOP BOP | SHOP THE VOLUME</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Be+Vietnam+Pro:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#a99e5d",
+                        "tertiary-dim": "#585018",
+                        "secondary": "#a22e64",
+                        "secondary-dim": "#922158",
+                        "on-secondary-fixed-variant": "#932259",
+                        "on-secondary-fixed": "#6b003b",
+                        "on-background": "#352f00",
+                        "on-primary-fixed": "#000000",
+                        "tertiary": "#655c23",
+                        "on-primary": "#f2f1ff",
+                        "secondary-fixed": "#ffc1d5",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#00166c",
+                        "outline-variant": "#b9ae6c",
+                        "surface": "#fff7d5",
+                        "on-primary-fixed-variant": "#001d83",
+                        "tertiary-container": "#fff2a9",
+                        "surface-bright": "#fff7d5",
+                        "on-tertiary-fixed": "#504810",
+                        "inverse-primary": "#7187ff",
+                        "error-dim": "#a70138",
+                        "on-tertiary-container": "#635b21",
+                        "on-tertiary-fixed-variant": "#6e652b",
+                        "primary-container": "#879aff",
+                        "surface-container": "#f8ea96",
+                        "error": "#b41340",
+                        "surface-container-low": "#fff2a9",
+                        "on-surface": "#352f00",
+                        "surface-dim": "#e5d674",
+                        "inverse-surface": "#110e00",
+                        "primary-fixed": "#879aff",
+                        "secondary-container": "#ffc1d5",
+                        "surface-container-highest": "#edde81",
+                        "on-surface-variant": "#655c23",
+                        "on-tertiary": "#fff4b8",
+                        "tertiary-fixed": "#fff2a9",
+                        "surface-tint": "#2448e3",
+                        "primary": "#2448e3",
+                        "primary-dim": "#0a39d7",
+                        "on-secondary": "#ffeff2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: #fff7d5;
+        }
+        .headline-font { font-family: 'Space Grotesk', sans-serif; }
+        .neo-zine-blur { backdrop-filter: blur(12px); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-white">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fff2a9]/84 backdrop-blur-md shadow-[0_20px_40px_rgba(53,47,0,0.08)]">
+<div class="flex justify-between items-center px-8 py-4 w-full">
+<div class="text-3xl font-black italic tracking-tighter text-[#0f3bd9] font-['Space_Grotesk']">BOP BOP</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase font-bold text-black/60 hover:scale-105 transition-transform duration-200" href="#">DROPS</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase font-bold text-[#0f3bd9] border-b-4 border-[#0f3bd9] pb-1 hover:scale-105 transition-transform duration-200" href="#">ARCHIVE</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase font-bold text-black/60 hover:scale-105 transition-transform duration-200" href="#">LOOKBOOK</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase font-bold text-black/60 hover:scale-105 transition-transform duration-200" href="#">LABELS</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-[#0f3bd9] hover:scale-110 transition-all" data-icon="shopping_bag">shopping_bag</button>
+<button class="material-symbols-outlined text-[#0f3bd9] hover:scale-110 transition-all" data-icon="person">person</button>
+</div>
+</div>
+</nav>
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex w-64 h-screen sticky top-0 flex-col pt-24 bg-white shadow-2xl rounded-r-full z-40">
+<div class="px-8 mb-8">
+<h3 class="text-xl font-bold text-black font-['Space_Grotesk'] rotate-[-3deg] inline-block bg-primary text-white px-2 mb-1">FILTER BY</h3>
+<p class="text-xs font-['Space_Grotesk'] font-medium opacity-50">ZINE LABELS VOL. 1</p>
+</div>
+<nav class="flex flex-col gap-2 flex-grow overflow-y-auto no-scrollbar">
+<a class="font-['Space_Grotesk'] font-medium bg-[#0f3bd9] text-white rounded-full mx-2 px-4 py-3 rotate-[-2deg] flex items-center gap-3 shadow-lg" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+                    ALL ITEMS
+                </a>
+<a class="font-['Space_Grotesk'] font-medium text-black px-4 py-3 mx-4 hover:bg-[#0f3bd9]/10 rounded-full transition-all flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="checkroom">checkroom</span>
+                    OUTERWEAR
+                </a>
+<a class="font-['Space_Grotesk'] font-medium text-black px-4 py-3 mx-4 hover:bg-[#0f3bd9]/10 rounded-full transition-all flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+                    TOPS
+                </a>
+<a class="font-['Space_Grotesk'] font-medium text-black px-4 py-3 mx-4 hover:bg-[#0f3bd9]/10 rounded-full transition-all flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="Straighten">straighten</span>
+                    BOTTOMS
+                </a>
+<a class="font-['Space_Grotesk'] font-medium text-black px-4 py-3 mx-4 hover:bg-[#0f3bd9]/10 rounded-full transition-all flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+                    ACCESSORIES
+                </a>
+</nav>
+<div class="p-6">
+<button class="w-full bg-primary text-white py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:scale-95 transition-all">APPLY FILTERS</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 pt-24 pb-12 px-4 md:px-12 max-w-7xl">
+<!-- Hero / Lead Section -->
+<section class="relative mb-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+<div class="lg:col-span-7 relative group">
+<div class="overflow-hidden rounded-lg shadow-2xl">
+<img alt="Featured Drop" class="w-full h-[600px] object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Fashion editorial shot of a young model wearing oversized street fashion in an industrial studio with vibrant yellow and blue accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOhmgqb0ldFHt_gx4TMW35KXBzBWOuqvC-jUii0_tq3TgszlejJk8u_j5nyfEl3otD60Q8DLKUdIte5wJj8kXQ9aowARjivB5HmIb3diJDROJA3mNqZJ0NnMxHjzDm0UnAQUWsb0d5GtSxbxki-uYof-NhD0SIALbU1FVAT1FmPIGSYMATSUxYpAYTsHAIbAMbGItYJ9VwKBWCVYfvccf5ThD3GsAth_euNrT17u7Wj7WnSUgzEda-JsTeJSSemcbUSy_JY0dV9N9R"/>
+</div>
+<!-- Sticker CTA -->
+<button class="absolute bottom-10 -right-4 bg-secondary text-on-secondary px-8 py-8 rounded-full shadow-2xl hover:scale-110 transition-transform rotate-12 flex flex-col items-center justify-center font-black z-20">
+<span class="text-xs uppercase tracking-tighter">New Drop</span>
+<span class="text-lg">ADD TO BAG</span>
+</button>
+</div>
+<div class="lg:col-span-5 pb-8">
+<h1 class="headline-font text-6xl md:text-8xl font-black italic tracking-tighter text-primary leading-none mb-6">
+                        SHOP THE <br/> VOLUME
+                    </h1>
+<div class="flex items-baseline gap-4 mb-4">
+<span class="text-3xl font-bold bg-surface-container-highest px-3 py-1 rounded-sm">DROP #24</span>
+<span class="text-xl font-medium opacity-70">NEO-STREET ARCHIVE</span>
+</div>
+<p class="text-lg max-w-md mb-8 leading-relaxed">
+                        도시의 리듬과 유스 컬처의 에너지를 담은 BOP BOP의 스물네 번째 캡슐 컬렉션. 자유로운 실루엣과 대담한 컬러 블로킹의 조화.
+                    </p>
+<div class="flex items-center gap-6">
+<span class="text-4xl font-black text-primary">₩189,000</span>
+<span class="text-sm font-bold uppercase tracking-widest text-secondary border-b-2 border-secondary">Limited Edition</span>
+</div>
+</div>
+</section>
+<!-- Section Label -->
+<div class="flex items-center justify-between mb-12">
+<h2 class="headline-font text-4xl font-bold uppercase tracking-widest">Selected Labels <span class="text-primary italic">/ 2024</span></h2>
+<div class="h-[2px] flex-1 mx-8 bg-on-surface/10"></div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors" data-icon="arrow_back">arrow_back</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Product Grid (Asymmetric Editorial Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-12">
+<!-- Product Card 1 -->
+<div class="relative flex flex-col group">
+<div class="relative overflow-hidden rounded-lg bg-surface-container mb-6 shadow-lg">
+<img alt="Blue Jacket" class="w-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-500" data-alt="High-end streetwear blue technical jacket displayed against a clean pastel yellow background with sharp focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoikSkCl7zdJhzlYNQc-Fx2gnsBbfUH_LbTK0LDVpaoFPn4ldw7ID5RLWZdfuATLa9GEhReyC8hFrp8-mTr2zC0N7ft1uOtZWOeMX6j97een7lg3xlPrLMSShFMjK_c3U4bIKQrlMzYGBCMDQ98eOm7rxCY2sFw9KQmmIN-WU1_EdOv5cKBkUqw8wildNyioqDSHl_e9qS-jVdI0UZpRTxijgqG_qen2jPk3S10WDPqqCVvYMcKw7DDJuaZsiOu3PKVe87a682I3ng"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-white text-primary p-4 rounded-full shadow-xl">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+<span class="absolute top-4 left-4 bg-secondary text-white text-[10px] px-2 py-1 rounded-full uppercase font-bold rotate-[-15deg]">Label Exclusive</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="headline-font text-xl font-bold uppercase tracking-tight">Oversized Tech-Parka</h3>
+<p class="text-on-surface-variant font-medium">오버사이즈 테크 파카 (블루)</p>
+<span class="text-2xl font-black text-primary mt-2">₩245,000</span>
+</div>
+</div>
+<!-- Product Card 2 (Offset / Large) -->
+<div class="relative flex flex-col group lg:mt-12">
+<div class="relative overflow-hidden rounded-lg bg-surface-container mb-6 shadow-lg">
+<img alt="Cargo Pants" class="w-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Editorial photograph of stylish wide-leg cargo pants in a neutral cream tone, featuring multiple utility pockets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeyxFP8d6n3Eb6V1CDTJ_o3gVmk1CHVxmEx2FvkZN83XMZlR2Zs1UIng2LeYSuPSh7CWplmTKrdVDCcaOLXboAWhiVSYO1QKcckr6zclSLg7QYB9bEUd46rMbloudj43bevhjM_FGIRqN6kJDx9SCybLx8p1smLnXORqZkiYBRzedtNMtg0gUkHp-N8US3u5NmL3Z5tqqH2RUSJxhog5L8e6EXXm5ou9dhn5hs3UI0TxMmeAQubbOHCDsrVndL3FG66ym6ptmu4J6p"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-white text-primary p-4 rounded-full shadow-xl">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="headline-font text-xl font-bold uppercase tracking-tight">Loose Wide Cargos</h3>
+<p class="text-on-surface-variant font-medium">루즈 와이드 카고 팬츠 (크림)</p>
+<span class="text-2xl font-black text-primary mt-2">₩129,000</span>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="relative flex flex-col group">
+<div class="relative overflow-hidden rounded-lg bg-surface-container mb-6 shadow-lg">
+<img alt="Logo Tee" class="w-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Graphic t-shirt with bold abstract typography on a heavy cotton fabric, lifestyle product shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnziGHgZjakFUxxPrIBOCIa6uEFkODvNEPAAuP2u5NyeujNu5WQVqr0y7kz56MtK_fWTZVWwqOPHExNEq8D3MZwrhKqQ1XhJJHO9Xqy8c2kouNH9CKJ01_LvcaB5KHzrgoEwNaRL-z9Bz5tCENnprke2HVSFzEApyoWYymL8wHyBd41KSTi0kJEcw-cvZUbMyO76dSlPWA631miP6tNdfAbLgMfgbDAWUxcvZ9c9K20yWUbVGTLVFuLFVdHva5zPYTwf5oeKyXlDGQ"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-white text-primary p-4 rounded-full shadow-xl">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<span class="absolute top-4 right-4 bg-primary text-white text-[10px] px-2 py-1 rounded-full uppercase font-bold rotate-[10deg]">Best Seller</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="headline-font text-xl font-bold uppercase tracking-tight">Graphic Logo Tee</h3>
+<p class="text-on-surface-variant font-medium">그래픽 로고 티셔츠 (블랙)</p>
+<span class="text-2xl font-black text-primary mt-2">₩59,000</span>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="relative flex flex-col group">
+<div class="relative overflow-hidden rounded-lg bg-surface-container mb-6 shadow-lg">
+<img alt="Knitwear" class="w-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Distressed vibrant blue knit sweater with textural weave patterns, studio lighting on soft background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBap70U2mP88dqzH6mPy4se9ORAuuVbS2VgKeki3ZheyMNQbY09xassegy4Wyxy_iGbeIz-XQiN_jkhIqD_yGcRk0jQyyKNvohqhbtvDYiZaH400DeL5ehAJY3wkKTZiNXrJ8ASWwfQ7PQjQU_WgikUU9Zg40Knqh8fJ9cCK1K4WF0sFHxpXgKRnx41Og8RUKHLOmYzK8Rcn3wdmmceu3ZsNqmP3JkCB9M2iIMsVkZDShfDHpZNbbpayh5SfG2KgRtaYTdkxMkz7zGy"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-white text-primary p-4 rounded-full shadow-xl">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="headline-font text-xl font-bold uppercase tracking-tight">Distressed Blue Knit</h3>
+<p class="text-on-surface-variant font-medium">디스트레스드 블루 니트</p>
+<span class="text-2xl font-black text-primary mt-2">₩155,000</span>
+</div>
+</div>
+<!-- Product Card 5 (Large Offset) -->
+<div class="relative flex flex-col group lg:-mt-12">
+<div class="relative overflow-hidden rounded-lg bg-surface-container mb-6 shadow-lg">
+<img alt="Bag" class="w-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Close up of a premium silver technical crossbody bag with metallic hardware and nylon straps" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz1fRNhBDadbgs1QzXIdDCUimBOAV9kCnOTiX2ArPPKojQtOap0idXYKgeoq3qY4w2Pcv6rylOPMFmIl_ENH7GSZ_40_BWptY6DYW2gnTfBNU2c_h8IZhqN76HxvEmrBA5jAStLcnZ5HTfnsGISc2daHMiOhcXLZtrszdbsXwaXVsYRL1bYpCoupKmuXvL--8A1kWp0_RgPVkn4WuEyGRrwJgr7jeKqnzMfZkm8CG3UuHwkChYgMfU-zSYTlEMRQaTvkIdEfYhIeQK"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-white text-primary p-4 rounded-full shadow-xl">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="headline-font text-xl font-bold uppercase tracking-tight">Neo-Nylon Sling Bag</h3>
+<p class="text-on-surface-variant font-medium">네오 나일론 슬링 백 (실버)</p>
+<span class="text-2xl font-black text-primary mt-2">₩98,000</span>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="relative flex flex-col group">
+<div class="relative overflow-hidden rounded-lg bg-surface-container mb-6 shadow-lg">
+<img alt="Cap" class="w-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Minimalist street style cap with bold blue embroidered logo on white cotton twill" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfbAxaZov5KgOSjrZ2fLGzhuVih2S4z8zw107ZtDb_bbFS69pLblZfGLlEPYFa9Sehn08nSHd7czvGxqcQI5I3-Qh4qutRq1E3nnv5znKwtccFm0frKYzMjGCBE56unREWC7L4KTr0iEaXmCa08I6GEpZ4yMTaakmxjGWf4iGG-ts_U68O3BU5w5O9ZPGTImHuaOSjQCAstwBQJgMi5-uACaCI7sfIJkJMajjw8epzA718MiZexSIVyyssi30wkR_uDzJQAdnxhw_S"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-white text-primary p-4 rounded-full shadow-xl">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="headline-font text-xl font-bold uppercase tracking-tight">Zine Signature Cap</h3>
+<p class="text-on-surface-variant font-medium">진 시그니처 캡 (화이트)</p>
+<span class="text-2xl font-black text-primary mt-2">₩45,000</span>
+</div>
+</div>
+</div>
+<!-- More Load Button -->
+<div class="flex justify-center mt-32">
+<button class="group relative px-12 py-6 bg-transparent border-4 border-primary rounded-full overflow-hidden hover:scale-105 transition-transform duration-300">
+<span class="relative z-10 headline-font text-xl font-black text-primary group-hover:text-white transition-colors duration-300">LOAD MORE ARCHIVES</span>
+<div class="absolute inset-0 bg-primary transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+</button>
+</div>
+</main>
+</div>
+<!-- Floating Sticker Decoration -->
+<div class="fixed bottom-32 left-10 hidden xl:block pointer-events-none opacity-20">
+<div class="bg-on-surface text-background px-4 py-1 rotate-[35deg] font-black text-xs">NEO-ZINE GALLERY</div>
+</div>
+<div class="fixed top-48 right-10 hidden xl:block pointer-events-none opacity-20">
+<div class="bg-primary text-white px-6 py-2 rotate-[-15deg] font-black text-2xl italic tracking-tighter">BOP BOP STUDIO</div>
+</div>
+<!-- Footer -->
+<footer class="bg-[#0f3bd9] text-white flex flex-col items-center justify-center py-16 px-8 gap-8 mt-20 font-['Be_Vietnam_Pro'] text-xs tracking-widest uppercase">
+<div class="text-4xl font-black text-[#fff2a9] font-['Space_Grotesk'] italic tracking-tighter">BOP BOP</div>
+<div class="flex flex-wrap justify-center gap-8 text-white/80">
+<a class="hover:text-white transition-colors" href="#">PRIVACY</a>
+<a class="hover:text-white transition-colors" href="#">TERMS</a>
+<a class="hover:text-white transition-colors" href="#">SHIPPING</a>
+<a class="hover:text-white transition-colors" href="#">CONTACT</a>
+</div>
+<div class="text-center opacity-60">
+            ©2024 BOP BOP NEO-ZINE GALLERY. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+</body></html>

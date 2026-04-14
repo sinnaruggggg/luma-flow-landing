@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OFFERS | HOTEL STILL</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,400&amp;family=Manrope:wght@200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#50453a",
+                    "on-tertiary-fixed": "#221a14",
+                    "surface-container-highest": "#ece1d4",
+                    "on-tertiary-fixed-variant": "#4f453e",
+                    "secondary-fixed-dim": "#d4c4b5",
+                    "secondary": "#685c50",
+                    "inverse-surface": "#353027",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#d3c3ba",
+                    "outline-variant": "#d2c4bc",
+                    "surface-dim": "#e3d8cb",
+                    "primary-container": "#3c2c20",
+                    "primary": "#25180d",
+                    "secondary-container": "#f0e0d0",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#201b13",
+                    "on-error-container": "#93000a",
+                    "surface": "#fff8f3",
+                    "on-secondary-container": "#6e6256",
+                    "inverse-primary": "#dcc2b0",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#f0dfd6",
+                    "primary-fixed-dim": "#dcc2b0",
+                    "on-surface-variant": "#4e453f",
+                    "on-primary-fixed-variant": "#554336",
+                    "surface-bright": "#fff8f3",
+                    "on-background": "#201b13",
+                    "surface-tint": "#6e5a4c",
+                    "on-secondary-fixed": "#221a11",
+                    "surface-container-low": "#fdf2e4",
+                    "inverse-on-surface": "#faefe2",
+                    "tertiary-container": "#372d27",
+                    "surface-variant": "#ece1d4",
+                    "on-error": "#ffffff",
+                    "outline": "#80756e",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#f8ecdf",
+                    "secondary-fixed": "#f0e0d0",
+                    "on-primary-container": "#aa9282",
+                    "tertiary": "#211913",
+                    "on-primary-fixed": "#26190e",
+                    "on-tertiary-container": "#a2948b",
+                    "surface-container-high": "#f2e6d9",
+                    "background": "#fff8f3",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#f9ddcb",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        }
+      }
+    </script>
+<style>.glass-nav {
+    background-color: rgba(255, 248, 243, 0.8);
+    backdrop-filter: blur(20px)
+    }
+.grain-texture {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAFXWBnJm5Fd7XrcyN-qhNhb7uzb3M6Wjar705SQSeMn0kP_yx5DOw1sC7NuPQeZF4DEyZ9Lncd8jJ7Sh09rGE1PrArgC90KeWE0oYMhyPOrj7n47LSPkiupn6maJ2mGsrwSLeY_UAeGNWeO_7XnyxOvEkkDB5Qtgo4350bfBE6hree6RDj8ZpySbuafXZ7a0JIYSbPK4xVUkhJG-iDRoO2hseRzWxweUYo_nQbbnEC_PNJoDxPBYobudb404JSRJVaRFbQFU4320-F)
+    }
+.editorial-shadow {
+    box-shadow: 0 32px 64px -12px rgba(32, 27, 19, 0.06)
+    }</style>
+</head>
+<body class="bg-background font-body text-on-surface leading-relaxed overflow-x-hidden">
+<div class="grain-texture"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav">
+<div class="flex justify-between items-center w-full px-12 py-6">
+<div class="font-headline text-2xl font-light tracking-[0.2em] text-stone-900">HOTEL STILL</div>
+<div class="hidden md:flex gap-12 items-center">
+<a class="text-stone-500 font-light font-headline text-lg tracking-tight hover:text-stone-900 transition-colors duration-500" href="#">STAYS</a>
+<a class="text-stone-500 font-light font-headline text-lg tracking-tight hover:text-stone-900 transition-colors duration-500" href="#">AMENITIES</a>
+<a class="text-stone-900 font-medium border-b border-stone-900/20 font-headline text-lg tracking-tight hover:text-stone-900 transition-colors duration-500" href="#">OFFERS</a>
+<a class="text-stone-500 font-light font-headline text-lg tracking-tight hover:text-stone-900 transition-colors duration-500" href="#">JOURNAL</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 text-xs tracking-widest font-label hover:bg-primary-container transition-all duration-300">BOOK NOW</button>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative h-[921px] w-full px-12 overflow-hidden flex items-center">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="Cinematic wide shot of a minimalist luxury hotel lobby with warm morning light filtering through high windows and shadows of trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB73GKX_zGxjiXnOwFAcuEBlpbHZJB59kBdygsv_MRpVecg8BRtNczRsB7jwLwVhKnP49LP2Vnb9OfJydI1isG-esXFl3SL8Vu5vXBMEvhc0m_oBqGj5cclJVaW55qoTvkZ67mdRgIxaz13xvJdNO4dWbgMvQf2wdZVnrcxP0BfvkRYmDhjTVjmuXgKH2z9HJA2quJMN4lA-b6R3tk3YsWiMVEtiXQBJFOrKTN8UBVyXQATcYf_0mkATN-e5ud-u-KUC6LBZJwOfZpk"/>
+<div class="absolute inset-0 bg-primary/10"></div>
+</div>
+<div class="relative z-10 w-full max-w-4xl">
+<div class="bg-surface/90 backdrop-blur-xl p-16 md:p-24 inline-block editorial-shadow border-l-[1px] border-primary/5">
+<span class="block font-label text-xs tracking-[0.4em] text-secondary mb-6 uppercase">Curated Experiences</span>
+<h1 class="font-headline text-5xl md:text-7xl font-light text-primary leading-tight mb-8">
+                        OFFERS &amp; <br/>PACKAGES
+                    </h1>
+<p class="font-headline italic text-2xl text-on-surface-variant mb-10">
+                        침묵 속에 발견하는 특별한 제안
+                    </p>
+<div class="w-20 h-[1px] bg-primary/20 mb-10"></div>
+<p class="max-w-md text-on-surface-variant font-light leading-relaxed">
+                        호텔 스틸이 제안하는 여정은 단순한 투숙을 넘어섭니다. 감각을 깨우고 내면의 소리에 집중하는 시간을 통해 당신의 일상에 고요한 파동을 전합니다. 오직 당신만을 위해 큐레이션된 특별한 혜택을 만나보세요.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Featured Offers Section -->
+<section class="py-32 px-12 space-y-48">
+<!-- Offer 1: Autumn Stillness -->
+<div class="grid grid-cols-12 items-center gap-0">
+<div class="col-span-12 md:col-span-7 relative z-0">
+<div class="aspect-[4/5] md:aspect-[16/10] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A serene indoor zen garden or tea room with autumn foliage visible through a large window, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtAw31UmCwWgNiNrvoFdkZpOUYYWJoQgDDMIlwk_gMwnGXf2AUlcjtaGQjTNDmtVxwUEqy0kdE4PqohLSiLzffW_lF2vsJ6b4xoYNv1La-Q82SWuDAY1tW8B3f8biryhIs9EzXEdDu_0Rx52TJQECN3KnTchwh2iLoQboq2yJjxCw_-TbRMyxI-1z678qsx5uxbpOE1VYKaszeqZa0iEQuulN2E78TbV64KDQ7fKy1XYGQoH0CNFc9EWTfsC4XezxYfvSpGBug_9su"/>
+</div>
+</div>
+<div class="col-span-12 md:col-span-6 md:-ml-32 relative z-10">
+<div class="bg-surface-container-low p-12 md:p-20 editorial-shadow">
+<span class="block font-label text-[10px] tracking-widest text-secondary mb-4 uppercase">Seasonal Package</span>
+<h2 class="font-headline text-4xl text-primary mb-6">Autumn Stillness Package</h2>
+<div class="flex items-baseline gap-2 mb-8">
+<span class="text-xs font-label text-secondary">Starting from</span>
+<span class="text-2xl font-headline text-primary">520,000원</span>
+</div>
+<ul class="space-y-4 mb-10 text-on-surface-variant font-light text-sm">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">done</span>
+                                시그니처 조식 서비스 (2인)
+                            </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">done</span>
+                                프라이빗 다도 세션 (60분)
+                            </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">done</span>
+                                오후 2시 레이트 체크아웃
+                            </li>
+</ul>
+<button class="border border-primary/20 px-10 py-4 text-xs tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-500 uppercase">Discover More</button>
+</div>
+</div>
+</div>
+<!-- Offer 2: Midnight Curator -->
+<div class="grid grid-cols-12 items-center gap-0">
+<div class="col-span-12 md:col-span-6 md:order-2 relative z-0">
+<div class="aspect-[4/5] md:aspect-[16/10] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A dark moody library or whiskey bar with amber lighting and glass decanters on a dark wood table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ8YrZlNtJ36MwU4y3ra63FlFYmNX8wth61LW5J1p2Lq-f__SsCXIxBCC0f0zu5UftHJd55l1g39S09bQ9tco9zVFGPw0uUIl0_IdgKUCKzDfn9pm81pX9Z5qiJxTp69yL8_oiFt75N1ycF035erwmWlDxUKupiNA_7C4zzrzQRiMDS31Kcf614srWJSaVDRVEGRxpm7t-msmsfOSKU9yZN7CO1VHldgp8Q4TeQmYow2ZCYIPeU8zDoFdevrIsZw3gcqqBHzwlBVQx"/>
+</div>
+</div>
+<div class="col-span-12 md:col-span-6 md:-mr-32 md:order-1 relative z-10">
+<div class="bg-surface-container-highest p-12 md:p-20 editorial-shadow">
+<span class="block font-label text-[10px] tracking-widest text-secondary mb-4 uppercase">Evening Experience</span>
+<h2 class="font-headline text-4xl text-primary mb-6">Midnight Curator Visit</h2>
+<div class="flex items-baseline gap-2 mb-8">
+<span class="text-xs font-label text-secondary">Starting from</span>
+<span class="text-2xl font-headline text-primary">480,000원</span>
+</div>
+<ul class="space-y-4 mb-10 text-on-surface-variant font-light text-sm">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">done</span>
+                                미드나잇 프라이빗 갤러리 투어
+                            </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">done</span>
+                                전문 소믈리에의 위스키 페어링 (2잔)
+                            </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">done</span>
+                                인룸 다이닝 야식 플래터
+                            </li>
+</ul>
+<button class="border border-primary/20 px-10 py-4 text-xs tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-500 uppercase">Discover More</button>
+</div>
+</div>
+</div>
+<!-- Offer 3: Art of Stillness -->
+<div class="grid grid-cols-12 items-center gap-0">
+<div class="col-span-12 md:col-span-7 relative z-0">
+<div class="aspect-[4/5] md:aspect-[16/10] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Interior of a luxury spa suite with a stone bathtub and steam rising in soft light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0a7kegbvIGu1KuIRTKnwQvQTDSxqo3uaQcYWinCqeT5mjKaopkqlqpxc_WMRLSAptn9TLlXsCg0aTuU_K7kQGWiC93MLO26oFvwcZjBX7FRb2AGlPbj9AZeJtCA31-0XYxQLnQLRT5zODW2dmzfCFxnglPKDKYbTFUT9PUTl1-JI-19e-8bYu5EzjrsZIZit1nPEK8u-min0kcS3R7oJX1vvgKWJI1-lPpQ8Bj0Ey02wIXsFUmP1R4gv7EieRI49MLkeirsX80B7Z"/>
+</div>
+</div>
+<div class="col-span-12 md:col-span-6 md:-ml-32 relative z-10">
+<div class="bg-surface-container p-12 md:p-20 editorial-shadow">
+<span class="block font-label text-[10px] tracking-widest text-secondary mb-4 uppercase">Extended Stay Retreat</span>
+<h2 class="font-headline text-4xl text-primary mb-6">The Art of Stillness - 2 Nights Stay</h2>
+<div class="flex items-baseline gap-2 mb-8">
+<span class="text-xs font-label text-secondary">Starting from</span>
+<span class="text-2xl font-headline text-primary">920,000원</span>
+</div>
+<p class="mb-8 text-on-surface-variant font-light text-sm italic">
+                            진정한 휴식을 위한 2박 이상의 고요한 체류. 시간에 쫓기지 않는 완전한 몰입을 경험하세요.
+                        </p>
+<ul class="space-y-4 mb-10 text-on-surface-variant font-light text-sm">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">done</span>
+                                2인 조식 포함 (매일 제공)
+                            </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">done</span>
+                                웰니스 스파 세션 (90분, 1회)
+                            </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">done</span>
+                                저녁 코스 메뉴 1회 제공
+                            </li>
+</ul>
+<button class="border border-primary/20 px-10 py-4 text-xs tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-500 uppercase">Discover More</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Membership Section -->
+<section class="bg-surface-container-low py-32 px-12 border-t border-primary/5">
+<div class="max-w-6xl mx-auto">
+<div class="text-center mb-24">
+<span class="block font-label text-[10px] tracking-[0.5em] text-secondary mb-4 uppercase">STILL MEMBER BENEFITS</span>
+<h2 class="font-headline text-4xl text-primary">스틸 멤버십만을 위한 혜택</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
+<div class="flex flex-col items-center group">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="loyalty">loyalty</span>
+</div>
+<h3 class="font-headline text-xl mb-4">Member Exclusive Rates</h3>
+<p class="text-sm font-light text-on-surface-variant leading-relaxed">
+                            공식 홈페이지 예약 시<br/>상시 10% 추가 할인 혜택
+                        </p>
+</div>
+<div class="flex flex-col items-center group">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="upgrade">upgrade</span>
+</div>
+<h3 class="font-headline text-xl mb-4">Room Upgrades</h3>
+<p class="text-sm font-light text-on-surface-variant leading-relaxed">
+                            객실 상황에 따른<br/>무료 객실 업그레이드 우선권
+                        </p>
+</div>
+<div class="flex flex-col items-center group">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="event_available">event_available</span>
+</div>
+<h3 class="font-headline text-xl mb-4">Early Access to Events</h3>
+<p class="text-sm font-light text-on-surface-variant leading-relaxed">
+                            호텔 내 전시 및 다도 세션<br/>우선 예약권 및 초청
+                        </p>
+</div>
+</div>
+<div class="mt-24 text-center">
+<button class="bg-primary text-on-primary px-12 py-4 text-xs tracking-widest font-label hover:bg-primary-container transition-all duration-300">JOIN THE STILLNESS</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 py-16 px-12">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 w-full border-b border-primary/5 pb-12 mb-12">
+<div class="font-headline text-xl tracking-widest text-stone-900">HOTEL STILL</div>
+<div class="flex gap-8">
+<a class="font-label text-xs tracking-widest uppercase text-stone-400 hover:text-stone-900 transition-opacity duration-300" href="#">PRIVACY</a>
+<a class="font-label text-xs tracking-widest uppercase text-stone-400 hover:text-stone-900 transition-opacity duration-300" href="#">TERMS</a>
+<a class="font-label text-xs tracking-widest uppercase text-stone-400 hover:text-stone-900 transition-opacity duration-300" href="#">PRESS</a>
+<a class="font-label text-xs tracking-widest uppercase text-stone-400 hover:text-stone-900 transition-opacity duration-300" href="#">CAREERS</a>
+</div>
+</div>
+<div class="text-center font-label text-[10px] tracking-widest text-stone-400 opacity-80 uppercase">
+            © 2024 HOTEL STILL. A MOMENT OF STILLNESS.
+        </div>
+</footer>
+</body></html>

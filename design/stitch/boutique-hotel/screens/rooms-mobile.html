@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "tertiary-fixed-dim": "#d3c3ba",
+                  "inverse-on-surface": "#faefe2",
+                  "error-container": "#ffdad6",
+                  "on-tertiary-container": "#a2948b",
+                  "on-primary-container": "#aa9282",
+                  "tertiary-fixed": "#f0dfd6",
+                  "secondary-container": "#f0e0d0",
+                  "secondary-fixed": "#f0e0d0",
+                  "surface-variant": "#ece1d4",
+                  "primary-container": "#3c2c20",
+                  "on-secondary-fixed": "#221a11",
+                  "tertiary": "#211913",
+                  "surface-container": "#f8ecdf",
+                  "primary": "#25180d",
+                  "outline-variant": "#d2c4bc",
+                  "on-background": "#201b13",
+                  "surface-container-highest": "#ece1d4",
+                  "surface-container-high": "#f2e6d9",
+                  "on-primary-fixed": "#26190e",
+                  "on-surface": "#201b13",
+                  "on-secondary-fixed-variant": "#50453a",
+                  "surface-dim": "#e3d8cb",
+                  "surface-container-low": "#fdf2e4",
+                  "primary-fixed-dim": "#dcc2b0",
+                  "surface": "#fff8f3",
+                  "on-primary": "#ffffff",
+                  "secondary": "#685c50",
+                  "on-tertiary": "#ffffff",
+                  "on-secondary": "#ffffff",
+                  "on-primary-fixed-variant": "#554336",
+                  "on-error-container": "#93000a",
+                  "on-error": "#ffffff",
+                  "secondary-fixed-dim": "#d4c4b5",
+                  "on-tertiary-fixed-variant": "#4f453e",
+                  "inverse-primary": "#dcc2b0",
+                  "inverse-surface": "#353027",
+                  "on-surface-variant": "#4e453f",
+                  "surface-container-lowest": "#ffffff",
+                  "on-tertiary-fixed": "#221a14",
+                  "error": "#ba1a1a",
+                  "tertiary-container": "#372d27",
+                  "surface-tint": "#6e5a4c",
+                  "outline": "#80756e",
+                  "surface-bright": "#fff8f3",
+                  "on-secondary-container": "#6e6256",
+                  "primary-fixed": "#f9ddcb",
+                  "background": "#fff8f3"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.125rem",
+                  "lg": "0.25rem",
+                  "xl": "0.5rem",
+                  "full": "0.75rem"
+          },
+          "fontFamily": {
+                  "headline": ["Noto Serif"],
+                  "body": ["Manrope"],
+                  "label": ["Manrope"]
+          }
+        },
+      },
+    }
+  </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24
+    }
+.film-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 99;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBmfzcONgTScqy3MkZ7kSIfhCJa9E8IAFmvegt-6cTkA-aGklDYQ5DZuCxSjcukME-K4UeJM00VUXWfa-hNLp6J54MAzqKd8p8XM6kYUnIaJyq3zIrhaUXbfdid1pWYemLCAiZGJsVg5w-Dq9KdytishbkF_np5EIn8f3RSofoDjb_Ryfv81GdFK8nb5IWptSYRng8YK7P9ZVhMh-tQjvkzl27Q6fLroZVZqK3jZ9LGMUxJrHtwmr7LM0OeI8o5xxOtsYmQPMZt8DXZ)
+    }
+body {
+    -webkit-font-smoothing: antialiased
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<div class="film-grain"></div>
+<!-- TopAppBar -->
+<header class="bg-[#fff8f3]/80 dark:bg-[#201b13]/80 backdrop-blur-xl fixed top-0 w-full z-50">
+<div class="flex justify-between items-center px-6 h-16 w-full max-w-screen-2xl mx-auto">
+<div class="flex items-center">
+<button class="w-10 h-10 flex items-center justify-center hover:bg-[#ece1d4]/20 transition-colors duration-300">
+<span class="material-symbols-outlined text-[#25180d] dark:text-[#fdf2e4]">menu</span>
+</button>
+</div>
+<div class="font-['Noto_Serif'] text-xl tracking-[0.2em] uppercase text-[#25180d] dark:text-[#fdf2e4] font-bold">
+        ATELIER STILL
+      </div>
+<div class="flex items-center">
+<button class="w-10 h-10 flex items-center justify-center hover:bg-[#ece1d4]/20 transition-colors duration-300">
+<span class="material-symbols-outlined text-[#25180d] dark:text-[#fdf2e4]">shopping_bag</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pb-32 pt-16">
+<!-- Hero Section -->
+<section class="relative h-[795px] w-full overflow-hidden">
+<div class="absolute inset-0">
+<img alt="Luxury Suite" class="w-full h-full object-cover" data-alt="Interior of a minimalist luxury hotel suite with warm plaster walls, floor to ceiling windows, and soft morning sunlight casting long shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmygrFe7kvCYQeR309m9TjTxdVHOJKC9YgvLWIdFNXBKJp0ymeKUqHd31Jd2yOaw--ypeBfnXXs4VmdNIxwrVUXQ_O5X9TBp0YVuqlUlDEJPTk7q4YOyxRMxjKlvB3Q8O4jDyeexeBhfTu1ix00zk28uFMieHrA_cwm9Ls1m8uukDWjZ0RBrbSsDcxCQmIcDdw0y4F7415DKGGXJMSDyfXkMKdsdjh6AEzG-xlvv9mM7I_U1LTym-0ip18aPKnQz2WZM00stw2UPIZ"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-background"></div>
+</div>
+<div class="absolute bottom-12 left-6 right-6 z-20">
+<div class="bg-surface/80 backdrop-blur-2xl p-8 rounded-xl shadow-[0_8px_32px_rgba(32,27,19,0.08)] border border-outline-variant/10">
+<div class="space-y-6">
+<h1 class="font-headline text-3xl tracking-tight text-primary">객실 둘러보기</h1>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="font-label text-[10px] uppercase tracking-widest text-secondary opacity-70">Check-in</label>
+<div class="text-sm font-medium border-b border-outline-variant/30 py-2">2024.10.12</div>
+</div>
+<div class="space-y-1">
+<label class="font-label text-[10px] uppercase tracking-widest text-secondary opacity-70">Check-out</label>
+<div class="text-sm font-medium border-b border-outline-variant/30 py-2">2024.10.14</div>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label text-[10px] uppercase tracking-widest text-secondary opacity-70">Guests</label>
+<div class="text-sm font-medium border-b border-outline-variant/30 py-2">Adults 2, Infants 0</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-label tracking-widest text-xs uppercase hover:bg-primary-container transition-colors duration-300">
+              Availability
+            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Filter System -->
+<section class="sticky top-16 z-40 bg-background/95 backdrop-blur-md px-6 py-8 flex items-center justify-center gap-10 overflow-x-auto no-scrollbar">
+<button class="whitespace-nowrap font-label text-[11px] tracking-[0.2em] uppercase text-primary font-bold border-b-2 border-primary pb-1">전체보기</button>
+<button class="whitespace-nowrap font-label text-[11px] tracking-[0.2em] uppercase text-secondary hover:text-primary transition-colors duration-300">스탠다드</button>
+<button class="whitespace-nowrap font-label text-[11px] tracking-[0.2em] uppercase text-secondary hover:text-primary transition-colors duration-300">디럭스</button>
+<button class="whitespace-nowrap font-label text-[11px] tracking-[0.2em] uppercase text-secondary hover:text-primary transition-colors duration-300">스위트</button>
+</section>
+<!-- Room Catalog -->
+<section class="px-6 space-y-24 mt-12">
+<!-- Standard Room -->
+<article class="relative group">
+<div class="p-4 bg-surface-container-low rounded-xl">
+<div class="aspect-[4/5] overflow-hidden rounded-lg">
+<img alt="Standard Room" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern minimalist hotel bedroom with warm beige linens, oak wood accents, and a large circular mirror reflecting soft interior light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvPBFlz37u95nB0gdI_M3l4pGrEKQvOS-kFodBCKrW__vHQJf4AbHPrnh2vNfzrp_Feq6CO7t3ts_V1ONZqMSGgmguKWShBAHptKYwtp5X_6URNwMV7TijrXhCR22rlh3iPaUqYx6QP49MxoHVNhCiwMA-l0uIML8M2DCjyTNuOQpcxgNzhrqR-99YbUwI_vn_QT4Tgxw6eZBp9U7oOHpxAr5sXRXHjc8cwecCJ8P0qNySHPf76o7s9Nq-cik6D5rweiCgVIfMFUYU"/>
+</div>
+</div>
+<div class="mt-[-80px] ml-10 mr-4 relative z-10">
+<div class="bg-surface-container-lowest/90 backdrop-blur-xl p-8 rounded-xl shadow-lg border border-outline-variant/5">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="font-label text-[10px] uppercase tracking-widest text-secondary mb-2 block">Standard King</span>
+<h2 class="font-headline text-2xl text-primary">스탠다드 킹</h2>
+</div>
+<div class="text-right">
+<p class="font-label text-[10px] text-secondary tracking-widest uppercase mb-1">Starts from</p>
+<p class="font-bold text-primary">320,000원~</p>
+</div>
+</div>
+<div class="flex gap-4 mb-6 text-secondary text-[11px] tracking-wide font-light">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">aspect_ratio</span> 34m²</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">bed</span> King size</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">visibility</span> City view</span>
+</div>
+<button class="w-full border border-outline-variant py-3 font-label text-[10px] tracking-[0.3em] uppercase hover:bg-primary hover:text-on-primary transition-all duration-300">
+              View Details
+            </button>
+</div>
+</div>
+</article>
+<!-- Deluxe Room -->
+<article class="relative group">
+<div class="p-4 bg-surface-container-low rounded-xl">
+<div class="aspect-[4/5] overflow-hidden rounded-lg">
+<img alt="Deluxe Room" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Spacious luxury hotel room with a private balcony, sculptural lounge chairs, and a neutral color palette of cream and charcoal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBye5s3sGnBy6wHI_oPIHQ4hmxCNSLYowfj3V66r10-a_qYUYcRZTAmlnOqINyHfDkSYffwTI41lbY0kt8m54sSMeUQF_BgQPn9v5mjMG37H3fo5Fo1EOmHQP-57WkHBewFs5XY2stuHfiYZokUmFx7Fl_yM2bmGOLjSdyScLPOEuwU3kcfpK_hIk66WodxjMt2DYfahGqvUSDUT32alCRVxBhR3muMasW_EyzrWHzrd8T6CO4viOoBKAHDyzEOrVv7wOT9WF2doR9F"/>
+</div>
+</div>
+<div class="mt-[-80px] ml-4 mr-10 relative z-10">
+<div class="bg-surface-container-lowest/90 backdrop-blur-xl p-8 rounded-xl shadow-lg border border-outline-variant/5">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="font-label text-[10px] uppercase tracking-widest text-secondary mb-2 block">Deluxe Terrace</span>
+<h2 class="font-headline text-2xl text-primary">디럭스 테라스</h2>
+</div>
+<div class="text-right">
+<p class="font-label text-[10px] text-secondary tracking-widest uppercase mb-1">Starts from</p>
+<p class="font-bold text-primary">450,000원~</p>
+</div>
+</div>
+<div class="flex gap-4 mb-6 text-secondary text-[11px] tracking-wide font-light">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">aspect_ratio</span> 48m²</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">deck</span> Balcony</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">waves</span> River view</span>
+</div>
+<button class="w-full border border-outline-variant py-3 font-label text-[10px] tracking-[0.3em] uppercase hover:bg-primary hover:text-on-primary transition-all duration-300">
+              View Details
+            </button>
+</div>
+</div>
+</article>
+<!-- Still Suite -->
+<article class="relative group">
+<div class="p-4 bg-surface-container-low rounded-xl">
+<div class="aspect-[4/5] overflow-hidden rounded-lg">
+<img alt="Still Suite" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Exquisite hotel suite living room with high ceilings, large art pieces, premium velvet sofa, and warm ambient architectural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2Z7PEwnmW2K_ndDYoTQxuq8Q5RshWN_1DA8sOeUOps_M5z9j96lWAN0Gu-2C5qlMTknpUcAawTOs9UpEUWsARz5kExT3gcKZWY5puQrGk9yzDaiJPd8MdWa6FXwVSAJjtYsXXckt4kpEQh9egP1pWVjOv9N7ss1G-K1YFCDYfWBXfGJ2pXwdy4T9r1XpVib_ruIbmGcVql9MZ0AXnYC_thdRu3BNQlZE9YaPBnqWf84-cVrTyR3KUnjHUrKSsAUo20YnRMlFsbsFi"/>
+</div>
+</div>
+<div class="mt-[-80px] ml-10 mr-4 relative z-10">
+<div class="bg-surface-container-lowest/90 backdrop-blur-xl p-8 rounded-xl shadow-lg border border-outline-variant/5">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="font-label text-[10px] uppercase tracking-widest text-secondary mb-2 block">The Still Suite</span>
+<h2 class="font-headline text-2xl text-primary">스틸 스위트</h2>
+</div>
+<div class="text-right">
+<p class="font-label text-[10px] text-secondary tracking-widest uppercase mb-1">Starts from</p>
+<p class="font-bold text-primary">980,000원~</p>
+</div>
+</div>
+<div class="flex gap-4 mb-6 text-secondary text-[11px] tracking-wide font-light">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">aspect_ratio</span> 112m²</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">bathtub</span> Spa bath</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">panorama</span> Panoramic</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 font-label text-[10px] tracking-[0.3em] uppercase hover:bg-primary-container transition-all duration-300">
+              Book Now
+            </button>
+</div>
+</div>
+</article>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-[2rem] bg-[#fff8f3]/90 dark:bg-[#201b13]/90 backdrop-blur-2xl shadow-[0_-8px_32px_rgba(32,27,19,0.06)]">
+<div class="fixed bottom-0 left-0 w-full px-8 pb-6 pt-3 flex justify-between items-end">
+<!-- Reserve (Active for Rooms Page) -->
+<a class="flex flex-col items-center justify-center bg-[#25180d] text-[#ffffff] rounded-full w-14 h-14 -mt-4 shadow-lg active:scale-95 duration-500 ease-in-out transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="font-['Manrope'] text-[10px] tracking-widest uppercase mt-1 hidden">Reserve</span>
+</a>
+<!-- Discover -->
+<a class="flex flex-col items-center justify-center text-[#685c50] dark:text-[#d2c4bc] opacity-70 hover:opacity-100 transition-opacity duration-500" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-['Manrope'] text-[10px] tracking-widest uppercase mt-1">Discover</span>
+</a>
+<!-- Wellness -->
+<a class="flex flex-col items-center justify-center text-[#685c50] dark:text-[#d2c4bc] opacity-70 hover:opacity-100 transition-opacity duration-500" href="#">
+<span class="material-symbols-outlined">spa</span>
+<span class="font-['Manrope'] text-[10px] tracking-widest uppercase mt-1">Wellness</span>
+</a>
+<!-- Account -->
+<a class="flex flex-col items-center justify-center text-[#685c50] dark:text-[#d2c4bc] opacity-70 hover:opacity-100 transition-opacity duration-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Manrope'] text-[10px] tracking-widest uppercase mt-1">Account</span>
+</a>
+</div>
+</nav>
+</body></html>

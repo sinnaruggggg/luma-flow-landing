@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ATELIER SKIN - AI Scan</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&amp;family=Manrope:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#5d6059",
+                    "on-tertiary": "#f6f9ff",
+                    "surface-dim": "#d9dbd2",
+                    "primary-fixed": "#d7e3f9",
+                    "on-tertiary-container": "#535b64",
+                    "on-surface": "#31332e",
+                    "surface-container": "#efeee8",
+                    "on-primary-fixed": "#344051",
+                    "outline-variant": "#b1b3ab",
+                    "on-primary-fixed-variant": "#505c6e",
+                    "surface-bright": "#fbf9f5",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#414952",
+                    "on-error-container": "#752121",
+                    "surface": "#fbf9f5",
+                    "error-dim": "#4e0309",
+                    "background": "#fbf9f5",
+                    "tertiary-container": "#e9f1fd",
+                    "secondary-container": "#d9e3f9",
+                    "on-secondary": "#f8f8ff",
+                    "on-primary-container": "#465264",
+                    "surface-container-highest": "#e2e3db",
+                    "tertiary": "#586069",
+                    "primary": "#535f71",
+                    "secondary-fixed": "#d9e3f9",
+                    "primary-container": "#d7e3f9",
+                    "on-background": "#31332e",
+                    "primary-fixed-dim": "#c9d5ea",
+                    "surface-tint": "#535f71",
+                    "primary-dim": "#475365",
+                    "tertiary-dim": "#4c545d",
+                    "secondary-fixed-dim": "#cbd5ea",
+                    "error": "#9f403d",
+                    "secondary": "#555f72",
+                    "tertiary-fixed-dim": "#dbe3ee",
+                    "on-secondary-fixed": "#364051",
+                    "outline": "#797b75",
+                    "on-error": "#fff7f6",
+                    "error-container": "#fe8983",
+                    "surface-container-low": "#f5f4ee",
+                    "inverse-surface": "#0e0e0c",
+                    "inverse-primary": "#dae6fc",
+                    "on-secondary-fixed-variant": "#525c6e",
+                    "inverse-on-surface": "#9e9d99",
+                    "surface-container-high": "#e8e9e1",
+                    "secondary-dim": "#4a5365",
+                    "on-secondary-container": "#485264",
+                    "on-primary": "#f6f7ff",
+                    "tertiary-fixed": "#e9f1fd",
+                    "on-tertiary-fixed-variant": "#5d656f",
+                    "surface-variant": "#e2e3db"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif KR", "Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3 { font-family: 'Noto Serif KR', serif; }
+    </style>
+</head>
+<body class="bg-surface-bright text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl flex justify-between items-center px-8 py-4 max-w-full">
+<div class="text-xl font-bold tracking-widest text-slate-800 dark:text-slate-100 font-headline">ATELIER SKIN</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors font-label uppercase text-[10px] tracking-widest" href="#">Home</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors font-label uppercase text-[10px] tracking-widest" href="#">Programs</a>
+<a class="text-slate-900 dark:text-white font-semibold border-b-2 border-slate-400 dark:border-slate-500 pb-1 font-label uppercase text-[10px] tracking-widest" href="#">AI Scan</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors font-label uppercase text-[10px] tracking-widest" href="#">Booking</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors font-label uppercase text-[10px] tracking-widest" href="#">Clinic</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-2xl text-slate-700 cursor-pointer hover:opacity-80 transition-opacity">account_circle</span>
+</div>
+</nav>
+<!-- Hero Section with Clinic Stack -->
+<main class="pt-20">
+<section class="relative min-h-[921px] flex items-center px-8 md:px-24">
+<!-- Hero Background Image -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover grayscale-[0.2] contrast-[1.05]" data-alt="ultra-minimalist high-end skin clinic treatment room with soft natural lighting and frosted glass partitions" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7-UXlHEoLW701o7UIQREoEv13IJT81E9tfRNJp85aBf16uqWh0Wu4virWwOd7xSZRXuWLNs1jiKAvHdWp1PQmD4S4hbTdp8KhuBX7Cm6MRLrSZbecKzuXdkiI2YmVLklkf2PiwMfvbHCbYhyD5d801gDpkPJ-eUYKVQkH08m2_77vUvdwtHfq9cweD3NfCGG86pKdMtV-GJzLyTFDYR7R-BF3UcLmonavt21mRg9ZnQSzr948phFqNfr-FbV2JVx5DEzIVz_E1cI"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-bright/80 via-surface-bright/40 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-end">
+<!-- Main Header -->
+<div class="md:w-1/2 mb-12 md:mb-0">
+<span class="text-secondary label-md tracking-[0.2em] font-label uppercase mb-4 block">Precision Dermatology</span>
+<h1 class="text-5xl md:text-7xl font-bold text-on-surface leading-tight tracking-tight mb-8">당신만을 위한<br/>과학적 피부 진단</h1>
+<p class="text-on-surface-variant text-lg max-w-md font-body leading-relaxed">
+                        최첨단 AI 알고리즘을 통해 8가지 주요 피부 지표를 정밀 분석합니다. 아틀리에 스킨만의 독자적인 진단 시스템으로 숨겨진 고민을 발견하세요.
+                    </p>
+</div>
+<!-- Start AI Scan Column (Translucent Sheet) -->
+<div class="md:w-[420px] glass-panel p-10 rounded-full shadow-[0_10px_30px_rgba(49,51,46,0.04)] mb-[-5vh]">
+<h2 class="text-2xl font-bold mb-8 text-on-surface">AI Scan 시작하기</h2>
+<div class="space-y-8 mb-10">
+<div class="flex items-start gap-4">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center text-xs font-bold font-body">1</span>
+<div>
+<p class="text-sm font-bold text-on-surface mb-1">사진 업로드</p>
+<p class="text-xs text-on-surface-variant font-body">고해상도 얼굴 사진 촬영</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center text-xs font-bold font-body">2</span>
+<div>
+<p class="text-sm font-bold text-on-surface mb-1">AI 정밀 분석</p>
+<p class="text-xs text-on-surface-variant font-body">딥러닝 기반 피부 상태 진단</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center text-xs font-bold font-body">3</span>
+<div>
+<p class="text-sm font-bold text-on-surface mb-1">퍼스널 컨설팅</p>
+<p class="text-xs text-on-surface-variant font-body">전문의 맞춤 프로그램 매칭</p>
+</div>
+</div>
+</div>
+<button class="w-full py-5 bg-gradient-to-r from-primary to-primary-dim text-on-primary rounded-full font-bold tracking-wide hover:opacity-90 transition-all flex items-center justify-center gap-2 mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">camera</span>
+                        지금 스캔 시작하기
+                    </button>
+<!-- Live Availability Widget -->
+<div class="pt-6 border-t border-outline-variant/20">
+<div class="flex justify-between items-center mb-3">
+<span class="text-[10px] uppercase tracking-widest text-secondary font-label">Consultation Status</span>
+<span class="flex items-center gap-1.5 text-[10px] text-green-600 font-bold uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span> Live
+                            </span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl flex items-center justify-between">
+<p class="text-xs font-body text-on-surface">오늘 가능 상담 시간</p>
+<p class="text-xs font-bold text-primary">14:30 | 16:00 | 17:15</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works Section -->
+<section class="py-32 px-8 bg-surface-container">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<span class="text-secondary label-md tracking-[0.2em] font-label uppercase mb-4 block">Process</span>
+<h2 class="text-4xl font-bold">분석 프로세스</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Step 1 Card -->
+<div class="glass-panel p-12 rounded-full flex flex-col items-center text-center group hover:translate-y-[-4px] transition-transform duration-500">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-3xl text-primary">add_a_photo</span>
+</div>
+<h3 class="text-xl font-bold mb-4">사진 분석</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed font-body">
+                            다각도 촬영을 통해 피부 결, 모공, 유수분 밸런스를 고해상도 데이터로 수집합니다.
+                        </p>
+</div>
+<!-- Step 2 Card -->
+<div class="glass-panel p-12 rounded-full flex flex-col items-center text-center group hover:translate-y-[-4px] transition-transform duration-500">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-3xl text-primary">psychology</span>
+</div>
+<h3 class="text-xl font-bold mb-4">딥러닝 엔진</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed font-body">
+                            100만 개 이상의 임상 데이터를 학습한 AI가 미세한 주름과 색소 침착을 조기에 감지합니다.
+                        </p>
+</div>
+<!-- Step 3 Card -->
+<div class="glass-panel p-12 rounded-full flex flex-col items-center text-center group hover:translate-y-[-4px] transition-transform duration-500">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-3xl text-primary">description</span>
+</div>
+<h3 class="text-xl font-bold mb-4">클리니컬 리포트</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed font-body">
+                            수치화된 분석 결과와 함께 피부 노화 지수 및 맞춤 관리 솔루션을 제공합니다.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Our AI Technology Section -->
+<section class="py-32 px-8 overflow-hidden">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+<div class="md:w-1/2">
+<img class="rounded-full shadow-2xl w-full h-[600px] object-cover" data-alt="close-up of futuristic medical scanner displaying complex skin topology and data points on a frosted glass interface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz3RFhc9PUE_AHOt2x7NulyfE7CEt54BWJB4Sb5SkJacvZjwBZQcwx5wE_hL319Bj-wb6jFyPe2alpT5S-R94rQbB95eROFwG-KJl8bkMO_04Le1qXo2Uv-3_4QTtT46nlNSOZPCWQIyJJ8A4bMYpJyc-nZlXDfe4nLUhR7keBP07hdYlrOHtkTlIv760eLiFWrohGUxAR67N1AwfAfRqKoJybfxMTiI-YK1UJEM8S2cJdhxc0XiknU4n_q8ZVTvms5nkbbRbWhpI"/>
+</div>
+<div class="md:w-1/2 space-y-10">
+<div>
+<span class="text-secondary label-md tracking-[0.2em] font-label uppercase mb-4 block">Our Technology</span>
+<h2 class="text-4xl font-bold leading-tight mb-6">의학적 정확도를 넘어서는<br/>정밀 진단 솔루션</h2>
+<p class="text-on-surface-variant leading-relaxed font-body text-lg">
+                            아틀리에 스킨의 AI 스캔은 단순한 이미지 분석이 아닙니다. 피부 하층부의 잠재적 색소부터 탄력 저하의 전조 증상까지, 육안으로는 확인하기 어려운 피부의 미래를 예측합니다.
+                        </p>
+</div>
+<div class="grid grid-cols-2 gap-8 pt-8">
+<div>
+<p class="text-3xl font-bold text-primary mb-1">98.4%</p>
+<p class="text-xs uppercase tracking-widest text-secondary font-label">Clinical Accuracy</p>
+</div>
+<div>
+<p class="text-3xl font-bold text-primary mb-1">1.2M+</p>
+<p class="text-xs uppercase tracking-widest text-secondary font-label">Dataset Analysis</p>
+</div>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl border-l-4 border-primary">
+<p class="text-sm font-body italic text-on-surface-variant">
+                            "AI는 우리가 미처 인지하지 못한 미세한 변화를 읽어내어, 가장 효율적이고 안전한 케어의 시점을 제안합니다."
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Personalized Program Matching Section -->
+<section class="py-32 px-8 bg-white">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<span class="text-secondary label-md tracking-[0.2em] font-label uppercase mb-4 block">Recommendation</span>
+<h2 class="text-4xl font-bold">진단 결과에 따른 맞춤 솔루션</h2>
+</div>
+<button class="px-8 py-3 border border-outline-variant text-on-surface-variant rounded-full text-xs font-label uppercase tracking-widest hover:bg-surface-container transition-colors">
+                        All Programs View
+                    </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Program 1 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden group hover:shadow-xl transition-all duration-500">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="serene woman receiving professional facial lifting treatment in a bright clinical setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI9jUXfcXwBpi_n2HI5IW28DB0Bv9ikom-77vMne17kP6f8ZapGUd9x7wJsSD8tSyjXOM2GljLuWIZwDpuZpn05aW2gsaGuX8qsu9z3_xQMvkHCz_33-7rfGs8GoLJhKim57_0MlmFtYuPvaCBa50tejH1vRlPtoeGnEL_Ivsk4sfPdOKq019_I_P74Qps69yWHR2LEZkPaVP051jBThd1dyXgWvL-MmocndDLkYLRszZmi8OT6KnBO2B37jOcoONjiJPiV2a-Tbc"/>
+</div>
+<div class="p-6">
+<span class="text-[10px] text-primary font-bold uppercase tracking-widest mb-2 block">For Sagging Skin</span>
+<h4 class="text-lg font-bold mb-4">울트라 리프팅 케어</h4>
+<div class="flex items-center justify-between">
+<span class="text-xs text-on-surface-variant font-body">Match Rate: 92%</span>
+<span class="material-symbols-outlined text-primary text-xl">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Program 2 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden group hover:shadow-xl transition-all duration-500">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="aesthetic lab setup with clear clinical glass droppers and essential skin serums" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNwJhZbLDsDiimtBjoqPhEcQ-_al4GSp6uuYePcWYnnQ0dtgzJvvYDEpQKHC7rQw6xkeZVmD-vdAG61rmT0robzpPMyhoVXHLQZ-ImrnebiQ8z9j96veL4w9SBQ1sSeKYwBJek9eodwy_9ANxR5JH75cJ7tsTfSEzf14SZLufi2zRQD0_PPfMXiSwOu7IT6E3uEtPBrGzbCQUK87bWrvRamhd7J-sDB8t26Q-0Opx0HfMu-0yYN61O8RaiYN4kHgnnFIRsrvR5KM8"/>
+</div>
+<div class="p-6">
+<span class="text-[10px] text-primary font-bold uppercase tracking-widest mb-2 block">For Dehydration</span>
+<h4 class="text-lg font-bold mb-4">하이드라 부스터</h4>
+<div class="flex items-center justify-between">
+<span class="text-xs text-on-surface-variant font-body">Match Rate: 88%</span>
+<span class="material-symbols-outlined text-primary text-xl">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Program 3 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden group hover:shadow-xl transition-all duration-500">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="soft close-up of healthy glowing skin texture in natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB81EhQ8Tt98fBy8fzA11erQCQkCA19H1aOqx3sjVx1ZwRV_M6V04djfrL81QYZAGfbFey2B5UJbkUtkf-rrQo78OmodBr30nnJBtZtxfTTvCKRVrUzSrlyUHeLGxDo23ryR3ns00kz6Eh7THLSMlQYq2mhhhcFAiQdxc3w0_4p3VGdgjZ4R6xArXcEUf_3MPT9EJlF_V14B5_43LulwzwKcZuHDt03qgRQM_kzSyQ4MEz08WNOrH5OR7lJZyqVrXxaC5gm56O1n34"/>
+</div>
+<div class="p-6">
+<span class="text-[10px] text-primary font-bold uppercase tracking-widest mb-2 block">For Pigmentation</span>
+<h4 class="text-lg font-bold mb-4">화이트닝 사이클</h4>
+<div class="flex items-center justify-between">
+<span class="text-xs text-on-surface-variant font-body">Match Rate: 76%</span>
+<span class="material-symbols-outlined text-primary text-xl">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Program 4 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden group hover:shadow-xl transition-all duration-500">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="luxury dermatologist consultation space with comfortable seating and soft clinical decor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDknfVL-94Wjvl8LABZVVQVRKCtASgdgoYDSdRMfZ3CQqTqD5xOhNL1x7yu_edrW9xXExjcp5w49L-FRAwcv4JpnDd1Xtvx0YZVWkzU_-FEcAHVBqC4yrh7gyvB7q2TJD4fx17Yn9qTcXmSNTIWvfycVrkgLs8L5aqlcvl0Lg2zsiqdetkrh3wMT51FS_T23x4CqTd4j7z-uzBVjuXVdX-ZNfw-2ZjjKIxEgMHdc2vA0OuUKjQ9FIMq3OcHZuyqlN9lRu46RuFVAI0"/>
+</div>
+<div class="p-6">
+<span class="text-[10px] text-primary font-bold uppercase tracking-widest mb-2 block">For Complex Care</span>
+<h4 class="text-lg font-bold mb-4">아틀리에 시그니처</h4>
+<div class="flex items-center justify-between">
+<span class="text-xs text-on-surface-variant font-body">Match Rate: 95%</span>
+<span class="material-symbols-outlined text-primary text-xl">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200/15 dark:border-slate-800/15 bg-slate-50 dark:bg-slate-950 flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8">
+<div class="flex flex-col gap-2">
+<div class="text-sm font-bold tracking-widest text-slate-800 dark:text-slate-100 font-headline mb-4">ATELIER SKIN</div>
+<p class="text-slate-600 dark:text-slate-400 font-manrope text-xs tracking-widest uppercase">© 2024 ATELIER SKIN. ADVANCED DERMATOLOGICAL SOLUTIONS.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-slate-500 dark:text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 underline decoration-slate-300 font-manrope text-xs tracking-widest uppercase transition-all duration-300" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 underline decoration-slate-300 font-manrope text-xs tracking-widest uppercase transition-all duration-300" href="#">Privacy Protocol</a>
+<a class="text-slate-500 dark:text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 underline decoration-slate-300 font-manrope text-xs tracking-widest uppercase transition-all duration-300" href="#">Clinical Standards</a>
+<a class="text-slate-500 dark:text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 underline decoration-slate-300 font-manrope text-xs tracking-widest uppercase transition-all duration-300" href="#">Contact Support</a>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#ffafac",
+                        "surface-dim": "#edd600",
+                        "inverse-on-surface": "#ae9e18",
+                        "surface-container-high": "#fbe431",
+                        "surface-container": "#ffea50",
+                        "surface-container-low": "#fff2a6",
+                        "outline-variant": "#bfae2b",
+                        "tertiary-dim": "#005672",
+                        "surface-container-highest": "#f6de0b",
+                        "tertiary-fixed": "#7bd1fa",
+                        "on-primary": "#f5f2f1",
+                        "on-surface": "#352f00",
+                        "primary-fixed": "#edeaea",
+                        "primary-dim": "#504f4f",
+                        "on-primary-container": "#575656",
+                        "surface-bright": "#fff7d4",
+                        "secondary-container": "#ffc3c0",
+                        "on-tertiary-container": "#00465d",
+                        "primary-fixed-dim": "#dfdcdc",
+                        "on-secondary-fixed": "#6f0011",
+                        "background": "#fff7d4",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffefee",
+                        "on-secondary-container": "#8d1620",
+                        "tertiary": "#006382",
+                        "secondary-dim": "#992027",
+                        "tertiary-fixed-dim": "#6cc3eb",
+                        "on-secondary-fixed-variant": "#9a2128",
+                        "primary-container": "#edeaea",
+                        "on-tertiary-fixed": "#003041",
+                        "inverse-primary": "#ffffff",
+                        "inverse-surface": "#110e00",
+                        "secondary": "#aa2c32",
+                        "error-container": "#f95630",
+                        "secondary-fixed": "#ffc3c0",
+                        "on-primary-fixed-variant": "#626060",
+                        "surface-variant": "#f6de0b",
+                        "on-primary-fixed": "#454444",
+                        "outline": "#857800",
+                        "on-error": "#ffefec",
+                        "on-error-container": "#520c00",
+                        "on-surface-variant": "#675c00",
+                        "error": "#b02500",
+                        "primary": "#5c5b5b",
+                        "error-dim": "#b92902",
+                        "surface": "#fff7d4",
+                        "on-tertiary-fixed-variant": "#004f69",
+                        "on-tertiary": "#e5f5ff",
+                        "surface-tint": "#5c5b5b",
+                        "on-background": "#352f00",
+                        "tertiary-container": "#7bd1fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Epilogue"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-grid-bg {
+            background-image: radial-gradient(circle at 2px 2px, #857800 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-secondary selection:text-white">
+<!-- TopNavBar -->
+<header class="bg-[#fff7d4] dark:bg-black border-b-4 border-[#352f00] dark:border-[#f6de0b] sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-[1440px] mx-auto">
+<div class="text-2xl font-black text-[#352f00] dark:text-[#f6de0b] tracking-tighter uppercase font-headline">
+                PUNCH FUEL
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-['Epilogue'] font-bold tracking-tight uppercase text-[#352f00]/60 dark:text-[#f6de0b]/60 hover:skew-x-[-3deg] transition-transform duration-100" href="#">Home</a>
+<a class="font-['Epilogue'] font-bold tracking-tight uppercase text-[#352f00] dark:text-[#f6de0b] border-b-4 border-[#352f00] dark:border-[#f6de0b] pb-1 hover:skew-x-[-3deg] transition-transform duration-100" href="#">Routine</a>
+<a class="font-['Epilogue'] font-bold tracking-tight uppercase text-[#352f00]/60 dark:text-[#f6de0b]/60 hover:skew-x-[-3deg] transition-transform duration-100" href="#">Compare</a>
+<a class="font-['Epilogue'] font-bold tracking-tight uppercase text-[#352f00]/60 dark:text-[#f6de0b]/60 hover:skew-x-[-3deg] transition-transform duration-100" href="#">Subscribe</a>
+<a class="font-['Epilogue'] font-bold tracking-tight uppercase text-[#352f00]/60 dark:text-[#f6de0b]/60 hover:skew-x-[-3deg] transition-transform duration-100" href="#">Brand</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#352f00] cursor-pointer">shopping_cart</span>
+<span class="material-symbols-outlined text-[#352f00] cursor-pointer">account_circle</span>
+</div>
+</div>
+</header>
+<main class="min-h-screen">
+<!-- Hero: Kinetic Browsing Header -->
+<section class="relative overflow-hidden bg-surface-container-highest pt-16 pb-24 border-b-4 border-on-background">
+<div class="absolute inset-0 kinetic-grid-bg opacity-10"></div>
+<div class="max-w-[1440px] mx-auto px-6 relative z-10">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<span class="inline-block bg-secondary text-white font-label font-bold uppercase tracking-widest px-4 py-1 mb-6 -rotate-2">
+                            Performance Stacks
+                        </span>
+<h1 class="text-6xl md:text-8xl font-headline font-black tracking-tighter text-on-surface uppercase leading-[0.9]">
+                            Find Your <br/> <span class="text-secondary italic">Momentum</span>
+</h1>
+<p class="mt-8 text-xl font-medium max-w-lg leading-relaxed">
+                            최상의 성과를 위한 맞춤형 루틴. 과학적으로 설계된 스택으로 당신의 한계를 넘어서세요.
+                        </p>
+</div>
+<!-- Category Anchors (Asymmetric Layout) -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full lg:w-auto">
+<button class="flex flex-col items-start p-6 bg-surface-container-lowest border-2 border-outline hover:translate-y-[-4px] hover:translate-x-[-4px] transition-transform group relative">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-headline font-bold text-lg">에너지 강호</span>
+<div class="absolute bottom-0 right-0 w-8 h-8 bg-surface-container opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">arrow_outward</span>
+</div>
+</button>
+<button class="flex flex-col items-start p-6 bg-surface-container-lowest border-2 border-outline hover:translate-y-[-4px] hover:translate-x-[-4px] transition-transform group">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+<span class="font-headline font-bold text-lg">근육 회복</span>
+</button>
+<button class="flex flex-col items-start p-6 bg-surface-container-lowest border-2 border-outline hover:translate-y-[-4px] hover:translate-x-[-4px] transition-transform group">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="font-headline font-bold text-lg">집중력 향상</span>
+</button>
+<button class="flex flex-col items-start p-6 bg-surface-container-lowest border-2 border-outline hover:translate-y-[-4px] hover:translate-x-[-4px] transition-transform group">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+<span class="font-headline font-bold text-lg">종합 건강</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Floating Decorative Sticker -->
+<div class="absolute -bottom-10 right-12 transform rotate-12 hidden xl:block">
+<div class="bg-tertiary-container p-8 border-4 border-on-background shadow-[12px_12px_0px_0px_rgba(53,47,0,1)]">
+<span class="font-label font-bold text-on-tertiary-container uppercase tracking-tighter text-3xl leading-none">
+                        Engineered <br/> In Seoul
+                    </span>
+</div>
+</div>
+</section>
+<!-- Main Browsing Surface -->
+<section class="max-w-[1440px] mx-auto px-6 py-16 flex flex-col md:flex-row gap-12">
+<!-- Sidebar Filtering -->
+<aside class="w-full md:w-72 shrink-0 space-y-12">
+<div>
+<h3 class="font-label font-bold uppercase tracking-widest text-on-surface-variant mb-6 text-sm">Goal / 목표</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 group cursor-pointer">
+<input class="w-6 h-6 border-2 border-outline rounded-none checked:bg-secondary focus:ring-0 focus:ring-offset-0 transition-colors" type="checkbox"/>
+<span class="font-bold text-lg group-hover:text-secondary transition-colors">전력 폭발</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<input checked="" class="w-6 h-6 border-2 border-outline rounded-none checked:bg-secondary focus:ring-0 focus:ring-offset-0 transition-colors" type="checkbox"/>
+<span class="font-bold text-lg group-hover:text-secondary transition-colors">선명한 근조직</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<input class="w-6 h-6 border-2 border-outline rounded-none checked:bg-secondary focus:ring-0 focus:ring-offset-0 transition-colors" type="checkbox"/>
+<span class="font-bold text-lg group-hover:text-secondary transition-colors">인지 최적화</span>
+</label>
+</div>
+</div>
+<div>
+<h3 class="font-label font-bold uppercase tracking-widest text-on-surface-variant mb-6 text-sm">Intensity / 강도</h3>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 border-2 border-outline font-bold bg-surface-container-highest">ELITE</button>
+<button class="py-2 border-2 border-outline font-bold">CORE</button>
+<button class="py-2 border-2 border-outline font-bold">RECOVERY</button>
+<button class="py-2 border-2 border-outline font-bold">DAILY</button>
+</div>
+</div>
+<div class="p-6 bg-on-background text-surface-bright border-4 border-secondary -rotate-1">
+<h4 class="font-headline font-black text-2xl mb-4 italic uppercase">Elite Access</h4>
+<p class="text-sm font-medium mb-6 opacity-80 leading-relaxed">
+                        구독을 통해 전문가들이 설계한 한정판 루틴과 퍼포먼스 가이드를 받아보세요.
+                    </p>
+<button class="w-full py-3 bg-secondary text-white font-headline font-bold uppercase tracking-tight hover:translate-x-1 hover:-translate-y-1 transition-transform border-2 border-white">
+                        Join The Grid
+                    </button>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-1">
+<div class="flex justify-between items-end mb-12 border-b-2 border-outline-variant pb-4">
+<span class="font-label font-bold uppercase text-on-surface-variant">Showing 12 Results</span>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary">grid_view</span>
+<span class="material-symbols-outlined opacity-40">view_headline</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+<!-- Product Card 1 -->
+<div class="group relative bg-surface-container-low border-2 border-outline hover:bg-surface-container-lowest transition-colors flex flex-col">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" data-alt="studio shot of high-end sports supplement bottle on architectural yellow and black platform with harsh industrial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmmbJu9HltINuHOCrz_3jKWReVKn4wlUHjIgMKm4c6lBORkUL0qdjv0hyCAArhEIAFjSn4rlri4evygGHEoGjaq4vd8ZSeneDkHylP2Ai8I0WPcAbHVpSaA_p7esVk4Uk84h1GjLKh5gxOUlgrw1VYLFcS6IEfW1qs7qJilOc7sLPO4fFr2KflTJqSYqSiS8C3ly7-3-jFcN6xtE9tDnvFS-yhXH0TJAswTR95Zz2ez_zPsCftzsFNBiT7uJGprAeoXvtfbeudshM"/>
+<div class="absolute top-4 left-4 flex flex-col gap-2">
+<span class="bg-on-background text-white font-label font-bold text-[10px] uppercase tracking-widest px-2 py-1">Limited</span>
+<span class="bg-secondary text-white font-label font-bold text-[10px] uppercase tracking-widest px-2 py-1">Best Seller</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-2xl font-headline font-black tracking-tight text-on-surface leading-none">데일리 파워 팩</h3>
+<span class="font-label font-bold text-secondary">Elite</span>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="text-[10px] font-bold border border-outline px-2 py-0.5 rounded-full uppercase">Energy</span>
+<span class="text-[10px] font-bold border border-outline px-2 py-0.5 rounded-full uppercase">Strength</span>
+</div>
+<p class="text-sm font-medium mb-8 line-clamp-2 opacity-70">
+                                24시간 활력을 유지하기 위한 비타민, 미네랄, 그리고 천연 카페인의 완벽한 조합.
+                            </p>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-2xl font-headline font-black tracking-tighter">59,000원</span>
+<button class="bg-secondary p-3 text-white hover:rotate-90 transition-transform">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<!-- Hover Overlay Action -->
+<div class="absolute inset-0 bg-secondary/90 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-8 gap-4">
+<button class="w-full py-4 bg-white text-secondary font-headline font-bold uppercase tracking-tight shadow-[4px_4px_0px_0px_rgba(53,47,0,1)]">
+                                View Details
+                            </button>
+<button class="w-full py-4 border-2 border-white text-white font-headline font-bold uppercase tracking-tight">
+                                Add to Routine
+                            </button>
+</div>
+</div>
+<!-- Product Card 2: Kinetic Variation -->
+<div class="group relative bg-surface-container-highest border-4 border-on-background hover:-translate-y-2 hover:-translate-x-2 transition-transform shadow-[8px_8px_0px_0px_rgba(170,44,50,1)] flex flex-col">
+<div class="aspect-[4/5] overflow-hidden relative border-b-4 border-on-background">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="dramatic lighting on premium black supplement tub with red accents on a textured concrete surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVXu814riohVebWT74Wdr1qLC36_ioeBlBfd7c2GTgdXetrF1aEszLrcGC6OlM_5EVekhlT_7mYmdUqukso_0C0lw7uMMhwjf9OlQSZYEE3xoN2WM4lKsX9oatvpfEfMAGLmxhO1_4cqLn0GHIOEAgTHC4dJTLicAOss_t2Dl5BFevy7-ACOlgcXuptzS_aN8ea7rklSdJPY4Ba1adY6dpGrV5cKtYN28YhCy40IMx5ugrvLJLbIC8JBdq3JgRLeCqogTYf-ZPRr4"/>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h3 class="text-2xl font-headline font-black tracking-tight text-on-surface leading-none mb-2">나이트 리커버리</h3>
+<div class="flex gap-2 mb-6">
+<span class="text-[10px] font-bold bg-white text-on-background px-2 py-0.5 rounded-none uppercase border border-on-background">Sleep</span>
+<span class="text-[10px] font-bold bg-white text-on-background px-2 py-0.5 rounded-none uppercase border border-on-background">Muscle</span>
+</div>
+<p class="text-sm font-bold mb-8 uppercase font-label">Deep Repair Formula / 고농축 아미노산</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-2xl font-headline font-black tracking-tighter">72,000원</span>
+<button class="bg-on-background p-3 text-white">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group relative bg-surface-container-low border-2 border-outline hover:bg-surface-container-lowest transition-colors flex flex-col">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" data-alt="dynamic shot of water splashing against a high-performance supplement shaker bottle in bright yellow background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9PYFxh1MUWaO8nNljwsrzeqYQJaD7Jxe0P25FhX7dY_CdiB3CKd2Z798iNkeNJmD5-uwF1R5wnzLPBSceiiSbMVqm8anyWplGleWySuYgsA0F6uybxaj-8FSlKgWWaMGhOraCY0KVcFRaohAkDYtcbP8KTOvlBEAKzn6fe4rIkJTh9FWXWAC3Rxk5S6Zsoqp-BAT2i4CJdPMjjltMfP5uDOurqRxsTdA43BWLfq-wFmCMPlTvkbfzl8Cst9RfX9377hgD_SGH_WI"/>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-2xl font-headline font-black tracking-tight text-on-surface leading-none">포커스 업 콤보</h3>
+<span class="font-label font-bold text-tertiary">Brain</span>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="text-[10px] font-bold border border-outline px-2 py-0.5 rounded-full uppercase">Nooptropics</span>
+<span class="text-[10px] font-bold border border-outline px-2 py-0.5 rounded-full uppercase">Zen</span>
+</div>
+<p class="text-sm font-medium mb-8 line-clamp-2 opacity-70">
+                                뇌 기능을 활성화하고 집중력을 유지하게 도와주는 스마트 서플리먼트 스택.
+                            </p>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-2xl font-headline font-black tracking-tighter">45,000원</span>
+<button class="bg-secondary p-3 text-white">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Style Promo Block -->
+<div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 bg-gradient-to-br from-secondary to-secondary-dim p-12 text-white relative overflow-hidden flex flex-col justify-center min-h-[400px]">
+<div class="relative z-10">
+<h2 class="text-5xl font-headline font-black uppercase tracking-tighter mb-6 leading-none">Build Your <br/> Custom Grid</h2>
+<p class="text-lg font-medium max-w-md mb-8">
+                                당신만의 운동 강도와 목표에 맞춰 영양 밸런스를 커스터마이징 하세요. AI 기반 엔진이 최적의 비율을 제안합니다.
+                            </p>
+<button class="bg-white text-secondary px-8 py-4 font-headline font-bold uppercase tracking-tight hover:translate-x-2 transition-transform inline-flex items-center gap-2">
+                                Start Configuration <span class="material-symbols-outlined">bolt</span>
+</button>
+</div>
+<div class="absolute -right-20 -bottom-20 opacity-20 transform -rotate-12">
+<span class="text-[200px] font-black font-headline leading-none">PUNCH</span>
+</div>
+</div>
+<div class="bg-surface-container-high border-4 border-on-background p-12 flex flex-col justify-center">
+<span class="material-symbols-outlined text-5xl mb-6" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<h3 class="text-3xl font-headline font-black tracking-tight mb-4">ENGINE LOGS</h3>
+<ul class="space-y-4 font-label font-bold text-sm uppercase">
+<li class="flex justify-between border-b border-outline pb-2"><span>Hydration Mode</span> <span class="text-secondary">Active</span></li>
+<li class="flex justify-between border-b border-outline pb-2"><span>ATP Recycling</span> <span class="text-secondary">Enhanced</span></li>
+<li class="flex justify-between border-b border-outline pb-2"><span>Neural Lag</span> <span class="text-secondary">Minimized</span></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#352f00] dark:bg-black w-full px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-lg font-black text-[#f6de0b] uppercase font-headline">PUNCH FUEL</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Space_Grotesk'] font-bold uppercase text-xs tracking-widest text-[#f6de0b]/50 hover:text-white transition-colors" href="#">Terms</a>
+<a class="font-['Space_Grotesk'] font-bold uppercase text-xs tracking-widest text-[#f6de0b]/50 hover:text-white transition-colors" href="#">Privacy</a>
+<a class="font-['Space_Grotesk'] font-bold uppercase text-xs tracking-widest text-[#f6de0b]/50 hover:text-white transition-colors" href="#">Shipping</a>
+<a class="font-['Space_Grotesk'] font-bold uppercase text-xs tracking-widest text-[#f6de0b]/50 hover:text-white transition-colors" href="#">Wholesale</a>
+</div>
+<div class="font-['Space_Grotesk'] font-bold uppercase text-[10px] tracking-widest text-[#f6de0b]/50 text-center md:text-right">
+            © 2024 PUNCH PERFORMANCE EDITORIAL. <br/> KINETIC GRID ENGINE.
+        </div>
+</footer>
+</body></html>

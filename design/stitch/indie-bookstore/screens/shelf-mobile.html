@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=Be+Vietnam+Pro:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#f0e0cf",
+                        "surface-container-highest": "#e8e2d7",
+                        "secondary": "#296580",
+                        "surface-bright": "#fff9ee",
+                        "on-primary-fixed": "#261a00",
+                        "on-tertiary-fixed-variant": "#504539",
+                        "on-secondary-fixed-variant": "#024d67",
+                        "secondary-fixed-dim": "#96ceed",
+                        "primary-container": "#f5c24f",
+                        "primary": "#795900",
+                        "on-surface": "#1d1c15",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f6f0e5",
+                        "surface-container": "#f3ede2",
+                        "surface-container-high": "#ede8dd",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#1d1c15",
+                        "inverse-primary": "#f2bf4c",
+                        "outline": "#807663",
+                        "on-tertiary-container": "#5e5346",
+                        "surface": "#fff9ee",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#333029",
+                        "surface-variant": "#e8e2d7",
+                        "on-primary-fixed-variant": "#5c4300",
+                        "on-surface-variant": "#4e4635",
+                        "outline-variant": "#d2c5af",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#001e2b",
+                        "primary-fixed-dim": "#f2bf4c",
+                        "tertiary-container": "#d7c7b7",
+                        "surface-container-low": "#f9f3e8",
+                        "secondary-fixed": "#c1e8ff",
+                        "tertiary-fixed-dim": "#d4c4b4",
+                        "on-tertiary-fixed": "#221a10",
+                        "surface-tint": "#795900",
+                        "on-secondary-container": "#27647e",
+                        "primary-fixed": "#ffdfa0",
+                        "on-error": "#ffffff",
+                        "background": "#fff9ee",
+                        "surface-dim": "#dfd9cf",
+                        "tertiary": "#685c50",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#a7dffe",
+                        "on-primary-container": "#6d5000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Be Vietnam Pro", "sans-serif"],
+                        "label": ["Be Vietnam Pro", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>.paper-grain {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuC7XoYKWiAWSxIyyFXnLpmKdRc2ljS-E-Vk54sDkdB61G_kG15ny56gTh7ryu78s-wdVNaIGyLGenRgZ2YGDoI4aG8Ge0oGOoEitJ7APh3m1rwRtUTCa-mQyCASEcu_29RstcFPWo4ZdRRgIdlMABnQC6d7YyGEBksL2GjO_X0iMDjhyojAkX-XDnHPr6-7iwfr7CKdyujcCcygtnCXQH517jXYNt9jfKBNjx2xv47-dAuYVF3WV2UUuD356yt3ZsIA5c2tZHSn8OI);
+    opacity: 0.05;
+    pointer-events: none
+    }
+.torn-edge {
+    clip-path: polygon(0% 0%, 5% 2%, 10% 0%, 15% 3%, 20% 0%, 25% 2%, 30% 0%, 35% 3%, 40% 0%, 45% 2%, 50% 0%, 55% 3%, 60% 0%, 65% 2%, 70% 0%, 75% 3%, 80% 0%, 85% 2%, 90% 0%, 95% 3%, 100% 0%, 100% 100%, 0% 100%)
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container/30">
+<div class="fixed inset-0 paper-grain z-50"></div>
+<!-- TopAppBar -->
+<header class="bg-[#fff9ee] dark:bg-stone-900 flex justify-between items-center w-full px-6 py-4 sticky top-0 z-40 bg-stone-200/10 dark:bg-stone-800/20">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#795900] dark:text-[#f5c24f] cursor-pointer">menu</span>
+</div>
+<h1 class="text-2xl font-bold text-[#1d1c15] dark:text-[#fff9ee] tracking-tighter font-headline italic">PAPER NOOK</h1>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#795900] dark:text-[#f5c24f] cursor-pointer">search</span>
+</div>
+</header>
+<main class="min-h-screen pb-24 overflow-x-hidden">
+<!-- Hero Title Section -->
+<section class="px-8 pt-12 pb-8">
+<h2 class="font-headline text-5xl italic tracking-tighter mb-2">Shelf</h2>
+<p class="font-headline text-lg italic text-on-surface-variant leading-relaxed">
+                공간을 채우는 종이의 숨결
+            </p>
+</section>
+<!-- Category Anchors & Filtering -->
+<section class="px-8 mb-12">
+<div class="flex flex-wrap gap-3 items-center">
+<button class="bg-primary-container text-on-primary-container px-6 py-2 text-xs font-label uppercase tracking-widest transition-transform hover:scale-95 active:scale-90">Literature</button>
+<button class="bg-surface-container-high text-on-surface-variant px-6 py-2 text-xs font-label uppercase tracking-widest transition-transform hover:scale-95 border border-outline-variant/10">Essay</button>
+<button class="bg-surface-container-high text-on-surface-variant px-6 py-2 text-xs font-label uppercase tracking-widest transition-transform hover:scale-95 border border-outline-variant/10">Art</button>
+<button class="bg-surface-container-high text-on-surface-variant px-6 py-2 text-xs font-label uppercase tracking-widest transition-transform hover:scale-95 border border-outline-variant/10">Periodicals</button>
+<div class="ml-auto flex items-center gap-2 cursor-pointer group pt-4 sm:pt-0">
+<span class="text-[10px] uppercase font-label tracking-widest border-b border-secondary/40 group-hover:border-secondary transition-colors text-secondary">Archive Filters</span>
+<span class="material-symbols-outlined text-sm text-secondary">tune</span>
+</div>
+</div>
+</section>
+<!-- Main Content Surface: Magazine Deck Layout -->
+<section class="px-8 grid grid-cols-1 gap-16 relative">
+<!-- Book Card 1: Overlapping Style -->
+<div class="relative group">
+<div class="absolute -top-4 -left-4 w-32 h-44 bg-surface-container shadow-lg transform -rotate-3 z-0"></div>
+<div class="relative z-10 flex flex-col md:flex-row gap-8 bg-surface-container-lowest p-6 shadow-[0_12px_32px_-4px_rgba(35,29,23,0.06)]">
+<div class="w-full md:w-1/2 overflow-hidden aspect-[3/4] bg-surface-container-high">
+<img class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-700" data-alt="Modern minimalist book cover with abstract cream shapes and elegant serif typography on a textured paper background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFqG_XFiCrWx-fT0tEFpqYszWPIob91FxofcGd5ivVTDd4082t2LJOsSP3C3Ru9ukCxYd798vdVqEuIuJoh6ykLkFC9QymYlrgV5DeNigtUzh5Q84ilaiZ2P94CDoOkcKpZh5boW_wCVEenfLQL1nhY1DrXeSJqNOeLEx2QzG-q_PvhDqILA5QCCobBHvmAVqUEOzRO_Z6U-xIZ_PO_l8FczknLXUaaDX_CO9jOOOt7TxTUFue67zBCE1rouadCTJXB3tYwxqRH2M"/>
+</div>
+<div class="w-full md:w-1/2 flex flex-col justify-between">
+<div>
+<span class="text-[10px] font-label uppercase tracking-[0.2em] text-secondary-container bg-secondary px-2 py-0.5 mb-4 inline-block">New Arrival</span>
+<h3 class="font-headline text-2xl mb-2 leading-tight">시간의 모서리</h3>
+<p class="text-xs font-label text-on-surface-variant mb-6 uppercase tracking-wider">Kim Ji-Hoon • 18,500원</p>
+<div class="bg-surface-container-low p-4 border-l-2 border-primary transform rotate-1">
+<p class="text-[13px] leading-relaxed italic text-on-surface/80">
+                                    "문장 하나하나가 종이의 질감처럼 살아 숨쉬는 작품입니다. 서재의 가장 조용한 구석에 어울리는 책입니다."
+                                </p>
+<p class="text-[10px] font-label uppercase mt-2 text-primary tracking-widest">— Curator's Note</p>
+</div>
+</div>
+<button class="mt-8 border border-on-surface/10 py-3 text-xs font-label uppercase tracking-widest hover:bg-on-surface hover:text-surface transition-colors duration-300">Explore Archives</button>
+</div>
+</div>
+</div>
+<!-- Librarian's Pick: Breaking the Grid -->
+<div class="my-12 py-16 px-8 -mx-8 bg-[#1d1c15] text-surface relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(circle_at_50%_50%,_#795900_0%,_transparent_70%)]"></div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<h4 class="font-headline text-primary text-sm italic mb-4">Librarian's Pick</h4>
+<h2 class="font-headline text-4xl mb-6 tracking-tight">계절의 기록: 한정판 에디션</h2>
+<p class="text-surface/70 text-sm leading-relaxed mb-8 max-w-sm">
+                            수제 한지로 제작된 이번 에디션은 만지는 것만으로도 하나의 예술적 경험을 선사합니다. 소장 가치가 높은 100부 한정 수량입니다.
+                        </p>
+<div class="inline-block bg-primary-container text-on-primary-container px-8 py-3 text-xs font-label uppercase tracking-widest transform -rotate-1 cursor-pointer hover:rotate-0 transition-transform">
+                            Reserve a Copy
+                        </div>
+</div>
+<div class="relative h-[400px]">
+<img class="w-full h-full object-cover transform rotate-3 shadow-2xl" data-alt="Artisan handmade book with exposed stitching and raw paper edges resting on a dark rustic wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFDjVXHJYY9O1t4NEq4a4vFBp4ydyU7OAi7Sf9B8MOr6TNyXGkLpys7me2g8W9ed6G-BzgDh1gAw9lTbYlA4rbrZ9uDyTPacfz5HNf6IeNpo9-ZlC-fbCvoAL4093IuBd5OfWMWt0X7CtDzyQK2bxIQd9UoeJBgDmq14nH7n55YQsT7KjnZzNsl_sV1En1dacXrfizNuV9YRbyGwUcGNkwo22Nf4Awdq_9bJUt43U_Z5WX8itcMYGY28nSAE5OlUp3GIEq0WA324w"/>
+<div class="absolute -bottom-6 -right-6 bg-secondary-container text-on-secondary-container p-6 w-48 shadow-lg transform -rotate-2">
+<p class="font-headline italic text-lg leading-tight">"종이는 기억을 품습니다."</p>
+<p class="text-[10px] font-label uppercase mt-2 opacity-70">— Librarian M.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Book Card 2: Clipped Note Style -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-surface-container-high p-4 flex flex-col gap-4 group">
+<div class="relative aspect-square overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Elegant photography of an open book showing fine typography on cream paper with soft morning shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYVslMRqvdVrGaJa2JmC87UdiuB0LT5iERSE6XA41hguawX1R8KHxKe_LZ0ldgYsIhk-OHHBvzNiqJd9nfDoK8bKCU7u6b-TyOl5vIrM4oi_N3xOtZBIAEwC6zLZwsr5I9OkC0GuMo0St773Bzw5ht4-Pkiy5bMjuD3iGlRopPupNiHmTI56s2VBGzDJ3Wah1c9rkKA_beamaxfJVPDpe-uz9ZoPXm_LWg5X4o5gGrzsf5a8e0jaPlWn0A75hcpl3mOia0pESD1Ck"/>
+</div>
+<div class="p-2">
+<h3 class="font-headline text-xl mb-1">침묵의 형태</h3>
+<p class="text-[11px] font-label text-on-surface-variant mb-3">Lee Young-Hee • 22,000원</p>
+<p class="text-xs leading-relaxed text-on-surface/70 line-clamp-2">도시의 소음 속에서 발견한 고요한 문장들의 수집본입니다.</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 flex flex-col gap-4 group relative">
+<div class="absolute top-2 right-2 bg-primary text-[8px] font-label text-surface px-2 py-1 rotate-12 z-20 uppercase tracking-tighter">Stockist Choice</div>
+<div class="relative aspect-square overflow-hidden shadow-inner">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Collection of minimalist art periodicals stacked neatly with visible paper textures and muted earth tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHYOgXUJUjWrZzahZ20ho6fKBmM7UnTRSdgnC2U2VdYNi3tD2WS22bfeVPH03TgfOnCMbMMP5B2n-qc2RgnNusfTGY9miOTUkS8Yjq57_X-GZS_NsEkYUg8npbPxKQ6_ptpIMNbuvMGGYQ8mrfoNBVuJiPZhzSyP7wpNOS_93OWDjPfIu8P-9wMCoCFVKFV5XpJp4ig7L4s_nnGumPpAgrvG1X8Mm62IQESsNoOzcGBE5jq9BUOl_LpZoNnqVZULci_8Q1EnvGn8Q"/>
+</div>
+<div class="p-2">
+<h3 class="font-headline text-xl mb-1">PAPER NOOK Vol. 04</h3>
+<p class="text-[11px] font-label text-on-surface-variant mb-3">Editorial Team • 15,000원</p>
+<p class="text-xs leading-relaxed text-on-surface/70 line-clamp-2">종이와 촉각에 대한 담론을 담은 당사의 계간지 네 번째 이슈입니다.</p>
+</div>
+</div>
+</div>
+<!-- Gift CTA Section -->
+<div class="mt-12 bg-secondary-container/30 p-12 flex flex-col items-center text-center border-y border-secondary/10">
+<div class="mb-6 relative">
+<div class="w-24 h-24 bg-surface-container-lowest rotate-45 absolute -top-4 -left-4 -z-10"></div>
+<img class="w-48 h-48 object-cover shadow-xl border-4 border-surface" data-alt="Beautifully gift-wrapped book in textured brown paper with a simple twine ribbon and a dried flower" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpoLktr0DV3FJY0o8UKgG_6h5nrTNlEMffyS3ePkPg9CXNC8rdyvwJ1vV9xnwl9C-kqofi9qW1baky2wij1E1EyO1KeA5edjTbL6PEFF-DSPcaK6Gd7mtv-9klXO0M-3_631IjsTNMEvY9uq_HJEiKL_ZfBgCvTk2aU88maNSH6kRDkkb0bZHAgvwPiFumsCE6DNXliXZhCrnMDcE-POmJll0cnrblN_MlQtP01ePecmjQvqH1PWDJKrw-Cp47s3_0sTFYh3EqN1k"/>
+</div>
+<h3 class="font-headline text-3xl mb-4">Gifts for Book Lovers</h3>
+<p class="text-sm max-w-xs text-on-secondary-container/80 leading-relaxed mb-8">
+                    사랑하는 사람에게 종이의 따스함을 선물하세요. 정성 어린 보자기 패키징 서비스를 제공합니다.
+                </p>
+<button class="bg-secondary text-surface px-10 py-3 text-xs font-label uppercase tracking-widest hover:bg-secondary/90 transition-all active:scale-95">Browse Gift Guide</button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#1d1c15] dark:bg-stone-950 w-full px-8 py-12 flex flex-col gap-6 mt-12 mb-16">
+<div class="flex justify-between items-end">
+<span class="text-[#fff9ee] font-headline text-lg italic">PAPER NOOK</span>
+<p class="text-[#f5c24f] font-body text-[11px] font-light leading-relaxed">© 2024 PAPER NOOK. PRINTED IN SOUL.</p>
+</div>
+<div class="h-px bg-surface-variant/10 w-full"></div>
+<nav class="flex flex-wrap gap-x-6 gap-y-2">
+<a class="text-[#fff9ee]/70 font-body text-[11px] hover:text-[#fff9ee] transition-all" href="#">Archives</a>
+<a class="text-[#fff9ee]/70 font-body text-[11px] hover:text-[#fff9ee] transition-all" href="#">Librarian Notes</a>
+<a class="text-[#fff9ee]/70 font-body text-[11px] hover:text-[#fff9ee] transition-all" href="#">Terms</a>
+<a class="text-[#fff9ee]/70 font-body text-[11px] hover:text-[#fff9ee] transition-all" href="#">Stockists</a>
+</nav>
+</footer>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-4 bg-[#fff9ee] dark:bg-stone-900 shadow-[0_-12px_32px_-4px_rgba(35,29,23,0.06)] border-t border-[#1d1c15]/10 dark:border-stone-700">
+<a class="flex flex-col items-center justify-center text-[#795900] dark:text-[#f5c24f] border-t-2 border-[#795900] -mt-[2px] w-1/4 h-full" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="font-label uppercase text-[10px] tracking-widest">Shelf</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1d1c15]/60 dark:text-stone-400 hover:text-[#795900] dark:hover:text-[#f5c24f] transition-all w-1/4 h-full" href="#">
+<span class="material-symbols-outlined mb-1">auto_awesome</span>
+<span class="font-label uppercase text-[10px] tracking-widest">Picks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1d1c15]/60 dark:text-stone-400 hover:text-[#795900] dark:hover:text-[#f5c24f] transition-all w-1/4 h-full" href="#">
+<span class="material-symbols-outlined mb-1">redeem</span>
+<span class="font-label uppercase text-[10px] tracking-widest">Gift</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1d1c15]/60 dark:text-stone-400 hover:text-[#795900] dark:hover:text-[#f5c24f] transition-all w-1/4 h-full" href="#">
+<span class="material-symbols-outlined mb-1">book</span>
+<span class="font-label uppercase text-[10px] tracking-widest">Brand</span>
+</a>
+</nav>
+</body></html>

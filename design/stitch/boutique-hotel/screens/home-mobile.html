@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#aa9282",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#f0dfd6",
+                    "background": "#fff8f3",
+                    "surface-container-highest": "#ece1d4",
+                    "on-primary-fixed": "#26190e",
+                    "surface": "#fff8f3",
+                    "surface-container-low": "#fdf2e4",
+                    "surface-bright": "#fff8f3",
+                    "primary-fixed-dim": "#dcc2b0",
+                    "on-secondary-fixed": "#221a11",
+                    "on-surface-variant": "#4e453f",
+                    "outline": "#80756e",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#4f453e",
+                    "surface-tint": "#6e5a4c",
+                    "inverse-on-surface": "#faefe2",
+                    "tertiary-container": "#372d27",
+                    "tertiary-fixed-dim": "#d3c3ba",
+                    "secondary": "#685c50",
+                    "on-secondary-fixed-variant": "#50453a",
+                    "on-primary-fixed-variant": "#554336",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#f9ddcb",
+                    "primary-container": "#3c2c20",
+                    "surface-container": "#f8ecdf",
+                    "tertiary": "#211913",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#f2e6d9",
+                    "secondary-fixed-dim": "#d4c4b5",
+                    "secondary-container": "#f0e0d0",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed": "#221a14",
+                    "inverse-primary": "#dcc2b0",
+                    "on-background": "#201b13",
+                    "surface-dim": "#e3d8cb",
+                    "primary": "#25180d",
+                    "secondary-fixed": "#f0e0d0",
+                    "on-tertiary-container": "#a2948b",
+                    "inverse-surface": "#353027",
+                    "outline-variant": "#d2c4bc",
+                    "on-surface": "#201b13",
+                    "on-secondary-container": "#6e6256",
+                    "surface-variant": "#ece1d4",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif KR", "serif"],
+                    "body": ["Manrope", "sans-serif"],
+                    "label": ["Manrope", "sans-serif"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .grain-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        .text-cinematic {
+            letter-spacing: 0.15em;
+            line-height: 1.2;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #fff8f3;
+        }
+        h1, h2, h3 {
+            font-family: 'Noto Serif KR', serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<div class="fixed inset-0 grain-overlay z-[999]"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fff8f3]/80 dark:bg-[#25180d]/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<button class="text-[#25180d] dark:text-[#fdf2e4]">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-xl font-serif tracking-widest uppercase text-[#25180d] dark:text-[#fdf2e4]">HOTEL STILL</h1>
+<div class="w-6"></div> <!-- Spacer for symmetry -->
+</div>
+</header>
+<main class="relative">
+<!-- Hero Section -->
+<section class="relative h-[884px] w-full flex flex-col justify-end overflow-hidden">
+<div class="absolute inset-0 z-0 scale-105">
+<img alt="Luxury hotel room with warm natural light" class="w-full h-full object-cover grayscale-[20%] contrast-[1.1]" data-alt="Interior of a luxury minimalist hotel room with high ceilings, soft linen bedding, and morning sunlight filtering through sheer curtains in warm sepia tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1JVzWJH5il_kpSKZNTG_Y3If0NyEtk9uE8jj7ErKOPDSAj1SH_0e06AY3jFvM9S8W-1dVrCwcNgePOduLN3HTHRhDV5WNUpA2M6Laza_i4Blnq8TDiK4UCDVQ2uDytrUT37RyvDVj-Mc4fSAKShTn8tza1bAV3dwQAIh0XA3PCGzrpht9B0x9Y4WSls5wSgTe0uGm9jng5-xl4GVM6YzEply_X7W7OPwRkFM8J3Vy7Ki-aN6UxxWmOh59ysiPYCpBbrOt1nHy5cRy"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 px-6 pb-40 w-full">
+<h2 class="text-4xl md:text-6xl text-[#ffffff] font-headline mb-4 drop-shadow-sm leading-tight">
+                    고요함의 미학
+                </h2>
+<p class="text-sm tracking-[0.2em] text-[#ffffff]/80 font-label uppercase">The Aesthetics of Stillness</p>
+</div>
+<!-- Stay Finder Module -->
+<div class="absolute bottom-0 left-0 w-full px-4 pb-8 z-20">
+<div class="bg-surface-container-low/90 backdrop-blur-2xl p-6 rounded-lg shadow-[0_32px_64px_-12px_rgba(32,27,19,0.06)] border border-outline-variant/20">
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="flex flex-col gap-1 border-b border-outline-variant/40 pb-2">
+<label class="text-[10px] uppercase tracking-widest text-secondary font-label">Check-in</label>
+<span class="text-sm font-medium">2024.11.20</span>
+</div>
+<div class="flex flex-col gap-1 border-b border-outline-variant/40 pb-2">
+<label class="text-[10px] uppercase tracking-widest text-secondary font-label">Check-out</label>
+<span class="text-sm font-medium">2024.11.22</span>
+</div>
+<div class="col-span-2 flex flex-col gap-1 border-b border-outline-variant/40 pb-2">
+<label class="text-[10px] uppercase tracking-widest text-secondary font-label">Guests</label>
+<div class="flex justify-between items-center">
+<span class="text-sm font-medium">Adult 2, Room 1</span>
+<span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-md text-xs font-semibold tracking-widest uppercase transition-all hover:bg-primary-container">
+                        AVAILABILITY
+                    </button>
+</div>
+</div>
+</section>
+<!-- Content Canvas (Floating Sheets) -->
+<div class="relative -mt-12 z-30 space-y-1">
+<!-- Section 1: Philosophy -->
+<section class="bg-surface-container-low px-8 py-24 rounded-t-3xl">
+<div class="max-w-md mx-auto text-center space-y-8">
+<span class="text-xs uppercase tracking-[0.3em] text-secondary font-label">Introduction</span>
+<h3 class="text-2xl leading-relaxed font-headline text-on-surface">
+                        침묵이 큐레이팅한<br/>가장 사적인 휴식
+                    </h3>
+<p class="text-sm leading-loose text-on-surface-variant font-body">
+                        호텔 스틸은 도시의 소음에서 벗어나<br/>자신만의 리듬을 되찾는 공간을 지향합니다.<br/>
+                        간결한 선과 절제된 미학 속에서<br/>진정한 휴식의 본질을 마주해 보세요.
+                    </p>
+<div class="pt-4">
+<div class="w-[1px] h-16 bg-outline-variant/40 mx-auto"></div>
+</div>
+</div>
+</section>
+<!-- Section 2: Rooms (Bento-style editorial) -->
+<section class="bg-background px-6 py-20">
+<div class="flex justify-between items-end mb-12">
+<div class="space-y-2">
+<span class="text-xs uppercase tracking-widest text-secondary font-label">Accommodations</span>
+<h2 class="text-3xl font-headline">공간의 철학</h2>
+</div>
+</div>
+<div class="space-y-16">
+<!-- Standard Room -->
+<div class="group">
+<div class="p-4 bg-surface-container-low rounded-xl mb-6">
+<div class="aspect-[4/5] overflow-hidden rounded-lg">
+<img alt="Standard Room design" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Minimalist standard hotel room with natural oak furniture, stone textures, and soft beige linens under warm ambient cove lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZqN6goSPnBRn2gOdoGksZnEIbDBXZSD5JXBWmslRlCoMsvxbL3JyEn6MOSGI5l4t3t9Su86-D4aMAlRKJIWmtUyVSwxo9J1CUe4Bmp7njyEgXCDDUBTccdmOY5RdY5jqTCarkmVK-GsH95beKohO4w_ttsHEJdIL86RydaENfNgCLSiEFRFLxAnrQi_AeFhmkoLXhbJ8-O8RTIMItwSi-5NqklrGoMYeGA3SWV_a1lG0AUcANVQLx0KZZXXILPtvelkqbrwxM0cnt"/>
+</div>
+</div>
+<div class="px-2 flex justify-between items-start">
+<div class="space-y-1">
+<h4 class="text-xl font-headline">Standard</h4>
+<p class="text-xs text-secondary font-label">299,000원 ~</p>
+</div>
+<button class="border border-outline-variant px-4 py-2 text-[10px] tracking-widest uppercase font-semibold">VIEW ROOM</button>
+</div>
+</div>
+<!-- Deluxe Room -->
+<div class="group">
+<div class="p-4 bg-surface-container-low rounded-xl mb-6">
+<div class="aspect-[4/5] overflow-hidden rounded-lg">
+<img alt="Deluxe Room design" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Spacious deluxe room with a private reading nook, large windows overlooking a serene garden, and textured plaster walls in earth tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrfQXEzFZutapT_AoJmdmMMxas-KqZiTTT2sp6g9r25EjTiK2de01mntr4j4eF0qQ09pKVU193j_xUp0GqAGiT4EosAdTd0CgrUyD3W8woCDU0-e74cQuNB_MIYXOM_YzHqoRwT2_yy_GuOf29f0KFFOL8GZc34bMG3AGf_VasybKreT13t1NnBhjkZzi-wQW4AD06kYKv6dkj7rHBs9sm87ns-SAALgZfC0uAYPVMp78bZA0DOoa3f6q2M95Q4PiokkKa_eYtZuHm"/>
+</div>
+</div>
+<div class="px-2 flex justify-between items-start">
+<div class="space-y-1">
+<h4 class="text-xl font-headline">Deluxe</h4>
+<p class="text-xs text-secondary font-label">450,000원 ~</p>
+</div>
+<button class="border border-outline-variant px-4 py-2 text-[10px] tracking-widest uppercase font-semibold">VIEW ROOM</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Seasonal Offers -->
+<section class="bg-surface-container px-6 py-24">
+<div class="text-center mb-16 space-y-3">
+<span class="text-xs uppercase tracking-widest text-secondary font-label">Special Offer</span>
+<h2 class="text-2xl font-headline">계절의 흐름을 담은 제안</h2>
+</div>
+<div class="relative">
+<!-- Package Card 1 -->
+<div class="relative z-10 bg-surface-container-lowest p-8 shadow-sm rounded-lg mb-8 transform -rotate-1">
+<h4 class="text-lg font-headline mb-2">Winter Silence Ritual</h4>
+<p class="text-sm text-on-surface-variant mb-6 font-body leading-relaxed">추운 계절을 위한 아로마 테라피와 따뜻한 티 세레모니가 포함된 특별한 스테이.</p>
+<a class="text-xs font-semibold tracking-widest underline underline-offset-8 uppercase" href="#">Read Details</a>
+</div>
+<!-- Package Card 2 (Overlapping visual effect) -->
+<div class="relative z-0 bg-surface-container-low p-8 opacity-60 rounded-lg transform translate-y-[-2rem] scale-95">
+<h4 class="text-lg font-headline mb-2">Artisanal Tea Journey</h4>
+</div>
+</div>
+</section>
+<!-- Section 4: Information & Location -->
+<section class="bg-surface-container-low px-8 py-24 space-y-16">
+<div class="grid grid-cols-1 gap-12">
+<div class="space-y-6">
+<h2 class="text-2xl font-headline">Information</h2>
+<div class="space-y-4 font-body text-sm text-on-surface-variant">
+<div class="flex justify-between py-2 border-b border-outline-variant/20">
+<span>Check-in</span>
+<span>15:00</span>
+</div>
+<div class="flex justify-between py-2 border-b border-outline-variant/20">
+<span>Check-out</span>
+<span>11:00</span>
+</div>
+<div class="flex justify-between py-2 border-b border-outline-variant/20">
+<span>Address</span>
+<span class="text-right">서울특별시 종로구<br/>고요로 108 스틸빌딩</span>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<h2 class="text-2xl font-headline">Location</h2>
+<div class="h-64 bg-surface-variant rounded-xl overflow-hidden relative grayscale contrast-125">
+<img class="w-full h-full object-cover opacity-50" data-alt="Clean minimalist architectural map abstraction of a city grid with muted warm gray tones" data-location="Seoul" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb7SiRw9Y_5bnZGYiwRZ3TF_ypLU-mpQbFgULTgKvNNzjg9eZSlSD4xD8mAUfeA3IgQjBDPfKo6HaXQ03HGW5tCe-mXvcu6PddqzpuSi62IFfQn-G_MCRyz66lCylRw1fhZSE1UcHuv4QOJ9U36QqXVORKP3vbhgWWCj_yL5iGEIoU0HcuC54H1RhU52Tpv1sltZMNyWOXUffAKwT0nuQX6WoMmF4edWu0kXx_KqSImdmMWv7Y64nBYRkyM5LgAyho34ZHdafa_fBU"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#fdf2e4] dark:bg-[#3c2c20] w-full mt-auto">
+<div class="flex flex-col justify-between items-center px-8 py-12 w-full gap-8">
+<h1 class="text-lg font-serif text-[#25180d] dark:text-[#fdf2e4] tracking-widest uppercase">HOTEL STILL</h1>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="text-[#685c50] dark:text-[#d2c4bc] text-[10px] tracking-widest uppercase hover:text-[#25180d] transition-all" href="#">Contact</a>
+<a class="text-[#685c50] dark:text-[#d2c4bc] text-[10px] tracking-widest uppercase hover:text-[#25180d] transition-all" href="#">Instagram</a>
+<a class="text-[#685c50] dark:text-[#d2c4bc] text-[10px] tracking-widest uppercase hover:text-[#25180d] transition-all" href="#">Journal</a>
+<a class="text-[#685c50] dark:text-[#d2c4bc] text-[10px] tracking-widest uppercase hover:text-[#25180d] transition-all" href="#">Location</a>
+</nav>
+<p class="text-[9px] font-label text-[#685c50] dark:text-[#d2c4bc] tracking-[0.2em] uppercase text-center">
+                © 2024 HOTEL STILL. THE SILENT CURATOR.
+            </p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Primary Navigation) -->
+<nav class="fixed bottom-0 left-0 w-full bg-[#fff8f3]/90 backdrop-blur-xl border-t border-outline-variant/10 md:hidden z-50 flex justify-around items-center px-6 py-4">
+<div class="flex flex-col items-center gap-1 text-[#25180d]">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[8px] font-label tracking-tighter uppercase">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#685c50]">
+<span class="material-symbols-outlined" data-icon="bed">bed</span>
+<span class="text-[8px] font-label tracking-tighter uppercase">Rooms</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#685c50]">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="text-[8px] font-label tracking-tighter uppercase">Reserve</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#685c50]">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[8px] font-label tracking-tighter uppercase">Profile</span>
+</div>
+</nav>
+</body></html>

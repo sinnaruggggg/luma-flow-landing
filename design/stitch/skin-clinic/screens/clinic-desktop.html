@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clinic Guide | ATELIER SKIN</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&amp;family=Manrope:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#f6f9ff",
+                    "on-primary-container": "#465264",
+                    "primary-fixed-dim": "#c9d5ea",
+                    "tertiary": "#586069",
+                    "primary": "#535f71",
+                    "on-surface-variant": "#5d6059",
+                    "error-container": "#fe8983",
+                    "background": "#fbf9f5",
+                    "error-dim": "#4e0309",
+                    "surface-container-highest": "#e2e3db",
+                    "on-error-container": "#752121",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#fff7f6",
+                    "on-tertiary-container": "#535b64",
+                    "on-primary-fixed": "#344051",
+                    "inverse-on-surface": "#9e9d99",
+                    "on-secondary": "#f8f8ff",
+                    "secondary": "#555f72",
+                    "inverse-surface": "#0e0e0c",
+                    "primary-dim": "#475365",
+                    "on-secondary-fixed-variant": "#525c6e",
+                    "on-secondary-fixed": "#364051",
+                    "surface-container": "#efeee8",
+                    "on-primary-fixed-variant": "#505c6e",
+                    "on-tertiary-fixed-variant": "#5d656f",
+                    "surface-variant": "#e2e3db",
+                    "tertiary-container": "#e9f1fd",
+                    "surface-container-low": "#f5f4ee",
+                    "surface-tint": "#535f71",
+                    "surface-container-high": "#e8e9e1",
+                    "on-background": "#31332e",
+                    "tertiary-fixed": "#e9f1fd",
+                    "error": "#9f403d",
+                    "on-secondary-container": "#485264",
+                    "tertiary-dim": "#4c545d",
+                    "primary-container": "#d7e3f9",
+                    "on-surface": "#31332e",
+                    "surface-dim": "#d9dbd2",
+                    "outline-variant": "#b1b3ab",
+                    "outline": "#797b75",
+                    "secondary-fixed-dim": "#cbd5ea",
+                    "secondary-dim": "#4a5365",
+                    "surface": "#fbf9f5",
+                    "tertiary-fixed-dim": "#dbe3ee",
+                    "inverse-primary": "#dae6fc",
+                    "on-tertiary-fixed": "#414952",
+                    "on-primary": "#f6f7ff",
+                    "surface-bright": "#fbf9f5",
+                    "secondary-container": "#d9e3f9",
+                    "primary-fixed": "#d7e3f9",
+                    "secondary-fixed": "#d9e3f9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif KR", "serif"],
+                    "body": ["Manrope", "sans-serif"],
+                    "label": ["Manrope", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #fbf9f5; color: #31332e; }
+        .font-serif { font-family: 'Noto Serif KR', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); }
+        .clinic-stack-shadow { box-shadow: 0 10px 30px rgba(49, 51, 46, 0.04); }
+    </style>
+</head>
+<body class="bg-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 shadow-sm dark:shadow-none">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="font-serif text-xl tracking-widest text-slate-800 dark:text-slate-100 uppercase">ATELIER SKIN</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-serif text-lg tracking-tight text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors duration-300 ease-in-out" href="#">Home</a>
+<a class="font-serif text-lg tracking-tight text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors duration-300 ease-in-out" href="#">Programs</a>
+<a class="font-serif text-lg tracking-tight text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors duration-300 ease-in-out" href="#">AI Scan</a>
+<a class="font-serif text-lg tracking-tight text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors duration-300 ease-in-out" href="#">Booking</a>
+<a class="font-serif text-lg tracking-tight text-slate-900 dark:text-white border-b border-slate-900 dark:border-white pb-1 transition-colors duration-300 ease-in-out" href="#">Clinic</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label text-sm tracking-wide transition-all active:opacity-70">
+                Consultation
+            </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Section 1: Hero Viewport (Clinic Stack) -->
+<section class="relative h-[921px] w-full overflow-hidden">
+<div class="absolute inset-0">
+<img class="w-full h-full object-cover grayscale-[20%] brightness-95" data-alt="luxury minimal dermatology clinic treatment room with white linen bed soft morning light and minimalist architectural details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnWIBX4lr6ltOzMmjEh8vX6QCci-VYsOEWjlKrlVaFP-dXoohIjeur4lf7TPvLgHQlrMIj2P4Uh3BSVD4b0r7J2gc1mH2jlcvzE09JO5rRuVab7Lel8epPEYZXbA-WthRDqAMjFtx_VOFxI-cweBFpVwthx87INgRvGFpBQIl3fhXug1vy72mPCQPl-kHT5NwyhCzm-9ExI2pXH9_uvx6J011vGkcdok0iJRXTNoBc7NX-bBJm6INL05C6FclnEpOQz16Wy-jf3Tk"/>
+</div>
+<div class="relative max-w-7xl mx-auto h-full px-6 flex flex-col justify-end pb-24">
+<div class="flex flex-col md:flex-row gap-8 items-end">
+<!-- Overlapping Hero Card -->
+<div class="glass-panel p-10 rounded-full clinic-stack-shadow max-w-md border border-white/20">
+<span class="font-label text-xs uppercase tracking-[0.2em] text-secondary mb-4 block">Clinic Guide</span>
+<h1 class="font-serif text-4xl leading-tight mb-6 text-on-surface">정적이고 전문적인,<br/>당신만을 위한 공간</h1>
+<p class="font-body text-on-surface-variant leading-relaxed text-sm">
+                            아뜰리에 스킨은 단순한 진료를 넘어, 당신의 피부가 휴식할 수 있는 최적의 환경을 제공합니다. 
+                        </p>
+</div>
+<!-- Floating Floating Info Cards -->
+<div class="flex flex-col gap-4 mb-4">
+<div class="glass-panel px-8 py-6 rounded-xl clinic-stack-shadow border border-white/20 flex items-center gap-6">
+<div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+<div>
+<div class="font-label text-[10px] uppercase tracking-widest text-secondary">Clinic Status</div>
+<div class="font-body font-bold text-sm text-on-surface">현재 정상 진료 중</div>
+</div>
+</div>
+<div class="glass-panel px-8 py-6 rounded-xl clinic-stack-shadow border border-white/20">
+<div class="font-label text-[10px] uppercase tracking-widest text-secondary mb-2">Operating Hours</div>
+<div class="space-y-1">
+<div class="flex justify-between gap-12 text-xs font-body">
+<span class="text-on-surface-variant">평일 (Mon-Fri)</span>
+<span class="text-on-surface font-semibold">10:00 - 20:00</span>
+</div>
+<div class="flex justify-between gap-12 text-xs font-body">
+<span class="text-on-surface-variant">토요일 (Sat)</span>
+<span class="text-on-surface font-semibold">10:00 - 16:00</span>
+</div>
+<div class="flex justify-between gap-12 text-xs font-body">
+<span class="text-on-surface-variant">일요일/공휴일</span>
+<span class="text-error font-semibold">Closed</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Visit Flow -->
+<section class="py-32 bg-surface-bright overflow-hidden">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-16">
+<div class="md:col-span-4">
+<h2 class="font-serif text-3xl text-on-surface leading-snug">
+                            Step-by-Step<br/>Visit Process
+                        </h2>
+<p class="mt-6 font-body text-on-surface-variant leading-relaxed">
+                            당신의 첫 방문부터 마지막 케어까지,<br/>아뜰리에 스킨의 정교한 프로세스를 안내합니다.
+                        </p>
+</div>
+<div class="md:col-span-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24 relative">
+<!-- Process Item 1 -->
+<div class="relative pl-12 border-l border-outline-variant/30">
+<span class="absolute -left-3 top-0 font-label text-sm text-primary font-bold bg-background px-1">01</span>
+<div class="font-serif text-xl mb-4">Arrival &amp; Check-in</div>
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">meeting_room</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                                    데스크에서 예약 확인 후 시그니처 웰컴 티와 함께 대기 공간으로 안내해 드립니다.
+                                </p>
+</div>
+<!-- Process Item 2 -->
+<div class="relative pl-12 border-l border-outline-variant/30">
+<span class="absolute -left-3 top-0 font-label text-sm text-primary font-bold bg-background px-1">02</span>
+<div class="font-serif text-xl mb-4">Consultation</div>
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">clinical_notes</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                                    AI 정밀 진단 시스템을 통해 현재 피부 상태를 입체적으로 분석하고 맞춤 프로그램을 설계합니다.
+                                </p>
+</div>
+<!-- Process Item 3 -->
+<div class="relative pl-12 border-l border-outline-variant/30">
+<span class="absolute -left-3 top-0 font-label text-sm text-primary font-bold bg-background px-1">03</span>
+<div class="font-serif text-xl mb-4">Treatment</div>
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">spa</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                                    프라이빗한 개별 룸에서 숙련된 테라피스트와 전문의의 정교한 시술이 진행됩니다.
+                                </p>
+</div>
+<!-- Process Item 4 -->
+<div class="relative pl-12 border-l border-outline-variant/30">
+<span class="absolute -left-3 top-0 font-label text-sm text-primary font-bold bg-background px-1">04</span>
+<div class="font-serif text-xl mb-4">Post-Care</div>
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">favorite</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                                    시술 후 주의사항 안내와 함께 집에서도 유지할 수 있는 홈케어 가이드를 제공합니다.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Preparation & Rules (Bento Layered) -->
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Checklist -->
+<div class="bg-surface-container-lowest p-12 rounded-full clinic-stack-shadow border border-outline-variant/10">
+<div class="font-label text-xs tracking-widest text-secondary uppercase mb-8">Preparation</div>
+<h3 class="font-serif text-2xl mb-10">Pre-treatment Checklist</h3>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-lg mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body text-on-surface-variant text-sm leading-relaxed">내원 전 과도한 기능성 화장품(레티놀, 비타민C 등) 사용을 자제해 주세요.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-lg mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body text-on-surface-variant text-sm leading-relaxed">복용 중인 약물이 있거나 알레르기가 있는 경우 상담 전 미리 말씀해 주세요.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-lg mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body text-on-surface-variant text-sm leading-relaxed">시술 후 자극을 최소화하기 위해 가급적 가벼운 옷차림을 권장합니다.</span>
+</li>
+</ul>
+</div>
+<!-- House Rules -->
+<div class="bg-primary/5 p-12 rounded-full border border-primary/10">
+<div class="font-label text-xs tracking-widest text-secondary uppercase mb-8">Clinic Policy</div>
+<h3 class="font-serif text-2xl mb-10 text-primary-dim">Clinic House Rules</h3>
+<div class="space-y-10">
+<div>
+<div class="font-bold text-sm mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">schedule</span> Cancellation Policy
+                                </div>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                                    예약 변경 및 취소는 최소 24시간 전까지 연락 부탁드립니다. 당일 노쇼(No-show)의 경우 향후 예약에 제한이 있을 수 있습니다.
+                                </p>
+</div>
+<div>
+<div class="font-bold text-sm mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">local_parking</span> Parking &amp; Access
+                                </div>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                                    건물 내 무료 발렛 주차 서비스를 제공합니다. 입차 시 아뜰리에 스킨 방문 고객임을 말씀해 주세요.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Map & Directions -->
+<section class="py-32 bg-background">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 rounded-full overflow-hidden grayscale contrast-125 h-[500px] clinic-stack-shadow border-4 border-white">
+<!-- Minimalist Map Simulation -->
+<div class="w-full h-full bg-surface-container relative">
+<img class="w-full h-full object-cover opacity-40" data-alt="minimal aerial map view of an upscale city district with clean lines and soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHZyHHTPlml4HuE4panPU2AUjd-1hvunv4HGU0-c1vkVsFdgYuopnBtgAHolfpFpERzS7anUhPkVCprnTtDAKKb0tqpUpFoYBzDJY9MjHsGqm63-Pt9xLWbZT3_rmBEbS-oRmCp3wRDoM0Hyt273rurMTfR_bctBYi8wgUtyLIualikaWp-IvKR6UhRd5YxQsYTc-ZBRzYsI8ndM09rAVNw5IuINsirV4Iz0UFn9n59qG_iZayJWEqnrnZYQU22oQnNQ6hmebTPGU"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white ring-8 ring-primary/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 lg:pl-12">
+<div class="font-label text-xs tracking-[0.2em] text-secondary uppercase mb-6">Location</div>
+<h2 class="font-serif text-3xl mb-8">오시는 길</h2>
+<div class="space-y-8 mb-12">
+<div>
+<p class="font-label text-[10px] text-secondary uppercase tracking-widest mb-1">Address</p>
+<p class="font-body text-lg text-on-surface">서울특별시 강남구 압구정로 123-1, 아뜰리에 빌딩 5F</p>
+</div>
+<div>
+<p class="font-label text-[10px] text-secondary uppercase tracking-widest mb-1">Contact</p>
+<p class="font-body text-lg text-on-surface">T. 02-123-4567<br/>E. hello@atelierskin.com</p>
+</div>
+<div>
+<p class="font-label text-[10px] text-secondary uppercase tracking-widest mb-1">Public Transit</p>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">지하철 3호선 압구정역 3번 출구 도보 5분<br/>시내버스 압구정파출소 정류장 하차</p>
+</div>
+</div>
+<button class="w-full bg-gradient-to-r from-primary to-primary-dim text-on-primary py-5 rounded-full font-label tracking-widest text-sm flex items-center justify-center gap-3 transition-transform active:scale-[0.98]">
+<span class="material-symbols-outlined text-lg">directions</span>
+                            GET DIRECTIONS
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: FAQ -->
+<section class="py-32 bg-surface-container-low/50">
+<div class="max-w-4xl mx-auto px-6">
+<div class="text-center mb-20">
+<h2 class="font-serif text-3xl mb-4">자주 묻는 질문</h2>
+<p class="font-body text-on-surface-variant">더 궁금하신 사항은 언제든 편하게 문의해 주세요.</p>
+</div>
+<div class="space-y-6">
+<!-- FAQ Item 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10">
+<div class="flex justify-between items-center cursor-pointer group">
+<h4 class="font-serif text-lg group-hover:text-primary transition-colors">예약 없이 방문해도 진료가 가능한가요?</h4>
+<span class="material-symbols-outlined text-secondary">expand_more</span>
+</div>
+<div class="mt-4 pt-4 border-t border-surface-container font-body text-sm text-on-surface-variant leading-relaxed">
+                            아뜰리에 스킨은 프라이빗한 진료와 충분한 상담을 위해 100% 예약제로 운영되고 있습니다. 방문 전 반드시 홈페이지나 전화를 통해 예약 부탁드립니다.
+                        </div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10">
+<div class="flex justify-between items-center cursor-pointer group">
+<h4 class="font-serif text-lg group-hover:text-primary transition-colors">시술 후 바로 일상생활이 가능한가요?</h4>
+<span class="material-symbols-outlined text-secondary">expand_more</span>
+</div>
+<div class="mt-4 pt-4 border-t border-surface-container font-body text-sm text-on-surface-variant leading-relaxed">
+                            대부분의 레이저 및 스킨부스터 시술은 바로 일상생활이 가능하지만, 개인의 피부 예민도에 따라 미세한 붉은 기가 1-2일 정도 지속될 수 있습니다.
+                        </div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10">
+<div class="flex justify-between items-center cursor-pointer group">
+<h4 class="font-serif text-lg group-hover:text-primary transition-colors">주차 공간이 마련되어 있나요?</h4>
+<span class="material-symbols-outlined text-secondary">expand_more</span>
+</div>
+<div class="mt-4 pt-4 border-t border-surface-container font-body text-sm text-on-surface-variant leading-relaxed">
+                            네, 건물 1층에 발렛 주차 공간이 마련되어 있으며 내원하시는 동안 무료로 이용 가능합니다.
+                        </div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full py-16 border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-12 grid grid-cols-1 md:grid-cols-3 gap-12">
+<div>
+<div class="font-serif text-lg text-slate-800 dark:text-slate-200 mb-6">ATELIER SKIN</div>
+<p class="font-sans text-xs tracking-widest uppercase text-slate-500 mb-8 leading-relaxed">
+                    © 2024 ATELIER SKIN. ALL RIGHTS RESERVED.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-sans text-xs tracking-widest uppercase text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 underline decoration-slate-300" href="#">Privacy Policy</a>
+<a class="font-sans text-xs tracking-widest uppercase text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 underline decoration-slate-300" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-sans text-xs tracking-widest uppercase text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 underline decoration-slate-300" href="#">Instagram</a>
+<a class="font-sans text-xs tracking-widest uppercase text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 underline decoration-slate-300" href="#">Location</a>
+</div>
+</div>
+</footer>
+</body></html>

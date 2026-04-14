@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#bac6e6",
+                        "on-tertiary-fixed": "#3a0033",
+                        "surface-container-high": "#222a38",
+                        "on-primary-fixed-variant": "#004e60",
+                        "background": "#0b1421",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary": "#243049",
+                        "outline": "#869398",
+                        "on-tertiary-fixed-variant": "#840076",
+                        "surface-bright": "#313a48",
+                        "surface-container": "#17202e",
+                        "on-secondary-container": "#acb8d7",
+                        "tertiary-fixed-dim": "#fface8",
+                        "on-primary": "#003543",
+                        "on-tertiary-container": "#970187",
+                        "on-tertiary": "#5e0053",
+                        "secondary-fixed-dim": "#bac6e6",
+                        "outline-variant": "#3c494e",
+                        "inverse-on-surface": "#28313f",
+                        "surface-container-low": "#131c29",
+                        "surface-tint": "#45d6ff",
+                        "surface-variant": "#2c3544",
+                        "error": "#ffb4ab",
+                        "primary-container": "#39d5ff",
+                        "tertiary": "#ffd5f0",
+                        "secondary-fixed": "#d8e2ff",
+                        "on-surface": "#dae3f6",
+                        "on-primary-container": "#00596e",
+                        "on-background": "#dae3f6",
+                        "inverse-surface": "#dae3f6",
+                        "primary-fixed-dim": "#45d6ff",
+                        "on-error": "#690005",
+                        "primary-fixed": "#b5ebff",
+                        "secondary-container": "#3d4963",
+                        "on-surface-variant": "#bbc9ce",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#3b4761",
+                        "on-secondary-fixed": "#0e1b33",
+                        "surface-container-lowest": "#060e1b",
+                        "surface": "#0b1421",
+                        "surface-dim": "#0b1421",
+                        "tertiary-container": "#ffaae8",
+                        "on-primary-fixed": "#001f28",
+                        "surface-container-highest": "#2c3544",
+                        "inverse-primary": "#00677e",
+                        "tertiary-fixed": "#ffd7f0",
+                        "primary": "#b1eaff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .mesh-depth {
+            background-image: radial-gradient(#39d5ff 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            opacity: 0.05;
+        }
+        .glass-panel {
+            background: rgba(10, 22, 42, 0.82);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body select-none">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#07101d]/80 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full shadow-[0_0_40px_rgba(57,213,255,0.08)]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#39d5ff]">menu</span>
+<span class="text-xl font-bold tracking-tighter text-[#39d5ff] font-headline uppercase">ORBIT E</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#39d5ff]">settings_input_component</span>
+</div>
+</nav>
+<main class="pt-16 pb-24">
+<!-- First Viewport: Technical Browsing Surface -->
+<section class="relative min-h-[751px] flex flex-col justify-end px-6 pb-8 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background z-10"></div>
+<img alt="Orbit GT" class="w-full h-full object-cover object-center grayscale-[0.2]" data-alt="Close-up side profile of a metallic cyan high-performance electric sports car in a futuristic dark laboratory with clinical neon lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-CrB128vDc9KCAXusWwPYJviJXW_CthvaAGUB-KYtHNbx9rz4lO4nIgdwOtW1h3OVVWNYrXmAimlXVtur8q6vBeN53oxh7dfNOwQBHl_PPzkcTU7kKUEdjv33Vs4esjkzPlc8CbIabwRiHa4VE_6l6RpaQQyUL3mZjHFt0UN6Y6eYYyMEuCb4FwbZ8v4grVr7_xWVflRW9fvJH2jvnQsmWEfFImmobZCuYZ5lVC82dG2wBbhXGosH8CIM58tm8eWdEWj6FjWlIwM"/>
+</div>
+<div class="relative z-20 space-y-6">
+<div class="space-y-1">
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-[#39d5ff] font-bold">NEXT GENERATION EV</span>
+<h1 class="font-headline text-5xl font-extrabold tracking-tighter leading-none">MODEL LINEUP</h1>
+</div>
+<!-- Category Anchors -->
+<div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+<button class="bg-[#39d5ff] text-on-primary-container px-6 py-2 font-label text-[11px] font-bold uppercase rounded-sm border-t border-white/20">GT</button>
+<button class="bg-white/5 backdrop-blur-md text-slate-400 px-6 py-2 font-label text-[11px] font-bold uppercase rounded-sm border border-white/10">SUV</button>
+<button class="bg-white/5 backdrop-blur-md text-slate-400 px-6 py-2 font-label text-[11px] font-bold uppercase rounded-sm border border-white/10">CITY</button>
+</div>
+<!-- Quick Spec Summary -->
+<div class="bg-[#0a162a]/90 backdrop-blur-xl border-l-2 border-[#39d5ff] p-4 flex justify-between items-center">
+<div class="space-y-1">
+<span class="block font-label text-[9px] text-slate-500 uppercase tracking-widest">Starting Price</span>
+<span class="block font-headline text-lg font-bold text-on-surface">74,900,000원</span>
+</div>
+<div class="h-8 w-px bg-white/10"></div>
+<div class="space-y-1 text-right">
+<span class="block font-label text-[9px] text-slate-500 uppercase tracking-widest">Max Range</span>
+<span class="block font-headline text-lg font-bold text-[#39d5ff]">620 KM</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Core: Spec Compare Table -->
+<section class="px-6 py-12 space-y-6">
+<div class="flex items-center justify-between">
+<h2 class="font-headline text-xl font-bold tracking-tight uppercase">TECHNICAL CORE</h2>
+<span class="material-symbols-outlined text-[#39d5ff] scale-75">analytics</span>
+</div>
+<div class="grid grid-cols-1 gap-1">
+<div class="grid grid-cols-4 bg-surface-container-lowest p-3 rounded-sm items-center">
+<span class="font-label text-[10px] text-slate-500 uppercase">Model</span>
+<span class="font-label text-[10px] text-center text-[#39d5ff] font-bold">RANGE</span>
+<span class="font-label text-[10px] text-center text-slate-400">0-100</span>
+<span class="font-label text-[10px] text-right text-slate-400">PRICE</span>
+</div>
+<div class="grid grid-cols-4 bg-surface-container-low p-4 rounded-sm items-center border-l border-[#39d5ff]/30">
+<span class="font-headline text-sm font-bold">GT</span>
+<span class="font-body text-xs text-center text-[#39d5ff]">580km</span>
+<span class="font-body text-xs text-center">3.2s</span>
+<span class="font-body text-[10px] text-right">92.5M</span>
+</div>
+<div class="grid grid-cols-4 bg-surface-container-low p-4 rounded-sm items-center">
+<span class="font-headline text-sm font-bold">MODEL X</span>
+<span class="font-body text-xs text-center text-[#39d5ff]">620km</span>
+<span class="font-body text-xs text-center">4.5s</span>
+<span class="font-body text-[10px] text-right">88.2M</span>
+</div>
+<div class="grid grid-cols-4 bg-surface-container-low p-4 rounded-sm items-center">
+<span class="font-headline text-sm font-bold">MODEL S</span>
+<span class="font-body text-xs text-center text-[#39d5ff]">450km</span>
+<span class="font-body text-xs text-center">5.8s</span>
+<span class="font-body text-[10px] text-right">74.9M</span>
+</div>
+</div>
+</section>
+<!-- Catalog: Modular Collections -->
+<section class="space-y-12 px-6">
+<!-- Orbit GT Card -->
+<div class="relative group">
+<div class="aspect-[4/5] w-full bg-surface-container-lowest overflow-hidden rounded-sm relative">
+<img alt="Orbit GT" class="w-full h-full object-cover" data-alt="Side profile of a futuristic electric sports car in a sleek dark blue metallic finish parked in a concrete architectural space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdPUDdYfbbtD_JdjhcEt_IZMvAGYm39N8t2lbHVubJgjO-17MLmTvpcR_8v33sv4seq76z-rBF812VQ6zVsZqIpsw_iCaNEYpcSC2WPh-NS248dvATAveOgo1VRYVWHx526E3SB9Ubhd6lAoG_yhnGsBIr0idT7oqE2yDohsscuCrkCX5Dajt8O2OzMu9eL_AZT5e0aXuEnEtUdFnbe9W9uDqW_17KUaL2qS1UGIpSV96waMUG6JjMk8o60F9RBdbTa4ywTOTqjwU"/>
+<!-- Instrument Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a162a] via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary-container/20 text-[#39d5ff] px-2 py-1 font-label text-[9px] font-bold uppercase tracking-widest ring-1 ring-[#39d5ff]/30 backdrop-blur-md">ULTRA-PERF</span>
+<span class="bg-surface-container-highest/60 text-white px-2 py-1 font-label text-[9px] font-bold uppercase tracking-widest backdrop-blur-md">GT CHASSIS</span>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-6 space-y-4">
+<div class="flex justify-between items-end">
+<div class="space-y-1">
+<h3 class="font-headline text-4xl font-bold tracking-tighter">ORBIT GT</h3>
+<p class="text-slate-400 text-xs font-light leading-relaxed">극강의 퍼포먼스와 우아함의 조화.<br/>새로운 시대를 여는 그랜드 투어러.</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-4">
+<button class="bg-[#39d5ff] text-on-primary-container font-label text-[11px] font-bold py-3 uppercase tracking-widest rounded-sm active:scale-95 transition-all">Configure</button>
+<button class="bg-white/5 border border-white/10 text-white font-label text-[11px] font-bold py-3 uppercase tracking-widest rounded-sm active:scale-95 transition-all">Details</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Test Drive CTA (Interjected) -->
+<div class="bg-[#39d5ff]/5 border border-[#39d5ff]/20 p-8 relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-32 h-32 bg-[#39d5ff]/10 rounded-full blur-3xl"></div>
+<div class="relative z-10 space-y-6 text-center">
+<div class="space-y-1">
+<span class="font-label text-[10px] text-[#39d5ff] tracking-widest uppercase font-bold">DRIVE THE FUTURE</span>
+<h2 class="font-headline text-3xl font-bold tracking-tight">시승 예약하기</h2>
+</div>
+<div class="space-y-3">
+<div class="bg-surface-container-lowest p-4 flex items-center justify-between group">
+<span class="text-xs text-slate-400 font-label uppercase">Select Location</span>
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold">ORBIT GANGNAM</span>
+<span class="material-symbols-outlined text-[#39d5ff] text-sm">expand_more</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 flex items-center justify-between group">
+<span class="text-xs text-slate-400 font-label uppercase">Select Date</span>
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold">2024.11.24</span>
+<span class="material-symbols-outlined text-[#39d5ff] text-sm">calendar_today</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-[#39d5ff] text-on-primary-container font-label text-xs font-bold py-4 uppercase tracking-[0.2em] shadow-[0_0_20px_rgba(57,213,255,0.3)]">Book Your Drive</button>
+</div>
+</div>
+<!-- Orbit X Card -->
+<div class="relative group">
+<div class="aspect-[4/5] w-full bg-surface-container-lowest overflow-hidden rounded-sm relative">
+<img alt="Orbit X" class="w-full h-full object-cover" data-alt="Sleek silver SUV electric car in a minimalist modern showroom with soft top-down lighting and sharp shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPvyW0iCE9kUo1VAJ6RXUqn0PSDzPkndq-qqmVjLuyZbnNc9n1RsfAY_tT3CqBBNVi_vFMnm0IGpHoI3vqEfnpLgW9696xbe8qHIzA0bdbFfKufViQaHuWWO4dqn7Y8DL5pY1UUVFdFczW9eRn471CGD97Gmo1nPytyreVSFBfzIoku8BGcvpfBNVgNPOnLzCa7ebwGg5-ZV8_AFnWESziDhr8zYTg7MzVV56yXwBrp7RIwkDH0X8XCkJSd23EcAVbUWqG43K8dY0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a162a] via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-surface-container-highest/60 text-white px-2 py-1 font-label text-[9px] font-bold uppercase tracking-widest backdrop-blur-md">EXTENDED RANGE</span>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-6 space-y-4">
+<div class="space-y-1">
+<h3 class="font-headline text-4xl font-bold tracking-tighter uppercase">ORBIT X</h3>
+<p class="text-slate-400 text-xs font-light leading-relaxed">가장 다재다능한 럭셔리 SUV.<br/>가족의 여정을 더욱 완벽하게.</p>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-4">
+<button class="bg-[#39d5ff] text-on-primary-container font-label text-[11px] font-bold py-3 uppercase tracking-widest rounded-sm">Configure</button>
+<button class="bg-white/5 border border-white/10 text-white font-label text-[11px] font-bold py-3 uppercase tracking-widest rounded-sm">Details</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Spec Compare Section Header -->
+<section class="px-6 pt-16 pb-4">
+<span class="font-label text-[10px] text-[#39d5ff] tracking-widest uppercase font-bold">SIDE BY SIDE</span>
+<h2 class="font-headline text-3xl font-bold tracking-tight">SPEC COMPARE</h2>
+</section>
+<!-- Comparison Tool (Horizontal Glide) -->
+<section class="overflow-x-auto no-scrollbar pb-12">
+<div class="inline-flex gap-4 px-6 min-w-full">
+<!-- Compare Row 1 -->
+<div class="w-64 flex-shrink-0 bg-surface-container-low p-6 rounded-sm space-y-8 border-t-2 border-[#39d5ff]">
+<div class="space-y-1">
+<span class="font-label text-[10px] text-slate-500 uppercase tracking-widest">DRIVETRAIN</span>
+<h4 class="font-headline text-lg font-bold">GT DUAL MOTOR</h4>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center border-b border-white/5 pb-2">
+<span class="text-[10px] text-slate-500 font-label uppercase">Max Power</span>
+<span class="text-sm font-bold">580 kW</span>
+</div>
+<div class="flex justify-between items-center border-b border-white/5 pb-2">
+<span class="text-[10px] text-slate-500 font-label uppercase">Torque</span>
+<span class="text-sm font-bold">850 Nm</span>
+</div>
+<div class="flex justify-between items-center border-b border-white/5 pb-2">
+<span class="text-[10px] text-slate-500 font-label uppercase">Wheelbase</span>
+<span class="text-sm font-bold">2,900 mm</span>
+</div>
+</div>
+</div>
+<!-- Compare Row 2 -->
+<div class="w-64 flex-shrink-0 bg-surface-container-low p-6 rounded-sm space-y-8 border-t-2 border-slate-700">
+<div class="space-y-1">
+<span class="font-label text-[10px] text-slate-500 uppercase tracking-widest">DRIVETRAIN</span>
+<h4 class="font-headline text-lg font-bold">X ALL-WHEEL</h4>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center border-b border-white/5 pb-2">
+<span class="text-[10px] text-slate-500 font-label uppercase">Max Power</span>
+<span class="text-sm font-bold">420 kW</span>
+</div>
+<div class="flex justify-between items-center border-b border-white/5 pb-2">
+<span class="text-[10px] text-slate-500 font-label uppercase">Torque</span>
+<span class="text-sm font-bold">720 Nm</span>
+</div>
+<div class="flex justify-between items-center border-b border-white/5 pb-2">
+<span class="text-[10px] text-slate-500 font-label uppercase">Wheelbase</span>
+<span class="text-sm font-bold">3,100 mm</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 mb-20 flex flex-col items-center gap-6 px-8 text-center bg-[#0b1421]">
+<div class="flex gap-6">
+<span class="font-label text-[11px] uppercase tracking-widest text-slate-600 hover:text-white transition-all">Telemetry</span>
+<span class="font-label text-[11px] uppercase tracking-widest text-slate-600 hover:text-white transition-all">Security</span>
+<span class="font-label text-[11px] uppercase tracking-widest text-slate-600 hover:text-white transition-all">Compliance</span>
+</div>
+<p class="font-label text-[11px] uppercase tracking-widest text-slate-500">© 2024 ORBIT E MOBILITY. PRECISION ENGINEERED.</p>
+</footer>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full h-20 flex justify-around items-center px-4 pb-2 bg-[#0a162a]/90 backdrop-blur-2xl z-50 rounded-t-sm shadow-[0_-4px_40px_rgba(57,213,255,0.1)]">
+<a class="flex flex-col items-center justify-center bg-[#39d5ff]/10 text-[#39d5ff] rounded-sm px-3 py-1 ring-1 ring-[#39d5ff]/20 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+<span class="font-label text-[10px] uppercase tracking-[0.1em] font-bold mt-1">Models</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 opacity-70 hover:bg-white/5 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">ev_station</span>
+<span class="font-label text-[10px] uppercase tracking-[0.1em] font-bold mt-1">Charge</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 opacity-70 hover:bg-white/5 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">sports_score</span>
+<span class="font-label text-[10px] uppercase tracking-[0.1em] font-bold mt-1">Drive</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 opacity-70 hover:bg-white/5 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="font-label text-[10px] uppercase tracking-[0.1em] font-bold mt-1">Support</span>
+</a>
+</nav>
+</body></html>

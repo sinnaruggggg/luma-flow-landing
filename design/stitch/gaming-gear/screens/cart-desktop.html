@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#00596e",
+                        "surface-container": "#17202e",
+                        "on-surface": "#dae3f6",
+                        "on-error": "#690005",
+                        "inverse-surface": "#dae3f6",
+                        "surface-tint": "#45d6ff",
+                        "surface-container-low": "#131c29",
+                        "surface": "#0b1421",
+                        "primary": "#b1eaff",
+                        "secondary-fixed-dim": "#fface8",
+                        "background": "#0b1421",
+                        "inverse-primary": "#00677e",
+                        "on-primary-fixed-variant": "#004e60",
+                        "on-secondary": "#5e0053",
+                        "on-background": "#dae3f6",
+                        "secondary-fixed": "#ffd7f0",
+                        "tertiary": "#ffdcaa",
+                        "on-primary": "#003543",
+                        "on-secondary-container": "#fface8",
+                        "on-tertiary-container": "#6e4b00",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#222a38",
+                        "primary-fixed": "#b5ebff",
+                        "on-tertiary-fixed-variant": "#604100",
+                        "surface-container-highest": "#2c3544",
+                        "on-surface-variant": "#bbc9ce",
+                        "outline": "#869398",
+                        "surface-variant": "#2c3544",
+                        "inverse-on-surface": "#28313f",
+                        "surface-container-lowest": "#060e1b",
+                        "on-tertiary-fixed": "#281800",
+                        "tertiary-container": "#ffb837",
+                        "surface-dim": "#0b1421",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#ffdeae",
+                        "primary-fixed-dim": "#45d6ff",
+                        "secondary": "#fface8",
+                        "outline-variant": "#3c494e",
+                        "on-primary-fixed": "#001f28",
+                        "secondary-container": "#980388",
+                        "tertiary-fixed-dim": "#ffba3f",
+                        "surface-bright": "#313a48",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary": "#432c00",
+                        "primary-container": "#39d5ff",
+                        "on-secondary-fixed-variant": "#840076",
+                        "on-secondary-fixed": "#3a0033"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .grid-bg {
+            background-image: linear-gradient(#39d5ff08 1px, transparent 1px), linear-gradient(90deg, #39d5ff08 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .glass-panel {
+            backdrop-filter: blur(12px);
+            background: rgba(23, 32, 46, 0.7);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30 min-h-screen grid-bg overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="bg-[#0b1421] dark:bg-[#0b1421] flex justify-between items-center w-full px-6 py-4 max-w-[1920px] mx-auto sticky top-0 z-50 backdrop-blur-xl shadow-[0_0_20px_rgba(57,213,255,0.15)]">
+<div class="flex items-center gap-12">
+<h1 class="text-2xl font-black italic tracking-tighter text-[#39d5ff] font-['Space_Grotesk']">VOID ARC</h1>
+<nav class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] tracking-tight">
+<a class="text-slate-400 hover:text-[#39d5ff] transition-colors" href="#">홈</a>
+<a class="text-slate-400 hover:text-[#39d5ff] transition-colors" href="#">기어</a>
+<a class="text-slate-400 hover:text-[#39d5ff] transition-colors" href="#">번들</a>
+<a class="text-slate-400 hover:text-[#39d5ff] transition-colors" href="#">장바구니</a>
+<a class="text-[#39d5ff] border-b-2 border-[#39d5ff] pb-1 font-bold" href="#">고객지원</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center bg-surface-container-high px-4 py-2 rounded-lg border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary-container text-sm mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-xs font-label uppercase tracking-widest text-on-surface placeholder:text-outline w-40" placeholder="COMMAND SEARCH..." type="text"/>
+</div>
+<button class="p-2 hover:bg-[#39d5ff]/5 transition-all duration-300 rounded-lg">
+<span class="material-symbols-outlined text-[#39d5ff]">account_circle</span>
+</button>
+<button class="p-2 hover:bg-[#39d5ff]/5 transition-all duration-300 rounded-lg relative">
+<span class="material-symbols-outlined text-[#39d5ff]">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-secondary rounded-full"></span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 bg-gradient-to-b from-[#39d5ff]/10 to-transparent h-[2px] w-full"></div>
+</header>
+<main class="max-w-7xl mx-auto px-6 py-12">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="h-[2px] w-8 bg-primary"></span>
+<span class="font-label text-[10px] tracking-[0.3em] text-primary uppercase">Active Session: Cart_01</span>
+</div>
+<h2 class="font-headline text-5xl font-black italic tracking-tighter text-on-surface">DEPLOYMENT_LOADOUT</h2>
+<p class="font-label text-xs text-outline mt-2 tracking-widest uppercase">장바구니 세션 - 시스템 최적화 완료</p>
+</div>
+<div class="text-right">
+<div class="font-label text-[10px] text-secondary tracking-widest uppercase mb-1">Status: Ready for Sync</div>
+<div class="h-1 w-48 bg-surface-container-highest relative overflow-hidden">
+<div class="absolute inset-0 bg-primary w-2/3"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Cart Items List -->
+<div class="lg:col-span-8 space-y-6">
+<!-- Item 1: Keyboard -->
+<div class="glass-panel border-l-4 border-primary p-6 rounded-r-xl transition-all hover:bg-surface-container-high group relative overflow-hidden">
+<div class="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="font-headline text-6xl font-black italic">ARC-K7</span>
+</div>
+<div class="flex flex-col md:flex-row gap-8 relative z-10">
+<div class="w-full md:w-48 h-48 bg-surface-container-lowest rounded-lg overflow-hidden flex items-center justify-center p-4 border border-outline-variant/10">
+<img alt="ARC-K7 Mechanical Keyboard" class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500" data-alt="Close-up of a sleek black mechanical gaming keyboard with glowing cyan RGB lighting beneath the keys in a dark technical setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp96ZeVFLd9raLJqrTnEKKVr0jGPzFx2YYO2xTUYFNSx2h3-7YxxpZD4HZOhM_tSpHSEVYxlAUtRYj2LpIE5mOO9at-BpvqiyGjJj_pHRKkH-eQOWqcMPW5bJl_KZzzwldHi2V9-uHtih3jjVOkkzER1-k16tC_RpO_smALO270pHq9GmOW9wuCJ5UDm2CTh1eObZffjmPCHT0df5r1Wuf4KfjXTkzqCiHtS9ppIHTFUV6PEul3Kc76klBDsqQv0zikt4DumCxBezr"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-2xl font-bold text-on-surface group-hover:text-primary transition-colors">ARC-K7 MECHANICAL KEYBOARD</h3>
+<span class="font-label text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded mt-2 inline-block tracking-tighter">PREMIUM_CORE</span>
+</div>
+<button class="text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined">delete_forever</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-4">
+<div class="border-l border-outline-variant/30 pl-3">
+<div class="font-label text-[10px] text-outline uppercase">Polling Rate</div>
+<div class="font-headline text-sm font-bold text-primary">8000Hz</div>
+</div>
+<div class="border-l border-outline-variant/30 pl-3">
+<div class="font-label text-[10px] text-outline uppercase">Switch Type</div>
+<div class="font-headline text-sm font-bold text-primary">OPTICAL_RED</div>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-end mt-6">
+<div class="flex items-center gap-4 bg-surface-container-lowest p-1 rounded-lg border border-outline-variant/20">
+<button class="w-8 h-8 flex items-center justify-center hover:bg-primary/10 text-primary rounded">-</button>
+<span class="font-headline font-bold text-lg px-2">01</span>
+<button class="w-8 h-8 flex items-center justify-center hover:bg-primary/10 text-primary rounded">+</button>
+</div>
+<div class="text-right">
+<div class="font-label text-[10px] text-outline uppercase">Subtotal</div>
+<div class="font-headline text-xl font-black text-on-surface">219,000원</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2: Mouse -->
+<div class="glass-panel border-l-4 border-secondary p-6 rounded-r-xl transition-all hover:bg-surface-container-high group relative overflow-hidden">
+<div class="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="font-headline text-6xl font-black italic">ARC-M1</span>
+</div>
+<div class="flex flex-col md:flex-row gap-8 relative z-10">
+<div class="w-full md:w-48 h-48 bg-surface-container-lowest rounded-lg overflow-hidden flex items-center justify-center p-4 border border-outline-variant/10">
+<img alt="ARC-M1 Gaming Mouse" class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500" data-alt="High-performance wireless gaming mouse with a futuristic honeycomb shell and neon pink accents against a dark brushed metal surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIrVopkYttd7Xc0XRBcJAxMirODQBLgRmOmWwXSxQ89_uKUf7SLh0A3rdGxJiqHU6IapsrvghFsMNsb8zqBiq_YD9uDrE9pqiqmZxs40KD0DV8Iib3-HpIfrD52oYksJcgwKADyKC-1Aq38zqkfJnjfOqOwA4ic7-KUT4bIkNUkCx-C3SPTPgBUqPE-Kb839ptJE4-zsI5L1uScuKrqlubqZ2mN3wlmQTLEHJYiViXkpywmiYP0dUObl_yvZd0_QTDhlRuUA6ngbgm"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-2xl font-bold text-on-surface group-hover:text-secondary transition-colors">ARC-M1 ULTRA LIGHTWEIGHT</h3>
+<span class="font-label text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded mt-2 inline-block tracking-tighter">AGILITY_CLASS</span>
+</div>
+<button class="text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined">delete_forever</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-4">
+<div class="border-l border-outline-variant/30 pl-3">
+<div class="font-label text-[10px] text-outline uppercase">Latency</div>
+<div class="font-headline text-sm font-bold text-secondary">0.1ms</div>
+</div>
+<div class="border-l border-outline-variant/30 pl-3">
+<div class="font-label text-[10px] text-outline uppercase">Weight</div>
+<div class="font-headline text-sm font-bold text-secondary">49G</div>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-end mt-6">
+<div class="flex items-center gap-4 bg-surface-container-lowest p-1 rounded-lg border border-outline-variant/20">
+<button class="w-8 h-8 flex items-center justify-center hover:bg-secondary/10 text-secondary rounded">-</button>
+<span class="font-headline font-bold text-lg px-2">01</span>
+<button class="w-8 h-8 flex items-center justify-center hover:bg-secondary/10 text-secondary rounded">+</button>
+</div>
+<div class="text-right">
+<div class="font-label text-[10px] text-outline uppercase">Subtotal</div>
+<div class="font-headline text-xl font-black text-on-surface">159,000원</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recommended Upgrades -->
+<div class="mt-16">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">add_circle</span>
+<h4 class="font-headline text-lg font-bold tracking-tight uppercase">SYSTEM_UPGRADES_AVAILABLE</h4>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-surface-container-low border border-outline-variant/10 p-4 rounded-xl flex items-center gap-4 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="w-16 h-16 bg-surface-container rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">texture</span>
+</div>
+<div>
+<div class="font-headline text-sm font-bold">VOID_MAT XL</div>
+<div class="font-label text-[10px] text-outline">NANOFIBER SURFACE</div>
+<div class="font-headline text-xs text-primary mt-1">45,000원</div>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/10 p-4 rounded-xl flex items-center gap-4 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="w-16 h-16 bg-surface-container rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">cable</span>
+</div>
+<div>
+<div class="font-headline text-sm font-bold">ARC_BUNGEE V2</div>
+<div class="font-label text-[10px] text-outline">ZERO_DRAG SYSTEM</div>
+<div class="font-headline text-xs text-primary mt-1">29,000원</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Summary -->
+<aside class="lg:col-span-4 sticky top-28">
+<div class="glass-panel border border-outline-variant/20 rounded-xl overflow-hidden shadow-2xl">
+<div class="bg-surface-container-highest p-4 border-b border-outline-variant/20 flex justify-between items-center">
+<span class="font-headline font-bold text-sm tracking-widest uppercase">Tactical Summary</span>
+<span class="material-symbols-outlined text-primary text-sm">terminal</span>
+</div>
+<div class="p-6 space-y-6">
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="font-label text-xs text-outline uppercase tracking-wider">Base Loadout</span>
+<span class="font-headline text-sm font-bold">378,000원</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label text-xs text-outline uppercase tracking-wider">System Discount</span>
+<span class="font-headline text-sm font-bold text-secondary">-15,000원</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label text-xs text-outline uppercase tracking-wider">Deployment Fee</span>
+<span class="font-headline text-sm font-bold text-primary">FREE</span>
+</div>
+</div>
+<div class="h-px bg-gradient-to-r from-transparent via-outline-variant/50 to-transparent"></div>
+<div>
+<div class="flex justify-between items-baseline mb-2">
+<span class="font-headline text-lg font-black italic tracking-tighter">TOTAL_PRICE</span>
+<span class="font-headline text-3xl font-black text-primary">363,000원</span>
+</div>
+<div class="font-label text-[10px] text-right text-outline">VAT_INCLUDED_10%</div>
+</div>
+<div class="bg-primary/5 border border-primary/20 p-3 rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-lg">verified_user</span>
+<div>
+<div class="font-label text-[10px] font-bold text-primary uppercase mb-1">System Status: Optimized</div>
+<p class="text-[10px] text-on-surface/70 leading-relaxed uppercase">전술적 배송 준비 완료. 초기화 시 즉시 물류 엔진 가동.</p>
+</div>
+</div>
+<button class="w-full group relative overflow-hidden bg-primary-container text-on-primary-container py-4 font-headline font-black italic text-lg tracking-tighter transition-all active:scale-95 shadow-[0_0_30px_rgba(57,213,255,0.3)] rounded-lg">
+<span class="relative z-10 flex items-center justify-center gap-2">
+                                INITIALIZE DEPLOYMENT
+                                <span class="material-symbols-outlined font-normal">bolt</span>
+</span>
+<div class="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+</button>
+<button class="w-full py-3 font-label text-[10px] tracking-[0.2em] text-outline hover:text-primary transition-colors uppercase">
+                            Return to Hangar (계속 쇼핑하기)
+                        </button>
+</div>
+</div>
+<!-- Side Info -->
+<div class="mt-6 space-y-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full border border-primary/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">local_shipping</span>
+</div>
+<div>
+<div class="text-[10px] font-bold uppercase">Rapid Deployment</div>
+<div class="text-[10px] text-outline uppercase">24HR_EXPRESS_ACTIVE</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full border border-secondary/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-sm">shield_moon</span>
+</div>
+<div>
+<div class="text-[10px] font-bold uppercase">Tech Protection</div>
+<div class="text-[10px] text-outline uppercase">2_YEAR_WARRANTY</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-4 px-8 flex justify-between items-center gap-4 bg-[#07101d] dark:bg-[#07101d] border-t border-[#39d5ff]/20 mt-24">
+<div class="font-['Inter'] uppercase text-[10px] tracking-[0.2em] text-[#39d5ff]">
+            © 2024 VOID ARC COMMAND CENTER. SYSTEM STATUS: OPTIMIZED.
+        </div>
+<div class="flex items-center gap-8 font-['Inter'] uppercase text-[10px] tracking-[0.2em]">
+<a class="text-slate-500 hover:text-[#ff6fe4] transition-colors duration-200 cursor-crosshair" href="#">시스템 매뉴얼</a>
+<a class="text-slate-500 hover:text-[#ff6fe4] transition-colors duration-200 cursor-crosshair" href="#">보증 규정</a>
+<a class="text-slate-500 hover:text-[#ff6fe4] transition-colors duration-200 cursor-crosshair" href="#">터미널 접속</a>
+<a class="text-slate-500 hover:text-[#ff6fe4] transition-colors duration-200 cursor-crosshair" href="#">개인정보처리방침</a>
+</div>
+</footer>
+</body></html>

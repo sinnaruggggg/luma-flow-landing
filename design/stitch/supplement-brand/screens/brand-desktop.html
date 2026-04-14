@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,700;0,800;0,900;1,900&amp;family=Space+Grotesk:wght@700&amp;family=Plus+Jakarta+Sans:wght@500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#00465d",
+                    "on-tertiary-fixed-variant": "#004f69",
+                    "on-secondary-fixed-variant": "#9a2128",
+                    "primary-fixed-dim": "#dfdcdc",
+                    "surface-tint": "#5c5b5b",
+                    "surface": "#fff7d4",
+                    "on-error-container": "#520c00",
+                    "secondary-container": "#ffc3c0",
+                    "inverse-on-surface": "#ae9e18",
+                    "tertiary-fixed-dim": "#6cc3eb",
+                    "on-tertiary": "#e5f5ff",
+                    "secondary-dim": "#992027",
+                    "tertiary-dim": "#005672",
+                    "on-primary": "#f5f2f1",
+                    "primary-dim": "#504f4f",
+                    "secondary": "#aa2c32",
+                    "on-tertiary-fixed": "#003041",
+                    "on-primary-fixed-variant": "#626060",
+                    "outline": "#857800",
+                    "on-surface-variant": "#675c00",
+                    "inverse-primary": "#ffffff",
+                    "tertiary-container": "#7bd1fa",
+                    "inverse-surface": "#110e00",
+                    "tertiary-fixed": "#7bd1fa",
+                    "error-container": "#f95630",
+                    "on-background": "#352f00",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#f6de0b",
+                    "surface-dim": "#edd600",
+                    "on-surface": "#352f00",
+                    "error": "#b02500",
+                    "primary-container": "#edeaea",
+                    "on-primary-fixed": "#454444",
+                    "tertiary": "#006382",
+                    "on-secondary-fixed": "#6f0011",
+                    "surface-variant": "#f6de0b",
+                    "surface-container-low": "#fff2a6",
+                    "surface-container-high": "#fbe431",
+                    "on-secondary-container": "#8d1620",
+                    "secondary-fixed": "#ffc3c0",
+                    "on-secondary": "#ffefee",
+                    "background": "#fff7d4",
+                    "surface-bright": "#fff7d4",
+                    "on-primary-container": "#575656",
+                    "error-dim": "#b92902",
+                    "secondary-fixed-dim": "#ffafac",
+                    "outline-variant": "#bfae2b",
+                    "surface-container": "#ffea50",
+                    "on-error": "#ffefec",
+                    "primary": "#5c5b5b",
+                    "primary-fixed": "#edeaea"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Epilogue"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48; }
+        .sticker-lift:hover { transform: translate(-4px, -4px); box-shadow: 4px 4px 0px 0px #352f00; }
+        .kinetic-gradient { background: linear-gradient(45deg, #aa2c32 0%, #ffc3c0 100%); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-background font-body selection:bg-secondary selection:text-white">
+<!-- TopNavBar -->
+<header class="bg-[#fff7d4] dark:bg-[#121212] flex justify-between items-center w-full px-6 py-4 max-w-[1920px] mx-auto sticky top-0 z-50">
+<div class="text-3xl font-black italic tracking-tighter text-[#352f00] dark:text-[#f6de0b]">PUNCH FUEL</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#352f00] dark:text-[#fff7d4] font-['Epilogue'] font-bold tracking-tighter uppercase hover:skew-x-[-6deg] transition-transform duration-150 hover:text-[#aa2c32] Active: scale-95 transition-all" href="#">SHOP ALL</a>
+<a class="text-[#352f00] dark:text-[#fff7d4] font-['Epilogue'] font-bold tracking-tighter uppercase hover:skew-x-[-6deg] transition-transform duration-150 hover:text-[#aa2c32] Active: scale-95 transition-all" href="#">ROUTINES</a>
+<a class="text-[#352f00] dark:text-[#fff7d4] font-['Epilogue'] font-bold tracking-tighter uppercase hover:skew-x-[-6deg] transition-transform duration-150 hover:text-[#aa2c32] Active: scale-95 transition-all" href="#">SUBSCRIPTIONS</a>
+<a class="text-[#352f00] dark:text-[#fff7d4] font-['Epilogue'] font-bold tracking-tighter uppercase hover:skew-x-[-6deg] transition-transform duration-150 hover:text-[#aa2c32] Active: scale-95 transition-all" href="#">SCIENCE</a>
+<!-- Brand is the active slug/context -->
+<a class="text-[#f6de0b] border-b-4 border-[#f6de0b] pb-1 font-['Epilogue'] font-bold tracking-tighter uppercase" href="#">BRAND</a>
+</nav>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-[#352f00] dark:text-[#f6de0b] cursor-pointer">search</span>
+<button class="bg-[#352f00] text-[#fff7d4] px-4 py-1 font-['Epilogue'] font-bold tracking-tighter uppercase Active: scale-95 transition-all">CART</button>
+</div>
+</header>
+<main class="w-full">
+<!-- Section 1: Hero Viewport (Split-Screen Grammar) -->
+<section class="min-h-screen flex flex-col md:flex-row overflow-hidden">
+<div class="w-full md:w-1/2 relative bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="ultra high-shutter-speed macro of white supplement powder exploding against a bright yellow background, intense detail and particles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6WXp8ndc9Vc1nybe3kVwuiISoBPm67QSFZOYRGRDmfsXwYKnHe-3309lVGdYvU5tEaMdrf_XSVOtJ56O6yCe4HzMK6tPUhpXzxUeWKY2fxwARhv-oS3y45dWkCAV_SZzERet4DAm9KTlN4vAQw7AOs5hfwszNFRG2IxIL0eRTUYN1ZQPfxbmSoyIymnKWZchqywXEVMGryLXpIS7VwJG96FU3lX_2mb1ExEdlno_23ad6F_ynJ6ISs-G1yI0o9SOIVezd0b3-Z88"/>
+<div class="absolute bottom-12 left-12">
+<span class="bg-secondary text-white font-label px-4 py-2 text-xl font-bold uppercase -skew-x-12 inline-block">DATA-DRIVEN FUEL</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 flex flex-col justify-center px-12 md:px-24 bg-surface py-20">
+<h1 class="font-headline text-7xl md:text-8xl font-black tracking-tighter text-on-background mb-8 leading-[0.9]">
+                    OUR OPERATING <br/> CONTEXT.
+                </h1>
+<div class="max-w-md">
+<p class="text-xl leading-relaxed text-on-background/80 font-body mb-8">
+                        PUNCH PERFORMANCE는 단순한 보충제 제조사가 아닙니다. 우리는 생체 데이터와 정밀 영양학을 결합하여 인간의 한계를 재설계하는 데이터 주도형 연료 엔지니어링 기업입니다.
+                    </p>
+<div class="border-l-8 border-secondary-container pl-6 py-2">
+<p class="font-label text-sm uppercase tracking-widest text-secondary font-bold">Protocol Status: Optimal</p>
+<p class="font-headline text-3xl font-bold text-on-background">BEYOND PILLS.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: The Kinetic Lab (Layered Grid) -->
+<section class="bg-surface-container py-32 px-6">
+<div class="max-w-[1400px] mx-auto">
+<div class="flex justify-between items-end mb-16">
+<h2 class="font-headline text-6xl font-black tracking-tighter uppercase italic">The Kinetic Lab</h2>
+<span class="font-label text-on-background opacity-40 uppercase tracking-[0.2em]">Science of Motion [01-03]</span>
+</div>
+<div class="grid grid-cols-12 gap-8 relative">
+<!-- Image 1: Lab Testing -->
+<div class="col-span-12 md:col-span-7 aspect-[16/9] bg-surface relative z-10 outline outline-2 outline-outline">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="modern pharmaceutical laboratory with high-tech equipment and focused scientist in white coat, bright clinical lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyY_LOot2_wAQdQCBELHzc6S77EGZZVKXQQKaxKxz1cXRGMj3CWVNfmKjWMTOBQgnTt2kB5SUDteu2vNEww-wGfCgwMts5VaD7Zd6_eV7Xn4AbBG5EuPyk6b5_DLttUs1jxGWrYYqhsfOY-Bww96Yc74GwyRPP5QB-EtmlRn5rILLvG6XO-2nOpGjUV9RtjnzhSPIACYnaS12rxFwcGuvXXZxvwGiOrWMmGJcjwB55lIByfecn9nBF5FYcsWEiSqfZUgiezzqCQbg"/>
+<div class="absolute -bottom-8 -right-8 bg-white p-6 outline outline-2 outline-outline sticker-lift transition-transform">
+<p class="font-label text-4xl font-bold text-secondary">99.9%</p>
+<p class="font-label text-xs uppercase tracking-widest">Purity Standard</p>
+</div>
+</div>
+<!-- Image 2: Biometric Tracking (Overlapping) -->
+<div class="col-span-12 md:col-span-5 aspect-square bg-surface-container-low mt-20 relative z-20 outline outline-2 outline-outline">
+<img class="w-full h-full object-cover" data-alt="athlete undergoing biometric performance testing with sensors and heart rate monitor in a dark high-performance gym" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTTiLMlJZaIG85NaFpWY2XDuUm7IlLIBMNolqm_hmj8mH35KSkMm9MYAPGZ3P5cJ8fS5-g1IkvzMUIYL07FyzkpFopJtsxgdsU4izct_s8BWtpvblPHZ_4ZOK27I1AymcOtJA3pC5bCVsaTVC4gkyWg8PlJ1JCu8ifxnSHPTqCVE0KQK1rRjdisDpDqjFO1hyopp7Z81Sz0-xezVrJXgbGF1r6d0ePyll47H4c4WvgIee6o7XSpKglo1ECje6T59wAQlL0CjSGQEM"/>
+<div class="absolute top-0 left-0 bg-secondary text-white p-4 -translate-y-1/2 translate-x-4">
+<p class="font-label text-xs uppercase tracking-widest font-bold">ISO CERTIFIED FACILITY</p>
+</div>
+</div>
+<!-- Technical Stats Cards (Sticker Style) -->
+<div class="col-span-12 md:col-span-4 bg-surface-container-highest p-8 outline outline-3 outline-on-background relative -mt-16 md:ml-12 z-30 sticker-lift transition-all">
+<p class="font-label text-sm uppercase font-bold mb-4 flex items-center gap-2">
+<span class="w-3 h-3 bg-secondary rounded-full"></span>
+                            Production Macro
+                        </p>
+<h3 class="font-headline text-3xl font-black mb-4">PRECISION MILLING</h3>
+<p class="font-body text-sm text-on-background/70">분자 단위의 초미세 분쇄 공정을 통해 흡수율을 극대화합니다. 모든 배치는 독립된 연구소에서 3단계 검증을 거칩니다.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Ingredient Deep Dive (Matrix Layout) -->
+<section class="bg-surface py-32 border-y-4 border-on-background">
+<div class="max-w-[1400px] mx-auto px-6">
+<div class="mb-24 flex flex-col md:flex-row md:items-center justify-between gap-8">
+<div>
+<h2 class="font-headline text-6xl md:text-8xl font-black tracking-tighter uppercase italic text-on-background">Ingredient<br/>Deep Dive</h2>
+</div>
+<div class="max-w-md text-right">
+<p class="font-label text-xl font-bold uppercase tracking-tighter text-secondary mb-4 italic underline decoration-4">Zero Hidden Blends</p>
+<p class="font-body text-on-background/70">우리는 모든 성분의 함량과 출처를 투명하게 공개합니다. 성능을 위해 타협하지 않는 원칙, 그것이 PUNCH의 정체성입니다.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-on-background outline outline-2 outline-on-background overflow-hidden">
+<!-- Grid Item 1 -->
+<div class="bg-surface-container-low p-10 group hover:bg-secondary-container transition-colors duration-300">
+<div class="flex justify-between items-start mb-8">
+<span class="font-label text-sm font-bold bg-on-background text-surface px-2 py-1">ORIGIN: GERMANY</span>
+<span class="material-symbols-outlined text-4xl text-on-background">science</span>
+</div>
+<h4 class="font-headline text-3xl font-black mb-2 uppercase">CREAPURE®</h4>
+<p class="font-label text-secondary font-bold mb-6">5,000MG / SERVING</p>
+<p class="font-body text-sm text-on-background/60 group-hover:text-on-background transition-colors">세계에서 가장 순수한 크레아틴 모노하이드레이트. ATP 재생산 속도를 가속화합니다.</p>
+</div>
+<!-- Grid Item 2 -->
+<div class="bg-surface-container-low p-10 group hover:bg-secondary-container transition-colors duration-300">
+<div class="flex justify-between items-start mb-8">
+<span class="font-label text-sm font-bold bg-on-background text-surface px-2 py-1">ORIGIN: JAPAN</span>
+<span class="material-symbols-outlined text-4xl text-on-background">bolt</span>
+</div>
+<h4 class="font-headline text-3xl font-black mb-2 uppercase">AJIPURE®</h4>
+<p class="font-label text-secondary font-bold mb-6">2:1:1 BCAA RATIO</p>
+<p class="font-body text-sm text-on-background/60 group-hover:text-on-background transition-colors">발효 공법으로 추출된 식물성 아미노산. 근육 회복의 골든타임을 확보합니다.</p>
+</div>
+<!-- Grid Item 3 -->
+<div class="bg-surface-container-low p-10 group hover:bg-secondary-container transition-colors duration-300">
+<div class="flex justify-between items-start mb-8">
+<span class="font-label text-sm font-bold bg-on-background text-surface px-2 py-1">ORIGIN: USA</span>
+<span class="material-symbols-outlined text-4xl text-on-background">ecg_heart</span>
+</div>
+<h4 class="font-headline text-3xl font-black mb-2 uppercase">COQ10</h4>
+<p class="font-label text-secondary font-bold mb-6">100MG BIOAVAILABLE</p>
+<p class="font-body text-sm text-on-background/60 group-hover:text-on-background transition-colors">미토콘드리아 에너지 생성을 돕는 핵심 코엔자임. 세포 수준의 퍼포먼스를 지원합니다.</p>
+</div>
+<!-- Grid Item 4 -->
+<div class="bg-surface-container-low p-10 group hover:bg-secondary-container transition-colors duration-300">
+<div class="flex justify-between items-start mb-8">
+<span class="font-label text-sm font-bold bg-on-background text-surface px-2 py-1">ORIGIN: KOREA</span>
+<span class="material-symbols-outlined text-4xl text-on-background">water_drop</span>
+</div>
+<h4 class="font-headline text-3xl font-black mb-2 uppercase">ELECTROLYTES</h4>
+<p class="font-label text-secondary font-bold mb-6">PRECISION ION RATIO</p>
+<p class="font-body text-sm text-on-background/60 group-hover:text-on-background transition-colors">해양 심층수 유래 미네랄. 체액 균형을 유지하며 경련을 방지합니다.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Brand Manifesto -->
+<section class="relative bg-on-background py-48 px-6 text-center overflow-hidden">
+<!-- Decorative "Noise" or Dynamic Background shapes could go here -->
+<div class="absolute inset-0 kinetic-gradient opacity-10"></div>
+<div class="max-w-5xl mx-auto relative z-10">
+<span class="font-label text-surface-container-highest text-sm tracking-[0.4em] uppercase mb-8 block font-bold">The Punch Ethos</span>
+<blockquote class="font-headline text-5xl md:text-8xl font-black text-surface tracking-tighter italic leading-none mb-12">
+                    "LIMITLESS PERFORMANCE <br/> IS A <span class="text-secondary-container">CALCULATED</span> <br/> OUTCOME."
+                </blockquote>
+<p class="text-surface-container-low font-body text-lg max-w-2xl mx-auto opacity-80 leading-relaxed">
+                    우리는 운을 믿지 않습니다. 우리는 오직 데이터와 성분, 그리고 이를 증명하는 결과만을 신뢰합니다. 
+                    당신의 루틴이 한계에 부딪힐 때, PUNCH FUEL이 그 한계를 돌파하는 추진력이 될 것입니다.
+                </p>
+<div class="mt-20">
+<button class="bg-surface text-on-background font-headline text-2xl font-black px-12 py-6 uppercase sticker-lift transition-all hover:bg-secondary hover:text-white border-2 border-on-background">
+                        BUILD YOUR ROUTINE
+                    </button>
+</div>
+</div>
+<!-- Large floating typography elements for kinetic feel -->
+<div class="absolute -bottom-10 -left-10 font-headline text-[15rem] font-black text-white/5 tracking-tighter select-none pointer-events-none italic">
+                PUNCH
+            </div>
+<div class="absolute -top-10 -right-10 font-headline text-[15rem] font-black text-white/5 tracking-tighter select-none pointer-events-none italic">
+                FUEL
+            </div>
+</section>
+<!-- Section 5: Global Navigation - Replaced with the TopNavBar at top and keeping the Footer below -->
+</main>
+<!-- Footer -->
+<footer class="bg-[#ffea50] dark:bg-[#000000] w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-12 border-t-4 border-[#352f00]">
+<div>
+<div class="text-4xl font-black text-[#352f00] dark:text-[#f6de0b] mb-4 uppercase italic">PUNCH FUEL</div>
+<p class="text-[#352f00] dark:text-[#fff2a6] font-['Space_Grotesk'] font-bold text-sm tracking-widest uppercase mb-8">Fueling the 1% since 2024.</p>
+<div class="flex gap-4">
+<a class="text-[#352f00] dark:text-[#fff2a6] font-['Space_Grotesk'] font-bold text-xs tracking-widest uppercase hover:bg-[#352f00] hover:text-[#ffea50] px-2 transition-colors" href="#">PRIVACY</a>
+<a class="text-[#352f00] dark:text-[#fff2a6] font-['Space_Grotesk'] font-bold text-xs tracking-widest uppercase hover:bg-[#352f00] hover:text-[#ffea50] px-2 transition-colors" href="#">TERMS</a>
+<a class="text-[#352f00] dark:text-[#fff2a6] font-['Space_Grotesk'] font-bold text-xs tracking-widest uppercase hover:bg-[#352f00] hover:text-[#ffea50] px-2 transition-colors" href="#">WHOLESALE</a>
+<a class="text-[#352f00] dark:text-[#fff2a6] font-['Space_Grotesk'] font-bold text-xs tracking-widest uppercase hover:bg-[#352f00] hover:text-[#ffea50] px-2 transition-colors" href="#">CONTACT</a>
+</div>
+</div>
+<div class="flex flex-col justify-between items-end text-right">
+<div class="space-y-4">
+<div class="flex gap-4 justify-end">
+<span class="material-symbols-outlined text-4xl">podium</span>
+<span class="material-symbols-outlined text-4xl">monitoring</span>
+<span class="material-symbols-outlined text-4xl">precision_manufacturing</span>
+</div>
+<p class="font-headline text-xl font-black text-[#352f00] dark:text-[#f6de0b]">STAY IN THE STACK</p>
+<div class="flex border-2 border-on-background overflow-hidden">
+<input class="bg-white px-4 py-2 font-label text-sm uppercase outline-none w-64 border-none focus:ring-0" placeholder="ENTER EMAIL" type="text"/>
+<button class="bg-on-background text-surface px-6 font-headline font-black uppercase">JOIN</button>
+</div>
+</div>
+<p class="text-[#352f00] dark:text-[#f6de0b] font-['Space_Grotesk'] font-bold text-xs tracking-widest uppercase mt-12">© 2024 PUNCH FUEL PERFORMANCE. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+</body></html>

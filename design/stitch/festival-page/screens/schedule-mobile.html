@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NOISE WAVE | TIMETABLE 2024</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#840076",
+                    "secondary": "#fface8",
+                    "on-secondary-container": "#fface8",
+                    "surface-variant": "#2c3544",
+                    "surface": "#0b1421",
+                    "on-tertiary-fixed-variant": "#604100",
+                    "primary-container": "#39d5ff",
+                    "tertiary-fixed": "#ffdeae",
+                    "surface-container-highest": "#2c3544",
+                    "on-secondary": "#5e0053",
+                    "surface-container-lowest": "#060e1b",
+                    "inverse-primary": "#00677e",
+                    "error-container": "#93000a",
+                    "on-tertiary-fixed": "#281800",
+                    "on-background": "#dae3f6",
+                    "on-surface-variant": "#bbc9ce",
+                    "on-primary": "#003543",
+                    "surface-bright": "#313a48",
+                    "outline-variant": "#3c494e",
+                    "inverse-surface": "#dae3f6",
+                    "surface-container-low": "#131c29",
+                    "secondary-fixed-dim": "#fface8",
+                    "primary-fixed-dim": "#45d6ff",
+                    "on-tertiary": "#432c00",
+                    "on-surface": "#dae3f6",
+                    "error": "#ffb4ab",
+                    "background": "#0b1421",
+                    "surface-container-high": "#222a38",
+                    "on-error": "#690005",
+                    "secondary-fixed": "#ffd7f0",
+                    "surface-dim": "#0b1421",
+                    "surface-tint": "#45d6ff",
+                    "tertiary-container": "#ffb837",
+                    "tertiary-fixed-dim": "#ffba3f",
+                    "inverse-on-surface": "#28313f",
+                    "primary-fixed": "#b5ebff",
+                    "on-primary-fixed-variant": "#004e60",
+                    "secondary-container": "#980388",
+                    "surface-container": "#17202e",
+                    "primary": "#b1eaff",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary-container": "#6e4b00",
+                    "on-primary-container": "#00596e",
+                    "on-secondary-fixed": "#3a0033",
+                    "outline": "#869398",
+                    "tertiary": "#ffdcaa",
+                    "on-primary-fixed": "#001f28"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Be Vietnam Pro"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0b1421;
+            color: #dae3f6;
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glow-cyan {
+            box-shadow: 0 0 20px rgba(57, 213, 255, 0.15);
+        }
+        .tech-grid {
+            background-size: 40px 40px;
+            background-image: radial-gradient(circle, #39d5ff10 1px, transparent 1px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="dark selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center px-4 h-16 bg-[#0b1421] shadow-[0_0_40px_rgba(57,213,255,0.08)]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#39d5ff]">terminal</span>
+<h1 class="text-xl font-bold tracking-[-0.05em] text-[#39d5ff] font-['Space_Grotesk'] uppercase">NOISE_WAVE</h1>
+</div>
+<div class="ml-auto flex items-center gap-4">
+<button class="p-2 text-[#ecfbff] hover:bg-[#39d5ff]/10 transition-colors duration-150 active:scale-95 ease-linear">
+<span class="material-symbols-outlined">settings_input_component</span>
+</button>
+</div>
+</header>
+<main class="pt-16 pb-24 min-h-screen tech-grid">
+<!-- Hero Section -->
+<section class="px-4 pt-8 pb-4">
+<div class="mb-2 flex items-center justify-between">
+<span class="font-label text-[10px] tracking-[0.3em] text-secondary uppercase">SYS_LOG: 2024_ACTIVE</span>
+<span class="font-label text-[10px] tracking-[0.3em] text-outline">LOC: SEOUL_ARCHIVE</span>
+</div>
+<h2 class="text-5xl font-headline font-extrabold tracking-tighter text-on-surface leading-none mb-2">TIMETABLE 2024</h2>
+<p class="text-primary font-body text-sm font-medium mb-8">타임테이블 — 노이즈 웨이브 페스티벌</p>
+<!-- Date Selector Tabs -->
+<div class="flex gap-1 bg-surface-container-lowest p-1">
+<button class="flex-1 py-4 bg-primary-container text-on-primary font-headline font-bold text-sm tracking-widest border-r border-surface-container-highest last:border-0">
+                    DAY 01
+                </button>
+<button class="flex-1 py-4 bg-surface-container-highest text-on-surface-variant font-headline font-bold text-sm tracking-widest hover:text-primary transition-colors">
+                    DAY 02
+                </button>
+<button class="flex-1 py-4 bg-surface-container-highest text-on-surface-variant font-headline font-bold text-sm tracking-widest hover:text-primary transition-colors">
+                    DAY 03
+                </button>
+</div>
+</section>
+<!-- Sticky Filter Bar -->
+<div class="sticky top-16 z-40 bg-surface/90 backdrop-blur-md border-b border-surface-container-highest">
+<div class="flex">
+<button class="flex-1 py-3 text-[10px] font-label font-bold tracking-[0.2em] text-primary border-b-2 border-primary">
+                    BY TIME <span class="ml-1 text-[8px] opacity-50">시간순</span>
+</button>
+<button class="flex-1 py-3 text-[10px] font-label font-bold tracking-[0.2em] text-outline hover:text-on-surface transition-colors">
+                    BY STAGE <span class="ml-1 text-[8px] opacity-50">스테이지별</span>
+</button>
+</div>
+</div>
+<!-- Schedule Grid -->
+<div class="relative mt-4">
+<!-- Timeline Grid Lines -->
+<div class="absolute inset-0 pointer-events-none">
+<div class="h-[120px] border-b border-outline-variant/20"></div>
+<div class="h-[120px] border-b border-outline-variant/20"></div>
+<div class="h-[120px] border-b border-outline-variant/20"></div>
+<div class="h-[120px] border-b border-outline-variant/20"></div>
+</div>
+<!-- Schedule Content -->
+<div class="space-y-0">
+<!-- Time Slot: 14:00 -->
+<div class="flex min-h-[160px] border-b border-outline-variant/10">
+<div class="w-20 shrink-0 p-4 border-r border-outline-variant/20 flex flex-col items-center">
+<span class="font-headline font-bold text-lg text-primary leading-none">14:00</span>
+<span class="text-[8px] font-label text-outline mt-1 uppercase">START</span>
+</div>
+<div class="flex-1 p-4 flex flex-col gap-3">
+<!-- Artist Card -->
+<div class="bg-surface-container-high p-4 relative group">
+<div class="absolute left-0 top-0 w-1 h-full bg-secondary"></div>
+<div class="flex justify-between items-start mb-1">
+<span class="text-[9px] font-label text-secondary tracking-widest uppercase">MAIN STAGE (메인 스테이지)</span>
+<span class="text-[9px] font-label text-outline">14:00 - 15:30</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface group-hover:text-primary transition-colors">GLITCH_HARBOR</h3>
+</div>
+</div>
+</div>
+<!-- Time Slot: 16:00 (Live State) -->
+<div class="flex min-h-[240px] border-b border-outline-variant/10 bg-primary/5">
+<div class="w-20 shrink-0 p-4 border-r border-outline-variant/20 flex flex-col items-center bg-surface-container-low">
+<span class="font-headline font-bold text-lg text-primary leading-none">16:00</span>
+<div class="mt-2 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#39d5ff] animate-pulse"></span>
+<span class="text-[8px] font-label text-primary font-bold uppercase tracking-tighter">LIVE_NOW</span>
+</div>
+</div>
+<div class="flex-1 p-4 flex flex-col gap-3">
+<!-- Artist Card: Main -->
+<div class="bg-primary-container p-4 relative shadow-[0_0_20px_rgba(57,213,255,0.2)]">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[9px] font-label text-on-primary font-bold tracking-widest uppercase">MAIN STAGE</span>
+<span class="text-[9px] font-label text-on-primary font-bold">16:00 - 17:30</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-primary">WAVE ALPHA</h3>
+<div class="mt-2 text-[8px] font-label text-on-primary/70 tracking-widest uppercase">CRITICAL_MASS_SET</div>
+</div>
+<!-- Artist Card: Side Stage -->
+<div class="bg-surface-container-highest p-4 relative border-l-2 border-primary/40">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[9px] font-label text-primary tracking-widest uppercase">VOID ARCHIVE</span>
+<span class="text-[9px] font-label text-outline">16:30 - 18:00</span>
+</div>
+<h3 class="text-lg font-headline font-bold text-on-surface">SILENT_ERROR</h3>
+</div>
+</div>
+</div>
+<!-- Time Slot: 18:00 -->
+<div class="flex min-h-[200px] border-b border-outline-variant/10">
+<div class="w-20 shrink-0 p-4 border-r border-outline-variant/20 flex flex-col items-center">
+<span class="font-headline font-bold text-lg text-outline leading-none">18:00</span>
+</div>
+<div class="flex-1 p-4 flex flex-col gap-3">
+<!-- Artist Card -->
+<div class="bg-surface-container-high p-4 relative border-l-2 border-secondary/40">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[9px] font-label text-secondary tracking-widest uppercase">CIRCUIT CORE</span>
+<span class="text-[9px] font-label text-outline">18:00 - 19:30</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface">NEON PULSE</h3>
+</div>
+</div>
+</div>
+<!-- Time Slot: 20:00 -->
+<div class="flex min-h-[220px] border-b border-outline-variant/10">
+<div class="w-20 shrink-0 p-4 border-r border-outline-variant/20 flex flex-col items-center">
+<span class="font-headline font-bold text-lg text-outline leading-none">20:00</span>
+</div>
+<div class="flex-1 p-4 flex flex-col gap-3">
+<div class="bg-surface-container-low border border-outline-variant/20 p-4 flex items-center justify-center h-24">
+<span class="text-[10px] font-label text-outline uppercase tracking-[0.4em]">INTERMISSION_BREAK</span>
+</div>
+</div>
+</div>
+<!-- Time Slot: 22:00 (Headliner) -->
+<div class="flex min-h-[300px] mb-20">
+<div class="w-20 shrink-0 p-4 border-r border-outline-variant/20 flex flex-col items-center">
+<span class="font-headline font-bold text-lg text-primary leading-none">22:00</span>
+<span class="text-[8px] font-label text-secondary mt-1 uppercase">PEAK</span>
+</div>
+<div class="flex-1 p-4">
+<div class="relative overflow-hidden group">
+<img class="w-full h-48 object-cover opacity-60 grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="dramatic stage lighting with intense cyan and pink laser beams cutting through thick fog at a techno music festival" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeiJJyuhr1m0F1lIyP7cjesoC9yZ9rcai4dPUR5JivNpSqKiMOBfjrX4eH0MjPEoLMiDlDcH448WfXyTKu3iaWqagPhHU3BwTMRRZm3_2_UvSY-2ROyBZCyG8mpsUgMgJ8DkhfgGjm8NkAIQYwnpQrEuj047_V42SQzO27LC6OIxe_owBRSFDaXF4JLDaQphFiH_JSpO_1d8sWDexo_CuhHvFGFTNEQb2fb1hWfK7fChTRkvtkP0WXNjmmPl1BRSxVNi3aJ9-A8bo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4 w-full">
+<span class="text-[9px] font-label text-primary font-bold tracking-widest uppercase">MAIN STAGE HEADLINER</span>
+<h3 class="text-3xl font-headline font-extrabold text-on-surface uppercase tracking-tighter">DATA_GHOST</h3>
+<div class="flex justify-between items-end mt-2">
+<span class="text-[10px] font-label text-secondary">22:00 - 00:00</span>
+<span class="material-symbols-outlined text-primary text-xl">star</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center h-20 bg-[#060e1b]">
+<a class="flex flex-col items-center justify-center text-[#ecfbff]/60 h-full w-full hover:text-[#fface8] transition-colors duration-150 active:bg-[#fface8]/10" href="#">
+<span class="material-symbols-outlined mb-1">schedule</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">TIMELINE</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#ecfbff]/60 h-full w-full hover:text-[#fface8] transition-colors duration-150 active:bg-[#fface8]/10" href="#">
+<span class="material-symbols-outlined mb-1">format_list_bulleted</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">LINEUP</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#ecfbff]/60 h-full w-full hover:text-[#fface8] transition-colors duration-150 active:bg-[#fface8]/10" href="#">
+<span class="material-symbols-outlined mb-1">layers</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">STAGES</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#ecfbff]/60 h-full w-full hover:text-[#fface8] transition-colors duration-150 active:bg-[#fface8]/10" href="#">
+<span class="material-symbols-outlined mb-1">confirmation_number</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">TICKETS</span>
+</a>
+</nav>
+<!-- FAB Contextual (Only if relevant, hidden per instructions on details pages but kept here as this is a primary dashboard for schedule) -->
+<div class="fixed bottom-24 right-4 z-50">
+<button class="w-14 h-14 bg-secondary text-on-secondary flex items-center justify-center shadow-[0_0_20px_rgba(255,172,232,0.3)] active:scale-90 transition-transform">
+<span class="material-symbols-outlined">map</span>
+</button>
+</div>
+</body></html>

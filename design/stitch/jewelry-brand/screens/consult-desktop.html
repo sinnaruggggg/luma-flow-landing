@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LUNE FORM | 컨설팅 예약</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "background": "#f7fafe",
+                      "on-primary-fixed": "#38404d",
+                      "inverse-primary": "#e6eeff",
+                      "surface-variant": "#d7e4ef",
+                      "surface-container-low": "#eff4fa",
+                      "primary-container": "#dbe3f3",
+                      "surface-dim": "#ccdce9",
+                      "inverse-surface": "#0b0f12",
+                      "secondary-fixed-dim": "#c8d5eb",
+                      "on-error-container": "#752121",
+                      "on-surface-variant": "#54616a",
+                      "on-secondary-fixed-variant": "#4f5c6f",
+                      "primary-dim": "#4b5360",
+                      "inverse-on-surface": "#9a9da1",
+                      "on-tertiary-fixed-variant": "#525861",
+                      "on-primary-container": "#4a5260",
+                      "on-tertiary": "#f7f9ff",
+                      "on-error": "#fff7f6",
+                      "error": "#9f403d",
+                      "on-secondary-fixed": "#334052",
+                      "tertiary-fixed": "#d7dde7",
+                      "surface-bright": "#f7fafe",
+                      "on-secondary-container": "#465365",
+                      "outline": "#6f7c86",
+                      "secondary-container": "#d6e3fa",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed": "#d6e3fa",
+                      "tertiary-dim": "#4d545c",
+                      "on-secondary": "#f7f9ff",
+                      "on-background": "#27343c",
+                      "tertiary-container": "#d7dde7",
+                      "secondary": "#536073",
+                      "on-primary-fixed-variant": "#545c6a",
+                      "primary": "#575f6d",
+                      "tertiary": "#596068",
+                      "on-primary": "#f6f7ff",
+                      "error-dim": "#4e0309",
+                      "surface": "#f7fafe",
+                      "on-surface": "#27343c",
+                      "primary-fixed": "#dbe3f3",
+                      "outline-variant": "#a6b4be",
+                      "surface-container-highest": "#d7e4ef",
+                      "error-container": "#fe8983",
+                      "tertiary-fixed-dim": "#c9cfd9",
+                      "surface-tint": "#575f6d",
+                      "on-tertiary-container": "#484f57",
+                      "primary-fixed-dim": "#cdd5e5",
+                      "surface-container": "#e7eff6",
+                      "surface-container-high": "#dfeaf3",
+                      "on-tertiary-fixed": "#363c44",
+                      "secondary-dim": "#475466"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Plus Jakarta Sans"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .metallic-gradient {
+            background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.1) 100%);
+        }
+        .hero-mask {
+            mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/50 dark:bg-slate-950/50 backdrop-blur-xl">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="font-manrope text-xl font-light tracking-[0.2em] text-slate-900 dark:text-slate-100">LUNE FORM</div>
+<div class="hidden md:flex items-center gap-10 font-manrope tracking-tight text-sm uppercase">
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors" href="#">Collections</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors" href="#">Bespoke</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors" href="#">Atelier</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors" href="#">Story</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-slate-700 dark:text-slate-300 hover:opacity-70 transition-opacity duration-300" data-icon="person">person</button>
+<button class="material-symbols-outlined text-slate-700 dark:text-slate-300 hover:opacity-70 transition-opacity duration-300" data-icon="shopping_bag">shopping_bag</button>
+</div>
+</div>
+</nav>
+<main class="pt-24 min-h-screen flex flex-col">
+<!-- First Viewport: Hero & Floating CTA -->
+<section class="relative h-[921px] w-full overflow-hidden flex items-center justify-center">
+<!-- Macro Background -->
+<div class="absolute inset-0 z-0 hero-mask">
+<img class="w-full h-full object-cover grayscale-[20%] contrast-[1.05]" data-alt="extreme macro close-up of a platinum diamond ring with soft chrome reflections and a dreamy out-of-focus background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxEKXmXntqs5Q8Owd6zKPK4YtqyDFZgKnTqCp_gPVfPF-rhGABi-ToN-f3IlLHVbPApyX_hhTbnht913hODsFFyAuDHKLHPFi2mEIeM20ssMclh5ku70StZEZ2DolyVAdh_L3tnEh5fMpJTMcwr9AR0kmVR0Z5ITuesGkQSeBOm_Ao_vyeEdU456aUPb1zxnwT_EpZTTSATZ5ivHFiSjJ1a2C0jYTxc1cbWrKB76Pzlq5ie2MY-89XKOkF5mhAN9wRtTN5y2A8HoL1"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background/40 to-transparent"></div>
+</div>
+<!-- Content Overlay -->
+<div class="relative z-10 w-full max-w-7xl px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="space-y-6">
+<h1 class="font-headline text-6xl lg:text-7xl font-extralight tracking-tight text-on-background leading-tight">
+                        컨설팅 예약
+                    </h1>
+<p class="text-xl font-light text-on-surface-variant max-w-md leading-relaxed">
+                        당신만의 빛을 찾는 여정,<br/>LUNE FORM의 전문가와 함께 시작하세요.
+                    </p>
+</div>
+<!-- Floating Appointment Card -->
+<div class="bg-white/50 backdrop-blur-2xl p-10 rounded-sm shadow-[0_40px_80px_-15px_rgba(39,52,60,0.08)] border border-white/40">
+<div class="space-y-8">
+<div class="space-y-2">
+<span class="font-label text-[10px] tracking-[0.2em] text-outline uppercase">Schedule Experience</span>
+<h2 class="font-headline text-2xl font-normal text-on-background">방문 상담 신청</h2>
+</div>
+<div class="space-y-4">
+<div class="group cursor-pointer p-4 border-b border-outline-variant/30 hover:border-primary transition-all duration-300">
+<div class="flex justify-between items-center">
+<span class="font-medium">상담 유형 선택</span>
+<span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+</div>
+</div>
+<div class="group cursor-pointer p-4 border-b border-outline-variant/30 hover:border-primary transition-all duration-300">
+<div class="flex justify-between items-center">
+<span class="font-medium">날짜 및 시간</span>
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+</div>
+</div>
+</div>
+<button class="w-full py-5 bg-primary text-on-primary font-label text-sm tracking-widest transition-all duration-300 hover:bg-primary-dim hover:scale-[1.02] active:scale-[0.98]">
+                            예약하기
+                        </button>
+<p class="text-center text-[11px] text-on-surface-variant font-light tracking-wide">
+                            * 예약 확정 후 개별 안내 연락을 드립니다.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Selection State: Consultation Types -->
+<section class="py-32 px-12 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20 text-center space-y-4">
+<span class="font-label text-xs tracking-[0.3em] text-primary uppercase">Service Selection</span>
+<h3 class="font-headline text-4xl font-light">맞춤형 서비스 옵션</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Virtual Styling -->
+<div class="group bg-surface-container-lowest p-1 border border-transparent hover:border-outline-variant/20 transition-all duration-500">
+<div class="aspect-[4/5] overflow-hidden mb-8">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="a professional jewelry consultant presenting a gold necklace via video call on a high-end laptop, bright natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIDgzX9HmAl6ietEJ2nMouyw7Rngu1EScVu0mvJUAVjp2-zXbhsg2QzlKLEs8M3OcZio_oUZTtpsz8Y1HmO9ROT1MEm7kK8dN_2Wmnt1_0w7b4xLfwXIYQ_hOPoM0E6M0Ht8Yn_3NeUwkLZ9X8IX2c43K2_axm5M_XcLJWEE4KLwxljMO-dDJTBtWXmsZZTDzAb98d0Wx6K75T5on9geXn2k01KUWBnefsOX4TPsynHBjikenaOUNZdiUsAu08Czq1euDw9sklxu5c"/>
+</div>
+<div class="px-6 pb-8 space-y-4">
+<div class="flex justify-between items-start">
+<h4 class="font-headline text-xl">퍼스널 스타일링</h4>
+<span class="font-label text-xs py-1 px-3 bg-surface-container-low text-on-surface-variant">Virtual</span>
+</div>
+<p class="text-sm text-on-surface-variant font-light leading-relaxed">온라인을 통해 장소 제약 없이 진행되는 1:1 맞춤형 주얼리 큐레이션 서비스입니다.</p>
+<div class="pt-4 flex justify-between items-center">
+<span class="font-label text-sm text-primary">상담비 무료</span>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Bespoke -->
+<div class="group bg-surface-container-lowest p-1 border border-transparent hover:border-outline-variant/20 transition-all duration-500 relative -top-6">
+<div class="aspect-[4/5] overflow-hidden mb-8">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="hand-drawn jewelry sketches on a desk with jeweler's tools and loose diamonds, workshop aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlKnivRVQ52ZFik9lG9Y4zsIhZKpyREdD-hJ2OswAD3BsbnbN64LRUYwWg9xp9Sg8etwFcujpnEwhmq32UWhkSa6pmZAuDVZqdhKn8f-orCjR7Gr8kFtT8CnFSRhVQB0U1MHZ-umlHhSnGJ4VtSWFoySOLwCc7F_OIcW1JZ1k3QV_0uDONycG34ssmh8hxe-x1ozTSrzfnqkSfIIab8lZWepsR54H_gB2rgJSCsm8jPtI0UD2caDd-dsDw8CfWEH_kEKH_pGpv6mue"/>
+</div>
+<div class="px-6 pb-8 space-y-4">
+<div class="flex justify-between items-start">
+<h4 class="font-headline text-xl">비스포크 디자인</h4>
+<span class="font-label text-xs py-1 px-3 bg-surface-container-low text-on-surface-variant">In-Gallery</span>
+</div>
+<p class="text-sm text-on-surface-variant font-light leading-relaxed">세상에 단 하나뿐인 당신만의 주얼리를 아틀리에 장인과 함께 직접 설계하고 제작합니다.</p>
+<div class="pt-4 flex justify-between items-center">
+<span class="font-label text-sm text-primary">29,900원 ~</span>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Wedding -->
+<div class="group bg-surface-container-lowest p-1 border border-transparent hover:border-outline-variant/20 transition-all duration-500">
+<div class="aspect-[4/5] overflow-hidden mb-8">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="close up of two elegant platinum wedding bands sitting in a soft velvet box with silk ribbons" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkcb1nRVfcle3ZKv0FiBFG29I7jPMxbYYqx2vXASzgzFj_9KmVVggfp9XZ7UvEBfTcOk8DyW8yuzcRk4tscc4ZWKzoMKkR0ta0vexNoaKuUy5HYcHWHjWpMYhHhPC_XdAJRQBizNmSewFvVEWA0W2P5X6qX3Ye7tnUVf2KCVvaMNVlpg7VPOC92d0oG9-jnmTkBBl6-0ICXKRHxVTeqelFMWjSWXSi3aqc3Hlk_MsAMUSsFMWWjDHGDvoya3N_vRePY68XDbUQj4Cp"/>
+</div>
+<div class="px-6 pb-8 space-y-4">
+<div class="flex justify-between items-start">
+<h4 class="font-headline text-xl">웨딩 주얼리 컨설팅</h4>
+<span class="font-label text-xs py-1 px-3 bg-surface-container-low text-on-surface-variant">In-Gallery</span>
+</div>
+<p class="text-sm text-on-surface-variant font-light leading-relaxed">생애 가장 빛나는 순간을 위한 웨딩 밴드와 다이아몬드 셀렉션을 전문 감정사와 함께 하세요.</p>
+<div class="pt-4 flex justify-between items-center">
+<span class="font-label text-sm text-primary">상담비 무료</span>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Service Summary: Highlighting What to Expect -->
+<section class="py-40 px-12 bg-white">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-24">
+<div class="flex-1 space-y-12">
+<div class="space-y-4">
+<span class="font-label text-xs tracking-[0.3em] text-outline uppercase">Our Process</span>
+<h3 class="font-headline text-5xl font-extralight text-on-background leading-[1.1]">신뢰할 수 있는<br/>LUNE FORM의 전문성</h3>
+</div>
+<div class="space-y-10">
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 flex-shrink-0 bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="verified">verified</span>
+</div>
+<div class="space-y-2">
+<h5 class="font-semibold text-lg">전문 보석 감정사 (GIA)</h5>
+<p class="text-on-surface-variant font-light leading-relaxed">GIA 출신의 전문 감정사가 다이아몬드와 유색 보석의 가치를 정직하게 안내해 드립니다.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 flex-shrink-0 bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="architecture">architecture</span>
+</div>
+<div class="space-y-2">
+<h5 class="font-semibold text-lg">아틀리에 비스포크 시스템</h5>
+<p class="text-on-surface-variant font-light leading-relaxed">디자인 스케치부터 3D 렌더링, 최종 수공예 제작까지 투명한 프로세스를 경험하세요.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 flex-shrink-0 bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="palette">palette</span>
+</div>
+<div class="space-y-2">
+<h5 class="font-semibold text-lg">소재 큐레이션</h5>
+<p class="text-on-surface-variant font-light leading-relaxed">피부 톤과 라이프스타일에 맞춘 최적의 메탈 텍스처와 스톤 배열을 제안합니다.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1 relative">
+<div class="aspect-square bg-surface-container-low absolute -inset-6 -z-10"></div>
+<img class="w-full h-auto grayscale-[40%]" data-alt="overhead view of professional jeweler hands working on a platinum ring with precision tools and focused lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdRtG7UvQOKVFatFo75KdsovF1Z089kbB4wtUcNOh5WFjQe4dd4l98AWDv6ZLMwK8w5RfJar3IO-52otJEFRcgq9yC-4sHmM-ryb72UVegP1Z1UJqS_awC5egtHR7VEfbb7w6c8izuLUUFoL-asXAUT9wJn1fLcnByMMmPm8om3VbbYyMQ2pbZgdDmZ4HFAKkg6fAvLXnyI1MedJhieAVClWiw6VP5OWO4YQ7_EtUPx20drd07P2-NEfGh0Ahex9TkTI6L3NLKvkgO"/>
+</div>
+</div>
+</section>
+<!-- Final Action: Price Summary & Trust -->
+<section class="py-32 px-12 bg-on-background text-white relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent"></div>
+</div>
+<div class="max-w-4xl mx-auto relative z-10 text-center space-y-12">
+<h3 class="font-headline text-4xl lg:text-5xl font-extralight tracking-tight leading-tight">
+                    오직 당신만을 위한<br/>프라이빗 갤러리 예약
+                </h3>
+<div class="flex flex-wrap justify-center gap-16 py-10 border-y border-white/10">
+<div class="space-y-2">
+<span class="font-label text-[10px] tracking-widest text-outline uppercase block">Average Duration</span>
+<span class="text-2xl font-light">60 - 90 mins</span>
+</div>
+<div class="space-y-2">
+<span class="font-label text-[10px] tracking-widest text-outline uppercase block">Starting Fee</span>
+<span class="text-2xl font-light">29,900원 ~</span>
+</div>
+<div class="space-y-2">
+<span class="font-label text-[10px] tracking-widest text-outline uppercase block">Success Rate</span>
+<span class="text-2xl font-light">99.8% Satisfaction</span>
+</div>
+</div>
+<div class="pt-8 space-y-8">
+<p class="text-on-surface-variant text-lg font-light">
+                        전문가와의 1:1 상담은 완전 예약제로 운영되며,<br/>매주 금요일 오전 10시 다음 주 예약이 오픈됩니다.
+                    </p>
+<button class="px-16 py-6 bg-white text-on-background font-label text-sm tracking-[0.2em] transition-all duration-300 hover:bg-slate-200 hover:scale-[1.05] active:scale-[0.95]">
+                        지금 바로 예약하기
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-12 mt-auto bg-[#f7fafe] dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+<div class="flex flex-col items-center justify-center gap-8 w-full">
+<div class="font-manrope text-lg font-light tracking-[0.15em] text-slate-900 dark:text-slate-100">LUNE FORM</div>
+<div class="flex gap-8 font-inter text-xs tracking-widest uppercase">
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-300" href="#">Consultation</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-300" href="#">Sustainability</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-300" href="#">Shipping</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-300" href="#">Contact</a>
+</div>
+<div class="font-inter text-[10px] tracking-[0.2em] text-slate-400 uppercase">
+                © 2024 LUNE FORM. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+</body></html>

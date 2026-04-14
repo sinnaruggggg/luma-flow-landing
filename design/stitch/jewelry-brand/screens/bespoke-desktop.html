@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bespoke | LUNE FORM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-dim": "#4d545c",
+                    "surface": "#f7fafe",
+                    "on-tertiary-fixed": "#363c44",
+                    "inverse-surface": "#0b0f12",
+                    "error-container": "#fe8983",
+                    "surface-tint": "#575f6d",
+                    "secondary-fixed-dim": "#c8d5eb",
+                    "surface-variant": "#d7e4ef",
+                    "primary-container": "#dbe3f3",
+                    "on-secondary": "#f7f9ff",
+                    "on-tertiary": "#f7f9ff",
+                    "secondary-container": "#d6e3fa",
+                    "secondary-dim": "#475466",
+                    "on-background": "#27343c",
+                    "on-primary-container": "#4a5260",
+                    "tertiary": "#596068",
+                    "surface-dim": "#ccdce9",
+                    "inverse-primary": "#e6eeff",
+                    "on-secondary-container": "#465365",
+                    "on-tertiary-fixed-variant": "#525861",
+                    "primary-fixed": "#dbe3f3",
+                    "on-tertiary-container": "#484f57",
+                    "tertiary-container": "#d7dde7",
+                    "secondary": "#536073",
+                    "surface-container-low": "#eff4fa",
+                    "error": "#9f403d",
+                    "on-primary-fixed-variant": "#545c6a",
+                    "outline": "#6f7c86",
+                    "surface-container-high": "#dfeaf3",
+                    "tertiary-fixed": "#d7dde7",
+                    "on-primary-fixed": "#38404d",
+                    "error-dim": "#4e0309",
+                    "background": "#f7fafe",
+                    "surface-bright": "#f7fafe",
+                    "on-primary": "#f6f7ff",
+                    "on-surface-variant": "#54616a",
+                    "secondary-fixed": "#d6e3fa",
+                    "on-error": "#fff7f6",
+                    "primary-fixed-dim": "#cdd5e5",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-dim": "#4b5360",
+                    "on-secondary-fixed": "#334052",
+                    "surface-container": "#e7eff6",
+                    "on-surface": "#27343c",
+                    "tertiary-fixed-dim": "#c9cfd9",
+                    "on-error-container": "#752121",
+                    "surface-container-highest": "#d7e4ef",
+                    "on-secondary-fixed-variant": "#4f5c6f",
+                    "outline-variant": "#a6b4be",
+                    "primary": "#575f6d",
+                    "inverse-on-surface": "#9a9da1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #d8dee8; /* Custom brand background requirement */
+            color: #151b26;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .metallic-shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background-size: 200% 100%;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/50 dark:bg-slate-900/50 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-8 py-6 w-full max-w-[1920px] mx-auto">
+<div class="font-manrope font-bold text-xl tracking-tighter text-slate-800 dark:text-slate-100">
+                LUNE FORM
+            </div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-manrope tracking-tight text-sm uppercase text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors" href="#">Collections</a>
+<a class="font-manrope tracking-tight text-sm uppercase text-slate-900 dark:text-white border-b border-slate-900 dark:border-white pb-1" href="#">Bespoke</a>
+<a class="font-manrope tracking-tight text-sm uppercase text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors" href="#">Atelier</a>
+<a class="font-manrope tracking-tight text-sm uppercase text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors" href="#">Story</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300" data-icon="person">person</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center px-8 lg:px-24">
+<div class="absolute inset-0 z-0">
+<img alt="Macro of jewelry craftsman" class="w-full h-full object-cover" data-alt="High-resolution macro shot of artisan hands meticulously polishing a platinum ring on a wooden workbench with warm focused light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGMykuEmC9sPTkCtq7NRcQLPMHsQMpPUWQlUnM0BbYUZVlRjkmDnrZZAj3AE86KCCFb59RQofkym-KWpAc9q_93VKRDdj-6MVLyfo5L0o1ewELt5DYMFpZ7PtlQmAYUdC3Gs9nE7GjlF3S8e15KQLltux8Smprgh5PVWzzisuc6p6TEhklRAKoH28Ov3BDba2FgGZHv-ukRvxc34fePOn3XFWwODGq1nHxQkzSMu2qBU_LjPFko6AQ_c-yB8PV7CmGQ1WnanRnBS4i"/>
+<div class="absolute inset-0 bg-slate-900/10"></div>
+</div>
+<div class="relative z-10 grid lg:grid-cols-2 w-full max-w-7xl mx-auto items-end pb-24">
+<div class="max-w-xl">
+<span class="font-label text-xs tracking-[0.3em] uppercase text-white/80 mb-6 block">The Bespoke Experience</span>
+<h1 class="font-headline text-5xl md:text-7xl font-bold text-white tracking-tighter leading-tight">
+                        영원한 조각의 미학,<br/>당신만의 형태를 제안합니다.
+                    </h1>
+</div>
+<div class="flex justify-end mt-12 lg:mt-0">
+<div class="glass-panel p-10 w-full max-w-sm rounded-lg shadow-2xl border border-white/20">
+<h3 class="font-headline font-bold text-xl text-on-background mb-2">Bespoke Inquiry</h3>
+<p class="font-body text-on-surface-variant text-sm mb-8 leading-relaxed">
+                            세상에 단 하나뿐인 당신의 이야기를 위해,<br/>숙련된 장인이 직접 디자인 상담을 시작합니다.
+                        </p>
+<div class="flex justify-between items-baseline mb-8">
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Starting from</span>
+<span class="font-headline font-semibold text-2xl text-on-background tracking-tight">2,900,000원 ~</span>
+</div>
+<button class="w-full bg-primary py-4 text-on-primary font-label uppercase tracking-widest text-xs hover:bg-primary-dim transition-all duration-300 flex items-center justify-center gap-2">
+                            Consult Now
+                            <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- The Process Section -->
+<section class="py-32 px-8 lg:px-24 max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start mb-24">
+<div class="mb-8 md:mb-0">
+<span class="font-label text-xs tracking-widest text-primary uppercase">The Journey</span>
+<h2 class="font-headline text-4xl font-bold mt-4 tracking-tighter">비스포크 프로세스</h2>
+</div>
+<p class="max-w-sm font-body text-on-surface-variant leading-relaxed">
+                    단순한 제품 구매를 넘어, 소재의 선택부터 최종 완성까지 모든 과정에 당신의 감각을 투영합니다.
+                </p>
+</div>
+<div class="space-y-48">
+<!-- Phase 01 -->
+<div class="flex flex-col md:flex-row items-center gap-16 md:gap-32">
+<div class="w-full md:w-3/5 order-2 md:order-1">
+<div class="relative">
+<img class="w-full h-[600px] object-cover rounded-sm shadow-xl" data-alt="Editorial close up of architectural jewelry sketches on cream paper with a graphite pencil and silver fragments" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADjRdBtuD_QGSG09joI2C2t3ahxKztmamqM7x__68V1dLYCVi2GrPCk6bVRkhUJNq5BjRH9myOkDb6Grb5yx9xckmm5T0ymQ6h2YReRkGxrzjuodxPM5Y-M0X7HdL_0x10bmygtqAhiWZBc8qpV_GO3XoOR2BqhU33pAEf_TXeRjHyeGpgBxAsevqwTkFkWpvRGQkPQr2lLg13-ehF3pX1-9vVMTU3XoXGlHg1UmFJ7IBcDSkBFgvWuIOJI35sqceNLU9dPeBxcLQa"/>
+<div class="absolute -bottom-10 -right-10 hidden lg:block w-64 h-64 glass-panel p-8 rounded-sm">
+<span class="font-headline font-bold text-6xl text-primary/10">01</span>
+<p class="text-sm font-body text-on-surface-variant mt-4">초기 드로잉을 통해 당신이 상상하던 선과 면의 조화를 시각화합니다.</p>
+</div>
+</div>
+</div>
+<div class="w-full md:w-2/5 order-1 md:order-2">
+<span class="font-label text-xs tracking-widest text-primary/60 uppercase">Phase 01</span>
+<h3 class="font-headline text-3xl font-semibold mt-4 mb-6 tracking-tight">Concept &amp; Sketch <br/><span class="text-primary-dim">컨셉 및 스케치</span></h3>
+<p class="font-body text-on-surface-variant leading-loose">
+                            전문 디자이너와의 1:1 상담을 통해 제작의 목적과 취향을 분석합니다. 추상적인 영감을 구체적인 조형으로 다듬어가는 디자인 단계입니다.
+                        </p>
+</div>
+</div>
+<!-- Phase 02 -->
+<div class="flex flex-col md:flex-row items-center gap-16 md:gap-32">
+<div class="w-full md:w-2/5">
+<span class="font-label text-xs tracking-widest text-primary/60 uppercase">Phase 02</span>
+<h3 class="font-headline text-3xl font-semibold mt-4 mb-6 tracking-tight">Material Selection <br/><span class="text-primary-dim">소재 선정</span></h3>
+<p class="font-body text-on-surface-variant leading-loose">
+                            최상급 실버 925, 18K 골드, 그리고 영원함의 상징인 플래티넘까지. Lune Form이 엄선한 고순도 귀금속과 희소성 있는 원석을 직접 확인하고 선택합니다.
+                        </p>
+</div>
+<div class="w-full md:w-3/5">
+<div class="relative grid grid-cols-2 gap-4">
+<img class="w-full h-[400px] object-cover" data-alt="Macro of various precious metal ingots including silver, gold and platinum with soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGxoqBHF5vecyq7GFRMao5FVnTp5RO8_LLeCm9_SmmjE_0wZmHxG9iuqfe8vXY_sB-QUdKESEQUCb7sGEq5pl3IXB6DB7tafTWQigUNgBQnXE6pWETodBApcJnsuRJ4wDpsEB6TtJg-GvVkE2C0bfwFBx0fAGpqYHVCIIi0q5kN8jQ2qHX12frvp0f5VznTqjilwsMgQtKEo5Lt2360evy4YdAdCAh4bpiYmdYLoM0XWW4euqLZZ4EgcNd3IEcfg4E_wI6kxBT5M1p"/>
+<img class="w-full h-[400px] object-cover mt-12" data-alt="Close up of a handful of uncut diamonds and rare clear gemstones on a dark velvet surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGqXfshwCFQ-wB0aAR1Ss1F5S0bm4MlmuUIXUpyESLLjH91ZOKMqXwnDEL6yG1uaO4Tt-SAWkj-4RN7jwzj0kRvqNiRNHK0y4UX4a27WRAHIV_Z6Q1WFaMHp9GmKUzqlVjEuN9MhCGjr_JCdZyrMgloqdzdAyrk-4aIjIMhNJeB_IOFm7N96xmVoCDFcEgp1uKWkjlQJx58CTWEGGqmWsYE_j7MsWE-1Z0I-C0Ig6kNLAlXyyQGVaDf9vSVK2KjiGnzI1X3bEaGaL0"/>
+</div>
+</div>
+</div>
+<!-- Phase 03 -->
+<div class="flex flex-col md:flex-row items-center gap-16 md:gap-32">
+<div class="w-full md:w-3/5 order-2 md:order-1">
+<img class="w-full h-[500px] object-cover rounded-sm shadow-inner" data-alt="A master craftsman using a torch to solder a complex silver jewelry piece with visible sparks and heat glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy8v4KoWMQ2Ngb7tijlm5QeNZvk0x3PExWeEL8Ogo-TgaTmx5Qr4wXV9a3LzPaFDiGBSKC8GpvF7FVipe4BdUfW8N5oi3Rkn9UUmZ0MjOYQsPHWMQSBQ12e-maOcVGbtwwNlgI_o2jwnCKqvEpAY2afUQ3HMVNyCDlrotwJRBB1BrE3BAw6qep8LAC_cRydV7MXoLWF3BWnAiZv4JToBwz8P1qWa8lNn5r3GKaOuYScxqMjxMjuGKWSYLWUQc1ikI_9z-ygeI_6mUh"/>
+</div>
+<div class="w-full md:w-2/5 order-1 md:order-2">
+<span class="font-label text-xs tracking-widest text-primary/60 uppercase">Phase 03</span>
+<h3 class="font-headline text-3xl font-semibold mt-4 mb-6 tracking-tight">Master Craftsmanship <br/><span class="text-primary-dim">장인의 손길</span></h3>
+<p class="font-body text-on-surface-variant leading-loose">
+                            오직 한 사람을 위한 수작업이 시작됩니다. 수십 년 경력의 장인들이 세밀한 세공 기술을 통해 금속에 생명력을 불어넣고 마침내 형태를 완성합니다.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Decision Points (Bento Layout) -->
+<section class="bg-surface-container-low py-32 px-8 lg:px-24">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<span class="font-label text-xs tracking-widest text-primary uppercase">Customization</span>
+<h2 class="font-headline text-4xl font-bold mt-4 tracking-tighter">선택의 미학</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Texture: Hammered -->
+<div class="group relative overflow-hidden bg-white p-2">
+<img class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Macro texture of hammered silver ring showing organic faceted light reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTh1eij0_Cs734LS0F-iXfj5t1t5foyyZCoWArQ-_hhsFKDhnAfx3D0sjPK9eS0qMBzMPJ59qoLM9pIy81ASokkl0JqPLMlXvzRJoMnW4bl9QjH_deJQw1DKIFazrs_NYbONf9myRQ2DJ9Q8I8zKvEm8CE2WJxwMp6LoPXR-3idhEHpEGw2JtqViIgwDghD8Sb_iA_YQ3iRISyzgjhUhgWBSFLibZv6vtkfRBqfL-cbwlqa_0oldFMv4ldtCFRoIBEPuxQ-ctP_JvS"/>
+<div class="mt-8 px-4 pb-8">
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-2 block">Texture 01</span>
+<h4 class="font-headline font-bold text-xl mb-4">Hammered</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">자연스러운 망치질의 흔적이 빛을 분산시켜 오가닉한 매력을 선사합니다.</p>
+</div>
+</div>
+<!-- Texture: Polished -->
+<div class="group relative overflow-hidden bg-white p-2 mt-12 md:mt-0">
+<img class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Super polished mirror finish of a white gold ring reflecting a crisp light source" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgG8WA5q91EVZ-hUOb48KB1jfUbkWVwrbSQ9fKLGPyywRhsEKB9whArPRMIU3hPr7VmLqYd-dI_mCpSvb7JaHgM84CDxKo8gjEsVOe4r5HPXOTvWYvrH9SuNPO-_Z9nZKQmPMV0o53z1vjprFbHqFHZDWS8SygsNBIPpgqJn9tzmgfX0wvOwpWfcKYlXYaCTScti8hM8KSqODsM3e5Ov91_nURDNaQCRAyUQ42F05eLfCRRuGjrDi0vDXM8lgkjXRyp2QpSz87-9y0"/>
+<div class="mt-8 px-4 pb-8">
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-2 block">Texture 02</span>
+<h4 class="font-headline font-bold text-xl mb-4">Polished</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">거울처럼 매끄럽게 연마된 표면이 금속 특유의 선명한 광택을 극대화합니다.</p>
+</div>
+</div>
+<!-- Texture: Matte -->
+<div class="group relative overflow-hidden bg-white p-2 mt-12 md:mt-24">
+<img class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Satin finish matte texture on a modern titanium wedding band with soft diffuse light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZrXYODrHF5Rp6SRgDwudG2KpSVtX1n35bgoxjh4gfG1lruMEoD3fI9IDIcOemAsLwsCZRf1haW_O7ZoZiJODGrTPJV9GgorsMc3vsq0vGJ7o6NbzktMfOotwnB85LiIvvB4wb_4sw7x60BJq2xEw--5sBPW711fSJrVnSt55uzkbPF06yh1bMkXf-2B2MYDKDpWjvpGzWBUaW49r3fCStfVGgQgeJtUW2GpEvPRNcJhXnRr5SU1jozM04v3DFMa1NjP_JEw3PcuvS"/>
+<div class="mt-8 px-4 pb-8">
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-2 block">Texture 03</span>
+<h4 class="font-headline font-bold text-xl mb-4">Matte</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">은은하고 차분한 무광 마감으로 고급스럽고 현대적인 분위기를 연출합니다.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Layer: Atelier -->
+<section class="py-32 px-8 lg:px-24">
+<div class="max-w-7xl mx-auto glass-panel p-16 border border-white/40">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div>
+<span class="font-label text-xs tracking-widest text-primary uppercase">Our Philosophy</span>
+<h2 class="font-headline text-3xl font-bold mt-4 tracking-tighter mb-8 italic">"Digital Curator for Eternal Value"</h2>
+<p class="font-body text-on-surface-variant leading-loose">
+                            Lune Form의 아뜰리에는 과거의 유산과 현대의 미학이 만나는 곳입니다. 우리는 단순히 주얼리를 제작하는 것을 넘어, 당신의 삶 속에서 빛날 가치를 큐레이팅합니다. 디지털 공간에서의 소통부터 오프라인 아뜰리에의 장인 정신까지, 전 과정에서 타협하지 않는 품질을 약속합니다.
+                        </p>
+</div>
+<div class="relative overflow-hidden group">
+<img class="w-full h-72 object-cover" data-alt="Interior of a luxury jewelry atelier with glass cases and warm spotlighting on silver displays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPZ2lZUnsATNcOYs26sUY8vLaz61YtYtJLFMfOsWlO5GkYW87OXmq9vjcx8s7r2ye73DCLewzmSCpk3X7sx1hejhaftVUne8ouMt8qdF3d-yZi3CtGn_dKzhazcDGYCYzbaXCtuoRWDeFUYzntaBSi4MM7LvyrMP64l8B07VXewvyiyR2XnHB0tRRrDHe5HLcHVE_OG2T4Np1ZujossuX4BntmfX78_Sw0bil3iESAOvdGBHCLqYQ11Ex08SEXL1yP-UG1fsl0NUKm"/>
+<div class="absolute inset-0 border-[20px] border-white/20 pointer-events-none"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 mt-24 border-t border-slate-200/20 dark:border-slate-800/20 bg-slate-50 dark:bg-slate-950">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="font-manrope font-semibold text-lg text-slate-800 dark:text-slate-200">
+                LUNE FORM
+            </div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-inter text-xs tracking-widest uppercase text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="font-inter text-xs tracking-widest uppercase text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="font-inter text-xs tracking-widest uppercase text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Shipping &amp; Returns</a>
+<a class="font-inter text-xs tracking-widest uppercase text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Contact</a>
+</div>
+<p class="font-inter text-xs tracking-widest uppercase text-slate-600 dark:text-slate-400">
+                © 2024 LUNE FORM. All Rights Reserved.
+            </p>
+</div>
+</footer>
+</body></html>

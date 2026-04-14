@@ -1,0 +1,89 @@
+{
+  "siteId": "boxing-gym",
+  "brand": "UPPERCUT CLUB",
+  "projectId": "4262906030861762861",
+  "projectTitle": "UPPERCUT CLUB Stitch",
+  "updatedAt": "2026-04-14T00:21:32.896Z",
+  "screens": {
+    "home:desktop": {
+      "screenId": "d3a90d25f78d49839e9a62daa37d0915",
+      "pageSlug": "home",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/boxing-gym/screens/home-desktop.html",
+      "imagePath": "design/stitch/boxing-gym/screens/home-desktop.png",
+      "updatedAt": "2026-04-13T16:20:07.877Z"
+    },
+    "home:mobile": {
+      "screenId": "d6de521053274e079b108670ce293168",
+      "pageSlug": "home",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/boxing-gym/screens/home-mobile.html",
+      "imagePath": "design/stitch/boxing-gym/screens/home-mobile.png",
+      "updatedAt": "2026-04-13T16:25:40.713Z"
+    },
+    "classes:desktop": {
+      "screenId": "6812f3f915ba4332bf2cf2c6da8c19a2",
+      "pageSlug": "classes",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/boxing-gym/screens/classes-desktop.html",
+      "imagePath": "design/stitch/boxing-gym/screens/classes-desktop.png",
+      "updatedAt": "2026-04-14T00:05:59.072Z"
+    },
+    "classes:mobile": {
+      "screenId": "9bf03825598c4c25a6dacade3f3832ae",
+      "pageSlug": "classes",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/boxing-gym/screens/classes-mobile.html",
+      "imagePath": "design/stitch/boxing-gym/screens/classes-mobile.png",
+      "updatedAt": "2026-04-14T00:07:10.576Z"
+    },
+    "coaches:desktop": {
+      "screenId": "191ac8ad2de14ef39a22b69ac8d82d60",
+      "pageSlug": "coaches",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/boxing-gym/screens/coaches-desktop.html",
+      "imagePath": "design/stitch/boxing-gym/screens/coaches-desktop.png",
+      "updatedAt": "2026-04-14T00:15:17.666Z"
+    },
+    "coaches:mobile": {
+      "screenId": "82e896145a984622a4ed2284f1edaf64",
+      "pageSlug": "coaches",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/boxing-gym/screens/coaches-mobile.html",
+      "imagePath": "design/stitch/boxing-gym/screens/coaches-mobile.png",
+      "updatedAt": "2026-04-14T00:16:31.224Z"
+    },
+    "join:desktop": {
+      "screenId": "3bc5d43820634a8c8d9c970455a37432",
+      "pageSlug": "join",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/boxing-gym/screens/join-desktop.html",
+      "imagePath": "design/stitch/boxing-gym/screens/join-desktop.png",
+      "updatedAt": "2026-04-14T00:17:46.175Z"
+    },
+    "join:mobile": {
+      "screenId": "6cac5f428b21447f9f997639448da334",
+      "pageSlug": "join",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/boxing-gym/screens/join-mobile.html",
+      "imagePath": "design/stitch/boxing-gym/screens/join-mobile.png",
+      "updatedAt": "2026-04-14T00:18:57.316Z"
+    },
+    "guide:desktop": {
+      "screenId": "bc2a79041d124be0b2eb9bc3707ddc62",
+      "pageSlug": "guide",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/boxing-gym/screens/guide-desktop.html",
+      "imagePath": "design/stitch/boxing-gym/screens/guide-desktop.png",
+      "updatedAt": "2026-04-14T00:20:17.574Z"
+    },
+    "guide:mobile": {
+      "screenId": "031dd08787be4781925ad50a96c0255e",
+      "pageSlug": "guide",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/boxing-gym/screens/guide-mobile.html",
+      "imagePath": "design/stitch/boxing-gym/screens/guide-mobile.png",
+      "updatedAt": "2026-04-14T00:21:32.898Z"
+    }
+  }
+}

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UPPERCUT CLUB | ELITE_ROSTER</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#ffb3b0",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e4e1ec",
+                        "secondary-fixed": "#e9ddff",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "on-secondary": "#3c0091",
+                        "surface": "#13131a",
+                        "on-tertiary-container": "#303336",
+                        "on-tertiary": "#2d3134",
+                        "on-secondary-fixed": "#23005c",
+                        "tertiary-fixed-dim": "#c4c7ca",
+                        "on-secondary-fixed-variant": "#5516be",
+                        "surface-bright": "#393841",
+                        "inverse-on-surface": "#303038",
+                        "background": "#13131a",
+                        "on-primary": "#68000f",
+                        "surface-container": "#1f1f26",
+                        "on-surface": "#e4e1ec",
+                        "inverse-primary": "#ae2f34",
+                        "surface-container-low": "#1b1b22",
+                        "surface-variant": "#34343c",
+                        "surface-dim": "#13131a",
+                        "outline": "#a78a88",
+                        "on-primary-container": "#6d0010",
+                        "secondary": "#d0bcff",
+                        "on-tertiary-fixed-variant": "#44474a",
+                        "tertiary": "#c4c7ca",
+                        "primary-container": "#ff6b6b",
+                        "primary-fixed-dim": "#ffb3b0",
+                        "outline-variant": "#584140",
+                        "surface-container-high": "#2a2931",
+                        "primary": "#ffb3b0",
+                        "error": "#ffb4ab",
+                        "surface-container-lowest": "#0e0e15",
+                        "surface-container-highest": "#34343c",
+                        "on-secondary-container": "#c4abff",
+                        "on-primary-fixed": "#410006",
+                        "on-primary-fixed-variant": "#8c1520",
+                        "primary-fixed": "#ffdad8",
+                        "error-container": "#93000a",
+                        "inverse-surface": "#e4e1ec",
+                        "tertiary-fixed": "#e0e3e6",
+                        "secondary-container": "#571bc1",
+                        "tertiary-container": "#989b9f",
+                        "on-tertiary-fixed": "#181c1f",
+                        "on-surface-variant": "#e0bfbd",
+                        "on-error": "#690005"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #13131a;
+            color: #f5f7fb;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            overflow-x: hidden;
+        }
+        .scan-line-overlay {
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none;
+        }
+        .mesh-gradient {
+            background-image: radial-gradient(#ff6b6b10 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .glass-panel {
+            background: rgba(18, 18, 28, 0.84);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hud-border {
+            border: 1px solid rgba(255, 179, 176, 0.15);
+        }
+        .glow-primary {
+            filter: drop-shadow(0 0 8px rgba(255, 107, 107, 0.5));
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background selection:bg-primary-container selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#13131a]/84 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#ff6b6b]">menu</span>
+<h1 class="text-xl font-bold tracking-tighter text-[#f5f7fb] font-['Space_Grotesk'] uppercase tracking-widest">UPPERCUT CLUB</h1>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden hud-border">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a confident athlete in dark moody lighting with slight neon rim light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi0JfyhxeObYTbU0cCDzCsBFOwx1AxLLtQwtqTzqGbJGuxU4DAiI2uke8KP6UGxTgSiJP5ETnPhwkTR-QP4hQtsUZcDLsTWahtN5CAMslrQFK1KsvXsaKCh5-fouetbhMbFiOaQXwNCSzM1E5GKa0pwE1Amwqh285TjjQR_rnlxOOgNiJZShuO4d0ogZ9fS_E-MYUfkdZTzca1zhxCLdMP8-DPsSsnimkKVD9mDAhyQF4vZ1Bte3dUPxgjelQwclZhj50cGXgyzWY"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="relative pt-16 pb-24 min-h-screen">
+<!-- Background Elements -->
+<div class="fixed inset-0 z-0 pointer-events-none">
+<div class="absolute inset-0 mesh-gradient opacity-20"></div>
+<div class="absolute inset-0 scan-line-overlay opacity-10"></div>
+<div class="absolute top-0 left-0 w-full h-[707px] bg-gradient-to-b from-[#ff6b6b]/5 via-transparent to-transparent"></div>
+</div>
+<!-- HERO SECTION -->
+<section class="relative px-6 pt-8 mb-12">
+<div class="flex flex-col gap-2 mb-6">
+<span class="font-label text-xs tracking-[0.2em] text-[#ff6b6b] uppercase">UNIT_01 // ACCESS_GRANTED</span>
+<h2 class="font-headline text-4xl font-black text-[#f5f7fb] leading-none tracking-tighter">ELITE_ROSTER</h2>
+</div>
+<!-- Hero Coach Display -->
+<div class="relative w-full aspect-[4/5] rounded-lg overflow-hidden hud-border bg-surface-container-low mb-8">
+<img class="w-full h-full object-cover grayscale contrast-125" data-alt="high-contrast technical portrait of a male boxing coach with sweat and intense expression in a dark gym setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm7h4p-tKziac1e4exX4U2MJbtmKuY3Jtpcbgeumgt3otDsVuYtExtkW-nVzisxDNkpm_pbj0TNEAW3hMvAUZAXgX76ET9V6PoLS-E0wkn52ucQx79Ed9WSnitMHODgs-YBKTFvsFCj58F1089gBOptzX_GvSi3njO0mTazS-SfzWEb8hmT8VeQs67NpbZYHzwqLtKrPrmnUfxGUkVTr43k2RxGRQqHjxk8qgDxD-QUenOFZvxIhHmAYlphcu7i3RJ6xygak2UJ24"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<div class="flex items-end justify-between">
+<div>
+<span class="font-label text-[10px] text-secondary tracking-widest uppercase mb-1 block">HEAD_COACH</span>
+<h3 class="font-headline text-3xl font-bold text-[#f5f7fb]">MARCUS 'THE AXE'</h3>
+<p class="font-body text-sm text-on-surface-variant">Ex-National Champion / 15-0 KO</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label text-[10px] text-[#ff6b6b] mb-1">STAMINA_DRAIN</span>
+<div class="w-20 h-1.5 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[92%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Trial Booking Floating Card -->
+<div class="glass-panel rounded-xl hud-border p-6 shadow-[0_20px_40px_rgba(0,0,0,0.5)] relative z-10 translate-y-[-2rem]">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-[#ff6b6b] text-xl" style="font-variation-settings: 'FILL' 1;">event_available</span>
+<h4 class="font-headline text-lg font-bold tracking-tight">1회 무료 체험 일정</h4>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-[10px] text-on-surface-variant tracking-widest">DATE_SELECT</label>
+<div class="bg-surface-container-lowest h-12 rounded flex items-center px-4 hud-border">
+<span class="text-sm font-medium">OCT_24_THU</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-[10px] text-on-surface-variant tracking-widest">TIME_WINDOW</label>
+<div class="bg-surface-container-lowest h-12 rounded flex items-center px-4 hud-border">
+<span class="text-sm font-medium">19:00_PM</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container h-14 font-headline font-bold uppercase tracking-widest rounded-lg flex items-center justify-center gap-2 glow-primary transition-transform active:scale-95">
+                    JOIN_THE_RING
+                    <span class="material-symbols-outlined text-xl">bolt</span>
+</button>
+<p class="text-[10px] text-center mt-3 text-on-surface-variant font-label opacity-60">SYSTEM_VERSION: 4.0.2 // SECURE_ENCRYPTION_ACTIVE</p>
+</div>
+</section>
+<!-- ROSTER MATRIX SECTION -->
+<section class="px-6 space-y-12 mb-12">
+<div class="flex items-center gap-4">
+<h3 class="font-headline text-xl font-bold tracking-tight text-[#f5f7fb]">ROSTER_MATRIX</h3>
+<div class="h-px flex-1 bg-gradient-to-r from-[#ff6b6b]/30 to-transparent"></div>
+</div>
+<!-- Profile: Kim Jun -->
+<div class="bg-surface-container-low rounded-lg p-5 hud-border relative overflow-hidden">
+<div class="absolute top-0 right-0 p-3 opacity-10">
+<span class="font-label text-4xl font-black">UNIT_02</span>
+</div>
+<div class="flex gap-5">
+<div class="w-24 h-32 rounded bg-surface-variant overflow-hidden shrink-0 hud-border">
+<img class="w-full h-full object-cover grayscale" data-alt="focused portrait of a male boxing trainer with wraps on hands looking intense, dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfZtqbHjWswngeIJR1ungmqPwJ-68Zf6-h48G2xQF5iCVRRjzpcvLEKvLTPtTodIfLem1TkJmHljJsrD5213xqML6DidgPhdAiUOpRxVUleZ3tQWWvXywPK5UWm_yDZlGUuzgThFFVhFjYo_jlLmXJk7eWY9-rwJWscs2TtXgfwI9Gl6RDaJr8b4MDJrTU-B-mg_UPdrq2pf5FFrDKOF1XNskYjtskbibgiskd-Y68fa3JtUhY7A_Q_3oqYfiphRd5XAYXELbMgvo"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h4 class="font-headline text-xl font-bold">KIM JUN</h4>
+<p class="font-body text-xs text-[#ff6b6b] font-semibold uppercase tracking-wider">Pro Sparring</p>
+</div>
+<div class="grid grid-cols-2 gap-y-2 mt-4">
+<div>
+<span class="font-label text-[9px] text-on-surface-variant block uppercase">Win Rate</span>
+<span class="text-sm font-bold font-headline">94.2%</span>
+</div>
+<div>
+<span class="font-label text-[9px] text-on-surface-variant block uppercase">KO Streak</span>
+<span class="text-sm font-bold font-headline text-secondary">08</span>
+</div>
+<div class="col-span-2">
+<span class="font-label text-[9px] text-on-surface-variant block uppercase mb-1">STAMINA_INDEX</span>
+<div class="w-full h-1 bg-surface-container-lowest rounded-full">
+<div class="h-full bg-secondary w-[88%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Profile: Lee Mina -->
+<div class="bg-surface-container-low rounded-lg p-5 hud-border relative overflow-hidden">
+<div class="absolute top-0 right-0 p-3 opacity-10">
+<span class="font-label text-4xl font-black">UNIT_03</span>
+</div>
+<div class="flex gap-5">
+<div class="w-24 h-32 rounded bg-surface-variant overflow-hidden shrink-0 hud-border">
+<img class="w-full h-full object-cover grayscale" data-alt="dynamic close-up of a female boxing trainer hitting focus mitts with intense lighting and motion blur" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKM2cOGZl2W8oVqZ3C-_n95c7Ult-e-iig7nJKsemDL1VQVFP2eU6bPr0sy5ndfoONA39l27ZuZ9eWpFlZLfEP-WTM2izwDYsTTYtxmh6U1f3jy9V2cGYman6ZxnpwEybh2oagl7nClVh8t461Joln--xlV1c0_wqg2K0VP3vITHEdkmduljtevYvzeNhp552OiE_s0Gue-OBPkycRrdHqkTY2GAY16SlMVaVYJw8_xSUOisEUpDAcN7Ma4-pIiiHXK4sOro72Hjk"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h4 class="font-headline text-xl font-bold">LEE MINA</h4>
+<p class="font-body text-xs text-[#ff6b6b] font-semibold uppercase tracking-wider">HIIT Master</p>
+</div>
+<div class="grid grid-cols-2 gap-y-2 mt-4">
+<div>
+<span class="font-label text-[9px] text-on-surface-variant block uppercase">BURN_RATE</span>
+<span class="text-sm font-bold font-headline">850Kcal/h</span>
+</div>
+<div>
+<span class="font-label text-[9px] text-on-surface-variant block uppercase">INTENSITY</span>
+<span class="text-sm font-bold font-headline text-primary">ELITE</span>
+</div>
+<div class="col-span-2">
+<span class="font-label text-[9px] text-on-surface-variant block uppercase mb-1">FATIGUE_OFFSET</span>
+<div class="w-full h-1 bg-surface-container-lowest rounded-full">
+<div class="h-full bg-primary-container w-[75%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Stats Technical Readout -->
+<div class="bg-[#ff6b6b]/5 rounded-lg border-l-2 border-[#ff6b6b] p-4 font-label">
+<div class="flex justify-between text-[10px] mb-2 text-[#ff6b6b] opacity-80">
+<span>RECRUITMENT_STATUS</span>
+<span>LIVE_SYNC_0.4ms</span>
+</div>
+<p class="text-xs leading-relaxed text-on-surface">
+                    전담 코치진 전원 국가대표 및 프로 경력 보유. 상기 수치는 실시간 훈련 데이터 기반으로 산출된 고유 기술 능력치(STAMINA/POWER/SPEED)를 나타냅니다.
+                </p>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-[#13131a]/90 backdrop-blur-md border-t border-[#f5f7fb]/10 flex justify-around items-center h-20 w-full px-4 pb-safe shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
+<button class="flex flex-col items-center justify-center text-[#f5f7fb]/40 transition-all active:scale-90">
+<span class="material-symbols-outlined text-2xl mb-1">fitness_center</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-[0.05em]">TRAINING</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#ff6b6b] drop-shadow-[0_0_8px_rgba(255,107,107,0.5)] transition-all active:scale-90">
+<span class="material-symbols-outlined text-2xl mb-1" style="font-variation-settings: 'FILL' 1;">sports_martial_arts</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-[0.05em]">COACHES</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#f5f7fb]/40 transition-all active:scale-90">
+<span class="material-symbols-outlined text-2xl mb-1">event_available</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-[0.05em]">BOOKING</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#f5f7fb]/40 transition-all active:scale-90">
+<span class="material-symbols-outlined text-2xl mb-1">insert_chart</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-[0.05em]">INTEL</span>
+</button>
+</nav>
+</body></html>

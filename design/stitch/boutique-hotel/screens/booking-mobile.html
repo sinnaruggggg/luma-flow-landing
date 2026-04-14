@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HOTEL STILL - Booking (Mobile)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#4e453f",
+                    "on-background": "#201b13",
+                    "surface-container-low": "#fdf2e4",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#a2948b",
+                    "surface-container": "#f8ecdf",
+                    "on-secondary-container": "#6e6256",
+                    "surface-variant": "#ece1d4",
+                    "on-tertiary-fixed-variant": "#4f453e",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#fff8f3",
+                    "surface": "#fff8f3",
+                    "primary-container": "#3c2c20",
+                    "secondary-container": "#f0e0d0",
+                    "on-secondary-fixed": "#221a11",
+                    "outline-variant": "#d2c4bc",
+                    "inverse-on-surface": "#faefe2",
+                    "surface-tint": "#6e5a4c",
+                    "primary-fixed": "#f9ddcb",
+                    "primary": "#25180d",
+                    "on-primary-container": "#aa9282",
+                    "background": "#fff8f3",
+                    "on-primary-fixed": "#26190e",
+                    "surface-dim": "#e3d8cb",
+                    "tertiary-container": "#372d27",
+                    "primary-fixed-dim": "#dcc2b0",
+                    "outline": "#80756e",
+                    "on-primary-fixed-variant": "#554336",
+                    "tertiary-fixed-dim": "#d3c3ba",
+                    "tertiary-fixed": "#f0dfd6",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#685c50",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#ece1d4",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#221a14",
+                    "on-secondary-fixed-variant": "#50453a",
+                    "surface-container-high": "#f2e6d9",
+                    "inverse-surface": "#353027",
+                    "secondary-fixed-dim": "#d4c4b5",
+                    "on-surface": "#201b13",
+                    "inverse-primary": "#dcc2b0",
+                    "secondary-fixed": "#f0e0d0",
+                    "tertiary": "#211913",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>body {
+    font-family: "Manrope", sans-serif;
+    -webkit-font-smoothing: antialiased
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+    vertical-align: middle
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBMfGTL-K5xvBpUQrD7701Od56mjv7fS85gMac_tP5SglI0RlTmEBM_M-TGmGon7dmdEt5dPMUfo6HtAmDV32a9LNfOhPQB5530IcyO9mvM5DSnFOJ_bT68JxgHc4gMu9wyrjFwRnPCyPeZVZGmV68HM2QSYl4ph343v-V2K7zaJWL3grUmKYZZjG43kejttQ_FZYebTX5tA3aH-nvL1g-a17c5Wa5UUo5dHS9a2TrLdUa6DXTSp-8A51KQVJwPo6RYbuKvpO-JL1CO);
+    opacity: 0.03;
+    pointer-events: none
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<div class="fixed inset-0 grain-overlay z-[60]"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fff8f3]/80 dark:bg-[#201b13]/80 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#25180d] dark:text-[#fdf2e4] text-2xl hover:opacity-70 transition-opacity duration-300 cursor-pointer">menu</span>
+</div>
+<h1 class="text-lg font-['Manrope'] tracking-[0.2em] uppercase text-[#25180d] dark:text-[#fdf2e4] font-bold">HOTEL STILL</h1>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#25180d] dark:text-[#fdf2e4] text-2xl hover:opacity-70 transition-opacity duration-300 cursor-pointer">account_circle</span>
+</div>
+</header>
+<main class="pt-0">
+<!-- Hero Section -->
+<section class="relative h-[751px] w-full overflow-hidden">
+<div class="absolute inset-0">
+<img alt="Luxury Hotel Room" class="w-full h-full object-cover" data-alt="Cinematic wide shot of a minimalist luxury hotel suite with warm plaster walls, linen textures, and soft afternoon sunlight streaming through large windows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQutJ8X45VvsC2vvvmJe-NRxayPpoWlDPUWYWnS5Cc12VRGUf_8GPbzHwfJPGwPzfpWdDjV_yyWe4x1vvCLFaFdR3Z6PVuDaGtUhXhwH4FY7nrkTv4S3rn5lGT2fpmDLXKXv3CVmlM7aL6MhDilzq9lLcvbSlgdQw2Vr1f3J8jgYG7c2xQXrm3pjS-twgwvQOUq1pQjQqzdYJ-64fo9lni7Q6kNsAnYm3IqZETuKATNDsiSjRrEgt0NQJe9GwlSYk7vJioxxP6zLBG"/>
+<div class="absolute inset-0 bg-black/20"></div>
+</div>
+<!-- Stay Finder Floating Panel -->
+<div class="absolute bottom-12 left-6 right-6 z-10">
+<div class="bg-surface-bright/90 backdrop-blur-2xl p-8 rounded-lg shadow-[0_32px_64px_-12px_rgba(32,27,19,0.15)] border border-outline-variant/10">
+<div class="grid grid-cols-2 gap-6 mb-8">
+<div class="space-y-2 border-b border-outline-variant/30 pb-3">
+<label class="text-[10px] uppercase tracking-widest text-secondary font-bold">Check-in</label>
+<p class="text-primary font-headline text-lg">10월 24일</p>
+</div>
+<div class="space-y-2 border-b border-outline-variant/30 pb-3">
+<label class="text-[10px] uppercase tracking-widest text-secondary font-bold">Check-out</label>
+<p class="text-primary font-headline text-lg">10월 26일</p>
+</div>
+<div class="col-span-2 space-y-2 border-b border-outline-variant/30 pb-3">
+<label class="text-[10px] uppercase tracking-widest text-secondary font-bold">Guests</label>
+<div class="flex justify-between items-center">
+<p class="text-primary font-headline text-lg">성인 2, 아동 0</p>
+<span class="material-symbols-outlined text-secondary">expand_more</span>
+</div>
+</div>
+</div>
+<button class="w-full py-5 bg-primary text-on-primary text-[12px] font-bold tracking-[0.25em] uppercase rounded-md hover:bg-primary-container transition-all duration-500 active:scale-[0.98]">
+                        AVAILABILITY
+                    </button>
+</div>
+</div>
+</section>
+<!-- Select Your Room Section -->
+<section class="px-6 pt-16 pb-12 space-y-12">
+<div class="flex flex-col gap-2">
+<span class="text-secondary text-[11px] uppercase tracking-[0.3em] font-bold">Accommodations</span>
+<h2 class="text-3xl font-headline text-primary tracking-tight">객실 선택</h2>
+</div>
+<div class="space-y-16">
+<!-- Room Card: Standard -->
+<article class="group">
+<div class="relative bg-surface-container-low p-4 transition-transform duration-500 hover:-translate-y-2">
+<div class="aspect-[4/5] overflow-hidden mb-6">
+<img alt="Standard Room" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern minimalist standard room with oak furniture, neutral linens, and a small gallery wall under warm atmospheric lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_1AMvs4D05OVz2keug3Y4qFiscjLc6rqSNlP1J2o-xWXARtbnfi-v0inI_iK2BUryyXdbVvbSh4IMKzeVZ8v2DYKvrQ1hKyBirnJKCdn0as3KmU66YlYjF5MNIl-f69ckjVM-117gsr0ePgVOT2mKgsJUz_7oau4_XyQ7k4575GNqPTldUcuzU0GlIVXSjtrC-etw7cBlcC0YLBMLBCrw3MuU6bbjNrJ86VeQp5cNP7ebKvx2eccXavvdnBfimZWLbK8oKo-uVnYx"/>
+</div>
+<div class="px-2 pb-2">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-headline text-primary mb-1">Standard</h3>
+<p class="text-secondary text-xs font-medium tracking-wide">32m² • City View</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase tracking-tighter text-secondary opacity-60">Starting from</p>
+<p class="text-primary font-headline text-lg">320,000원~</p>
+</div>
+</div>
+<button class="w-full py-4 border border-primary/20 text-primary text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-primary hover:text-white transition-all duration-300">
+                                SELECT
+                            </button>
+</div>
+</div>
+</article>
+<!-- Room Card: Deluxe Terrace -->
+<article class="group">
+<div class="relative bg-surface-container-low p-4 transition-transform duration-500 hover:-translate-y-2">
+<div class="aspect-[4/5] overflow-hidden mb-6">
+<img alt="Deluxe Terrace" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Spacious deluxe room with a private terrace featuring outdoor lounge seating and views of a lush Japanese-inspired garden." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLRnDXsFJUg0mmb4gFXdMNp1fs105GoHljnvNHY0v54BqmR-vENF-Z6FBJMEkwB1wqqgK9cczQ43yo9j3iqJnBvWMZrXt5rtTkpP9J7tEODaqK2LqkY5pbeE29hszmsSNYoXPthGqaMjdlbx5oyRaoZISrJ9P2q_NNv9b4d4dM5AikKeuMLZu2ZBqiAsSZQIsCo78QvXJaBOnrS8LL-ruePyxTnYNdle3UdSvbhTO66SQfS3hYByjQyMqmr1-JEpAzCoGx_gcmMNQB"/>
+</div>
+<div class="px-2 pb-2">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-headline text-primary mb-1">Deluxe Terrace</h3>
+<p class="text-secondary text-xs font-medium tracking-wide">48m² • Garden Terrace</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase tracking-tighter text-secondary opacity-60">Starting from</p>
+<p class="text-primary font-headline text-lg">480,000원~</p>
+</div>
+</div>
+<button class="w-full py-4 border border-primary/20 text-primary text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-primary hover:text-white transition-all duration-300">
+                                SELECT
+                            </button>
+</div>
+</div>
+</article>
+<!-- Room Card: Still Suite -->
+<article class="group">
+<div class="relative bg-surface-container-low p-4 transition-transform duration-500 hover:-translate-y-2">
+<div class="aspect-[4/5] overflow-hidden mb-6">
+<img alt="Still Suite" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Editorial shot of a grand hotel suite with architectural details, a standalone marble bathtub, and bespoke walnut cabinetry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlC9F-PRhUmucQGQGXQnCICowwZGlngNNlDT_GXQc7QksTDeNIGIK5epO47yf8vs6CsQewsPlwGoA6QnAysVFVDWl59H-JHCSAnrG8T52vxrdFpQFpxwVK6rtywyYmxGVaa69CizHzhGhh2YXZpXmQpBANcA4JKV-Z-HYLLE5VW0RiBNWqSMpJz-y-A-29Vdl1ISnGYAw4A4PtAQR5jvL5CvbNxJdJQXHin0Vm_HN_Y1hJOElW-FMOMgDVJS8OuGLMM3Urg4T7XXXc"/>
+</div>
+<div class="px-2 pb-2">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-headline text-primary mb-1">Still Suite</h3>
+<p class="text-secondary text-xs font-medium tracking-wide">75m² • Panoramic View</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase tracking-tighter text-secondary opacity-60">Starting from</p>
+<p class="text-primary font-headline text-lg">820,000원~</p>
+</div>
+</div>
+<button class="w-full py-4 border border-primary/20 text-primary text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-primary hover:text-white transition-all duration-300">
+                                SELECT
+                            </button>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Enhance Your Stay -->
+<section class="bg-surface-container-high/50 py-20 px-6">
+<div class="mb-12">
+<span class="text-secondary text-[11px] uppercase tracking-[0.3em] font-bold block mb-2">Enhancements</span>
+<h2 class="text-3xl font-headline text-primary tracking-tight">특별한 순간의 완성</h2>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<div class="flex items-center gap-6 bg-surface-bright p-5 rounded-lg">
+<div class="w-20 h-20 flex-shrink-0 overflow-hidden rounded-md">
+<img alt="Morning Breakfast" class="w-full h-full object-cover" data-alt="High-end breakfast spread with fresh fruit, artisan pastries, and pour-over coffee on a linen-covered table." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3uT_wvPdQInH13Q-Zqxp3qha8P7PH3_6muAVNeoX10F-bdd7vAQF_ZvobrT9LVf8XHNRWZChHq7P8Ca6Xep8slcBoFID6pfVMzR5ljef54EZ4kihGpPr8rM-2Yr8q909SW5FIB4HEiic3tyhIZymf-mABz8ag4u1Zn15rL_w1yupjb86imGMCnFRtj-TLkgMYtkRsb1ovtUELjOV-2i_HB0SJe2qUdYWgJq2rIj6C-gd2XA6L3TzXrKQX8YfDTYU5JwsSxES-3tVB"/>
+</div>
+<div class="flex-grow">
+<h4 class="text-primary font-bold text-sm tracking-tight mb-1">조식 다이닝</h4>
+<p class="text-secondary text-[11px] mb-2 leading-relaxed">신선한 로컬 재료로 준비된 프라이빗 조식</p>
+<p class="text-primary font-bold text-xs">+ 45,000원</p>
+</div>
+<span class="material-symbols-outlined text-outline text-2xl">add_circle</span>
+</div>
+<div class="flex items-center gap-6 bg-surface-bright p-5 rounded-lg">
+<div class="w-20 h-20 flex-shrink-0 overflow-hidden rounded-md">
+<img alt="Spa Ritual" class="w-full h-full object-cover" data-alt="Close up of essential oils and smooth basalt stones for a luxury spa ritual in a serene, dark-toned environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAJSjpCnX9EtnI1ZghFiOUcvCICkAkjBrSL2AJnieAXAp5mSJb6wFlHT2APAusfxud1ZCElHrNN_TPnacndbcZHMAPUEddO2fxxk2fKYGPR3Hz37QV-yFAOfLrQB3Llg27mP6cuxV1glI6zRFU28Bgf1doryXAHcDq8Pj8r3AkMV9ik8UAl7MfrYJgoNev0lf3aKGnoF6vbxePOVUhYga708KbZIWtxoueqrO7448pcfKsTcB96AJPJiFGyrcPNBrkwL7qQgaR2D2M"/>
+</div>
+<div class="flex-grow">
+<h4 class="text-primary font-bold text-sm tracking-tight mb-1">스파 리추얼</h4>
+<p class="text-secondary text-[11px] mb-2 leading-relaxed">심신의 안정을 위한 아로마 테라피</p>
+<p class="text-primary font-bold text-xs">+ 180,000원</p>
+</div>
+<span class="material-symbols-outlined text-outline text-2xl">add_circle</span>
+</div>
+</div>
+</section>
+<!-- Final Summary Sticky Mobile (Pseudo) -->
+<div class="px-6 py-8 border-t border-outline-variant/20 mb-10">
+<div class="flex justify-between items-center mb-6">
+<span class="text-secondary text-sm font-medium">선택된 객실이 없습니다</span>
+<span class="text-primary font-headline text-xl">0원</span>
+</div>
+<p class="text-secondary text-[10px] text-center leading-relaxed italic opacity-70">
+                세금 및 봉사료가 포함된 최종 금액입니다.
+            </p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 px-4 bg-[#fff8f3]/80 dark:bg-[#201b13]/80 backdrop-blur-xl z-50 pb-safe">
+<div class="flex flex-col items-center justify-center text-[#685c50] dark:text-[#d2c4bc] opacity-60 hover:text-[#25180d] transition-colors duration-500 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-2xl mb-1">auto_awesome</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest">Inspiration</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#25180d] dark:text-[#fdf2e4] font-bold hover:text-[#25180d] transition-colors duration-500 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-2xl mb-1">calendar_today</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest">Reserve</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#685c50] dark:text-[#d2c4bc] opacity-60 hover:text-[#25180d] transition-colors duration-500 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-2xl mb-1">import_contacts</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest">Curation</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#685c50] dark:text-[#d2c4bc] opacity-60 hover:text-[#25180d] transition-colors duration-500 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-2xl mb-1">person</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest">Profile</span>
+</div>
+</nav>
+</body></html>

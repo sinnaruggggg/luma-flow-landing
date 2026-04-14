@@ -1,23 +1,28 @@
-﻿import { ArrowLeft, CheckCircle2, ChevronRight, Layers3, Monitor, Smartphone } from "lucide-react";
+import { ArrowLeft, CheckCircle2, ChevronRight, Clock3, Layers3, Monitor, Smartphone } from "lucide-react";
 import { buildSitePath, siteRegistry } from "../content/siteRegistry";
 import { themeStyle, useBackdropPointer } from "../lib/showcaseUtils";
 import { HubMark, SceneBackdrop, ShowcasePhone } from "./showcaseAtoms";
 
 function totals() {
-  const routes = siteRegistry.reduce((sum, site) => sum + site.gallery.totalRoutes, 0);
-  const staged = siteRegistry.reduce((sum, site) => sum + site.gallery.stitchedRoutes, 0);
-  return { sites: siteRegistry.length, routes, staged };
+  const totalRoutes = siteRegistry.reduce((sum, site) => sum + site.gallery.totalRoutes, 0);
+  const readyRoutes = siteRegistry.reduce((sum, site) => sum + site.gallery.readyRoutes, 0);
+  const readySites = siteRegistry.filter((site) => site.gallery.publicReady).length;
+  const liveHomes = siteRegistry.filter((site) => site.gallery.homeReady).length;
+  return { sites: siteRegistry.length, totalRoutes, readyRoutes, readySites, liveHomes };
 }
 
 function coverageLabel(site) {
-  if (site.gallery.fullRoutes === site.gallery.totalRoutes) return "Full Stitch";
+  if (site.gallery.publicReady) return "Full Stitch";
+  if (site.gallery.homeReady) return `${site.gallery.readyRoutes}/${site.gallery.totalRoutes} live`;
   if (site.gallery.stitchedRoutes > 0) return `${site.gallery.stitchedRoutes}/${site.gallery.totalRoutes} staged`;
-  return "Fallback preview";
+  return "Stitch staging";
 }
 
 function GalleryCard({ site, onOpen }) {
+  const canOpen = site.gallery.homeReady;
+
   return (
-    <button type="button" className="hub-card" onClick={() => onOpen(buildSitePath(site.id))}>
+    <button type="button" className={`hub-card ${canOpen ? "" : "hub-card--disabled"}`.trim()} onClick={() => onOpen(buildSitePath(site.id))} disabled={!canOpen}>
       <div className="hub-card__visual">
         <img src={site.gallery.desktop} alt={`${site.brand} desktop preview`} />
         <ShowcasePhone src={site.gallery.mobile} />
@@ -32,8 +37,8 @@ function GalleryCard({ site, onOpen }) {
         <div className="hub-card__footer">
           <span>{site.industry}</span>
           <span className="hub-card__action">
-            Enter site
-            <ChevronRight size={16} />
+            {canOpen ? "Enter site" : "Staging"}
+            {canOpen ? <ChevronRight size={16} /> : <Clock3 size={16} />}
           </span>
         </div>
       </div>
@@ -58,8 +63,9 @@ export function GalleryHome({ onOpen }) {
           </div>
           <div className="hub-topbar__meta">
             <span>{summary.sites} sites</span>
-            <span>{summary.routes} routes</span>
-            <span>{summary.staged} stitched routes</span>
+            <span>{summary.liveHomes} homes live</span>
+            <span>{summary.readyRoutes}/{summary.totalRoutes} routes live</span>
+            <span>{summary.readySites} full sites</span>
           </div>
         </header>
 
@@ -67,8 +73,8 @@ export function GalleryHome({ onOpen }) {
           <span className="hub-hero__eyebrow">Stitch-first Gallery</span>
           <h1>Twenty sites that enter as sites, not as one family of layout variations.</h1>
           <p>
-            Every card opens straight into <code>/{'{'}siteId{'}'}</code>. The viewer prefers local Stitch HTML, then local Stitch screenshots,
-            then the existing fallback previews until each route is staged.
+            Cards stay visible for all twenty sites, but only homes with real desktop and mobile Stitch output can open.
+            Fallback previews are no longer used as public routes.
           </p>
         </section>
 
@@ -112,7 +118,13 @@ function SiteTopbar({ site, route, viewMode, isMobileClient, onViewChange, onNav
       </div>
       <nav className="site-nav" aria-label={`${site.brand} routes`}>
         {site.routes.map((item) => (
-          <button key={item.slug} type="button" className={item.slug === route.slug ? "is-active" : ""} onClick={() => onNavigate(buildSitePath(site.id, item.slug))}>
+          <button
+            key={item.slug}
+            type="button"
+            className={item.slug === route.slug ? "is-active" : ""}
+            onClick={() => onNavigate(buildSitePath(site.id, item.slug))}
+            disabled={!item.ready}
+          >
             {item.label}
           </button>
         ))}
@@ -195,13 +207,15 @@ function SidePanels({ site, route, actualView, onNavigate }) {
       </Panel>
       <Panel eyebrow="Routes" title="Move through the site">
         <div className="route-links">
-          {homeLink.slug !== route.slug ? <button type="button" className="route-link" onClick={() => onNavigate(buildSitePath(site.id, homeLink.slug))}>Home</button> : null}
+          {homeLink.slug !== route.slug ? <button type="button" className="route-link" onClick={() => onNavigate(buildSitePath(site.id, homeLink.slug))} disabled={!homeLink.ready}>Home</button> : null}
           {nextRoutes.map((item) => (
-            <button key={item.slug} type="button" className="route-link" onClick={() => onNavigate(buildSitePath(site.id, item.slug))}>
+            <button key={item.slug} type="button" className="route-link" onClick={() => onNavigate(buildSitePath(site.id, item.slug))} disabled={!item.ready}>
               {item.label}
             </button>
           ))}
-          <span className="route-note">{stage.html ? "Live Stitch HTML is active for this route." : "This route is still using a static preview until Stitch output is staged."}</span>
+          <span className="route-note">
+            {stage.html ? "Live Stitch HTML is active for this route." : "This route is using a stitched screenshot while HTML capture is still being refined."}
+          </span>
         </div>
       </Panel>
     </aside>
@@ -228,6 +242,31 @@ export function SiteView({ site, route, viewMode, isMobileClient, onViewChange, 
   );
 }
 
+export function SiteStaging({ site, route, onHome, onOpenHome }) {
+  return (
+    <div className="hub-page">
+      <SceneBackdrop tone={site.backdrop} />
+      <div className="hub-page__content">
+        <section className="missing-card">
+          <span>Stitch staging</span>
+          <h1>{site.brand} {route.label} is not ready for public entry yet.</h1>
+          <p>
+            This route stays blocked until both desktop and mobile Stitch outputs are saved locally.
+            Current coverage: {site.gallery.readyRoutes}/{site.gallery.totalRoutes} routes live.
+          </p>
+          <div className="tag-rail">
+            <span>{site.homeMode}</span>
+            <span>{site.industry}</span>
+            <span>{site.gallery.stitchedScreens} stitched screens</span>
+          </div>
+          {site.gallery.homeReady ? <button type="button" className="cta cta--primary" onClick={onOpenHome}>Open live home</button> : null}
+          <button type="button" className="cta cta--secondary" onClick={onHome}>Back to gallery</button>
+        </section>
+      </div>
+    </div>
+  );
+}
+
 export function NotFound({ onHome }) {
   return (
     <div className="hub-page">
@@ -235,7 +274,7 @@ export function NotFound({ onHome }) {
       <div className="hub-page__content">
         <section className="missing-card">
           <span>Route not found</span>
-          <h1>This route is not staged yet.</h1>
+          <h1>This route does not exist in the staged site map.</h1>
           <p>Return to the gallery and enter another site.</p>
           <button type="button" className="cta cta--primary" onClick={onHome}>Back to gallery</button>
         </section>

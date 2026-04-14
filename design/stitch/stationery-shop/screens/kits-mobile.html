@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#296580",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#261a00",
+                        "tertiary": "#685c50",
+                        "surface-container-high": "#f3e6dc",
+                        "on-primary-fixed-variant": "#5c4300",
+                        "surface-container": "#f8ece2",
+                        "on-secondary-fixed": "#001e2b",
+                        "primary-fixed-dim": "#f2bf4c",
+                        "on-background": "#201b15",
+                        "inverse-on-surface": "#fbeee4",
+                        "secondary-fixed-dim": "#96ceed",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#795900",
+                        "on-surface": "#201b15",
+                        "surface-container-highest": "#ede0d6",
+                        "secondary-fixed": "#c1e8ff",
+                        "on-tertiary-fixed-variant": "#504539",
+                        "surface-container-low": "#fef1e7",
+                        "inverse-primary": "#f2bf4c",
+                        "outline": "#807663",
+                        "surface-variant": "#ede0d6",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#27647e",
+                        "primary": "#795900",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#d2c5af",
+                        "background": "#fff8f4",
+                        "tertiary-fixed-dim": "#d4c4b4",
+                        "inverse-surface": "#362f29",
+                        "on-surface-variant": "#4e4635",
+                        "tertiary-fixed": "#f0e0cf",
+                        "secondary-container": "#a7dffe",
+                        "primary-fixed": "#ffdfa0",
+                        "on-secondary-fixed-variant": "#024d67",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#221a10",
+                        "surface-dim": "#e4d8ce",
+                        "surface": "#fff8f4",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#5e5346",
+                        "surface-bright": "#fff8f4",
+                        "primary-container": "#f5c24f",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#d7c7b7",
+                        "on-primary-container": "#6d5000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Space Grotesk", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>body {
+    font-family: "Manrope", sans-serif
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.textured-bg {
+    background-color: #fff8f4;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCbfnQHIzVxz0baXdZSWiH8YaXMvgkiVTkMIH7g2EI3pismEyKo6FnSetm_XEVcv-9hkxeN87999wa6A_1VrpvmKayC8QErsx8cKCUndXov0_koJdfHLuJgRHG-QrscP5JA9lTdUJVNgY76VLolO_flbnGGpbhPpp1CyL0HkY5n6ITNzRATOu4e95Mm8Nb9o20-AohqwSXIRIBtZbZ1P9WYCi4gPrrU8VdSqes9gCSuJj7Jeok6BXR6JZ8SPKwhmODHygrg7vTdPRrc)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="textured-bg text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-[#fff8f4] dark:bg-stone-950 flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#795900] dark:text-[#f5c24f] hover:opacity-80 transition-opacity">menu</span>
+</div>
+<h1 class="text-xl font-bold text-[#201b15] dark:text-[#ede0d6] font-['Newsreader'] tracking-widest uppercase">CUT &amp; NOTE</h1>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#795900] dark:text-[#f5c24f] hover:opacity-80 transition-opacity">shopping_bag</span>
+</div>
+</header>
+<main class="max-w-screen-md mx-auto">
+<!-- Category Anchors -->
+<nav class="flex overflow-x-auto gap-6 px-6 py-8 no-scrollbar scroll-smooth">
+<a class="flex-shrink-0 font-label text-xs uppercase tracking-widest text-primary font-bold border-b-2 border-primary pb-1" href="#">모든 키트</a>
+<a class="flex-shrink-0 font-label text-xs uppercase tracking-widest text-on-surface/60 hover:text-primary transition-colors" href="#">저널링 키트</a>
+<a class="flex-shrink-0 font-label text-xs uppercase tracking-widest text-on-surface/60 hover:text-primary transition-colors" href="#">스크랩 키트</a>
+<a class="flex-shrink-0 font-label text-xs uppercase tracking-widest text-on-surface/60 hover:text-primary transition-colors" href="#">스탬프 컬렉션</a>
+</nav>
+<!-- Featured Kit (Tactile Collage) -->
+<section class="px-6 mb-16 relative">
+<div class="relative bg-surface-container-low p-8 shadow-sm">
+<!-- Washi Tape Effect -->
+<div class="absolute -top-3 left-1/4 w-16 h-8 bg-secondary-container/40 -rotate-3 backdrop-blur-sm z-10"></div>
+<div class="relative z-0 mb-8 overflow-hidden bg-surface-container-high aspect-[4/5] shadow-inner">
+<img class="w-full h-full object-cover grayscale-[20%] hover:scale-105 transition-transform duration-700" data-alt="overhead shot of a vintage journaling kit with aged papers, wax seals, and twine on a cream surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT4URQmRgOFtM3lzg20S_qsBQVYWH09Lo4q_gPuO6p4xp2QWeuxyB71SvH1ppU7PHzXsOlnXyc0fqMS0qbggH8FbhADGEQFMRvfljptfm8xBPWEAOqQRkNSI_2cysX4O9pJkb_g161nKrwbfKMm-CCc9pVGl5JQuhqtCRuDT-N_8w-mJObVC1VPWilLCDJnKVkP_I1Zba-9p8sz2EIhr-KaO80R85TZ_N0RATJ2BDzkuEeMcElTjLre3j8NxuTPjqqo05n1kITep0u"/>
+</div>
+<div class="absolute top-12 right-2 w-40 p-4 bg-surface-container-lowest shadow-xl rotate-2 z-20">
+<p class="font-label text-[10px] uppercase tracking-tighter text-secondary mb-1">Editor's Pick</p>
+<h2 class="font-headline text-2xl leading-tight mb-4">The Archive<br/>Master Kit</h2>
+<div class="flex items-center justify-between mt-6">
+<span class="font-label text-sm">₩ 42,000</span>
+<button class="bg-primary text-on-primary px-4 py-2 font-label text-[10px] uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all">
+                            Add to Basket
+                        </button>
+</div>
+</div>
+<div class="mt-4 max-w-[60%]">
+<p class="text-sm leading-relaxed text-on-surface-variant font-body">
+                        가장 완벽한 아카이브를 위한 시작. 엄선된 12종의 빈티지 페이퍼와 황동 스탬프가 포함되어 있습니다.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Modular Grid Catalog -->
+<section class="px-6 space-y-12">
+<h3 class="font-headline text-3xl italic px-2">Kit Collection</h3>
+<div class="grid grid-cols-2 gap-x-4 gap-y-12">
+<!-- Card 1 -->
+<div class="group">
+<div class="bg-surface-container-high aspect-square mb-4 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="close up of delicate washi tapes and paper scraps arranged neatly on a textured desk surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs-j1_m9Ff2PcutWSiuASZJaPh_uU431I_VifE0TRX5Ue2hJpDjTfsmlLMxEr4UJPboUBbudK0tOKXI-4SnZMHKHRJT9Xbo6tZJMtzqI4_NXztAGsTJh-0aRFngKp7ANryqiLSQX5K-_Ouz_mxpPq6ijLC98ptlxEINhgctoH6UFW_d6vkvywxrQQEIU2xH4B0JQeCGoxXxPb8X9QwUzdFZFBFYSTfZHTGyny7pOhjH-vjuFiI8Q8AGha8vtTXZ6EHttW6-CLELexf"/>
+<button class="absolute bottom-3 right-3 bg-white/90 p-2 opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+<p class="font-label text-[10px] uppercase text-on-surface/50 mb-1">Scrap Kit</p>
+<h4 class="font-body font-bold text-sm mb-1 text-on-surface">모닝 콜라주 키트</h4>
+<p class="font-label text-xs text-primary">₩ 29,900</p>
+</div>
+<!-- Card 2 -->
+<div class="group translate-y-8">
+<div class="bg-surface-container-high aspect-square mb-4 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="vintage leather bound journal and wooden ink pen on a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB5jJehlf0rTOAPvAZnv3FIZ8QyaOWuip70hqMKPCOU2vcnoLqkSzA9qhlRcIs0Q_w3SUtiHwUShgH_wHgPez8DlzIS_q3ybvlCpcdt7nq5vEp5xrzMp84LNukRNxp-xDoPF6x85EGPW86EXXM0eU4l3j1NTIiB2ekUqu7LvQeJvpLw7Q5x5s9zoQ59p_VVKJ0kGN__5PPf4WN7tKG_PGR1BmujIIjflEC1i_TwwuhQaG820QzHC6hIbNujyUOWf7VHZwDyJ07Q3uE"/>
+<button class="absolute bottom-3 right-3 bg-white/90 p-2 opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+<p class="font-label text-[10px] uppercase text-on-surface/50 mb-1">Journal Kit</p>
+<h4 class="font-body font-bold text-sm mb-1 text-on-surface">레더 저널 패키지</h4>
+<p class="font-label text-xs text-primary">₩ 58,000</p>
+</div>
+<!-- Card 3 -->
+<div class="group">
+<div class="bg-surface-container-high aspect-square mb-4 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="assorted postage stamps and envelopes in warm neutral colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkHPs6CSfoiKaoUukkxIFLPuSlCzvTW0YMWJUwsDsi_jUNyreN-KhW8y0Xz2hv_L2sj_pcClE1JQqCJs9wPhg02DJKVzKGP87oXE6aOwDF_wmKaTEt5QVUlB5Fjj_CQHxjISoCmHT1Qbg_e4eWKIUPQ_f-G-sRN-4J_8uqEVrVSnPyGoPBVBZm19w2NkWirhXHid2E--6Ec5kyu6XA9vUz-8eKnE6Yi9j8YZLrGuTkn40GNjU4mRKCNw-tPrUrPbjAzenSppXqNKBT"/>
+<button class="absolute bottom-3 right-3 bg-white/90 p-2 opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+<p class="font-label text-[10px] uppercase text-on-surface/50 mb-1">Stamp Collection</p>
+<h4 class="font-body font-bold text-sm mb-1 text-on-surface">빈티지 스탬프 셋</h4>
+<p class="font-label text-xs text-primary">₩ 34,000</p>
+</div>
+<!-- Card 4 -->
+<div class="group translate-y-8">
+<div class="bg-surface-container-high aspect-square mb-4 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="writing supplies including inkwell and paper arranged on a wooden desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChv-qAhbzmt9SUWDR4pGw4f4u7TVbq6tfzb-OL9W5yo4tSoRvakLS1GfnDsQt3Nybjn4kmdo_Bzk8mOhZti5fSl3OBLwJeVJOR2ON6aWWRWus9xNr1licmQT1n-wnhmJRgUPJStTJ2KfSF7BW_v_tYy1oOpRhGSc0PKNudx4Xr1YnwxnusWzjWhZaoj2Vief8HiUJbHqZVlVYwyGB2yeYnq8pj4sqiZE74fVc6wlpWQjNpjSqTfJfpTJLVxqpNYQ2kHGssLodRMo63"/>
+<button class="absolute bottom-3 right-3 bg-white/90 p-2 opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+<p class="font-label text-[10px] uppercase text-on-surface/50 mb-1">Writing Kit</p>
+<h4 class="font-body font-bold text-sm mb-1 text-on-surface">아날로그 라이팅 키트</h4>
+<p class="font-label text-xs text-primary">₩ 41,000</p>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="mt-32 px-6 py-16 bg-surface-container-highest/50 relative overflow-hidden">
+<div class="absolute -top-4 -right-4 w-24 h-24 bg-primary-container/20 rotate-12"></div>
+<div class="relative z-10 text-center">
+<h2 class="font-headline text-3xl mb-4">Join the Desk Archive</h2>
+<p class="font-body text-sm text-on-surface-variant mb-8 px-8">
+                    매달 전해드리는 영감과 새로운 키트 소식.<br/>기록의 즐거움을 함께 나누세요.
+                </p>
+<div class="flex flex-col gap-4 max-w-xs mx-auto">
+<input class="bg-surface border-none border-b border-outline-variant focus:ring-0 font-label text-sm py-3 text-center" placeholder="이메일 주소" type="email"/>
+<button class="bg-on-surface text-surface py-4 font-label text-xs uppercase tracking-[0.2em] hover:opacity-90 active:scale-95 transition-all">
+                        Subscribe
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-6 bg-[#ede0d6]/80 dark:bg-stone-900/80 backdrop-blur-xl shadow-[0_-10px_40px_-5px_rgba(32,27,21,0.06)] border-t border-[#201b15]/10">
+<a class="flex flex-col items-center justify-center text-[#795900] dark:text-[#f5c24f] font-bold scale-110 active:scale-95 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-tighter">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#201b15]/60 dark:text-[#ede0d6]/60 hover:text-[#795900] dark:hover:text-[#f5c24f] active:scale-95 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">edit_note</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-tighter">Journal</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#201b15]/60 dark:text-[#ede0d6]/60 hover:text-[#795900] dark:hover:text-[#f5c24f] active:scale-95 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-tighter">Archive</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#201b15]/60 dark:text-[#ede0d6]/60 hover:text-[#795900] dark:hover:text-[#f5c24f] active:scale-95 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">shopping_basket</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-tighter">Bag</span>
+</a>
+</nav>
+</body></html>

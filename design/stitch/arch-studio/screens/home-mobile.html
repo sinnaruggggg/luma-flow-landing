@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#c8c6c5",
+                    "primary-fixed": "#e4e2e1",
+                    "surface-container-high": "#ede7dd",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#f6f0e6",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#656464",
+                    "on-background": "#1d1b16",
+                    "surface-container-highest": "#e8e2d8",
+                    "secondary-fixed-dim": "#c9c6c5",
+                    "on-surface-variant": "#444748",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#e6e2de",
+                    "surface-container-low": "#f9f3e9",
+                    "surface-bright": "#fff9ee",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "surface-container": "#f3ede3",
+                    "secondary": "#5f5e5e",
+                    "surface": "#fff9ee",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#c9c6c3",
+                    "inverse-primary": "#c8c6c5",
+                    "on-surface": "#1d1b16",
+                    "tertiary": "#161614",
+                    "primary-container": "#2a2a2a",
+                    "surface-dim": "#dfd9d0",
+                    "on-tertiary-container": "#94918e",
+                    "outline": "#747878",
+                    "on-primary-container": "#929191",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#c4c7c7",
+                    "inverse-surface": "#33302a",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#5f5e5e",
+                    "on-primary-fixed-variant": "#474746",
+                    "on-secondary-fixed-variant": "#474646",
+                    "primary": "#151616",
+                    "surface-variant": "#e8e2d8",
+                    "on-primary-fixed": "#1b1c1c",
+                    "secondary-fixed": "#e5e2e1",
+                    "on-secondary": "#ffffff",
+                    "background": "#fff9ee",
+                    "secondary-container": "#e5e2e1",
+                    "on-tertiary-fixed-variant": "#484644",
+                    "on-tertiary-fixed": "#1c1b1a",
+                    "tertiary-container": "#2b2a28"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif KR"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>body {
+    font-family: "Manrope", sans-serif;
+    -webkit-font-smoothing: antialiased
+    }
+h1, h2, h3 {
+    font-family: "Noto Serif KR", serif
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24
+    }
+.grain-overlay {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    opacity: 0.04;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCo5w2ig0GlL4vxXjkG1ehzlx5XYHJPTlW--gGQvSvMiRp7KX-jB0GI3crYCSQCB0ueIweyrtbOAiEtysfdqgIzyxhp2V5U2GiFYd2VkDy7fkdGDAsiW9ets7AoxB-hZ7POP6Q658XZFRcIcE3XwAFKq8D_08HNT_aMtTXIrP2wmQFNoLpu6ouY5ZM1jHz2DMccDEgUwG5lSBgucswePymWCyeS5GapK-vZQcqmhi40DQBKj42YaFhyWj5mpi5LS8XGBzB-JrXG1DE)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface overflow-x-hidden">
+<div class="grain-overlay"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fff9ee]/80 backdrop-blur-xl flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#151616] cursor-pointer hover:opacity-70 transition-opacity">menu</span>
+<span class="text-xl font-bold tracking-[0.2em] text-[#151616] font-['Noto_Serif_KR']">PLAIN GRID</span>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[#151616] cursor-pointer hover:opacity-70 transition-opacity">drafts</span>
+</div>
+</header>
+<main class="pt-16 pb-24">
+<!-- Hero Section: Editorial Spread -->
+<section class="relative w-full h-[751px] flex flex-col justify-end px-6 pb-12 overflow-hidden bg-surface-dim">
+<div class="absolute inset-0 z-0">
+<img alt="Cinematic low angle shot of a minimalist concrete building reaching into a clear sky with sharp shadows" class="w-full h-full object-cover grayscale contrast-125" data-alt="Cinematic low angle shot of a minimalist concrete building reaching into a clear sky with sharp shadows and high contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKCqKJKd14N5elAmpZLCf-0YV_qaZh60r1ylvL3iSJN5YwSb1G2-GYe62znLBa5TD2ANyyzsiogWUCOFBawhYJKnyINF6VwLw4Ba1jM6eVN4dCIcfxrkiRKeP4m4sR6t_44S_q5sPCHLS46fMtxaMPO5qIfP-GmcQulfWgNAVdm_nek0KCa4_JJUDZRSmooi_6NlTvapT5f94OQRqq_r08Z41DHzIqwjVdKOGd4lRU-5oKAw4CBNJ3zPW2Zs1BSpZVpPkAbs9C0es"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#151616]/60 via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-sm">
+<span class="block text-surface-bright/80 font-label tracking-[0.3em] text-[10px] uppercase mb-4">The Essence of Architecture</span>
+<h1 class="text-5xl md:text-7xl text-surface-bright leading-[1.1] font-black tracking-tighter">공간의 본질</h1>
+<p class="mt-6 text-surface-bright/90 font-body text-sm leading-relaxed max-w-[280px]">
+                    우리는 건축이 가지는 구조적 진실함과 소재의 본연의 가치를 탐구합니다. 인위적인 장식을 배제하고 본질에 집중하는 것, 그것이 PLAIN GRID의 시작입니다.
+                </p>
+<div class="mt-8 flex gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 text-xs font-bold tracking-widest uppercase hover:bg-primary-container transition-colors active:scale-95 duration-200">
+                        View Editorial
+                    </button>
+</div>
+</div>
+</section>
+<!-- Project Index: Selected Works -->
+<section class="mt-20 px-6">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="text-[10px] font-label font-bold uppercase tracking-[0.4em] text-secondary">Index 01-04</span>
+<h2 class="text-3xl font-bold mt-2">Selected Works</h2>
+</div>
+<span class="material-symbols-outlined text-primary mb-1">arrow_forward</span>
+</div>
+<div class="space-y-24">
+<!-- Project 01 -->
+<div class="group">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-low mb-8">
+<img alt="Interior of a modern house with wood accents and natural light" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" data-alt="Interior of a modern Japanese-inspired house with warm cedar wood walls and soft afternoon sunlight casting long shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgYMys9Q_Kl-mLkbXf4_Cye_ITlqGsnfzgzQufN7GxGhCxTp4QaNi1oz3O80-lbuD3CE2iWcumCtraEbyRDVzP87exCATuLZUUzWBemgt7vmE7zD3334ORM7Ce4o2f-J6ltDqF2io2IWlKRNUDvvJiyI1cTGIQSok7Od6gtMXlTV-04y_1hyyylUlTJxH8RW7qFo92gkZ7iZhNedVPGkp-WjRUBEMGq5WukGx1ThR9sIQ0lMbMLeybzE26St_J6ciGBDA0L-y4GSE"/>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-baseline">
+<h3 class="text-2xl font-bold">침묵의 숲 (Silent Forest)</h3>
+<span class="font-label text-[10px] text-secondary">2023 / RESIDENTIAL</span>
+</div>
+<p class="text-sm text-secondary leading-relaxed font-body">강원도의 자연과 공명하는 목조 주택. 나무의 결이 숨 쉬는 공간을 제안합니다.</p>
+<div class="mt-4 border-b border-outline-variant/30 pb-2 flex items-center gap-2 group-hover:gap-4 transition-all">
+<span class="text-[10px] font-bold uppercase tracking-widest">Detail View</span>
+<span class="material-symbols-outlined text-[14px]">north_east</span>
+</div>
+</div>
+</div>
+<!-- Project 02: Asymmetric Layout -->
+<div class="group flex flex-col items-end">
+<div class="w-[85%] aspect-[4/5] overflow-hidden bg-surface-container-low mb-8 self-start">
+<img alt="Architectural detail of a concrete staircase" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" data-alt="Dramatic architectural detail of a Brutalist concrete staircase with sharp geometric edges and deep shadows in monochrome" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZoO6gMIcvMugtNH2xOObhDI_CDH0ebVGCBn4XD-YDXLUETtKR9e38MAzYbul4Tl-0jM2oHEK9s67hzxK_YiRaXLNhoyQwA5Pqdn12MoIKv48V7yXYflpAFEH_ejGgaU0fwKDTC2qU42vt37E0Cys5r5bWDZ6UF1mVX6dxW9ezLhXLNFHqf3NSiLAowcODIyU0j4vx5GU9g0En7KNCcODR_eJygkz3GFd_wj0gKLpDc9zI214LXn5KuXPAhRRD_l263RDKaJ1ejSY"/>
+</div>
+<div class="w-full flex flex-col gap-2">
+<div class="flex justify-between items-baseline">
+<h3 class="text-2xl font-bold">빛의 기하학 (Geometric Light)</h3>
+<span class="font-label text-[10px] text-secondary">2022 / GALLERY</span>
+</div>
+<p class="text-sm text-secondary leading-relaxed font-body">노출 콘크리트와 빛의 산란이 만들어내는 정적인 전시장.</p>
+<div class="mt-4 border-b border-outline-variant/30 pb-2 flex items-center gap-2 group-hover:gap-4 transition-all">
+<span class="text-[10px] font-bold uppercase tracking-widest">Detail View</span>
+<span class="material-symbols-outlined text-[14px]">north_east</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Service Section: Brief Framing -->
+<section class="mt-32 py-24 bg-surface-container-low">
+<div class="px-6">
+<span class="text-[10px] font-label font-bold uppercase tracking-[0.4em] text-secondary block mb-8">Methodology</span>
+<div class="space-y-16">
+<div class="border-l border-primary pl-6 py-2">
+<h4 class="text-xl font-bold mb-4 font-headline tracking-tight">Spatial Honesty</h4>
+<p class="text-sm font-body text-secondary leading-relaxed">
+                            우리는 공간이 거짓을 말하지 않기를 바랍니다. 구조를 숨기지 않고 드러내며, 그 자체가 미학이 되는 공간을 설계합니다. 건축의 정직함은 거주자의 삶을 더욱 풍요롭게 합니다.
+                        </p>
+</div>
+<div class="border-l border-primary/20 pl-6 py-2">
+<h4 class="text-xl font-bold mb-4 font-headline tracking-tight">Material Integrity</h4>
+<p class="text-sm font-body text-secondary leading-relaxed">
+                            돌은 돌답게, 나무는 나무답게. 소재가 가진 고유의 물성을 존중합니다. 가공을 최소화하고 시간이 흐를수록 깊이를 더해가는 지속 가능한 가치를 지향합니다.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Inquiry Entry: Start a Brief -->
+<section class="mt-32 px-6 mb-20">
+<div class="mb-12">
+<span class="text-[10px] font-label font-bold uppercase tracking-[0.4em] text-secondary">Inquiry</span>
+<h2 class="text-3xl font-bold mt-2">Start a Brief</h2>
+<p class="mt-4 text-sm text-secondary font-body leading-relaxed">당신의 프로젝트를 위한 첫 번째 기록을 남겨주세요. PLAIN GRID가 함께 고민하겠습니다.</p>
+</div>
+<form class="space-y-10">
+<div class="group">
+<label class="block text-[10px] font-bold uppercase tracking-widest text-secondary mb-2">Name</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/50 focus:border-primary focus:ring-0 px-0 py-2 font-body text-on-surface transition-colors" placeholder="성함을 입력하세요." type="text"/>
+</div>
+<div class="group">
+<label class="block text-[10px] font-bold uppercase tracking-widest text-secondary mb-2">Email Address</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/50 focus:border-primary focus:ring-0 px-0 py-2 font-body text-on-surface transition-colors" placeholder="연락 가능한 이메일을 입력하세요." type="email"/>
+</div>
+<div class="group">
+<label class="block text-[10px] font-bold uppercase tracking-widest text-secondary mb-2">Project Message</label>
+<textarea class="w-full bg-transparent border-0 border-b border-outline-variant/50 focus:border-primary focus:ring-0 px-0 py-2 font-body text-on-surface transition-colors resize-none" placeholder="프로젝트의 성격과 예산, 일정 등을 자유롭게 기술해주세요." rows="3"></textarea>
+</div>
+<button class="w-full py-5 bg-primary text-on-primary text-xs font-bold tracking-[0.3em] uppercase hover:bg-primary-container transition-all active:scale-95" type="submit">
+                    Submit Portfolio Request
+                </button>
+</form>
+</section>
+<!-- Minimal Footer -->
+<footer class="px-6 py-12 border-t border-outline-variant/20 flex flex-col gap-6">
+<span class="text-xl font-bold tracking-[0.2em] text-[#151616] font-['Noto_Serif_KR']">PLAIN GRID</span>
+<div class="grid grid-cols-2 gap-8 text-[10px] font-label tracking-widest uppercase text-secondary">
+<div class="flex flex-col gap-2">
+<span class="text-primary font-bold">Seoul Studio</span>
+<span>123 Architecture Blvd,<br/>Gangnam-gu, Seoul</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-primary font-bold">Contact</span>
+<span>hello@plaingrid.kr<br/>+82 02 123 4567</span>
+</div>
+</div>
+<p class="text-[9px] text-secondary/50 font-label tracking-wider mt-4">© 2024 PLAIN GRID ARCHITECTURE STUDIO. ALL RIGHTS RESERVED.</p>
+</footer>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center pt-3 pb-6 px-4 bg-[#fff9ee]/90 backdrop-blur-xl z-50 border-t border-stone-200/20 shadow-[0_-12px_40px_rgba(29,27,22,0.05)]">
+<a class="flex flex-col items-center justify-center text-[#151616] font-bold transition-transform active:translate-y-[-2px]" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest">Works</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 hover:text-[#151616] transition-transform active:translate-y-[-2px]" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="account_balance">account_balance</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest">Studio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 hover:text-[#151616] transition-transform active:translate-y-[-2px]" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="history_edu">history_edu</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest">Archive</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 hover:text-[#151616] transition-transform active:translate-y-[-2px]" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="edit_note">edit_note</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest">Brief</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Be+Vietnam+Pro:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#655c23",
+                    "on-primary-fixed-variant": "#001d83",
+                    "primary-container": "#879aff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#f3e48b",
+                    "surface-container": "#f8ea96",
+                    "inverse-surface": "#110e00",
+                    "outline-variant": "#b9ae6c",
+                    "surface-dim": "#e5d674",
+                    "error": "#b41340",
+                    "on-primary-fixed": "#000000",
+                    "on-tertiary-container": "#635b21",
+                    "tertiary-dim": "#585018",
+                    "surface-variant": "#edde81",
+                    "tertiary-fixed": "#fff2a9",
+                    "secondary-fixed": "#ffc1d5",
+                    "error-container": "#f74b6d",
+                    "on-surface": "#352f00",
+                    "outline": "#81783b",
+                    "error-dim": "#a70138",
+                    "surface-container-highest": "#edde81",
+                    "primary-fixed-dim": "#748aff",
+                    "inverse-on-surface": "#a99e5d",
+                    "on-tertiary-fixed": "#504810",
+                    "surface-container-low": "#fff2a9",
+                    "tertiary": "#655c23",
+                    "primary": "#2448e3",
+                    "on-secondary-fixed-variant": "#932259",
+                    "on-secondary-container": "#87174f",
+                    "on-tertiary-fixed-variant": "#6e652b",
+                    "surface-tint": "#2448e3",
+                    "on-primary-container": "#00166c",
+                    "surface": "#fff7d5",
+                    "tertiary-container": "#fff2a9",
+                    "primary-dim": "#0a39d7",
+                    "surface-bright": "#fff7d5",
+                    "secondary": "#a22e64",
+                    "primary-fixed": "#879aff",
+                    "secondary-dim": "#922158",
+                    "on-error": "#ffefef",
+                    "on-tertiary": "#fff4b8",
+                    "on-error-container": "#510017",
+                    "secondary-fixed-dim": "#ffacc9",
+                    "secondary-container": "#ffc1d5",
+                    "background": "#fff7d5",
+                    "on-secondary": "#ffeff2",
+                    "on-background": "#352f00",
+                    "tertiary-fixed-dim": "#f0e49c",
+                    "on-primary": "#f2f1ff",
+                    "on-secondary-fixed": "#6b003b",
+                    "inverse-primary": "#7187ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Be Vietnam Pro"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neo-glass {
+            background: rgba(255, 248, 211, 0.84);
+            backdrop-filter: blur(12px);
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px currentColor;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-white">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fff2a9]/80 dark:bg-yellow-900/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(53,47,0,0.08)]">
+<nav class="flex justify-between items-center px-8 py-4 w-full">
+<div class="text-3xl font-black text-[#0f3bd9] dark:text-blue-500 italic font-['Space_Grotesk'] tracking-tighter uppercase">BOP BOP</div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="text-black/60 dark:text-white/60 font-['Space_Grotesk'] tracking-tighter uppercase hover:scale-105 hover:text-[#0f3bd9] transition-transform duration-300" href="#">LOOKBOOK</a>
+<a class="text-black/60 dark:text-white/60 font-['Space_Grotesk'] tracking-tighter uppercase hover:scale-105 hover:text-[#0f3bd9] transition-transform duration-300" href="#">SHOP</a>
+<a class="text-black/60 dark:text-white/60 font-['Space_Grotesk'] tracking-tighter uppercase hover:scale-105 hover:text-[#0f3bd9] transition-transform duration-300" href="#">ARCHIVE</a>
+<a class="text-black/60 dark:text-white/60 font-['Space_Grotesk'] tracking-tighter uppercase hover:scale-105 hover:text-[#0f3bd9] transition-transform duration-300" href="#">DROPS</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-[#0f3bd9] scale-95 transition-all" data-icon="shopping_bag">shopping_bag</button>
+<button class="material-symbols-outlined text-[#0f3bd9] scale-95 transition-all" data-icon="person">person</button>
+</div>
+</nav>
+</header>
+<main class="pt-24 overflow-x-hidden">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center px-8 md:px-16 mb-20">
+<div class="absolute right-0 top-0 w-3/4 h-full z-0 overflow-hidden rounded-l-xl">
+<img class="w-full h-full object-cover" data-alt="Avant-garde streetwear model wearing oversized cobalt blue puffer jacket and metallic accessories in a minimal industrial concrete setting with high contrast lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKOfOJtZ5Z7rbWdmqac0C8jLnmJoSb3jCisDFgOLzAgd-4wGP1STu3ducM8ipZ8BRnK0z2_RKuikxIRxNqVzKyFqFcmdjSxAg47G56JaGkuk5JBG7gk6zT1Cu5JspcyGkAPrcmGwuzQdw1GA9mp0_3Yl7JPZkUb9WINrI3qenabygINyYcUQA75pRfLGQ-S4v1aZhCza34eX1OyXeqh-p69OeWqBRXV_M9pxvrdUQf6miKSVbRhwbuL50br_31UBoN36ooNpE23yfA"/>
+</div>
+<div class="relative z-10 max-w-4xl">
+<h1 class="font-headline font-black text-6xl md:text-9xl text-[#0f3bd9] leading-[0.85] tracking-tighter uppercase mb-6">
+                    BOP BOP WORLD:<br/>NEO-STREET<br/>ARCHIVE
+                </h1>
+<div class="inline-block bg-secondary py-2 px-6 rounded-full -rotate-3 mb-8 shadow-lg">
+<span class="text-on-secondary font-headline font-bold text-xl uppercase italic">지루함을 파괴하다</span>
+</div>
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<p class="max-w-md text-xl md:text-2xl font-bold leading-tight">
+                        우리는 정해진 틀을 거부하고 거리의 소음을 예술로 승화시킵니다. BOP BOP은 단순한 브랜드가 아닌 진화하는 아카이브입니다.
+                    </p>
+</div>
+</div>
+<!-- Scroll Indicator Sticker -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-primary">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_downward">arrow_downward</span>
+</div>
+</div>
+</section>
+<!-- Section 1: Our Vision -->
+<section class="px-8 md:px-24 mb-32 relative">
+<div class="grid grid-cols-12 gap-6 items-center">
+<div class="col-span-12 md:col-span-5 order-2 md:order-1 relative">
+<div class="absolute -top-12 -left-8 z-20 bg-primary text-white p-4 rounded-xl rotate-[-6deg] shadow-xl">
+<span class="font-headline font-bold text-2xl uppercase">Neo-Zine Philosophy</span>
+</div>
+<img class="w-full h-auto rounded-lg shadow-2xl relative z-10" data-alt="Editorial close-up of fashion magazine pages being torn and collaged with vibrant blue spray paint and handwritten Korean characters" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAzZorEOA5YNF6ABTXpJzZkXuxATWQ_8MC-j3q-kw4FMRTKSPK1iExpH8EOpyJF0M0OZZH3RETvleerLC-bsDbPqG80DypfKosFHoQWRvncRTRTwDL6WLFc0Yvc-1DIhuvRDMkDiRGrTYLBYmK6Yp5LTK32qyz3k_HODqL3DtyQWb-WpU-TvlgNLYNGetejlHU0R0UQYJ7znx6dwlrbfFBz-Pl319gE_aELsu7xOrwaLu1bdw9zq5E51W69M1A5ccMju2Bd_aJnGJQ"/>
+<img class="absolute -bottom-16 -right-16 w-1/2 h-auto rounded-lg shadow-xl z-20 hidden md:block border-8 border-background" data-alt="Close up of high quality fabric textures in electric blue and pale yellow arranged in an artistic messy pile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTPljIGXM4J0XgQS4kFkAvaDrJxiqRjgAEdh9UZhBt7P56nuGuh_ZtYxf05GKN0NRZkgUAdPAF4fGvSfburkDPdXwzkVIi3rw3l0awKLPOYMxp4y7xKEWqHVt82NQRYW03SchdjhCuy1lrBiwbPx5QGoD8ZTOo-6luMwHmLQnCgRd-ugJCuaXpknmQQGQFOYJ1-GhZpwVQ5l1Gc60b-okrCEzq2Hurco6HU3U5R4BSPcNnXHbLQetqyXO3nRSI3BHR4zTfRGFgzpd6"/>
+</div>
+<div class="col-span-12 md:col-span-7 order-1 md:order-2 pl-0 md:pl-20 mb-16 md:mb-0">
+<h2 class="font-headline font-black text-7xl md:text-8xl text-on-surface-variant/20 absolute -top-10 right-0 select-none">VISION</h2>
+<h3 class="font-headline font-black text-5xl md:text-6xl text-primary mb-8 relative z-10">우리의 비전</h3>
+<div class="space-y-6 max-w-xl">
+<p class="text-xl font-bold leading-relaxed text-on-surface">
+                            BOP BOP은 'Zine' 문화의 저항 정신을 현대적인 스트릿 웨어로 재해석합니다. 우리는 디지털의 매끄러움보다 종이의 거친 질감과 복사기의 노이즈에서 영감을 얻습니다.
+                        </p>
+<p class="text-lg text-on-surface-variant font-medium">
+                            Neo-Zine 갤러리는 단순히 옷을 전시하는 공간이 아닙니다. 이것은 불완전함의 미학을 기념하고, 각자의 개성이 겹쳐져 새로운 리듬을 만들어내는 실험실입니다.
+                        </p>
+<div class="pt-4">
+<button class="bg-primary text-on-primary font-headline font-bold py-4 px-10 rounded-full hover:scale-105 transition-transform shadow-xl">
+                                DISCOVER THE STORY
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: The Process -->
+<section class="bg-surface-container-low py-24 px-8 overflow-hidden">
+<div class="max-w-7xl mx-auto mb-16 text-center">
+<h2 class="font-headline font-black text-5xl md:text-7xl text-primary mb-4 uppercase tracking-tighter">제작 과정</h2>
+<p class="font-bold text-xl">THE RHYTHM OF CREATION</p>
+</div>
+<div class="flex flex-wrap justify-center gap-10">
+<!-- Sticker Item 1 -->
+<div class="w-72 h-80 bg-white p-4 shadow-xl rotate-[2deg] flex-shrink-0 relative hover:rotate-0 transition-transform duration-500">
+<div class="absolute -top-4 -right-4 w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-xl border-4 border-background z-20">01</div>
+<div class="w-full h-48 mb-4 overflow-hidden rounded-sm">
+<img class="w-full h-full object-cover" data-alt="Macro photo of detailed charcoal and ink fashion sketches on textured cream paper showing oversized silhouettes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApyuRhCbeG-8df5KvYO1j2z4kRIJqO3buLHFIwkxRkVhYb2Pa_kp1ljFSmpH_Eyj3YiCdHxJzowThKdf_QiJc6y7gH_MgqdyAyyiqbE07l2urpN7SJYhHkvsd6un82L1W0DM71HFM6uGOFU25o3bYSrU1klgEwoCoOGK-N59C1jQ0Xb4F3a4awRmqq1ulAZ8wnifKRInW2ikwdp12KXVViMzCBCZm2EKYl3ly0I1jQ5fcq5-nbZxl1xomW883kkA7QRGHaj9eJvcd0"/>
+</div>
+<h4 class="font-headline font-bold text-lg mb-1">SKETCHING NOISE</h4>
+<p class="text-sm text-on-surface-variant">거친 아이디어의 시작, 본능적인 드로잉</p>
+</div>
+<!-- Sticker Item 2 -->
+<div class="w-72 h-80 bg-white p-4 shadow-xl rotate-[-3deg] flex-shrink-0 relative hover:rotate-0 transition-transform duration-500 mt-10">
+<div class="absolute -top-4 -right-4 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl border-4 border-background z-20">02</div>
+<div class="w-full h-48 mb-4 overflow-hidden rounded-sm">
+<img class="w-full h-full object-cover" data-alt="Close up of a heavy duty sewing machine stitching vibrant blue thread into thick yellow denim fabric" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2_pWmTGaxqbVIUGZgWV-zqSJAqNMT07v8Ucoo-a6aNWPav6GPgp7I6v7MW3MHOwVoS4YIdviisPssoRK_bOiMYez4A6-Jz4S6zMEZR_teHoX2EgoD4MRE55hy_LHiEZvItfQ2CGgACDuQV7V1Rnp443sT3BDqUdxXpvnIpy3RE4VMT01dU-nz-t5bntk0_1qeVpvp9yzkbRgcmY0Ez3XO5tVM48RjIICigBwA2tYh3Kjm8Nr4w35GQfk7pvyZb03nmz7PUENzBLE-"/>
+</div>
+<h4 class="font-headline font-bold text-lg mb-1">MATERIAL CLASH</h4>
+<p class="text-sm text-on-surface-variant">서로 다른 질감의 충돌이 만드는 새로운 조화</p>
+</div>
+<!-- Sticker Item 3 -->
+<div class="w-72 h-80 bg-white p-4 shadow-xl rotate-[4deg] flex-shrink-0 relative hover:rotate-0 transition-transform duration-500">
+<div class="absolute -top-4 -right-4 w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-xl border-4 border-background z-20">03</div>
+<div class="w-full h-48 mb-4 overflow-hidden rounded-sm">
+<img class="w-full h-full object-cover" data-alt="Interior of a modern messy design studio with rolls of fabric, mood boards, and bright blue neon signs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCymT9Z1cq4m2caaMT9IfSoOHgra-gwdfPaeZpczlrpbs7jhJZvTUDFfdaPA3UTTBpAhoQWCIJWE4bIwgLg25gf9jrDOtIdhHjj3rmlUNis1IMewCaV5pLNrRJfhD6X-dpeKc9nTMStFFgmNJKPUdrpFAowWyJOIp04Sej1_D0Cj7xfkPsOQQQ8O0wotTPem02AmsPv_mo-yGjQqBT3k9M3K6rJ7QOqcPrEGtnVuRC84Q2RvGTXDs6it2_FCV484nr1W3w7NPynM3jy"/>
+</div>
+<h4 class="font-headline font-bold text-lg mb-1">STUDIO PULSE</h4>
+<p class="text-sm text-on-surface-variant">24시간 멈추지 않는 창조의 리듬</p>
+</div>
+<!-- Sticker Item 4 -->
+<div class="w-72 h-80 bg-white p-4 shadow-xl rotate-[-1deg] flex-shrink-0 relative hover:rotate-0 transition-transform duration-500 mt-8">
+<div class="absolute -top-4 -right-4 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl border-4 border-background z-20">04</div>
+<div class="w-full h-48 mb-4 overflow-hidden rounded-sm">
+<img class="w-full h-full object-cover" data-alt="Overhead shot of completed streetwear garment being tagged with a large BOP BOP brand label" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9cn1kJEJp0AccK4E_qmSzEtaLngu9rrGK7UaZDPAhlgbIqH6v27VYLx-ao8xhZPO4OXwZTDpCQzeEWg-UejRocIDgJRf1U4c9q7d9x4DDc4TRv_mhM8iNb1Zh76OOKh1n9mh4eat8LnaKho9yCpTpD1xpZYrhvCclQksfM1cXx4lQkJaGMBaWDAubhVH8A4v7KeAauOnjdAjs0wns49a8B-oqYqYCmkZjDwyjVA9ImovmKVKPiavQtmJRR9fJlqc1Gc626Np0P6_B"/>
+</div>
+<h4 class="font-headline font-bold text-lg mb-1">FINAL DROP</h4>
+<p class="text-sm text-on-surface-variant">세상 밖으로 나가는 우리의 결과물</p>
+</div>
+</div>
+</section>
+<!-- Section 3: Community & Trust -->
+<section class="py-32 px-4 md:px-0">
+<div class="px-8 md:px-24 mb-16">
+<h2 class="font-headline font-black text-6xl md:text-8xl text-[#0f3bd9] leading-[0.85] tracking-tighter uppercase">COMMUNITY<br/>&amp; TRUST</h2>
+<div class="mt-4 flex items-center gap-4">
+<div class="h-[2px] w-24 bg-primary"></div>
+<p class="font-bold text-xl tracking-widest uppercase">The BOP BOP Tribe</p>
+</div>
+</div>
+<div class="flex overflow-x-auto gap-8 pb-12 px-8 md:px-24 no-scrollbar">
+<!-- UGC Rail Cards -->
+<div class="min-w-[300px] md:min-w-[400px] flex-shrink-0 group">
+<div class="relative mb-4 overflow-hidden rounded-lg">
+<img class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Young person posing in a bright urban environment wearing a BOP BOP logo hoodie with dynamic perspective" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3s0OCRRlwAX4LFsARcrZd0-zZRGPeLWOy_zU9ULnq_t6PCudykZOwkK5C2ghIqQ8v7cvAXJ1GP5RaJ7AUkBDnoqFcbAJxrXvN9CmU24gYtfMHxyD6cRsH5GGy7vF_Xc-AMqb8XdhX4cxFvg18mHqyLwBnA8t2TsHpfirBEsXpd5MzI3bH9sTW0BDh34My6hr4Lm9Ie27wda_PYVzIeojfvqzSwsS1hYGBki4YA2Jd56BnqkACoqfoPilZlDsey3dFTjq3cKRz9TcK"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-2 shadow-sm">
+<span class="font-bold text-xs">@SEOUL_STREETS</span>
+</div>
+</div>
+</div>
+<div class="min-w-[300px] md:min-w-[400px] flex-shrink-0 group pt-12">
+<div class="relative mb-4 overflow-hidden rounded-lg">
+<img class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Cool creative professional in a workspace wearing technical streetwear and holding a vintage film camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEpa1Mi5uIP8ZWjZX6BNcMLH0gqHNE7QsZGZNa5an0eqDBsEv4KFSrsWqgsrZHJMz05Oh1guXdrOqNYI-sYc8HHiBRv9TZE4-Pz8axFy-gL8rqmBUPImRA9K47LYUPsgDvJfmzLJDzYh9pJVKWhV6VkOhioMNnoGJYSn4hkQiOpce-_JibjjjSqJmcQGNMRLIphr93NPXiYLIye7BFRMw_Rp2ZzK7Y3bQ8YODwGNtZZhvhrjnuW2bDsUmzJeiDW_tl2JE4mWDc95sm"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-2 shadow-sm">
+<span class="font-bold text-xs">@ART_WORKER_J</span>
+</div>
+</div>
+</div>
+<div class="min-w-[300px] md:min-w-[400px] flex-shrink-0 group">
+<div class="relative mb-4 overflow-hidden rounded-lg">
+<img class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Fashionable couple walking through a neon lit alley at night wearing coordinated blue and yellow outfits" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrwQl-aSjwF8xz2YhnGRGsd9ZziLLP4tWN0QHvmYR9rbmDm7opbtVsFO8KphzKkanXNIhL_VHImuOlXpKDxCNwxJ4VQB3W9H3eYapNiPGjAdOKH1YhsY0UZq66SHdWOfdRMPCzKSR36Fvd11r2vpi1XHQ8l66ypORCGmqVVmbfLd6y3uq1sdxHwvL6N0wOFRQWOtNoZpEvutb8bUiemsjhpEa7fuhoqRgfjycq63QVNXT50sCCeisoFc3-6cjBCgrLgXoPGzoqjQed"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-2 shadow-sm">
+<span class="font-bold text-xs">@NEO_PULSE</span>
+</div>
+</div>
+</div>
+<div class="min-w-[300px] md:min-w-[400px] flex-shrink-0 group pt-12">
+<div class="relative mb-4 overflow-hidden rounded-lg">
+<img class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Skater performing a trick in an urban park wearing oversized BOP BOP cargo pants and graphic tee" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVEDeTpretEgNKhSd5laNWo7JRohB7jxvE6-E1ZEcbtnkw9yVs8Lx5rk0huR4kgsplNGooSa3MSCfkn_hSFvjvjkql8uyBF6ZyP4crjP2XBETuj3Y2hj6I3ysKclBimY7ltwJIHq1WCuaC4yMudnwQdm9B2OxgNZMvAIzJTX4VbjNoVzTEXkEmXeoyPuQ7hSmxMmIWeah0SridZasJ0HNlYWvWqV8SsUXwA4T9p_fnCaQcSj3AVRC8cdeF3ndSeWSRBcZ_bSBHMOlO"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-2 shadow-sm">
+<span class="font-bold text-xs">@SKATE_RIOT</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Trust Proof -->
+<div class="mt-16 px-8 md:px-24 flex flex-col md:flex-row gap-12 items-center justify-between">
+<div class="max-w-xl">
+<p class="text-4xl md:text-5xl font-headline font-black text-primary leading-tight">우리는 서로의 영감이 되어 세계를 확장합니다.</p>
+</div>
+<div class="flex gap-12">
+<div class="text-center">
+<span class="block text-6xl font-black font-headline">50K+</span>
+<span class="text-on-surface-variant font-bold uppercase tracking-widest text-sm">Members</span>
+</div>
+<div class="text-center">
+<span class="block text-6xl font-black font-headline">12</span>
+<span class="text-on-surface-variant font-bold uppercase tracking-widest text-sm">Archives</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Neo-Zine Style -->
+<section class="mb-32 px-8">
+<div class="bg-primary p-12 md:p-24 rounded-lg relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-20 pointer-events-none">
+<div class="font-headline font-black text-9xl text-white rotate-90 origin-top-left -mt-20 leading-none">JOIN THE LIST JOIN THE LIST JOIN THE LIST</div>
+</div>
+<div class="relative z-10 max-w-2xl">
+<h2 class="font-headline font-black text-5xl md:text-7xl text-on-primary mb-8 leading-none">더 빠른 소식을<br/>원하시나요?</h2>
+<p class="text-on-primary text-xl font-medium mb-10">가장 빠른 드롭 소식과 한정판 아카이브를 누구보다 먼저 만나보세요.</p>
+<form class="flex flex-col md:flex-row gap-4">
+<input class="flex-1 bg-transparent border-b-4 border-on-primary text-on-primary placeholder:text-on-primary/50 font-headline font-bold text-2xl py-4 focus:outline-none uppercase" placeholder="YOUR EMAIL ADDRESS" type="email"/>
+<button class="bg-surface-bright text-primary font-headline font-black text-xl py-4 px-12 rounded-full hover:bg-white transition-colors">SUBMIT</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0f3bd9] dark:bg-blue-900 full-width mt-20">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 px-12 py-16 w-full">
+<div class="text-lg font-black text-[#fff2a9] font-headline uppercase italic">BOP BOP GLOBAL</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-[#fff2a9]/80 font-['Be_Vietnam_Pro'] text-xs font-bold tracking-widest hover:text-white transition-colors" href="#">PRIVACY</a>
+<a class="text-[#fff2a9]/80 font-['Be_Vietnam_Pro'] text-xs font-bold tracking-widest hover:text-white transition-colors" href="#">TERMS</a>
+<a class="text-[#fff2a9]/80 font-['Be_Vietnam_Pro'] text-xs font-bold tracking-widest hover:text-white transition-colors" href="#">CONTACT</a>
+<a class="text-[#fff2a9]/80 font-['Be_Vietnam_Pro'] text-xs font-bold tracking-widest hover:text-white transition-colors" href="#">INSTAGRAM</a>
+<a class="text-[#fff2a9]/80 font-['Be_Vietnam_Pro'] text-xs font-bold tracking-widest hover:text-white transition-colors" href="#">TIKTOK</a>
+</div>
+<div class="text-[#fff2a9]/80 font-['Be_Vietnam_Pro'] text-xs font-bold tracking-widest">
+                ©2024 BOP BOP GLOBAL. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+</body></html>

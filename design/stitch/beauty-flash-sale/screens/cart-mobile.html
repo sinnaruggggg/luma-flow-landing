@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Manrope:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#841065",
+                    "inverse-primary": "#725c00",
+                    "secondary-fixed": "#ffd8eb",
+                    "surface-dim": "#190c2e",
+                    "on-tertiary": "#2f3131",
+                    "on-surface-variant": "#d9c0cb",
+                    "primary-fixed": "#ffe07e",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#564500",
+                    "surface-container-high": "#312346",
+                    "on-primary-container": "#4c3d00",
+                    "outline": "#a18b95",
+                    "surface-container": "#26193b",
+                    "surface": "#190c2e",
+                    "on-background": "#ecdcff",
+                    "outline-variant": "#54424b",
+                    "error-container": "#93000a",
+                    "on-primary-fixed": "#231b00",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "surface-bright": "#403356",
+                    "secondary-fixed-dim": "#ffaedc",
+                    "inverse-on-surface": "#372a4d",
+                    "on-secondary": "#600049",
+                    "surface-container-low": "#221537",
+                    "surface-container-lowest": "#140629",
+                    "background": "#190c2e",
+                    "secondary": "#ffaedc",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed": "#e2e2e2",
+                    "tertiary-container": "#a9aaaa",
+                    "primary-container": "#caa71a",
+                    "surface-tint": "#e9c339",
+                    "on-secondary-fixed": "#3c002c",
+                    "on-primary": "#3b2f00",
+                    "primary-fixed-dim": "#e9c339",
+                    "on-tertiary-container": "#3d3f3f",
+                    "inverse-surface": "#ecdcff",
+                    "secondary-container": "#871368",
+                    "tertiary": "#c6c6c7",
+                    "on-secondary-container": "#ff97d5",
+                    "on-surface": "#ecdcff",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "primary": "#e9c339",
+                    "surface-variant": "#3c2e52",
+                    "surface-container-highest": "#3c2e52"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Epilogue"],
+                    "body": ["Manrope"],
+                    "label": ["Epilogue"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .text-glow-yellow {
+            text-shadow: 0 0 15px rgba(233, 195, 57, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#190c2e] dark:bg-[#190c2e]">
+<div class="flex justify-between items-center w-full px-6 py-4">
+<button class="text-[#e9c339] dark:text-[#e9c339] active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-['Epilogue'] font-black tracking-[-0.04em] uppercase text-2xl font-black tracking-tighter text-[#e9c339]">MELT POP</h1>
+<button class="text-[#e9c339] dark:text-[#e9c339] active:scale-95 transition-transform relative">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-on-secondary text-[10px] font-bold px-1 rounded-sm">2</span>
+</button>
+</div>
+</header>
+<main class="pt-20 pb-40 px-5 max-w-md mx-auto">
+<!-- Page Title -->
+<div class="flex items-baseline gap-2 mb-8 mt-4">
+<h2 class="font-headline font-black text-5xl tracking-tighter text-on-surface">BAG</h2>
+<span class="font-label font-bold text-lg text-primary">(2 ITEMS)</span>
+</div>
+<!-- Cart Items -->
+<section class="space-y-6">
+<!-- Item 1 -->
+<div class="group relative bg-surface-container-high overflow-hidden">
+<div class="flex gap-4 p-4">
+<div class="relative w-28 h-32 flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close-up of vibrant neon purple cosmetic kit with sleek metallic packaging against a dark purple background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAGHwikmvrdWp2co9XtunAkPp9vTT_jnvwlM4irW4frkzc1tcCirzH9NEobzXQwURi6G19Og3CM3TSg2Y70Fx2X2rrT2BWxRCqjmZ3GHXJTgK0gjmcQ3dP85swRpJgt6yNkBINHs6RQBShC4MY6GT_e0p9T9ZSor4DUU7WcJc_lHohjGhAEIk5kRcdNs9SZYpAbL_XJ2fDHFG1qZ2je-OjRTH9UJelfcPfzXhLg4RuDCfucWKOlcOs3MHhKTT3LngmYcUV3zugUXgU"/>
+<div class="absolute top-2 left-[-8px] bg-secondary text-on-secondary font-label font-bold text-[10px] px-2 py-1 rotate-[-5deg] shadow-lg">
+                            20% OFF
+                        </div>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-headline font-extrabold text-lg leading-tight uppercase tracking-tight">NEON PULSE KIT</h3>
+<button class="text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="close">close</span>
+</button>
+</div>
+<p class="text-sm text-on-surface-variant font-medium mt-1 uppercase">Shade: Electric Violet</p>
+<p class="font-headline font-black text-xl text-primary mt-2">29,900원</p>
+</div>
+<div class="flex items-center justify-between mt-3">
+<div class="flex items-center bg-surface-container-highest border border-outline-variant/15 rounded-sm">
+<button class="px-2 py-1 text-primary"><span class="material-symbols-outlined text-lg" data-icon="remove">remove</span></button>
+<span class="px-3 font-label font-bold text-sm">1</span>
+<button class="px-2 py-1 text-primary"><span class="material-symbols-outlined text-lg" data-icon="add">add</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="group relative bg-surface-container-high overflow-hidden">
+<div class="flex gap-4 p-4">
+<div class="relative w-28 h-32 flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="High-gloss electric pink lip gloss bottle with luxury finish reflecting neon studio lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQqdjhi04ekTX0ChnzDXVOiUsfQmJ3yOhp58T7uvsCDxatUeVsySVirYSP19IhoRNPOKMizTwG-JHsCjIyp-5grjesQrPiZxtwzIhgt389rl0G38LyHzUPENZ1Fq2-uDPWZp0CmGZvr1IvBWatoNTlZFh-Qz2UtAIaZCWA602ifwWzfFOQFzT14273mA5jY0Ys3seAGAcjtWrnYxs9FzTWZ109iwAgiYPIujKbZTM0qWvxHvV__AiLK9KjwRPjXnYUSCWv9gIdpuNK"/>
+<div class="absolute bottom-2 right-2 bg-error-container text-error font-label font-bold text-[9px] px-2 py-1 uppercase tracking-widest">
+                            Only 2 Left
+                        </div>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-headline font-extrabold text-lg leading-tight uppercase tracking-tight">ELECTRIC LIP GLOSS</h3>
+<button class="text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="close">close</span>
+</button>
+</div>
+<p class="text-sm text-on-surface-variant font-medium mt-1 uppercase">Shade: Acid Pink</p>
+<p class="font-headline font-black text-xl text-primary mt-2">45,800원</p>
+</div>
+<div class="flex items-center justify-between mt-3">
+<div class="flex items-center bg-surface-container-highest border border-outline-variant/15 rounded-sm">
+<button class="px-2 py-1 text-primary"><span class="material-symbols-outlined text-lg" data-icon="remove">remove</span></button>
+<span class="px-3 font-label font-bold text-sm">1</span>
+<button class="px-2 py-1 text-primary"><span class="material-symbols-outlined text-lg" data-icon="add">add</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Order Summary -->
+<section class="mt-12 bg-surface-container-low p-6">
+<h4 class="font-headline font-extrabold text-xl mb-6 uppercase tracking-tight">주문 요약</h4>
+<div class="space-y-4 font-body">
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal</span>
+<span class="font-bold">83,800원</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Shipping</span>
+<span class="font-bold text-primary">FREE</span>
+</div>
+<div class="flex justify-between text-secondary">
+<span>Discount</span>
+<span class="font-bold">-8,100원</span>
+</div>
+<div class="pt-6 mt-6 border-t border-outline-variant/10">
+<div class="flex flex-col gap-1">
+<span class="font-label font-bold text-xs text-on-surface-variant uppercase tracking-widest">총 결제 금액</span>
+<div class="flex justify-between items-end">
+<span class="font-headline font-black text-4xl text-primary text-glow-yellow tracking-tighter">75,700원</span>
+<span class="font-label font-bold text-primary text-sm mb-1 uppercase">TOTAL</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Cross Sell -->
+<section class="mt-16 mb-8">
+<h4 class="font-headline font-black text-2xl mb-6 italic tracking-tighter">YOU NEED THESE</h4>
+<div class="grid grid-cols-2 gap-4">
+<!-- Suggestion 1 -->
+<div class="bg-surface-container p-3 flex flex-col">
+<div class="aspect-square mb-3">
+<img class="w-full h-full object-cover" data-alt="Liquid glow serum in a frosted glass bottle with a minimalist aesthetic under soft purple glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDOYWe3OVUjcx8YRvrUUR8kVVTa99FBDtgzE46us8N6p4w_78ZZRV50QsBNQK4rUMDZ3WvgQpUUf-6RkQ8HH5fI8fQc0NSCJKXPYKW4RlMSMdJx0a2_lXyAwGtjlKxdA03trtIdnyobVWnlcI26m2Ib0JoqVpW9NTexO6JUef0QGgvYUxlSl567bNTOJAJniO8FaoNKb2qqWYWFghjUt0YwAJlEhmfj7s4pIFqXBmkftHQLajYiFUdPS8DU9VE8XJ2UsXh5axubQcT"/>
+</div>
+<h5 class="font-headline font-bold text-sm leading-tight uppercase">Glow Serum</h5>
+<p class="font-headline font-black text-primary mt-1 text-sm">18,000원</p>
+<button class="mt-3 w-full bg-secondary py-2 text-on-secondary font-label font-bold text-[10px] uppercase tracking-widest active:scale-95 transition-transform">
+                        Quick Add
+                    </button>
+</div>
+<!-- Suggestion 2 -->
+<div class="bg-surface-container p-3 flex flex-col">
+<div class="aspect-square mb-3">
+<img class="w-full h-full object-cover" data-alt="Metallic chrome makeup palette with reflective surfaces and bold geometric pans" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzPTZt0P3QLuuY_wd8fCSkecV7klSymXDBhxYGlKWlEWWpl0SKXvG60ZlhnrH2x-KLXcDzHDRV_KS_wa8yrdy89wLKs1D2pbskokCNNo0hY_Ef5emxrabtygR9EBLHm9hrLDTK9rI9oAjUjYiIl2oKleBVQuIaYsGzFpWDA3fOq1_wH8pEqU5AQptsoU0ka2DE6PKsdBPkUYywwfTp272iHAy8c3Mhudvq74v-Y4uc3wWdxFD4JuVQib7TLBiO8n8h6ubtdjtV1C0A"/>
+</div>
+<h5 class="font-headline font-bold text-sm leading-tight uppercase">Chrome Palette</h5>
+<p class="font-headline font-black text-primary mt-1 text-sm">32,000원</p>
+<button class="mt-3 w-full bg-secondary py-2 text-on-secondary font-label font-bold text-[10px] uppercase tracking-widest active:scale-95 transition-transform">
+                        Quick Add
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Bottom CTA -->
+<div class="fixed bottom-0 left-0 w-full z-50 p-6 bg-surface-container-low/80 backdrop-blur-xl border-t border-outline-variant/15">
+<button class="w-full bg-primary py-4 px-8 flex justify-between items-center group active:scale-[0.98] transition-all">
+<span class="font-headline font-black text-xl text-on-primary tracking-tighter uppercase italic">BUY NOW / 결제하기</span>
+<span class="material-symbols-outlined text-on-primary group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- BottomNavBar (Hidden on this specific transactional screen per prompt logic but kept for shell consistency) -->
+<nav class="fixed bottom-0 left-0 w-full z-[60] flex justify-around items-center px-4 pb-6 pt-3 bg-[#221537]/60 backdrop-blur-xl border-t border-[#403356]/15 shadow-[0_-4px_40px_rgba(135,19,104,0.08)]">
+<div class="flex flex-col items-center justify-center text-[#ff7ccf]/60 px-4 py-1 hover:text-[#ff7ccf] transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+<span class="font-['Epilogue'] font-bold text-[10px] tracking-widest uppercase mt-1">DROP</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#ff7ccf]/60 px-4 py-1 hover:text-[#ff7ccf] transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="Auto-fix-high">auto_fix_high</span>
+<span class="font-['Epilogue'] font-bold text-[10px] tracking-widest uppercase mt-1">KITS</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#ff7ccf] text-[#190c2e] rounded-sm px-4 py-1 active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-['Epilogue'] font-bold text-[10px] tracking-widest uppercase mt-1">BAG</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#ff7ccf]/60 px-4 py-1 hover:text-[#ff7ccf] transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Epilogue'] font-bold text-[10px] tracking-widest uppercase mt-1">VIBE</span>
+</div>
+</nav>
+</body></html>

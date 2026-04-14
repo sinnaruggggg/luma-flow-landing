@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Noto+Serif+KR:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#dae7ca",
+                        "primary-dim": "#485642",
+                        "inverse-surface": "#0a1008",
+                        "on-primary": "#edfde1",
+                        "tertiary-fixed-dim": "#d5edc3",
+                        "on-tertiary": "#ecffdc",
+                        "on-primary-fixed-variant": "#51604b",
+                        "surface-tint": "#54624d",
+                        "on-primary-container": "#485641",
+                        "background": "#f5fcee",
+                        "outline-variant": "#a2b89b",
+                        "inverse-on-surface": "#989f93",
+                        "on-secondary-fixed": "#37432e",
+                        "on-tertiary-fixed-variant": "#586c4b",
+                        "surface-container": "#e4f2dc",
+                        "surface-variant": "#d3e9ca",
+                        "on-background": "#253721",
+                        "on-surface-variant": "#51644c",
+                        "on-error": "#fff7f6",
+                        "on-secondary": "#f0fedf",
+                        "error-dim": "#5c1202",
+                        "tertiary": "#516544",
+                        "secondary-dim": "#4b5740",
+                        "secondary-fixed-dim": "#ccd9bc",
+                        "inverse-primary": "#ebfce0",
+                        "on-surface": "#253721",
+                        "surface-container-high": "#dbeed3",
+                        "on-tertiary-fixed": "#3c4f30",
+                        "error-container": "#fe8b70",
+                        "on-secondary-fixed-variant": "#535f48",
+                        "secondary": "#57634c",
+                        "surface-container-highest": "#d3e9ca",
+                        "tertiary-fixed": "#e3fbd1",
+                        "primary-fixed-dim": "#c9d9bf",
+                        "outline": "#6c8066",
+                        "surface-dim": "#c7e2be",
+                        "on-primary-fixed": "#364330",
+                        "tertiary-container": "#e3fbd1",
+                        "primary-fixed": "#d7e7cd",
+                        "primary": "#54624d",
+                        "secondary-container": "#dae7ca",
+                        "surface": "#f5fcee",
+                        "primary-container": "#d7e7cd",
+                        "surface-bright": "#f5fcee",
+                        "error": "#9e422c",
+                        "tertiary-dim": "#455939",
+                        "on-secondary-container": "#4a553f",
+                        "on-tertiary-container": "#4d6141",
+                        "surface-container-low": "#ecf7e5",
+                        "on-error-container": "#742410"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Noto Serif KR"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Noto Serif KR', serif; }
+        .font-manrope { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#f5fcee]/84 backdrop-blur-xl flex justify-between items-center px-8 py-6 max-w-[1920px] mx-auto shadow-[0_20px_50px_rgba(37,55,33,0.04)]">
+<div class="flex items-center gap-12">
+<span class="text-2xl font-bold tracking-tighter text-[#253721]">MOSS HOME</span>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-manrope text-sm tracking-tight text-[#253721]/60 hover:text-[#516544] transition-colors duration-300" href="#">Living</a>
+<a class="font-manrope text-sm tracking-tight text-[#253721]/60 hover:text-[#516544] transition-colors duration-300" href="#">Dining</a>
+<a class="font-manrope text-sm tracking-tight text-[#253721]/60 hover:text-[#516544] transition-colors duration-300" href="#">Bedroom</a>
+<a class="font-manrope text-sm tracking-tight text-[#253721]/60 hover:text-[#516544] transition-colors duration-300" href="#">Planner</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-[#54624d] hover:scale-95 transition-transform">shopping_cart</button>
+<button class="material-symbols-outlined text-[#54624d] hover:scale-95 transition-transform">person</button>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-8 md:px-16 max-w-[1440px] mx-auto">
+<!-- Page Header -->
+<header class="mb-16">
+<h1 class="font-headline text-5xl font-extrabold tracking-tight text-on-surface mb-2">Shopping Bag</h1>
+<p class="font-body text-on-surface-variant italic text-lg">당신만을 위해 큐레이션된 공간의 조각들</p>
+</header>
+<div class="flex flex-col lg:flex-row gap-16 items-start">
+<!-- Left Column: Cart Items -->
+<div class="w-full lg:w-[70%] space-y-8">
+<!-- Item 1: Living Starter Bundle -->
+<article class="bg-surface-container-lowest rounded-xl p-8 flex gap-8 items-center shadow-[0_20px_60px_rgba(37,55,33,0.04)] transition-all duration-300 hover:translate-y-[-4px]">
+<div class="w-48 h-48 rounded-lg overflow-hidden bg-surface-container flex-shrink-0">
+<img alt="Living Starter Bundle" class="w-full h-full object-cover" data-alt="Interior design scene featuring a modern green lounge chair, a minimalist wooden table, and a neutral textured rug in a sunlit room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH9hBeUSHW4J_KjUaJh7b4S_8FZuLEb2Xax31kkk2XaMvE33SvC5YM7O3eA1UAqCJaC3_M6cgdVhWcaeMtHrI9ma7WfToe63h1a-iJjfMch9VuLRs9vpSGXPLDkzCIjX6nMvb4ZZiFKKUwGFIpkDlev1k5In5n7U6LcQZ2ncZ80XBbhMk_o-KL6v7Bzu0nMqRBO6TaQoy70LDyp_iQ_u6X7U-qOMXRR-emXtkgAZEr88NJkzAhvhZl5h_Kkn06k0rFNt9yHciuAnjY"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Living Starter Bundle</h3>
+<p class="font-body text-on-surface-variant text-sm">거실 스타터 번들</p>
+</div>
+<button class="material-symbols-outlined text-outline hover:text-error transition-colors">close</button>
+</div>
+<div class="space-y-1 mb-6">
+<p class="font-body text-xs text-on-surface-variant/80 flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span> Forest Lounge Chair
+                            </p>
+<p class="font-body text-xs text-on-surface-variant/80 flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span> Streamline Table
+                            </p>
+<p class="font-body text-xs text-on-surface-variant/80 flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span> Wool Texture Rug
+                            </p>
+</div>
+<div class="flex justify-between items-end">
+<div class="flex items-center gap-4 bg-surface-container-low px-4 py-2 rounded-full">
+<button class="material-symbols-outlined text-sm">remove</button>
+<span class="font-manrope font-bold">1</span>
+<button class="material-symbols-outlined text-sm">add</button>
+</div>
+<span class="font-headline text-xl font-extrabold text-on-surface">2,130,000원</span>
+</div>
+</div>
+</article>
+<!-- Item 2: Luce Floor Lamp -->
+<article class="bg-surface-container-lowest rounded-xl p-8 flex gap-8 items-center shadow-[0_20px_60px_rgba(37,55,33,0.04)] transition-all duration-300 hover:translate-y-[-4px]">
+<div class="w-48 h-48 rounded-lg overflow-hidden bg-surface-container flex-shrink-0">
+<img alt="Luce Floor Lamp" class="w-full h-full object-cover" data-alt="Minimalist brass floor lamp standing in a corner with soft architectural shadows and warm ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvtJ0H8n-SQiKuLdp6QpcRRJ9WqLSlZ6-EAOzdOa_q4FEvTYJcy7B7AnWrYlMVoQkaaLP8U3_JutQ23AgcpmnswxfO-NwY0VJih03ndjXz4OmFJyYIkx8IOC8E6A8mUzUgTBCxN0wldGmPHbX7_IkgYwS7eqnR9STwfyudO8JuJ2JBaeOlkcuI5axF3X5M5I-PEIw8kvrkgSj0-tbNafKuQoJg7ztvX9IIR9iiR7Na4Z9m5I1fiIalVZQnzgw3qfSjIYuR2lIRl5yH"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Luce Floor Lamp</h3>
+<p class="font-body text-on-surface-variant text-sm">루체 플로어 램프</p>
+</div>
+<button class="material-symbols-outlined text-outline hover:text-error transition-colors">close</button>
+</div>
+<div class="mb-6">
+<span class="inline-block bg-surface-container-high text-on-surface-variant text-[10px] uppercase tracking-widest font-manrope px-2 py-1 rounded">Finish: Brass</span>
+</div>
+<div class="flex justify-between items-end">
+<div class="flex items-center gap-4 bg-surface-container-low px-4 py-2 rounded-full">
+<button class="material-symbols-outlined text-sm">remove</button>
+<span class="font-manrope font-bold">1</span>
+<button class="material-symbols-outlined text-sm">add</button>
+</div>
+<span class="font-headline text-xl font-extrabold text-on-surface">540,000원</span>
+</div>
+</div>
+</article>
+<!-- Sustainability Note -->
+<div class="p-8 rounded-xl bg-surface-container-low flex gap-6 items-center">
+<span class="material-symbols-outlined text-tertiary text-4xl" style="font-variation-settings: 'FILL' 1;">eco</span>
+<div>
+<h4 class="font-headline font-bold text-on-surface">MOSS Sustainability Guarantee</h4>
+<p class="font-body text-on-surface-variant text-sm">우리는 모든 가구 한 점당 한 그루의 나무를 심습니다. MOSS의 제품은 지속 가능한 숲에서 온 목재만을 사용합니다.</p>
+</div>
+</div>
+</div>
+<!-- Right Column: Summary Panel -->
+<aside class="w-full lg:w-[30%] sticky top-32">
+<div class="bg-surface-container rounded-3xl p-8 space-y-8">
+<h2 class="font-headline text-2xl font-bold text-on-surface border-b-0">Summary</h2>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-body text-on-surface-variant">상품 합계</span>
+<span class="font-manrope font-medium">2,670,000원</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body text-on-surface-variant">배송비</span>
+<span class="font-manrope text-tertiary font-bold">Free</span>
+</div>
+<div class="pt-6 mt-6 border-t-0 border-outline-variant/10">
+<div class="flex justify-between items-end">
+<span class="font-headline text-lg font-bold">Total</span>
+<span class="font-headline text-3xl font-extrabold text-primary">2,670,000원</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<button class="w-full bg-primary text-on-primary font-headline font-bold py-5 rounded-full text-lg shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">주문하기</button>
+<p class="text-center font-manrope text-xs text-on-surface-variant/70">
+                            최대 24개월 무이자 할부 가능
+                        </p>
+</div>
+<div class="bg-surface-container-lowest/50 p-6 rounded-2xl space-y-4">
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary">verified</span>
+<div>
+<p class="font-headline text-sm font-bold">Premium Delivery</p>
+<p class="font-body text-xs text-on-surface-variant">전문 설치 기사님이 직접 방문하여 완벽하게 배치해 드립니다.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary">security</span>
+<div>
+<p class="font-headline text-sm font-bold">5-Year Warranty</p>
+<p class="font-body text-xs text-on-surface-variant">구조적 결함에 대해 5년간 품질을 보증합니다.</p>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-4 px-8 font-manrope text-sm font-bold text-on-surface-variant/60 hover:text-on-surface transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+                    쇼핑 계속하기
+                </button>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[2.5rem] mt-24 bg-[#e4f2dc] grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20">
+<div class="space-y-6">
+<span class="text-xl font-bold text-[#253721]">MOSS HOME</span>
+<p class="font-body text-sm text-[#54624d]">자연의 결을 닮은 가구, 삶의 공백을 채우는 정적이 깃든 공간을 제안합니다.</p>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="font-headline font-bold text-sm uppercase tracking-widest text-[#253721] mb-2">Support</h5>
+<a class="text-[#253721]/70 hover:translate-x-1 transition-transform duration-200 text-sm" href="#">Shipping &amp; Returns</a>
+<a class="text-[#253721]/70 hover:translate-x-1 transition-transform duration-200 text-sm" href="#">Warranty</a>
+<a class="text-[#253721]/70 hover:translate-x-1 transition-transform duration-200 text-sm" href="#">Contact Us</a>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="font-headline font-bold text-sm uppercase tracking-widest text-[#253721] mb-2">Legal</h5>
+<a class="text-[#253721]/70 hover:translate-x-1 transition-transform duration-200 text-sm" href="#">Privacy Policy</a>
+<a class="text-[#253721]/70 hover:translate-x-1 transition-transform duration-200 text-sm" href="#">Terms of Service</a>
+<a class="text-[#253721]/70 hover:translate-x-1 transition-transform duration-200 text-sm" href="#">Sustainability</a>
+</div>
+<div class="space-y-6">
+<p class="text-xs text-[#253721]/70 font-manrope">© 2024 MOSS HOME. All rights reserved.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#54624d]">language</span>
+<span class="material-symbols-outlined text-[#54624d]">share</span>
+</div>
+</div>
+</footer>
+</body></html>

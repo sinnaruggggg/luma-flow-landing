@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed-variant": "#004f69",
+                      "primary": "#5c5b5b",
+                      "on-secondary-fixed-variant": "#9a2128",
+                      "on-secondary-container": "#8d1620",
+                      "surface-container-low": "#fff2a6",
+                      "tertiary": "#006382",
+                      "on-tertiary-fixed": "#003041",
+                      "primary-fixed-dim": "#dfdcdc",
+                      "inverse-on-surface": "#ae9e18",
+                      "error-dim": "#b92902",
+                      "surface-container-highest": "#f6de0b",
+                      "outline": "#857800",
+                      "on-surface": "#352f00",
+                      "error-container": "#f95630",
+                      "surface-variant": "#f6de0b",
+                      "tertiary-fixed": "#7bd1fa",
+                      "secondary-fixed": "#ffc3c0",
+                      "tertiary-dim": "#005672",
+                      "on-tertiary-container": "#00465d",
+                      "surface-dim": "#edd600",
+                      "error": "#b02500",
+                      "on-primary-fixed": "#454444",
+                      "outline-variant": "#bfae2b",
+                      "inverse-surface": "#110e00",
+                      "surface-container": "#ffea50",
+                      "surface-container-high": "#fbe431",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-container": "#edeaea",
+                      "on-surface-variant": "#675c00",
+                      "on-primary-fixed-variant": "#626060",
+                      "inverse-primary": "#ffffff",
+                      "on-secondary-fixed": "#6f0011",
+                      "on-primary": "#f5f2f1",
+                      "on-background": "#352f00",
+                      "tertiary-fixed-dim": "#6cc3eb",
+                      "on-secondary": "#ffefee",
+                      "background": "#fff7d4",
+                      "secondary-fixed-dim": "#ffafac",
+                      "secondary-container": "#ffc3c0",
+                      "on-error-container": "#520c00",
+                      "on-tertiary": "#e5f5ff",
+                      "on-error": "#ffefec",
+                      "secondary-dim": "#992027",
+                      "surface-bright": "#fff7d4",
+                      "secondary": "#aa2c32",
+                      "primary-fixed": "#edeaea",
+                      "tertiary-container": "#7bd1fa",
+                      "primary-dim": "#504f4f",
+                      "surface": "#fff7d4",
+                      "surface-tint": "#5c5b5b",
+                      "on-primary-container": "#575656"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Epilogue"],
+                      "body": ["Plus Jakarta Sans"],
+                      "label": ["Space Grotesk"]
+              }
+            },
+          },
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.sticker-lift:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 4px 4px 0 0 #857800
+    }
+.kinetic-gradient {
+    background: linear-gradient(45deg, #aa2c32 0%, #ffc3c0 100%)
+    }
+.bg-noise {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCtvQF-Pq3YBI_kQrg00xaqB1EZWc-WavT21ssEgvSjTJDiLN7FcGZPwOFDHgllW9188NmydzrU7TXUqwKDpGSPF_CICL3lOP_HT0AcM-72Ewie2pI6FqClZxrQ54g8GjqybuqtH_KftlzloVWbJQ5MKleI3IiAxEuqk-5uOL2JzFpUiaVJByq10LqYjkTdoNJQtoC-KmA-YkH7KFOr-jPY9R-5mKa40FNkKxZ8s7ViAwbKEMBNkjzs3eMqDSx2s-W_yP7mdCJqgKA);
+    opacity: 0.05
+    }</style>
+</head>
+<body class="bg-background text-on-background font-body antialiased">
+<!-- TopNavBar -->
+<nav class="bg-yellow-400 dark:bg-yellow-500 text-stone-950 dark:text-stone-900 font-['Epilogue'] font-bold tracking-tighter uppercase docked full-width top-0 border-b-4 border-stone-950 z-50 sticky">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-full">
+<div class="text-2xl font-black italic tracking-tighter text-stone-950">PUNCH FUEL</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-stone-800/80 hover:text-stone-950 hover:bg-stone-950 hover:text-yellow-400 transition-colors duration-150 p-1" href="#">Home</a>
+<a class="text-stone-800/80 hover:text-stone-950 hover:bg-stone-950 hover:text-yellow-400 transition-colors duration-150 p-1" href="#">Routine</a>
+<a class="text-stone-800/80 hover:text-stone-950 hover:bg-stone-950 hover:text-yellow-400 transition-colors duration-150 p-1" href="#">Compare</a>
+<a class="text-stone-950 border-b-4 border-stone-950 pb-1" href="#">Subscribe</a>
+<a class="text-stone-800/80 hover:text-stone-950 hover:bg-stone-950 hover:text-yellow-400 transition-colors duration-150 p-1" href="#">Brand</a>
+</div>
+<button class="bg-stone-950 text-yellow-400 px-6 py-2 font-black text-sm tracking-widest scale-95 active:translate-y-1 transition-all">GET STARTED</button>
+</div>
+</nav>
+<main class="min-h-screen relative overflow-hidden">
+<!-- Background Decorative Elements -->
+<div class="absolute inset-0 pointer-events-none z-0">
+<div class="absolute top-20 -left-20 w-96 h-96 bg-surface-container-highest rotate-12 opacity-50"></div>
+<div class="absolute bottom-40 -right-20 w-[500px] h-[500px] kinetic-gradient opacity-20 -rotate-6"></div>
+<div class="absolute inset-0 bg-noise"></div>
+</div>
+<div class="max-w-7xl mx-auto px-6 py-12 md:py-24 relative z-10">
+<div class="flex flex-col lg:flex-row gap-12 items-start">
+<!-- Left Column: Selection State -->
+<div class="w-full lg:w-2/3 space-y-12">
+<header>
+<span class="font-label font-bold text-secondary uppercase tracking-[0.2em] mb-4 block">PREMIUM PERFORMANCE FUEL</span>
+<h1 class="font-headline font-black text-6xl md:text-8xl tracking-tighter leading-none mb-6">FUEL YOUR<br/>ROUTINE.</h1>
+<p class="text-xl max-w-xl text-on-surface-variant font-medium">최고의 퍼포먼스를 위한 최적의 배합. 당신의 목표에 맞는 정기 구독 플랜을 선택하세요.</p>
+</header>
+<!-- Plan Selection -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Standard Plan -->
+<div class="relative group bg-surface-container-lowest border-2 border-outline p-8 sticker-lift transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<div class="bg-tertiary-container px-3 py-1 font-label font-bold text-xs uppercase tracking-wider -rotate-2">STANDARD</div>
+<div class="font-headline font-bold text-2xl">29,900원</div>
+</div>
+<h3 class="font-headline font-black text-3xl mb-4 tracking-tight">BASE PACK</h3>
+<ul class="font-body text-sm space-y-3 mb-8 text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> 30일분 에너지 부스터</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> 필수 아미노산 블렌드</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> 휴대용 개별 포장</li>
+</ul>
+<div class="bg-outline text-white py-2 text-center font-label text-xs uppercase font-bold tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">SELECT THIS PLAN</div>
+</div>
+<!-- Elite Plan -->
+<div class="relative group bg-surface-container-highest border-[3px] border-secondary p-8 sticker-lift transition-all cursor-pointer overflow-hidden">
+<div class="absolute top-4 right-[-30px] bg-secondary text-on-secondary px-10 py-1 rotate-45 font-label font-bold text-[10px] tracking-[0.2em] shadow-lg">POPULAR</div>
+<div class="flex justify-between items-start mb-6">
+<div class="bg-secondary text-on-secondary px-3 py-1 font-label font-bold text-xs uppercase tracking-wider rotate-2">ELITE</div>
+<div class="font-headline font-bold text-2xl text-secondary-dim">49,900원</div>
+</div>
+<h3 class="font-headline font-black text-3xl mb-4 tracking-tight">PERFORMANCE+</h3>
+<ul class="font-body text-sm space-y-3 mb-8 text-on-surface">
+<li class="flex items-center gap-2 font-bold text-secondary-dim"><span class="material-symbols-outlined text-sm">bolt</span> 고함량 크레아틴 포함</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> 30일분 에너지 부스터</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> 집중력 강화 노오트로픽</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> 프리미엄 쉐이커 증정 (첫 달)</li>
+</ul>
+<div class="bg-secondary text-on-secondary py-2 text-center font-label text-xs uppercase font-bold tracking-widest">SELECTED</div>
+</div>
+</section>
+<!-- Quantity & Frequency -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<label class="font-label font-bold text-xs uppercase tracking-widest text-outline">QUANTITY (수량)</label>
+<div class="flex items-center border-2 border-outline bg-surface-container-lowest w-fit">
+<button class="p-4 hover:bg-surface-container transition-colors"><span class="material-symbols-outlined">remove</span></button>
+<span class="px-8 font-headline font-bold text-2xl">01</span>
+<button class="p-4 hover:bg-surface-container transition-colors"><span class="material-symbols-outlined">add</span></button>
+</div>
+</div>
+<div class="space-y-4">
+<label class="font-label font-bold text-xs uppercase tracking-widest text-outline">DELIVERY FREQUENCY (배송 주기)</label>
+<div class="flex gap-4">
+<button class="flex-1 border-2 border-secondary bg-surface-container font-label font-bold py-4 px-2 text-xs uppercase tracking-tighter">Every 4 Weeks</button>
+<button class="flex-1 border-2 border-outline hover:border-secondary bg-surface-container-lowest font-label font-bold py-4 px-2 text-xs uppercase tracking-tighter transition-colors">Every 8 Weeks</button>
+</div>
+</div>
+</section>
+<!-- Product Macro Section -->
+<section class="relative h-[400px] border-4 border-stone-950 overflow-hidden group">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="close-up of sleek professional sports supplement powder and capsules on high-contrast black and yellow background with sharp cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdZL6lYAGblWF5BmZJioue0Sxuy4ivg51Hnywva2tpP5W_r_MiOTQrN2oXooh33YV-NQP6C2FG8_m8mjZASxCVWWfOgF39bO_EbL88-seKMmRFNM-K_LMqUnOn3n5xiwrt2Cz-JniMxnKZR1HQVTCN3INeHnivZMxiUwZM_BHp_8g3-koou39tG2ZxkFH1FB2RbEpfpfVoeJqA_zqB-NTFWsFtMsioKReo9FOb2Ls_ykZ8r37e3WtLGCc0mPl_TPZ2bg8rSYh6Xj0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-stone-950 to-transparent opacity-60"></div>
+<div class="absolute bottom-8 left-8">
+<span class="font-label font-bold text-yellow-400 text-sm tracking-widest uppercase">Ingredient Transparency</span>
+<h2 class="font-headline font-black text-4xl text-white tracking-tighter">NO FILLERS.<br/>JUST FUEL.</h2>
+</div>
+</section>
+</div>
+<!-- Right Column: Sticky Summary -->
+<aside class="w-full lg:w-1/3 lg:sticky lg:top-32">
+<div class="bg-stone-950 text-white p-8 border-t-8 border-secondary shadow-2xl relative overflow-hidden">
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-secondary/20 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-end mb-8 border-b border-stone-800 pb-6">
+<div>
+<p class="font-label font-bold text-stone-500 text-xs uppercase tracking-widest">MONTHLY TOTAL</p>
+<h2 class="font-headline font-black text-5xl tracking-tighter">49,900원</h2>
+</div>
+<div class="text-secondary font-label font-bold text-sm">-15% OFF</div>
+</div>
+<div class="space-y-6 mb-10">
+<div class="flex items-start gap-4">
+<div class="bg-secondary/20 p-2 rounded-sm">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+</div>
+<div>
+<p class="font-bold text-sm tracking-tight">FREE SHIPPING ALWAYS</p>
+<p class="text-xs text-stone-400">구독 회원에게는 모든 배송비가 면제됩니다.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-secondary/20 p-2 rounded-sm">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">event_available</span>
+</div>
+<div>
+<p class="font-bold text-sm tracking-tight">EXCLUSIVE ACCESS</p>
+<p class="text-xs text-stone-400">신제품 런칭 시 가장 먼저 구매 기회를 드립니다.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-secondary/20 p-2 rounded-sm">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<div>
+<p class="font-bold text-sm tracking-tight">CANCEL ANYTIME</p>
+<p class="text-xs text-stone-400">약정 없음. 원하실 때 언제든 해지 가능합니다.</p>
+</div>
+</div>
+</div>
+<button class="w-full kinetic-gradient py-6 font-headline font-black text-2xl tracking-tighter uppercase text-on-secondary shadow-[8px_8px_0px_0px_rgba(255,255,255,0.1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all active:scale-95">
+                                구독 시작하기
+                            </button>
+<div class="mt-8 flex flex-col items-center gap-4 border-t border-stone-800 pt-8">
+<div class="flex gap-4 opacity-40 grayscale">
+<span class="material-symbols-outlined">payments</span>
+<span class="material-symbols-outlined">credit_card</span>
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<p class="font-label text-[10px] text-stone-500 tracking-[0.2em] uppercase">SECURE CHECKOUT GUARANTEED</p>
+</div>
+</div>
+</div>
+<!-- Trust Layer Sticker -->
+<div class="mt-6 bg-surface-container-high border-2 border-outline p-4 flex items-center gap-4 -rotate-1 shadow-xl">
+<div class="w-12 h-12 bg-stone-950 text-yellow-400 flex items-center justify-center rounded-full font-headline font-black text-xl">!</div>
+<p class="font-body text-xs font-bold leading-tight">
+                            현재 2,491명의 에디터가<br/>PUNCH FUEL을 정기구독 중입니다.
+                        </p>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-950 dark:bg-black text-yellow-400 block w-full border-t-8 border-yellow-400">
+<div class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-5xl font-black text-stone-800 opacity-50">PUNCH</div>
+<div class="flex flex-wrap justify-center gap-8 font-['Space_Grotesk'] font-bold uppercase text-xs tracking-widest">
+<a class="text-stone-400 hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="text-stone-400 hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="text-stone-400 hover:text-white transition-colors" href="#">Shipping</a>
+<a class="text-stone-400 hover:text-white transition-colors" href="#">Wholesale</a>
+<a class="text-stone-400 hover:text-white transition-colors" href="#">Contact</a>
+</div>
+<div class="font-['Space_Grotesk'] font-bold uppercase text-xs tracking-widest text-stone-500">
+                ©2024 PUNCH PERFORMANCE. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-stone-950 dark:bg-black fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-4 pb-safe border-t-2 border-stone-800 shadow-[0_-4px_10px_rgba(0,0,0,0.3)]">
+<a class="flex flex-col items-center justify-center text-stone-500 p-2 hover:text-yellow-300" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 p-2 hover:text-yellow-300" href="#">
+<span class="material-symbols-outlined">fitness_center</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] uppercase tracking-widest mt-1">Routine</span>
+</a>
+<a class="flex flex-col items-center justify-center text-yellow-400 bg-stone-800 rounded-none p-2" href="#">
+<span class="material-symbols-outlined">card_membership</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] uppercase tracking-widest mt-1">Subscribe</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 p-2 hover:text-yellow-300" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

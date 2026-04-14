@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TABLE WARM | Artisanal Menu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;family=Work+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed-variant": "#514438",
+                      "secondary": "#6a5c4f",
+                      "surface-variant": "#ebe1d1",
+                      "on-secondary-container": "#706255",
+                      "on-tertiary-fixed-variant": "#5b4220",
+                      "surface": "#fff8f1",
+                      "primary-container": "#5d3b24",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed": "#ffddb5",
+                      "surface-container-highest": "#ebe1d1",
+                      "on-secondary": "#ffffff",
+                      "inverse-primary": "#eebc9d",
+                      "on-tertiary-fixed": "#2a1800",
+                      "on-background": "#1f1b11",
+                      "error-container": "#ffdad6",
+                      "on-surface-variant": "#50443e",
+                      "on-primary": "#ffffff",
+                      "surface-bright": "#fff8f1",
+                      "outline-variant": "#d4c3ba",
+                      "inverse-surface": "#353025",
+                      "surface-container-low": "#fdf2e1",
+                      "secondary-fixed-dim": "#d6c3b3",
+                      "primary-fixed-dim": "#eebc9d",
+                      "on-tertiary": "#ffffff",
+                      "on-surface": "#1f1b11",
+                      "error": "#ba1a1a",
+                      "background": "#fff8f1",
+                      "surface-container-high": "#f1e7d6",
+                      "on-error": "#ffffff",
+                      "secondary-fixed": "#f3dfce",
+                      "surface-dim": "#e2d9c8",
+                      "tertiary-container": "#563e1d",
+                      "surface-tint": "#7c563d",
+                      "inverse-on-surface": "#faf0de",
+                      "tertiary-fixed-dim": "#e4c195",
+                      "primary-fixed": "#ffdbc7",
+                      "on-primary-fixed-variant": "#613f27",
+                      "secondary-container": "#f3dfce",
+                      "primary": "#432510",
+                      "on-error-container": "#93000a",
+                      "surface-container": "#f7eddc",
+                      "on-tertiary-container": "#ccaa7f",
+                      "on-secondary-fixed": "#231a10",
+                      "on-primary-container": "#d6a688",
+                      "outline": "#82746c",
+                      "tertiary": "#3d2808",
+                      "on-primary-fixed": "#2f1503"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Noto Serif"],
+                      "body": ["Be Vietnam Pro"],
+                      "label": ["Work Sans"]
+              }
+            },
+          }
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24
+    }
+.paper-texture {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBNAIIrK5bBK17tsVklMETWZFKed4x4CAfj_VBPXELTFvtJfi7g-8uWr7DKDZhSMGWYH78gXPm76yzxxMl6Ojo5MAUuxNgxCYIByuhHfzR3NDkYaJMuUDS55QDSOn-HVcC_dcYrqSHqaFy-rVBxoQ6wELAmCct1zawItz_lBzpLNVK1SkOqdyMweI40PbbVW4k6TzCICrOMXLfr5d30D8MVOuBZXDfRunei3VudNCInMHZqd28i5r5eVFAC1OrNB8gGs3bebfm2qnk)
+    }
+.reservation-notch {
+    mask-image: radial-gradient(circle at 0 50%, transparent 12px, black 13px);
+    -webkit-mask-image: radial-gradient(circle at 0 50%, transparent 12px, black 13px)
+    }</style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fff8f1]/86 backdrop-blur-xl shadow-[0_12px_40px_rgba(43,34,26,0.06)]">
+<div class="flex justify-between items-center px-8 h-20 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-headline italic text-[#432510]">TABLE WARM</div>
+<div class="hidden md:flex items-center space-x-8 font-headline font-medium tracking-tight">
+<a class="text-[#432510] border-b-2 border-[#432510] pb-1 transition-all" href="#">Coffee</a>
+<a class="text-[#5d3b24]/60 hover:text-[#432510] transition-colors duration-300" href="#">Tea</a>
+<a class="text-[#5d3b24]/60 hover:text-[#432510] transition-colors duration-300" href="#">Dessert</a>
+<a class="text-[#5d3b24]/60 hover:text-[#432510] transition-colors duration-300" href="#">Brunch</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="p-2 text-[#432510] hover:bg-[#f7eddc]/50 transition-colors duration-300 rounded-full">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="p-2 text-[#432510] hover:bg-[#f7eddc]/50 transition-colors duration-300 rounded-full relative">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero / First Viewport -->
+<section class="relative h-[716px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover brightness-95" data-alt="cinematic soft focus shot of a sun-drenched minimalist cafe interior with wooden tables and warm afternoon light through linen curtains" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApwTYD2wDwDno2S77YanEGDlGOj176UeCSrzCuhtrRElu-v999FIMzb3WD86ynQY01ZWZEiWjbicNAN44umP0KFa3aNY9eI2kIdJe3dS6CAT80cCPEhLAKlk1Xm_Z2fiRYAnFGyKRpWT0fLadgCPcHGbxdMzybyalJBCgHjpJUfHZo8WDxjHPupBQrkXZuIqNENO09tJVFr0_JMuBKBRSWNaVswSVK3bgtCnPkJ8lUulgMT4ML5oCH_xwZtgBjFpavNJHphlIuINc"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-background/40"></div>
+</div>
+<div class="relative z-10 w-full max-w-4xl px-6">
+<div class="bg-surface-container/95 paper-texture backdrop-blur-sm p-12 md:p-20 text-center rounded-xl shadow-2xl transform -rotate-1 border border-outline-variant/10">
+<span class="font-label text-xs tracking-[0.2em] uppercase text-on-surface-variant mb-4 block">Hand-Crafted Hospitality</span>
+<h1 class="font-headline text-5xl md:text-7xl text-primary mb-8 tracking-tighter">Our Seasonal Palette</h1>
+<p class="text-lg md:text-xl text-on-secondary-fixed-variant max-w-xl mx-auto font-light leading-relaxed mb-10">
+                        Inspired by the quiet warmth of morning light and the tactile beauty of aged parchment. Every ingredient, a brushstroke.
+                    </p>
+<!-- Category Filtering System -->
+<div class="flex flex-wrap justify-center gap-4">
+<button class="px-8 py-3 bg-primary text-on-primary rounded-full font-label text-sm tracking-wide transition-all scale-98 active:opacity-80">COFFEE</button>
+<button class="px-8 py-3 bg-surface-container-highest text-on-surface rounded-full font-label text-sm tracking-wide hover:bg-surface-container-high transition-colors">TEA</button>
+<button class="px-8 py-3 bg-surface-container-highest text-on-surface rounded-full font-label text-sm tracking-wide hover:bg-surface-container-high transition-colors">DESSERT</button>
+<button class="px-8 py-3 bg-surface-container-highest text-on-surface rounded-full font-label text-sm tracking-wide hover:bg-surface-container-high transition-colors">BRUNCH</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Menu Catalog Structure -->
+<section class="max-w-screen-2xl mx-auto px-8 py-24">
+<!-- Coffee Section -->
+<div class="mb-32">
+<div class="flex items-baseline gap-6 mb-16">
+<h2 class="font-headline text-4xl text-primary italic">Coffee</h2>
+<div class="h-px flex-grow bg-outline-variant/30"></div>
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Signature Blends</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+<!-- Item 1 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl mb-6 aspect-[4/5] bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="aesthetic close-up of a vanilla bean latte with elegant latte art and visible vanilla specks in a ceramic cup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUeafXt31eVMZKkhnlYCmUMvtFdQASPFNCz7wjmFuR1cY7jJ0SbwuygU2LrAncFrZFJaA8eY_YQqKS4FF-OC47OM8oFt-3eFH9IQHjigX1XjSj-xWO4RSnDGWh2XklEEnKzR4CiQQwo-PlA9g0xP9lNyP2brRfUgas6fsRELYrHusJ2H79Ciwk_XdYOeS7a-XJ01G1VSvHr79cnsLriqa2JY-OPTn_AzvJvGdmvRiLnT4CpCkv5fX0zG3Sj3oLmDG_7rrxa6whewo"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="bg-surface px-6 py-2 rounded-full font-label text-xs tracking-widest text-primary shadow-lg">+ ADD TO RESERVATION</span>
+</div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-primary">시그니처 바닐라 빈 라떼</h3>
+<span class="font-body text-primary font-medium tracking-tight">6,500원</span>
+</div>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed">Pure Madagascar vanilla beans infused for 48 hours, blended with our house roast.</p>
+</div>
+<!-- Item 2 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl mb-6 aspect-[4/5] bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="creamy cafe latte in a warm textured ceramic mug on a wooden table with soft side lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDViFkkn6YzuYcWub7gnudMrxfcz1zY8MLp-HzOp9Pwgplf5Uw6KyVnEPeyj58-4iCvtpli44ZxqT6qKC0k6FH-aSgWPuY4_BUpDY0kTR4PGVnNW6ETOb_OEbbL9i78i-wjv-4YnOhJwOmLVZHg5BH97rr_GECusaRT9jK4lmRmSCKNtFRjk5-jMWWVZtFIKaudLFiWJGIMoONFrhv_CcPXohbCVCZ_QBysu_gXxNlvi3CNt1viAayqwBvRy8j-97QUpKZCHqNZ04U"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="bg-surface px-6 py-2 rounded-full font-label text-xs tracking-widest text-primary shadow-lg">+ QUICK VIEW</span>
+</div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-primary">카페 라떼</h3>
+<span class="font-body text-primary font-medium tracking-tight">5,500원</span>
+</div>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed">Velvety micro-foam paired with our nutty medium-dark espresso blend.</p>
+</div>
+<!-- Item 3 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl mb-6 aspect-[4/5] bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="einspanner coffee with thick white cream top and dark coffee layer below in a glass cup on a marble coaster" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZBKVkMpRSWUtg_vdj2cXyC2AJJjjhggQWD0Uua2A8quTwoCcaM5WNe4uhKKtJJqRk52aEfDzCctuPJhXHsgHVVLkDYpHDWj0gAY4d8HM1_tysw7XcCoKwAtzQjysSDg1YzzZuTsl3D5RogZXfBKbvCN0Cx7Uv1PbzpbNt16LMoYCOT0EycRjvZZzog78Ag7PJ-u7Sz3XOoYAmLJXkuKijy3SYaRvh0MT3axS8xjyz4uwRbpKeOG7lG7Z1p3KThLKruYySiGxIV4Y"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="bg-surface px-6 py-2 rounded-full font-label text-xs tracking-widest text-primary shadow-lg">+ ADD TO RESERVATION</span>
+</div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-primary">아인슈페너</h3>
+<span class="font-body text-primary font-medium tracking-tight">6,000원</span>
+</div>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed">Hand-whisked sweet cream flowing into chilled long-black espresso.</p>
+</div>
+</div>
+</div>
+<!-- Dessert & Brunch Modular Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Dessert Column -->
+<div class="lg:col-span-8">
+<div class="flex items-baseline gap-6 mb-16">
+<h2 class="font-headline text-4xl text-primary italic">Dessert</h2>
+<div class="h-px flex-grow bg-outline-variant/30"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Fig Financier - Small Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_12px_40px_rgba(43,34,26,0.04)] border border-outline-variant/5 group hover:-translate-y-1 transition-all duration-300">
+<div class="aspect-video overflow-hidden rounded-lg mb-6">
+<img class="w-full h-full object-cover" data-alt="close-up of golden brown fig and cream cheese financiers with caramelized fruit on top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfGT4A_jJ35HOkloVGWIqAWG0ma_V_YJJWEOX0WGqaZ41evZPH3qUN__Arl6vMCLoeSPF-djXQDc_2Yzi5k0zSqYI8hgHX1yfASI6onZWXFCJ5F4UcUQbheYxAliHEkVFyCcFAPwuLbA6W43mpL1pTXaQzvebngetdfWEtXBnQezpVgLOa7PcR55sF-EkVWcQCopLnL5wT5HfiX28J0ukgfMgBT36viHc86SgxEZRTkGrq6a88GteaovdIKMSWDKPDW3kNfvYm7gA"/>
+</div>
+<h3 class="font-headline text-lg text-primary mb-1">무화과 크림치즈 휘낭시에</h3>
+<div class="flex justify-between items-center">
+<p class="text-xs text-on-surface-variant uppercase tracking-tighter">Fig &amp; Cream Cheese</p>
+<span class="font-body text-primary text-sm">3,800원</span>
+</div>
+</div>
+<!-- Brownie - Editorial Card -->
+<div class="row-span-2 bg-surface-container-low rounded-xl overflow-hidden flex flex-col group">
+<div class="flex-grow">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="indulgent melting dark chocolate brownie with a scoop of vanilla ice cream on a rustic plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIiUMXDqfGkqmBSLbKkD-evcGe8HfFOLfl1HcWP8xh0l40rKI_Gf3Eo2MKY2_WKP9ROwvqIoZZUQmlTqQ9cpeyvt4BK3kldq90De1l9331GrzuJvY7KYxp6B2RuyZYKYOub0mJQUVDVyrTzVjA2Up93TBFGzhW0n8QfaqqxKVkDhoOGePJX1Ou1TTqaOcytRjQA81LdTxQ_jwzcZf22WJjSDEgmbPmV-LzyFLr-IFdx56zTmND9tlDju8uv8UqXqx-fJ8ZkX3Rk8Y"/>
+</div>
+<div class="p-8 paper-texture bg-surface-container">
+<h3 class="font-headline text-2xl text-primary mb-2">멜팅 브라우니</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Warm, molten center dark chocolate brownie served with sea salt and cold cream.</p>
+<div class="flex justify-between items-end">
+<span class="font-body text-xl text-primary">8,500원</span>
+<button class="bg-primary px-5 py-2 rounded-full text-white text-xs font-label tracking-widest">ORDER</button>
+</div>
+</div>
+</div>
+<!-- Croissant Platter -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_12px_40px_rgba(43,34,26,0.04)] border border-outline-variant/5 group hover:-translate-y-1 transition-all duration-300">
+<div class="aspect-video overflow-hidden rounded-lg mb-6">
+<img class="w-full h-full object-cover" data-alt="flaky golden croissants on a wooden board with small bowls of seasonal jam and artisan butter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPPPkwylQipaMPOhfk398yZstxS5vEmYshbDIjnayXv7POrf_6maUXg72ZTklsHc6aTxpxh_w7k727CDl2ROisS1Rs4ncjpxpyAwzTEbZfOaqq82BMiNHEyf0kLefOm2wOstI_qgTKmoAnlHZG20yZl62Koed0PL5LwrvMucq_CtbY7nph24GnuBb5McqHUkifL_6sjLHu02oStJCKV1z9bd0Oq-xFw85ijK-pfdpeqTYQbTx7SlMQf-r0I7hxripAkpXjyqaBdWI"/>
+</div>
+<h3 class="font-headline text-lg text-primary mb-1">크루아상 플래터</h3>
+<div class="flex justify-between items-center">
+<p class="text-xs text-on-surface-variant uppercase tracking-tighter">Served with seasonal jam</p>
+<span class="font-body text-primary text-sm">7,800원</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Brunch Sidebar -->
+<div class="lg:col-span-4">
+<div class="sticky top-32">
+<div class="bg-surface-container p-10 rounded-xl reservation-notch paper-texture shadow-lg">
+<h2 class="font-headline text-3xl text-primary italic mb-10">Brunch</h2>
+<div class="space-y-12">
+<!-- Brunch 1 -->
+<div class="group">
+<div class="mb-4 overflow-hidden rounded-lg aspect-[16/9]">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="jambon beurre sandwich with thick slices of ham and butter on a crusty french baguette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS8H4zRg4-EOQdOF_wCuYHNZTfJeRw9Z3-UDg9o_n-Pv55nyeoOh20GVHSQZoarGERBR75YwbOP6RaMv5j2w04nLANvw7tRmeb6XRVk5f9xk8QLZq6tnds7geozIvbpTEVrkl5y7kDFYS7hZFJ4PDH-CKONcEpwDYjtCbOYYFGHAEcjKnCm3WVn5l0V_gSFre_wzMmY6g7vba-p_Oov6isWdY5h-4CbjXdwWTWsg_lInS9hYD1cdfk1XEoMQEUBWleLbCSvjC7Clk"/>
+</div>
+<h3 class="font-headline text-xl text-primary mb-1">잠봉뵈르 샌드위치</h3>
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm text-on-surface-variant italic">Artisan Baguette</span>
+<span class="font-body text-primary font-semibold">12,500원</span>
+</div>
+<p class="text-xs text-on-surface-variant/80 leading-relaxed font-light">Le Gall butter and premium Jambon ham on our sourdough baguette.</p>
+</div>
+<!-- Brunch 2 -->
+<div class="group">
+<div class="mb-4 overflow-hidden rounded-lg aspect-[16/9]">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="steaming bowl of creamy tomato basil soup served with a piece of toasted sourdough" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq4w7bNTjZTPK9deMe64Q9T5bUUTsfsfCMCaIR0AaxXo_AJC7QSv_aUe2BBt1UE5kA2jFGmc2ToOS-pelTq5cio0zvXlsWamvPjDwO4b3wFN89Bw2W57gxkyX1xO-pFIvyk3vcIewZN5uSFu70jLGYbWKcs5DshsufZTuTlTT61upY8E3xoML6ZUE9r4liAY6ShWcr0gdzkvQtayE39_c7B5HaY5YQ6Wc5zbmu9xq5UnVRJXBmRt0pVPqb3tXYtOI7EVwIrlWgspY"/>
+</div>
+<h3 class="font-headline text-xl text-primary mb-1">오늘의 수프</h3>
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm text-on-surface-variant italic">Chef's Daily</span>
+<span class="font-body text-primary font-semibold">7,500원</span>
+</div>
+<p class="text-xs text-on-surface-variant/80 leading-relaxed font-light">A rotating selection of seasonal vegetables and fresh herbs.</p>
+</div>
+</div>
+<button class="w-full mt-12 py-4 bg-primary text-on-primary rounded-full font-label text-sm tracking-[0.15em] transition-all hover:opacity-90">RESERVE A TABLE</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Signature Experience Banner -->
+<section class="max-w-screen-2xl mx-auto px-8 mb-24">
+<div class="relative rounded-3xl overflow-hidden h-96 flex items-center">
+<img class="absolute inset-0 w-full h-full object-cover brightness-50" data-alt="top down view of coffee beans being roasted with dramatic low key lighting and smoke texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgv2Ibw6ZvGJCh-fk-XCYwjVnWruh33cK8gGpIv_sW44k13z5VwiG0Ugo0i1bBWvn6nXGCQGkwp4H8hjETfH6lOqeaji9ieEGbTXNhu1hKG-e_dFCIiWrH8lCdiGcI6g9x-56o11O_wMPFxnvudgYW4pqkKegLuV-jHJzLHj_AFyJNz3Y4lyJQu6kuTzn09kmva80TT2mJVkOd7juHiLkj5HAYMEhQxlwwZzd63XAYuqHSZoCNSrYOfLaCSFaymFFEIPLQsxJd1XY"/>
+<div class="relative z-10 p-16 max-w-2xl">
+<h2 class="font-headline text-4xl text-white mb-6">The Ritual of Roasting</h2>
+<p class="text-white/80 font-light leading-relaxed mb-8">Every Saturday at 10:00 AM, join us for a live roasting session. Experience the transformation of raw green beans into the aromatic soul of Table Warm.</p>
+<a class="inline-flex items-center gap-2 text-white font-label text-sm tracking-widest group" href="#">
+                        LEARN MORE
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-2" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f7eddc] w-full mt-20 border-t border-[#5d3b24]/10">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 max-w-screen-2xl mx-auto">
+<div class="font-headline italic text-lg text-[#432510]">TABLE WARM</div>
+<div class="flex gap-10 font-label text-sm tracking-wide uppercase text-[#5d3b24]/70">
+<a class="hover:text-[#432510] transition-opacity duration-300" href="#">Provenance</a>
+<a class="hover:text-[#432510] transition-opacity duration-300" href="#">Journal</a>
+<a class="hover:text-[#432510] transition-opacity duration-300" href="#">Reservations</a>
+<a class="hover:text-[#432510] transition-opacity duration-300" href="#">Contact</a>
+</div>
+<div class="text-[#5d3b24]/70 font-body text-xs tracking-wide">
+                © 2024 TABLE WARM. Hand-crafted hospitality.
+            </div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PUNCH FUEL | Routine Builder</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#edeaea",
+                        "on-secondary-fixed": "#6f0011",
+                        "secondary-fixed": "#ffc3c0",
+                        "on-primary-container": "#575656",
+                        "error": "#b02500",
+                        "secondary-fixed-dim": "#ffafac",
+                        "surface": "#fff7d4",
+                        "error-dim": "#b92902",
+                        "inverse-on-surface": "#ae9e18",
+                        "error-container": "#f95630",
+                        "surface-dim": "#edd600",
+                        "tertiary-container": "#7bd1fa",
+                        "on-error-container": "#520c00",
+                        "on-secondary": "#ffefee",
+                        "on-primary-fixed": "#454444",
+                        "surface-container-highest": "#f6de0b",
+                        "on-surface-variant": "#675c00",
+                        "primary-container": "#edeaea",
+                        "inverse-surface": "#110e00",
+                        "tertiary-fixed": "#7bd1fa",
+                        "on-tertiary": "#e5f5ff",
+                        "surface-container-low": "#fff2a6",
+                        "on-secondary-fixed-variant": "#9a2128",
+                        "primary-dim": "#504f4f",
+                        "secondary-dim": "#992027",
+                        "on-tertiary-fixed-variant": "#004f69",
+                        "surface-bright": "#fff7d4",
+                        "on-tertiary-container": "#00465d",
+                        "on-secondary-container": "#8d1620",
+                        "tertiary-fixed-dim": "#6cc3eb",
+                        "surface-container-high": "#fbe431",
+                        "primary": "#5c5b5b",
+                        "on-primary": "#f5f2f1",
+                        "inverse-primary": "#ffffff",
+                        "outline-variant": "#bfae2b",
+                        "background": "#fff7d4",
+                        "outline": "#857800",
+                        "on-surface": "#352f00",
+                        "secondary": "#aa2c32",
+                        "on-tertiary-fixed": "#003041",
+                        "on-background": "#352f00",
+                        "primary-fixed-dim": "#dfdcdc",
+                        "tertiary": "#006382",
+                        "secondary-container": "#ffc3c0",
+                        "tertiary-dim": "#005672",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffefec",
+                        "on-primary-fixed-variant": "#626060",
+                        "surface-container": "#ffea50",
+                        "surface-variant": "#f6de0b",
+                        "surface-tint": "#5c5b5b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Epilogue"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-border {
+            box-shadow: 4px 4px 0px 0px #352f00;
+        }
+        .kinetic-border-sm {
+            box-shadow: 2px 2px 0px 0px #352f00;
+        }
+        .sticker-lift:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px 0px #352f00;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary selection:text-on-secondary">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-4 h-16 w-full bg-[#fff7d4] border-b-4 border-[#352f00]">
+<button class="flex items-center justify-center p-2 active:translate-y-1 transition-transform text-[#352f00]">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<span class="text-2xl font-black italic tracking-tighter text-[#352f00] font-headline uppercase">PUNCH FUEL</span>
+<button class="flex items-center justify-center p-2 active:translate-y-1 transition-transform text-[#352f00]">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</nav>
+<main class="pt-16 pb-24">
+<!-- First Viewport: Routine Builder Selector -->
+<section class="relative min-h-[751px] flex flex-col bg-surface overflow-hidden">
+<div class="p-6 flex-1 flex flex-col justify-end relative z-10">
+<!-- Visual Background Accent (Asymmetric Grid) -->
+<div class="absolute top-0 right-0 w-2/3 h-full opacity-10 pointer-events-none">
+<div class="grid grid-cols-4 h-full border-l border-outline">
+<div class="border-r border-outline"></div>
+<div class="border-r border-outline"></div>
+<div class="border-r border-outline"></div>
+</div>
+</div>
+<div class="mb-8">
+<span class="bg-secondary text-on-secondary font-label text-xs font-bold px-2 py-1 uppercase inline-block mb-4 -rotate-1 kinetic-border-sm">ROUTINE BUILDER</span>
+<h1 class="font-headline text-5xl font-black leading-none tracking-tighter uppercase mb-4">
+                        YOUR<br/>PERFORMANCE<br/><span class="text-secondary italic">STACK</span>
+</h1>
+<p class="font-body text-lg font-medium max-w-[80%] leading-tight">당신의 목표에 맞춘 최적의 퍼포먼스 루틴을 구성하세요.</p>
+</div>
+<!-- Goal Selection Chips -->
+<div class="space-y-4 mb-8">
+<p class="font-label text-xs font-bold uppercase tracking-widest text-outline">SELECT YOUR GOAL</p>
+<div class="flex flex-wrap gap-3">
+<button class="flex items-center gap-2 px-6 py-3 bg-surface-container-highest border-2 border-on-surface font-label font-bold uppercase kinetic-border sticker-lift">
+<span class="material-symbols-outlined text-xl" data-icon="bolt">bolt</span>
+                            Energy
+                        </button>
+<button class="flex items-center gap-2 px-6 py-3 bg-surface border-2 border-on-surface font-label font-bold uppercase kinetic-border-sm opacity-60">
+<span class="material-symbols-outlined text-xl" data-icon="rebase_edit">rebase_edit</span>
+                            Recovery
+                        </button>
+<button class="flex items-center gap-2 px-6 py-3 bg-surface border-2 border-on-surface font-label font-bold uppercase kinetic-border-sm opacity-60">
+<span class="material-symbols-outlined text-xl" data-icon="psychology">psychology</span>
+                            Focus
+                        </button>
+</div>
+</div>
+<!-- Subscription CTA -->
+<div class="bg-surface-container border-t-4 border-on-surface -mx-6 p-6 mt-4">
+<div class="flex justify-between items-end">
+<div>
+<p class="font-label text-xs font-bold text-on-surface opacity-70 mb-1">MEMBERSHIP STARTING AT</p>
+<p class="font-headline text-3xl font-black text-on-surface tracking-tighter">월 39,000원</p>
+</div>
+<button class="bg-secondary text-on-secondary px-8 py-4 font-headline font-bold uppercase text-lg kinetic-border sticker-lift">
+                            START NOW
+                        </button>
+</div>
+</div>
+</div>
+<!-- Kinetic Image Element -->
+<div class="absolute top-10 -right-20 w-64 h-64 bg-surface-container-high rounded-full overflow-hidden border-4 border-on-surface -rotate-12 z-0">
+<img alt="Athletic performance" class="w-full h-full object-cover grayscale contrast-125 mix-blend-multiply opacity-80" data-alt="Close-up of a high-performance athlete in mid-motion with dynamic lighting and grit texture, vibrant sport editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHWhtBmzaTqmUYpZNhq7j3zxOXAxPuP_9YUBl1MQNkj6_SL5Vy5iMcaX3OlLC6jug-UQsmvjyOc7NkiPW8l0z_lcOwz9PCdfVwICfcOZ9uifwFD0n48pdVvcLD7EoPm0jxfTZT3jNZ36ykBiigZ4SSJLZ_tR05ywjRr45EMTS6BVeTphViBlLOl9yZREMxlauwGcfULpTlFrEhkooVykrRWcBqosI1Nr8DWM39DESsOx6PQD5IAEGinmPcBk69bOJdLZNOxZ_zQAg"/>
+</div>
+</section>
+<!-- Body: Routine Catalog -->
+<section class="bg-on-surface text-surface py-12">
+<!-- Category Anchors -->
+<div class="sticky top-16 z-40 bg-on-surface/95 backdrop-blur-sm border-b-2 border-surface/20 px-4 py-4 mb-8">
+<div class="flex justify-between items-center max-w-md mx-auto">
+<a class="font-label text-sm font-bold uppercase text-surface-container-highest border-b-2 border-surface-container-highest pb-1 tracking-tighter" href="#">DAILY</a>
+<a class="font-label text-sm font-bold uppercase text-surface/40 tracking-tighter" href="#">PRO</a>
+<a class="font-label text-sm font-bold uppercase text-surface/40 tracking-tighter" href="#">RECOVERY</a>
+</div>
+</div>
+<div class="px-4 space-y-12">
+<div class="flex justify-between items-baseline border-b-4 border-surface pb-2">
+<h2 class="font-headline text-4xl font-black uppercase tracking-tighter">DAILY FUEL</h2>
+<span class="font-label text-xs font-bold text-surface-container-highest">01 / 03</span>
+</div>
+<!-- Product Cards Container -->
+<div class="space-y-8">
+<!-- Product Card 1 -->
+<div class="group relative bg-surface text-on-surface border-2 border-on-surface p-1 kinetic-border">
+<div class="flex h-48 overflow-hidden relative">
+<div class="w-2/5 bg-surface-container flex flex-col items-center justify-center p-4 border-r-2 border-on-surface">
+<img alt="Protein Powder" class="w-full h-full object-contain mix-blend-multiply" data-alt="Minimalist black sports supplement container on a bright yellow background with sharp shadows and high contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4mem1UV40TV-xWnL1yvXIwgAEHxhQX3sJS63HqKFOJrk6HZcYQAR51ZjMLxglZBYmsXzXMvnN-olyncoiqmdX4-zwxJaL-KvVm1f2a7IPEV-llIuHu2aHYfPydsGvVSrIhkr0WBL2U0hQ8uRAT9Zyc_AuVj5yw-2FSgNsfgNGFB3aDxAMNvDhsymT4-5-VwiiQzK8qEp4DwYsh7Vlw0FM4mE0LrQK1frj3y2x79BtvQep7wfw8rKP3cjc04hdicXDy-zclcKmFE4"/>
+</div>
+<div class="w-3/5 p-4 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<span class="bg-on-surface text-surface text-[10px] font-label font-bold px-1 uppercase tracking-tighter">ESSENTIAL</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h3 class="font-headline text-xl font-bold leading-none uppercase mb-2">PUNCH WHEY ISOLATE</h3>
+<div class="flex gap-2">
+<div class="text-[10px] font-label font-bold uppercase border border-on-surface/20 px-1">24G PRO</div>
+<div class="text-[10px] font-label font-bold uppercase border border-on-surface/20 px-1">ZERO SUGAR</div>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<p class="font-headline text-xl font-black tracking-tighter">59,000원</p>
+<button class="bg-on-surface text-surface w-10 h-10 flex items-center justify-center sticker-lift active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group relative bg-surface-container-high text-on-surface border-2 border-on-surface p-1 kinetic-border">
+<div class="flex h-48 overflow-hidden relative">
+<div class="w-2/5 bg-surface-container-highest flex flex-col items-center justify-center p-4 border-r-2 border-on-surface">
+<img alt="Pre-workout" class="w-full h-full object-contain mix-blend-multiply" data-alt="Close-up of a sleek black energy drink can with vibrant yellow typography sitting on a concrete surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7dPEI0Dq6WBuzg94zsfGKPczUhUx2IckjMEVGls1yrwnZ20qES6xZiZnA3er_Amkt572zQdfTw3KgmfA6cTcH51wEY74yso8ungPS7QCGxkvHOMgUAta1zuAwnrbMFdML_z0QksNk1XHWedYiI-B3soboMwQPekwwdKgooJHQkGZYqPO7e_IGK7DrH_IHNHZfkQ8QlQzggeEO6_IlJfK_pj_bb7yCOauJlKJ_T8AQw7wvsJNG5JS4VZcT3IqKSNDjYtpehe5yD9o"/>
+</div>
+<div class="w-3/5 p-4 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<span class="bg-secondary text-on-secondary text-[10px] font-label font-bold px-1 uppercase tracking-tighter">BEST SELLER</span>
+</div>
+<h3 class="font-headline text-xl font-bold leading-none uppercase mb-2">PUNCH IGNITE PRE</h3>
+<div class="flex gap-2">
+<div class="text-[10px] font-label font-bold uppercase border border-on-surface/20 px-1">200MG CAFFEINE</div>
+<div class="text-[10px] font-label font-bold uppercase border border-on-surface/20 px-1">BETA-ALANINE</div>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<p class="font-headline text-xl font-black tracking-tighter">45,000원</p>
+<button class="bg-on-surface text-surface w-10 h-10 flex items-center justify-center sticker-lift">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="flex flex-col items-start px-6 py-12 w-full bg-[#ffea50] mt-auto">
+<span class="text-4xl font-black text-[#352f00] mb-4 font-headline italic tracking-tighter">PUNCH PERFORMANCE</span>
+<div class="grid grid-cols-2 gap-x-12 gap-y-4 mb-8 w-full">
+<a class="font-label font-bold uppercase tracking-widest text-xs text-[#352f00] hover:text-[#aa2c32] transition-colors" href="#">Terms</a>
+<a class="font-label font-bold uppercase tracking-widest text-xs text-[#352f00] hover:text-[#aa2c32] transition-colors" href="#">Privacy</a>
+<a class="font-label font-bold uppercase tracking-widest text-xs text-[#352f00] hover:text-[#aa2c32] transition-colors" href="#">Shipping</a>
+<a class="font-label font-bold uppercase tracking-widest text-xs text-[#352f00] hover:text-[#aa2c32] transition-colors" href="#">Returns</a>
+</div>
+<p class="font-label font-bold uppercase tracking-widest text-[10px] text-[#352f00] opacity-60">©2024 PUNCH PERFORMANCE. KINETIC GRID ENGINE.</p>
+</footer>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe px-2 bg-[#fff7d4] border-t-4 border-[#352f00] z-50">
+<a class="flex flex-col items-center justify-center text-[#857800] opacity-70 hover:opacity-100 active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] uppercase mt-1">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#f6de0b] text-[#352f00] px-4 py-1 border-2 border-[#352f00] -translate-y-1 active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="fitness_center">fitness_center</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] uppercase mt-1">Routine</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#857800] opacity-70 hover:opacity-100 active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] uppercase mt-1">Profile</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#857800] opacity-70 hover:opacity-100 active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] uppercase mt-1">Cart</span>
+</a>
+</nav>
+</body></html>

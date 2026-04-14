@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#d6e3fa",
+                    "error-container": "#fe8983",
+                    "secondary": "#536073",
+                    "inverse-surface": "#0b0f12",
+                    "inverse-primary": "#e6eeff",
+                    "outline": "#6f7c86",
+                    "on-error": "#fff7f6",
+                    "surface-variant": "#d7e4ef",
+                    "on-primary-fixed": "#38404d",
+                    "on-primary-fixed-variant": "#545c6a",
+                    "error": "#9f403d",
+                    "on-surface-variant": "#54616a",
+                    "on-error-container": "#752121",
+                    "tertiary-container": "#d7dde7",
+                    "on-background": "#27343c",
+                    "surface-tint": "#575f6d",
+                    "on-tertiary": "#f7f9ff",
+                    "on-tertiary-fixed-variant": "#525861",
+                    "surface": "#f7fafe",
+                    "primary": "#575f6d",
+                    "error-dim": "#4e0309",
+                    "tertiary-fixed": "#d7dde7",
+                    "tertiary-dim": "#4d545c",
+                    "surface-container-highest": "#d7e4ef",
+                    "outline-variant": "#a6b4be",
+                    "surface-container-low": "#eff4fa",
+                    "surface-container-high": "#dfeaf3",
+                    "surface-container": "#e7eff6",
+                    "surface-dim": "#ccdce9",
+                    "inverse-on-surface": "#9a9da1",
+                    "secondary-fixed-dim": "#c8d5eb",
+                    "secondary-container": "#d6e3fa",
+                    "surface-bright": "#f7fafe",
+                    "on-primary-container": "#4a5260",
+                    "primary-dim": "#4b5360",
+                    "on-surface": "#27343c",
+                    "primary-fixed": "#dbe3f3",
+                    "on-primary": "#f6f7ff",
+                    "on-secondary": "#f7f9ff",
+                    "on-secondary-container": "#465365",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f7fafe",
+                    "on-secondary-fixed": "#334052",
+                    "on-tertiary-container": "#484f57",
+                    "primary-fixed-dim": "#cdd5e5",
+                    "primary-container": "#dbe3f3",
+                    "on-tertiary-fixed": "#363c44",
+                    "tertiary-fixed-dim": "#c9cfd9",
+                    "on-secondary-fixed-variant": "#4f5c6f",
+                    "secondary-dim": "#475466",
+                    "tertiary": "#596068"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .gallery-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .text-hallmark {
+            letter-spacing: -0.02em;
+        }
+        .metallic-shimmer:hover {
+            background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.4) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl shadow-sm dark:shadow-none flex justify-between items-center w-full px-8 py-6 max-w-full mx-auto font-['Manrope'] tracking-tight">
+<div class="flex items-center">
+<span class="text-2xl font-bold tracking-[-0.02em] text-slate-800 dark:text-slate-100">LUNE FORM</span>
+</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="text-slate-900 dark:text-white border-b border-slate-900 dark:border-white pb-1" href="#">Collection</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors" href="#">Bespoke</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors" href="#">Consult</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors" href="#">Brand</a>
+</div>
+<div class="flex items-center space-x-6 text-slate-700 dark:text-slate-300">
+<button class="hover:opacity-80 transition-opacity flex items-center">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="hover:opacity-80 transition-opacity flex items-center">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- First Viewport: Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-surface-bright">
+<div class="absolute inset-0 z-0">
+<img alt="Macro Jewelry" class="w-full h-full object-cover opacity-90" data-alt="extreme close-up of a polished platinum ring with chrome reflections and intricate details on a soft cool-toned background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9w0SZ_AnnQ8CJqwDoJ1WteENf6wSBDBJ_OMGACOz1iNT5LfWAlRgJTwmEytpvR9o3hCCSTZGanOp_Sy8YJb2pw3soxgUNEJys7aQonC2UU6Uj3biiUIWlVhs_Kwy0lhmPuk1DnBMSfGhZwlaZr38ouPIhsIr1YHBe1Yl77KWIWrv1YSBk_05MMAGZhR7hab07d50sC9bMPaeKS5ctlYBEMMXwLT3Q31MdnEUIqVflpJVOSCzl3V2EIPKlklYiQ2By85uGIKM_bpFc"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background"></div>
+</div>
+<div class="relative z-10 w-full max-w-7xl mx-auto px-8 flex flex-col items-start">
+<div class="max-w-2xl">
+<span class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-4 block">Seasonal Edit</span>
+<h1 class="font-headline text-6xl md:text-8xl font-extrabold text-on-surface leading-[1.1] text-hallmark mb-6">
+                        당신의 빛을<br/>큐레이팅하다.
+                    </h1>
+<p class="text-lg text-on-surface-variant max-w-md leading-relaxed mb-12">
+                        공간과 빛의 조화를 담은 정교한 금속 공예. LUNE FORM은 당신의 일상에 은은한 품격을 더하는 에테리얼 갤러리입니다.
+                    </p>
+</div>
+<!-- Floating Consult CTA -->
+<div class="relative md:absolute md:right-8 md:bottom-24 bg-white/50 backdrop-blur-xl p-8 shadow-2xl border border-white/30 max-w-xs transition-transform hover:-translate-y-2 duration-500">
+<div class="space-y-4">
+<div class="flex justify-between items-end border-b border-outline-variant/30 pb-4">
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Consulting</span>
+<span class="font-headline text-xl font-bold">299,000원 ~</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-snug">
+                            전문 큐레이터와의 1:1 상담을 통해 나만의 비스포크 주얼리를 만나보세요.
+                        </p>
+<button class="w-full bg-primary text-on-primary py-4 px-6 text-sm font-semibold tracking-widest uppercase transition-all hover:bg-primary-dim active:opacity-70">
+                            Book a Consult
+                        </button>
+</div>
+</div>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce opacity-40">
+<span class="font-label text-[10px] uppercase tracking-widest mb-2">Scroll</span>
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</section>
+<!-- Current Collection Grid -->
+<section class="py-32 px-8 bg-background">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-20">
+<div class="space-y-2">
+<span class="font-label text-xs uppercase tracking-widest text-primary">01 / Collection</span>
+<h2 class="font-headline text-4xl font-bold text-hallmark">Current Collection</h2>
+</div>
+<a class="font-label text-xs uppercase tracking-widest border-b border-primary pb-1 hover:opacity-60 transition-opacity" href="#">View All Series</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+<!-- Large Asymmetric Panel -->
+<div class="md:col-span-7 group">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden transition-all duration-700">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="luxury pearl necklace on a white velvet surface with soft morning light and deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCieJlAj2np6Yz1x36YpVtjynoHI-1poE8C09O5bmvWNm6vqvCTNYKKS4z3ybCe3FvPAlgdPW2zkGeGBMCJ3Y1pBN-kJcxYlFkNtZTNINy0juXJp033rKMTuDIYEbcboHmm37WEFKDHdmIpU-_xnrpBYpcOdxKvtFll7xHiz8JdUZl8zRA1VUNv6e_cPYaQcqwPRfUChEXn78wMKap5E-dauzAuvcK1bqtsCMLHWvSHtjez24Z7Yh2QpEW3LlmXTuZ1-aGLjonR47IR"/>
+<div class="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-colors duration-500"></div>
+<div class="absolute bottom-10 left-10 text-white mix-blend-difference">
+<p class="font-headline text-3xl font-light italic">Lune de Pearl</p>
+</div>
+</div>
+<div class="mt-6 space-y-1">
+<span class="font-label text-[10px] text-on-surface-variant uppercase">Silver 925 / Natural Pearl</span>
+<h3 class="font-headline text-lg font-semibold">진주의 은은한 광채, 루네 펄 시리즈</h3>
+</div>
+</div>
+<!-- Side Grid -->
+<div class="md:col-span-5 flex flex-col space-y-12">
+<div class="group">
+<div class="relative aspect-[1/1] bg-surface-container-low overflow-hidden transition-all duration-700">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="minimalist silver earrings resting on a smooth grey stone with artistic directional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq6IQdJb5K7-fv1Y973h6O3x6oL_DkY3gIvrPENnFfmSVqZDa87T4Vt8V2_e7kRnImrQ22qPHEuvQjznIrc51qcTKDZwrUxwSR8hWHz4yBKM1SjjVBYM3LJQcaD47Qfd_kr4hk6-ASGh3LpH4aFKWQPnCtG33b_koaza8vUR6ZND9t-T_D6GtEwP0XwZBmvm5nt9CxH6wgQS-fr1N1dsIF3jPIUJdNgHfX1SZEnI4meEqD2gTnaLasH8TjRvLSiPCS-7tOGcKJWB6a"/>
+<div class="absolute inset-0 metallic-shimmer transition-opacity opacity-0 group-hover:opacity-100 duration-500"></div>
+</div>
+<div class="mt-4">
+<h3 class="font-headline text-md font-semibold">Minimalist Studs</h3>
+<p class="text-sm text-on-surface-variant mt-1">45,000원</p>
+</div>
+</div>
+<div class="group">
+<div class="relative aspect-[1/1] bg-surface-container-low overflow-hidden transition-all duration-700">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="handcrafted platinum wedding band with brushed finish and subtle texture on a cool slate surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2Q7VisXIv8lT5YPAcMNVTzrdNXPjPjHE3xnuqrgnonw1WOL9vpYDJsuSFoABmki0fUKDzkGzQjbM2Bl7mU95i8T-92uPy4EhewA7jeEx3-AA-bC5nh9cxi9yxsWAt0yfyRvxAiLc-FFTq3I8nMQ_xV6_kEtn00Fn9FA6oC_cHDkcfFvDC7lsuJfw696Kf_vr4xBrIRA3F3VTWUUehVLu1gb89tmMg934rOb-7Y-vjDWgkTCIc9nfg54U-pR1ruB4H7bFSbwPBQaph"/>
+<div class="absolute inset-0 metallic-shimmer transition-opacity opacity-0 group-hover:opacity-100 duration-500"></div>
+</div>
+<div class="mt-4">
+<h3 class="font-headline text-md font-semibold">Architectural Ring</h3>
+<p class="text-sm text-on-surface-variant mt-1">128,000원</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bespoke Inquiry Section -->
+<section class="py-32 bg-surface-container-low relative">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<div class="order-2 md:order-1">
+<div class="space-y-8">
+<span class="font-label text-xs uppercase tracking-widest text-primary">02 / Bespoke Service</span>
+<h2 class="font-headline text-5xl font-bold leading-tight text-hallmark">영원한 조각의 미학,<br/>당신만의 형태를 제안합니다.</h2>
+<div class="space-y-6 text-on-surface-variant leading-relaxed">
+<p>모든 비스포크 과정은 고객의 취향과 라이프스타일을 분석하는 것에서 시작됩니다. 루네 폼의 수석 디자이너가 직접 스케치부터 금속 선정, 마감 기법까지 섬세하게 조율합니다.</p>
+<ul class="space-y-4 font-label text-sm uppercase tracking-wide text-on-surface">
+<li class="flex items-center space-x-4">
+<span class="w-8 h-[1px] bg-primary"></span>
+<span>Personal Consultation</span>
+</li>
+<li class="flex items-center space-x-4">
+<span class="w-8 h-[1px] bg-primary"></span>
+<span>Material Selection</span>
+</li>
+<li class="flex items-center space-x-4">
+<span class="w-8 h-[1px] bg-primary"></span>
+<span>Precision Crafting</span>
+</li>
+</ul>
+</div>
+<div class="pt-6">
+<button class="group flex items-center space-x-4 border border-outline-variant py-4 px-8 text-sm font-semibold tracking-widest uppercase transition-all hover:bg-on-surface hover:text-white">
+<span>Inquiry Now</span>
+<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2 relative">
+<div class="aspect-square bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="hands of an artisan jeweler working with precision tools on a silver piece in a modern clean studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADlp0peu3vrpUApycJzf7pL9yDZO6W2WTCssT-NeL4C9RnajdWJ-g5d84hcmWcgzHv4E3i_J1LH8lAQdzkVCJN1CPgMsKJtAiB-ixPyOyjFZz5zzrlZaqxEyU5qRjGjf6TdSc_TsOKMC7fUpWPT2XQvGoqOTkp0xuNMp5BqQhFQFmFxQEiJL5c60gbmlkmpjo_ZzPAIpCiCOmEbAcp8iLpRq1NLPvV1J4_EccyUdnLQgDLf3M0Dts6HeZbQNyHJ6CPZbaswK8TpaUo"/>
+</div>
+<div class="absolute -bottom-10 -left-10 w-2/3 aspect-video bg-white/30 backdrop-blur-xl border border-white/50 p-6 hidden md:block">
+<p class="text-[10px] font-label uppercase tracking-widest opacity-60 mb-2">Philosophy</p>
+<p class="text-sm font-medium leading-relaxed italic">"우리는 장신구가 아닌, 시간에 따라 변화하는 빛의 기록을 만듭니다."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Philosophy Snippet -->
+<section class="py-48 px-8 flex flex-col items-center text-center bg-surface-bright">
+<div class="max-w-3xl space-y-12">
+<span class="font-label text-xs uppercase tracking-[0.4em] text-primary">The Digital Curator</span>
+<h2 class="font-headline text-4xl md:text-6xl font-light text-hallmark leading-tight">
+                    공간을 채우는 정적,<br/>그 속에 깃든 우아함
+                </h2>
+<p class="text-lg text-on-surface-variant font-light leading-relaxed max-w-xl mx-auto">
+                    LUNE FORM은 'Ethereal Gallery' 컨셉을 지향합니다. 불필요한 장식을 덜어내고, 재료 본연의 물성과 정교한 마감이 빚어내는 조화로운 균형을 통해 시대를 초월하는 미학을 선보입니다.
+                </p>
+<div class="pt-12">
+<div class="w-px h-24 bg-gradient-to-b from-primary to-transparent mx-auto"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 border-t border-slate-100 dark:border-slate-900 bg-slate-50 dark:bg-slate-950 font-['Plus_Jakarta_Sans'] text-sm tracking-wide">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+<div class="space-y-6">
+<span class="text-xl font-black text-slate-800 dark:text-slate-200">LUNE FORM</span>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed pr-8">
+                    Curating eternal light through meticulous metal craftsmanship.
+                </p>
+</div>
+<div class="flex flex-col space-y-4">
+<span class="font-bold text-slate-900 dark:text-white mb-2">Shop</span>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white underline-offset-4 hover:underline transition-all" href="#">All Collection</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white underline-offset-4 hover:underline transition-all" href="#">Bespoke Jewelry</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white underline-offset-4 hover:underline transition-all" href="#">Limited Edition</a>
+</div>
+<div class="flex flex-col space-y-4">
+<span class="font-bold text-slate-900 dark:text-white mb-2">Support</span>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white underline-offset-4 hover:underline transition-all" href="#">Shipping &amp; Returns</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white underline-offset-4 hover:underline transition-all" href="#">Care Guide</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white underline-offset-4 hover:underline transition-all" href="#">Contact Us</a>
+</div>
+<div class="flex flex-col space-y-4">
+<span class="font-bold text-slate-900 dark:text-white mb-2">Legal</span>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white underline-offset-4 hover:underline transition-all" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white underline-offset-4 hover:underline transition-all" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center text-slate-500 dark:text-slate-400">
+<span>© 2024 LUNE FORM. All Rights Reserved.</span>
+<div class="flex space-x-6 mt-4 md:mt-0">
+<span class="material-symbols-outlined text-lg cursor-pointer hover:text-primary transition-colors" data-icon="public">public</span>
+<span class="material-symbols-outlined text-lg cursor-pointer hover:text-primary transition-colors" data-icon="chat">chat</span>
+</div>
+</div>
+</footer>
+</body></html>

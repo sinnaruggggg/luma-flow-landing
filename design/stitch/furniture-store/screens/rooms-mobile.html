@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MOSS HOME | Rooms</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Noto+Serif+KR:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#ccd9bc",
+                        "inverse-surface": "#0a1008",
+                        "error-dim": "#5c1202",
+                        "on-secondary": "#f0fedf",
+                        "on-surface": "#253721",
+                        "surface": "#f5fcee",
+                        "on-secondary-container": "#4a553f",
+                        "inverse-primary": "#ebfce0",
+                        "primary": "#54624d",
+                        "secondary-container": "#dae7ca",
+                        "primary-dim": "#485642",
+                        "inverse-on-surface": "#989f93",
+                        "tertiary-fixed": "#e3fbd1",
+                        "primary-fixed-dim": "#c9d9bf",
+                        "on-background": "#253721",
+                        "on-primary-fixed": "#364330",
+                        "surface-container-high": "#dbeed3",
+                        "background": "#f5fcee",
+                        "error-container": "#fe8b70",
+                        "surface-variant": "#d3e9ca",
+                        "on-error": "#fff7f6",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-dim": "#455939",
+                        "secondary": "#57634c",
+                        "on-tertiary": "#ecffdc",
+                        "on-secondary-fixed-variant": "#535f48",
+                        "on-tertiary-fixed": "#3c4f30",
+                        "surface-container-highest": "#d3e9ca",
+                        "on-tertiary-fixed-variant": "#586c4b",
+                        "on-error-container": "#742410",
+                        "tertiary-fixed-dim": "#d5edc3",
+                        "outline-variant": "#a2b89b",
+                        "surface-dim": "#c7e2be",
+                        "primary-container": "#d7e7cd",
+                        "on-secondary-fixed": "#37432e",
+                        "surface-container-low": "#ecf7e5",
+                        "tertiary-container": "#e3fbd1",
+                        "on-primary": "#edfde1",
+                        "on-surface-variant": "#51644c",
+                        "on-primary-fixed-variant": "#51604b",
+                        "surface-bright": "#f5fcee",
+                        "surface-tint": "#54624d",
+                        "secondary-dim": "#4b5740",
+                        "tertiary": "#516544",
+                        "on-tertiary-container": "#4d6141",
+                        "error": "#9e422c",
+                        "primary-fixed": "#d7e7cd",
+                        "outline": "#6c8066",
+                        "surface-container": "#e4f2dc",
+                        "secondary-fixed": "#dae7ca",
+                        "on-primary-container": "#485641"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Noto Serif KR"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f5fcee; /* surface */
+            color: #253721; /* on-surface */
+            font-family: 'Noto Serif KR', serif;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-panel {
+            background: rgba(249, 252, 244, 0.84);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full flex justify-between items-center px-6 h-16 bg-[#f5fcee]/80 dark:bg-[#1a1c18]/80 backdrop-blur-xl z-50 shadow-[0_4px_30px_rgba(0,0,0,0.04)]">
+<button class="hover:opacity-70 transition-opacity active:scale-95 duration-200 text-[#54624d] dark:text-[#d7e7cd]">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-manrope text-xl font-bold tracking-[0.2em] text-[#54624d] dark:text-[#d7e7cd]">MOSS HOME</h1>
+<button class="hover:opacity-70 transition-opacity active:scale-95 duration-200 text-[#54624d] dark:text-[#d7e7cd]">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</header>
+<main class="pt-24 px-6">
+<!-- Room Category Anchor -->
+<section class="mb-10 overflow-hidden">
+<h2 class="font-headline font-bold text-sm tracking-widest uppercase text-on-surface-variant mb-6">Explore Rooms</h2>
+<div class="flex gap-4 overflow-x-auto hide-scrollbar pb-4 -mx-6 px-6">
+<!-- Living Room (Active) -->
+<div class="flex-shrink-0 flex flex-col items-center gap-3">
+<div class="w-20 h-24 bg-primary text-on-primary rounded-[2.5rem] flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-3xl">chair</span>
+</div>
+<span class="font-headline text-[10px] font-bold tracking-tighter uppercase">Living</span>
+</div>
+<!-- Bedroom -->
+<div class="flex-shrink-0 flex flex-col items-center gap-3">
+<div class="w-20 h-24 bg-surface-container-high text-on-surface-variant rounded-[2.5rem] flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">bed</span>
+</div>
+<span class="font-headline text-[10px] font-medium tracking-tighter uppercase opacity-60">Bedroom</span>
+</div>
+<!-- Kitchen -->
+<div class="flex-shrink-0 flex flex-col items-center gap-3">
+<div class="w-20 h-24 bg-surface-container-high text-on-surface-variant rounded-[2.5rem] flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">cooking</span>
+</div>
+<span class="font-headline text-[10px] font-medium tracking-tighter uppercase opacity-60">Kitchen</span>
+</div>
+<!-- Dining -->
+<div class="flex-shrink-0 flex flex-col items-center gap-3">
+<div class="w-20 h-24 bg-surface-container-high text-on-surface-variant rounded-[2.5rem] flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">restaurant</span>
+</div>
+<span class="font-headline text-[10px] font-medium tracking-tighter uppercase opacity-60">Dining</span>
+</div>
+<!-- Office -->
+<div class="flex-shrink-0 flex flex-col items-center gap-3">
+<div class="w-20 h-24 bg-surface-container-high text-on-surface-variant rounded-[2.5rem] flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">desk</span>
+</div>
+<span class="font-headline text-[10px] font-medium tracking-tighter uppercase opacity-60">Office</span>
+</div>
+</div>
+</section>
+<!-- Atmospheric Tip Card -->
+<section class="mb-12">
+<div class="surface-container-low rounded-xl p-6 relative overflow-hidden bg-surface-container-low">
+<div class="relative z-10 flex flex-col gap-2">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-sm">auto_awesome</span>
+<span class="font-headline text-[10px] font-bold tracking-widest uppercase text-primary">Atmospheric Tip</span>
+</div>
+<h3 class="font-body text-xl font-bold text-on-surface leading-tight">자연광을 머금는 거실의 미학</h3>
+<p class="font-body text-sm text-on-surface-variant/80 leading-relaxed max-w-[85%]">
+                        낮은 채도의 오크 소재 가구는 오후의 햇살을 가장 아름답게 투영합니다. 공간의 중심에 여백을 두어 빛의 흐름을 방해하지 마세요.
+                    </p>
+</div>
+<div class="absolute -right-4 -bottom-4 w-32 h-32 opacity-10">
+<span class="material-symbols-outlined text-[8rem]">filter_vintage</span>
+</div>
+</div>
+</section>
+<!-- Sticky Filter/Sort -->
+<section class="sticky top-16 z-40 bg-surface/90 backdrop-blur-md -mx-6 px-6 py-4 mb-8">
+<div class="flex items-center justify-between">
+<div class="flex gap-2 overflow-x-auto hide-scrollbar">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-highest rounded-full whitespace-nowrap">
+<span class="font-headline text-xs font-bold text-on-surface">Material</span>
+<span class="material-symbols-outlined text-xs">keyboard_arrow_down</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-highest rounded-full whitespace-nowrap">
+<span class="font-headline text-xs font-bold text-on-surface">Design Style</span>
+<span class="material-symbols-outlined text-xs">keyboard_arrow_down</span>
+</button>
+</div>
+<button class="ml-4 p-2 text-on-surface">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="grid grid-cols-2 gap-x-4 gap-y-10">
+<!-- Product 1 -->
+<div class="flex flex-col gap-4">
+<div class="relative aspect-[3/4] bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_20px_40px_rgba(37,55,33,0.03)] group">
+<img class="w-full h-full object-cover" data-alt="minimalist design wooden lounge chair with grey upholstery in a sunlit bright studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjVV31TdMP7ID-hcT1kUF-R3GVeCKrQqQXoDbZr39Y5RKfzCN_KAHEaHUFCZadva13YBpps20zkWXQWx1nQxkLEbUK-GNJQNIkDfMCIz6ilBNf7z2SvNoaypvAQJP3KLqop0X-M8UVP1MfxOlgfgt7cBowDbsxZQea2lKYwi3eUJkp_1HoU-KzkWgEnqcB4Swq--x-yncowyww_Ul5a8aaei-kwzSXGw9e1T3-T3sVbBaaJpHKn4E2lfs1xeT_94II4KsKtWxW8WXr"/>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-md rounded-full flex items-center justify-center text-primary shadow-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="px-1">
+<p class="font-headline text-[10px] text-on-surface-variant tracking-widest uppercase mb-1">Oak / Minimalist</p>
+<h4 class="font-body text-base font-bold text-on-surface leading-tight mb-1">포레스트 라운지 체어</h4>
+<p class="font-headline text-sm font-bold text-primary">1,240,000원</p>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="flex flex-col gap-4">
+<div class="relative aspect-[3/4] bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_20px_40px_rgba(37,55,33,0.03)]">
+<img class="w-full h-full object-cover" data-alt="low profile minimalist walnut coffee table on a light green woven rug in a modern living room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2WchUBXIFKhdrDQ2tUE2dutBMwhuAH38axJ2a8O9Czqu8em79G2BS1VVZ_3WWbEv9AtDfDL9KBy5xH99E5NOOAqxF7uTSKx5ALa71Il2GEtyQrE1W9Km9viWv49WW5RHNTCVjx5bl7i0hRyiaR14QMIpzzTqHXIh9_-oDZOh09JgqclJRLbyN6yQfDDKiMY2duK_QlUKKTme73XQwJ9miAfuC_I6hiY8dowBndjaiOnT3MAjZYlvwu6g6Zp2z9rYAQq3jpgrZ-TLz"/>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-md rounded-full flex items-center justify-center text-on-surface-variant/40 shadow-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="px-1">
+<p class="font-headline text-[10px] text-on-surface-variant tracking-widest uppercase mb-1">Walnut / Zen Modern</p>
+<h4 class="font-body text-base font-bold text-on-surface leading-tight mb-1">고요 사이드 테이블</h4>
+<p class="font-headline text-sm font-bold text-primary">850,000원</p>
+</div>
+</div>
+<!-- Planner CTA Section (Asymmetric Span) -->
+<div class="col-span-2 my-6">
+<div class="relative bg-primary rounded-xl p-8 overflow-hidden shadow-xl">
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-30">
+<img class="w-full h-full object-cover grayscale" data-alt="atmospheric shot of an empty aesthetic room with shadows playing on the wall and a single branch in a vase" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6y3z-upeR3eZXkIvc7QEh18_MIzKqq4Xypi4VW6tMQXqnRuvQ8R-snNItdPs5SOXwsoyluKe45GSpvz6Ed18oYcO7z0Ue6iQjVHfbxO-mADefBAkS7EvykI-6-t4uOoMxATZnoq03Pb_1Fnkt3vcm3eVWKAqDk72IjzLMjLgJjyEmOEQHuLB4Qlb-e5iJdTObPcjAvWs-ZN243L4bfsDjl0T1d58uvm8yQrlJJIjlE2mUomQ5XuQwjePSRujLOaToWM--MVCbjkDt"/>
+</div>
+<div class="relative z-10 flex flex-col gap-4 items-start max-w-[65%]">
+<h3 class="font-body text-2xl font-bold text-on-primary leading-tight">이 가구로 공간<br/>계획하기</h3>
+<p class="font-body text-xs text-on-primary/70 leading-relaxed">
+                            선택한 아이템을 가상 공간에 배치하여 우리 집의 조화를 미리 확인해보세요.
+                        </p>
+<button class="mt-2 bg-surface-container-lowest text-primary px-6 py-3 rounded-full font-headline text-xs font-bold tracking-widest uppercase shadow-lg active:scale-95 transition-transform">
+                            Start Planner
+                        </button>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="flex flex-col gap-4">
+<div class="relative aspect-[3/4] bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_20px_40px_rgba(37,55,33,0.03)]">
+<img class="w-full h-full object-cover" data-alt="large textured linen fabric sectional sofa in a neutral tone interior with soft warm shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYbs-U7SumC2jNEA7Cvov7h7TOCSEm1DZYABS5B6wFnuLHkgfmhBMBhcYJ9GNDCO2k9KcTo9tEgIZTXWG1gMxvRUcpBBnfFlt6Vd-BOOHnwYB-OOfJIAmxbCs6YoA6qfAb_p1-l-7ZSzvqYxjNVarskpI2sqas5EIOcOdnBT_axM95b77mFerMHYi_scs4Eq_xsh3E78MsVhszZ4FgYHOaWr877Fuh15o9TCzg0jIqC92HR-CBA-5aLuTBEXoh_g203X2ECXWdvHBm"/>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-md rounded-full flex items-center justify-center text-on-surface-variant/40 shadow-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="px-1">
+<p class="font-headline text-[10px] text-on-surface-variant tracking-widest uppercase mb-1">Linen / Scandinavian</p>
+<h4 class="font-body text-base font-bold text-on-surface leading-tight mb-1">모스 모듈러 소파</h4>
+<p class="font-headline text-sm font-bold text-primary">3,890,000원</p>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="flex flex-col gap-4">
+<div class="relative aspect-[3/4] bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_20px_40px_rgba(37,55,33,0.03)]">
+<img class="w-full h-full object-cover" data-alt="tall designer floor lamp with a sculptural shade and matte steel base next to a house plant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfjC_5xqzJ_nDKIILya7UOuZlw_UvtzrK--PLVWhPb8gYMiU-11lYc3VQ5a7bkg33DSd0U3UJ6iWkXCqplqAlAY4FuiwCnXOqXrSPW3JK9_ELwdLKLwqZumT6QpmzGLgu7N-VVW8Rcpc6J6t8HiYrwyq0SqxBxzCaAbT2OD8Fqw9XpuJxwuxJkyegf1712GMn2njga67udZquuV71IiYB0ZJbYyg4sXtoEIiKkNUmqn1WmWsbCQ7zaHjpowaoDiYHTJFJnSush09tH"/>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-md rounded-full flex items-center justify-center text-on-surface-variant/40 shadow-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="px-1">
+<p class="font-headline text-[10px] text-on-surface-variant tracking-widest uppercase mb-1">Steel / Minimalist</p>
+<h4 class="font-body text-base font-bold text-on-surface leading-tight mb-1">루체 플로어 램프</h4>
+<p class="font-headline text-sm font-bold text-primary">420,000원</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#f5fcee] dark:bg-[#1a1c18] rounded-t-[1.5rem] shadow-[0_-10px_40px_rgba(37,55,33,0.06)]">
+<a class="flex flex-col items-center justify-center text-[#54624d]/70 dark:text-[#d7e7cd]/70 px-5 py-2.5 hover:bg-[#e4f2dc] dark:hover:bg-[#24311f] transition-colors" href="#">
+<span class="material-symbols-outlined">architecture</span>
+<span class="font-manrope text-[10px] font-medium tracking-wide uppercase">Planner</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#d7e7cd] dark:bg-[#54624d] text-[#253721] dark:text-[#ffffff] rounded-[1.5rem] px-5 py-2.5 transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-manrope text-[10px] font-medium tracking-wide uppercase">Bundles</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#54624d]/70 dark:text-[#d7e7cd]/70 px-5 py-2.5 hover:bg-[#e4f2dc] dark:hover:bg-[#24311f] transition-colors" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-manrope text-[10px] font-medium tracking-wide uppercase">Saved</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#54624d]/70 dark:text-[#d7e7cd]/70 px-5 py-2.5 hover:bg-[#e4f2dc] dark:hover:bg-[#24311f] transition-colors" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-manrope text-[10px] font-medium tracking-wide uppercase">Inquiry</span>
+</a>
+</nav>
+</body></html>

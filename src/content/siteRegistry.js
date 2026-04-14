@@ -75,11 +75,16 @@ function buildRouteAssets(site, routes) {
   );
 }
 
+function isRouteReady(entry) {
+  return entry.desktop.stitched && entry.mobile.stitched;
+}
+
 function getCoverage(routeAssets) {
   const values = Object.values(routeAssets);
   const stitchedRoutes = values.filter((entry) => entry.desktop.stitched || entry.mobile.stitched).length;
-  const fullRoutes = values.filter((entry) => entry.desktop.stitched && entry.mobile.stitched).length;
-  return { stitchedRoutes, fullRoutes };
+  const readyRoutes = values.filter(isRouteReady).length;
+  const stitchedScreens = values.reduce((sum, entry) => sum + Number(entry.desktop.stitched) + Number(entry.mobile.stitched), 0);
+  return { stitchedRoutes, readyRoutes, stitchedScreens };
 }
 
 export function buildSitePath(siteId, slug = "home") {
@@ -96,6 +101,7 @@ export function parseSitePath(pathname) {
 
   const route = site.routes.find((entry) => entry.slug === pageSlug);
   if (!route) return { kind: "not-found" };
+  if (!route.ready) return { kind: "staging", siteId, route };
 
   return { kind: "site", siteId, route };
 }
@@ -109,17 +115,19 @@ export const siteRegistry = siteCatalog.map((site) => {
   return {
     ...site,
     blueprint,
-    routes,
+    routes: routes.map((route) => ({ ...route, ready: isRouteReady(routeAssets[route.slug]) })),
     routeAssets,
     gallery: {
       desktop: routeAssets.home.desktop.image,
       mobile: routeAssets.home.mobile.image,
       homeMode: site.homeMode,
       hook: blueprint.heroMode,
-      stitchedHome: routeAssets.home.desktop.stitched || routeAssets.home.mobile.stitched,
+      homeReady: isRouteReady(routeAssets.home),
       stitchedRoutes: coverage.stitchedRoutes,
-      fullRoutes: coverage.fullRoutes,
+      readyRoutes: coverage.readyRoutes,
+      stitchedScreens: coverage.stitchedScreens,
       totalRoutes: routes.length,
+      publicReady: coverage.readyRoutes === routes.length,
     },
   };
 });

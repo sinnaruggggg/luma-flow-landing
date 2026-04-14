@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#9565ff",
+                    "on-error": "#690005",
+                    "tertiary-fixed": "#e9ddff",
+                    "secondary-fixed": "#9cf0ff",
+                    "on-tertiary": "#3c0090",
+                    "surface-variant": "#333539",
+                    "inverse-surface": "#e2e2e8",
+                    "surface-container": "#1e2024",
+                    "on-primary-fixed": "#001452",
+                    "surface-dim": "#111318",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#dde1ff",
+                    "surface-bright": "#37393e",
+                    "secondary": "#bdf4ff",
+                    "outline-variant": "#44474e",
+                    "tertiary-container": "#23005b",
+                    "surface-container-lowest": "#0c0e12",
+                    "surface-container-high": "#282a2e",
+                    "surface": "#111318",
+                    "on-surface-variant": "#c4c6cf",
+                    "on-primary-fixed-variant": "#0038b6",
+                    "surface-tint": "#b7c4ff",
+                    "on-primary-container": "#5479ff",
+                    "primary-container": "#001451",
+                    "on-primary": "#002682",
+                    "tertiary-fixed-dim": "#d1bcff",
+                    "on-secondary-fixed-variant": "#004f58",
+                    "on-secondary-container": "#00616d",
+                    "primary": "#b7c4ff",
+                    "on-background": "#e2e2e8",
+                    "inverse-primary": "#004ced",
+                    "on-secondary-fixed": "#001f24",
+                    "on-tertiary-fixed-variant": "#5700c9",
+                    "tertiary": "#d1bcff",
+                    "surface-container-low": "#1a1c20",
+                    "on-secondary": "#00363d",
+                    "on-tertiary-fixed": "#23005b",
+                    "background": "#111318",
+                    "surface-container-highest": "#333539",
+                    "on-error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#00daf3",
+                    "secondary-container": "#00e3fd",
+                    "primary-fixed-dim": "#b7c4ff",
+                    "inverse-on-surface": "#2f3035",
+                    "error-container": "#93000a",
+                    "outline": "#8e9099",
+                    "on-surface": "#e2e2e8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #111318;
+            background-image: radial-gradient(circle at 50% 0%, #001451 0%, #111318 70%);
+            background-attachment: fixed;
+            color: #e2e2e8;
+            font-family: 'Inter', sans-serif;
+        }
+        .mesh-glow {
+            position: fixed;
+            top: 20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(189, 244, 255, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: -1;
+            filter: blur(80px);
+        }
+        .tech-accent-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(189, 244, 255, 0.3), transparent);
+        }
+        .instrument-panel {
+            background: rgba(26, 28, 32, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(68, 71, 78, 0.15);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+<div class="mesh-glow"></div>
+<!-- TopNavBar -->
+<nav class="bg-[#111318]/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-[#44474e]/15 shadow-[0_4px_30px_rgba(0,0,0,0.5)] transition-all duration-300 ease-out flex justify-between items-center px-8 h-20 w-full">
+<div class="font-['Space_Grotesk'] text-2xl font-bold tracking-tighter text-[#bdf4ff] drop-shadow-[0_0_8px_rgba(189,244,255,0.4)]">
+            SIGNAL GRID
+        </div>
+<div class="hidden md:flex items-center space-x-8 font-['Space_Grotesk'] tracking-tight">
+<a class="text-[#c4c6cf] hover:text-[#e2e2e8] transition-colors" href="#">Home</a>
+<a class="text-[#c4c6cf] hover:text-[#e2e2e8] transition-colors" href="#">Flows</a>
+<a class="text-[#c4c6cf] hover:text-[#e2e2e8] transition-colors" href="#">Cases</a>
+<a class="text-[#c4c6cf] hover:text-[#e2e2e8] transition-colors" href="#">Pricing</a>
+<a class="text-[#bdf4ff] border-b-2 border-[#bdf4ff] pb-1" href="#">Contact</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="material-symbols-outlined text-[#c4c6cf] hover:bg-[#b7c4ff]/10 p-2 rounded-full transition-all">settings</button>
+<button class="material-symbols-outlined text-[#c4c6cf] hover:bg-[#b7c4ff]/10 p-2 rounded-full transition-all">account_circle</button>
+<button class="hidden lg:block bg-[#b7c4ff] text-[#002682] px-6 py-2.5 font-bold transition-all duration-300 ease-out active:scale-95">Get Started</button>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-20 text-center lg:text-left">
+<div class="inline-flex items-center space-x-2 px-3 py-1 bg-primary-container/30 border border-primary/20 rounded-full mb-6">
+<span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_#bdf4ff]"></span>
+<span class="text-secondary text-xs font-bold tracking-widest uppercase">Global Connectivity</span>
+</div>
+<h1 class="font-headline text-4xl md:text-6xl font-bold tracking-tighter text-on-surface mb-6 leading-tight">
+                비즈니스의 지능형 진화,<br/>
+<span class="text-secondary">지금 문의하십시오</span>
+</h1>
+<p class="font-body text-on-surface-variant text-lg max-w-2xl leading-relaxed">
+                INTELLIGENT EVOLUTION OF YOUR BUSINESS. CONNECT WITH OUR ARCHITECTS TO DEPLOY NEXT-GENERATION SIGNAL INFRASTRUCTURE.
+            </p>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Contact Form Area -->
+<div class="lg:col-span-7">
+<div class="instrument-panel p-8 lg:p-12 relative overflow-hidden">
+<!-- Technical UI Accents -->
+<div class="absolute top-0 right-0 p-4 font-headline text-[10px] text-outline tracking-[0.2em] opacity-40 uppercase">
+                        Protocol: SG-772 / Secure Channel
+                    </div>
+<div class="mb-10">
+<h2 class="text-2xl font-bold text-on-surface mb-2 font-headline">INQUIRY INITIATION</h2>
+<div class="flex items-center space-x-3 text-secondary/80">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<p class="text-sm font-medium tracking-wide">24시간 이내 전문 엔지니어가 회신합니다</p>
+</div>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold text-outline tracking-wider uppercase px-1">Name</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b border-outline-variant focus:border-secondary focus:ring-0 text-on-surface placeholder:text-outline/50 transition-all py-3" placeholder="성함 (Full Name)" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-outline tracking-wider uppercase px-1">Work Email</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b border-outline-variant focus:border-secondary focus:ring-0 text-on-surface placeholder:text-outline/50 transition-all py-3" placeholder="이메일 주소 (Work Email)" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-outline tracking-wider uppercase px-1">Company</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b border-outline-variant focus:border-secondary focus:ring-0 text-on-surface placeholder:text-outline/50 transition-all py-3" placeholder="회사명 (Company Name)" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-outline tracking-wider uppercase px-1">Inquiry Type</label>
+<select class="w-full bg-surface-container-lowest border-0 border-b border-outline-variant focus:border-secondary focus:ring-0 text-on-surface transition-all py-3 appearance-none">
+<option>Select Purpose</option>
+<option>Demo Request (데모 요청)</option>
+<option>Partnership (파트너십)</option>
+<option>Technical Support (기술 지원)</option>
+<option>Enterprise Quote (기업용 견적)</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-outline tracking-wider uppercase px-1">Message</label>
+<textarea class="w-full bg-surface-container-lowest border-0 border-b border-outline-variant focus:border-secondary focus:ring-0 text-on-surface placeholder:text-outline/50 transition-all py-3 resize-none" placeholder="문의 사항을 상세히 기재해 주세요..." rows="4"></textarea>
+</div>
+<div class="pt-6">
+<button class="w-full bg-primary text-on-primary font-bold font-headline py-4 tracking-tighter hover:bg-secondary hover:text-surface transition-all flex justify-center items-center group" type="submit">
+                                SUBMIT SIGNAL
+                                <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">send</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Side Sidebar: Trust & Channels -->
+<div class="lg:col-span-5 space-y-10">
+<!-- Trust Signals -->
+<div class="space-y-6">
+<h3 class="text-sm font-bold text-outline tracking-[0.3em] uppercase">신뢰할 수 있는 파트너</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-6 flex flex-col items-center justify-center text-center space-y-3 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-3xl text-secondary-fixed">security</span>
+<div class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Enterprise Security</div>
+<div class="text-xs text-outline">SSO / SOC2 Compliance</div>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-col items-center justify-center text-center space-y-3 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-3xl text-secondary-fixed">cloud</span>
+<div class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Global Infrastructure</div>
+<div class="text-xs text-outline">AWS / GCP Partner</div>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-col items-center justify-center text-center space-y-3 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-3xl text-secondary-fixed">verified</span>
+<div class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Service Reliability</div>
+<div class="text-xs text-outline">99.9% Enterprise SLA</div>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-col items-center justify-center text-center space-y-3 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-3xl text-secondary-fixed">headset_mic</span>
+<div class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Expert Support</div>
+<div class="text-xs text-outline">24/7 Global Response</div>
+</div>
+</div>
+</div>
+<!-- Direct Channels -->
+<div class="space-y-4">
+<h3 class="text-sm font-bold text-outline tracking-[0.3em] uppercase">DIRECT CHANNELS</h3>
+<div class="flex items-center p-5 bg-surface-container-lowest border border-outline-variant/10 group cursor-pointer hover:border-secondary/30 transition-all">
+<div class="w-12 h-12 bg-primary-container flex items-center justify-center mr-5">
+<span class="material-symbols-outlined text-primary">campaign</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-sm text-on-surface">영업 문의 (Sales Inquiry)</h4>
+<p class="text-xs text-outline">sales@signalgrid.ai</p>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">arrow_forward_ios</span>
+</div>
+<div class="flex items-center p-5 bg-surface-container-lowest border border-outline-variant/10 group cursor-pointer hover:border-secondary/30 transition-all">
+<div class="w-12 h-12 bg-primary-container flex items-center justify-center mr-5">
+<span class="material-symbols-outlined text-primary">folder_zip</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-sm text-on-surface">미디어 키트 (Media Kit)</h4>
+<p class="text-xs text-outline">Assets &amp; Branding Guidelines</p>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">download</span>
+</div>
+<div class="flex items-center p-5 bg-surface-container-lowest border border-outline-variant/10 group cursor-pointer hover:border-secondary/30 transition-all">
+<div class="w-12 h-12 bg-primary-container flex items-center justify-center mr-5">
+<span class="material-symbols-outlined text-primary">location_on</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-sm text-on-surface">Global Office</h4>
+<p class="text-xs text-outline">Seoul | San Francisco | Tokyo</p>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">map</span>
+</div>
+</div>
+<!-- Global Office Visual -->
+<div class="h-48 w-full bg-surface-container overflow-hidden rounded-lg relative">
+<img class="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-700" data-alt="abstract architectural landscape of a futuristic high-tech city with neon blue night lighting and steel structures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZWwEdfnxDMQqQ6ILjBulGhc5C-9K2Un6EOA1OIP7GBuHcbkSc3pXhKl2nJKVokmjG71i7LCHOW8NBI2-8TAEf1CHbVkrshPhAvYO9P6pyuoA-gbkP4secTsNmLrbPjBlebmJ4gNkTC81-vC_V3bsDYHkd8cDsykArUVB2JD0V-QtN4EhCpXy8cmhZZ19w7QxYItM_OY7Gv4ogNlDqO2u30hnOnpkM02VLm6kGoJ1m1sadmPQl4qlGSAWSBLhvXWWTF42CCJl3eU8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<div class="text-[10px] font-bold text-secondary uppercase tracking-widest">Global HQ</div>
+<div class="text-sm font-bold text-on-surface">TEHERAN-RO, SEOUL, KOREA</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0c0e12] w-full py-12 px-8 border-t-4 border-[#1a1c20]">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto items-center">
+<div class="space-y-4">
+<div class="text-lg font-bold text-[#bdf4ff]">SIGNAL GRID</div>
+<p class="text-[#8e9099] font-['Inter'] text-sm tracking-wide">© 2024 SIGNAL GRID. Powered by The Ethereal Engine</p>
+</div>
+<div class="flex flex-wrap justify-start md:justify-end gap-x-8 gap-y-4">
+<a class="text-[#8e9099] hover:text-[#bdf4ff] transition-colors font-['Inter'] text-sm tracking-wide opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-[#8e9099] hover:text-[#bdf4ff] transition-colors font-['Inter'] text-sm tracking-wide opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-[#8e9099] hover:text-[#bdf4ff] transition-colors font-['Inter'] text-sm tracking-wide opacity-80 hover:opacity-100" href="#">Security</a>
+<a class="text-[#8e9099] hover:text-[#bdf4ff] transition-colors font-['Inter'] text-sm tracking-wide opacity-80 hover:opacity-100" href="#">Status</a>
+</div>
+</div>
+</footer>
+</body></html>

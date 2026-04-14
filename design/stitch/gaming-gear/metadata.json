@@ -1,0 +1,89 @@
+{
+  "siteId": "gaming-gear",
+  "brand": "VOID ARC",
+  "projectId": "13128179329531663411",
+  "projectTitle": "VOID ARC Stitch",
+  "updatedAt": "2026-04-14T03:34:22.232Z",
+  "screens": {
+    "home:desktop": {
+      "screenId": "ec23061d4a874dbc9b324c98255424f1",
+      "pageSlug": "home",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/gaming-gear/screens/home-desktop.html",
+      "imagePath": "design/stitch/gaming-gear/screens/home-desktop.png",
+      "updatedAt": "2026-04-13T23:31:43.539Z"
+    },
+    "home:mobile": {
+      "screenId": "075123c2e0504ba58a85dc61070290e6",
+      "pageSlug": "home",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/gaming-gear/screens/home-mobile.html",
+      "imagePath": "design/stitch/gaming-gear/screens/home-mobile.png",
+      "updatedAt": "2026-04-13T23:32:55.170Z"
+    },
+    "gear:desktop": {
+      "screenId": "4f744e2888014fde9f62a1a17f824cd9",
+      "pageSlug": "gear",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/gaming-gear/screens/gear-desktop.html",
+      "imagePath": "design/stitch/gaming-gear/screens/gear-desktop.png",
+      "updatedAt": "2026-04-14T03:24:36.389Z"
+    },
+    "gear:mobile": {
+      "screenId": "92d3a80cf8f94b2684ebecc5b964aded",
+      "pageSlug": "gear",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/gaming-gear/screens/gear-mobile.html",
+      "imagePath": "design/stitch/gaming-gear/screens/gear-mobile.png",
+      "updatedAt": "2026-04-14T03:26:01.077Z"
+    },
+    "bundle:desktop": {
+      "screenId": "6c5cc400acbe4434a2256421a7895cea",
+      "pageSlug": "bundle",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/gaming-gear/screens/bundle-desktop.html",
+      "imagePath": "design/stitch/gaming-gear/screens/bundle-desktop.png",
+      "updatedAt": "2026-04-14T03:27:31.602Z"
+    },
+    "bundle:mobile": {
+      "screenId": "b17d2becfbeb49da8eb8ec4740c2eb91",
+      "pageSlug": "bundle",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/gaming-gear/screens/bundle-mobile.html",
+      "imagePath": "design/stitch/gaming-gear/screens/bundle-mobile.png",
+      "updatedAt": "2026-04-14T03:29:03.742Z"
+    },
+    "cart:desktop": {
+      "screenId": "51de2207ae134905aecb52b113e84446",
+      "pageSlug": "cart",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/gaming-gear/screens/cart-desktop.html",
+      "imagePath": "design/stitch/gaming-gear/screens/cart-desktop.png",
+      "updatedAt": "2026-04-14T03:30:27.465Z"
+    },
+    "cart:mobile": {
+      "screenId": "dc919b31be9f4fd6af549bd348c5c63f",
+      "pageSlug": "cart",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/gaming-gear/screens/cart-mobile.html",
+      "imagePath": "design/stitch/gaming-gear/screens/cart-mobile.png",
+      "updatedAt": "2026-04-14T03:31:48.559Z"
+    },
+    "support:desktop": {
+      "screenId": "b57c832fc93e49ac9a6e2c8361bdb1f9",
+      "pageSlug": "support",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/gaming-gear/screens/support-desktop.html",
+      "imagePath": "design/stitch/gaming-gear/screens/support-desktop.png",
+      "updatedAt": "2026-04-14T03:33:04.152Z"
+    },
+    "support:mobile": {
+      "screenId": "86f47707c1a44bd2b81954aa10ac2f97",
+      "pageSlug": "support",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/gaming-gear/screens/support-mobile.html",
+      "imagePath": "design/stitch/gaming-gear/screens/support-mobile.png",
+      "updatedAt": "2026-04-14T03:34:22.234Z"
+    }
+  }
+}

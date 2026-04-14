@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UPPERCUT CLUB | TECHNICAL BOXING</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#303038",
+                        "primary": "#ffb3b0",
+                        "on-tertiary-container": "#303336",
+                        "surface-container-lowest": "#0e0e15",
+                        "on-primary-fixed": "#410006",
+                        "surface-bright": "#393841",
+                        "secondary": "#d0bcff",
+                        "on-background": "#e4e1ec",
+                        "surface-dim": "#13131a",
+                        "surface-container-low": "#1b1b22",
+                        "secondary-container": "#571bc1",
+                        "error": "#ffb4ab",
+                        "on-primary": "#68000f",
+                        "on-surface": "#e4e1ec",
+                        "surface": "#13131a",
+                        "outline": "#a78a88",
+                        "on-secondary": "#3c0091",
+                        "surface-container": "#1f1f26",
+                        "error-container": "#93000a",
+                        "inverse-surface": "#e4e1ec",
+                        "surface-container-highest": "#34343c",
+                        "outline-variant": "#584140",
+                        "surface-tint": "#ffb3b0",
+                        "on-tertiary-fixed-variant": "#44474a",
+                        "primary-container": "#ff6b6b",
+                        "tertiary-fixed-dim": "#c4c7ca",
+                        "tertiary-fixed": "#e0e3e6",
+                        "on-primary-fixed-variant": "#8c1520",
+                        "background": "#13131a",
+                        "on-secondary-fixed": "#23005c",
+                        "on-primary-container": "#6d0010",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#e0bfbd",
+                        "surface-container-high": "#2a2931",
+                        "tertiary-container": "#989b9f",
+                        "primary-fixed-dim": "#ffb3b0",
+                        "on-secondary-container": "#c4abff",
+                        "on-error": "#690005",
+                        "secondary-fixed": "#e9ddff",
+                        "on-secondary-fixed-variant": "#5516be",
+                        "surface-variant": "#34343c",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "inverse-primary": "#ae2f34",
+                        "tertiary": "#c4c7ca",
+                        "primary-fixed": "#ffdad8",
+                        "on-tertiary": "#2d3134",
+                        "on-tertiary-fixed": "#181c1f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Space Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #13131a;
+            color: #e4e1ec;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-image: radial-gradient(circle at 50% 50%, rgba(255, 107, 107, 0.05) 0%, transparent 80%), 
+                              repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.03) 0px, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 4px);
+        }
+        .hud-scanline {
+            background: linear-gradient(to bottom, transparent 50%, rgba(139, 92, 246, 0.05) 50.5%, transparent 51%);
+            background-size: 100% 4px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="selection:bg-primary-container selection:text-white">
+<!-- TopAppBar -->
+<header class="bg-[#13131a]/80 backdrop-blur-md border-b border-[#ff6b6b]/15 docked full-width top-0 sticky shadow-2xl shadow-black/50 flex justify-between items-center px-6 py-4 w-full z-50">
+<div class="text-2xl font-black italic tracking-tighter text-[#ff6b6b] drop-shadow-[0_0_8px_rgba(255,107,107,0.5)] font-['Space_Grotesk']">
+            UPPERCUT CLUB
+        </div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#ff6b6b] scale-95 active:scale-90 transition-all duration-300" data-icon="bolt">bolt</span>
+<button class="bg-primary-container text-on-primary-container font-['Space_Grotesk'] uppercase tracking-wider text-xs px-4 py-2 font-bold rounded-lg scale-95 active:scale-90 transition-all duration-300">
+                JOIN_THE_RING
+            </button>
+</div>
+</header>
+<main class="relative min-h-screen">
+<!-- Hero Section -->
+<section class="relative w-full h-[795px] flex flex-col justify-end px-6 pb-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Boxing Gym" class="w-full h-full object-cover opacity-50 grayscale" data-alt="dramatic wide shot of a dark professional boxing gym with heavy bags and a lit ring in background, moody blue and red lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDngkGIfFubB_q7h2dhyrR5AYLLylzMci_LlWobi_b-JuVe6kE-3O0XwsioS4UgMIoNPCWgk89FN7GgchRSviSqIeFtoXId68A6GRxPe7o0tEJ_5Xb_rhSXDaUqBcW0NrNQVeTOSmA1CEOMxiFn1lvzNAvs33H2Q8vWxaRuZ_r3eZsUy-aU88RtHRYrquLB6_ZgkCQVPdbO5J7YancD_Wl1wlXTPAJdOv6o1OYc5W-UzGAIDxmV-IczWIVZnoEtE4rtDz97ZNwMrZY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+</div>
+<!-- Kinetic HUD Elements -->
+<div class="relative z-10 space-y-6">
+<div class="inline-block border-l-4 border-primary px-4 py-2 bg-surface-container-low/40 backdrop-blur-sm">
+<p class="text-xs font-label uppercase tracking-widest text-primary opacity-80">EST_NYC_SEOUL</p>
+<h1 class="text-4xl md:text-6xl font-black font-headline uppercase leading-none tracking-tighter">TECHNICAL<br/><span class="text-primary-container">COMBAT</span></h1>
+</div>
+<!-- Booking Widget -->
+<div class="bg-surface-container-high/80 backdrop-blur-xl p-6 border border-outline-variant/15 rounded-lg shadow-2xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 opacity-20 pointer-events-none">
+<span class="text-[8px] font-label">UNIT_RESERVATION_v2.0</span>
+</div>
+<h2 class="text-lg font-headline font-bold mb-4 tracking-tight">무료 체험 클래스 예약하기</h2>
+<div class="grid grid-cols-2 gap-3 mb-6">
+<div class="bg-surface-container-lowest p-3 rounded border border-outline-variant/10">
+<label class="text-[10px] font-label uppercase text-primary block mb-1">DATE_ENTRY</label>
+<input class="bg-transparent border-none text-sm w-full p-0 focus:ring-0 text-on-surface" type="date"/>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded border border-outline-variant/10">
+<label class="text-[10px] font-label uppercase text-primary block mb-1">TIME_SLOT</label>
+<select class="bg-transparent border-none text-sm w-full p-0 focus:ring-0 text-on-surface">
+<option>07:00 AM</option>
+<option>12:00 PM</option>
+<option>19:30 PM</option>
+</select>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-4 font-headline font-black uppercase tracking-widest text-sm rounded shadow-[0_0_15px_rgba(255,107,107,0.3)] hover:shadow-[0_0_25px_rgba(255,107,107,0.5)] transition-all">
+                        INITIALIZE_BOOKING
+                    </button>
+</div>
+<!-- Quick Action Chips -->
+<div class="flex gap-2 overflow-x-auto pb-4 no-scrollbar">
+<div class="flex-shrink-0 bg-surface-container-low/80 border border-primary/20 px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="event_note">event_note</span>
+<span class="text-xs font-label font-bold uppercase tracking-tighter">TODAY'S_LOG</span>
+</div>
+<div class="flex-shrink-0 bg-surface-container-low/80 border border-secondary/20 px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="groups">groups</span>
+<span class="text-xs font-label font-bold uppercase tracking-tighter">ELITE_ROSTER</span>
+</div>
+</div>
+</div>
+</section>
+<!-- TRAINING_MODULES -->
+<section class="py-20 px-6 bg-surface-container-lowest relative">
+<div class="flex justify-between items-end mb-10">
+<div>
+<span class="text-[10px] font-label text-primary-container tracking-widest uppercase">SYLLABUS</span>
+<h2 class="text-3xl font-headline font-black uppercase">TRAINING_MODULES</h2>
+</div>
+<div class="text-right opacity-30 text-[8px] font-label leading-tight">
+                    DEPT_TACTICAL<br/>V.24.4.2
+                </div>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<!-- Card 1 -->
+<div class="group relative bg-surface-container border border-outline-variant/10 p-6 overflow-hidden">
+<div class="absolute -right-8 -bottom-8 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-9xl" data-icon="fitness_center">fitness_center</span>
+</div>
+<div class="flex justify-between items-start mb-8">
+<h3 class="text-xl font-headline font-bold">BOXING FOUNDATION</h3>
+<span class="text-[10px] px-2 py-1 bg-primary/20 text-primary font-label">LVL_01</span>
+</div>
+<div class="flex gap-8">
+<div>
+<p class="text-[10px] font-label text-on-surface-variant uppercase mb-1">INTENSITY</p>
+<div class="flex gap-0.5">
+<div class="w-4 h-1 bg-primary"></div>
+<div class="w-4 h-1 bg-primary"></div>
+<div class="w-4 h-1 bg-outline-variant/30"></div>
+</div>
+</div>
+<div>
+<p class="text-[10px] font-label text-on-surface-variant uppercase mb-1">BURN_EST</p>
+<p class="text-lg font-headline font-black italic">650<span class="text-xs ml-1">KCAL</span></p>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative bg-surface-container border border-outline-variant/10 p-6 overflow-hidden">
+<div class="absolute -right-8 -bottom-8 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-9xl" data-icon="sports_martial_arts">sports_martial_arts</span>
+</div>
+<div class="flex justify-between items-start mb-8">
+<h3 class="text-xl font-headline font-bold">SPARRING CLINIC</h3>
+<span class="text-[10px] px-2 py-1 bg-primary/20 text-primary font-label">LVL_03</span>
+</div>
+<div class="flex gap-8">
+<div>
+<p class="text-[10px] font-label text-on-surface-variant uppercase mb-1">INTENSITY</p>
+<div class="flex gap-0.5">
+<div class="w-4 h-1 bg-primary"></div>
+<div class="w-4 h-1 bg-primary"></div>
+<div class="w-4 h-1 bg-primary"></div>
+</div>
+</div>
+<div>
+<p class="text-[10px] font-label text-on-surface-variant uppercase mb-1">BURN_EST</p>
+<p class="text-lg font-headline font-black italic">900<span class="text-xs ml-1">KCAL</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ELITE_ROSTER -->
+<section class="py-20 bg-background overflow-hidden">
+<div class="px-6 mb-10">
+<span class="text-[10px] font-label text-secondary tracking-widest uppercase">COMMAND_STRUCTURE</span>
+<h2 class="text-3xl font-headline font-black uppercase">ELITE_ROSTER</h2>
+</div>
+<div class="flex gap-4 overflow-x-auto px-6 pb-8 no-scrollbar">
+<!-- Coach 1 -->
+<div class="flex-shrink-0 w-64 group">
+<div class="relative aspect-[3/4] mb-4 bg-surface-container-high overflow-hidden">
+<img alt="Coach PROFILE" class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-500" data-alt="high-contrast black and white portrait of a muscular boxing coach with hand wraps, dramatic spotlight lighting against black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_X6ZGPqf6jqHzHkl_Jdvnqh3GZSWUoy9X7hbi6VIKEXXkcy4PiRfSmG0bXEIlTiC41yC-r-RSEeftb5XClEj2-Q5FW8hy5KNBBTVPWzkAlGoWsLwY9tkLRiS-v2q4SvFVT5AFBuKieoAEfnwyfItYxqrx3D8-iVEpzUZKE9sPvuPVnIjw1HPJN2-03DfwF9FDJbX3bftn8I-1m0p_292fNplWvN1MA8AAesQU96pnV8EcojeONrYgGFBMOZ2Jr2j7991veSDgVLM"/>
+<div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-background to-transparent opacity-80"></div>
+<div class="absolute top-2 right-2 text-[8px] font-label bg-background/80 px-2 py-1">RANK_HEAD_TRAINER</div>
+</div>
+<h3 class="text-xl font-headline font-black italic uppercase">MARCUS 'THE AXE'</h3>
+<p class="text-xs font-label text-primary tracking-tighter">EX-NATIONAL CHAMPION</p>
+</div>
+<!-- Coach 2 -->
+<div class="flex-shrink-0 w-64 group">
+<div class="relative aspect-[3/4] mb-4 bg-surface-container-high overflow-hidden">
+<img alt="Coach PROFILE" class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-500" data-alt="dramatic black and white close up of a female boxing trainer intensely focused, shadows contouring facial muscles, dark professional studio look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC13A4nErf7b4BTHc7YNf8HpLag26VkYjAqrrky7cPGmAnlTyUsZ0jMOAs4ynxr7bBSsDWhdEBh8TzmkXPd12xa9UVbO6PHD9SQ6RpQhCtZ4AX9I67sZrx_Kw3mbDil6qWctGa9amcKYgB3psSWkxyolGTXGLJQ30H5465Khn7xaaw86pzaciWpAjZxrEl4Act82-IK3P2hxsOXVgah7ynyxfKfxVvkLnkZhBY1ljRoqth_v7K4qscw-ldBSXHV3LUvTiDXCcCzKgA"/>
+<div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-background to-transparent opacity-80"></div>
+<div class="absolute top-2 right-2 text-[8px] font-label bg-background/80 px-2 py-1">RANK_TECH_OFFICER</div>
+</div>
+<h3 class="text-xl font-headline font-black italic uppercase">SARAH 'SILENCE'</h3>
+<p class="text-xs font-label text-primary tracking-tighter">OLYMPIC QUALIFIER</p>
+</div>
+</div>
+</section>
+<!-- PREPARATION_GUIDE -->
+<section class="py-20 px-6 bg-surface-container-low border-y border-outline-variant/10">
+<h2 class="text-3xl font-headline font-black uppercase mb-12 text-center">PREPARATION_GUIDE</h2>
+<div class="space-y-12">
+<div class="flex gap-6 items-start">
+<div class="text-4xl font-headline font-black text-primary/30 leading-none">01</div>
+<div>
+<h4 class="text-lg font-headline font-bold mb-2">GEAR CHECK</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">운동복과 실내용 운동화를 지참하세요. 개인 글러브가 없다면 대여 가능합니다.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="text-4xl font-headline font-black text-primary/30 leading-none">02</div>
+<div>
+<h4 class="text-lg font-headline font-bold mb-2">ARRIVAL TIME</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">첫 방문 시 오리엔테이션을 위해 클래스 시작 15분 전 도착을 권장합니다.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="text-4xl font-headline font-black text-primary/30 leading-none">03</div>
+<div>
+<h4 class="text-lg font-headline font-bold mb-2">HYDRATION</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">충분한 수분 섭취를 위해 개인 텀블러를 준비하세요. 센터 내 정수기가 완비되어 있습니다.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Map Section -->
+<section class="w-full h-80 relative grayscale contrast-125 border-b border-outline-variant/10">
+<div class="absolute inset-0 z-0 bg-surface-container-high" data-location="Seoul, South Korea" style="">
+<img alt="Location Map" class="w-full h-full object-cover opacity-40 grayscale" data-alt="abstract architectural top-down view of a modern urban city layout with high-contrast lines and dark industrial color palette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl0ug36NldfSGRN6EsBNZ27OxRWJiDpAxH_qLFZKIKCDwgz_bJARAlmpO81v77dm7zZOw0UiVvG7IKE9iC68xl7TUNPbzsV4Lkl4U3KFjF8xeONUC48IM28wglvHbXuwbf9gPuEePR-lqk-lxKHSW9IZJLi7PQBOJFBN65MKbqtL24lXu5M6gGUc1PKlUZ7KTHlODOGOVRoFQOaZwhXmhOwR7COFYRDsqDJLA6H1057krWM82zgoSO1SIcw4-1DiMJqKBHkMeJQLY"/>
+</div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="bg-primary px-4 py-2 text-on-primary font-headline font-black italic text-sm tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] fill-current" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+                    UPPERCUT_HQ_SEOUL
+                </div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#13131a] full-width py-12 px-8 border-t border-[#f5f7fb]/5">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+<div class="space-y-4">
+<div class="text-lg font-black text-[#f5f7fb] font-['Space_Grotesk']">UPPERCUT CLUB</div>
+<p class="text-[#f5f7fb]/40 font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.2em]">©2024 UPPERCUT CLUB [EST_NYC]</p>
+</div>
+<div class="grid grid-cols-1 gap-3">
+<a class="text-[#f5f7fb]/40 hover:text-[#8b5cf6] font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.2em] transition-all duration-300 underline-offset-4 hover:underline" href="#">PRIVACY_PROTOCOL</a>
+<a class="text-[#f5f7fb]/40 hover:text-[#8b5cf6] font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.2em] transition-all duration-300 underline-offset-4 hover:underline" href="#">OPERATIONAL_HOURS</a>
+<a class="text-[#f5f7fb]/40 hover:text-[#8b5cf6] font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.2em] transition-all duration-300 underline-offset-4 hover:underline" href="#">TECHNICAL_SUPPORT</a>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#f5f7fb]/20" data-icon="public">public</span>
+<span class="material-symbols-outlined text-[#f5f7fb]/20" data-icon="terminal">terminal</span>
+<span class="material-symbols-outlined text-[#f5f7fb]/20" data-icon="shield">shield</span>
+</div>
+</div>
+</footer>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-[#13131a]/95 backdrop-blur-xl border-t border-[#ff6b6b]/15 flex justify-around items-center py-4 z-50">
+<button class="flex flex-col items-center gap-1 text-[#ff6b6b] transition-all duration-300">
+<span class="material-symbols-outlined fill-current" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="text-[8px] font-label font-bold uppercase">DASH</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#f5f7fb]/50 hover:text-[#f5f7fb] transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="fitness_center">fitness_center</span>
+<span class="text-[8px] font-label font-bold uppercase">TRAIN</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#f5f7fb]/50 hover:text-[#f5f7fb] transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-[8px] font-label font-bold uppercase">STATS</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#f5f7fb]/50 hover:text-[#f5f7fb] transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[8px] font-label font-bold uppercase">SETT</span>
+</button>
+</nav>
+<div class="fixed inset-0 pointer-events-none hud-scanline opacity-30 z-40"></div>
+</body></html>

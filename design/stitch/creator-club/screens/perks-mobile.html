@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800;900&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#65004c",
+                        "primary": "#ff83d1",
+                        "tertiary": "#ab8aff",
+                        "on-primary": "#5d0046",
+                        "surface-container-lowest": "#000000",
+                        "secondary-fixed": "#fed74c",
+                        "tertiary-dim": "#8355ef",
+                        "on-secondary": "#5d4b00",
+                        "on-background": "#eee0ff",
+                        "secondary": "#fed74c",
+                        "tertiary-container": "#8e60fa",
+                        "surface-container": "#21103a",
+                        "primary-fixed-dim": "#ed6dbf",
+                        "surface-container-high": "#271643",
+                        "on-tertiary-fixed": "#1e0053",
+                        "secondary-dim": "#efc93f",
+                        "surface": "#140629",
+                        "error-dim": "#d73357",
+                        "outline-variant": "#4f4166",
+                        "primary-fixed": "#fd7acd",
+                        "on-surface": "#eee0ff",
+                        "error-container": "#a70138",
+                        "surface-container-highest": "#2e1b4c",
+                        "surface-tint": "#ff83d1",
+                        "on-tertiary-container": "#000000",
+                        "tertiary-fixed-dim": "#b091ff",
+                        "on-error-container": "#ffb2b9",
+                        "secondary-fixed-dim": "#efc93f",
+                        "surface-dim": "#140629",
+                        "inverse-surface": "#fef7ff",
+                        "on-secondary-fixed-variant": "#685400",
+                        "on-surface-variant": "#b5a4ce",
+                        "primary-dim": "#f070c2",
+                        "background": "#140629",
+                        "inverse-primary": "#a32f7f",
+                        "on-primary-fixed": "#200016",
+                        "surface-variant": "#2e1b4c",
+                        "surface-container-low": "#1a0b31",
+                        "primary-container": "#f473c5",
+                        "tertiary-fixed": "#bca2ff",
+                        "outline": "#7e6e96",
+                        "surface-bright": "#352156",
+                        "on-secondary-container": "#fff7e8",
+                        "secondary-container": "#725c00",
+                        "on-tertiary-fixed-variant": "#4600a8",
+                        "inverse-on-surface": "#5d4e74",
+                        "on-tertiary": "#280068",
+                        "on-primary-container": "#480036",
+                        "on-secondary-fixed": "#473800",
+                        "on-error": "#490013",
+                        "error": "#ff6e84"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Epilogue"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .aurora-mesh {
+            background: radial-gradient(at 0% 0%, #21103a 0%, transparent 50%),
+                        radial-gradient(at 100% 0%, #140629 0%, transparent 50%),
+                        radial-gradient(at 50% 100%, #ab8aff 0%, transparent 50%),
+                        radial-gradient(at 100% 100%, #ff83d1 0%, transparent 50%);
+            background-size: 200% 200%;
+        }
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-dim text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#140629]/60 backdrop-blur-xl flex justify-between items-center px-6 h-16 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden outline outline-2 outline-primary/20">
+<img alt="user profile" class="w-full h-full object-cover" data-alt="close up of a stylish young individual with neon lighting reflections on face in a cinematic dark setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGsCgn0r9LikVPGRJe24PjxV1CPmM2iyireviqWN1H29SRQH_9VJYbS2fGFdI2Nhv3h3HpRL8dwy2mT4rZVf1qxJ4hZx0G57bTrY0gIb-_j4aqOqyZD6108KhKzEHfR7Px6x7AWW1VvkNKe6MpwIJsdzhtplEuIuO_jXlFC4PEQZZcDB4Y61nCW5pmS0eJyjLZ_lP5Y4BqTipEgmCLAy4U99mW8XW9SqH-Y1KjsZxKhL_CwG-y3JEyaw-dzflfVLnIfANbFlpNHfkG"/>
+</div>
+<h1 class="text-2xl font-black text-[#ff83d1] drop-shadow-[0_0_8px_rgba(255,131,209,0.4)] font-['Epilogue'] tracking-tighter uppercase">RALLY HOUSE</h1>
+</div>
+<button class="text-[#ff83d1] hover:opacity-80 transition-opacity active:scale-95 duration-200 ease-out">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<main class="pt-24 pb-32 px-6 overflow-x-hidden relative">
+<!-- Background Mesh Decoration -->
+<div class="fixed inset-0 -z-10 aurora-mesh opacity-30"></div>
+<!-- Live Update Module -->
+<div class="mb-10 animate-pulse">
+<div class="inline-flex items-center gap-3 px-4 py-2 bg-primary/10 rounded-full border border-primary/20 glass-panel">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+<span class="font-label text-[11px] font-bold tracking-widest text-secondary uppercase">Live Now: 1,429 Members Claimed Perks</span>
+</div>
+</div>
+<!-- Hero Section -->
+<section class="mb-12">
+<h2 class="font-headline text-5xl font-extrabold leading-[0.95] tracking-tighter text-on-surface mb-4">
+                멤버십<br/>특권의 시작
+            </h2>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-[80%]">
+                RALLY HOUSE 크루만을 위한 한정판 혜택과 프라이빗 아카이브를 잠금 해제하세요.
+            </p>
+</section>
+<!-- Join Entry (Early CTA) -->
+<section class="mb-16">
+<button class="w-full py-5 rounded-2xl bg-secondary text-on-secondary font-headline text-xl font-black uppercase tracking-tight shadow-[0_8px_30px_rgba(254,215,76,0.2)] active:scale-[0.98] transition-transform flex items-center justify-center gap-2">
+                지금 합류하기
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</section>
+<!-- Membership Pass Options -->
+<section class="space-y-6 mb-20">
+<div class="flex items-center justify-between px-2 mb-2">
+<h3 class="font-label text-sm font-bold uppercase tracking-[0.2em] text-tertiary">Select Your Tier</h3>
+</div>
+<!-- STARTER CARD -->
+<div class="relative group">
+<div class="absolute -inset-0.5 bg-gradient-to-r from-tertiary/20 to-transparent rounded-[2rem] blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative bg-surface-container-high rounded-[2rem] p-8 glass-panel border border-outline-variant/10 overflow-hidden">
+<div class="flex justify-between items-start mb-12">
+<div>
+<span class="font-label text-[10px] font-extrabold uppercase tracking-widest text-on-surface-variant">Membership</span>
+<h4 class="font-headline text-3xl font-black text-on-surface mt-1">STARTER</h4>
+</div>
+<span class="material-symbols-outlined text-4xl text-on-surface-variant opacity-20">noise_control_off</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline text-4xl font-bold text-primary">19,000</span>
+<span class="font-label text-sm font-medium text-on-surface-variant">KRW / Month</span>
+</div>
+</div>
+</div>
+<!-- PRO PASS CARD (BEST VALUE) -->
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-tr from-primary via-secondary to-tertiary rounded-[2.5rem] blur-xl opacity-30"></div>
+<div class="relative bg-surface-container-highest rounded-[2.5rem] p-8 border border-primary/30 overflow-hidden">
+<!-- Aurora Mesh Background inside card -->
+<div class="absolute inset-0 aurora-mesh opacity-20 pointer-events-none"></div>
+<div class="absolute -top-1 -right-6 bg-secondary text-on-secondary px-10 py-1 font-label text-[10px] font-black uppercase tracking-tighter rotate-[30deg] shadow-lg">
+                        BEST VALUE
+                    </div>
+<div class="flex justify-between items-start mb-12 relative z-10">
+<div>
+<span class="font-label text-[10px] font-extrabold uppercase tracking-widest text-secondary">Premium Tier</span>
+<h4 class="font-headline text-4xl font-black text-on-surface mt-1">PRO PASS</h4>
+</div>
+<span class="material-symbols-outlined text-4xl text-secondary drop-shadow-[0_0_8px_rgba(254,215,76,0.4)]" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<div class="flex items-baseline gap-1 relative z-10">
+<span class="font-headline text-5xl font-bold text-white">49,000</span>
+<span class="font-label text-sm font-medium text-secondary/70">KRW / Month</span>
+</div>
+<div class="mt-8 pt-8 border-t border-white/10 relative z-10">
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-on-surface text-sm">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+                                모든 독점 아카이브 무제한 열람
+                            </li>
+<li class="flex items-center gap-3 text-on-surface text-sm">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+                                프라이빗 파티 우선 초대권
+                            </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Concise Benefit Blocks -->
+<section class="mb-20">
+<h3 class="font-label text-sm font-bold uppercase tracking-[0.2em] text-tertiary mb-8 px-2">Core Benefits</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container rounded-3xl p-6 flex flex-col gap-4 border border-outline-variant/10">
+<span class="material-symbols-outlined text-3xl text-primary">bolt</span>
+<div>
+<h5 class="font-headline text-sm font-bold text-on-surface mb-1 uppercase">Fast Lane Access</h5>
+<p class="text-xs text-on-surface-variant font-label">이벤트 우선 입장</p>
+</div>
+</div>
+<div class="bg-surface-container rounded-3xl p-6 flex flex-col gap-4 border border-outline-variant/10">
+<span class="material-symbols-outlined text-3xl text-secondary">folder_managed</span>
+<div>
+<h5 class="font-headline text-sm font-bold text-on-surface mb-1 uppercase">Exclusive Archives</h5>
+<p class="text-xs text-on-surface-variant font-label">비공개 콘텐츠 리스트</p>
+</div>
+</div>
+<div class="bg-surface-container rounded-3xl p-6 flex flex-col gap-4 border border-outline-variant/10">
+<span class="material-symbols-outlined text-3xl text-tertiary">chat_bubble</span>
+<div>
+<h5 class="font-headline text-sm font-bold text-on-surface mb-1 uppercase">1:1 Creator DM</h5>
+<p class="text-xs text-on-surface-variant font-label">크리에이터와의 직통</p>
+</div>
+</div>
+<div class="bg-surface-container rounded-3xl p-6 flex flex-col gap-4 border border-outline-variant/10">
+<span class="material-symbols-outlined text-3xl text-primary">celebration</span>
+<div>
+<h5 class="font-headline text-sm font-bold text-on-surface mb-1 uppercase">Private Parties</h5>
+<p class="text-xs text-on-surface-variant font-label">크루 전용 오프라인 모임</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Explanation -->
+<section class="mb-20 px-2">
+<div class="relative p-1">
+<div class="absolute top-0 left-0 w-12 h-1 bg-primary"></div>
+<h3 class="font-headline text-2xl font-black text-on-surface mt-6 mb-4">RALLY HOUSE PHILOSOPHY</h3>
+<p class="text-on-surface-variant leading-loose font-body text-sm">
+                    우리는 단순한 팬덤을 넘어, 디지털과 아날로그의 경계를 허무는 강력한 결속력을 지향합니다. 랠리 하우스의 멤버십은 소유가 아닌 '소속'의 가치를 증명합니다. 이곳에서 당신은 단순한 관찰자가 아닌, 커뮤니티의 주체가 됩니다.
+                </p>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-[32px] bg-[#21103a]/80 backdrop-blur-2xl shadow-[0_-8px_40px_rgba(20,6,41,0.5)] flex justify-around items-center h-20 px-4 pb-4">
+<a class="flex flex-col items-center justify-center text-[#eee0ff]/60 hover:text-[#fed74c] transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase font-bold tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#eee0ff]/60 hover:text-[#fed74c] transition-colors" href="#">
+<span class="material-symbols-outlined">dynamic_feed</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase font-bold tracking-widest mt-1">Feed</span>
+</a>
+<!-- ACTIVE ITEM: Perks -->
+<a class="flex flex-col items-center justify-center text-[#ff83d1] bg-[#ff83d1]/10 rounded-full px-4 py-1 animate-pulse" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase font-bold tracking-widest mt-1">Perks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#eee0ff]/60 hover:text-[#fed74c] transition-colors" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase font-bold tracking-widest mt-1">Join</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#eee0ff]/60 hover:text-[#fed74c] transition-colors" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase font-bold tracking-widest mt-1">Guide</span>
+</a>
+</nav>
+</body></html>

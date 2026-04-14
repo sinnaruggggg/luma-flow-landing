@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VOID ARC | ARC-OMEGA BUNDLE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed-dim": "#45d6ff",
+                        "on-surface-variant": "#bbc9ce",
+                        "primary-fixed": "#b5ebff",
+                        "on-secondary": "#5e0053",
+                        "secondary-fixed": "#ffd7f0",
+                        "surface": "#0b1421",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#2c3544",
+                        "secondary-fixed-dim": "#fface8",
+                        "inverse-primary": "#00677e",
+                        "primary-container": "#39d5ff",
+                        "outline-variant": "#3c494e",
+                        "tertiary": "#ffdcaa",
+                        "on-surface": "#dae3f6",
+                        "surface-dim": "#0b1421",
+                        "outline": "#869398",
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#ffb837",
+                        "on-tertiary-fixed": "#281800",
+                        "inverse-on-surface": "#28313f",
+                        "on-tertiary-container": "#6e4b00",
+                        "on-background": "#dae3f6",
+                        "surface-container": "#17202e",
+                        "surface-container-high": "#222a38",
+                        "inverse-surface": "#dae3f6",
+                        "on-primary-fixed": "#001f28",
+                        "on-secondary-fixed-variant": "#840076",
+                        "on-secondary-container": "#fface8",
+                        "primary": "#b1eaff",
+                        "on-error": "#690005",
+                        "on-primary": "#003543",
+                        "surface-container-low": "#131c29",
+                        "secondary": "#fface8",
+                        "surface-bright": "#313a48",
+                        "secondary-container": "#980388",
+                        "on-tertiary": "#432c00",
+                        "background": "#0b1421",
+                        "surface-tint": "#45d6ff",
+                        "on-primary-fixed-variant": "#004e60",
+                        "on-tertiary-fixed-variant": "#604100",
+                        "tertiary-fixed": "#ffdeae",
+                        "on-primary-container": "#00596e",
+                        "surface-variant": "#2c3544",
+                        "surface-container-lowest": "#060e1b",
+                        "on-secondary-fixed": "#3a0033",
+                        "tertiary-fixed-dim": "#ffba3f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .technical-grid {
+            background-image: radial-gradient(circle, rgba(57, 213, 255, 0.1) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .asymmetric-cut {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0b1421]/80 backdrop-blur-xl border-b border-[#39d5ff]/15 flex justify-between items-center px-8 h-20 w-full max-w-[1920px] mx-auto shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+<div class="text-2xl font-bold tracking-tighter text-[#39d5ff] drop-shadow-[0_0_8px_rgba(57,213,255,0.5)] font-headline uppercase">VOID ARC</div>
+<div class="hidden md:flex gap-8 font-headline uppercase tracking-wider text-xs">
+<a class="text-slate-400 hover:text-[#39d5ff] transition-colors" href="#">Home</a>
+<a class="text-slate-400 hover:text-[#39d5ff] transition-colors" href="#">Gear</a>
+<a class="text-[#39d5ff] border-b-2 border-[#39d5ff] pb-1" href="#">Bundle</a>
+<a class="text-slate-400 hover:text-[#39d5ff] transition-colors" href="#">Cart</a>
+<a class="text-slate-400 hover:text-[#39d5ff] transition-colors" href="#">Support</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-[#39d5ff] cursor-pointer hover:bg-[#39d5ff]/10 p-2 transition-all">account_circle</span>
+<span class="material-symbols-outlined text-[#39d5ff] cursor-pointer hover:bg-[#39d5ff]/10 p-2 transition-all">shopping_cart</span>
+</div>
+</nav>
+<!-- SideNavBar (Hidden on Mobile) -->
+<aside class="fixed left-0 top-20 h-[calc(100vh-5rem)] w-64 border-r border-[#39d5ff]/10 bg-[#0b1421] hidden md:flex flex-col py-6 z-40">
+<div class="px-6 mb-10">
+<h3 class="text-[#39d5ff] font-black font-headline text-lg tracking-tighter">COMMAND CENTER</h3>
+<p class="text-[10px] text-slate-500 font-label tracking-[0.2em]">V.01-ARC</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-4 px-6 py-4 text-slate-500 opacity-70 hover:opacity-100 hover:bg-[#39d5ff]/5 transition-all font-headline text-xs font-semibold uppercase" href="#">
+<span class="material-symbols-outlined">dashboard</span> Overview
+            </a>
+<a class="flex items-center gap-4 px-6 py-4 bg-[#39d5ff]/10 text-[#39d5ff] border-r-4 border-[#39d5ff] transition-all font-headline text-xs font-semibold uppercase" href="#">
+<span class="material-symbols-outlined">tune</span> Customizer
+            </a>
+<a class="flex items-center gap-4 px-6 py-4 text-slate-500 opacity-70 hover:opacity-100 hover:bg-[#39d5ff]/5 transition-all font-headline text-xs font-semibold uppercase" href="#">
+<span class="material-symbols-outlined">settings_input_component</span> Specs
+            </a>
+<a class="flex items-center gap-4 px-6 py-4 text-slate-500 opacity-70 hover:opacity-100 hover:bg-[#39d5ff]/5 transition-all font-headline text-xs font-semibold uppercase" href="#">
+<span class="material-symbols-outlined">grade</span> Reviews
+            </a>
+<a class="flex items-center gap-4 px-6 py-4 text-slate-500 opacity-70 hover:opacity-100 hover:bg-[#39d5ff]/5 transition-all font-headline text-xs font-semibold uppercase" href="#">
+<span class="material-symbols-outlined">shopping_basket</span> Checkout
+            </a>
+</nav>
+</aside>
+<main class="md:ml-64 pt-20">
+<!-- Hero Section -->
+<section class="relative h-[921px] flex items-center justify-center overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-screen" data-alt="ultra-modern minimalist gaming desk setup with neon cyan lighting and high-end peripherals in a dark moody atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGvL1xSJylMnwEcgOWQ8Ok0O1hGLPoWbgghm36O3fmUzAkmp-JLYgjqhJLWaThRD5QvgZTZ7_oRf1_oT_0pXEVtO7OEjkKDPfliOZYyvclGdRvPpZBglGq7t_W_e4XxLb0ViFNOgIfJ5_kMtu4xMRviAAVHuwV292IY8Yp8Ch44bWPVg5OXKl63GtkEXoaL4sXaltleWdQOGvgZ-fnNCeYMMXVlvJ8jcAOVhcdsZv1WqkzxErIX2y9JRCVxFtmdq4s1OzKRUQ7uuhi"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="relative z-10 w-full max-w-7xl px-8 flex flex-col md:flex-row items-end justify-between gap-12">
+<div class="max-w-2xl">
+<div class="flex items-center gap-2 mb-4">
+<span class="h-[1px] w-12 bg-[#ff6fe4]"></span>
+<span class="text-[#ff6fe4] font-label text-xs tracking-widest uppercase">Elite Tactical Integration</span>
+</div>
+<h1 class="text-7xl md:text-8xl font-headline font-black text-on-surface tracking-tighter leading-none mb-6">
+                        ARC-OMEGA <br/><span class="text-[#39d5ff] drop-shadow-[0_0_15px_rgba(57,213,255,0.4)]">BUNDLE</span>
+</h1>
+<div class="flex flex-wrap gap-4 mb-8">
+<div class="bg-surface-container-high/60 backdrop-blur-md p-4 border-l-2 border-[#39d5ff] flex flex-col">
+<span class="text-[10px] text-slate-400 font-label uppercase">Latency</span>
+<span class="text-xl font-headline font-bold text-[#39d5ff]">0.1ms</span>
+</div>
+<div class="bg-surface-container-high/60 backdrop-blur-md p-4 border-l-2 border-[#39d5ff] flex flex-col">
+<span class="text-[10px] text-slate-400 font-label uppercase">Polling Rate</span>
+<span class="text-xl font-headline font-bold text-[#39d5ff]">8000Hz</span>
+</div>
+<div class="bg-surface-container-high/60 backdrop-blur-md p-4 border-l-2 border-[#ff6fe4] flex flex-col">
+<span class="text-[10px] text-slate-400 font-label uppercase">RGB Sync</span>
+<span class="text-xl font-headline font-bold text-[#ff6fe4]">ACTIVE</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-highest/40 backdrop-blur-2xl p-8 border border-[#39d5ff]/20 asymmetric-cut w-full md:w-80">
+<p class="text-xs text-slate-400 font-label uppercase mb-1">Starting at</p>
+<div class="flex items-baseline gap-2 mb-6">
+<span class="text-4xl font-headline font-black text-on-surface">월 39,000원</span>
+</div>
+<button class="w-full bg-[#39d5ff] hover:bg-[#b5ebff] text-[#001f28] py-4 font-headline font-bold uppercase tracking-widest transition-all active:scale-95 shadow-[0_0_20px_rgba(57,213,255,0.3)]">
+                        INITIALIZE BUNDLE
+                    </button>
+</div>
+</div>
+</section>
+<!-- Bundle Customizer -->
+<section class="py-24 px-8 max-w-7xl mx-auto technical-grid">
+<div class="flex flex-col md:flex-row gap-16">
+<!-- Left: Interactive Visual -->
+<div class="flex-1 relative group">
+<div class="absolute -inset-4 bg-[#39d5ff]/5 blur-3xl rounded-full"></div>
+<div class="relative bg-surface-container-low border border-[#39d5ff]/10 p-4 aspect-square flex items-center justify-center">
+<img class="w-4/5 h-auto transition-transform duration-700 group-hover:scale-105" data-alt="sleek black mechanical gaming keyboard with vibrant cyan and pink backlighting against a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBObSgGIR85iyzt3dkzwLHsJ2eI1ESiQw5zp1VSnKrWovQEK-oy4SF6YGAkNRb9BcEcJPxtc_NPiWLcDSh67Bs_bjQ0TmszHycuxWUv9YHB4YQBy47mHCsupGDezY4ydN4fIDxFzxRUS1Rj6batdhr07s7QkftP3yZWJiXbGnCfBBw8TKKpLioA10tZHsZgR_eAsTt97tLzCS1r7FdCgZBxJwp-eSUpQycV-KTgM3bNff6KW3F2nyrqyLR0B1FjAHIFbeZ9xAcJe6cM"/>
+<!-- Floating Data Points -->
+<div class="absolute top-10 right-10 flex flex-col items-end">
+<span class="text-[#39d5ff] text-[10px] font-label font-bold tracking-[0.3em] uppercase mb-1">Current Config</span>
+<span class="bg-[#39d5ff] text-[#001f28] text-[10px] font-bold px-2 py-0.5">OMEGA-K1</span>
+</div>
+</div>
+</div>
+<!-- Right: Selection Panel -->
+<div class="flex-1">
+<h2 class="text-4xl font-headline font-black uppercase mb-12 flex items-center gap-4">
+<span class="text-[#ff6fe4]">01.</span> BUNDLE CUSTOMIZER
+                    </h2>
+<div class="space-y-6">
+<!-- Module Selection -->
+<div class="space-y-4">
+<label class="text-[10px] text-slate-500 font-label font-bold uppercase tracking-widest">Select Component to Swap</label>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-between p-4 bg-surface-container-high border-l-4 border-[#39d5ff] text-on-surface hover:bg-surface-variant transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#39d5ff]">keyboard</span>
+<span class="text-xs font-headline font-bold uppercase">Keyboard</span>
+</div>
+<span class="material-symbols-outlined text-slate-600 group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-4 bg-surface-container border-l-4 border-transparent text-slate-400 hover:bg-surface-container-high hover:border-[#39d5ff]/30 transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">mouse</span>
+<span class="text-xs font-headline font-bold uppercase">Mouse</span>
+</div>
+<span class="material-symbols-outlined text-slate-600 group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-4 bg-surface-container border-l-4 border-transparent text-slate-400 hover:bg-surface-container-high hover:border-[#39d5ff]/30 transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">headset</span>
+<span class="text-xs font-headline font-bold uppercase">Audio</span>
+</div>
+<span class="material-symbols-outlined text-slate-600 group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-4 bg-surface-container border-l-4 border-transparent text-slate-400 hover:bg-surface-container-high hover:border-[#39d5ff]/30 transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">texture</span>
+<span class="text-xs font-headline font-bold uppercase">Pad</span>
+</div>
+<span class="material-symbols-outlined text-slate-600 group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Options for selected module -->
+<div class="bg-surface-container-lowest p-6 border border-[#39d5ff]/5">
+<h4 class="text-xs font-headline font-bold uppercase text-[#39d5ff] mb-4 flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-[#39d5ff] rounded-full"></span>
+                                Keyboard Options
+                            </h4>
+<div class="space-y-2">
+<div class="flex items-center justify-between p-3 bg-surface-container hover:bg-[#39d5ff]/5 cursor-pointer border border-[#39d5ff]/20">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-500 font-label">DEFAULT</span>
+<span class="text-sm font-headline font-bold uppercase">VOID OMEGA-K1 (Linear)</span>
+</div>
+<span class="text-xs font-headline font-bold text-[#39d5ff]">+0원</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-transparent hover:bg-[#39d5ff]/5 cursor-pointer border border-transparent hover:border-[#39d5ff]/20 transition-all">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-500 font-label">UPGRADE</span>
+<span class="text-sm font-headline font-bold uppercase">VOID OMEGA-K1 PRO (Optical)</span>
+</div>
+<span class="text-xs font-headline font-bold text-[#ff6fe4]">+12,000원</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Deep-Dive -->
+<section class="bg-surface-container-low py-32 relative overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center opacity-5">
+<span class="text-[20rem] font-headline font-black">ENGINE</span>
+</div>
+<div class="max-w-7xl mx-auto px-8 relative z-10">
+<div class="text-center mb-20">
+<p class="text-[#39d5ff] font-headline font-bold uppercase tracking-[0.5em] mb-4">SYSTEM ARCHITECTURE</p>
+<h2 class="text-5xl md:text-6xl font-headline font-black uppercase text-on-surface tracking-tighter">VOID SYSTEM ENGINE</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Tech Card 1 -->
+<div class="p-8 border border-[#39d5ff]/10 bg-surface flex flex-col gap-6 hover:border-[#39d5ff]/40 transition-all group">
+<div class="w-12 h-12 bg-[#39d5ff]/10 flex items-center justify-center border border-[#39d5ff]/20">
+<span class="material-symbols-outlined text-[#39d5ff]">memory</span>
+</div>
+<h3 class="text-xl font-headline font-bold uppercase tracking-tight">Zero-Lag Neural Link</h3>
+<p class="text-slate-400 text-sm leading-relaxed">하드웨어 간의 통신 병목 현상을 0.01% 미만으로 억제하는 독자적인 인공 신경망 전송 프로토콜을 탑재했습니다.</p>
+<div class="mt-auto pt-4 flex items-center gap-2">
+<span class="text-[10px] font-label font-bold uppercase tracking-widest text-[#39d5ff]">Efficiency</span>
+<div class="flex-1 h-1 bg-surface-container-highest">
+<div class="h-full bg-[#39d5ff] w-[98%]"></div>
+</div>
+</div>
+</div>
+<!-- Tech Card 2 -->
+<div class="p-8 border border-[#ff6fe4]/10 bg-surface flex flex-col gap-6 hover:border-[#ff6fe4]/40 transition-all group">
+<div class="w-12 h-12 bg-[#ff6fe4]/10 flex items-center justify-center border border-[#ff6fe4]/20">
+<span class="material-symbols-outlined text-[#ff6fe4]">settings_input_antenna</span>
+</div>
+<h3 class="text-xl font-headline font-bold uppercase tracking-tight">8K Hyper-Polling</h3>
+<p class="text-slate-400 text-sm leading-relaxed">기존 게이밍 기어 대비 8배 빠른 8,000Hz 폴링 레이트를 지원하여 모든 미세한 움직임을 실시간으로 캡처합니다.</p>
+<div class="mt-auto pt-4 flex items-center gap-2">
+<span class="text-[10px] font-label font-bold uppercase tracking-widest text-[#ff6fe4]">Response</span>
+<div class="flex-1 h-1 bg-surface-container-highest">
+<div class="h-full bg-[#ff6fe4] w-[94%]"></div>
+</div>
+</div>
+</div>
+<!-- Tech Card 3 -->
+<div class="p-8 border border-[#39d5ff]/10 bg-surface flex flex-col gap-6 hover:border-[#39d5ff]/40 transition-all group">
+<div class="w-12 h-12 bg-[#39d5ff]/10 flex items-center justify-center border border-[#39d5ff]/20">
+<span class="material-symbols-outlined text-[#39d5ff]">fluorescent</span>
+</div>
+<h3 class="text-xl font-headline font-bold uppercase tracking-tight">Unified RGB Core</h3>
+<p class="text-slate-400 text-sm leading-relaxed">단일 드라이버를 통해 모든 번들 구성품의 LED를 제어하며, 게임 내 이벤트와 실시간으로 동기화됩니다.</p>
+<div class="mt-auto pt-4 flex items-center gap-2">
+<span class="text-[10px] font-label font-bold uppercase tracking-widest text-[#39d5ff]">Sync Rate</span>
+<div class="flex-1 h-1 bg-surface-container-highest">
+<div class="h-full bg-[#39d5ff] w-[100%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bundle Performance Data -->
+<section class="py-24 px-8 max-w-7xl mx-auto">
+<h2 class="text-4xl font-headline font-black uppercase mb-16 flex items-center gap-4">
+<span class="text-[#ff6fe4]">02.</span> PERFORMANCE DATA
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="bg-surface-container p-6 border border-white/5 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-[#39d5ff]"></div>
+<span class="text-[10px] font-label uppercase text-slate-500 mb-2 block">Response Time</span>
+<div class="text-4xl font-headline font-bold text-on-surface">0.12<span class="text-lg text-[#39d5ff]">MS</span></div>
+<p class="text-[10px] text-slate-600 mt-4 uppercase">Industry Leading Speed</p>
+</div>
+<div class="bg-surface-container p-6 border border-white/5 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-[#39d5ff]"></div>
+<span class="text-[10px] font-label uppercase text-slate-500 mb-2 block">Tracking Accuracy</span>
+<div class="text-4xl font-headline font-bold text-on-surface">99.8<span class="text-lg text-[#39d5ff]">%</span></div>
+<p class="text-[10px] text-slate-600 mt-4 uppercase">Perfect Motion Capture</p>
+</div>
+<div class="bg-surface-container p-6 border border-white/5 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-[#ff6fe4]"></div>
+<span class="text-[10px] font-label uppercase text-slate-500 mb-2 block">Switch Durability</span>
+<div class="text-4xl font-headline font-bold text-on-surface">100<span class="text-lg text-[#ff6fe4]">M</span></div>
+<p class="text-[10px] text-slate-600 mt-4 uppercase">Actuations Per Key</p>
+</div>
+<div class="bg-surface-container p-6 border border-white/5 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-[#ff6fe4]"></div>
+<span class="text-[10px] font-label uppercase text-slate-500 mb-2 block">Signal Stability</span>
+<div class="text-4xl font-headline font-bold text-on-surface">ULTRA<span class="text-lg text-[#ff6fe4]">STB</span></div>
+<p class="text-[10px] text-slate-600 mt-4 uppercase">Interference Shielding</p>
+</div>
+</div>
+</section>
+<!-- Ready to Deploy Section -->
+<section class="py-24 mb-32 relative">
+<div class="max-w-4xl mx-auto px-8 relative z-10 text-center bg-surface-container-highest/30 backdrop-blur-xl border border-[#39d5ff]/10 p-12 asymmetric-cut">
+<span class="inline-block py-1 px-3 bg-[#39d5ff]/10 text-[#39d5ff] text-[10px] font-label font-bold uppercase tracking-[0.4em] mb-6">Final Step</span>
+<h2 class="text-5xl font-headline font-black uppercase mb-8">READY TO DEPLOY?</h2>
+<div class="flex flex-col md:flex-row justify-center items-center gap-12 mb-12">
+<div class="text-left border-l-2 border-slate-700 pl-6">
+<p class="text-xs text-slate-500 uppercase font-headline">Selected Bundle</p>
+<p class="text-xl font-headline font-bold uppercase">ARC-OMEGA CUSTOM V1</p>
+</div>
+<div class="text-left border-l-2 border-[#39d5ff] pl-6">
+<p class="text-xs text-slate-500 uppercase font-headline">Monthly Total</p>
+<p class="text-3xl font-headline font-black text-[#39d5ff]">39,000원</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<button class="bg-[#39d5ff] hover:bg-[#b5ebff] text-[#001f28] px-12 py-5 font-headline font-black uppercase tracking-widest transition-all active:scale-95 shadow-[0_0_30px_rgba(57,213,255,0.4)]">
+                        GO TO CART
+                    </button>
+<button class="bg-transparent border border-slate-700 hover:border-[#39d5ff]/50 text-slate-400 px-12 py-5 font-headline font-bold uppercase tracking-widest transition-all">
+                        SAVE SPEC_LOG
+                    </button>
+</div>
+</div>
+<!-- Background Decorative Image -->
+<div class="absolute inset-0 -z-10 opacity-20 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="abstract close-up of a high-tech internal computer component with neon blue and purple light paths" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwalPEhFdZwdfBG4JspuNcjYdmouisia_VQ2Rt6jPaZIozbBqevBNoPQCGuFLu5J1FB5UmJZ_DNVngWmf80qGZMuWklXWwuaZZ7VVgcoFroqpcw0p7vVeA6VD-q6MvJP_Ez1YtTCb-lgVz_FZKCUPP65Uz-Ca3pQlGQO3_8IZDLuBgfDNnSH7rdj5q53aU_Ov3IqviRhoI36_-jyman7LWBzlbCV840rJbgntOkWA6j3ihxTwuuyhrHeL2RElF-Zl_HCD1ZKEz2uQ-"/>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#07101d] w-full py-12 border-t border-[#39d5ff]/5 flex flex-col md:flex-row justify-between items-center px-12 mt-auto">
+<div class="flex flex-col gap-2 mb-8 md:mb-0">
+<div class="text-[#39d5ff] font-bold font-headline uppercase tracking-tighter">VOID ARC</div>
+<p class="text-slate-600 font-label text-[10px] tracking-widest uppercase">© 2024 VOID ARC TACTICAL SYSTEMS. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="flex gap-12 font-label text-[10px] tracking-widest uppercase">
+<a class="text-slate-600 hover:text-[#ff6fe4] transition-colors" href="#">Terms of Engagement</a>
+<a class="text-slate-600 hover:text-[#ff6fe4] transition-colors" href="#">Privacy Protocol</a>
+<a class="text-slate-600 hover:text-[#ff6fe4] transition-colors" href="#">System Status</a>
+</div>
+</footer>
+</main>
+<!-- Floating UI Decorative Elements -->
+<div class="fixed bottom-10 right-10 z-50 pointer-events-none hidden lg:block">
+<div class="bg-surface-container-high/40 backdrop-blur-md p-4 border border-[#39d5ff]/10">
+<div class="flex items-center gap-3 mb-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="text-[10px] font-label font-bold text-[#39d5ff] uppercase tracking-widest">Server: STABLE</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[10px] font-label text-slate-500">VO_ID: 992-ARC-01</span>
+</div>
+</div>
+</div>
+</body></html>

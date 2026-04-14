@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#23005c",
+                    "on-primary": "#68000f",
+                    "on-secondary": "#3c0091",
+                    "on-tertiary": "#2d3134",
+                    "secondary-fixed": "#e9ddff",
+                    "inverse-primary": "#ae2f34",
+                    "surface-tint": "#ffb3b0",
+                    "primary-container": "#ff6b6b",
+                    "tertiary": "#c4c7ca",
+                    "tertiary-container": "#989b9f",
+                    "surface-variant": "#34343c",
+                    "on-primary-fixed-variant": "#8c1520",
+                    "surface": "#13131a",
+                    "surface-container-highest": "#34343c",
+                    "on-primary-fixed": "#410006",
+                    "secondary": "#d0bcff",
+                    "on-tertiary-fixed-variant": "#44474a",
+                    "surface-container-low": "#1b1b22",
+                    "surface-container": "#1f1f26",
+                    "outline-variant": "#584140",
+                    "surface-container-lowest": "#0e0e15",
+                    "surface-container-high": "#2a2931",
+                    "inverse-on-surface": "#303038",
+                    "on-secondary-container": "#c4abff",
+                    "outline": "#a78a88",
+                    "surface-dim": "#13131a",
+                    "secondary-fixed-dim": "#d0bcff",
+                    "on-tertiary-fixed": "#181c1f",
+                    "error": "#ffb4ab",
+                    "on-surface": "#e4e1ec",
+                    "tertiary-fixed-dim": "#c4c7ca",
+                    "error-container": "#93000a",
+                    "primary-fixed-dim": "#ffb3b0",
+                    "secondary-container": "#571bc1",
+                    "on-background": "#e4e1ec",
+                    "on-error": "#690005",
+                    "on-tertiary-container": "#303336",
+                    "surface-bright": "#393841",
+                    "inverse-surface": "#e4e1ec",
+                    "primary-fixed": "#ffdad8",
+                    "on-secondary-fixed-variant": "#5516be",
+                    "background": "#13131a",
+                    "on-primary-container": "#6d0010",
+                    "on-error-container": "#ffdad6",
+                    "primary": "#ffb3b0",
+                    "on-surface-variant": "#e0bfbd",
+                    "tertiary-fixed": "#e0e3e6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Be Vietnam Pro"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scan-line-overlay {
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none;
+        }
+        .hero-mesh {
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,107,107,0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- TopAppBar -->
+<nav class="bg-[#13131a]/80 backdrop-blur-md text-[#ff6b6b] font-['Space_Grotesk'] uppercase tracking-wider text-sm docked full-width top-0 sticky border-b border-[#ff6b6b]/15 shadow-2xl shadow-black/50 flex justify-between items-center px-6 py-4 w-full z-50">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black italic tracking-tighter text-[#ff6b6b] drop-shadow-[0_0_8px_rgba(255,107,107,0.5)] cursor-pointer">UPPERCUT CLUB</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-[#ff6b6b] font-bold border-b-2 border-[#ff6b6b] pb-1 hover:bg-[#ff6b6b]/10 transition-all duration-300" href="#">ROSTER</a>
+<a class="text-[#f5f7fb]/70 hover:text-[#f5f7fb] hover:bg-[#ff6b6b]/10 transition-all duration-300" href="#">SCHEDULE</a>
+<a class="text-[#f5f7fb]/70 hover:text-[#f5f7fb] hover:bg-[#ff6b6b]/10 transition-all duration-300" href="#">FACILITY</a>
+<a class="text-[#f5f7fb]/70 hover:text-[#f5f7fb] hover:bg-[#ff6b6b]/10 transition-all duration-300" href="#">MEMBERSHIP</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary-container text-on-primary-container px-4 py-2 font-bold scale-95 active:scale-90 transition-all">JOIN_THE_RING</button>
+<span class="material-symbols-outlined text-xl cursor-pointer hover:bg-[#ff6b6b]/10 p-2 rounded transition-all" data-icon="bolt">bolt</span>
+</div>
+</nav>
+<main class="relative">
+<!-- Hero Section -->
+<section class="relative h-[921px] w-full flex items-center justify-center overflow-hidden">
+<!-- Immersive Background -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-background/80 z-10"></div>
+<img class="w-full h-full object-cover grayscale-[0.4] brightness-50" data-alt="Dark dramatic boxing gym interior with red neon lights highlighting punching bags and smoke in the shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQkn2X3KXciR6SMD-YwnUyqQD9lI2x51FbE1FY0tXbXuhMMFKn5n-WeCzrZjC_j7Rkd9zgMYs5xmmiE3eNMGX7_ouoOBUJ_o6cUZkdhTPHotbnyDRzYlYY2UnvZi_rYRrfKS_qCxkYhhkOJeSEq1t8FQ73gUREHipq75JKeSpIn9zEWaPphpZPe2ftO6FBzdmJkly4-fW4bFpFaQ5FVIXC0hoH0KJmferR4QOMzYddrTbhKhT78hj2tJaObMBmm1GBvicvoGpmFhE"/>
+<div class="absolute inset-0 scan-line-overlay z-20"></div>
+<div class="absolute inset-0 hero-mesh z-20 opacity-50"></div>
+</div>
+<!-- Floating Booking Card -->
+<div class="relative z-30 w-full max-w-xl px-4 lg:ml-[-20%]">
+<div class="bg-[#12121c]/84 backdrop-blur-xl p-8 rounded-lg border border-outline-variant/20 shadow-[0_20px_40px_rgba(0,0,0,0.6)]">
+<div class="flex items-center gap-2 mb-6">
+<span class="w-2 h-2 bg-primary animate-pulse rounded-full"></span>
+<span class="font-headline text-xs tracking-[0.2em] text-primary">RESERVATION_SYSTEM_V.2.4</span>
+</div>
+<h1 class="font-headline text-4xl md:text-5xl font-black text-on-surface mb-2 leading-tight">무료 체험<br/>클래스 예약하기</h1>
+<p class="text-on-surface-variant text-sm mb-8 font-body">최고의 코치진과 함께하는 어퍼컷 클럽의 파워풀한 세션을 직접 경험해보세요.</p>
+<form class="space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="font-label text-[10px] uppercase text-tertiary tracking-widest">Select Date</label>
+<input class="w-full bg-surface-container-lowest border-none text-on-surface p-3 focus:ring-1 focus:ring-primary text-sm rounded-sm" type="date"/>
+</div>
+<div class="space-y-1">
+<label class="font-label text-[10px] uppercase text-tertiary tracking-widest">Select Time</label>
+<select class="w-full bg-surface-container-lowest border-none text-on-surface p-3 focus:ring-1 focus:ring-primary text-sm rounded-sm">
+<option>07:00 AM</option>
+<option>06:00 PM</option>
+<option>08:00 PM</option>
+</select>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-4 font-headline font-bold uppercase tracking-widest hover:shadow-[0_0_20px_rgba(255,107,107,0.4)] transition-all">
+                            INITIALIZE_BOOKING
+                        </button>
+</form>
+<div class="mt-6 flex justify-between items-center text-[10px] font-label text-tertiary/60">
+<span>LAT: 37.5665 | LONG: 126.9780</span>
+<span>STATUS: READY_TO_SPAR</span>
+</div>
+</div>
+</div>
+</section>
+<!-- First Scroll: Coach Snapshot & Schedule -->
+<section class="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Coaches -->
+<div class="lg:col-span-8">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline text-2xl font-bold tracking-tight">ELITE_ROSTER</h2>
+<span class="text-xs text-primary font-label">VIEW_ALL_TRAINERS</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Coach Card -->
+<div class="group relative aspect-[3/4] bg-surface-container overflow-hidden rounded-sm border border-outline-variant/10">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="Professional boxer trainer portrait with sharp lighting and urban athletic aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgkQRIBnNkMYcqkK-1M7fH2th8KLdSekrcSh-ILJ-wRO3InQKysoJyUbC-pY4UvQQod8KMMZtMd7j3C-BiWaHFt4vlDZ2tRAWKiycvR-oCTnErPQ4nmorcfqushGeN7bKXG5pkj6afYwtufAMmcBIwVryBFmoCFIQJ0FiWevW-NSUYoMuoJERMQrEeLsAwq8SQbA3ArR977eWhuUWWsM-8cvfDAax2NdVlbCadfpHHiINu482B5oEqbVC9DvKlD4TFSp4kt6P1iWk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<div class="bg-primary/10 backdrop-blur-md text-primary text-[10px] font-label px-2 py-0.5 inline-block mb-1">PRO_LEAGUE</div>
+<h3 class="font-headline font-bold text-sm">COACH KIM</h3>
+</div>
+</div>
+<div class="group relative aspect-[3/4] bg-surface-container overflow-hidden rounded-sm border border-outline-variant/10">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="Athletic female boxing coach with hand wraps in a high-contrast gym setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxyfJUqT9auqWvQZMmaxkzlt4pvQwRbSlHZl5qB7eGP6W1dDKB1xxrC5aX3UiG2evshczMfEbfhglcM-jtXHlICREoKo9C-l7qUCzMGxZzWm7VcO3y1vMhNsKpkoaDUTHsilYCcD84_GFR-ULm_QT_cunhg6TRzzpxVdIa1jq07ZafjTfn3LPH-hBHVnYfCgVEpFxuSr-vM-TpyCvHR6xdOlJVGdfIZHOFdbNXEsatTPdcA00d_AKTyGDYbuU1OQTQVpf2_AtD_w8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<div class="bg-secondary/10 backdrop-blur-md text-secondary text-[10px] font-label px-2 py-0.5 inline-block mb-1">STRIKING_SPECIALIST</div>
+<h3 class="font-headline font-bold text-sm">COACH PARK</h3>
+</div>
+</div>
+<div class="group relative aspect-[3/4] bg-surface-container overflow-hidden rounded-sm border border-outline-variant/10">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="Intense boxing trainer holding focus mitts with sweat and grit texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe9YXpP4zjtAkojcaCDdzJcxpOm2lgjr7zeoHNyFhnvrs9YDjvMuCz8HnKPQNRpfsq27edHPU8iT_5nVbLPky6vIpRAtghMAPtm0mvIoV1DGnXGuicfaAmKiqJELHxaalR_tfQePQvHpaaPMh2LgBd6cQTuVQreRSw83McoKEH7uJM6tD2Ph1VilJRGXH6VnRTsIlreFGePmMKcemJpZvv1ueDgNU8Tjq8e04VvOzy48XxLcCk9s1Pe3Hi4FFFWth9FAOAbTHmoJQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<div class="bg-primary/10 backdrop-blur-md text-primary text-[10px] font-label px-2 py-0.5 inline-block mb-1">CONDITIONING</div>
+<h3 class="font-headline font-bold text-sm">COACH LEE</h3>
+</div>
+</div>
+<div class="group relative aspect-[3/4] bg-surface-container overflow-hidden rounded-sm border border-outline-variant/10">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="Veteran boxer with graying beard and intense focus in dark studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd3etzpB6SkwT0LNIZAPMIlIcEnOZOp1QV_NpXqwFPO9zuCkRxiLzrHDYZtJlhWliuj66nUNSNY-O9YbkgSZgtDlHVnoCHUSQxC85NeHdjOAcBiSrxbzsUjM_CBZ3A1OuEv4MDh-Y2v5HO00Uq3lrufWR8zy-L5rWFNBMtCdhlgmroFHN-VHxPjfNRJAyjllegDs0V_LKJ0FMm61AKetMbEg9aKYzeF63watEhMMPVxzcBig6-qD99pI39_Nj7tzI69ES8Z9JLa7k"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<div class="bg-secondary/10 backdrop-blur-md text-secondary text-[10px] font-label px-2 py-0.5 inline-block mb-1">HEAD_COACH</div>
+<h3 class="font-headline font-bold text-sm">COACH CHOI</h3>
+</div>
+</div>
+</div>
+</div>
+<!-- Today's Schedule -->
+<div class="lg:col-span-4 bg-surface-container-low p-6 border-l border-primary/10">
+<h2 class="font-headline text-lg font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="calendar_today">calendar_today</span>
+                    TODAY'S_LOG
+                </h2>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-sm border border-outline-variant/5">
+<div>
+<p class="text-[10px] font-label text-primary">06:00 - 07:00</p>
+<h4 class="font-headline text-sm font-bold">MORNING SHARPEN</h4>
+</div>
+<span class="text-[10px] font-label bg-surface-variant px-2 py-1">6/12 SPOTS</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-primary/5 rounded-sm border border-primary/20">
+<div>
+<p class="text-[10px] font-label text-primary">18:00 - 19:30</p>
+<h4 class="font-headline text-sm font-bold">HEAVY HITTER</h4>
+</div>
+<span class="text-[10px] font-label bg-primary text-on-primary-container px-2 py-1">FULL</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-sm border border-outline-variant/5">
+<div>
+<p class="text-[10px] font-label text-primary">20:00 - 21:00</p>
+<h4 class="font-headline text-sm font-bold">TECHNICAL SPAR</h4>
+</div>
+<span class="text-[10px] font-label bg-surface-variant px-2 py-1">2/10 SPOTS</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Programs Bento -->
+<section class="py-20 bg-surface-container-lowest relative overflow-hidden">
+<div class="absolute top-0 right-0 p-20 opacity-5">
+<span class="text-[200px] font-black italic tracking-tighter">BOX</span>
+</div>
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-12 text-center">
+<h2 class="font-headline text-4xl font-black mb-4">TRAINING_MODULES</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">어퍼컷 클럽만의 데이터 기반 트레이닝 시스템을 통해 자신의 한계를 돌파하십시오.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Program 1 -->
+<div class="bg-surface p-8 border border-outline-variant/10 relative group hover:border-primary/40 transition-all">
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="sports_kabaddi">sports_kabaddi</span>
+<span class="font-label text-[10px] text-tertiary">LVL_01</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">BOXING FOUNDATION</h3>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between text-xs font-label">
+<span class="text-on-surface-variant">INTENSITY</span>
+<span class="text-primary">MEDIUM</span>
+</div>
+<div class="h-1 bg-surface-variant w-full overflow-hidden">
+<div class="h-full bg-primary w-[60%]"></div>
+</div>
+<div class="flex justify-between text-xs font-label">
+<span class="text-on-surface-variant">CALORIE_BURN</span>
+<span>600+ KCAL</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-6">복싱의 기본기인 스탠스, 잽, 크로스를 체계적으로 익히는 기초 프로그램입니다.</p>
+<button class="flex items-center gap-2 text-xs font-bold text-primary group-hover:translate-x-2 transition-transform">
+                            INITIALIZE_PROTOCOL <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Program 2 -->
+<div class="bg-surface p-8 border border-primary/20 relative group overflow-hidden">
+<div class="absolute top-0 right-0 bg-primary text-on-primary-container px-3 py-1 font-label text-[10px]">ELITE_ONLY</div>
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="fitness_center" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+<span class="font-label text-[10px] text-tertiary">LVL_03</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">SPARRING CLINIC</h3>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between text-xs font-label">
+<span class="text-on-surface-variant">INTENSITY</span>
+<span class="text-primary">ULTRA_HIGH</span>
+</div>
+<div class="h-1 bg-surface-variant w-full overflow-hidden">
+<div class="h-full bg-primary w-[95%]"></div>
+</div>
+<div class="flex justify-between text-xs font-label">
+<span class="text-on-surface-variant">CALORIE_BURN</span>
+<span>900+ KCAL</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-6">실전 스파링을 통해 기술적 완성도를 높이고 링 위에서의 전술을 훈련합니다.</p>
+<button class="flex items-center gap-2 text-xs font-bold text-primary group-hover:translate-x-2 transition-transform">
+                            INITIALIZE_PROTOCOL <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Program 3 -->
+<div class="bg-surface p-8 border border-outline-variant/10 relative group hover:border-secondary/40 transition-all">
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-4xl text-secondary" data-icon="monitor_heart">monitor_heart</span>
+<span class="font-label text-[10px] text-tertiary">LVL_02</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">CONDITIONING</h3>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between text-xs font-label">
+<span class="text-on-surface-variant">INTENSITY</span>
+<span class="text-secondary">HIGH</span>
+</div>
+<div class="h-1 bg-surface-variant w-full overflow-hidden">
+<div class="h-full bg-secondary w-[80%]"></div>
+</div>
+<div class="flex justify-between text-xs font-label">
+<span class="text-on-surface-variant">CALORIE_BURN</span>
+<span>800+ KCAL</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-6">최상의 신체 능력을 위한 고강도 인터벌 트레이닝과 체력 강화 세션입니다.</p>
+<button class="flex items-center gap-2 text-xs font-bold text-secondary group-hover:translate-x-2 transition-transform">
+                            INITIALIZE_PROTOCOL <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Operational Trust Block -->
+<section class="py-20 px-6 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<div>
+<h2 class="font-headline text-3xl font-black mb-4 italic tracking-tight">PREPARATION_GUIDE</h2>
+<p class="text-on-surface-variant">처음 방문하시는 분들을 위한 입문 프로토콜입니다. 걱정하지 말고 링 안으로 들어오십시오.</p>
+</div>
+<div class="space-y-6">
+<div class="flex gap-4 items-start">
+<span class="font-headline text-primary font-bold text-lg">01</span>
+<div>
+<h4 class="font-bold text-sm mb-1 uppercase">GEAR_CHECK</h4>
+<p class="text-xs text-on-surface-variant">개인용 운동복과 실내용 운동화만 준비하세요. 글러브와 핸드랩은 대여 가능합니다.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<span class="font-headline text-primary font-bold text-lg">02</span>
+<div>
+<h4 class="font-bold text-sm mb-1 uppercase">ARRIVAL_TIME</h4>
+<p class="text-xs text-on-surface-variant">수업 시작 15분 전까지 도착하여 환복 및 기본 스트레칭을 완료해 주세요.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<span class="font-headline text-primary font-bold text-lg">03</span>
+<div>
+<h4 class="font-bold text-sm mb-1 uppercase">HYDRATION</h4>
+<p class="text-xs text-on-surface-variant">고강도 훈련이 진행되므로 충분한 수분 섭취를 위해 개인 물통을 지참하세요.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="bg-surface-container p-4 rounded-lg border border-outline-variant/10 shadow-2xl">
+<img class="w-full h-80 object-cover rounded-sm grayscale brightness-75" data-alt="High-contrast dark mode map showing elite boxing gym location in Seoul city center" data-location="Seoul, Korea" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGvrk59_xQ_1tNHhREYkfm6QtbPfwMDmwnpFpv368DtzVK2JHtor_Y29-XGdO7l28XAEynuxK5Yhx44hDrtN36ccPsz1PH0ha7t35ePWXSz6jiooFcpp_JojAaWyawxbEOJiMvF6bHWo_ptlTqXCYatWaeDRAdwbSysE46mgFaOowZ38m9JvOhCfkqoCdJcN7WJwsh965S5n6OJ0nosdTCyu6PlHoeeAPOFPKMH-Qx0EXG_vqnYnYqvLVenFzOhaZ5DS1AXDrEv_0"/>
+<div class="mt-4 flex justify-between items-center">
+<div>
+<p class="font-headline font-bold text-sm">UPPERCUT CLUB [EST_NYC]</p>
+<p class="text-xs text-on-surface-variant">서울특별시 강남구 테헤란로 123</p>
+</div>
+<div class="text-right">
+<p class="text-primary font-label text-xs">OPERATIONAL</p>
+<p class="text-[10px] text-tertiary">MON - FRI: 06:00 - 23:00</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#13131a] full-width py-12 px-8 border-t border-[#f5f7fb]/5 flat no shadows">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+<div>
+<span class="text-lg font-black text-[#f5f7fb] mb-4 block">UPPERCUT CLUB</span>
+<p class="font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.2em] text-[#f5f7fb]/40 leading-loose">
+                    THE ELITE BOXING EXPERIENCE. DATA DRIVEN. RESULT ORIENTED. UNCOMPROMISING POWER.
+                </p>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.2em] text-[#f5f7fb]/40 hover:text-[#8b5cf6] underline-offset-4 hover:underline transition-all" href="#">PRIVACY_PROTOCOL</a>
+<a class="font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.2em] text-[#f5f7fb]/40 hover:text-[#8b5cf6] underline-offset-4 hover:underline transition-all" href="#">OPERATIONAL_HOURS</a>
+<a class="font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.2em] text-[#f5f7fb]/40 hover:text-[#8b5cf6] underline-offset-4 hover:underline transition-all" href="#">TECHNICAL_SUPPORT</a>
+</div>
+<div class="text-right flex flex-col justify-between items-end">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#f5f7fb]/40 hover:text-[#ff6b6b] cursor-pointer" data-icon="public">public</span>
+<span class="material-symbols-outlined text-[#f5f7fb]/40 hover:text-[#ff6b6b] cursor-pointer" data-icon="contact_support">contact_support</span>
+</div>
+<p class="font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.2em] text-[#f5f7fb]/40">©2024 UPPERCUT CLUB [EST_NYC]</p>
+</div>
+</div>
+</footer>
+</body></html>

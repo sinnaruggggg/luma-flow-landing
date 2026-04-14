@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-sm:hover {
+            box-shadow: 0 0 15px rgba(57, 213, 255, 0.4);
+        }
+        .tonal-shift-bg-surface-container-low {
+            background-color: #131c29;
+        }
+        .tonal-layering-surface-container-lowest {
+            background-color: #060e1b;
+        }
+        .mesh-gradient {
+            background-image: radial-gradient(at 0% 0%, rgba(57, 213, 255, 0.15) 0, transparent 50%),
+                              radial-gradient(at 100% 100%, rgba(255, 111, 228, 0.1) 0, transparent 50%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#dae3f6",
+                        "inverse-on-surface": "#28313f",
+                        "surface-dim": "#0b1421",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#ffb837",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed": "#001f28",
+                        "on-secondary": "#5e0053",
+                        "primary-fixed": "#b5ebff",
+                        "background": "#0b1421",
+                        "outline-variant": "#3c494e",
+                        "secondary-fixed": "#ffd7f0",
+                        "on-secondary-fixed": "#3a0033",
+                        "outline": "#869398",
+                        "error": "#ffb4ab",
+                        "on-primary-container": "#00596e",
+                        "secondary": "#fface8",
+                        "on-surface": "#dae3f6",
+                        "on-tertiary-fixed": "#281800",
+                        "secondary-fixed-dim": "#fface8",
+                        "surface": "#0b1421",
+                        "surface-container-lowest": "#060e1b",
+                        "surface-bright": "#313a48",
+                        "on-error": "#690005",
+                        "tertiary-fixed-dim": "#ffba3f",
+                        "on-secondary-container": "#fface8",
+                        "on-tertiary-container": "#6e4b00",
+                        "on-primary-fixed-variant": "#004e60",
+                        "surface-container": "#17202e",
+                        "primary": "#b1eaff",
+                        "surface-container-high": "#222a38",
+                        "inverse-primary": "#00677e",
+                        "on-primary": "#003543",
+                        "surface-tint": "#45d6ff",
+                        "surface-variant": "#2c3544",
+                        "primary-container": "#39d5ff",
+                        "inverse-surface": "#dae3f6",
+                        "surface-container-highest": "#2c3544",
+                        "on-surface-variant": "#bbc9ce",
+                        "primary-fixed-dim": "#45d6ff",
+                        "tertiary-fixed": "#ffdeae",
+                        "tertiary": "#ffdcaa",
+                        "on-tertiary": "#432c00",
+                        "surface-container-low": "#131c29",
+                        "on-secondary-fixed-variant": "#840076",
+                        "secondary-container": "#980388",
+                        "on-tertiary-fixed-variant": "#604100"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0b1421]/80 backdrop-blur-xl shadow-[0_0_20px_rgba(57,213,255,0.15)] flex justify-between items-center px-8 h-16 w-full">
+<div class="text-2xl font-black italic text-[#39d5ff] tracking-widest font-headline uppercase">VOID ARC</div>
+<div class="hidden md:flex items-center gap-10 font-headline tracking-tighter uppercase">
+<a class="text-[#39d5ff] border-b-2 border-[#39d5ff] pb-1 font-bold transition-all duration-300 ease-in-out active:scale-95" href="#">Home</a>
+<a class="text-slate-400 font-medium hover:text-[#39d5ff] transition-colors transition-all duration-300 ease-in-out active:scale-95" href="#">Gear</a>
+<a class="text-slate-400 font-medium hover:text-[#39d5ff] transition-colors transition-all duration-300 ease-in-out active:scale-95" href="#">Bundle</a>
+<a class="text-slate-400 font-medium hover:text-[#39d5ff] transition-colors transition-all duration-300 ease-in-out active:scale-95" href="#">Cart</a>
+<a class="text-slate-400 font-medium hover:text-[#39d5ff] transition-colors transition-all duration-300 ease-in-out active:scale-95" href="#">Support</a>
+</div>
+<div class="flex items-center gap-4 text-[#39d5ff]">
+<button class="p-2 hover:bg-[#39d5ff]/10 hover:text-white rounded transition-all duration-300 ease-in-out active:scale-95">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<button class="p-2 hover:bg-[#39d5ff]/10 hover:text-white rounded transition-all duration-300 ease-in-out active:scale-95">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</nav>
+<main class="pt-16">
+<!-- Hero Section: The Command Center -->
+<section class="relative min-height-[921px] flex flex-col justify-center items-center overflow-hidden py-24 px-8 mesh-gradient">
+<div class="absolute inset-0 z-0 opacity-40">
+<img alt="Main Hero Background" class="w-full h-full object-cover" data-alt="high-end futuristic gaming desk setup with glowing cyan neon lights and multiple high-resolution monitors in a dark room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOGjUCUl4d-PDYNy8YDb5JQjnXs9-DviKSFjesHa03RoP1EixMJCiLELCpECPxbwa0O4VwPrsx8jXZVxjawahGJhWdyFqIoDcPKo5GQIB3Wf341JZUEqhBrlExbMsEYrJdDXpPqm6HD_qRG3EhfDsAUuf93W5dj1-gfzkBQh287CiGDL7prTDZe__Xwdxdq0HZwvMJbgrxMDDZm2VhLO5J5oyHd0HI0qANI8apP6dAlRhL20ZtccNiRIzRwLK-N2ycibu6f8gaqPBL"/>
+<div class="absolute inset-0 bg-gradient-to-b from-[#0b1421]/20 via-[#0b1421]/60 to-[#0b1421]"></div>
+</div>
+<div class="container mx-auto relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 flex flex-col items-start gap-8">
+<div class="flex flex-col gap-2">
+<span class="font-label text-primary tracking-[0.4em] uppercase text-xs font-bold bg-primary/10 px-3 py-1 border-l-2 border-primary">System Online: Ver 2.4.0</span>
+<h1 class="font-headline text-7xl md:text-8xl font-black italic tracking-tighter leading-none text-white uppercase">
+                            Level Up Your <br/> <span class="text-primary-container">Command Station</span>
+</h1>
+</div>
+<p class="max-w-xl text-on-surface-variant font-body text-lg leading-relaxed">
+                        최고의 퍼포먼스를 위한 전술적 하드웨어의 집합체. VOID ARC는 단순한 기어가 아닌, 당신의 능력을 한계까지 끌어올리는 컨트롤 센터입니다.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary-container text-on-primary-container px-10 py-5 font-headline font-black uppercase text-lg tracking-widest rounded-br-xl hover:shadow-[0_0_30px_rgba(57,213,255,0.4)] transition-all active:scale-95">
+                            Bundle Commerce
+                        </button>
+<button class="border border-outline-variant/30 text-white px-10 py-5 font-headline font-bold uppercase text-lg tracking-widest backdrop-blur-md hover:bg-white/5 transition-all">
+                            View Catalog
+                        </button>
+</div>
+</div>
+<!-- Floating Instrument Blocks -->
+<div class="lg:col-span-5 grid grid-cols-2 gap-4">
+<div class="bg-surface-container/60 backdrop-blur-xl p-6 rounded-lg border-l border-t border-white/5 shadow-2xl transform translate-y-12">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">precision_manufacturing</span>
+<span class="font-label text-[10px] text-primary/50 tracking-widest uppercase">ID: ARC-77</span>
+</div>
+<h3 class="font-headline font-bold text-xl uppercase mb-1">ARC-X KEYBOARD</h3>
+<p class="font-label text-[10px] text-on-surface-variant mb-4 uppercase">Mechanical / Optical</p>
+<div class="text-2xl font-black text-primary font-headline italic">29,900원<span class="text-sm font-normal text-white/50 ml-1">/ mo</span></div>
+</div>
+<div class="bg-surface-container/60 backdrop-blur-xl p-6 rounded-lg border-l border-t border-white/5 shadow-2xl">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-secondary text-3xl">monitoring</span>
+<span class="font-label text-[10px] text-secondary/50 tracking-widest uppercase">ST: LIVE</span>
+</div>
+<h3 class="font-headline font-bold text-xl uppercase mb-1">PRO-SENS MOUSE</h3>
+<p class="font-label text-[10px] text-on-surface-variant mb-4 uppercase">26,000 DPI / Wireless</p>
+<div class="text-2xl font-black text-secondary font-headline italic">월 39,000원</div>
+</div>
+<div class="col-span-2 bg-surface-container-high/80 backdrop-blur-2xl p-6 rounded-lg border border-primary/20 shadow-[0_0_40px_rgba(57,213,255,0.1)] mt-4">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">view_quilt</span>
+</div>
+<div>
+<h4 class="font-headline font-bold uppercase text-sm">Bundle Optimization</h4>
+<p class="text-[10px] font-label text-on-surface-variant uppercase tracking-wider">Configure your ultimate setup</p>
+</div>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="w-3/4 h-full bg-primary-container"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Fast Browse / Product Entry Module -->
+<section class="py-12 bg-surface-container-lowest border-y border-white/5">
+<div class="container mx-auto px-8">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-4">
+<div class="h-8 w-1 bg-primary"></div>
+<h2 class="font-headline text-2xl font-black uppercase tracking-widest italic">Fast Entry Protocol</h2>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 border border-outline-variant flex items-center justify-center hover:bg-primary/10 hover:border-primary transition-all">
+<span class="material-symbols-outlined text-sm">arrow_back_ios</span>
+</button>
+<button class="w-10 h-10 border border-outline-variant flex items-center justify-center hover:bg-primary/10 hover:border-primary transition-all">
+<span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+<!-- Product Quick Action Cards -->
+<div class="group relative bg-surface-container border border-white/5 p-4 transition-all hover:bg-surface-container-high hover:scale-[1.02]">
+<img alt="Keyboard" class="w-full h-32 object-cover mb-4 opacity-70 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all" data-alt="high-quality mechanical gaming keyboard with customizable rgb lighting on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzn74dmMdM3gYniBxkxeuRO21WHMr8GVKr7KCArP9D5_BaswcUTbFzfzFl3k7kBsmOB3n0C8xUGi_xWOV11DhBgi8UM7ad6erpBepiMtwtbKczXB3iV50LLQxr2N6w4vX9a5C2dFQrMJqvyR4NNEYCsKk4vuNvViWlZ-mWaGpPP3X6sQy6-4GcLJ4dhyw36P9ro3i5ELgwR_ir_nxt3V6YrDlWytDIZC_NyUbfZrq3xof81M0w4K7o7cGnN-BQHD7SiyFQKzOCtSPZ"/>
+<h4 class="font-headline font-bold text-xs uppercase mb-1">ARC-K7</h4>
+<div class="flex justify-between items-end">
+<span class="font-label text-[10px] text-primary uppercase">In Stock</span>
+<span class="font-headline font-black text-sm">189,000원</span>
+</div>
+</div>
+<div class="group relative bg-surface-container border border-white/5 p-4 transition-all hover:bg-surface-container-high hover:scale-[1.02]">
+<img alt="Mouse" class="w-full h-32 object-cover mb-4 opacity-70 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all" data-alt="ultra-modern wireless gaming mouse with ergonomic design and glowing edges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlRAFxKgM_lBIQUX6_pL5dSbZto-LnS2OQtH-fME7YYLvsC_cW2r9cXsR1UE9gC0DTkSVyxdwqPLeI7WlteoQAgdSrbngIxV-_J0AaX6yLr26_Ef2KAtVzVpUvhA_ijI8DRdxvTP1pTh0zKyCTUmmUaV63kpiZnILmTsPZh2MrZzavTXN35su7NwM0o2GeQiQOSkRh41-82yweHWfRIRznUWJtu9ge9CkSE9bkJDUX3UsTY7BkmDNU9nwzbSbV22annqJf2aIVpefX"/>
+<h4 class="font-headline font-bold text-xs uppercase mb-1">PRO-M1</h4>
+<div class="flex justify-between items-end">
+<span class="font-label text-[10px] text-secondary uppercase">Limited</span>
+<span class="font-headline font-black text-sm">129,000원</span>
+</div>
+</div>
+<div class="group relative bg-surface-container border border-white/5 p-4 transition-all hover:bg-surface-container-high hover:scale-[1.02]">
+<img alt="Headset" class="w-full h-32 object-cover mb-4 opacity-70 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all" data-alt="studio-grade gaming headset with large ear cups and integrated microphone on a dark desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtxPbvjew2N0Lh4vTx2W2WZ3xP_YqnmyAGcI4Co1yORtsCpdUgwccFMX4aaIDnm9wbPv8nqa0p5RQ7WE9QNuO2wlBL5YOcJl8SNUs7CevQKR_C7_eq_vjskvKFNj-fTFSW54xK9Z3ROOPc8ksKjFeBFO_htbu2Kcom8FkU2FFUC-A-C3KRDyTRBmMDleMNCCYsVV0MBZ-b4kWX7Ppo0jSihbU-vi0byjC7K6Deusde9vfAFa8nouRYTnuVHOCO26y0tKLIY6Fvak3k"/>
+<h4 class="font-headline font-bold text-xs uppercase mb-1">VOICE-H</h4>
+<div class="flex justify-between items-end">
+<span class="font-label text-[10px] text-primary uppercase">New Arrival</span>
+<span class="font-headline font-black text-sm">249,000원</span>
+</div>
+</div>
+<div class="group relative bg-surface-container border border-white/5 p-4 transition-all hover:bg-surface-container-high hover:scale-[1.02]">
+<img alt="Pad" class="w-full h-32 object-cover mb-4 opacity-70 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all" data-alt="large extended gaming mouse pad with rgb border lighting on a dark desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAylIFONDFDdNTWdIiVZzf0A1Wo9PX7GwdwmEIRn3--15txcNjLS2KaUweoTBb0-N75avVAOyZD4fjvC5mUu_l_fhwtZe7vQnXac2D6rBmy4CDq4A2Yv6TvPreANze753bY50Yc8q0HEoN5Y-zaECf1lwtxvXR2P3D92zlarTNH75WyIAi73F4TMZyyV0dM9VLyswJmxmIuTsUX8fkIAz2tugtJI_XcFh-uqSeWb5meXbg3DYNQY0VVqPpPcF79jJaLH-tXbuowmf-q"/>
+<h4 class="font-headline font-bold text-xs uppercase mb-1">EXT-PAD</h4>
+<div class="flex justify-between items-end">
+<span class="font-label text-[10px] text-on-surface-variant uppercase">Standard</span>
+<span class="font-headline font-black text-sm">49,000원</span>
+</div>
+</div>
+<div class="group relative bg-surface-container-high border-2 border-primary/40 p-4 transition-all hover:border-primary flex flex-col justify-center items-center text-center cursor-pointer">
+<span class="material-symbols-outlined text-4xl text-primary mb-2">add_circle</span>
+<h4 class="font-headline font-bold text-sm uppercase">Custom Bundle</h4>
+<p class="font-label text-[9px] text-primary uppercase tracking-[0.2em] mt-1">Configure yours</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Specification Section (Bento Style) -->
+<section class="py-24 container mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6">
+<!-- Large Feature Card -->
+<div class="md:col-span-4 lg:col-span-4 bg-surface-container rounded-lg p-12 relative overflow-hidden flex flex-col justify-end min-h-[500px]">
+<img alt="Tech Spec Detail" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-overlay" data-alt="close-up detail of a gaming computer interior with glowing components and liquid cooling pipes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPXr0-037jCGxBCNyfd_uvyPRgcB4BKSw5xUqNyEt10qo6iFh1j33OiDLBiqZ3O4yCvHjlNdgQXA1Dk5noWf5eUgDBkXGXyA-Y9jU1XWdiuhTItTfKuM0fuGsJ8Yh7_DZarmYc4v3kfhyP501FtOTA66rRin5j2ICffu-DZTJ7x04ik3oQBEb5naTwhkFZ7CNRCl-QLq5Hjdmuh5tdMwAFJjKe8nHPf83dygrVvbUAqV-NGE9ciiVeb5XIducMP1YISDkvVTFwt-UT"/>
+<div class="relative z-10">
+<span class="font-headline text-primary font-black italic text-5xl mb-4 block tracking-tighter uppercase">VOID SYSTEM ENGINE</span>
+<h3 class="text-3xl font-bold max-w-lg leading-tight mb-6">최상의 반응 속도를 위한 고성능 하드웨어 아키텍처.</h3>
+<div class="flex gap-8">
+<div>
+<div class="text-xs font-label text-primary uppercase tracking-widest mb-1">Latency</div>
+<div class="text-4xl font-headline font-black italic">0.1ms</div>
+</div>
+<div>
+<div class="text-xs font-label text-secondary uppercase tracking-widest mb-1">Polling Rate</div>
+<div class="text-4xl font-headline font-black italic">8000Hz</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Small Info Cards (Setup-control styles) -->
+<div class="md:col-span-2 lg:col-span-2 bg-surface-container-high p-8 flex flex-col justify-between border-r-4 border-primary">
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<span class="material-symbols-outlined text-primary text-4xl">dynamic_form</span>
+<div class="text-right">
+<span class="block text-[10px] font-label text-on-surface-variant uppercase">Module</span>
+<span class="block font-headline font-bold text-xs">ARC-01_CTRL</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">자유로운 키 매핑과 매크로 설정을 통해 자신만의 명령 체계를 구축하십시오. 모든 제어는 손끝에서 이루어집니다.</p>
+</div>
+<button class="w-full py-4 border border-primary/30 font-headline font-bold uppercase text-sm hover:bg-primary hover:text-on-primary transition-all">
+                        Initialize Control
+                    </button>
+</div>
+<div class="md:col-span-2 lg:col-span-3 bg-surface-container p-8 border-l border-white/5">
+<div class="flex items-center gap-6 mb-8">
+<div class="w-16 h-16 bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings: 'FILL' 1;">palette</span>
+</div>
+<div>
+<h4 class="font-headline font-black uppercase text-xl italic">Prism RGB Lab</h4>
+<p class="text-xs font-label text-on-surface-variant uppercase">16.8M Colors Dynamic Sync</p>
+</div>
+</div>
+<div class="flex gap-2">
+<div class="flex-1 h-20 bg-[#39d5ff]"></div>
+<div class="flex-1 h-20 bg-[#ff6fe4]"></div>
+<div class="flex-1 h-20 bg-[#ffba3f]"></div>
+<div class="flex-1 h-20 bg-surface-container-highest border border-white/10"></div>
+</div>
+</div>
+<div class="md:col-span-2 lg:col-span-3 bg-surface-container p-8 border-l border-white/5 flex flex-col justify-center">
+<div class="grid grid-cols-2 gap-8">
+<div>
+<span class="block font-headline font-black text-3xl text-primary">UNIT_A</span>
+<span class="block text-[10px] font-label text-on-surface-variant uppercase tracking-[0.3em] mt-1">Core Performance</span>
+</div>
+<div class="text-right">
+<span class="block font-headline font-black text-3xl text-white">GEN_X</span>
+<span class="block text-[10px] font-label text-on-surface-variant uppercase tracking-[0.3em] mt-1">System Version</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Cart Entry CTA Area -->
+<section class="py-24 bg-[#07101d] overflow-hidden">
+<div class="container mx-auto px-8 relative">
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-10 blur-3xl bg-primary-container -z-0"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-12">
+<div class="max-w-2xl">
+<h2 class="font-headline text-6xl font-black italic tracking-tighter text-white uppercase mb-6">Ready to <span class="text-secondary">Deploy?</span></h2>
+<p class="text-xl text-on-surface-variant leading-relaxed">
+                            VOID ARC의 모든 장비는 당신의 승리를 위해 설계되었습니다. <br/>
+                            지금 바로 커스텀 번들을 구성하고 당신의 커맨드 센터를 완성하십시오.
+                        </p>
+</div>
+<div class="flex flex-col gap-4">
+<div class="text-right">
+<span class="block font-label text-xs text-on-surface-variant uppercase">Starting at</span>
+<span class="block font-headline font-black text-5xl text-primary">월 39,000원</span>
+</div>
+<button class="bg-primary-container text-on-primary-container px-12 py-6 font-headline font-black uppercase text-xl tracking-widest flex items-center gap-4 hover:translate-x-2 transition-transform">
+                            Go to Cart
+                            <span class="material-symbols-outlined font-bold">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#07101d] w-full border-t border-[#39d5ff]/10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-12 py-16 max-w-screen-2xl mx-auto">
+<div class="flex flex-col gap-6">
+<div class="text-lg font-bold text-[#39d5ff] font-headline tracking-widest">VOID ARC COMMAND CENTER</div>
+<div class="font-['Inter'] text-[10px] tracking-[0.02em] uppercase text-slate-500">
+                    © 2024 VOID ARC COMMAND CENTER. ALL SYSTEMS OPERATIONAL.
+                </div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-3">
+<a class="font-['Inter'] text-[10px] tracking-[0.02em] uppercase text-slate-500 hover:text-[#ff6fe4] hover:translate-x-1 transition-transform" href="#">Privacy Protocol</a>
+<a class="font-['Inter'] text-[10px] tracking-[0.02em] uppercase text-slate-500 hover:text-[#ff6fe4] hover:translate-x-1 transition-transform" href="#">Terms of Engagement</a>
+</div>
+<div class="flex flex-col gap-3">
+<a class="font-['Inter'] text-[10px] tracking-[0.02em] uppercase text-slate-500 hover:text-[#ff6fe4] hover:translate-x-1 transition-transform" href="#">System Status</a>
+<a class="font-['Inter'] text-[10px] tracking-[0.02em] uppercase text-slate-500 hover:text-[#ff6fe4] hover:translate-x-1 transition-transform" href="#">Warranty Registry</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

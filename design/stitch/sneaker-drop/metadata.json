@@ -1,0 +1,89 @@
+{
+  "siteId": "sneaker-drop",
+  "brand": "RIFT/01",
+  "projectId": "362217223160732599",
+  "projectTitle": "RIFT/01 Stitch",
+  "updatedAt": "2026-04-14T01:13:53.828Z",
+  "screens": {
+    "home:desktop": {
+      "screenId": "eb2ee4b906804ea8933dd1dcfb7ec7ae",
+      "pageSlug": "home",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/sneaker-drop/screens/home-desktop.html",
+      "imagePath": "design/stitch/sneaker-drop/screens/home-desktop.png",
+      "updatedAt": "2026-04-13T15:44:03.843Z"
+    },
+    "home:mobile": {
+      "screenId": "797b2a399e4c4f65964e796b94561869",
+      "pageSlug": "home",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/sneaker-drop/screens/home-mobile.html",
+      "imagePath": "design/stitch/sneaker-drop/screens/home-mobile.png",
+      "updatedAt": "2026-04-13T15:53:37.294Z"
+    },
+    "drops:desktop": {
+      "screenId": "4339f944548f406f9e74ce004952a37b",
+      "pageSlug": "drops",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/sneaker-drop/screens/drops-desktop.html",
+      "imagePath": "design/stitch/sneaker-drop/screens/drops-desktop.png",
+      "updatedAt": "2026-04-14T01:00:13.972Z"
+    },
+    "drops:mobile": {
+      "screenId": "76f468cabccc48c7902a3928666a458e",
+      "pageSlug": "drops",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/sneaker-drop/screens/drops-mobile.html",
+      "imagePath": "design/stitch/sneaker-drop/screens/drops-mobile.png",
+      "updatedAt": "2026-04-14T01:01:31.717Z"
+    },
+    "styles:desktop": {
+      "screenId": "ca6142ef96524e2faa8477a126c1404c",
+      "pageSlug": "styles",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/sneaker-drop/screens/styles-desktop.html",
+      "imagePath": "design/stitch/sneaker-drop/screens/styles-desktop.png",
+      "updatedAt": "2026-04-14T01:02:43.035Z"
+    },
+    "styles:mobile": {
+      "screenId": "b5860a7bd2df492bb1b18afc6dbbace5",
+      "pageSlug": "styles",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/sneaker-drop/screens/styles-mobile.html",
+      "imagePath": "design/stitch/sneaker-drop/screens/styles-mobile.png",
+      "updatedAt": "2026-04-14T01:03:54.261Z"
+    },
+    "cart:desktop": {
+      "screenId": "ce40239fa6f74d70a9da083c1cdc30bc",
+      "pageSlug": "cart",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/sneaker-drop/screens/cart-desktop.html",
+      "imagePath": "design/stitch/sneaker-drop/screens/cart-desktop.png",
+      "updatedAt": "2026-04-14T01:05:05.552Z"
+    },
+    "cart:mobile": {
+      "screenId": "cc462b5b09984e1f89824be85ac30719",
+      "pageSlug": "cart",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/sneaker-drop/screens/cart-mobile.html",
+      "imagePath": "design/stitch/sneaker-drop/screens/cart-mobile.png",
+      "updatedAt": "2026-04-14T01:06:02.134Z"
+    },
+    "brand:desktop": {
+      "screenId": "820db48cb33d4534a781ea64d095ccd8",
+      "pageSlug": "brand",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/sneaker-drop/screens/brand-desktop.html",
+      "imagePath": "design/stitch/sneaker-drop/screens/brand-desktop.png",
+      "updatedAt": "2026-04-14T01:07:49.978Z"
+    },
+    "brand:mobile": {
+      "screenId": "94a6e85bf1de495790de08909625c8d5",
+      "pageSlug": "brand",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/sneaker-drop/screens/brand-mobile.html",
+      "imagePath": "design/stitch/sneaker-drop/screens/brand-mobile.png",
+      "updatedAt": "2026-04-14T01:13:53.830Z"
+    }
+  }
+}

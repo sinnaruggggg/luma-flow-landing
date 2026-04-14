@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&amp;family=Be+Vietnam+Pro:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#f9f3e8",
+                    "surface-container-high": "#ede8dd",
+                    "on-primary-fixed-variant": "#5c4300",
+                    "outline": "#807663",
+                    "on-secondary-container": "#27647e",
+                    "secondary-fixed": "#c1e8ff",
+                    "on-secondary": "#ffffff",
+                    "background": "#fff9ee",
+                    "tertiary": "#685c50",
+                    "on-tertiary-fixed": "#221a10",
+                    "on-secondary-fixed": "#001e2b",
+                    "surface-variant": "#e8e2d7",
+                    "surface-bright": "#fff9ee",
+                    "on-primary-container": "#6d5000",
+                    "secondary-fixed-dim": "#96ceed",
+                    "on-surface-variant": "#4e4635",
+                    "tertiary-container": "#d7c7b7",
+                    "outline-variant": "#d2c5af",
+                    "inverse-surface": "#333029",
+                    "surface-container": "#f3ede2",
+                    "inverse-primary": "#f2bf4c",
+                    "primary-fixed": "#ffdfa0",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#f0e0cf",
+                    "primary": "#795900",
+                    "on-background": "#1d1c15",
+                    "on-tertiary-fixed-variant": "#504539",
+                    "on-secondary-fixed-variant": "#024d67",
+                    "on-tertiary-container": "#5e5346",
+                    "secondary-container": "#a7dffe",
+                    "surface-container-highest": "#e8e2d7",
+                    "surface-dim": "#dfd9cf",
+                    "inverse-on-surface": "#f6f0e5",
+                    "primary-fixed-dim": "#f2bf4c",
+                    "surface-tint": "#795900",
+                    "surface": "#fff9ee",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#d4c4b4",
+                    "on-surface": "#1d1c15",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#296580",
+                    "primary-container": "#f5c24f",
+                    "on-primary-fixed": "#261a00",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Be Vietnam Pro", "sans-serif"],
+                    "label": ["Be Vietnam Pro", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>body {
+    background-color: #fff9ee;
+    color: #1d1c15;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuB4ISlzd7Xh8AiTpVR39IEDBjOeSSmbewVkuNQVDJJqOvDraxlhWZ4kGMUtXUteYr2fQGaUMHNr-xc7ZsqCMELVnyBITFbcrCAUMTVNHIa39Yf_jS03v-LI2nPDYzOrb6d3H8zatqG_2ICCZdel3MX_awL6wdQaPjv_tm5drEIcNGCGvB31Kg2T4kFpzNPm1eFRvNo9mzNedPMc3HptleHbsmtKqMY5S-zub0Le3J1IMD-wRSSfUSoDq6EoIpn0DcWV9zD61o_gEE4);
+    background-attachment: fixed
+    }
+.paper-overlap {
+    box-shadow: 0 12px 32px -4px rgba(35, 29, 23, 0.08)
+    }
+.torn-edge-bottom {
+    mask-image: url("data:image/svg+xml;utf8,<svg viewBox=\"0 0 100 10\" preserveAspectRatio=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 0 L0 8 L5 6 L10 9 L15 5 L20 8 L25 4 L30 9 L35 6 L40 8 L45 5 L50 9 L55 6 L60 8 L65 4 L70 9 L75 6 L80 8 L85 5 L90 9 L95 6 L100 8 L100 0 Z\" fill=\"black\"/></svg>");
+    mask-size: 100% 100%
+    }
+.stipple-grain {
+    position: relative
+    }
+.stipple-grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCTk6hoaDIVKcAPT2yYU9ly-Rr0L8EF-Wl3PbxwfJTPTp5IhnMCJy_v9M9gyB8GXii5rqs6_z11fQ_3e1rqnJju8B1ZoRk8hZt65MURUf6Tiwen4IymunYyd0HS2EjLey4saWG4mX1KQKjOO_hHFEgBXPNd3NjLl5y8nAsD3gsrSVJbgiAPkmWThCBMzfkndafJDXFylpqZxDVOhYZ0olmIoZJTc9Uh7j7QsSZ50xy3gTftcORu0i_wG_AKO7WzjFI3gaQJ4dwGURk);
+    opacity: 0.03;
+    pointer-events: none
+    }</style>
+</head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-[#fff9ee] dark:bg-[#1d1c15] docked full-width top-0 z-50">
+<div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
+<div class="text-2xl font-bold font-['Newsreader'] uppercase tracking-widest text-[#1d1c15] dark:text-[#fff9ee]">PAPER NOOK</div>
+<nav class="hidden md:flex gap-12 items-center">
+<a class="text-[#1d1c15] dark:text-[#fff9ee] opacity-80 font-['Newsreader'] italic tracking-tight hover:opacity-100 hover:translate-y-[-2px] transition-transform duration-300" href="#">Curations</a>
+<a class="text-[#1d1c15] dark:text-[#fff9ee] opacity-80 font-['Newsreader'] italic tracking-tight hover:opacity-100 hover:translate-y-[-2px] transition-transform duration-300" href="#">Journal</a>
+<a class="text-[#1d1c15] dark:text-[#fff9ee] opacity-80 font-['Newsreader'] italic tracking-tight hover:opacity-100 hover:translate-y-[-2px] transition-transform duration-300" href="#">Archive</a>
+<a class="text-[#795900] dark:text-[#f5c24f] border-b-2 border-[#f5c24f] pb-1 font-['Newsreader'] italic tracking-tight hover:opacity-100 hover:translate-y-[-2px] transition-transform duration-300" href="#">About</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="text-[#1d1c15] dark:text-[#fff9ee] hover:opacity-100 hover:translate-y-[-2px] transition-transform duration-300">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+</div>
+<div class="bg-[#f2ebe0] dark:bg-[#2d2c25] h-[1px] w-full"></div>
+</header>
+<main>
+<!-- Section 1: Hero -->
+<section class="relative min-h-[870px] flex items-center overflow-hidden px-8 py-20">
+<div class="max-w-7xl mx-auto grid grid-cols-12 gap-8 items-center w-full">
+<div class="col-span-12 lg:col-span-6 z-10">
+<div class="inline-block bg-secondary-container text-on-secondary-container px-3 py-1 text-[0.6875rem] uppercase tracking-[0.15em] mb-6 transform -rotate-1 font-bold">Concept: The Living Archive</div>
+<h1 class="text-[4rem] lg:text-[5.5rem] font-headline leading-[1.1] text-on-surface mb-8 italic">
+                        종이와 기록,<br/>그 이상의 아카이브
+                    </h1>
+<p class="text-on-surface-variant max-w-md text-lg leading-relaxed mb-10">
+                        우리는 잊혀져 가는 기록의 가치를 다시 발견합니다. 손으로 만져지는 종이의 질감과 시간이 깃든 잉크의 향기를 통해 당신의 생각을 영원한 유산으로 남깁니다.
+                    </p>
+<button class="bg-primary-container text-on-primary-container px-10 py-5 text-sm font-bold uppercase tracking-widest hover:translate-y-[-4px] transition-all duration-300 cubic-bezier(0.2,0,0,1)">
+                        Explore Archive
+                    </button>
+</div>
+<div class="col-span-12 lg:col-span-6 relative h-[600px] flex items-center justify-center">
+<!-- Hero Collage Layout -->
+<div class="absolute top-0 right-0 w-64 h-80 bg-surface-container-high paper-overlap rotate-3 overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-80" data-alt="Close up of vintage book spines in a library with warm lighting and visible textures on the leather and paper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2zQzGmNB_K0ZCT7AU8aUH7ztcaZ-9r-XwKuQCTZJnuoCxk74WznB_7Ulk7cXQCEoR8hJA-rZR9CCQznhgx_LIQKFmYV1_GOXNZeFxN1tMeAZsiXXXqQQ-nQfl2boyj8hhJMpeVSYJy-WBFCCB6rD4yrDem-X8pjA0ECeHHzHShqi58ym5yK_WngThlJ_FtvmMMCC9-HrwhcFqO5edexyEDI2cE8827o4rqVJHJ-lE0trZibx-nq4qD5DOsVGLk99tyY7zT-CHVDs"/>
+</div>
+<div class="absolute bottom-10 left-10 w-72 h-96 bg-surface-container-lowest paper-overlap -rotate-2 p-6 flex flex-col justify-between">
+<div class="border-b border-outline-variant pb-4">
+<span class="text-[0.6rem] uppercase tracking-tighter text-outline">Ref: PN-2024</span>
+</div>
+<img class="w-full h-48 object-cover mb-4" data-alt="Handwritten notes on ink-stained parchment paper with elegant calligraphy and a warm amber color palette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfWv59Edz2MxnTBh-g_yymQvXgQDGDNCn_V5p4Gx4ti8DnCqPUL4AxZdQw8Q1o8-MlTbFvSizN32rmblUJ2vXFSjat5I3WvHsAd0CHbIO8_MlUj9E4vHSaPjZTFmCvSVIDdz-Op_C6MHwEHpHVZbbj1aZMW-DdtEIaErXLFNpCHObgtQmFCUQ_XfIVovvuLlEQhU3v5T2xVOZ_sa5r2ReHBgbzyAi00YLV-JHYN_1sqVdnZmWBSWW4zjZCaeFpVrUOEjjhoG-6wg8"/>
+<p class="font-headline italic text-xl">The Curated Desk</p>
+</div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 border-[12px] border-primary-container/20 rotate-12 flex items-center justify-center">
+<div class="w-full h-full bg-background/40 backdrop-blur-sm p-4">
+<div class="w-full h-full border border-primary/20 flex items-center justify-center p-8">
+<span class="text-4xl font-headline italic text-primary opacity-60">Archive 01</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: The Process -->
+<section class="bg-surface-container-low py-32 px-8 stipple-grain">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20 text-center lg:text-left">
+<h2 class="text-4xl font-headline italic mb-4">아카이빙의 과정</h2>
+<div class="h-[2px] w-24 bg-primary"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+<!-- Process 1 -->
+<div class="relative group">
+<div class="bg-surface-container-lowest p-10 paper-overlap transition-transform duration-500 group-hover:-translate-y-4">
+<span class="text-primary font-headline text-5xl italic block mb-6">01</span>
+<h3 class="text-xl font-bold mb-4 uppercase tracking-wider">Selection</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">
+                                수만 권의 기록물 중 가장 깊은 통찰을 담은 종이를 선별합니다. 단순한 정보가 아닌, 영감을 주는 물성을 가진 존재를 찾습니다.
+                            </p>
+<div class="bg-secondary-container/30 h-1 w-12 transition-all duration-300 group-hover:w-full"></div>
+</div>
+<div class="absolute -bottom-4 -right-4 w-20 h-24 bg-primary rotate-6 -z-10 opacity-10"></div>
+</div>
+<!-- Process 2 (Staggered Height) -->
+<div class="relative group mt-16 md:mt-24">
+<div class="bg-surface-container-lowest p-10 paper-overlap transition-transform duration-500 group-hover:-translate-y-4 border-t-8 border-primary-container">
+<span class="text-primary font-headline text-5xl italic block mb-6">02</span>
+<h3 class="text-xl font-bold mb-4 uppercase tracking-wider">Curation</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">
+                                선별된 기록들은 독창적인 맥락 아래 재구성됩니다. 사서의 시선으로 엮어낸 새로운 내러티브는 기록에 생명력을 불어넣습니다.
+                            </p>
+<div class="bg-secondary-container/30 h-1 w-12 transition-all duration-300 group-hover:w-full"></div>
+</div>
+</div>
+<!-- Process 3 -->
+<div class="relative group mt-16 md:mt-8">
+<div class="bg-surface-container-lowest p-10 paper-overlap transition-transform duration-500 group-hover:-translate-y-4">
+<span class="text-primary font-headline text-5xl italic block mb-6">03</span>
+<h3 class="text-xl font-bold mb-4 uppercase tracking-wider">Preservation</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">
+                                우리는 시간을 견디는 보존 기술을 활용합니다. 중성지부터 특수 장정까지, 당신의 문장이 수백 년 뒤에도 읽힐 수 있도록 합니다.
+                            </p>
+<div class="bg-secondary-container/30 h-1 w-12 transition-all duration-300 group-hover:w-full"></div>
+</div>
+<div class="absolute top-0 left-0 w-full h-full bg-[#296580] opacity-5 -rotate-2 -z-10"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: The Space -->
+<section class="py-32 px-8 overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-12 gap-0 items-center">
+<div class="col-span-12 lg:col-span-8 relative">
+<div class="relative overflow-hidden torn-edge-bottom">
+<img class="w-full h-[600px] object-cover grayscale-[30%] hover:scale-105 transition-transform duration-1000" data-alt="Minimalist cozy bookstore interior in Seoul Bukchon with warm wood furniture, soft window light, and stacks of paper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL2wKBeJP8K45UNwEYwhwtWr8PF8XILn9OUiozWKbpEJ3YF6YkML7NmA5wgugIJgcsH7a4PS0BLmxKJGtkXtGGHs2HZN6mJ06RG69RDck3dm8Icj3094UldpqNrtqlNyfzIxKzasR_rqsWQPilghief7Vp7Idkiw97aJiCnWCT-lwlTSBLx-Rwg2BV2rs0vadGQuDKZvwLxmSjmN9Vf-GORCiNNSWGCIKoIdycKstzZoxmUR_sOftfTVFKNBbu1N2f4CV6CJGbIbI"/>
+</div>
+<!-- Hand-Placed Note -->
+<div class="absolute -bottom-10 -right-10 md:right-10 bg-secondary-container p-8 w-64 paper-overlap -rotate-2 z-20">
+<span class="material-symbols-outlined text-on-secondary-container mb-4">location_on</span>
+<h4 class="font-bold text-on-secondary-container mb-2 uppercase tracking-tighter">Seoul, Bukchon</h4>
+<p class="text-on-secondary-container/80 text-xs leading-relaxed italic font-headline">
+                            "A quiet sanctuary for paper lovers. Visit us at the foot of the old palace walls."
+                        </p>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 lg:-ml-20 z-10 mt-20 lg:mt-0">
+<div class="bg-surface p-12 paper-overlap border border-outline-variant/20">
+<h2 class="text-4xl font-headline italic mb-8">서울, 북촌의 서재</h2>
+<p class="text-on-surface-variant leading-relaxed mb-8">
+                            북촌의 좁은 골목 끝, 시간이 멈춘 듯한 공간이 있습니다. 페이퍼 눅의 오프라인 쇼룸은 단순한 상점이 아닌, 기록을 대하는 태도를 경험하는 명상적인 서재입니다.
+                        </p>
+<div class="space-y-4 mb-10">
+<div class="flex items-center gap-4 text-sm">
+<span class="w-2 h-2 bg-primary"></span>
+<span class="font-bold tracking-widest uppercase">Opening Hours</span>
+<span class="ml-auto text-outline">11:00 - 19:00</span>
+</div>
+<div class="flex items-center gap-4 text-sm">
+<span class="w-2 h-2 bg-primary"></span>
+<span class="font-bold tracking-widest uppercase">Closed</span>
+<span class="ml-auto text-outline">Monday, Tuesday</span>
+</div>
+</div>
+<a class="inline-block border-b-2 border-primary-container text-primary font-bold tracking-widest uppercase text-xs hover:text-on-surface transition-colors" href="#">Book a Private Tour</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Philosophical Quote -->
+<section class="bg-surface-container-highest py-40 px-8 text-center relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+<div class="absolute top-10 left-20 text-9xl font-headline italic opacity-20">“</div>
+<div class="absolute bottom-10 right-20 text-9xl font-headline italic opacity-20">”</div>
+</div>
+<div class="max-w-4xl mx-auto relative z-10">
+<p class="text-3xl md:text-5xl font-headline italic leading-[1.4] text-on-surface mb-12">
+                    '글자는 종이 위에 머물 때 비로소<br/>살아있는 역사가 된다.'
+                </p>
+<div class="w-16 h-[1px] bg-primary mx-auto mb-8"></div>
+<p class="text-xs uppercase tracking-[0.3em] font-body font-bold text-outline">The Philosophy of Paper Nook</p>
+</div>
+</section>
+<!-- Section 5: Trust/Impact -->
+<section class="py-32 px-8 max-w-7xl mx-auto">
+<div class="grid grid-cols-12 gap-8 items-start">
+<div class="col-span-12 lg:col-span-5">
+<h2 class="text-4xl font-headline italic mb-6">기록의 가치를 나누는 사람들</h2>
+<p class="text-on-surface-variant leading-relaxed mb-12">
+                        우리는 독립 출판 제작자들과 지역 도서관, 그리고 기록을 사랑하는 모든 이들과 함께합니다. 우리의 이익 중 일부는 사라져가는 고서 복원 사업에 기부됩니다.
+                    </p>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<div class="text-3xl font-headline italic text-primary mb-2">4.2k+</div>
+<p class="text-[0.6rem] uppercase tracking-widest font-bold">Archived Works</p>
+</div>
+<div>
+<div class="text-3xl font-headline italic text-primary mb-2">128</div>
+<p class="text-[0.6rem] uppercase tracking-widest font-bold">Independent Authors</p>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Impact Note 1 -->
+<div class="bg-white p-8 paper-overlap border-l-4 border-primary transform -rotate-1">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">edit_note</span>
+<span class="text-[0.6875rem] font-bold uppercase tracking-widest">Librarian's Note</span>
+</div>
+<p class="text-sm italic leading-relaxed text-on-surface-variant">
+                            "디지털 시대에도 변하지 않는 종이의 힘을 믿습니다. 페이퍼 눅의 큐레이션은 항상 우리에게 새로운 영감을 줍니다."
+                        </p>
+<div class="mt-8 text-right">
+<span class="text-[0.6rem] font-bold tracking-tighter opacity-40">— Curator S. Kim</span>
+</div>
+</div>
+<!-- Impact Note 2 -->
+<div class="bg-surface-container-low p-8 paper-overlap rotate-1">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="text-[0.6875rem] font-bold uppercase tracking-widest text-secondary">Support Programs</span>
+</div>
+<h4 class="font-bold text-sm mb-4">Independent Publishing Support</h4>
+<p class="text-xs leading-relaxed text-on-surface-variant">
+                            매년 10명의 신진 작가를 선정하여 고품질의 종이 제작과 전시 기회를 무료로 제공하고 있습니다.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#fff9ee] dark:bg-[#1d1c15] w-full py-12 px-8 border-t border-[#1d1c15]/10 dark:border-[#fff9ee]/10">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="font-['Be_Vietnam_Pro'] text-[0.6875rem] uppercase tracking-[0.1em] text-[#1d1c15]/60 dark:text-[#fff9ee]/60">
+                © 2024 PAPER NOOK. THE LIVING ARCHIVE.
+            </div>
+<div class="flex gap-8">
+<a class="font-['Be_Vietnam_Pro'] text-[0.6875rem] uppercase tracking-[0.1em] text-[#1d1c15]/60 dark:text-[#fff9ee]/60 hover:text-[#795900] dark:hover:text-[#f5c24f] transition-colors" href="#">Privacy</a>
+<a class="font-['Be_Vietnam_Pro'] text-[0.6875rem] uppercase tracking-[0.1em] text-[#1d1c15]/60 dark:text-[#fff9ee]/60 hover:text-[#795900] dark:hover:text-[#f5c24f] transition-colors underline decoration-[#f5c24f]" href="#">Terms</a>
+<a class="font-['Be_Vietnam_Pro'] text-[0.6875rem] uppercase tracking-[0.1em] text-[#1d1c15]/60 dark:text-[#fff9ee]/60 hover:text-[#795900] dark:hover:text-[#f5c24f] transition-colors" href="#">Shipping</a>
+<a class="font-['Be_Vietnam_Pro'] text-[0.6875rem] uppercase tracking-[0.1em] text-[#1d1c15]/60 dark:text-[#fff9ee]/60 hover:text-[#795900] dark:hover:text-[#f5c24f] transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

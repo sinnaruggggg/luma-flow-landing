@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SIGNAL GRID | Connect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#b7c4ff",
+                    "inverse-on-surface": "#2f3035",
+                    "tertiary-container": "#23005b",
+                    "secondary": "#bdf4ff",
+                    "on-secondary-fixed-variant": "#004f58",
+                    "on-primary-fixed-variant": "#0038b6",
+                    "tertiary-fixed-dim": "#d1bcff",
+                    "on-secondary-fixed": "#001f24",
+                    "primary-fixed-dim": "#b7c4ff",
+                    "on-surface-variant": "#c4c6cf",
+                    "on-tertiary-fixed-variant": "#5700c9",
+                    "outline": "#8e9099",
+                    "error-container": "#93000a",
+                    "surface": "#111318",
+                    "surface-container-low": "#1a1c20",
+                    "surface-bright": "#37393e",
+                    "on-primary-container": "#5479ff",
+                    "error": "#ffb4ab",
+                    "surface-container-highest": "#333539",
+                    "on-primary-fixed": "#001452",
+                    "tertiary-fixed": "#e9ddff",
+                    "background": "#111318",
+                    "on-surface": "#e2e2e8",
+                    "outline-variant": "#44474e",
+                    "surface-variant": "#333539",
+                    "on-secondary-container": "#00616d",
+                    "on-primary": "#002682",
+                    "on-tertiary": "#3c0090",
+                    "inverse-primary": "#004ced",
+                    "on-background": "#e2e2e8",
+                    "secondary-fixed": "#9cf0ff",
+                    "surface-dim": "#111318",
+                    "primary": "#b7c4ff",
+                    "inverse-surface": "#e2e2e8",
+                    "on-tertiary-container": "#9565ff",
+                    "surface-container": "#1e2024",
+                    "primary-container": "#001451",
+                    "on-secondary": "#00363d",
+                    "tertiary": "#d1bcff",
+                    "surface-container-lowest": "#0c0e12",
+                    "surface-container-high": "#282a2e",
+                    "secondary-fixed-dim": "#00daf3",
+                    "secondary-container": "#00e3fd",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed": "#23005b",
+                    "on-error-container": "#ffdad6",
+                    "primary-fixed": "#dde1ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #111318;
+            color: #e2e2e8;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .technical-mesh {
+            background: radial-gradient(circle at 50% 0%, #001451 0%, #111318 70%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .glow-overlay {
+            background: radial-gradient(circle at 80% 20%, rgba(0, 227, 253, 0.08) 0%, transparent 50%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen">
+<div class="technical-mesh"></div>
+<div class="glow-overlay"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-slate-950/80 backdrop-blur-xl border-b border-white/5 shadow-[0_4px_20px_rgba(0,227,253,0.05)]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-cyan-300" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="text-lg font-bold tracking-widest text-cyan-300 uppercase font-['Space_Grotesk']">SIGNAL GRID</span>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-slate-400">more_vert</span>
+</div>
+</header>
+<main class="flex-grow pt-24 pb-32 px-6 space-y-12 max-w-lg mx-auto">
+<!-- Hero Section -->
+<section class="space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary-container/30 border border-on-primary-container/20 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_8px_#bdf4ff]"></span>
+<span class="text-[10px] font-mono tracking-widest text-secondary-fixed uppercase">System Active</span>
+</div>
+<h1 class="text-4xl font-headline font-bold leading-tight tracking-tight text-on-surface">
+                커넥트: <span class="text-secondary">지능형</span> 인프라 구축
+            </h1>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed max-w-[85%]">
+                차세대 배포를 위한 아키텍트들과의 연결. 시그널 그리드의 지능형 워크플로우 솔루션으로 인프라의 미래를 설계하십시오.
+            </p>
+</section>
+<!-- Response Protocol -->
+<section class="bg-surface-container-low p-4 rounded-lg border-l-2 border-secondary shadow-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</div>
+<span class="font-mono text-[11px] tracking-tighter text-on-surface-variant">
+                        PROTOCOL: <span class="text-on-surface font-semibold">SG-772</span>
+</span>
+</div>
+<span class="text-[11px] font-medium text-secondary-fixed-dim bg-secondary-container/10 px-2 py-0.5 rounded">
+                    평균 응답 시간: 14분
+                </span>
+</div>
+</section>
+<!-- Inquiry Form (Console Style) -->
+<section class="space-y-8">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-xs text-secondary-fixed">terminal</span>
+<h2 class="text-xs font-mono uppercase tracking-[0.2em] text-outline">Inquiry Console</h2>
+</div>
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="block text-[11px] font-mono text-outline-variant uppercase tracking-wider">문의 유형</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest border-b border-outline-variant py-3 px-1 text-on-surface appearance-none focus:outline-none focus:border-secondary transition-colors font-body text-sm">
+<option>기술 지원 (Technical Support)</option>
+<option>솔루션 도입 문의 (Sales)</option>
+<option>파트너십 (Partnership)</option>
+<option>기타 (General Inquiry)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-3 text-outline pointer-events-none text-sm">expand_more</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="block text-[11px] font-mono text-outline-variant uppercase tracking-wider">이름</label>
+<input class="w-full bg-surface-container-lowest border-b border-outline-variant py-3 px-1 text-on-surface focus:outline-none focus:border-secondary transition-colors font-body text-sm" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block text-[11px] font-mono text-outline-variant uppercase tracking-wider">이메일</label>
+<input class="w-full bg-surface-container-lowest border-b border-outline-variant py-3 px-1 text-on-surface focus:outline-none focus:border-secondary transition-colors font-body text-sm" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-[11px] font-mono text-outline-variant uppercase tracking-wider">메시지</label>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-4 text-on-surface focus:outline-none focus:border-secondary transition-colors font-body text-sm resize-none" placeholder="문의 내용을 입력하십시오..." rows="4"></textarea>
+</div>
+<button class="w-full group flex items-center justify-center gap-3 bg-primary py-4 rounded-lg text-on-primary font-headline font-bold text-sm tracking-widest uppercase shadow-[0_8px_20px_rgba(183,196,255,0.15)] active:scale-95 transition-all">
+<span>시그널 전송</span>
+<span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</form>
+</section>
+<!-- Trust Signals -->
+<section class="grid grid-cols-1 gap-4">
+<div class="bg-surface-container p-5 rounded-xl flex items-start gap-4 border border-outline-variant/10 shadow-md">
+<div class="p-3 bg-primary-container/30 rounded-lg">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div>
+<h3 class="text-sm font-bold font-headline text-on-surface mb-1">보안 솔루션</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">기업용 데이터 보호를 위한 완전한 SOC2 준수 및 종단간 암호화 보장.</p>
+</div>
+</div>
+<div class="bg-surface-container p-5 rounded-xl flex items-start gap-4 border border-outline-variant/10 shadow-md">
+<div class="p-3 bg-secondary-container/10 rounded-lg">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+</div>
+<div>
+<h3 class="text-sm font-bold font-headline text-on-surface mb-1">24/7 전문 지원</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">전 세계 3개 대륙의 전문 엔지니어링 팀이 상시 대기 중입니다.</p>
+</div>
+</div>
+</section>
+<!-- Global HQ / Map -->
+<section class="relative h-48 w-full rounded-2xl overflow-hidden bg-surface-container-lowest border border-white/5">
+<div class="absolute inset-0 opacity-30 grayscale" data-alt="abstract monochromatic map of city night lights with glowing grid overlay and technical data points" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB8-CQmb9tB999U_WVM4gbzxbgfAAuwd1nTRAzKAMhLve4LC3lT2yQT-l-0qcqngs7gIutquhum-Df79x9mhPH0V1CmKOBgjNrdWpz3iJdvDSoYwa99J_rPEPRj0nq3fPnnJ5jVjQTkp61upKUgyPFwgV_xJbFv2rJby6HChnbD-s78HYRvOthSBlboHoHE9B0yoV-IByJF68EJ_MzE40qGvLhAF1NYkr9v1sVe3m-y24jP1nKnnTx1JBgPSZn4HZj171lf_VXJiKY'); background-size: cover; background-position: center;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 flex flex-col gap-2">
+<div class="text-[10px] font-mono text-secondary-fixed-dim flex items-center gap-2">
+<span class="material-symbols-outlined text-xs">location_on</span>
+                    37.5665° N, 126.9780° E
+                </div>
+<div class="text-xs font-bold font-headline tracking-[0.3em] text-on-surface uppercase flex justify-between">
+<span>SEOUL</span>
+<span class="text-outline">|</span>
+<span>SAN FRANCISCO</span>
+<span class="text-outline">|</span>
+<span>TOKYO</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-slate-900/90 backdrop-blur-lg border-t border-white/5 shadow-[0_-8px_30px_rgba(0,0,0,0.5)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-indigo-100 active:translate-y-0.5 transition-all" href="#">
+<span class="material-symbols-outlined mb-1">account_tree</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wider uppercase">Flows</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-indigo-100 active:translate-y-0.5 transition-all" href="#">
+<span class="material-symbols-outlined mb-1">schema</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wider uppercase">Nodes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-indigo-100 active:translate-y-0.5 transition-all" href="#">
+<span class="material-symbols-outlined mb-1">database</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wider uppercase">Data</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-indigo-100 active:translate-y-0.5 transition-all" href="#">
+<span class="material-symbols-outlined mb-1">notifications_active</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wider uppercase">Alerts</span>
+</a>
+</nav>
+</body></html>

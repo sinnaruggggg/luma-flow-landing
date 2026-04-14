@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SIGNAL GRID | Cases</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1a1c20",
+                        "on-secondary": "#00363d",
+                        "tertiary": "#d1bcff",
+                        "on-tertiary-fixed": "#23005b",
+                        "background": "#111318",
+                        "inverse-primary": "#004ced",
+                        "on-tertiary-fixed-variant": "#5700c9",
+                        "on-secondary-fixed": "#001f24",
+                        "on-primary": "#002682",
+                        "primary": "#b7c4ff",
+                        "on-background": "#e2e2e8",
+                        "tertiary-fixed-dim": "#d1bcff",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "on-secondary-container": "#00616d",
+                        "outline": "#8e9099",
+                        "on-surface": "#e2e2e8",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#00daf3",
+                        "secondary-container": "#00e3fd",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "inverse-on-surface": "#2f3035",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-highest": "#333539",
+                        "surface-dim": "#111318",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#001452",
+                        "surface-bright": "#37393e",
+                        "secondary": "#bdf4ff",
+                        "outline-variant": "#44474e",
+                        "primary-fixed": "#dde1ff",
+                        "inverse-surface": "#e2e2e8",
+                        "surface-container": "#1e2024",
+                        "surface-variant": "#333539",
+                        "tertiary-fixed": "#e9ddff",
+                        "secondary-fixed": "#9cf0ff",
+                        "on-tertiary": "#3c0090",
+                        "on-tertiary-container": "#9565ff",
+                        "on-error": "#690005",
+                        "primary-container": "#001451",
+                        "on-surface-variant": "#c4c6cf",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "surface": "#111318",
+                        "surface-tint": "#b7c4ff",
+                        "on-primary-container": "#5479ff",
+                        "surface-container-high": "#282a2e",
+                        "tertiary-container": "#23005b",
+                        "surface-container-lowest": "#0c0e12"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #111318; }
+        .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .mesh-gradient {
+            background: radial-gradient(circle at 50% 0%, #001451 0%, #111318 70%);
+        }
+        .aura-glow {
+            box-shadow: 0 0 40px 0px rgba(0, 227, 253, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="dark text-on-background mesh-gradient min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-zinc-950/80 backdrop-blur-xl flex justify-between items-center px-6 py-4 w-full bg-gradient-to-b from-zinc-900/50 to-transparent shadow-[0_8px_32px_rgba(0,227,253,0.05)]">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="professional male user profile portrait with neutral background and soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNS-roMunsrc8Qn05vU1v5YmOGwi6YXfNTlWE5WHpVwhV7v5xT8noGWJK9JYY9cKPWJpZXuTXqnDW4cZhWHN5tUT9vF5_de0YXcJ2_FBbbC13Pnp4Ljdv5r0XFsjfWFlp5_H00Ai4Bjt-9bqMXL9Y0wna3YXfWKk614yWwQJAHuT2wa97Ycyl5xkUyglc_sDkBX7TBnsk5WB5u-cgfqxh9qvyMPcSDVdV-zMBOpm6MCvLDcB6q7AE7tUmsYQMIfrIiFFWKVTBJZdo"/>
+</div>
+<span class="text-lg font-bold text-cyan-100 tracking-[0.2em] font-headline uppercase">SIGNAL GRID</span>
+</div>
+<button class="text-indigo-200 hover:text-cyan-200 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">settings_input_component</span>
+</button>
+</header>
+<main class="pt-24 px-6 space-y-12">
+<!-- First Viewport: Case Overview -->
+<section class="relative space-y-6">
+<div class="space-y-2">
+<span class="font-headline text-xs tracking-widest text-secondary font-medium uppercase">Performance Metric</span>
+<h1 class="text-4xl font-bold text-on-background leading-tight">300% 이상의 운영 효율성 향상</h1>
+<p class="text-on-surface-variant leading-relaxed">SIGNAL GRID의 AI 워크플로우를 통한 지능형 자동화 결과입니다.</p>
+</div>
+<!-- Before vs After Logic Node Visual -->
+<div class="bg-surface-container-low rounded-xl p-6 aura-glow border border-outline-variant/10 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full blur-3xl"></div>
+<div class="flex flex-col gap-8 relative z-10">
+<!-- Before Node -->
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-outline">
+<span class="material-symbols-outlined">history</span>
+</div>
+<div>
+<p class="text-[10px] font-headline uppercase tracking-tighter text-outline">Legacy Process</p>
+<p class="font-medium text-on-surface-variant">수동 데이터 맵핑 및 검증</p>
+</div>
+<div class="ml-auto text-error font-headline font-bold">120h</div>
+</div>
+<!-- Connection Line -->
+<div class="flex justify-center -my-4 h-8 relative">
+<div class="w-0.5 h-full bg-gradient-to-b from-outline/20 via-secondary/40 to-secondary animate-pulse"></div>
+</div>
+<!-- After Node -->
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-secondary shadow-[0_0_15px_rgba(0,227,253,0.3)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div>
+<p class="text-[10px] font-headline uppercase tracking-tighter text-secondary">Signal Grid AI</p>
+<p class="font-bold text-on-surface">지능형 자가 학습 파이프라인</p>
+</div>
+<div class="ml-auto text-secondary font-headline font-bold">4.5h</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Case Study Module: K-Bank -->
+<section class="space-y-4">
+<div class="flex justify-between items-end">
+<h2 class="text-2xl font-bold font-headline tracking-tight text-on-background">FEATURED CASE</h2>
+<span class="text-xs text-outline font-headline">01 / 04</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl overflow-hidden">
+<div class="h-48 w-full relative">
+<img class="w-full h-full object-cover opacity-60" data-alt="abstract digital data visualization with blue and cyan glowing lines representing network flows on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpKTsfwIeP6iliVCHgj5OQuJAG9upXiB6hcxjW7LUAKv8YIOJQ-NQJJAaNxaRtPNrAgeYm3pZAu93USQ9wfAnKYuGGUKaz2J3fGJ1if1Xp2IQgDUWtEITzlXNjsA0Lqgxbuct0GLVqrZVmLxyN__KU6QZRVWCSUm9GZjnORqR85Mfb-7xfCIu9iSeBG9uLA606ADSexfW15mZpj1YSWthWdC_pJlXfjuQCi0a5SLWSmI-JuN0B9LpqsmWHuVDVzSaL4ZsU5UlcBqU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-primary/20 text-primary px-2 py-0.5 rounded text-[10px] font-headline font-bold uppercase mb-2 inline-block">Finance Sect.</span>
+<h3 class="text-xl font-bold text-on-background">K-Bank AI 리스크 자동화</h3>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<p class="text-sm text-on-surface-variant leading-relaxed">복잡한 리스크 평가 알고리즘을 AI 에이전트 워크플로우로 전환하여 수동 개입을 최소화하고 정확도를 98.4%까지 끌어올렸습니다.</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container p-3 rounded-lg">
+<p class="text-[10px] text-outline uppercase font-headline">Efficiency</p>
+<p class="text-lg font-bold text-secondary font-headline">96.25% ↓</p>
+</div>
+<div class="bg-surface-container p-3 rounded-lg">
+<p class="text-[10px] text-outline uppercase font-headline">Accuracy</p>
+<p class="text-lg font-bold text-primary font-headline">+14.2% ↑</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- KPI Cards Stacked -->
+<section class="space-y-6">
+<h2 class="text-2xl font-bold font-headline tracking-tight text-on-background">INDUSTRY IMPACT</h2>
+<div class="space-y-3">
+<!-- Healthcare -->
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-4 border-l-2 border-primary">
+<div class="w-12 h-12 bg-surface-container-high rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">health_and_safety</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="text-xs text-primary font-bold">Healthcare</span>
+<span class="text-[10px] text-outline font-headline">72% Optimized</span>
+</div>
+<p class="text-sm font-medium text-on-surface">환자 데이터 진단 자동 최적화</p>
+</div>
+</div>
+<!-- Tech -->
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-4 border-l-2 border-secondary">
+<div class="w-12 h-12 bg-surface-container-high rounded-full flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">terminal</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="text-xs text-secondary font-bold">Tech SaaS</span>
+<span class="text-[10px] text-outline font-headline">50ms Latency</span>
+</div>
+<p class="text-sm font-medium text-on-surface">실시간 API 리소스 동적 할당</p>
+</div>
+</div>
+<!-- Retail -->
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-4 border-l-2 border-tertiary">
+<div class="w-12 h-12 bg-surface-container-high rounded-full flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">shopping_cart</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="text-xs text-tertiary font-bold">Retail</span>
+<span class="text-[10px] text-outline font-headline">2.4x ROI</span>
+</div>
+<p class="text-sm font-medium text-on-surface">수요 예측 기반 재고 관리 시스템</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-8 space-y-4">
+<button class="w-full py-4 bg-primary text-on-primary font-bold rounded-xl active:scale-95 transition-transform">
+                지금 시작하기
+            </button>
+<button class="w-full py-4 border border-outline/30 text-on-surface font-bold rounded-xl active:scale-95 transition-transform bg-surface-container/20">
+                성공 사례 더 보기
+            </button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-zinc-950/90 backdrop-blur-2xl z-50 rounded-t-2xl border-t border-zinc-800/20 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+<!-- Cases (Active) -->
+<div class="flex flex-col items-center justify-center text-cyan-100 bg-indigo-950/40 rounded-xl px-4 py-1.5 shadow-[0_0_15px_rgba(189,244,255,0.1)] active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">folder_open</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight mt-1">Cases</span>
+</div>
+<!-- Nodes -->
+<div class="flex flex-col items-center justify-center text-zinc-500 px-4 py-1.5 hover:bg-zinc-900/50 transition-all active:scale-90 transition-transform">
+<span class="material-symbols-outlined">hub</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight mt-1">Nodes</span>
+</div>
+<!-- Flows -->
+<div class="flex flex-col items-center justify-center text-zinc-500 px-4 py-1.5 hover:bg-zinc-900/50 transition-all active:scale-90 transition-transform">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight mt-1">Flows</span>
+</div>
+<!-- Insights -->
+<div class="flex flex-col items-center justify-center text-zinc-500 px-4 py-1.5 hover:bg-zinc-900/50 transition-all active:scale-90 transition-transform">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight mt-1">Insights</span>
+</div>
+</nav>
+</body></html>

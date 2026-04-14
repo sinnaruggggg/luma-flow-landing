@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#fff2a9",
+                        "surface-variant": "#edde81",
+                        "on-primary-fixed": "#000000",
+                        "inverse-surface": "#110e00",
+                        "on-surface": "#352f00",
+                        "on-tertiary": "#fff4b8",
+                        "on-surface-variant": "#655c23",
+                        "on-error": "#ffefef",
+                        "secondary-dim": "#922158",
+                        "surface-dim": "#e5d674",
+                        "tertiary-container": "#fff2a9",
+                        "primary-fixed": "#879aff",
+                        "inverse-on-surface": "#a99e5d",
+                        "error-container": "#f74b6d",
+                        "surface-container": "#f8ea96",
+                        "tertiary": "#655c23",
+                        "inverse-primary": "#7187ff",
+                        "tertiary-fixed": "#fff2a9",
+                        "error": "#b41340",
+                        "secondary-fixed-dim": "#ffacc9",
+                        "surface-container-high": "#f3e48b",
+                        "surface-container-highest": "#edde81",
+                        "secondary-fixed": "#ffc1d5",
+                        "tertiary-dim": "#585018",
+                        "surface-tint": "#2448e3",
+                        "on-secondary": "#ffeff2",
+                        "on-primary-fixed-variant": "#001d83",
+                        "on-tertiary-container": "#635b21",
+                        "secondary-container": "#ffc1d5",
+                        "background": "#fff7d5",
+                        "surface-bright": "#fff7d5",
+                        "primary-fixed-dim": "#748aff",
+                        "on-tertiary-fixed": "#504810",
+                        "on-secondary-fixed-variant": "#932259",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#6e652b",
+                        "secondary": "#a22e64",
+                        "primary": "#2448e3",
+                        "on-background": "#352f00",
+                        "surface": "#fff7d5",
+                        "primary-dim": "#0a39d7",
+                        "tertiary-fixed-dim": "#f0e49c",
+                        "on-primary-container": "#00166c",
+                        "on-secondary-container": "#87174f",
+                        "outline-variant": "#b9ae6c",
+                        "outline": "#81783b",
+                        "error-dim": "#a70138",
+                        "primary-container": "#879aff",
+                        "on-error-container": "#510017",
+                        "on-secondary-fixed": "#6b003b",
+                        "on-primary": "#f2f1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-glass {
+            background: rgba(255, 248, 211, 0.84);
+            backdrop-filter: blur(12px);
+        }
+        .editorial-shadow {
+            box-shadow: 0 20px 40px rgba(53, 47, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fff2a9]/84 backdrop-blur-xl dark:bg-yellow-900/80 flex justify-between items-center px-6 py-4 w-full shadow-[0_20px_40px_rgba(53,47,0,0.08)]">
+<div class="flex items-center gap-8">
+<span class="text-3xl font-black text-[#0f3bd9] italic font-headline tracking-tighter uppercase">BOP BOP</span>
+<nav class="hidden md:flex items-center gap-6 font-headline tracking-tighter uppercase font-bold">
+<a class="text-black/60 dark:text-white/60 hover:scale-105 transition-transform duration-200" href="#">Shop</a>
+<a class="text-black/60 dark:text-white/60 hover:scale-105 transition-transform duration-200" href="#">Lookbook</a>
+<a class="text-black/60 dark:text-white/60 hover:scale-105 transition-transform duration-200" href="#">Archive</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:block relative">
+<input class="bg-transparent border-none focus:ring-0 font-headline text-sm tracking-widest text-[#0f3bd9] placeholder-[#0f3bd9]/40 text-right" placeholder="SEARCH..." type="text"/>
+</div>
+<button class="hover:scale-105 transition-transform duration-200 text-[#0f3bd9]">
+<span class="material-symbols-outlined">person</span>
+</button>
+<button class="hover:scale-105 transition-transform duration-200 text-[#0f3bd9] relative">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-on-secondary text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">2</span>
+</button>
+</div>
+</header>
+<main class="pt-32 pb-24 px-6 md:px-10 max-w-7xl mx-auto">
+<!-- Hero Header -->
+<div class="relative mb-16">
+<h1 class="font-headline text-[12vw] font-black leading-[0.8] tracking-tighter uppercase opacity-10 absolute -top-8 -left-4 pointer-events-none">CART</h1>
+<div class="relative z-10 flex flex-col md:flex-row md:items-end justify-between border-b-4 border-[#0f3bd9] pb-4">
+<div>
+<span class="font-headline text-[#0f3bd9] font-bold text-lg tracking-widest uppercase mb-2 block">YOUR SELECTION</span>
+<h2 class="font-headline text-5xl md:text-7xl font-black tracking-tighter text-[#0f3bd9]">장바구니</h2>
+</div>
+<div class="mt-4 md:mt-0 font-headline text-right">
+<p class="text-sm opacity-60">ITEM COUNT: 02</p>
+<p class="text-xs uppercase tracking-tighter">SEOUL / INTERNATIONAL SHIPPING AVAILABLE</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Items List -->
+<div class="lg:col-span-8 space-y-12">
+<!-- Item 1 -->
+<div class="group relative flex flex-col md:flex-row gap-8 bg-surface-container-lowest p-6 rounded-lg editorial-shadow transition-all duration-300 hover:-translate-y-1">
+<div class="relative w-full md:w-64 h-80 flex-shrink-0 overflow-hidden rounded-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close-up of baggy black cyber cargo pants with multiple metallic zippers and technical nylon fabric on a pale yellow studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHgNuYt4n9y0B46j1wsRFWLROq0adqIOyI6ee2bFW6R6-C9nc76umqTVZLjJk5LtiLsAgfTrTe6F-yceHnejCAh0_2KBhcAk7NSEaGCp5xrvEuzbjcGH8Vbrhj_sijrC0lJLNc7WlK_m1vQAHEc0OvL0z7xfAoUH2kGIbgR8Yj9YLeBjxlseO1TxVRoqMqYlDqV62ZQKksHC_K_8-x8tYHzrfJ91AnEL8Dlv5rQbhCoz7BbRjuKlonyLY5Cl6WpnXEsHYQ7F3p8kFz"/>
+<div class="absolute top-4 left-4 -rotate-3 bg-secondary text-white font-headline text-xs px-3 py-1 rounded-full font-bold shadow-lg">
+                            SIGNATURE
+                        </div>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-3xl font-black tracking-tighter text-on-surface leading-none">CYBER CARGO PANTS</h3>
+<button class="text-[#0f3bd9] opacity-40 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<p class="font-body text-sm text-on-surface/60 mb-6 max-w-md">Technical silhouette featuring heavy-duty nylon, 8-pocket configuration, and adjustable strap system for urban exploration.</p>
+<div class="flex flex-wrap gap-4 text-xs font-headline font-bold uppercase tracking-widest">
+<div class="bg-surface-container-low px-4 py-2 rounded-full">SIZE: L (32-34)</div>
+<div class="bg-surface-container-low px-4 py-2 rounded-full">COLOR: PHANTOM BLACK</div>
+</div>
+</div>
+<div class="mt-8 flex items-center justify-between">
+<div class="flex items-center gap-4 bg-surface-container p-1 rounded-full">
+<button class="w-8 h-8 flex items-center justify-center bg-surface-container-lowest rounded-full hover:scale-110 active:scale-95 transition-all text-[#0f3bd9]"><span class="material-symbols-outlined text-sm">remove</span></button>
+<span class="font-headline font-black text-lg w-6 text-center">01</span>
+<button class="w-8 h-8 flex items-center justify-center bg-[#0f3bd9] text-white rounded-full hover:scale-110 active:scale-95 transition-all"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+<div class="text-right">
+<span class="block text-xs opacity-40 font-headline tracking-tighter">PRICE / KRW</span>
+<span class="font-headline text-2xl font-black text-[#0f3bd9]">129,000원</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="group relative flex flex-col md:flex-row gap-8 bg-surface-container-lowest p-6 rounded-lg editorial-shadow transition-all duration-300 hover:-translate-y-1">
+<div class="relative w-full md:w-64 h-80 flex-shrink-0 overflow-hidden rounded-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Oversized ash grey graphic hoodie with high-definition screen printing on chest, premium heavy cotton material, urban streetwear vibe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAmYb_8jPgE9Ly_duu-LSKYswjFfGcqAX8oAcx9Fko4nrqgSHxLqc8m_8oHxdeqr6Hg6udBjd7zgsaGh2xwmRWlgWc8SKsRaG5XhMxBSfu_Dlj2VsQHxoQcaSb1Q-anGyKcQCgzmrPPBgbWoavMrxh-v7EhfZLABYUk9DsT_eY0RAqEcftB-iN0nPOR1j7CO3XfxkfdtSOGMktMIMCcSrhuuxvIhv8ocC11JWK3Uro76nIv7WbtofdbacHpXCf7MzkhWNFroZADT9U"/>
+<div class="absolute top-4 left-4 rotate-6 bg-primary text-white font-headline text-xs px-3 py-1 rounded-full font-bold shadow-lg">
+                            NEW DROP
+                        </div>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-3xl font-black tracking-tighter text-on-surface leading-none">GRAPHIC OVER-HOODIE</h3>
+<button class="text-[#0f3bd9] opacity-40 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<p class="font-body text-sm text-on-surface/60 mb-6 max-w-md">Ultra-heavy 450GSM cotton fleece with dropped shoulders and raw hem details. Features seasonal 'NEO-ZINE' artwork.</p>
+<div class="flex flex-wrap gap-4 text-xs font-headline font-bold uppercase tracking-widest">
+<div class="bg-surface-container-low px-4 py-2 rounded-full">SIZE: XL (OVER)</div>
+<div class="bg-surface-container-low px-4 py-2 rounded-full">COLOR: ACID GREY</div>
+</div>
+</div>
+<div class="mt-8 flex items-center justify-between">
+<div class="flex items-center gap-4 bg-surface-container p-1 rounded-full">
+<button class="w-8 h-8 flex items-center justify-center bg-surface-container-lowest rounded-full hover:scale-110 active:scale-95 transition-all text-[#0f3bd9]"><span class="material-symbols-outlined text-sm">remove</span></button>
+<span class="font-headline font-black text-lg w-6 text-center">01</span>
+<button class="w-8 h-8 flex items-center justify-center bg-[#0f3bd9] text-white rounded-full hover:scale-110 active:scale-95 transition-all"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+<div class="text-right">
+<span class="block text-xs opacity-40 font-headline tracking-tighter">PRICE / KRW</span>
+<span class="font-headline text-2xl font-black text-[#0f3bd9]">89,000원</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Order Summary -->
+<div class="lg:col-span-4">
+<div class="sticky top-32 space-y-6">
+<div class="bg-surface-container-low p-8 rounded-lg editorial-shadow relative overflow-hidden">
+<!-- Decorative element -->
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-[#0f3bd9]/5 rounded-full blur-3xl"></div>
+<h3 class="font-headline text-2xl font-black tracking-tighter text-[#0f3bd9] mb-8 uppercase border-b-2 border-[#0f3bd9]/20 pb-4">ORDER SUMMARY</h3>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between items-center text-sm">
+<span class="font-headline font-bold text-on-surface/60">SUBTOTAL (소계)</span>
+<span class="font-headline font-black">218,000원</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="font-headline font-bold text-on-surface/60">SHIPPING (배송비)</span>
+<span class="font-headline font-black">3,000원</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="font-headline font-bold text-on-surface/60">MEMBERSHIP DISCOUNT</span>
+<span class="font-headline font-black text-secondary">-5,000원</span>
+</div>
+</div>
+<div class="flex justify-between items-end mb-8 pt-4 border-t-2 border-[#0f3bd9] border-dashed">
+<div>
+<span class="block text-xs font-headline font-black text-[#0f3bd9]/60 uppercase">TOTAL AMOUNT</span>
+<span class="font-headline text-xl font-bold">합계</span>
+</div>
+<span class="font-headline text-4xl font-black text-[#0f3bd9]">216,000원</span>
+</div>
+<button class="w-full bg-[#0f3bd9] text-white py-5 rounded-full font-headline font-black text-xl tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-[#0f3bd9]/20 group flex items-center justify-center gap-3 uppercase">
+                            주문하기
+                            <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+<div class="mt-6 flex flex-col gap-2">
+<button class="w-full bg-white/50 py-3 rounded-full font-headline font-bold text-xs tracking-widest text-on-surface/60 hover:bg-white transition-colors uppercase">
+                                SHOPPING CONTINUE
+                            </button>
+</div>
+</div>
+<!-- Promo Code Sticker -->
+<div class="bg-secondary-container p-6 rounded-lg flex items-center justify-between border-2 border-dashed border-secondary/30">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary">confirmation_number</span>
+<div>
+<p class="text-[10px] font-headline font-black uppercase tracking-widest text-secondary">PROMO CODE</p>
+<p class="font-headline font-bold text-sm text-on-secondary-container">HELLO_BOP_24</p>
+</div>
+</div>
+<span class="font-headline font-black text-secondary text-xs cursor-pointer hover:underline">APPLY</span>
+</div>
+<!-- Information Cluster -->
+<div class="px-4 py-2 space-y-2">
+<div class="flex items-center gap-2 opacity-40">
+<span class="material-symbols-outlined text-sm">local_shipping</span>
+<span class="text-[10px] font-headline font-bold uppercase">7-Day Free Returns in KR</span>
+</div>
+<div class="flex items-center gap-2 opacity-40">
+<span class="material-symbols-outlined text-sm">shield</span>
+<span class="text-[10px] font-headline font-bold uppercase">SSL Encrypted Payment Secure</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Cross-sell Section -->
+<section class="mt-32">
+<div class="flex items-center justify-between mb-12">
+<h3 class="font-headline text-4xl font-black tracking-tighter text-[#0f3bd9] uppercase">WE THINK YOU'LL LIKE</h3>
+<a class="font-headline font-bold text-sm text-[#0f3bd9] hover:underline uppercase tracking-widest" href="#">View All Items</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<!-- Recommended 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden rounded-lg mb-4 editorial-shadow">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Model wearing futuristic silver wrap sunglasses with industrial blue lighting, fashion photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2z6f4Fu5gsUrxh6JsA1ApVYRl7BTGFecCp3zUhXhsYlFHwi8UZ0Dmdx7gflmxg7wIdUT4XPLB9jJDpJmSL6JL6olNLCZbY2MJkxpvyn70HTME4OprFLnBULVdR0N25HLLD1yl2KsOVt-AI0rAucWQhlcf9iX2X0B0eogcJ3M2e3gdFTbEJbzK35uMED28UWAaTwGLhydhyBYBeQfvN3EPtbI5aH9Uiw_uig0MIew2xu7f70Nd0x3fuhsRbSLuSEAVWkL394Fh72Mw"/>
+</div>
+<p class="font-headline font-black text-sm tracking-tight mb-1 group-hover:text-[#0f3bd9] transition-colors">NEO-CHROME EYEWEAR</p>
+<p class="font-headline text-xs opacity-60">45,000원</p>
+</div>
+<!-- Recommended 2 -->
+<div class="group cursor-pointer translate-y-8">
+<div class="aspect-[3/4] overflow-hidden rounded-lg mb-4 editorial-shadow">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Technical sling bag in electric blue ripstop nylon with chunky black buckles and modular attachments" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpc2ovKcogT_pav_Z4jbK9WxmzdOOxlbJvb94TAgfIWV2jKMRdQKUda5XZpq4SZJQdd5Tmeis_R-Nr15TKPKYMTcW1jmlJdJKtlRhTtoGmgOs9bzL4Dbso0aa2vZMWJjI5E8wO3P-8MLKZcYdiWvMensj-QFT2HAIaJz9DHU26zjUQceVEt33N_eUHSARfTGzF4FELuykmx833bira74wboXV1qDMqIFFRYlo62MRGuoAxrgqrfQvK-_7hiDSE0Gd2UvcfaRfgZABN"/>
+</div>
+<p class="font-headline font-black text-sm tracking-tight mb-1 group-hover:text-[#0f3bd9] transition-colors">SLING MODULAR BAG</p>
+<p class="font-headline text-xs opacity-60">69,000원</p>
+</div>
+<!-- Recommended 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden rounded-lg mb-4 editorial-shadow">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Platform leather boots with chunky soles and neon green laces, street style aesthetics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEqz-kVssA34imvxJA44El1x5frrphNmyh8X_3OtE7BCt4hlokmIC1KV3mgAJRPSj3FENaVAKgiWwqMINP7gRHlReR7jh-dtUuFQoSqc1v8eNiMBrC4MVDBYi2lE-3jhJ3387rJAz-BkyiSDS-_-2NO-rwxalv-P5yjf2grHHDB-8X5kHb2sG79J1st3foP555A4HtXID8MxEq8__gHyewwQJIj4FtqV3z7n_qWsB_C0Y9q5Lry7VgXS4yo97ukKEerC_7hBBcO03X"/>
+</div>
+<p class="font-headline font-black text-sm tracking-tight mb-1 group-hover:text-[#0f3bd9] transition-colors">STOMP PLATFORM BOOTS</p>
+<p class="font-headline text-xs opacity-60">189,000원</p>
+</div>
+<!-- Recommended 4 -->
+<div class="group cursor-pointer translate-y-8">
+<div class="aspect-[3/4] overflow-hidden rounded-lg mb-4 editorial-shadow">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="White ribbed tank top with subtle blue embroidery on chest, minimalist youth fashion" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDKE5wh9pen2Qivv5PQV7MLKcMCN3DD5Y40PDawzEhbj792O39CKE1rYSjdMunNpUlGkW4JyUAqxIORKXHnLBR56ZcFE2mj3dNcmcTCCGkvqwpI1xoWykDJZXD5ypOajdtK7OThxDUzV-ESwrmmJdJi00A1R82Q2ThpD1GrkrTxZEczjinZeRiXA-Zo_KVmPaib4JJs3gZT6vA4djM5ULjIQOqFjDhrpIE4kZdqbGrNdY2k8gXUmS0WwoYIFCkr-jKoPqs0sUiFUkA"/>
+</div>
+<p class="font-headline font-black text-sm tracking-tight mb-1 group-hover:text-[#0f3bd9] transition-colors">ESSENTIAL RIB TANK</p>
+<p class="font-headline text-xs opacity-60">29,000원</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#fff2a9] dark:bg-yellow-950 w-full mt-auto py-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-10 max-w-full">
+<div>
+<span class="font-space-grotesk font-bold text-[#0f3bd9] text-2xl uppercase tracking-tighter">BOP BOP NEO-ZINE.</span>
+<p class="font-be-vietnam-pro text-xs tracking-widest uppercase text-black/40 dark:text-white/40 mt-4 leading-loose">
+                    EMBRACE THE CHAOS. SEOUL BASED CREATIVE COLLECTIVE. NO RULES. NO LIMITS. JUST THE FUTURE.
+                </p>
+<p class="font-be-vietnam-pro text-xs tracking-widest uppercase text-[#0f3bd9] mt-8">©2024 BOP BOP NEO-ZINE. NO RULES.</p>
+</div>
+<div class="flex flex-col md:items-end justify-between">
+<div class="flex gap-8 font-be-vietnam-pro text-xs tracking-widest uppercase">
+<a class="text-black/40 dark:text-white/40 hover:text-[#0f3bd9] transition-colors" href="#">Privacy</a>
+<a class="text-black/40 dark:text-white/40 hover:text-[#0f3bd9] transition-colors" href="#">Shipping</a>
+<a class="text-black/40 dark:text-white/40 hover:text-[#0f3bd9] transition-colors" href="#">Terms</a>
+<a class="text-black/40 dark:text-white/40 hover:text-[#0f3bd9] transition-colors" href="#">Instagram</a>
+</div>
+<div class="mt-12 flex gap-4">
+<div class="w-12 h-12 bg-[#0f3bd9] rounded-full flex items-center justify-center text-white rotate-12 editorial-shadow">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white -rotate-12 editorial-shadow">
+<span class="material-symbols-outlined">star</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

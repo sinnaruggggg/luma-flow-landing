@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#690005",
+                    "primary-container": "#39d5ff",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-highest": "#2c3544",
+                    "primary-fixed": "#b5ebff",
+                    "on-tertiary-container": "#6e4b00",
+                    "tertiary-container": "#ffb837",
+                    "tertiary-fixed-dim": "#ffba3f",
+                    "secondary-fixed-dim": "#fface8",
+                    "on-secondary-fixed": "#3a0033",
+                    "inverse-primary": "#00677e",
+                    "secondary": "#fface8",
+                    "on-primary-container": "#00596e",
+                    "on-surface-variant": "#bbc9ce",
+                    "on-secondary-container": "#fface8",
+                    "on-primary-fixed-variant": "#004e60",
+                    "on-background": "#dae3f6",
+                    "surface-dim": "#0b1421",
+                    "surface-bright": "#313a48",
+                    "surface": "#0b1421",
+                    "primary": "#b1eaff",
+                    "on-primary": "#003543",
+                    "on-tertiary": "#432c00",
+                    "on-secondary": "#5e0053",
+                    "on-primary-fixed": "#001f28",
+                    "surface-container-low": "#131c29",
+                    "surface-container": "#17202e",
+                    "on-tertiary-fixed-variant": "#604100",
+                    "tertiary": "#ffdcaa",
+                    "surface-container-high": "#222a38",
+                    "on-secondary-fixed-variant": "#840076",
+                    "surface-variant": "#2c3544",
+                    "surface-tint": "#45d6ff",
+                    "secondary-fixed": "#ffd7f0",
+                    "inverse-on-surface": "#28313f",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed": "#281800",
+                    "tertiary-fixed": "#ffdeae",
+                    "surface-container-lowest": "#060e1b",
+                    "outline": "#869398",
+                    "error-container": "#93000a",
+                    "outline-variant": "#3c494e",
+                    "primary-fixed-dim": "#45d6ff",
+                    "on-surface": "#dae3f6",
+                    "secondary-container": "#980388",
+                    "background": "#0b1421",
+                    "inverse-surface": "#dae3f6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Manrope"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .mesh-depth {
+            background-image: radial-gradient(#39d5ff10 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .glass-panel {
+            background: rgba(19, 28, 41, 0.7);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body overflow-x-hidden mesh-depth">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0b1421]/80 backdrop-blur-xl border-b border-[#39d5ff]/15 shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-[1920px] mx-auto">
+<div class="text-2xl font-black italic tracking-widest text-[#39d5ff] drop-shadow-[0_0_8px_rgba(57,213,255,0.5)] font-headline uppercase">
+                VOID ARC
+            </div>
+<nav class="hidden md:flex items-center space-x-8 font-headline tracking-tighter uppercase text-sm">
+<a class="text-slate-400 hover:text-[#39d5ff] transition-colors transition-all duration-300 ease-out active:scale-95" href="#">Home</a>
+<a class="text-slate-400 hover:text-[#39d5ff] transition-colors transition-all duration-300 ease-out active:scale-95" href="#">Gear</a>
+<a class="text-slate-400 hover:text-[#39d5ff] transition-colors transition-all duration-300 ease-out active:scale-95" href="#">Bundle</a>
+<a class="text-slate-400 hover:text-[#39d5ff] transition-colors transition-all duration-300 ease-out active:scale-95" href="#">Cart</a>
+<a class="text-[#39d5ff] border-b-2 border-[#39d5ff] pb-1 font-bold transition-all duration-300 ease-out active:scale-95" href="#">Support</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="p-2 hover:bg-[#39d5ff]/10 hover:text-[#39d5ff] transition-all duration-300 ease-out active:scale-95 text-[#39d5ff]">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<button class="p-2 hover:bg-[#39d5ff]/10 hover:text-[#39d5ff] transition-all duration-300 ease-out active:scale-95 text-[#39d5ff]">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+</header>
+<div class="flex min-h-screen pt-16">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 z-40 bg-[#0b1421] border-r border-[#39d5ff]/10 shadow-[10px_0_30px_rgba(0,0,0,0.3)] flex flex-col pt-24 pb-8 hidden lg:flex">
+<div class="px-6 mb-8">
+<div class="flex items-center space-x-3 mb-2">
+<div class="w-10 h-10 rounded-full border border-[#39d5ff]/30 bg-surface-container overflow-hidden">
+<img alt="Operator" class="w-full h-full object-cover" data-alt="close-up of a futuristic cybernetic interface portrait with blue neon lighting and high tech aesthetics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqVYbSZzAKfYR5z9B8q7YiFP1p5JcUq7Ne0gavjjQCztYuShA6IQ0Gxg4t046FQ7eP2epwZdm2CkHc0FiaqsbotVsOq4SGE0Ol_R_RTtfzNPlNQKELSuqYzGtbkHu83VBadz5t2rA0hCIjxAJOKe3vipEhIAoWVzySLT1U2dSieDpM4ndI6OLZsL5gXoWUq2lfLXAwpNrxdD_kEXlOUoh1iffQvzuIoyUfwXq7fEXOH3WH0NqyBFz7vGnLUknzQPBz9nxUz_W-4pHH"/>
+</div>
+<div>
+<p class="font-headline font-bold text-xs tracking-widest text-[#39d5ff] uppercase">COMMAND CENTER</p>
+<p class="font-label text-[10px] text-slate-500 uppercase tracking-tighter">SUPPORT_PROTOCOL_v2.0</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1 font-['Space_Grotesk'] text-sm tracking-wide">
+<a class="flex items-center px-6 py-3 bg-[#39d5ff]/10 text-[#39d5ff] border-r-4 border-[#39d5ff] font-bold transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+                    지원 홈
+                </a>
+<a class="flex items-center px-6 py-3 text-slate-500 hover:bg-white/5 hover:text-[#39d5ff] transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3">build</span>
+                    수리 현황
+                </a>
+<a class="flex items-center px-6 py-3 text-slate-500 hover:bg-white/5 hover:text-[#39d5ff] transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3">download</span>
+                    드라이버
+                </a>
+<a class="flex items-center px-6 py-3 text-slate-500 hover:bg-white/5 hover:text-[#39d5ff] transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3">verified_user</span>
+                    보증 등록
+                </a>
+<a class="flex items-center px-6 py-3 text-slate-500 hover:bg-white/5 hover:text-[#39d5ff] transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3">support_agent</span>
+                    문의하기
+                </a>
+</nav>
+<div class="px-6 space-y-1 pt-6 border-t border-[#39d5ff]/5">
+<a class="flex items-center px-2 py-2 text-slate-500 hover:text-[#39d5ff] text-xs uppercase tracking-widest transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3 text-sm">settings</span>
+                    설정
+                </a>
+<a class="flex items-center px-2 py-2 text-slate-500 hover:text-[#39d5ff] text-xs uppercase tracking-widest transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3 text-sm">logout</span>
+                    로그아웃
+                </a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 lg:ml-64 px-4 sm:px-8 py-12">
+<!-- Hero / First Viewport -->
+<section class="relative mb-20">
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+<div class="lg:col-span-7">
+<div class="inline-flex items-center px-3 py-1 bg-primary-container/10 border border-primary-container/20 text-primary-container text-[10px] font-headline font-bold uppercase tracking-[0.3em] mb-6">
+<span class="w-2 h-2 bg-primary-container rounded-full mr-2 animate-pulse"></span>
+                            System Live
+                        </div>
+<h1 class="text-6xl md:text-8xl font-black font-headline tracking-tighter uppercase leading-none mb-6">
+                            SYSTEM PROTOCOL <br/>
+<span class="text-primary-container">&amp; SUPPORT</span>
+</h1>
+<p class="text-slate-400 max-w-xl font-body text-lg leading-relaxed">
+                            VOID ARC 전술 지원 허브에 접속되었습니다. 하드웨어 최적화, 보증 관리 및 기술 문서 라이브러리를 통해 최상의 퍼포먼스를 유지하십시오.
+                        </p>
+</div>
+<div class="lg:col-span-5">
+<div class="glass-panel p-6 border border-primary-container/20 rounded-lg relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl">shield_with_heart</span>
+</div>
+<div class="flex justify-between items-center mb-8">
+<span class="font-headline font-bold text-xs tracking-widest uppercase opacity-50">SYSTEM STATUS</span>
+<span class="font-headline font-black text-primary-container text-xs uppercase tracking-widest">OPTIMAL</span>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest mb-1">Latency</p>
+<p class="font-headline font-bold text-xl text-on-surface">0.003<span class="text-xs text-primary-container ml-1">ms</span></p>
+</div>
+<div>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest mb-1">Encryption</p>
+<p class="font-headline font-bold text-xl text-on-surface">AES-256 <span class="text-xs text-primary-container ml-1">ACTIVE</span></p>
+</div>
+<div class="col-span-2">
+<div class="w-full h-[2px] bg-white/5 rounded-full overflow-hidden">
+<div class="w-3/4 h-full bg-primary-container shadow-[0_0_10px_rgba(57,213,255,1)]"></div>
+</div>
+<div class="flex justify-between mt-2">
+<span class="text-[9px] font-label text-slate-600 uppercase">Buffer Load</span>
+<span class="text-[9px] font-label text-primary-container uppercase">74%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Technical Documentation -->
+<section class="lg:col-span-2 glass-panel border border-outline-variant/30 rounded-lg overflow-hidden group">
+<div class="p-8">
+<div class="flex justify-between items-start mb-12">
+<div>
+<h3 class="font-headline font-black text-2xl tracking-tighter uppercase mb-2">Technical Documentation</h3>
+<p class="text-slate-500 text-sm">드라이버 펌웨어 및 시스템 매뉴얼</p>
+</div>
+<span class="material-symbols-outlined text-primary-container/40 group-hover:text-primary-container transition-colors">terminal</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container-low border border-white/5 hover:border-primary-container/30 transition-all cursor-pointer">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary-container">mouse</span>
+<span class="text-[10px] font-headline text-slate-500">v4.2.1</span>
+</div>
+<h4 class="font-headline font-bold text-sm tracking-widest uppercase mb-1">ARC-01 MOUSE DRIVER</h4>
+<p class="text-[11px] text-slate-600">Universal sensor optimization protocol</p>
+</div>
+<div class="p-4 bg-surface-container-low border border-white/5 hover:border-primary-container/30 transition-all cursor-pointer">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary-container">keyboard</span>
+<span class="text-[10px] font-headline text-slate-500">v2.0.8</span>
+</div>
+<h4 class="font-headline font-bold text-sm tracking-widest uppercase mb-1">VOID-K APEX FIRMWARE</h4>
+<p class="text-[11px] text-slate-600">Mechanical latency reduction patch</p>
+</div>
+<div class="p-4 bg-surface-container-low border border-white/5 hover:border-primary-container/30 transition-all cursor-pointer">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary-container">headphones</span>
+<span class="text-[10px] font-headline text-slate-500">v1.1.0</span>
+</div>
+<h4 class="font-headline font-bold text-sm tracking-widest uppercase mb-1">SONIC VOID PRO DRIVER</h4>
+<p class="text-[11px] text-slate-600">3D Spatial audio processing unit</p>
+</div>
+<div class="p-4 bg-surface-container-low border border-white/5 hover:border-primary-container/30 transition-all cursor-pointer flex items-center justify-center">
+<span class="text-[11px] font-headline font-bold uppercase tracking-widest text-slate-500 hover:text-primary-container">View All Documents +</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Warranty Registry -->
+<section class="glass-panel border border-secondary/20 rounded-lg overflow-hidden flex flex-col">
+<div class="h-48 relative overflow-hidden">
+<img alt="Hardware Tech" class="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="extreme close up of high-end circuit board with glowing neon pink accents and futuristic microchips" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB15tn9af5z1TvFVpmfH9csvVNv6dusfy7sJx1TW9J-b037rfLk-hRoV5uHFa_hydPNjF9Ll1v3xuQm6INRbq2KJe20N9tF8bHNl6SHx6hNeXZBTUJNehZHKrrKllp3sm17uibUq1HVS7Ne7eQ-iSOmLLxd3nErSSMWLynl7NjACwW7wl5Yc8I9b21Ih0Sy3PKNwTG2d-quqKNYwgOn3UWI61BRgOk4IQ2P-oRIEl6RTrurODN_oOiJzzs2S_-kBPdZUEiC2YooJ9Tx"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="absolute bottom-4 left-6">
+<h3 class="font-headline font-black text-2xl tracking-tighter uppercase text-secondary">Registry</h3>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between">
+<p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            VOID ARC 정품 구매를 확인하고 보증 기간을 관리하십시오. 등록 시 1년 추가 워런티가 제공됩니다.
+                        </p>
+<div class="space-y-4">
+<button class="w-full py-4 bg-secondary-container/20 border border-secondary/30 text-secondary font-headline font-bold text-xs uppercase tracking-widest hover:bg-secondary-container/40 transition-all">
+                                보증 상태 확인
+                            </button>
+<button class="w-full py-4 bg-secondary text-on-secondary font-headline font-black text-xs uppercase tracking-widest rounded-lg transition-all active:scale-95">
+                                제품 등록하기
+                            </button>
+</div>
+</div>
+</section>
+<!-- Tactical Intel (Community) -->
+<section class="glass-panel border border-tertiary/20 rounded-lg overflow-hidden">
+<div class="p-8">
+<h3 class="font-headline font-black text-2xl tracking-tighter uppercase mb-8 border-b border-tertiary/10 pb-4">Tactical Intel</h3>
+<div class="space-y-8">
+<div class="flex gap-4 group cursor-pointer">
+<div class="w-16 h-16 bg-surface-container-high shrink-0 overflow-hidden rounded">
+<img alt="Esports" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="cinematic shot of a professional esports arena stage with vibrant team colors and glowing monitors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-oN_vo0cn1THutBPDorLUdTfUhS_ucmAk1DnhxjzRN2q9kRxENfoXWsRVmHf-htIjsvFL7vdctTjt71Nxa2oPpAHJYhRp8tApfoiJSNN4kCV3CBDk-IKFbNzRY7fVT5ge0ODCkL0vJrzIWTlIod-yG3lpCfFKS-jKA19rcpBg0RJdbpms7aY_lI-QJKf3Wr-0V6Y_-3U7yVaxXdb1BAZYitxj6Ddq6DaPM9VLkWA6iASDGdwYYv1YjqCeNiZccunh05Z4J6jdF8zO"/>
+</div>
+<div>
+<h4 class="font-headline font-bold text-xs uppercase tracking-wider mb-1 group-hover:text-tertiary transition-colors line-clamp-1">Pro-Player Setup Guide v2</h4>
+<p class="text-[10px] text-slate-500 line-clamp-2">마우스 감도 및 매크로 최적화 가이드. 글로벌 프로팀 기술 협업.</p>
+</div>
+</div>
+<div class="flex gap-4 group cursor-pointer">
+<div class="w-16 h-16 bg-surface-container-high shrink-0 overflow-hidden rounded">
+<img alt="News" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="modern technological news desk with holographic displays and clean cybernetic aesthetics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRCIGFxNmmjheEoQbMxGPKBNzFT_rCV4413QebEsWM6WO1VfCJQxfGDWLfbjHa-STW0L_LJwb1Np8g7gwuwClmRgzKEX4gMdM-AdHepPDwE7m3C7QdVaTIp2HWRtil83sA5ZvQDPDQHKKCxM-QLeLeKsRqiD4AhxdvzkQfnFswfWAEKc6FNhXDkEIjJKOV0db3_rNSIsQzB5qeHYVj9Bjp7_Dsl0QYdB6lru5l9Nd46J9b0cRoghoH3Fxwu3N5cc8wWTh_xHXEIdIr"/>
+</div>
+<div>
+<h4 class="font-headline font-bold text-xs uppercase tracking-wider mb-1 group-hover:text-tertiary transition-colors line-clamp-1">System Update: Protocol 1.4</h4>
+<p class="text-[10px] text-slate-500 line-clamp-2">클라우드 동기화 안정성 개선 및 RGB 에코시스템 통합.</p>
+</div>
+</div>
+<div class="flex gap-4 group cursor-pointer">
+<div class="w-16 h-16 bg-surface-container-high shrink-0 overflow-hidden rounded">
+<img alt="Community" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="dark gaming room setup with multiple screens and moody purple ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrJPksoKI-3Uc8ac7u97e_SFpo93U9JN1fuHgiK6FDbYjNthDoG3T2LNNvgmQRGR7n1j1UjUj9iOdqnSt4hpA-1O1emvIP_FugB0S-LABzXkIJdGUHbooTdCkDyQ45XUm34aJQYZE_7h_5pvHRex7tGpAHH9aSwrWDCOZNUvmdBhoVzMLZD3gB1eGhR1WOvYNtziSDnY9nqOrGfzd-iQ8u059OvAMOZZG4xZpzh05UFz3vjbh9FSx3dG1GHge-seARVbpFrzxQ3cjM"/>
+</div>
+<div>
+<h4 class="font-headline font-bold text-xs uppercase tracking-wider mb-1 group-hover:text-tertiary transition-colors line-clamp-1">COMMUNITY MODS SHOWCASE</h4>
+<p class="text-[10px] text-slate-500 line-clamp-2">이번 달 가장 인상적인 커스텀 셋업 갤러리.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Direct Command (Contact) -->
+<section class="lg:col-span-2 glass-panel border border-primary/20 rounded-lg relative overflow-hidden group">
+<div class="absolute -right-16 -bottom-16 w-64 h-64 bg-primary-container/5 rounded-full blur-[60px]"></div>
+<div class="p-8 relative z-10 flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1">
+<div class="inline-flex items-center space-x-2 text-primary-container mb-4">
+<span class="material-symbols-outlined text-sm">emergency</span>
+<span class="font-headline text-xs font-bold tracking-[0.4em] uppercase">Emergency Link</span>
+</div>
+<h3 class="font-headline font-black text-4xl tracking-tighter uppercase mb-4">Direct Command</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-8 max-w-md">
+                                해결되지 않는 기술적 이슈가 있습니까? 전술 전문가가 직접 대응합니다. 문의 사항을 전송하면 24시간 이내에 보이스/데이터 응답이 전송됩니다.
+                            </p>
+<div class="flex flex-wrap gap-4">
+<div class="flex items-center space-x-2 text-xs font-headline font-bold uppercase tracking-widest text-slate-500">
+<span class="material-symbols-outlined text-primary-container">support_agent</span>
+<span>24/7 Monitoring</span>
+</div>
+<div class="flex items-center space-x-2 text-xs font-headline font-bold uppercase tracking-widest text-slate-500">
+<span class="material-symbols-outlined text-primary-container">mail</span>
+<span>Encrypted COMMS</span>
+</div>
+</div>
+</div>
+<div class="w-full md:w-auto">
+<button class="px-12 py-6 bg-primary-container text-on-primary-container font-headline font-black text-lg uppercase tracking-widest rounded-lg shadow-[0_0_20px_rgba(57,213,255,0.4)] group-hover:shadow-[0_0_40px_rgba(57,213,255,0.6)] transition-all active:scale-95 whitespace-nowrap">
+                                통신 개시
+                            </button>
+</div>
+</div>
+</section>
+</div>
+<!-- FAQ Section / Bottom -->
+<section class="mt-20 border-t border-white/5 pt-20">
+<div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-12">
+<h3 class="font-headline font-black text-3xl tracking-tighter uppercase">Frequent Protocols <span class="text-slate-700">(FAQ)</span></h3>
+<div class="flex space-x-4">
+<button class="px-6 py-2 border border-white/10 hover:border-primary-container/40 text-[10px] font-headline font-bold uppercase tracking-widest transition-all">HARDWARE</button>
+<button class="px-6 py-2 border border-white/10 hover:border-primary-container/40 text-[10px] font-headline font-bold uppercase tracking-widest transition-all">SOFTWARE</button>
+<button class="px-6 py-2 border border-white/10 hover:border-primary-container/40 text-[10px] font-headline font-bold uppercase tracking-widest transition-all">LOGISTICS</button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-2">
+<div class="group py-6 border-b border-white/5 flex justify-between items-center cursor-pointer hover:px-2 transition-all">
+<span class="font-body text-sm text-slate-400 group-hover:text-on-surface transition-colors">시스템에서 기기가 인식되지 않을 때 해결 방법은?</span>
+<span class="material-symbols-outlined text-slate-600 group-hover:text-primary-container">chevron_right</span>
+</div>
+<div class="group py-6 border-b border-white/5 flex justify-between items-center cursor-pointer hover:px-2 transition-all">
+<span class="font-body text-sm text-slate-400 group-hover:text-on-surface transition-colors">해외 구매 제품의 보증 기간 적용 범위는 어떻게 되나요?</span>
+<span class="material-symbols-outlined text-slate-600 group-hover:text-primary-container">chevron_right</span>
+</div>
+<div class="group py-6 border-b border-white/5 flex justify-between items-center cursor-pointer hover:px-2 transition-all">
+<span class="font-body text-sm text-slate-400 group-hover:text-on-surface transition-colors">매크로 설정이 게임 엔진에서 차단될 경우 대응책</span>
+<span class="material-symbols-outlined text-slate-600 group-hover:text-primary-container">chevron_right</span>
+</div>
+<div class="group py-6 border-b border-white/5 flex justify-between items-center cursor-pointer hover:px-2 transition-all">
+<span class="font-body text-sm text-slate-400 group-hover:text-on-surface transition-colors">펌웨어 업데이트 중 전원이 차단되었을 때 복구 모드 진입법</span>
+<span class="material-symbols-outlined text-slate-600 group-hover:text-primary-container">chevron_right</span>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Footer -->
+<footer class="w-full py-12 bg-[#07101d] border-t border-[#39d5ff]/5 flex flex-col items-center justify-center space-y-4 px-8">
+<div class="flex flex-wrap justify-center gap-8 mb-4">
+<a class="font-['Inter'] text-[10px] uppercase tracking-[0.2em] text-slate-600 hover:text-[#39d5ff] transition-colors" href="#">Terms of Service</a>
+<a class="font-['Inter'] text-[10px] uppercase tracking-[0.2em] text-slate-600 hover:text-[#39d5ff] transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-[10px] uppercase tracking-[0.2em] text-slate-600 hover:text-[#39d5ff] transition-colors" href="#">Global Warranty</a>
+</div>
+<p class="font-['Inter'] text-[10px] uppercase tracking-[0.2em] text-slate-500 text-center">
+            © 2024 VOID ARC PRECISION GEAR. ALL SYSTEMS OPERATIONAL.
+        </p>
+</footer>
+</body></html>

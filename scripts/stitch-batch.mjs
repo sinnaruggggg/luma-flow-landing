@@ -8,14 +8,33 @@ const args = parseArgs();
 const devices = args.device ? [normalizeDevice(args.device)] : ["DESKTOP", "MOBILE"];
 const siteIds = args.site ? [args.site] : siteCatalog.map((site) => site.id);
 const pageOverride = args.page || null;
+const skipHome = Boolean(args["skip-home"]);
+const failures = [];
 
 for (const siteId of siteIds) {
-  const pages = pageOverride ? [pageOverride] : getRoutesForSite(siteId).map((route) => route.slug);
+  const pages = pageOverride
+    ? [pageOverride]
+    : getRoutesForSite(siteId)
+        .map((route) => route.slug)
+        .filter((slug) => !(skipHome && slug === "home"));
   for (const pageSlug of pages) {
     for (const deviceType of devices) {
-      await runGenerate(siteId, pageSlug, deviceType);
+      try {
+        await runGenerate(siteId, pageSlug, deviceType);
+      } catch (error) {
+        failures.push({ siteId, pageSlug, deviceType, message: error.message });
+        console.error(`Failed ${siteId}/${pageSlug}/${deviceType}: ${error.message}`);
+      }
     }
   }
+}
+
+if (failures.length) {
+  console.error(`\nBatch completed with ${failures.length} failure(s).`);
+  for (const failure of failures) {
+    console.error(`- ${failure.siteId}/${failure.pageSlug}/${failure.deviceType}: ${failure.message}`);
+  }
+  process.exit(1);
 }
 
 async function runGenerate(siteId, pageSlug, deviceType) {

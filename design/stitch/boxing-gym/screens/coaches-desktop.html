@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#690005",
+                    "surface-bright": "#393841",
+                    "primary-fixed": "#ffdad8",
+                    "inverse-surface": "#e4e1ec",
+                    "on-tertiary-container": "#303336",
+                    "on-primary-container": "#6d0010",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#5516be",
+                    "background": "#13131a",
+                    "tertiary-fixed": "#e0e3e6",
+                    "on-surface-variant": "#e0bfbd",
+                    "primary": "#ffb3b0",
+                    "on-tertiary-fixed": "#181c1f",
+                    "surface-dim": "#13131a",
+                    "secondary-fixed-dim": "#d0bcff",
+                    "outline": "#a78a88",
+                    "on-secondary-container": "#c4abff",
+                    "error": "#ffb4ab",
+                    "error-container": "#93000a",
+                    "tertiary-fixed-dim": "#c4c7ca",
+                    "on-surface": "#e4e1ec",
+                    "secondary-container": "#571bc1",
+                    "on-background": "#e4e1ec",
+                    "primary-fixed-dim": "#ffb3b0",
+                    "surface-container-highest": "#34343c",
+                    "surface": "#13131a",
+                    "on-primary-fixed-variant": "#8c1520",
+                    "surface-container-low": "#1b1b22",
+                    "surface-container": "#1f1f26",
+                    "outline-variant": "#584140",
+                    "on-tertiary-fixed-variant": "#44474a",
+                    "secondary": "#d0bcff",
+                    "on-primary-fixed": "#410006",
+                    "inverse-on-surface": "#303038",
+                    "surface-container-lowest": "#0e0e15",
+                    "surface-container-high": "#2a2931",
+                    "on-tertiary": "#2d3134",
+                    "on-secondary": "#3c0091",
+                    "on-secondary-fixed": "#23005c",
+                    "on-primary": "#68000f",
+                    "inverse-primary": "#ae2f34",
+                    "secondary-fixed": "#e9ddff",
+                    "surface-tint": "#ffb3b0",
+                    "primary-container": "#ff6b6b",
+                    "tertiary-container": "#989b9f",
+                    "surface-variant": "#34343c",
+                    "tertiary": "#c4c7ca"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Be Vietnam Pro"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #13131a;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(255, 107, 107, 0.05) 0%, transparent 50%),
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 100% 100%, 30px 30px, 30px 30px;
+            color: #f5f7fb;
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+        .scan-line {
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(0deg, transparent 0%, rgba(255, 107, 107, 0.1) 50%, transparent 100%);
+            position: absolute;
+            pointer-events: none;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-red { drop-shadow: 0 0 15px rgba(255, 107, 107, 0.5); }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-[#13131a]/84 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-[#f5f7fb]/10 shadow-[0_4px_20px_rgba(0,0,0,0.5)] flex justify-between items-center px-6 h-20">
+<div class="text-2xl font-bold tracking-tighter text-[#ff6b6b] italic font-['Space_Grotesk'] uppercase">UPPERCUT CLUB</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-[#f5f7fb]/60 hover:text-[#ff6b6b] hover:drop-shadow-[0_0_8px_rgba(255,107,107,0.8)] transition-all" href="#">TRAINING</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-[#ff6b6b] border-b-2 border-[#ff6b6b] pb-1 hover:text-[#ff6b6b] hover:drop-shadow-[0_0_8px_rgba(255,107,107,0.8)] transition-all" href="#">ROSTER</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-[#f5f7fb]/60 hover:text-[#ff6b6b] hover:drop-shadow-[0_0_8px_rgba(255,107,107,0.8)] transition-all" href="#">SCHEDULE</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-[#f5f7fb]/60 hover:text-[#ff6b6b] hover:drop-shadow-[0_0_8px_rgba(255,107,107,0.8)] transition-all" href="#">FACILITY</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#f5f7fb]/60 hover:text-[#ff6b6b] transition-colors">notifications</button>
+<button class="material-symbols-outlined text-[#f5f7fb]/60 hover:text-[#ff6b6b] transition-colors">account_circle</button>
+<button class="bg-[#ff6b6b] text-[#13131a] font-bold px-6 py-2 text-sm tracking-widest scale-95 active:opacity-80 transition-all font-['Space_Grotesk']">BOOK_NOW</button>
+</div>
+</header>
+<main class="pt-20 pb-32">
+<!-- FIRST VIEWPORT: CHIEF INSTRUCTORS SPOTLIGHT -->
+<section class="relative min-h-[870px] flex items-center overflow-hidden px-8 lg:px-24">
+<div class="absolute inset-0 z-0 bg-[#0b0b12]">
+<img alt="Head Coach Portrait" class="w-full h-full object-cover grayscale opacity-40 mix-blend-overlay" data-alt="Intense black and white portrait of a lead boxing coach with dramatic shadows and sweat, athlete expression, gritty gym background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGIetEg1l-ZZmrD838PohudEOEs0daTwwE_U8g_5EbGRyQ63C7r9Jg8hkupCBQuzGH9HunF8J58UHCpJXbXl6A8Odo7AcqgVb4GpyFAJiOf3eEvWU5TmSafDAz1bRnldp7pezrXArpA5cWWpO0BYmC9d5OI9WGHxkWmIubaSsQciKLZaRH6dEAgitJicM0oA5Seams4-1Dxyc8-MjBRKldzSrGeuUL2A1UWwLLxKqAGwJc5XlAi0ULEdYM6FgCrL0ayixEgxDRvyI"/>
+<div class="absolute inset-0 bg-gradient-to-r from-[#0b0b12] via-[#0b0b12]/60 to-transparent"></div>
+<div class="absolute top-0 right-0 w-1/2 h-full bg-[#ff6b6b]/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/4"></div>
+</div>
+<div class="relative z-10 grid lg:grid-cols-2 gap-12 items-center w-full">
+<div class="space-y-6">
+<div class="inline-flex items-center gap-2 bg-[#ff6b6b]/20 border border-[#ff6b6b]/30 px-3 py-1 text-[#ff6b6b] font-['Space_Grotesk'] text-xs tracking-tighter">
+<span class="w-2 h-2 bg-[#ff6b6b] animate-pulse"></span>
+                        CHIEF_OPERATOR_01
+                    </div>
+<h1 class="text-6xl md:text-8xl font-black font-['Space_Grotesk'] leading-[0.9] text-[#f5f7fb]">
+                        강태오 <br/>
+<span class="text-[#ff6b6b] italic uppercase">TAEO KANG</span>
+</h1>
+<p class="text-[#f5f7fb]/60 max-w-md font-['Be_Vietnam_Pro'] leading-relaxed">
+                        전 WBA 아시아 웰터급 챔피언. <br/>
+                        데이터 분석 기반의 정밀한 스트라이킹과 압도적인 피지컬 컨디셔닝을 통해 당신의 잠재력을 극한까지 끌어올립니다.
+                    </p>
+<div class="flex gap-4">
+<div class="bg-surface-container-low p-4 border-l-2 border-[#ff6b6b]">
+<div class="text-[10px] text-[#ff6b6b] font-['Space_Grotesk']">WIN_RATE</div>
+<div class="text-2xl font-bold font-['Space_Grotesk']">94.2%</div>
+</div>
+<div class="bg-surface-container-low p-4 border-l-2 border-[#8b5cf6]">
+<div class="text-[10px] text-[#8b5cf6] font-['Space_Grotesk']">EXP_YEARS</div>
+<div class="text-2xl font-bold font-['Space_Grotesk']">15+</div>
+</div>
+</div>
+</div>
+<!-- Floating Instrument Card -->
+<div class="bg-[#13131a]/80 backdrop-blur-2xl border border-[#f5f7fb]/10 p-8 rounded-lg shadow-2xl relative overflow-hidden lg:max-w-md ml-auto">
+<div class="absolute top-0 right-0 p-2 opacity-20">
+<span class="text-[10px] font-['Space_Grotesk']">UNIT_ID: UC_001</span>
+</div>
+<div class="space-y-6 relative z-10">
+<h3 class="text-xl font-bold font-['Space_Grotesk'] border-b border-[#f5f7fb]/10 pb-4">SESSION_PROTOCOL</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-xs text-[#f5f7fb]/40 font-['Space_Grotesk']">SPECIALTY</span>
+<span class="text-sm font-medium">Strike Precision</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs text-[#f5f7fb]/40 font-['Space_Grotesk']">INTENSITY</span>
+<div class="flex gap-1">
+<div class="h-1 w-4 bg-[#ff6b6b]"></div>
+<div class="h-1 w-4 bg-[#ff6b6b]"></div>
+<div class="h-1 w-4 bg-[#ff6b6b]"></div>
+<div class="h-1 w-4 bg-[#ff6b6b]"></div>
+<div class="h-1 w-4 bg-[#f5f7fb]/20"></div>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs text-[#f5f7fb]/40 font-['Space_Grotesk']">AVAILABILITY</span>
+<span class="text-sm text-[#ff6b6b]">LIMITED_SLOTS</span>
+</div>
+</div>
+<button class="w-full bg-[#ff6b6b] hover:bg-[#ff6b6b]/90 text-[#13131a] py-4 font-black tracking-widest font-['Space_Grotesk'] transition-all flex justify-center items-center gap-2 group">
+                            BOOK SESSION 
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<!-- Decorative HUD line -->
+<div class="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-transparent via-[#ff6b6b] to-transparent"></div>
+</div>
+</div>
+</section>
+<!-- ROSTER_MATRIX -->
+<section class="mt-24 px-8 lg:px-24">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
+<div>
+<h2 class="text-4xl font-black font-['Space_Grotesk'] text-[#f5f7fb] tracking-tighter uppercase">Roster_Matrix</h2>
+<p class="text-[#f5f7fb]/40 text-sm mt-2 font-['Space_Grotesk']">SELECT YOUR OPERATOR FOR THE NEXT ROUND</p>
+</div>
+<!-- FIGHTING_STYLE Filter -->
+<div class="flex flex-wrap gap-2">
+<button class="px-6 py-2 text-xs font-bold font-['Space_Grotesk'] bg-[#ff6b6b] text-[#13131a] border border-[#ff6b6b]">BOXING</button>
+<button class="px-6 py-2 text-xs font-bold font-['Space_Grotesk'] bg-transparent text-[#f5f7fb]/60 border border-[#f5f7fb]/10 hover:border-[#ff6b6b]/40 hover:text-[#ff6b6b] transition-all">MUAY THAI</button>
+<button class="px-6 py-2 text-xs font-bold font-['Space_Grotesk'] bg-transparent text-[#f5f7fb]/60 border border-[#f5f7fb]/10 hover:border-[#ff6b6b]/40 hover:text-[#ff6b6b] transition-all">STRENGTH</button>
+<button class="px-6 py-2 text-xs font-bold font-['Space_Grotesk'] bg-transparent text-[#f5f7fb]/60 border border-[#f5f7fb]/10 hover:border-[#ff6b6b]/40 hover:text-[#ff6b6b] transition-all">SPARRING</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Coach Card 1 -->
+<div class="group bg-surface-container-lowest border border-[#f5f7fb]/5 hover:border-[#ff6b6b]/30 transition-all duration-500 relative overflow-hidden">
+<div class="aspect-[3/4] relative overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+<img alt="Coach 01" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700" data-alt="Athletic woman boxing coach posing with hand wraps, focused look, dramatic purple rim lighting, high-contrast black and white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnmQNZkuQu1eXXr8frCesciEkp7jxPRafIP5kpCwm51zI2mRH9TbxqzpWGawmDd4TqGxLH4QWHfx7JXHchtzf6m4z4l5_bFTqXGp_gKIYVOyfReKJ0PLcVz65G-W7MNnaRIPjzz_w5R3rLJ_jzo89Yf7CxwGP4sqUlGnAtdIfHdxan6Us-_rUYNhBYSYowizEnsyAwQmMlq3UmTFlO0PBOyM2n4SwxbYRFuy8h4NoUwtQm6BkqyS7oAKR9i_XHCRCd4XLayaRNwxY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#13131a] via-transparent to-transparent"></div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-bold font-['Space_Grotesk'] text-[#f5f7fb]">이지민</h3>
+<span class="text-[10px] text-[#f5f7fb]/40 font-['Space_Grotesk'] uppercase tracking-widest italic">JIMIN LEE</span>
+</div>
+<span class="text-[10px] px-2 py-1 bg-[#8b5cf6]/20 text-[#8b5cf6] font-bold border border-[#8b5cf6]/20 font-['Space_Grotesk']">STRIKE</span>
+</div>
+<div class="grid grid-cols-3 gap-2 py-4 border-y border-[#f5f7fb]/5">
+<div class="text-center">
+<div class="text-[9px] text-[#f5f7fb]/30 font-['Space_Grotesk']">WIN</div>
+<div class="text-sm font-bold text-[#ff6b6b]">28</div>
+</div>
+<div class="text-center">
+<div class="text-[9px] text-[#f5f7fb]/30 font-['Space_Grotesk']">KO</div>
+<div class="text-sm font-bold">19</div>
+</div>
+<div class="text-center">
+<div class="text-[9px] text-[#f5f7fb]/30 font-['Space_Grotesk']">LOSS</div>
+<div class="text-sm font-bold">02</div>
+</div>
+</div>
+<div class="flex justify-between items-center group/btn">
+<span class="text-[10px] font-['Space_Grotesk'] text-[#f5f7fb]/60 group-hover:text-[#ff6b6b] transition-colors">VIEW_READOUT</span>
+<span class="material-symbols-outlined text-[#f5f7fb]/40 group-hover:text-[#ff6b6b] transition-colors">query_stats</span>
+</div>
+</div>
+</div>
+<!-- Coach Card 2 -->
+<div class="group bg-surface-container-lowest border border-[#f5f7fb]/5 hover:border-[#ff6b6b]/30 transition-all duration-500 relative overflow-hidden">
+<div class="aspect-[3/4] relative overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+<img alt="Coach 02" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700" data-alt="Muscular male coach in boxing gym, wearing gloves, intense look, neon red lighting accents, industrial background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWRKw027smcza5sDy-cF40qE5UCm-6033HfIDsrKbIE-oFm6MzyXiNd0jGXzLxCNzD-ptq_DSfuY3LPrslju34AekhFP458X3Nj2aqv8W8AWjB0_3XpHyvpsytw2G1kfk7FlBGOi0p3zyB0pgVMRctSXpESUbFkQudDjT0f-mMrC5mlxyMGeQsP1Eya5ReadAmlry4mmVDv_puQwlusMksj4PPz251XPYBIXBhI615CFtLtK8CSusqMDO1QYtwREnP_jgDD7T3hnY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#13131a] via-transparent to-transparent"></div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-bold font-['Space_Grotesk'] text-[#f5f7fb]">박준서</h3>
+<span class="text-[10px] text-[#f5f7fb]/40 font-['Space_Grotesk'] uppercase tracking-widest italic">JUNSEO PARK</span>
+</div>
+<span class="text-[10px] px-2 py-1 bg-[#ff6b6b]/20 text-[#ff6b6b] font-bold border border-[#ff6b6b]/20 font-['Space_Grotesk']">POWER</span>
+</div>
+<div class="grid grid-cols-3 gap-2 py-4 border-y border-[#f5f7fb]/5">
+<div class="text-center">
+<div class="text-[9px] text-[#f5f7fb]/30 font-['Space_Grotesk']">WIN</div>
+<div class="text-sm font-bold text-[#ff6b6b]">34</div>
+</div>
+<div class="text-center">
+<div class="text-[9px] text-[#f5f7fb]/30 font-['Space_Grotesk']">KO</div>
+<div class="text-sm font-bold">30</div>
+</div>
+<div class="text-center">
+<div class="text-[9px] text-[#f5f7fb]/30 font-['Space_Grotesk']">LOSS</div>
+<div class="text-sm font-bold">04</div>
+</div>
+</div>
+<div class="flex justify-between items-center group/btn">
+<span class="text-[10px] font-['Space_Grotesk'] text-[#f5f7fb]/60 group-hover:text-[#ff6b6b] transition-colors">VIEW_READOUT</span>
+<span class="material-symbols-outlined text-[#f5f7fb]/40 group-hover:text-[#ff6b6b] transition-colors">query_stats</span>
+</div>
+</div>
+</div>
+<!-- Coach Card 3 -->
+<div class="group bg-surface-container-lowest border border-[#f5f7fb]/5 hover:border-[#ff6b6b]/30 transition-all duration-500 relative overflow-hidden">
+<div class="aspect-[3/4] relative overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+<img alt="Coach 03" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700" data-alt="Technical coach demonstrating shadow boxing, motion blur on hands, dark studio setting, blue and red neon highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiVp2ubcAeNLApCbGzX3VBJgP25QBSGhIg0eYt5yfC1Ydy-PK5JNtW5cQhSCXxEDTnSg-4ehyP1kboLdqrXRdx2xR0S5Z5klj0csDlz3BX8D0guapSWxFv7resQe_ynWI0vYF1W1eGZHctniKFjeUvC-JUgE5mwEVFYfaiBz-b75Eig3u_4Z_jYlsw4RDxOCzhfIe8xx06Rng-Gyhz7Fvv6I_qdgQVKG-pwp5nk6kqJstOto-bo4Es4YcPcUMIAXTzLH03Wm5K3Ww"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#13131a] via-transparent to-transparent"></div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-bold font-['Space_Grotesk'] text-[#f5f7fb]">김하윤</h3>
+<span class="text-[10px] text-[#f5f7fb]/40 font-['Space_Grotesk'] uppercase tracking-widest italic">HAYUN KIM</span>
+</div>
+<span class="text-[10px] px-2 py-1 bg-[#d0bcff]/20 text-[#d0bcff] font-bold border border-[#d0bcff]/20 font-['Space_Grotesk']">MUAY THAI</span>
+</div>
+<div class="grid grid-cols-3 gap-2 py-4 border-y border-[#f5f7fb]/5">
+<div class="text-center">
+<div class="text-[9px] text-[#f5f7fb]/30 font-['Space_Grotesk']">WIN</div>
+<div class="text-sm font-bold text-[#ff6b6b]">21</div>
+</div>
+<div class="text-center">
+<div class="text-[9px] text-[#f5f7fb]/30 font-['Space_Grotesk']">KO</div>
+<div class="text-sm font-bold">12</div>
+</div>
+<div class="text-center">
+<div class="text-[9px] text-[#f5f7fb]/30 font-['Space_Grotesk']">LOSS</div>
+<div class="text-sm font-bold">01</div>
+</div>
+</div>
+<div class="flex justify-between items-center group/btn">
+<span class="text-[10px] font-['Space_Grotesk'] text-[#f5f7fb]/60 group-hover:text-[#ff6b6b] transition-colors">VIEW_READOUT</span>
+<span class="material-symbols-outlined text-[#f5f7fb]/40 group-hover:text-[#ff6b6b] transition-colors">query_stats</span>
+</div>
+</div>
+</div>
+<!-- Coach Card 4 -->
+<div class="group bg-surface-container-lowest border border-[#f5f7fb]/5 hover:border-[#ff6b6b]/30 transition-all duration-500 relative overflow-hidden">
+<div class="aspect-[3/4] relative overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+<img alt="Coach 04" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700" data-alt="Focused strength and conditioning coach with kettlebells, gym setting, hard lighting, gritty black and white texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfxBUu5WfYZIufzFhSq54OAqDWvw74CbT9o6GldxlqvqmD7D-BoAyuNxigpUvtOylxvxjT8Mpm9RRKr_OJ-FwRovWFGjO4_OiEnJ-oL8jCsHWFyZP494ppBJuLEiyWGXziS8QkXsPnqkxGy6-EiZBmUzyBiHc8-COGL3K5MnQiCYcDL1tzuHAsExHipmoIDrKGLX_RsPiScvExAapjMrhJqWaVM279TlhRCkYwDc5XRJwY8YF1A3nlGS_MY_p0B3v0dDuXq9RiiFA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#13131a] via-transparent to-transparent"></div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-bold font-['Space_Grotesk'] text-[#f5f7fb]">최성민</h3>
+<span class="text-[10px] text-[#f5f7fb]/40 font-['Space_Grotesk'] uppercase tracking-widest italic">SUNGMIN CHOI</span>
+</div>
+<span class="text-[10px] px-2 py-1 bg-[#ff6b6b]/20 text-[#ff6b6b] font-bold border border-[#ff6b6b]/20 font-['Space_Grotesk']">CONDITION</span>
+</div>
+<div class="grid grid-cols-3 gap-2 py-4 border-y border-[#f5f7fb]/5">
+<div class="text-center">
+<div class="text-[9px] text-[#f5f7fb]/30 font-['Space_Grotesk']">WIN</div>
+<div class="text-sm font-bold text-[#ff6b6b]">--</div>
+</div>
+<div class="text-center">
+<div class="text-[9px] text-[#f5f7fb]/30 font-['Space_Grotesk']">CERT</div>
+<div class="text-sm font-bold">LVL.3</div>
+</div>
+<div class="text-center">
+<div class="text-[9px] text-[#f5f7fb]/30 font-['Space_Grotesk']">EXP</div>
+<div class="text-sm font-bold">12Y</div>
+</div>
+</div>
+<div class="flex justify-between items-center group/btn">
+<span class="text-[10px] font-['Space_Grotesk'] text-[#f5f7fb]/60 group-hover:text-[#ff6b6b] transition-colors">VIEW_READOUT</span>
+<span class="material-symbols-outlined text-[#f5f7fb]/40 group-hover:text-[#ff6b6b] transition-colors">query_stats</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TECHNICAL_READOUT -->
+<section class="mt-32 px-8 lg:px-24 bg-[#0b0b12] py-24 border-y border-[#f5f7fb]/5">
+<div class="max-w-6xl mx-auto">
+<div class="text-center space-y-4 mb-20">
+<span class="font-['Space_Grotesk'] text-[#ff6b6b] text-xs tracking-widest uppercase">Methodology Protocol</span>
+<h2 class="text-5xl font-black font-['Space_Grotesk'] text-[#f5f7fb] tracking-tighter">COACHING_PHILOSOPHY</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-12">
+<div class="space-y-4 group">
+<div class="text-[#ff6b6b] text-4xl font-['Space_Grotesk'] font-light">01.</div>
+<h4 class="text-xl font-bold font-['Space_Grotesk'] text-[#f5f7fb]">DATA-DRIVEN TRAINING</h4>
+<p class="text-[#f5f7fb]/40 font-['Be_Vietnam_Pro'] text-sm leading-relaxed">
+                            모든 훈련 세션은 생체 인식 데이터와 타격 정밀도를 기반으로 최적화됩니다. 짐작이 아닌 수치로 증명하는 훈련 방식을 지향합니다.
+                        </p>
+<div class="h-[2px] w-0 group-hover:w-full bg-[#ff6b6b] transition-all duration-500"></div>
+</div>
+<div class="space-y-4 group">
+<div class="text-[#ff6b6b] text-4xl font-['Space_Grotesk'] font-light">02.</div>
+<h4 class="text-xl font-bold font-['Space_Grotesk'] text-[#f5f7fb]">ELITE LINEAGE</h4>
+<p class="text-[#f5f7fb]/40 font-['Be_Vietnam_Pro'] text-sm leading-relaxed">
+                            어퍼컷 클럽의 모든 인스트럭터는 전직 프로 챔피언 출신이거나 국가대표급 경력을 보유하고 있습니다. 실제 전장에서 검증된 기술만을 전수합니다.
+                        </p>
+<div class="h-[2px] w-0 group-hover:w-full bg-[#ff6b6b] transition-all duration-500"></div>
+</div>
+<div class="space-y-4 group">
+<div class="text-[#ff6b6b] text-4xl font-['Space_Grotesk'] font-light">03.</div>
+<h4 class="text-xl font-bold font-['Space_Grotesk'] text-[#f5f7fb]">PRECISION CALIBRATION</h4>
+<p class="text-[#f5f7fb]/40 font-['Be_Vietnam_Pro'] text-sm leading-relaxed">
+                            개개인의 신체 구조와 운동 능력에 맞춘 정밀 캘리브레이션을 진행합니다. 단순한 반복이 아닌, 가장 효율적인 움직임을 찾아냅니다.
+                        </p>
+<div class="h-[2px] w-0 group-hover:w-full bg-[#ff6b6b] transition-all duration-500"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#13131a] w-full py-12 px-8 border-t border-[#f5f7fb]/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="text-[#f5f7fb] opacity-50 font-['Space_Grotesk'] uppercase tracking-widest text-sm italic">UPPERCUT CLUB</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Space_Grotesk'] text-xs tracking-widest text-[#f5f7fb]/30 hover:text-[#f5f7fb] transition-opacity" href="#">PRIVACY_PROTOCOL</a>
+<a class="font-['Space_Grotesk'] text-xs tracking-widest text-[#f5f7fb]/30 hover:text-[#f5f7fb] transition-opacity" href="#">TERMS_OF_ENGAGEMENT</a>
+<a class="font-['Space_Grotesk'] text-xs tracking-widest text-[#f5f7fb]/30 hover:text-[#f5f7fb] transition-opacity" href="#">GYM_LOCATIONS</a>
+<a class="font-['Space_Grotesk'] text-xs tracking-widest text-[#f5f7fb]/30 hover:text-[#f5f7fb] transition-opacity" href="#">CONTACT_HQ</a>
+</div>
+<div class="font-['Space_Grotesk'] text-xs tracking-widest text-[#f5f7fb]/30">© 2024 UPPERCUT CLUB. SYSTEM_VER_4.0.2</div>
+</footer>
+<!-- BottomNavBar (Mobile) -->
+<nav class="lg:hidden fixed bottom-0 left-0 w-full bg-[#13131a]/90 backdrop-blur-md border-t border-[#f5f7fb]/10 shadow-[0_-10px_30px_rgba(0,0,0,0.8)] flex justify-around items-center py-3 px-4 z-50 rounded-t-lg">
+<div class="flex flex-col items-center justify-center text-[#f5f7fb]/40 font-['Space_Grotesk'] text-[10px] uppercase font-bold active:scale-90 transition-transform">
+<span class="material-symbols-outlined mb-1">home</span>
+<span>HOME</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#ff6b6b] drop-shadow-[0_0_5px_rgba(255,107,107,0.5)] font-['Space_Grotesk'] text-[10px] uppercase font-bold active:scale-90 transition-transform">
+<span class="material-symbols-outlined mb-1">sports_kabaddi</span>
+<span>COACHES</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#f5f7fb]/40 font-['Space_Grotesk'] text-[10px] uppercase font-bold active:scale-90 transition-transform">
+<span class="material-symbols-outlined mb-1">confirmation_number</span>
+<span>RESERVE</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#f5f7fb]/40 font-['Space_Grotesk'] text-[10px] uppercase font-bold active:scale-90 transition-transform">
+<span class="material-symbols-outlined mb-1">person</span>
+<span>PROFILE</span>
+</div>
+</nav>
+<!-- SideNavBar (Desktop Utility Hidden) -->
+<aside class="hidden lg:flex flex-col fixed left-0 top-0 h-screen w-16 bg-[#13131a] border-r border-[#f5f7fb]/5 z-40 items-center py-24 gap-8">
+<div class="material-symbols-outlined text-[#ff6b6b] cursor-pointer hover:bg-[#ff6b6b]/10 p-2 rounded transition-all">grid_view</div>
+<div class="material-symbols-outlined text-[#f5f7fb]/40 cursor-pointer hover:bg-[#f5f7fb]/5 p-2 rounded transition-all">fitness_center</div>
+<div class="material-symbols-outlined text-[#f5f7fb]/40 cursor-pointer hover:bg-[#f5f7fb]/5 p-2 rounded transition-all">groups</div>
+<div class="material-symbols-outlined text-[#f5f7fb]/40 cursor-pointer hover:bg-[#f5f7fb]/5 p-2 rounded transition-all">event_available</div>
+<div class="mt-auto material-symbols-outlined text-[#f5f7fb]/40 cursor-pointer hover:bg-[#f5f7fb]/5 p-2 rounded transition-all mb-8">settings</div>
+</aside>
+</body></html>

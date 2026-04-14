@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-dim": "#edd600",
+                      "on-surface-variant": "#675c00",
+                      "surface-container-high": "#fbe431",
+                      "primary-dim": "#504f4f",
+                      "inverse-primary": "#ffffff",
+                      "on-surface": "#352f00",
+                      "error-dim": "#b92902",
+                      "on-tertiary-fixed": "#003041",
+                      "on-secondary": "#ffefee",
+                      "on-error-container": "#520c00",
+                      "surface-container-highest": "#f6de0b",
+                      "on-primary-fixed-variant": "#626060",
+                      "surface-container": "#ffea50",
+                      "tertiary": "#006382",
+                      "secondary-fixed-dim": "#ffafac",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-bright": "#fff7d4",
+                      "on-tertiary-fixed-variant": "#004f69",
+                      "outline-variant": "#bfae2b",
+                      "tertiary-fixed": "#7bd1fa",
+                      "secondary-dim": "#992027",
+                      "surface-container-low": "#fff2a6",
+                      "on-secondary-fixed-variant": "#9a2128",
+                      "inverse-on-surface": "#ae9e18",
+                      "surface-variant": "#f6de0b",
+                      "on-background": "#352f00",
+                      "surface-tint": "#5c5b5b",
+                      "error-container": "#f95630",
+                      "on-error": "#ffefec",
+                      "on-secondary-fixed": "#6f0011",
+                      "outline": "#857800",
+                      "on-tertiary": "#e5f5ff",
+                      "primary": "#5c5b5b",
+                      "background": "#fff7d4",
+                      "on-tertiary-container": "#00465d",
+                      "tertiary-fixed-dim": "#6cc3eb",
+                      "secondary": "#aa2c32",
+                      "tertiary-container": "#7bd1fa",
+                      "inverse-surface": "#110e00",
+                      "primary-container": "#edeaea",
+                      "tertiary-dim": "#005672",
+                      "on-secondary-container": "#8d1620",
+                      "secondary-container": "#ffc3c0",
+                      "on-primary-container": "#575656",
+                      "error": "#b02500",
+                      "surface": "#fff7d4",
+                      "secondary-fixed": "#ffc3c0",
+                      "on-primary": "#f5f2f1",
+                      "primary-fixed": "#edeaea",
+                      "primary-fixed-dim": "#dfdcdc",
+                      "on-primary-fixed": "#454444"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Epilogue"],
+                      "body": ["Plus Jakarta Sans"],
+                      "label": ["Space Grotesk"]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sticker-tilt-right { transform: rotate(2deg); }
+        .sticker-tilt-left { transform: rotate(-2deg); }
+        .clip-path-kinetic { clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-secondary selection:text-white">
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 bg-[#fff7d4] dark:bg-zinc-950 border-b-4 border-zinc-900 dark:border-[#f7e45d] flex justify-between items-center w-full px-6 py-4 mx-auto">
+<div class="text-2xl font-black text-zinc-900 dark:text-[#f7e45d] tracking-tighter font-['Epilogue'] uppercase">
+            PUNCH FUEL
+        </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-['Epilogue'] font-bold tracking-tight uppercase text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-[#f7e45d] transition-colors duration-150" href="#">Home</a>
+<a class="font-['Epilogue'] font-bold tracking-tight uppercase text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-[#f7e45d] transition-colors duration-150" href="#">Routine</a>
+<a class="font-['Epilogue'] font-bold tracking-tight uppercase text-zinc-900 dark:text-[#f7e45d] border-b-4 border-zinc-900 dark:border-[#f7e45d] pb-1 transition-colors duration-150" href="#">Compare</a>
+<a class="font-['Epilogue'] font-bold tracking-tight uppercase text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-[#f7e45d] transition-colors duration-150" href="#">Subscribe</a>
+<a class="font-['Epilogue'] font-bold tracking-tight uppercase text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-[#f7e45d] transition-colors duration-150" href="#">Brand</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-zinc-900 dark:text-[#f7e45d] hover:bg-[#f6de0b] p-2 transition-all active:translate-y-0.5" data-icon="shopping_cart">shopping_cart</button>
+<button class="md:hidden material-symbols-outlined text-zinc-900 dark:text-[#f7e45d]" data-icon="menu">menu</button>
+</div>
+</nav>
+<main class="min-h-screen">
+<!-- Hero Section: Stack Face-Off -->
+<section class="relative overflow-hidden bg-surface py-16 md:py-24 border-b-8 border-on-background">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-2xl">
+<span class="font-label text-secondary font-bold uppercase tracking-widest text-sm mb-4 block">Performance Battle</span>
+<h1 class="font-headline text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none text-on-background">
+                            스택 비교
+                        </h1>
+</div>
+<div class="bg-on-background text-surface p-4 sticker-tilt-right inline-block">
+<p class="font-label text-xs uppercase font-bold tracking-tight">Kinetic Performance Editorial / Vol 04</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-0 border-4 border-on-background bg-on-background">
+<!-- Stack 1: 에너지 부스트 팩 -->
+<div class="group relative bg-surface-bright p-8 md:p-12 border-r-0 md:border-r-4 border-b-4 md:border-b-0 border-on-background transition-all hover:bg-surface-container-high">
+<div class="absolute top-4 right-4 z-10">
+<span class="bg-secondary text-white font-label font-bold px-4 py-1 text-sm sticker-tilt-left inline-block shadow-[4px_4px_0px_0px_rgba(53,47,0,1)] uppercase">High Voltage</span>
+</div>
+<div class="mb-8">
+<h2 class="font-headline text-4xl font-extrabold uppercase mb-2">에너지 부스트 팩</h2>
+<p class="font-body text-lg font-bold opacity-70">폭발적인 에너지와 집중력 향상</p>
+</div>
+<div class="aspect-square mb-10 overflow-hidden border-2 border-on-background bg-white relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Modern minimalist aesthetic supplement powder jar in bright studio lighting with sharp shadows and yellow accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi1DBaWwMUiWFbF6Jn3ZqLUuRCggMsNti9isD5kHd5hBonGnappsg8o8mxVyQh0_ERZjuULevC1p5QoClDQ04ZKTbjOrDmP9kIpgRePWTVLv2ouzoEUMuM1TCpjw8c8EWhlxQIiKcJHmOo5cpIjigUx2GD155J6dJnL3G3itDQDaqlhMS49pXe5xPxjao6CULC9V0_VRfDZG7ceaMp_mcLmiJdG80V5cWC9xIKbZ7ZQZ38RNk0K2jOyoOlr7Vvjn35CHqKYq9FoyY"/>
+</div>
+<div class="space-y-6">
+<div class="flex justify-between items-center border-b-2 border-on-background/10 pb-4">
+<span class="font-label uppercase text-sm font-bold opacity-60">Primary Goal</span>
+<span class="font-headline text-xl font-bold">에너지 최적화</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-on-background text-surface p-4">
+<span class="font-label block text-xs uppercase opacity-60 mb-1">Caffeine</span>
+<span class="font-headline text-2xl font-bold">200mg</span>
+</div>
+<div class="bg-surface-container text-on-background p-4 border-2 border-on-background">
+<span class="font-label block text-xs uppercase opacity-60 mb-1">Taurine</span>
+<span class="font-headline text-2xl font-bold">1,000mg</span>
+</div>
+</div>
+<div class="pt-6 flex justify-between items-center">
+<span class="font-headline text-3xl font-black">29,900원</span>
+<button class="bg-secondary text-on-secondary px-8 py-3 font-headline font-bold uppercase border-2 border-on-background hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[4px_4px_0px_0px_rgba(53,47,0,1)] transition-all">지금 구독하기</button>
+</div>
+</div>
+</div>
+<!-- Stack 2: 근육 회복 팩 -->
+<div class="group relative bg-surface-container-low p-8 md:p-12 transition-all hover:bg-surface-container">
+<div class="absolute top-4 right-4 z-10">
+<span class="bg-tertiary text-white font-label font-bold px-4 py-1 text-sm sticker-tilt-right inline-block shadow-[4px_4px_0px_0px_rgba(53,47,0,1)] uppercase">Recovery King</span>
+</div>
+<div class="mb-8">
+<h2 class="font-headline text-4xl font-extrabold uppercase mb-2">근육 회복 팩</h2>
+<p class="font-body text-lg font-bold opacity-70">강도 높은 훈련 후 최단기 근회복</p>
+</div>
+<div class="aspect-square mb-10 overflow-hidden border-2 border-on-background bg-white relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="High-end supplement capsule bottle with architectural lighting and blue tech-wear aesthetic background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU6rZdeOC1w7wJAqIcWo06rKWmst7jj9fgMgmP1WDub6ayKKc5Z1_F0fxz8fJn5Ec_0HjZH_i11d9mN-s3JV35Q6d_dpUM6bwJuxOG_aW8haW2LH1xoc_5OTPvetUuSr_of3y2dj2vl43aqVoEdZVawyz2YmKVAiQ0j7sqQYpVRR9qa_G0laDo6T0lEeqkw-U78qkmx8br7Og4ZnsIa-wx_SFM9hvadwXFx_AfikfYt1SsgTrd5sx79l39x9ikU22pnNMByNeWZFs"/>
+</div>
+<div class="space-y-6">
+<div class="flex justify-between items-center border-b-2 border-on-background/10 pb-4">
+<span class="font-label uppercase text-sm font-bold opacity-60">Primary Goal</span>
+<span class="font-headline text-xl font-bold">근성장 및 피로회복</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-on-background text-surface p-4">
+<span class="font-label block text-xs uppercase opacity-60 mb-1">BCAA 2:1:1</span>
+<span class="font-headline text-2xl font-bold">5,000mg</span>
+</div>
+<div class="bg-surface-container-highest text-on-background p-4 border-2 border-on-background">
+<span class="font-label block text-xs uppercase opacity-60 mb-1">Glutamine</span>
+<span class="font-headline text-2xl font-bold">3,000mg</span>
+</div>
+</div>
+<div class="pt-6 flex justify-between items-center">
+<span class="font-headline text-3xl font-black">34,900원</span>
+<button class="bg-secondary text-on-secondary px-8 py-3 font-headline font-bold uppercase border-2 border-on-background hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[4px_4px_0px_0px_rgba(53,47,0,1)] transition-all">지금 구독하기</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Ingredient Deep Dive Grid -->
+<section class="py-24 bg-on-background">
+<div class="container mx-auto px-6">
+<div class="mb-16 text-center">
+<h2 class="font-headline text-5xl font-black text-surface-container-highest uppercase mb-4">성분 분석</h2>
+<p class="font-label text-surface-dim uppercase tracking-widest font-bold">Ingredient Deep Dive Matrix</p>
+</div>
+<div class="bg-surface-bright border-4 border-on-background overflow-hidden">
+<!-- Table Header -->
+<div class="grid grid-cols-4 bg-on-background text-surface-bright font-label text-xs uppercase font-bold tracking-tighter text-center py-4">
+<div class="text-left px-8">Analysis Matrix</div>
+<div>에너지 부스트 팩</div>
+<div>근육 회복 팩</div>
+<div>Recommended</div>
+</div>
+<!-- Row 1: Performance Matrix -->
+<div class="grid grid-cols-4 border-b-2 border-on-background hover:bg-surface-container-low transition-colors group">
+<div class="px-8 py-8 border-r-2 border-on-background bg-surface-container font-headline font-extrabold text-xl">Performance Matrix</div>
+<div class="flex items-center justify-center border-r-2 border-on-background">
+<span class="material-symbols-outlined text-4xl text-on-background" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex items-center justify-center border-r-2 border-on-background">
+<span class="material-symbols-outlined text-4xl text-on-background/20" data-icon="circle" style="font-variation-settings: 'FILL' 0;">circle</span>
+</div>
+<div class="flex items-center justify-center font-label font-bold text-secondary">PRE-WORKOUT</div>
+</div>
+<!-- Row 2: Recovery Specs -->
+<div class="grid grid-cols-4 border-b-2 border-on-background hover:bg-surface-container-low transition-colors">
+<div class="px-8 py-8 border-r-2 border-on-background bg-surface-container-low font-headline font-extrabold text-xl">Recovery Specs</div>
+<div class="flex items-center justify-center border-r-2 border-on-background">
+<span class="font-body font-bold">LOW IMPACT</span>
+</div>
+<div class="flex items-center justify-center border-r-2 border-on-background">
+<span class="material-symbols-outlined text-4xl text-on-background" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex items-center justify-center font-label font-bold text-secondary">POST-WORKOUT</div>
+</div>
+<!-- Row 3: Caffeine Content -->
+<div class="grid grid-cols-4 border-b-2 border-on-background hover:bg-surface-container-low transition-colors">
+<div class="px-8 py-8 border-r-2 border-on-background bg-surface-container font-headline font-extrabold text-xl">Caffeine Content</div>
+<div class="flex items-center justify-center border-r-2 border-on-background bg-surface-container-highest">
+<span class="font-headline font-black text-2xl">200mg</span>
+</div>
+<div class="flex items-center justify-center border-r-2 border-on-background">
+<span class="font-headline font-black text-2xl text-on-background/20">0mg</span>
+</div>
+<div class="flex items-center justify-center font-label font-bold text-secondary">AM ONLY</div>
+</div>
+<!-- Row 4: Taste Profile -->
+<div class="grid grid-cols-4 hover:bg-surface-container-low transition-colors">
+<div class="px-8 py-8 border-r-2 border-on-background bg-surface-container-low font-headline font-extrabold text-xl">Taste Profile</div>
+<div class="flex items-center justify-center border-r-2 border-on-background">
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<div class="flex items-center justify-center border-r-2 border-on-background">
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<div class="flex items-center justify-center font-label font-bold text-secondary">REFRESHING</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section: 추천 루틴 -->
+<section class="py-24 bg-surface-container-highest relative overflow-hidden">
+<div class="absolute -right-20 top-0 opacity-10 pointer-events-none">
+<span class="font-headline font-black text-[20rem] leading-none text-on-background">PUNCH</span>
+</div>
+<div class="container mx-auto px-6 relative z-10">
+<div class="max-w-4xl">
+<h2 class="font-headline text-6xl md:text-8xl font-black uppercase mb-12 leading-none">추천 루틴</h2>
+<div class="flex flex-col md:flex-row gap-8">
+<div class="flex-1 bg-surface-bright border-4 border-on-background p-10 sticker-tilt-left">
+<div class="bg-secondary text-on-secondary font-label p-2 w-fit mb-6 text-xs font-bold uppercase">The AM Power Stacker</div>
+<h3 class="font-headline text-3xl font-bold mb-4">새벽 훈련 루틴</h3>
+<p class="font-body text-lg mb-8">오전 6시 기상 직후 에너지 부스트 팩 1포. 운동 후 근육 회복 팩 1포로 하루를 시작하세요.</p>
+<a class="font-label text-on-background underline font-bold uppercase tracking-widest text-sm hover:text-secondary transition-colors" href="#">루틴 상세보기 →</a>
+</div>
+<div class="flex-1 bg-on-background text-surface-bright p-10 sticker-tilt-right">
+<div class="bg-surface-container-highest text-on-background font-label p-2 w-fit mb-6 text-xs font-bold uppercase">The PM Recovery Focus</div>
+<h3 class="font-headline text-3xl font-bold mb-4">퇴근 후 나이트 루틴</h3>
+<p class="font-body text-lg mb-8 text-surface-dim">카페인 없는 근육 회복 팩을 중심으로 취침 전 최적의 신체 컨디션을 만듭니다.</p>
+<a class="font-label text-surface-container-high underline font-bold uppercase tracking-widest text-sm hover:text-white transition-colors" href="#">루틴 상세보기 →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-8 bg-zinc-900 dark:bg-black border-t-8 border-[#f6de0b]">
+<div class="text-xl font-black text-[#f7e45d] font-['Epilogue'] uppercase">
+            PUNCH FUEL
+        </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-['Space_Grotesk'] font-bold uppercase text-xs tracking-widest text-zinc-400 hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Space_Grotesk'] font-bold uppercase text-xs tracking-widest text-zinc-400 hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="font-['Space_Grotesk'] font-bold uppercase text-xs tracking-widest text-zinc-400 hover:text-white transition-colors" href="#">Shipping</a>
+<a class="font-['Space_Grotesk'] font-bold uppercase text-xs tracking-widest text-zinc-400 hover:text-white transition-colors" href="#">Contact</a>
+<a class="font-['Space_Grotesk'] font-bold uppercase text-xs tracking-widest text-zinc-400 hover:text-white transition-colors" href="#">Wholesale</a>
+</div>
+<div class="font-['Space_Grotesk'] font-bold uppercase text-xs tracking-widest text-[#f7e45d]">
+            © 2024 PUNCH FUEL. KINETIC PERFORMANCE EDITORIAL.
+        </div>
+</footer>
+</body></html>

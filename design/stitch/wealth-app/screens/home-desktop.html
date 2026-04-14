@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#cad4ec",
+                        "surface-container": "#f6f4e7",
+                        "inverse-primary": "#d9dff5",
+                        "secondary-fixed": "#d9e3fb",
+                        "tertiary-fixed": "#f0f4f9",
+                        "surface-variant": "#eae9d7",
+                        "error": "#a64542",
+                        "secondary-container": "#d9e3fb",
+                        "on-tertiary-fixed": "#454a4e",
+                        "on-tertiary-fixed-variant": "#62676b",
+                        "on-tertiary-container": "#575c61",
+                        "on-secondary-fixed-variant": "#525c70",
+                        "on-primary-fixed": "#383f50",
+                        "primary-fixed": "#dce2f7",
+                        "primary-dim": "#4b5264",
+                        "primary": "#575e70",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#545b6d",
+                        "error-dim": "#4e0309",
+                        "on-surface-variant": "#656557",
+                        "on-background": "#38392c",
+                        "surface-container-high": "#f0eedf",
+                        "primary-fixed-dim": "#ced4e9",
+                        "on-primary-container": "#4b5263",
+                        "on-secondary-fixed": "#364053",
+                        "surface-container-highest": "#eae9d7",
+                        "background": "#fdffd8",
+                        "surface-dim": "#e4e4cf",
+                        "on-primary": "#f7f7ff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fdffd8",
+                        "inverse-surface": "#0e0e0a",
+                        "inverse-on-surface": "#9f9d96",
+                        "tertiary-fixed-dim": "#e2e6eb",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#f0f4f9",
+                        "secondary-dim": "#4f586d",
+                        "tertiary-dim": "#54595d",
+                        "primary-container": "#dce2f7",
+                        "error-container": "#fe8983",
+                        "surface-tint": "#575e70",
+                        "surface-container-low": "#fcf9ef",
+                        "on-error-container": "#752121",
+                        "surface-bright": "#fdffd8",
+                        "outline-variant": "#bbbaa9",
+                        "outline": "#818172",
+                        "on-surface": "#38392c",
+                        "tertiary": "#606569",
+                        "secondary": "#5b6579",
+                        "on-secondary-container": "#485266"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #fdffd8; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .mesh-gradient {
+            background: radial-gradient(at 0% 0%, #fcf9ef 0%, transparent 50%),
+                        radial-gradient(at 100% 0%, #dce2f7 0%, transparent 50%),
+                        radial-gradient(at 100% 100%, #fdffd8 0%, transparent 50%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="text-on-background mesh-gradient min-h-screen">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-[#fdffd8]/80 backdrop-blur-xl">
+<nav class="flex justify-between items-center w-full px-12 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-[#111827] font-headline">CURATOR</div>
+<div class="hidden md:flex items-center gap-8 font-['Manrope'] tracking-tight font-medium">
+<a class="text-[#111827] border-b-2 border-[#111827] pb-1 hover:text-[#111827] transition-colors duration-300" href="#">Portfolio</a>
+<a class="text-[#575e70] pb-1 hover:text-[#111827] transition-colors duration-300" href="#">Insights</a>
+<a class="text-[#575e70] pb-1 hover:text-[#111827] transition-colors duration-300" href="#">Treasury</a>
+<a class="text-[#575e70] pb-1 hover:text-[#111827] transition-colors duration-300" href="#">Advisory</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-primary hover:text-accent transition-colors">account_circle</button>
+<button class="bg-[#111827] text-[#f7f7ff] px-6 py-2 rounded-lg font-medium text-sm transition-all duration-400 opacity-90 hover:opacity-100">Start</button>
+</div>
+</nav>
+</header>
+<main class="max-w-screen-2xl mx-auto px-12 pt-12 pb-24">
+<!-- Hero Section -->
+<section class="mb-20">
+<div class="max-w-3xl">
+<h1 class="text-6xl font-extrabold tracking-tighter text-on-background font-headline mb-6 leading-tight">
+                    당신의 자산을 위한<br/>고요한 정돈.
+                </h1>
+<p class="text-xl text-on-surface-variant font-body leading-relaxed max-w-xl">
+                    복잡한 데이터 뒤의 본질을 봅니다. CURATOR는 단순한 숫자를 넘어 당신의 재무적 가치를 조각합니다.
+                </p>
+</div>
+</section>
+<!-- Bento Grid Dashboard -->
+<section class="grid grid-cols-12 gap-6 mb-32">
+<!-- Main KPI: Total Assets -->
+<div class="col-span-12 lg:col-span-7 bg-surface-container-lowest p-10 rounded-xl flex flex-col justify-between shadow-[0px_4px_20px_rgba(56,57,44,0.04)] min-h-[420px]">
+<div>
+<span class="text-label-md font-medium text-on-surface-variant uppercase tracking-widest mb-4 block">Total Assets</span>
+<h2 class="text-5xl font-bold font-headline text-on-background">342,500,000원</h2>
+</div>
+<div class="mt-8 flex-1 flex items-end">
+<div class="w-full h-48 bg-surface-container-low rounded-lg relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 bg-gradient-to-t from-primary to-transparent"></div>
+<!-- Mock Chart Representation -->
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 1000 200">
+<path d="M0,150 Q150,140 250,100 T450,80 T650,40 T850,60 T1000,20 L1000,200 L0,200 Z" fill="url(#chartGradient)" opacity="0.3"></path>
+<path d="M0,150 Q150,140 250,100 T450,80 T650,40 T850,60 T1000,20" fill="none" stroke="#575e70" stroke-width="3"></path>
+<defs>
+<lineargradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#575e70"></stop>
+<stop offset="100%" stop-color="transparent"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+</div>
+<!-- Goal Progress -->
+<div class="col-span-12 lg:col-span-5 bg-surface-container-low p-10 rounded-xl shadow-[0px_4px_20px_rgba(56,57,44,0.04)] flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-8">
+<span class="text-label-md font-medium text-on-surface-variant uppercase tracking-widest">Goal Progress</span>
+<span class="material-symbols-outlined text-primary">trending_up</span>
+</div>
+<div class="relative pt-1">
+<div class="flex mb-4 items-center justify-between">
+<div>
+<span class="text-3xl font-bold font-headline">78%</span>
+</div>
+<div class="text-right">
+<span class="text-sm font-semibold inline-block text-primary">목표 달성도</span>
+</div>
+</div>
+<div class="overflow-hidden h-2 mb-4 text-xs flex rounded-full bg-surface-container-highest">
+<div class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-accent-soft bg-[#111827]" style="width:78%"></div>
+</div>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">자산 형성 목표까지 약 7,500만원 남았습니다. 현재 속도를 유지할 경우 14개월 내 달성이 가능합니다.</p>
+</div>
+<!-- Portfolio Transparency -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-low p-10 rounded-xl shadow-[0px_4px_20px_rgba(56,57,44,0.04)]">
+<span class="text-label-md font-medium text-on-surface-variant uppercase tracking-widest mb-6 block">Transparency</span>
+<h3 class="text-2xl font-bold font-headline mb-4">포트폴리오 투명성</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<span class="text-on-surface-variant">국내 주식</span>
+<span class="font-medium">42.5%</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<span class="text-on-surface-variant">해외 주식</span>
+<span class="font-medium">35.0%</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<span class="text-on-surface-variant">채권 및 현금</span>
+<span class="font-medium">22.5%</span>
+</div>
+</div>
+</div>
+<!-- AI Goal Management -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest p-10 rounded-xl shadow-[0px_12px_40px_rgba(56,57,44,0.08)] relative overflow-hidden">
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-6">
+<span class="px-3 py-1 bg-primary-container text-on-primary-container text-xs rounded-full font-bold">AI SMART ADVISOR</span>
+</div>
+<h3 class="text-3xl font-bold font-headline mb-4">지능형 목표 관리</h3>
+<p class="text-on-surface-variant max-w-md leading-relaxed mb-8">시장의 변동성을 실시간으로 분석하여 당신의 투자 목표에 최적화된 리밸런싱 포인트를 제안합니다.</p>
+<button class="border border-outline text-on-background px-6 py-2 rounded-lg hover:bg-surface-container-high transition-colors">맞춤 보고서 확인</button>
+</div>
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary-container/20 rounded-full blur-3xl"></div>
+</div>
+</section>
+<!-- Capability Strip -->
+<section class="mb-32">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="space-y-4">
+<div class="w-12 h-12 bg-surface-container-high flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-primary">target</span>
+</div>
+<h4 class="text-xl font-bold font-headline">Precision Tracking</h4>
+<p class="text-on-surface-variant leading-relaxed">소수점 단위까지 정확한 자산 추적 시스템으로 한 치의 오차도 허용하지 않습니다.</p>
+</div>
+<div class="space-y-4">
+<div class="w-12 h-12 bg-surface-container-high flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-primary">shield</span>
+</div>
+<h4 class="text-xl font-bold font-headline">Institutional Security</h4>
+<p class="text-on-surface-variant leading-relaxed">기관 투자자급 보안 프로토콜을 적용하여 당신의 자산과 데이터를 철저히 보호합니다.</p>
+</div>
+<div class="space-y-4">
+<div class="w-12 h-12 bg-surface-container-high flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-primary">published_with_changes</span>
+</div>
+<h4 class="text-xl font-bold font-headline">Automated Rebalancing</h4>
+<p class="text-on-surface-variant leading-relaxed">설정된 전략에 따라 자동으로 포트폴리오를 조정하여 최적의 수익률을 유지합니다.</p>
+</div>
+</div>
+</section>
+<!-- Proof Section -->
+<section class="py-24 bg-surface-container-low/50 rounded-2xl text-center mb-32 border border-outline-variant/10">
+<h5 class="text-on-surface-variant font-medium tracking-widest uppercase mb-8">Trusted by 5,000+ High Net Worth Individuals</h5>
+<div class="flex flex-wrap justify-center items-center gap-16 opacity-40 grayscale">
+<div class="text-2xl font-bold font-headline tracking-tighter">GLOBAL CAPITAL</div>
+<div class="text-2xl font-bold font-headline tracking-tighter">HERITAGE TRUST</div>
+<div class="text-2xl font-bold font-headline tracking-tighter">SILK ROAD ASSETS</div>
+<div class="text-2xl font-bold font-headline tracking-tighter">NORDIC ALPHA</div>
+</div>
+</section>
+<!-- Conversion Block -->
+<section class="max-w-4xl mx-auto bg-[#111827] text-[#f7f7ff] p-16 rounded-xl relative overflow-hidden shadow-2xl">
+<div class="relative z-10 flex flex-col items-center text-center">
+<h2 class="text-4xl font-bold font-headline mb-4">가장 고요한 부의 관리.</h2>
+<p class="text-primary-fixed mb-10 text-lg opacity-80">지금 바로 시작하여 전문적인 자산 관리를 경험해보세요.</p>
+<div class="flex flex-col items-center gap-4">
+<button class="bg-[#fcf9ef] text-[#111827] px-10 py-4 rounded-lg font-bold text-lg hover:bg-white transition-all shadow-lg">무료 체험 시작하기</button>
+<p class="text-sm text-primary-fixed/60 mt-4">월 39,000원부터 (베이직 플랜 기준)</p>
+</div>
+</div>
+<!-- Decorative gradient element -->
+<div class="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_20%,#575e70_0%,transparent_50%)] opacity-30"></div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-[#fcf9ef] border-t border-[#eae9d7]/30">
+<div class="w-full py-20 px-12 grid grid-cols-1 md:grid-cols-2 items-end max-w-screen-2xl mx-auto">
+<div>
+<div class="text-xl font-bold text-[#111827] mb-6 font-headline">CURATOR</div>
+<p class="font-['Manrope'] text-sm tracking-wide text-[#575e70] max-w-xs">
+                    금융의 복잡함을 걷어내고 당신의 본질적인 자산 가치에 집중할 수 있도록 돕습니다.
+                </p>
+<p class="mt-12 font-['Manrope'] text-xs text-[#575e70] opacity-60">
+                    © 2024 Curator Wealth Management. All rights reserved.
+                </p>
+</div>
+<div class="flex flex-col md:items-end gap-6">
+<div class="flex flex-wrap gap-8 font-['Manrope'] text-sm tracking-wide text-[#575e70]">
+<a class="hover:text-[#111827] underline-offset-4 hover:underline transition-all duration-300" href="#">Privacy Policy</a>
+<a class="hover:text-[#111827] underline-offset-4 hover:underline transition-all duration-300" href="#">Terms of Service</a>
+<a class="hover:text-[#111827] underline-offset-4 hover:underline transition-all duration-300" href="#">Security</a>
+<a class="hover:text-[#111827] underline-offset-4 hover:underline transition-all duration-300" href="#">Regulatory Disclosure</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

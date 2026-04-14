@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#e0bfbd",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#5516be",
+                    "surface-container-highest": "#34343c",
+                    "surface-container": "#1f1f26",
+                    "secondary-container": "#571bc1",
+                    "on-surface": "#e4e1ec",
+                    "on-primary-container": "#6d0010",
+                    "surface-variant": "#34343c",
+                    "inverse-surface": "#e4e1ec",
+                    "on-tertiary-fixed-variant": "#44474a",
+                    "on-secondary-fixed": "#23005c",
+                    "on-background": "#e4e1ec",
+                    "on-tertiary-fixed": "#181c1f",
+                    "on-primary-fixed": "#410006",
+                    "tertiary-fixed": "#e0e3e6",
+                    "surface": "#13131a",
+                    "tertiary": "#c4c7ca",
+                    "outline-variant": "#584140",
+                    "surface-bright": "#393841",
+                    "inverse-primary": "#ae2f34",
+                    "primary-fixed-dim": "#ffb3b0",
+                    "tertiary-fixed-dim": "#c4c7ca",
+                    "inverse-on-surface": "#303038",
+                    "tertiary-container": "#989b9f",
+                    "primary-fixed": "#ffdad8",
+                    "primary": "#ffb3b0",
+                    "on-primary": "#68000f",
+                    "on-secondary-container": "#c4abff",
+                    "secondary-fixed-dim": "#d0bcff",
+                    "secondary-fixed": "#e9ddff",
+                    "surface-container-lowest": "#0e0e15",
+                    "surface-container-high": "#2a2931",
+                    "error": "#ffb4ab",
+                    "surface-container-low": "#1b1b22",
+                    "on-primary-fixed-variant": "#8c1520",
+                    "on-tertiary-container": "#303336",
+                    "on-error": "#690005",
+                    "on-tertiary": "#2d3134",
+                    "error-container": "#93000a",
+                    "background": "#13131a",
+                    "on-secondary": "#3c0091",
+                    "surface-tint": "#ffb3b0",
+                    "outline": "#a78a88",
+                    "surface-dim": "#13131a",
+                    "secondary": "#d0bcff",
+                    "primary-container": "#ff6b6b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Be Vietnam Pro"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scan-line-overlay {
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+        }
+        .hud-glass {
+            background: rgba(19, 19, 26, 0.84);
+            backdrop-filter: blur(12px);
+        }
+        .kinetic-mesh {
+            background-image: 
+                radial-gradient(circle at 2px 2px, rgba(255, 107, 107, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- Top Navigation Bar (Immutable JSON Source) -->
+<nav class="bg-[#13131a]/84 backdrop-blur-xl fixed top-0 w-full z-50 shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+<div class="flex justify-between items-center px-6 py-4 max-w-[1440px] mx-auto relative">
+<div class="text-xl font-black italic tracking-tighter text-[#ff6b6b] font-['Space_Grotesk'] uppercase">THE KINETIC RING</div>
+<div class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm font-bold">
+<a class="text-[#f5f7fb]/70 hover:text-[#ff6b6b] hover:drop-shadow-[0_0_8px_#ff6b6b] transition-all" href="#">TRAINING</a>
+<a class="text-[#f5f7fb]/70 hover:text-[#ff6b6b] hover:drop-shadow-[0_0_8px_#ff6b6b] transition-all" href="#">SCHEDULE</a>
+<a class="text-[#f5f7fb]/70 hover:text-[#ff6b6b] hover:drop-shadow-[0_0_8px_#ff6b6b] transition-all" href="#">TRAINERS</a>
+<a class="text-[#f5f7fb]/70 hover:text-[#ff6b6b] hover:drop-shadow-[0_0_8px_#ff6b6b] transition-all" href="#">MEMBERSHIP</a>
+</div>
+<div class="flex items-center gap-4 font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm font-bold">
+<button class="text-[#f5f7fb]/70 hover:text-[#ff6b6b] transition-all px-4 py-2">LOGIN</button>
+<button class="bg-[#ff6b6b] text-[#6d0010] px-6 py-2 rounded-lg active:scale-95 duration-150 shadow-[0_0_15px_rgba(255,107,107,0.3)]">JOIN_NOW</button>
+</div>
+<div class="bg-gradient-to-r from-transparent via-[#ff6b6b]/20 to-transparent h-[1px] w-full absolute bottom-0 left-0"></div>
+</div>
+</nav>
+<!-- Hero / Booking Section -->
+<main class="relative pt-24 min-h-screen flex flex-col items-center kinetic-mesh overflow-hidden">
+<!-- Background Imagery -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-30 grayscale contrast-125" data-alt="cinematic interior of a high-end boxing gym at night with deep shadows, neon red atmospheric lighting, and rows of heavy bags" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvD2UIKaHCI0ZafhqF_d0QTrsK7-yPoLOv0bsmPgKA62UBw1ha0OxpGru00-VE3Qt328NELgunAQfx8TpPH-tyW2qxE-UVi2Q3GWkvqbTAZnuVBCx0nlno_QHMpvPxkzo-E4n7P7DD_njJzp7GfTJjsnP9FmC_RM6fotKXRoPz1UzzOx_Pm7Iol2k79zB-gEjxOnAfPvGjvGsCGl7-HwKDcitZrkN0UpCZs49qn7kBKZE-vO2bzEMFjqMwvwV6F_gk6tODKCfNAQI"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+<div class="scan-line-overlay absolute inset-0"></div>
+</div>
+<section class="relative z-10 w-full max-w-7xl px-6 py-12 flex flex-col lg:grid lg:grid-cols-12 gap-8 items-start">
+<!-- Left Side: Technical Messaging -->
+<div class="lg:col-span-5 flex flex-col space-y-6">
+<div class="flex items-center gap-3">
+<span class="bg-primary/20 text-primary border border-primary/30 px-2 py-1 text-[10px] font-label font-bold tracking-[0.2em] uppercase">SYSTEM_VER_0.4</span>
+<span class="text-on-surface-variant font-label text-[10px] tracking-widest opacity-60">LAT: 37.5665 / LONG: 126.9780</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-black italic tracking-tighter leading-none text-on-surface font-headline uppercase">
+                    JOIN THE <br/><span class="text-primary drop-shadow-[0_0_12px_rgba(255,179,176,0.4)]">KINETIC RING</span>
+</h1>
+<p class="text-on-surface-variant max-w-md text-lg leading-relaxed font-body">
+                    단순한 체육관이 아닙니다. 당신의 한계를 데이터화하고, 기술적 정교함으로 실전 감각을 완성하는 고성능 트레이닝 기지입니다.
+                </p>
+<div class="pt-8 grid grid-cols-2 gap-4">
+<div class="border-l border-primary/40 pl-4 py-2">
+<span class="block font-label text-[10px] text-primary tracking-widest uppercase">INTENSITY_STATUS</span>
+<span class="text-xl font-bold font-headline text-on-surface uppercase">CRITICAL_LEVEL</span>
+</div>
+<div class="border-l border-outline/40 pl-4 py-2">
+<span class="block font-label text-[10px] text-on-surface-variant tracking-widest uppercase">OPERATIONAL_HOURS</span>
+<span class="text-xl font-bold font-headline text-on-surface">06:00 - 23:00</span>
+</div>
+</div>
+</div>
+<!-- Right Side: The Master HUD Card -->
+<div class="lg:col-span-7 w-full">
+<div class="hud-glass border border-outline-variant/15 p-1 relative overflow-hidden group shadow-[0_20px_40px_rgba(0,0,0,0.6)]">
+<div class="absolute top-0 right-0 p-3">
+<span class="text-[10px] font-label text-primary/40 tracking-tighter uppercase">UNIT_04_BOOKING_CONSOLE</span>
+</div>
+<div class="p-8 space-y-8">
+<div class="flex items-center gap-4 pb-6 border-b border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-3xl">radar</span>
+<div>
+<h3 class="font-headline font-bold text-on-surface tracking-wide uppercase">SECURE_BOOKING</h3>
+<p class="text-on-surface-variant text-xs opacity-60">리얼타임 예약 시스템 활성화됨</p>
+</div>
+</div>
+<!-- Session Selection -->
+<div class="space-y-4">
+<span class="font-label text-[10px] text-primary tracking-widest uppercase">SESSION_TYPES</span>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<button class="flex items-center justify-between p-4 bg-surface-container-low border border-outline-variant/20 hover:border-primary/50 transition-all group/btn">
+<div class="text-left">
+<div class="text-xs font-label text-on-surface-variant/60 uppercase">TRIAL_ROUND</div>
+<div class="font-bold text-on-surface font-headline">무료 체험 세션</div>
+</div>
+<span class="material-symbols-outlined text-primary group-hover/btn:scale-125 transition-transform">bolt</span>
+</button>
+<button class="flex items-center justify-between p-4 bg-surface-container border border-primary/60 shadow-[inset_0_0_10px_rgba(255,107,107,0.1)] transition-all">
+<div class="text-left">
+<div class="text-xs font-label text-primary uppercase">FULL_ACCESS</div>
+<div class="font-bold text-on-surface font-headline">정규 멤버십 가입</div>
+</div>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+</div>
+</div>
+<!-- Mini Schedule Matrix -->
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<span class="font-label text-[10px] text-primary tracking-widest uppercase">TRIAL_SCHEDULE</span>
+<span class="text-[10px] font-label text-on-surface-variant opacity-40 uppercase">UTC+9 / SEOUL</span>
+</div>
+<div class="grid grid-cols-4 md:grid-cols-6 gap-2">
+<button class="bg-surface-container-lowest border border-outline-variant/10 py-3 text-xs font-label text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container transition-colors">08:00</button>
+<button class="bg-surface-container-lowest border border-outline-variant/10 py-3 text-xs font-label text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container transition-colors">10:30</button>
+<button class="bg-surface-container-lowest border border-outline-variant/10 py-3 text-xs font-label text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container transition-colors">13:00</button>
+<button class="bg-surface-container border border-primary/40 py-3 text-xs font-label text-primary">15:00</button>
+<button class="bg-surface-container-lowest border border-outline-variant/10 py-3 text-xs font-label text-on-surface-variant opacity-30 cursor-not-allowed">17:30</button>
+<button class="bg-surface-container-lowest border border-outline-variant/10 py-3 text-xs font-label text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container transition-colors">20:00</button>
+</div>
+</div>
+<!-- CTA -->
+<button class="w-full bg-primary py-5 rounded-lg flex items-center justify-center gap-3 group relative overflow-hidden active:scale-95 transition-transform">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+<span class="text-on-primary font-headline font-black tracking-widest text-lg uppercase">JOIN_THE_RING</span>
+<span class="material-symbols-outlined text-on-primary">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Membership Ranks Section -->
+<section class="bg-surface relative py-24 border-t border-outline-variant/10">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col items-center mb-16 space-y-4">
+<span class="font-label text-primary tracking-[0.5em] text-xs uppercase">RANKING_STRUCTURE</span>
+<h2 class="text-4xl md:text-5xl font-black italic tracking-tighter text-on-surface font-headline uppercase">입단 옵션 (MEMBERSHIP)</h2>
+<div class="w-24 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Rank: STANDARD -->
+<div class="bg-surface-container-low border border-outline-variant/10 p-8 flex flex-col justify-between hover:border-outline-variant transition-colors group">
+<div class="space-y-6">
+<div class="flex justify-between items-start">
+<div>
+<div class="text-[10px] font-label text-on-surface-variant/60 uppercase tracking-widest">RANK_01</div>
+<h3 class="text-2xl font-black font-headline text-on-surface tracking-tight uppercase">STANDARD</h3>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40">signal_cellular_1_bar</span>
+</div>
+<div class="text-3xl font-headline font-bold text-primary italic">월 39,000원</div>
+<ul class="space-y-4 font-body text-sm text-on-surface-variant">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-[16px]">check</span> 주 2회 트레이닝</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-[16px]">check</span> 기본 장비 대여</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-[16px]">check</span> 기초 테크닉 클래스</li>
+</ul>
+</div>
+<button class="mt-12 w-full py-4 border border-outline-variant/30 font-label font-bold text-xs tracking-widest uppercase hover:bg-surface-container-highest transition-colors">SELECT_RANK</button>
+</div>
+<!-- Rank: ELITE (Highlighted) -->
+<div class="bg-surface-container border border-primary/30 p-8 flex flex-col justify-between relative shadow-[0_0_30px_rgba(255,107,107,0.1)] group">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary px-4 py-1">
+<span class="text-[10px] font-black text-on-primary font-label uppercase tracking-widest italic">MOST_DEPLOYED</span>
+</div>
+<div class="space-y-6">
+<div class="flex justify-between items-start">
+<div>
+<div class="text-[10px] font-label text-primary uppercase tracking-widest">RANK_02</div>
+<h3 class="text-2xl font-black font-headline text-on-surface tracking-tight uppercase">ELITE</h3>
+</div>
+<span class="material-symbols-outlined text-primary">signal_cellular_3_bar</span>
+</div>
+<div class="text-3xl font-headline font-bold text-primary italic">월 79,000원</div>
+<ul class="space-y-4 font-body text-sm text-on-surface-variant">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-[16px]">check</span> 무제한 세션 이용</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-[16px]">check</span> 고급 장비 풀세트</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-[16px]">check</span> 실전 스파링 클래스</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-[16px]">check</span> 데이터 피드백 분석</li>
+</ul>
+</div>
+<button class="mt-12 w-full py-4 bg-primary font-label font-black text-xs tracking-widest text-on-primary uppercase hover:brightness-110 transition-all">SELECT_RANK</button>
+</div>
+<!-- Rank: PRO -->
+<div class="bg-surface-container-low border border-outline-variant/10 p-8 flex flex-col justify-between hover:border-outline-variant transition-colors group">
+<div class="space-y-6">
+<div class="flex justify-between items-start">
+<div>
+<div class="text-[10px] font-label text-secondary uppercase tracking-widest">RANK_03</div>
+<h3 class="text-2xl font-black font-headline text-on-surface tracking-tight uppercase">PRO RANKS</h3>
+</div>
+<span class="material-symbols-outlined text-secondary">signal_cellular_4_bar</span>
+</div>
+<div class="text-3xl font-headline font-bold text-secondary italic">월 159,000원</div>
+<ul class="space-y-4 font-body text-sm text-on-surface-variant">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-[16px]">check</span> 1:1 개인 코칭 월 4회</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-[16px]">check</span> 프로 대회 준비 서포트</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-[16px]">check</span> 전용 락커 및 프로틴 바</li>
+</ul>
+</div>
+<button class="mt-12 w-full py-4 border border-secondary/30 text-secondary font-label font-bold text-xs tracking-widest uppercase hover:bg-secondary/10 transition-colors">SELECT_RANK</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Registration Form Section -->
+<section class="py-24 bg-surface-container-lowest kinetic-mesh relative">
+<div class="max-w-4xl mx-auto px-6">
+<div class="hud-glass border border-outline-variant/15 p-8 md:p-12">
+<div class="mb-12">
+<h2 class="text-3xl font-black italic font-headline text-on-surface uppercase mb-2">OPERATIONAL_DATA_ENTRY</h2>
+<p class="text-on-surface-variant text-sm opacity-60">기본 정보를 입력하여 입단 절차를 시작하십시오.</p>
+</div>
+<form class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="block font-label text-[10px] text-primary tracking-widest uppercase ml-1">FIGHTER_NAME (이름)</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/30 p-4 font-body text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all backdrop-blur-md" placeholder="EX. KIM KINETIC" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label text-[10px] text-primary tracking-widest uppercase ml-1">CONTACT (연락처)</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/30 p-4 font-body text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all backdrop-blur-md" placeholder="010-0000-0000" type="tel"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block font-label text-[10px] text-primary tracking-widest uppercase ml-1">PREFERRED_UNIT (지점 선택)</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant/30 p-4 font-body text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all appearance-none backdrop-blur-md">
+<option>강남 UNIT (HQ)</option>
+<option>성수 UNIT</option>
+<option>한남 UNIT</option>
+<option>홍대 UNIT</option>
+</select>
+</div>
+<div class="p-4 bg-primary/5 border border-primary/20 flex gap-4">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<p class="text-xs text-on-surface-variant/80 font-body leading-relaxed">
+<span class="text-primary font-bold">DATA_READOUT:</span> 개인정보 수집 및 이용에 동의하며, 훈련 중 발생하는 기술적 데이터는 시스템 성능 개선을 위해 익명으로 기록될 수 있음을 이해합니다.
+                        </p>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-5 font-headline font-black text-xl tracking-tighter uppercase italic hover:scale-[1.01] active:scale-95 transition-all shadow-[0_0_20px_rgba(255,107,107,0.3)]" type="submit">
+                        INITIATE_DEPLOYMENT
+                    </button>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer (Immutable JSON Source) -->
+<footer class="bg-[#13131a] w-full border-t border-[#f5f7fb]/5">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 gap-6 w-full max-w-[1440px] mx-auto">
+<div class="flex flex-col gap-2 items-center md:items-start">
+<div class="text-[#ff6b6b] font-bold text-lg font-headline">UPPERCUT CLUB</div>
+<div class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase font-medium text-[#f5f7fb]/40">
+                    SYSTEM_VER_0.4 // © 2024 KINETIC RING BOXING
+                </div>
+</div>
+<div class="flex gap-8 font-['Space_Grotesk'] text-[10px] tracking-widest uppercase font-medium">
+<a class="text-[#f5f7fb]/40 hover:text-[#8b5cf6] transition-colors" href="#">TERMS_OF_SERVICE</a>
+<a class="text-[#f5f7fb]/40 hover:text-[#8b5cf6] transition-colors" href="#">PRIVACY_ENCRYPTION</a>
+<a class="text-[#f5f7fb]/40 hover:text-[#8b5cf6] transition-colors" href="#">DATA_READOUT</a>
+</div>
+<div class="flex gap-4">
+<div class="w-8 h-8 rounded-full border border-outline-variant/20 flex items-center justify-center group cursor-pointer hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant/40 group-hover:text-primary">language</span>
+</div>
+<div class="w-8 h-8 rounded-full border border-outline-variant/20 flex items-center justify-center group cursor-pointer hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant/40 group-hover:text-primary">terminal</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

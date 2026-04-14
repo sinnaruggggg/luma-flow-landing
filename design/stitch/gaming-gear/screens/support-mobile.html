@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VOID_ARC//CMD - SUPPORT CENTER</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#ffba3f",
+                    "surface": "#0b1421",
+                    "on-primary-container": "#00596e",
+                    "inverse-primary": "#00677e",
+                    "tertiary": "#ffdcaa",
+                    "surface-container": "#17202e",
+                    "secondary": "#fface8",
+                    "on-background": "#dae3f6",
+                    "primary": "#b1eaff",
+                    "outline": "#869398",
+                    "secondary-fixed-dim": "#fface8",
+                    "on-secondary-fixed": "#3a0033",
+                    "on-primary": "#003543",
+                    "surface-container-highest": "#2c3544",
+                    "surface-container-high": "#222a38",
+                    "primary-container": "#39d5ff",
+                    "on-error-container": "#ffdad6",
+                    "error": "#ffb4ab",
+                    "outline-variant": "#3c494e",
+                    "tertiary-fixed": "#ffdeae",
+                    "on-secondary-container": "#fface8",
+                    "on-tertiary": "#432c00",
+                    "surface-variant": "#2c3544",
+                    "on-primary-fixed": "#001f28",
+                    "inverse-surface": "#dae3f6",
+                    "on-surface": "#dae3f6",
+                    "on-surface-variant": "#bbc9ce",
+                    "on-error": "#690005",
+                    "surface-container-low": "#131c29",
+                    "secondary-fixed": "#ffd7f0",
+                    "surface-tint": "#45d6ff",
+                    "on-secondary": "#5e0053",
+                    "on-primary-fixed-variant": "#004e60",
+                    "on-tertiary-container": "#6e4b00",
+                    "primary-fixed": "#b5ebff",
+                    "surface-container-lowest": "#060e1b",
+                    "on-tertiary-fixed-variant": "#604100",
+                    "on-secondary-fixed-variant": "#840076",
+                    "inverse-on-surface": "#28313f",
+                    "error-container": "#93000a",
+                    "background": "#0b1421",
+                    "surface-dim": "#0b1421",
+                    "secondary-container": "#980388",
+                    "on-tertiary-fixed": "#281800",
+                    "tertiary-container": "#ffb837",
+                    "surface-bright": "#313a48",
+                    "primary-fixed-dim": "#45d6ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Manrope"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        background-color: #07101d; /* Explicit override for the core deep navy background */
+        font-family: 'Manrope', sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .text-glow {
+        text-shadow: 0 0 10px rgba(57, 213, 255, 0.5);
+      }
+      .border-glow {
+        box-shadow: inset 0 0 15px rgba(57, 213, 255, 0.1);
+      }
+      .asymmetric-cut {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center px-6 h-16 bg-[#0b1421] backdrop-blur-md bg-opacity-80 border-b border-[#39d5ff]/10 shadow-[0_4px_20px_rgba(11,20,33,0.5)]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#39d5ff]">terminal</span>
+<h1 class="font-['Space_Grotesk'] tracking-[0.2em] uppercase text-xl font-bold text-[#39d5ff] drop-shadow-[0_0_8px_rgba(57,213,255,0.6)]">VOID_ARC//CMD</h1>
+</div>
+<div class="ml-auto md:flex hidden gap-6 font-['Space_Grotesk'] text-sm tracking-widest">
+<a class="text-slate-400 hover:text-[#39d5ff] transition-colors" href="#">ARSENAL</a>
+<a class="text-slate-400 hover:text-[#39d5ff] transition-colors" href="#">LOADOUT</a>
+<a class="text-[#39d5ff]" href="#">INTEL</a>
+<a class="text-slate-400 hover:text-[#39d5ff] transition-colors" href="#">PROFILE</a>
+</div>
+</header>
+<main class="pt-20 pb-32 px-4 max-w-4xl mx-auto space-y-12">
+<!-- Hero Section: System Protocol -->
+<section class="relative overflow-hidden bg-surface-container rounded-xl p-6 border-glow">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<div class="relative z-10">
+<span class="font-['Space_Grotesk'] text-xs text-[#ff6fe4] tracking-[0.3em] uppercase block mb-2">Protocol 7-Delta</span>
+<h2 class="font-['Space_Grotesk'] text-3xl font-bold leading-tight mb-6">SYSTEM_PROTOCOL &amp;<br/><span class="text-[#39d5ff]">SUPPORT</span></h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-4 rounded-lg border border-[#39d5ff]/10">
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2 h-2 rounded-full bg-[#39d5ff] animate-pulse"></span>
+<span class="font-['Space_Grotesk'] text-[10px] text-[#39d5ff] uppercase tracking-widest">Status</span>
+</div>
+<p class="text-lg font-bold font-['Space_Grotesk']">OPTIMAL</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg border border-[#39d5ff]/10">
+<span class="font-['Space_Grotesk'] text-[10px] text-slate-500 uppercase tracking-widest block mb-1">Latency</span>
+<p class="text-lg font-bold font-['Space_Grotesk']">0.003ms</p>
+</div>
+<div class="col-span-2 bg-surface-container-low p-4 rounded-lg border border-[#39d5ff]/10 flex justify-between items-center">
+<div>
+<span class="font-['Space_Grotesk'] text-[10px] text-slate-500 uppercase tracking-widest block mb-1">Encryption Layer</span>
+<p class="text-sm font-bold font-['Space_Grotesk']">AES-256//VOID_GHOST</p>
+</div>
+<span class="material-symbols-outlined text-[#39d5ff]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Actions -->
+<section class="space-y-4">
+<h3 class="font-['Space_Grotesk'] text-xs text-slate-500 tracking-[0.4em] uppercase px-2">Quick_Operations</h3>
+<div class="grid grid-cols-1 gap-3">
+<button class="asymmetric-cut group flex items-center justify-between p-5 bg-primary-container text-on-primary-container font-bold transition-all active:scale-95">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined">system_update</span>
+<span class="font-['Space_Grotesk'] tracking-wider">FW UPDATE</span>
+</div>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex flex-col items-center justify-center py-6 bg-surface-container border border-[#39d5ff]/20 hover:bg-[#39d5ff]/5 transition-colors">
+<span class="material-symbols-outlined text-[#39d5ff] mb-2">memory</span>
+<span class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase">Driver Hub</span>
+</button>
+<button class="flex flex-col items-center justify-center py-6 bg-surface-container border border-[#39d5ff]/20 hover:bg-[#39d5ff]/5 transition-colors">
+<span class="material-symbols-outlined text-[#39d5ff] mb-2">app_registration</span>
+<span class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase">Warranty Reg</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Technical Documentation -->
+<section class="space-y-4">
+<h3 class="font-['Space_Grotesk'] text-xs text-slate-500 tracking-[0.4em] uppercase px-2">Tech_Archives</h3>
+<div class="space-y-2">
+<div class="bg-surface-container-low p-4 rounded-lg flex items-center gap-4 border-l-2 border-[#39d5ff]">
+<img class="w-12 h-12 rounded bg-surface-container-highest p-2" data-alt="Technical line art icon of a high-performance gaming mouse with neon cyan accents and sleek geometric lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtw3S9ibVZsQA49J2bRVI3Fg3_AoNqr2gl6EyooUzTgMn0iXPVQCsah5ZI3MorNV-Zz4zWjDzkvxSyV5fIlIkNlgykrnH6eTaU2sJyj_s8GLq2zJ-cPpSjxE1U6UbhoObR44j8U2iJ9jwbWmseut1pdgnvHgmODATPCkQlkrcdoJ5N6GzmsJgRFOZ7gHc2oOwNdjAcc35-oQHNzP4o4Np_LI2slarbcTVUs1aFX5KKngVeFqrAuazWM-vuBrVxDl_vma1A-rrfPTjs"/>
+<div class="flex-grow">
+<h4 class="font-['Space_Grotesk'] font-bold text-sm">ARC-01 MOUSE</h4>
+<p class="text-[10px] text-slate-500 font-['Inter'] uppercase tracking-tight">MANUAL_V3.2 // LAST UPDATED: 24.11.02</p>
+</div>
+<span class="material-symbols-outlined text-slate-500">download</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg flex items-center gap-4 border-l-2 border-[#ff6fe4]">
+<img class="w-12 h-12 rounded bg-surface-container-highest p-2" data-alt="Technical schematic icon of a mechanical keyboard with glowing violet backlight and transparent keycap details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTGtzVupxt1j22CjlDbBlg-EgVyNlNkXNWzt6AhZYtGHKhR_bG9wkSjAPAtDRI6MWdyefODLl03LlGhDQsCs4V7HubBVEykaxgw1iZGbbYbm4nz47B-YOeAl8nLLUwyszDVFmjims1FWPk_K7Htoyh3lKU1TWEYt70imbcqLp1I7QW3IXShNoHhAjmaDhG2CiMpW0TIM-inXO7mJs8WTGbKToRsOoPr4Jg-LyEtzBRCXcpnCZbYaefaJ_ija9ZpoEFcQN67G8yFfb_"/>
+<div class="flex-grow">
+<h4 class="font-['Space_Grotesk'] font-bold text-sm">VOID-K KEYBOARD</h4>
+<p class="text-[10px] text-slate-500 font-['Inter'] uppercase tracking-tight">MANUAL_V1.9 // LAST UPDATED: 24.10.15</p>
+</div>
+<span class="material-symbols-outlined text-slate-500">download</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg flex items-center gap-4 border-l-2 border-slate-700">
+<div class="w-12 h-12 rounded bg-surface-container-highest p-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">headphones</span>
+</div>
+<div class="flex-grow">
+<h4 class="font-['Space_Grotesk'] font-bold text-sm">SONIC_VOID PRO</h4>
+<p class="text-[10px] text-slate-500 font-['Inter'] uppercase tracking-tight">MANUAL_V2.0 // LAST UPDATED: 24.11.08</p>
+</div>
+<span class="material-symbols-outlined text-slate-500">download</span>
+</div>
+</div>
+</section>
+<!-- FAQ: Frequent Protocols -->
+<section class="space-y-4">
+<h3 class="font-['Space_Grotesk'] text-xs text-slate-500 tracking-[0.4em] uppercase px-2">Frequent_Protocols</h3>
+<div class="divide-y divide-[#39d5ff]/10 bg-surface-container rounded-xl overflow-hidden">
+<div class="p-4">
+<div class="flex items-center justify-between">
+<span class="text-xs font-['Inter'] text-[#39d5ff] font-bold">01_CONNECTION_LOSS</span>
+<span class="material-symbols-outlined text-slate-500 text-sm">expand_more</span>
+</div>
+<p class="mt-3 text-xs text-slate-400 leading-relaxed font-['Inter']">연결 끊김 현상이 발생할 경우, 최신 드라이버가 설치되어 있는지 확인하고 USB 동글의 위치를 조정하십시오. 전파 간섭을 최소화하기 위해 라우터와의 거리를 2m 이상 유지하는 것을 권장합니다.</p>
+</div>
+<div class="p-4 flex items-center justify-between opacity-70">
+<span class="text-xs font-['Inter'] text-slate-300">02_RGB_SYNC_FAILURE</span>
+<span class="material-symbols-outlined text-slate-500 text-sm">expand_more</span>
+</div>
+<div class="p-4 flex items-center justify-between opacity-70">
+<span class="text-xs font-['Inter'] text-slate-300">03_WARRANTY_TERMS</span>
+<span class="material-symbols-outlined text-slate-500 text-sm">expand_more</span>
+</div>
+</div>
+</section>
+<!-- Direct Command: CTA -->
+<section class="pt-8">
+<div class="bg-[#0b1421] border border-[#39d5ff]/30 p-8 rounded-xl text-center space-y-6 relative">
+<div class="absolute inset-0 bg-[#39d5ff]/5 blur-3xl rounded-full"></div>
+<div class="relative z-10 space-y-4">
+<div class="inline-flex items-center gap-2 bg-[#39d5ff]/10 px-3 py-1 rounded-full border border-[#39d5ff]/20">
+<span class="w-1.5 h-1.5 bg-[#39d5ff] rounded-full"></span>
+<span class="text-[10px] font-['Space_Grotesk'] text-[#39d5ff] tracking-widest">ENCRYPTED LINE OPEN</span>
+</div>
+<h4 class="font-['Space_Grotesk'] text-xl font-bold">궁금한 점이 해결되지 않았나요?</h4>
+<p class="text-xs text-slate-400 font-['Inter']">VOID ARC 전담 엔지니어가 실시간으로 기술 지원을 대기 중입니다.</p>
+<button class="w-full bg-surface-container-highest border border-[#39d5ff]/50 py-4 font-['Space_Grotesk'] tracking-[0.2em] font-bold text-[#39d5ff] hover:bg-[#39d5ff] hover:text-[#0b1421] transition-all group active:scale-95">
+<span class="mr-2">_</span>INITIALIZE COMM<span class="animate-pulse ml-1 opacity-50">|</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Footer Info -->
+<footer class="pt-12 pb-8 text-center space-y-4">
+<div class="flex justify-center gap-6 text-[10px] font-['Space_Grotesk'] text-slate-500 tracking-widest">
+<a class="hover:text-primary transition-colors" href="#">LEGAL</a>
+<a class="hover:text-primary transition-colors" href="#">PRIVACY</a>
+<a class="hover:text-primary transition-colors" href="#">SLA_STATUS</a>
+</div>
+<p class="text-[10px] text-slate-700 font-['Inter'] uppercase tracking-widest">© 2024 VOID_ARC_SYSTEMS. ALL RIGHTS RESERVED.</p>
+</footer>
+</main>
+<!-- Mobile Sticky Action -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 w-[90%] z-40 md:hidden">
+<button class="w-full bg-[#0b1421]/80 backdrop-blur-md border border-[#ff6fe4]/40 py-3 rounded-full flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(255,111,228,0.15)] active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[#ff6fe4] text-xl">build_circle</span>
+<span class="font-['Space_Grotesk'] text-xs font-bold tracking-[0.2em] text-[#ff6fe4]">VIEW SPARE PARTS</span>
+</button>
+</div>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 h-20 pb-safe bg-[#0b1421]/90 backdrop-blur-xl border-t border-[#39d5ff]/20 shadow-[0_-8px_32px_rgba(57,213,255,0.05)]">
+<button class="flex flex-col items-center justify-center text-slate-500 opacity-60 hover:text-[#39d5ff] hover:opacity-100 transition-all active:translate-y-[-2px]">
+<span class="material-symbols-outlined mb-1">grid_view</span>
+<span class="font-['Manrope'] text-[10px] font-semibold tracking-widest uppercase">Arsenal</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-500 opacity-60 hover:text-[#39d5ff] hover:opacity-100 transition-all active:translate-y-[-2px]">
+<span class="material-symbols-outlined mb-1">shopping_cart</span>
+<span class="font-['Manrope'] text-[10px] font-semibold tracking-widest uppercase">Loadout</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#39d5ff] drop-shadow-[0_0_10px_rgba(57,213,255,0.8)] scale-110 active:translate-y-[-2px]">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+<span class="font-['Manrope'] text-[10px] font-semibold tracking-widest uppercase">Intel</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-500 opacity-60 hover:text-[#39d5ff] hover:opacity-100 transition-all active:translate-y-[-2px]">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-['Manrope'] text-[10px] font-semibold tracking-widest uppercase">Profile</span>
+</button>
+</nav>
+</body></html>

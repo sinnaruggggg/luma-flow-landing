@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,700;0,800;0,900;1,900&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#190c2e",
+                    "inverse-surface": "#ecdcff",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "on-error": "#690005",
+                    "outline-variant": "#54424b",
+                    "primary": "#e9c339",
+                    "on-secondary-fixed-variant": "#841065",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "secondary-container": "#871368",
+                    "primary-fixed": "#ffe07e",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-surface-variant": "#d9c0cb",
+                    "surface-container-lowest": "#140629",
+                    "on-tertiary": "#2f3131",
+                    "surface": "#190c2e",
+                    "surface-dim": "#190c2e",
+                    "error-container": "#93000a",
+                    "tertiary-container": "#a9aaaa",
+                    "on-primary-container": "#4c3d00",
+                    "primary-container": "#caa71a",
+                    "surface-bright": "#403356",
+                    "on-tertiary-container": "#3d3f3f",
+                    "surface-container-high": "#312346",
+                    "tertiary": "#c6c6c7",
+                    "on-primary-fixed-variant": "#564500",
+                    "on-primary-fixed": "#231b00",
+                    "secondary": "#ffaedc",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-highest": "#3c2e52",
+                    "surface-tint": "#e9c339",
+                    "on-surface": "#ecdcff",
+                    "on-primary": "#3b2f00",
+                    "secondary-fixed-dim": "#ffaedc",
+                    "surface-container": "#26193b",
+                    "on-secondary-fixed": "#3c002c",
+                    "inverse-on-surface": "#372a4d",
+                    "primary-fixed-dim": "#e9c339",
+                    "on-background": "#ecdcff",
+                    "inverse-primary": "#725c00",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "surface-container-low": "#221537",
+                    "secondary-fixed": "#ffd8eb",
+                    "on-secondary-container": "#ff97d5",
+                    "on-secondary": "#600049",
+                    "surface-variant": "#3c2e52",
+                    "outline": "#a18b95"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Epilogue"],
+                    "body": ["Manrope"],
+                    "label": ["Epilogue"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; background-color: #190c2e; color: #ecdcff; overflow-x: hidden; }
+        .epilogue { font-family: 'Epilogue', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-purple-950/60 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-yellow-400">menu</span>
+</div>
+<div class="font-['Epilogue'] font-black italic tracking-tighter text-2xl font-black italic text-yellow-400 uppercase">MELT POP</div>
+<div class="flex items-center relative">
+<span class="material-symbols-outlined text-yellow-400">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-on-secondary text-[10px] font-bold px-1 rounded-full">3</span>
+</div>
+</header>
+<main class="pt-0">
+<!-- Hero Section: Poster Style -->
+<section class="relative min-h-screen w-full flex flex-col justify-end overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Beauty Campaign" class="w-full h-full object-cover" data-alt="High-gloss campaign image of a stunning beauty model holding a neon pink cosmetic kit with dramatic studio lighting and purple background tint" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqHc9uYmhct_w9Nm3YFq6H1oWvLAKOV_f1WWC45WD4VkTtk71KwRI_Yt0I2CUTjHpxQ64WndRO2fmfGmY8JXmJ2UDwzN9CbO9x_K0X6pb1q4p05TABl7R3HlfWVGi9wCHQIhiE5iwRFV-B7JYF1UUSWGmyQYZz7tv9_bK4dDjnAMWsOfclnxyv83oAT1kvYKwCUaZmovUrxb16VevzbkgadkSRwtvUGeceMj0p90_ryf0Q3Ro9xYAQqnirbyTEUA19rx2QJoafqfeH"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<!-- Kinetic Layering Content -->
+<div class="relative z-10 px-6 pb-28">
+<!-- Overlapping Typography -->
+<div class="relative mb-6">
+<span class="inline-block bg-secondary text-on-secondary epilogue font-black px-3 py-1 -rotate-3 text-sm mb-4">FLASH MELT 2024</span>
+<h1 class="epilogue font-black italic text-8xl leading-[0.8] tracking-tighter text-primary drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]">
+                        29,900<span class="text-4xl align-top">원</span>
+</h1>
+</div>
+<!-- Floating Product Card -->
+<div class="bg-surface-container-high/80 backdrop-blur-lg border-l-4 border-primary p-5 flex justify-between items-center shadow-2xl">
+<div>
+<p class="epilogue font-bold text-secondary text-xs tracking-widest uppercase">Limited Edition</p>
+<h2 class="epilogue font-extrabold text-2xl text-on-surface">POP KIT #01</h2>
+<div class="flex items-center space-x-2 mt-1">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">timer</span>
+<span class="epilogue font-bold text-primary text-sm uppercase">04:59:12</span>
+</div>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-['Epilogue'] font-black px-6 py-4 transition-all active:scale-95 shadow-[0_5px_15px_rgba(233,195,57,0.3)]">
+                        BUY NOW
+                    </button>
+</div>
+</div>
+</section>
+<!-- Exclusive Drops: Horizontal Scroll -->
+<section class="py-12 bg-surface">
+<div class="px-6 flex justify-between items-end mb-6">
+<div>
+<h3 class="epilogue font-black text-3xl italic tracking-tight text-on-surface">EXCLUSIVE DROPS</h3>
+<p class="text-on-surface-variant font-medium text-sm">한정 수량 에디션을 만나보세요</p>
+</div>
+<span class="material-symbols-outlined text-primary">arrow_forward</span>
+</div>
+<div class="flex overflow-x-auto pb-8 px-6 space-x-6 scrollbar-hide">
+<!-- Kit 1 -->
+<div class="flex-shrink-0 w-64 bg-surface-container-low relative group">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Dusty Mauve Kit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern makeup palette with dusty mauve shades on a dark textured surface with sharp lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT0QR5u7S6pTKpi75HxjVa-2v-jYLbtz0pcunuW5pHP54IMG752jla1Fu3MEipO6HwO1dt0NpR2jMAqfw6QINnafVc7MsEaL595_l83hDfNkGg96630WYSB5kBEWFLr4XnERb9XlwGxU5g8g8CCObWpsyohUs0QE0oWIGjisPPfgl-fA_8TUQRQnxGHah4jioB7NgToJhZd5ln2f4lanIEFEPquMFNo9QBrQ9g6umVRCpgTGUXcu9mJoUQ7UGPtP0WvI44Z6G8eCYr"/>
+<div class="absolute top-4 left-4 bg-secondary text-on-secondary px-2 py-1 epilogue font-bold text-[10px] rotate-2">SOLD OUT SOON</div>
+</div>
+<div class="p-4 bg-surface-container-high">
+<h4 class="epilogue font-extrabold text-lg text-on-surface">더스티 모브 킷</h4>
+<p class="text-primary font-bold">45,000원</p>
+</div>
+</div>
+<!-- Kit 2 -->
+<div class="flex-shrink-0 w-64 bg-surface-container-low relative group">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Neon Pop Edition" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vibrant neon pink and yellow cosmetic products arranged artistically with glossy finish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDydUopLXvhr9Yd-NooKtPn1VLvK-ugsY43vZXJcIFgiD1_g3xoIZR_Ns3qpO37egdoQdxN6oZI3OUHA7FXWSmmjwMgNtr2QXbI_nWUIJvRvNzz2nmXUkGaOiL6LbjqxguJgcI76LrUljnu9i3Trb7nPBbK0Dc1ZksaepZh3WxSPQq2QSe6iJ1QMlW4fZCJVPnZu7uZM1NH4McyWRsBdQeAarfTA46IdGDFGCEIPFinIaUjhrQgjMUJDfyS6vDm305w2qMZfPBaWyWg"/>
+</div>
+<div class="p-4 bg-surface-container-high">
+<h4 class="epilogue font-extrabold text-lg text-on-surface">네온 팝 에디션</h4>
+<p class="text-primary font-bold">52,000원</p>
+</div>
+</div>
+<!-- Kit 3 -->
+<div class="flex-shrink-0 w-64 bg-surface-container-low relative group">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Glossy Slick Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Liquid lip gloss products with high shine and gold caps reflecting purple ambient light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUApWqlPsOkkgkzQ9rs4kDaLnaWaqPebIjkI49xvbJCF1tURjmaET-04-nwxscQeNPB4RSaVHrKWmTzFDPvAKLiXGI5tzOCWbNdV9nKjP2U_1rOaIzpLojqHpB3wkmLaX6eidWMfVfwZQHFoe3jk_GQRMNbOQi5_aG_HNndkzLXIBPVxnmS1IyQtIKk_Em2oCXB9LEHDN_et9QUzEvA6cmItJGn-K1rAXXSmCw_LSH94kXPCL6qwKx8vBSj5duJrIQE0eJp3Yb1RdI"/>
+</div>
+<div class="p-4 bg-surface-container-high">
+<h4 class="epilogue font-extrabold text-lg text-on-surface">글로시 슬릭 셋</h4>
+<p class="text-primary font-bold">38,000원</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Color Palette Selector -->
+<section class="py-16 bg-surface-container-lowest px-6">
+<h3 class="epilogue font-black text-3xl italic tracking-tight text-on-surface text-center mb-12">FIND YOUR POP</h3>
+<div class="grid grid-cols-3 gap-4">
+<div class="flex flex-col items-center space-y-4">
+<button class="w-20 h-20 rounded-full bg-secondary border-4 border-surface shadow-[0_0_20px_rgba(255,174,220,0.4)]"></button>
+<span class="epilogue font-bold text-[10px] tracking-widest text-secondary uppercase">Electric Pink</span>
+</div>
+<div class="flex flex-col items-center space-y-4">
+<button class="w-20 h-20 rounded-full bg-primary border-4 border-secondary-container shadow-[0_0_20px_rgba(233,195,57,0.4)]"></button>
+<span class="epilogue font-bold text-[10px] tracking-widest text-primary uppercase">Melt Yellow</span>
+</div>
+<div class="flex flex-col items-center space-y-4">
+<button class="w-20 h-20 rounded-full bg-secondary-container border-4 border-surface shadow-[0_0_20px_rgba(135,19,104,0.4)]"></button>
+<span class="epilogue font-bold text-[10px] tracking-widest text-secondary-container uppercase">Deep Violet</span>
+</div>
+</div>
+</section>
+<!-- Melted Reviews: Social Proof -->
+<section class="py-16 bg-surface overflow-hidden">
+<div class="px-6 mb-12">
+<h3 class="epilogue font-black text-3xl italic tracking-tight text-on-surface">MELTED REVIEWS</h3>
+</div>
+<div class="flex flex-col space-y-8 px-6">
+<!-- Sticker Testimonial 1 -->
+<div class="self-start bg-secondary text-on-secondary p-4 max-w-[80%] -rotate-2 shadow-xl">
+<p class="font-bold text-sm leading-tight italic">"역대급 광택이에요! 네온 팝 컬러 진짜 미쳤음... 🥹"</p>
+<div class="mt-2 flex items-center justify-between">
+<span class="text-[10px] font-black epilogue">@GLOSSY_QUEEN</span>
+<div class="flex">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<!-- Sticker Testimonial 2 -->
+<div class="self-end bg-primary text-on-primary p-4 max-w-[80%] rotate-3 shadow-xl">
+<p class="font-bold text-sm leading-tight italic">"패키징부터 힙함 그 자체. 발색력이 장난 아니네요."</p>
+<div class="mt-2 flex items-center justify-between">
+<span class="text-[10px] font-black epilogue">@TRENDY_K_</span>
+<div class="flex">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<!-- Sticker Testimonial 3 -->
+<div class="self-center bg-on-surface text-background p-4 max-w-[85%] -rotate-1 shadow-xl">
+<p class="font-bold text-sm leading-tight italic">"이 가격에 이 퀄리티 실화? 재구매 의사 200%!!!"</p>
+<div class="mt-2 flex items-center justify-between">
+<span class="text-[10px] font-black epilogue">@MELT_M_LOVER</span>
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Story Section -->
+<section class="relative py-24 bg-surface-container-low overflow-hidden">
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-30">
+<img alt="Brand Story Image" class="w-full h-full object-cover grayscale contrast-125" data-alt="Artistic close up of makeup brushes and textures in high contrast black and white with dramatic shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLcDftNZ6e9LyIiYVe6N1txT4IdhWA-xsZ5SIlWKmWVSvqO1BtCH9hoEKagvMmkfvdsEaf1gXNm8My-UrdbMjHVLmsJE4S3dBXk7NT5hMQw911V1lk7IdYr_L9qGZ_KjlHMzGZOFiI-aIOCbB-3kQ7U00ca4ZxHMj04wr6h14QfrRzqZcdGtp9OlkGXel3NKIHjhMmeXG3j8J2s9pBjEmqI-yyVNs4vl5DfJKw8k2k2wUn1RRG3sNxDXAPMTazHp1e73d5NhX5A32-"/>
+</div>
+<div class="relative z-10 px-6">
+<div class="inline-block bg-primary text-on-primary epilogue font-black px-4 py-2 rotate-12 mb-8 shadow-lg">Founded in 2024</div>
+<h3 class="epilogue font-black text-5xl italic tracking-tighter text-on-surface mb-6 leading-none">THE KINETIC<br/>GLOSS ERA</h3>
+<p class="text-on-surface-variant font-medium leading-relaxed max-w-[70%] mb-10">
+                    MELT POP은 가장 대담한 자아를 위한 에디토리얼 뷰티 브랜드입니다. 일상의 템포를 높이는 강력한 발색과 텍스처를 경험하세요.
+                </p>
+<button class="flex items-center space-x-2 border-b-2 border-primary pb-1 group">
+<span class="epilogue font-black text-primary tracking-widest uppercase">OUR STORY</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Footer Section Shell -->
+<footer class="w-full relative bg-purple-950 flex flex-col items-center space-y-6 py-12 px-8 w-full text-center">
+<div class="bg-purple-900 h-2 w-full mb-8"></div>
+<div class="font-['Epilogue'] font-extrabold uppercase text-xs tracking-tight text-pink-500">MELT POP EDITORIAL</div>
+<div class="flex flex-col space-y-4">
+<a class="font-['Epilogue'] font-extrabold uppercase text-xs tracking-tight text-purple-300 hover:text-yellow-400 transition-all duration-300" href="#">INSTAGRAM</a>
+<a class="font-['Epilogue'] font-extrabold uppercase text-xs tracking-tight text-purple-300 hover:text-yellow-400 transition-all duration-300" href="#">TIKTOK</a>
+<a class="font-['Epilogue'] font-extrabold uppercase text-xs tracking-tight text-purple-300 hover:text-yellow-400 transition-all duration-300" href="#">SHIPPING INFO</a>
+</div>
+<div class="font-['Epilogue'] font-extrabold uppercase text-[10px] tracking-tight text-purple-400 mt-8 opacity-50">
+                © 2024 MELT POP EDITORIAL. ALL RIGHTS RESERVED.
+            </div>
+</footer>
+<!-- Empty space for nav bar -->
+<div class="h-20"></div>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-none bg-purple-950/80 backdrop-blur-2xl flex justify-around items-center w-full h-20 pb-safe px-4 shadow-[0_-10px_40px_rgba(135,19,104,0.2)]">
+<!-- Active Item: SHOP ALL (Intent for Home/Browse) -->
+<a class="flex flex-col items-center justify-center text-yellow-400 bg-purple-800/50 rounded-xl px-3 py-1 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-['Epilogue'] font-bold text-[10px] uppercase tracking-widest">SHOP ALL</span>
+</a>
+<a class="flex flex-col items-center justify-center text-purple-300 hover:text-pink-500 transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-['Epilogue'] font-bold text-[10px] uppercase tracking-widest">NEW IN</span>
+</a>
+<a class="flex flex-col items-center justify-center text-purple-300 hover:text-pink-500 transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">layers</span>
+<span class="font-['Epilogue'] font-bold text-[10px] uppercase tracking-widest">SETS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-purple-300 hover:text-pink-500 transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-['Epilogue'] font-bold text-[10px] uppercase tracking-widest">STORY</span>
+</a>
+</nav>
+</body></html>

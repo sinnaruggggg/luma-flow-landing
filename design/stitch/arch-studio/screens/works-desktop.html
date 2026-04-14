@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&amp;family=Manrope:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e8e2d8",
+                    "surface-tint": "#5f5e5e",
+                    "on-tertiary-container": "#94918e",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#c9c6c3",
+                    "on-tertiary-fixed-variant": "#484644",
+                    "surface": "#fff9ee",
+                    "inverse-on-surface": "#f6f0e6",
+                    "outline-variant": "#c4c7c7",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#1d1b16",
+                    "primary-fixed": "#e4e2e1",
+                    "on-primary-container": "#929191",
+                    "secondary-container": "#e5e2e1",
+                    "tertiary-fixed": "#e6e2de",
+                    "surface-container": "#f3ede3",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "outline": "#747878",
+                    "surface-bright": "#fff9ee",
+                    "on-secondary-container": "#656464",
+                    "surface-container-high": "#ede7dd",
+                    "on-tertiary-fixed": "#1c1b1a",
+                    "surface-variant": "#e8e2d8",
+                    "surface-container-low": "#f9f3e9",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1d1b16",
+                    "secondary": "#5f5e5e",
+                    "primary-container": "#2a2a2a",
+                    "tertiary-container": "#2b2a28",
+                    "background": "#fff9ee",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#e5e2e1",
+                    "inverse-primary": "#c8c6c5",
+                    "on-primary-fixed": "#1b1c1c",
+                    "on-secondary-fixed-variant": "#474646",
+                    "tertiary": "#161614",
+                    "on-surface-variant": "#444748",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#474746",
+                    "primary": "#151616",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#dfd9d0",
+                    "inverse-surface": "#33302a",
+                    "secondary-fixed-dim": "#c9c6c5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif KR", "serif"],
+                    "body": ["Manrope", "sans-serif"],
+                    "label": ["Manrope", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #fff9ee; }
+        .serif-text { font-family: 'Noto Serif KR', serif; }
+        .editorial-shadow { box-shadow: 0 12px 40px rgba(29, 27, 22, 0.05); }
+        .text-ink { color: #151616; }
+        .bg-paper { background-color: #fff9ee; }
+        .transition-editorial { transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-fixed selection:text-primary">
+<!-- TopNavBar Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#fff9ee]/80 dark:bg-zinc-950/80 backdrop-blur-xl flex justify-between items-center px-12 py-8 w-full no-border tonal-shift flat no shadows">
+<div class="text-2xl font-bold tracking-tighter text-[#151616] dark:text-zinc-100">THE ARCHIVE</div>
+<div class="hidden md:flex space-x-12">
+<a class="font-['Noto_Serif'] uppercase tracking-[0.2em] text-sm text-[#151616] dark:text-zinc-100 border-b border-[#151616] dark:border-zinc-100 pb-1 hover:text-[#151616] dark:hover:text-zinc-100 transition-colors duration-300" href="#">Projects</a>
+<a class="font-['Noto_Serif'] uppercase tracking-[0.2em] text-sm text-[#151616]/60 dark:text-zinc-400 hover:text-[#151616] dark:hover:text-zinc-100 transition-colors duration-300" href="#">Studio</a>
+<a class="font-['Noto_Serif'] uppercase tracking-[0.2em] text-sm text-[#151616]/60 dark:text-zinc-400 hover:text-[#151616] dark:hover:text-zinc-100 transition-colors duration-300" href="#">Journal</a>
+<a class="font-['Noto_Serif'] uppercase tracking-[0.2em] text-sm text-[#151616]/60 dark:text-zinc-400 hover:text-[#151616] dark:hover:text-zinc-100 transition-colors duration-300" href="#">Contact</a>
+</div>
+<div class="font-['Noto_Serif'] uppercase tracking-[0.2em] text-sm text-[#151616] dark:text-zinc-100 cursor-pointer">Inquiry</div>
+</nav>
+<main class="relative">
+<!-- First Viewport: Hero -->
+<section class="h-screen w-full relative flex items-center overflow-hidden bg-surface-dim">
+<div class="absolute inset-0 z-0 scale-105">
+<img alt="Minimalist concrete architecture" class="w-full h-full object-cover" data-alt="Monolithic minimalist concrete building facade with sharp geometric shadows under a clear blue sky, architectural clean lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPZpbBlmr45_sanD189_I_gkXRcMeTez3S9Umo3cPao3B1cXqR4Y-SV57tQWh33VXjVqqfXRwviKB5OSP3NawLAerNAS3ZfM4hdUHYX_Ik_Nb5tWReXU16Uu_hID0Sufv9iGCGlyBXl1fyS5DdsSn7qCE-PINhtf1ddUNufirjFjzvwlB96eY5XcK60J422STvQmWtAF6Kd5PRBR0mkJHazZinEmqdhQN84Tk9n_pX2ad9WRofUHKILU0TGIWfH62yXgHAUU96z8Q"/>
+</div>
+<!-- Hero Overlay/Label -->
+<div class="relative z-10 w-full px-12 mt-20 flex flex-col items-start">
+<div class="bg-surface/80 backdrop-blur-md px-6 py-3 mb-8 inline-block editorial-shadow">
+<span class="font-body text-[10px] tracking-[0.4em] uppercase text-on-surface">Selected Works</span>
+</div>
+<h1 class="serif-text text-6xl md:text-8xl text-ink leading-tight tracking-tighter">
+                    고요의 여백<br/>
+<span class="text-3xl md:text-4xl font-light tracking-normal opacity-70">Silence in Void</span>
+</h1>
+<div class="mt-12 flex items-center space-x-4 group cursor-pointer">
+<div class="w-12 h-[1px] bg-primary group-hover:w-20 transition-all duration-500"></div>
+<span class="font-label text-xs uppercase tracking-widest text-primary">View Project Index</span>
+</div>
+</div>
+</section>
+<!-- Layered Project Gallery -->
+<section class="relative z-20 -mt-24 bg-surface pt-40 pb-40 px-12">
+<!-- Filter System -->
+<div class="flex flex-col md:flex-row justify-between items-baseline mb-32 border-b border-outline-variant/20 pb-8">
+<h2 class="serif-text text-4xl mb-8 md:mb-0">프로젝트 아카이브</h2>
+<div class="flex flex-wrap gap-x-10 gap-y-4 font-label text-[10px] tracking-[0.3em] uppercase text-on-surface/60">
+<a class="text-primary border-b border-primary pb-1" href="#">All</a>
+<a class="hover:text-primary transition-colors" href="#">Residential</a>
+<a class="hover:text-primary transition-colors" href="#">Commercial</a>
+<a class="hover:text-primary transition-colors" href="#">Cultural</a>
+<a class="hover:text-primary transition-colors" href="#">Research</a>
+</div>
+</div>
+<!-- Grid Layout (Asymmetric) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-y-40 gap-x-12">
+<!-- Project 1: Full Height / Left -->
+<div class="md:col-span-8 group relative overflow-hidden bg-surface-container-low transition-editorial">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Modern villa architecture" class="w-full h-full object-cover group-hover:scale-105 transition-editorial duration-[2000ms]" data-alt="Interior of a modern luxury house with light streaming through vertical wood slats on warm oak flooring" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWjBz6lQyRovPUj-maJB3r9ujXhwjeMh8XXy9Ftj1wax6OQChEpWqi4skyg5BSw6kmzVHdPNSvbQtYUduEtJ0VZr15vuinwoHjHt2G57nYFBcf2C4FAJ-Rrqbevu-ZLZZlmEtOvcqGTpPDct64JLGVVdz_Iq0AVuMRRez4Bn4QkEli79dzizAO0uUEy3hEsk_PTiAG_FHejAzAJrtHs1_L0iLsU_qTJPbkL8v-_wrKPu3wTF3cS72JuFudOVK_DlaVyJ6QPPdqy2E"/>
+</div>
+<div class="mt-8 flex justify-between items-start">
+<div>
+<p class="font-label text-[10px] tracking-widest uppercase text-on-tertiary-container mb-2">Residential — Seoul, KR</p>
+<h3 class="serif-text text-3xl">연희동 주택 : 흐르는 선</h3>
+</div>
+<span class="font-body text-xs text-on-surface/40">2023</span>
+</div>
+</div>
+<!-- Project 2: Smaller / Right Floating -->
+<div class="md:col-span-4 md:mt-40 group relative">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-high">
+<img alt="Architectural detail" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-editorial duration-[1500ms]" data-alt="Detailed close-up of a textured white plaster wall meeting a dark grey stone floor in sharp sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWFPGhg4ljG44ksZkxK0u9_FXfMf8OQiDcI4sXSzyuCcnAvs72KGYFkqcLOzt6PDh2Exnqsj-7QMntxCrB_MMOyOzrKp_pPN77k0k5qMbNs_FLjXCvlFhcyTpby-dcXuwaidw3Y7J_KWpfuzTmx6k9wrZDYIs2xvXxChcbJp5S1ljcY4Ch271r7f7z4zg0KQ0HMxxty1-c-u5uFhCnNrZamoch0oifm801GyOi-NSLOlTP1dvaCxvTj-8lgi-4cgk0p__we_RddIo"/>
+</div>
+<div class="mt-8">
+<p class="font-label text-[10px] tracking-widest uppercase text-on-tertiary-container mb-2">Commercial — Jeju, KR</p>
+<h3 class="serif-text text-2xl">스테이 무우</h3>
+</div>
+</div>
+<!-- Project 3: Wide Layout -->
+<div class="md:col-span-12 relative flex flex-col md:flex-row items-end gap-12">
+<div class="md:w-2/3 aspect-video overflow-hidden bg-surface-container-highest">
+<img alt="Cultural center exterior" class="w-full h-full object-cover hover:scale-105 transition-editorial duration-[3000ms]" data-alt="Exterior of a minimalist art museum building with long rectangular windows at dusk with warm interior lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhax94GTsJYwYHElHhk-qV-SVydYjSov8oGMcpWb1MpyeImwzkFdqmPAkjurR7bOW0p8iHvzVS9lpfSiHlOtjj64cNyELjy7jIKP-XH6KpxMMyfLgODS6Gq490yoRkHwIto9k9yMQmxO8IbMCHw6bQ46dVsnC_ugbXC0Xl_CiFtju5Fc1PU6lYxFnhSrVP4vaWHMyoHw0ehERhVfmHIrYtjZ2x50O4Z-ZkwpUiDVA4ag82d5B0tspqpggu77lx_IgVaziRgoW42YU"/>
+</div>
+<div class="md:w-1/3 mb-12">
+<div class="bg-surface-container p-12 editorial-shadow -ml-20 relative z-10">
+<p class="font-label text-[10px] tracking-widest uppercase text-on-tertiary-container mb-4">Cultural — Paju, KR</p>
+<h3 class="serif-text text-4xl mb-6">파주 출판단지 도서관</h3>
+<p class="font-body text-sm leading-relaxed text-on-surface-variant opacity-80">
+                                대지의 고유한 성격을 보존하며 책의 숲을 형상화한 건축. 수직적 질서와 빛의 중첩을 통해 사유의 공간을 제안합니다.
+                            </p>
+<div class="mt-10">
+<a class="text-xs uppercase tracking-[0.2em] border-b border-primary pb-1 font-bold" href="#">Details</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Project 4: Square / Left -->
+<div class="md:col-span-5 group">
+<div class="aspect-square overflow-hidden bg-surface-container">
+<img alt="Luxury apartment interior" class="w-full h-full object-cover transition-editorial duration-[1500ms]" data-alt="Minimalist living room with a large white sofa and a floor-to-ceiling glass wall looking out to a misty garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9id_zpFDOmHtUvz4BHVZlZwFMMuu4FurYg4wXpJsB-raGO4bXPezi8gZ77vCn5GOxsxjmi93oIYBxPJrICzkUi1QEBSO_NivL3hqaZCssOjn4Ygr0jZcey5jVY8C0L2nRWbdOVdQ62fU95VEg2VhAxg8dVyBvtKLinm6raF5AUmg1slGAgVqUranSUoGOXuEgu5wmOBbQJIY1Pk2q7h4PPr5faJKX1Ui9Ui2g8RZh0MP0EqvjAnZL-uIHDQ1chH5265CFSZZphbg"/>
+</div>
+<div class="mt-8">
+<p class="font-label text-[10px] tracking-widest uppercase text-on-tertiary-container mb-2">Residential — Busan, KR</p>
+<h3 class="serif-text text-2xl">해운대 펜트하우스</h3>
+</div>
+</div>
+<!-- Project 5: Portrait / Right Offset -->
+<div class="md:col-span-6 md:col-start-7 group">
+<div class="aspect-[3/5] overflow-hidden bg-surface-container-low">
+<img alt="Shadow on floor" class="w-full h-full object-cover transition-editorial duration-[2000ms]" data-alt="Abstract architectural shot of a narrow hallway with a single beam of light falling on a concrete floor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALpkDCzHWQDd5knVtOsPXgflurv9dN7yb_WGWevEa6-7YV0nvXbNH3LYa7w6jCgme2nj6_TRKyY_KqKWOpT-Ycc1iDDSetAHU3944jnu7gbYsNcEhZaRbtjGqb58q7r_KTgV7IJNcSfWuPLYMOaeqalERpNhdlbWkDXsD8B65GtD7KJuSnx9_O8QKExUkrb1P--m_KdndMrvDVotnBU5BqOQwvL3Kmc4ognuEggudXn-Kocft8b_RRz3JuOcA7b2fURF1BzrLhYYE"/>
+</div>
+<div class="mt-8">
+<p class="font-label text-[10px] tracking-widest uppercase text-on-tertiary-container mb-2">Research — Archive</p>
+<h3 class="serif-text text-2xl">건축의 현상학적 탐구</h3>
+</div>
+</div>
+</div>
+<!-- Load More Interaction -->
+<div class="mt-60 flex justify-center">
+<button class="px-16 py-6 bg-primary text-on-primary font-label text-[10px] tracking-[0.4em] uppercase hover:bg-primary-container transition-all">
+                    Load Archive
+                </button>
+</div>
+</section>
+<!-- Overlapping Contact Section -->
+<section class="relative z-30 bg-surface-container-low py-40 px-12 border-t border-outline-variant/10">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="serif-text text-5xl md:text-7xl mb-12">당신의 공간을 함께 고민합니다</h2>
+<p class="font-body text-lg text-on-surface-variant mb-16 opacity-70">새로운 프로젝트에 대한 문의나 협업 제안은 언제나 환영입니다.</p>
+<a class="serif-text text-3xl md:text-5xl border-b-2 border-primary/20 hover:border-primary transition-all pb-2" href="mailto:contact@plain-grid.com">
+                    contact@plain-grid.com
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 bg-[#fff9ee] dark:bg-zinc-950 flex flex-col md:flex-row justify-between items-end px-12 w-full tonal-shift bg-zinc-100 dark:bg-zinc-900 flat no shadows">
+<div class="flex flex-col space-y-6">
+<div class="text-lg font-bold text-[#151616] dark:text-zinc-100">THE ARCHIVE</div>
+<p class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#151616]/40 dark:text-zinc-500">© 2024 THE ARCHIVE. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="mt-12 md:mt-0 flex flex-col md:flex-row md:space-x-12 space-y-4 md:space-y-0">
+<a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#151616]/40 dark:text-zinc-500 hover:underline transition-all underline-offset-4" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#151616]/40 dark:text-zinc-500 hover:underline transition-all underline-offset-4" href="#">Terms of Service</a>
+<a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#151616]/40 dark:text-zinc-500 hover:underline transition-all underline-offset-4" href="#">Instagram</a>
+<a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#151616]/40 dark:text-zinc-500 hover:underline transition-all underline-offset-4" href="#">LinkedIn</a>
+</div>
+</footer>
+</body></html>

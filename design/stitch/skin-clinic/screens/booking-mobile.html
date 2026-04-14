@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#fbf9f5",
+                    "outline-variant": "#b1b3ab",
+                    "on-tertiary-fixed": "#414952",
+                    "secondary": "#555f72",
+                    "on-surface": "#31332e",
+                    "outline": "#797b75",
+                    "on-background": "#31332e",
+                    "tertiary": "#586069",
+                    "primary-fixed-dim": "#c9d5ea",
+                    "secondary-container": "#d9e3f9",
+                    "on-primary-fixed-variant": "#505c6e",
+                    "on-error": "#fff7f6",
+                    "tertiary-dim": "#4c545d",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#535f71",
+                    "surface-variant": "#e2e3db",
+                    "surface-container": "#efeee8",
+                    "secondary-fixed": "#d9e3f9",
+                    "on-secondary-fixed": "#364051",
+                    "primary-fixed": "#d7e3f9",
+                    "surface": "#fbf9f5",
+                    "error-dim": "#4e0309",
+                    "secondary-fixed-dim": "#cbd5ea",
+                    "on-primary-container": "#465264",
+                    "error": "#9f403d",
+                    "tertiary-container": "#e9f1fd",
+                    "surface-dim": "#d9dbd2",
+                    "error-container": "#fe8983",
+                    "inverse-on-surface": "#9e9d99",
+                    "on-primary-fixed": "#344051",
+                    "on-secondary": "#f8f8ff",
+                    "on-error-container": "#752121",
+                    "on-tertiary": "#f6f9ff",
+                    "tertiary-fixed": "#e9f1fd",
+                    "primary-container": "#d7e3f9",
+                    "inverse-surface": "#0e0e0c",
+                    "surface-container-highest": "#e2e3db",
+                    "on-surface-variant": "#5d6059",
+                    "secondary-dim": "#4a5365",
+                    "on-tertiary-fixed-variant": "#5d656f",
+                    "primary-dim": "#475365",
+                    "surface-container-low": "#f5f4ee",
+                    "on-secondary-fixed-variant": "#525c6e",
+                    "tertiary-fixed-dim": "#dbe3ee",
+                    "on-tertiary-container": "#535b64",
+                    "on-secondary-container": "#485264",
+                    "surface-bright": "#fbf9f5",
+                    "inverse-primary": "#dae6fc",
+                    "on-primary": "#f6f7ff",
+                    "surface-container-high": "#e8e9e1",
+                    "primary": "#535f71"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif KR", "serif"],
+                    "body": ["Manrope", "sans-serif"],
+                    "label": ["Manrope", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .clinic-stack {
+            margin-top: -80px;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body antialiased">
+<!-- TopAppBar -->
+<header class="bg-white/90 backdrop-blur-xl dark:bg-slate-900/90 docked full-width top-0 sticky z-50 shadow-[0_10px_30px_rgba(22,27,38,0.04)] no-border-rule tonal-shift-boundary flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center text-[#535f71] dark:text-[#94a3b8] hover:opacity-70 transition-opacity scale-95 active:transition-transform cursor-pointer">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</div>
+<div class="font-['Noto_Serif'] font-semibold text-slate-800 dark:text-slate-100 tracking-[0.3em] uppercase text-sm">
+            ATELIER SKIN
+        </div>
+<div class="flex items-center text-[#535f71] dark:text-[#94a3b8] hover:opacity-70 transition-opacity scale-95 active:transition-transform cursor-pointer">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</header>
+<main class="pb-32">
+<!-- Hero Section -->
+<section class="relative h-[530px] w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Minimalist high-end clinical treatment room with soft linen textures, frosted glass partitions, and warm natural morning sunlight filtering through curtains." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCt6K1ZZtU-T5TNCobeHDLs4dRQ4TjXPghstfiVirLHTOwQxd-cAMB7-FKWXL4F6M94lzBxZ12QIy7r_zwitL-SsR_tCeNy-VfFhQ6iI0qJWPcZ7akdNZI3gZkx2mSf_aqp5xN00EGfZuyy0OjGUdeQ97d_J5ZgW86CUjutLaJtdGVNetgjAaMXEQbtA1j9J9l5T81h7H-SdMMys3u2VQA2dsCjO4taD5kpGipvohgHf44igeEiR84ZJiuH20WMT5j5hTCSlukBGfE');">
+<div class="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent"></div>
+</div>
+<div class="relative z-10 px-6 pt-12">
+<span class="text-white/80 font-label text-[10px] tracking-widest uppercase mb-2 block">Premium Clinic Experience</span>
+<h1 class="text-white font-headline text-3xl font-bold leading-tight">진단 기반 맞춤 예약</h1>
+<p class="text-white/90 font-body text-sm mt-3 max-w-[280px] leading-relaxed">
+                    당신의 피부 컨디션을 12가지 지표로 측정하고 최적의 프로그램을 제안합니다.
+                </p>
+</div>
+</section>
+<!-- Clinic Stack (Floating Diagnosis Card) -->
+<section class="clinic-stack px-6 relative z-20">
+<div class="surface-container-lowest rounded-full p-6 shadow-[0_10px_30px_rgba(22,27,38,0.06)] border border-outline-variant/10">
+<div class="flex items-center justify-between mb-6">
+<div>
+<span class="text-secondary text-[10px] font-bold tracking-tighter uppercase block mb-1">Clinic Status</span>
+<h2 class="font-headline text-lg font-bold text-on-surface">Real-time Availability</h2>
+</div>
+<div class="flex flex-col items-end">
+<span class="inline-flex items-center px-2 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded-md">
+<span class="w-1.5 h-1.5 bg-primary rounded-full mr-1.5 animate-pulse"></span>
+                            LIVE NOW
+                        </span>
+</div>
+</div>
+<div class="flex gap-3 overflow-x-auto pb-4 no-scrollbar">
+<div class="flex-shrink-0 bg-surface-container-low px-4 py-3 rounded-xl flex flex-col gap-1 min-w-[120px]">
+<span class="text-[10px] text-muted font-medium">Today</span>
+<span class="text-sm font-bold text-on-surface">14:00 예약 가능</span>
+</div>
+<div class="flex-shrink-0 bg-surface-container-low px-4 py-3 rounded-xl flex flex-col gap-1 min-w-[120px]">
+<span class="text-[10px] text-muted font-medium">Today</span>
+<span class="text-sm font-bold text-on-surface">15:30 예약 가능</span>
+</div>
+<div class="flex-shrink-0 bg-surface-container-low px-4 py-3 rounded-xl flex flex-col gap-1 min-w-[120px]">
+<span class="text-[10px] text-muted font-medium">Today</span>
+<span class="text-sm font-bold text-on-surface">17:00 예약 가능</span>
+</div>
+</div>
+<button class="w-full mt-2 py-4 bg-gradient-to-r from-primary to-primary-dim text-on-primary rounded-full font-bold text-sm tracking-wide shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="center_focus_weak">center_focus_weak</span>
+                    AI 피부 진단 시작하기
+                </button>
+</div>
+</section>
+<!-- Step 01: Treatment Selection -->
+<section class="mt-12 px-6">
+<div class="flex items-baseline gap-3 mb-6">
+<span class="font-label text-[10px] text-secondary tracking-widest uppercase opacity-60">Step 01</span>
+<h3 class="font-headline text-xl font-bold text-on-surface">Treatment Selection</h3>
+</div>
+<div class="space-y-4">
+<!-- Program Card 1 -->
+<div class="glass-panel p-5 rounded-full border border-outline-variant/15 flex items-center justify-between group active:scale-[0.98] transition-transform">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close up of a luxury serum bottle on a textured stone surface with clinical aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5_D4UtPKbJIDF2wP-w30avy8UCcjTAJFbTQtQrz5EgN0EuJr1stQdSQVa1-RM-_hbaAoUS_UzTE5rtw626GH1JX44fDX4yfaWmQ1o8FmFC4ExecKBg1MU-tipfpjT0sFkECZinuBjU6BWGBGuCSi7EYDX9bUlZDhl1b_sa1m63p1-e8fbBTBaUJUQAmSYzOmptMkUxyOPj8crr1_OGB08CPOOJVRejD4DPHjB4Imro3W4a6SV2sT7o2UtIaVHCSteCZletJqtIrA"/>
+</div>
+<div>
+<h4 class="text-sm font-bold text-on-surface">Skin Booster</h4>
+<p class="text-xs text-on-surface-variant">속건조 개선 및 광채 부여</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-sm font-bold text-primary">450,000원~</span>
+<div class="mt-1 flex justify-end">
+<span class="material-symbols-outlined text-sm text-outline-variant" data-icon="add_circle">add_circle</span>
+</div>
+</div>
+</div>
+<!-- Program Card 2 -->
+<div class="glass-panel p-5 rounded-full border border-outline-variant/15 flex items-center justify-between group active:scale-[0.98] transition-transform">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Modern dermatological lifting device head with subtle blue led light indicators." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2ksN_xSY0i7A6DaJ3gUnX6ieNt69J14CUguJnhLvaF2KJnCeA3yteP7tZ7YaGe_n2n8S5M6Zc7gJH4XmKkaZlQmQAPTl9knsjuJiB9Fc7KpWaeZOOZtUSExuNKCf-EU3H_qfqgz31Lf3FTNHZuzWP1x-S1Qe5_hMgYJNvwMaZ6CmArAzKO-IJSuqW6187rxli3zRR7i8qNw5f5D-JqtM0iHk8af7GgzMsIq0kuLeeIt0gziY__h6G9ugQU2-H5D-WNsq-0uBsooM"/>
+</div>
+<div>
+<h4 class="text-sm font-bold text-on-surface">Lifting &amp; Sculpt</h4>
+<p class="text-xs text-on-surface-variant">V라인 윤곽 및 탄력 강화</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-sm font-bold text-primary">850,000원~</span>
+<div class="mt-1 flex justify-end">
+<span class="material-symbols-outlined text-sm text-outline-variant" data-icon="add_circle">add_circle</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Step 02: Date & Time -->
+<section class="mt-12 px-6">
+<div class="flex items-baseline gap-3 mb-6">
+<span class="font-label text-[10px] text-secondary tracking-widest uppercase opacity-60">Step 02</span>
+<h3 class="font-headline text-xl font-bold text-on-surface">Date &amp; Time Selection</h3>
+</div>
+<div class="bg-surface-container-low rounded-full p-6">
+<!-- Simplified Calendar Row -->
+<div class="flex justify-between items-center mb-6">
+<div class="text-sm font-bold text-on-surface">October 2023</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-sm text-outline" data-icon="chevron_left">chevron_left</span>
+<span class="material-symbols-outlined text-sm text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-2 mb-8">
+<!-- Placeholder days -->
+<div class="text-center text-[10px] text-outline uppercase font-medium">Mon</div>
+<div class="text-center text-[10px] text-outline uppercase font-medium">Tue</div>
+<div class="text-center text-[10px] text-outline uppercase font-medium">Wed</div>
+<div class="text-center text-[10px] text-outline uppercase font-medium">Thu</div>
+<div class="text-center text-[10px] text-outline uppercase font-medium">Fri</div>
+<div class="text-center text-[10px] text-outline uppercase font-medium">Sat</div>
+<div class="text-center text-[10px] text-outline uppercase font-medium">Sun</div>
+<div class="aspect-square flex items-center justify-center text-sm text-outline-variant">24</div>
+<div class="aspect-square flex items-center justify-center text-sm text-outline-variant">25</div>
+<div class="aspect-square flex items-center justify-center text-sm bg-primary text-on-primary rounded-full font-bold">26</div>
+<div class="aspect-square flex items-center justify-center text-sm text-on-surface">27</div>
+<div class="aspect-square flex items-center justify-center text-sm text-on-surface">28</div>
+<div class="aspect-square flex items-center justify-center text-sm text-on-surface">29</div>
+<div class="aspect-square flex items-center justify-center text-sm text-on-surface">30</div>
+</div>
+<!-- Time Selection Chips -->
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 bg-surface-container-lowest border border-outline-variant/20 rounded-full text-xs font-medium text-on-surface-variant hover:bg-primary-container hover:border-transparent transition-colors">14:00</button>
+<button class="px-4 py-2 bg-surface-container-lowest border border-outline-variant/20 rounded-full text-xs font-medium text-on-surface-variant hover:bg-primary-container hover:border-transparent transition-colors">15:30</button>
+<button class="px-4 py-2 bg-primary text-on-primary rounded-full text-xs font-bold shadow-md shadow-primary/20">17:00</button>
+<button class="px-4 py-2 bg-surface-container-lowest border border-outline-variant/20 rounded-full text-xs font-medium text-on-surface-variant hover:bg-primary-container hover:border-transparent transition-colors">18:30</button>
+</div>
+</div>
+</section>
+<!-- Step 03: Simple Form -->
+<section class="mt-12 px-6">
+<div class="flex items-baseline gap-3 mb-6">
+<span class="font-label text-[10px] text-secondary tracking-widest uppercase opacity-60">Step 03</span>
+<h3 class="font-headline text-xl font-bold text-on-surface">Patient Information</h3>
+</div>
+<div class="space-y-6">
+<div class="relative">
+<label class="font-label text-[10px] text-secondary uppercase font-bold tracking-widest absolute -top-2 left-4 bg-background px-1 z-10">Name</label>
+<input class="w-full bg-surface-container-low border-transparent focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 rounded-full py-4 px-6 text-sm text-on-surface placeholder:text-outline-variant/50 transition-all" placeholder="성함을 입력해주세요" type="text"/>
+</div>
+<div class="relative">
+<label class="font-label text-[10px] text-secondary uppercase font-bold tracking-widest absolute -top-2 left-4 bg-background px-1 z-10">Phone Number</label>
+<input class="w-full bg-surface-container-low border-transparent focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 rounded-full py-4 px-6 text-sm text-on-surface placeholder:text-outline-variant/50 transition-all" placeholder="연락처를 입력해주세요" type="tel"/>
+</div>
+</div>
+<div class="mt-10 mb-8">
+<button class="w-full py-5 bg-primary text-on-primary rounded-full font-bold text-lg tracking-widest shadow-xl shadow-primary/30 active:scale-[0.98] transition-all">
+                    예약하기
+                </button>
+<p class="text-center text-[10px] text-outline-variant mt-4 leading-relaxed">
+                    * 예약 확정 후 카카오톡으로 안내 메시지가 발송됩니다.<br/>
+                    * 노쇼 방지를 위해 예약일 24시간 전까지만 취소가 가능합니다.
+                </p>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-8 bg-white/95 backdrop-blur-md dark:bg-slate-900/95 docked full-width z-50 rounded-t-[1.5rem] shadow-[0_-10px_30px_rgba(22,27,38,0.04)] tonal-layering-separation bg-surface-container-low">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Manrope'] text-[10px] font-medium tracking-widest uppercase">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="center_focus_weak">center_focus_weak</span>
+<span class="font-['Manrope'] text-[10px] font-medium tracking-widest uppercase">AI Scan</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-900 dark:text-white bg-slate-50 dark:bg-slate-800 rounded-xl px-4 py-1 Active: transition-all duration-300 ease-in-out cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="clinical_notes">clinical_notes</span>
+<span class="font-['Manrope'] text-[10px] font-medium tracking-widest uppercase">Programs</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-['Manrope'] text-[10px] font-medium tracking-widest uppercase">Profile</span>
+</div>
+</nav>
+</body></html>

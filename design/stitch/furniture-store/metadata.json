@@ -1,0 +1,89 @@
+{
+  "siteId": "furniture-store",
+  "brand": "MOSS HOME",
+  "projectId": "10119685222835935467",
+  "projectTitle": "MOSS HOME Stitch",
+  "updatedAt": "2026-04-14T04:55:01.815Z",
+  "screens": {
+    "home:desktop": {
+      "screenId": "97d766aa8fd94a018598aca7051c0168",
+      "pageSlug": "home",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/furniture-store/screens/home-desktop.html",
+      "imagePath": "design/stitch/furniture-store/screens/home-desktop.png",
+      "updatedAt": "2026-04-13T23:28:40.446Z"
+    },
+    "home:mobile": {
+      "screenId": "47f9d5f6238b4645b981f8d5419235c0",
+      "pageSlug": "home",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/furniture-store/screens/home-mobile.html",
+      "imagePath": "design/stitch/furniture-store/screens/home-mobile.png",
+      "updatedAt": "2026-04-13T23:29:58.257Z"
+    },
+    "rooms:desktop": {
+      "screenId": "c59844c9099d48d4b81e47261e90718c",
+      "pageSlug": "rooms",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/furniture-store/screens/rooms-desktop.html",
+      "imagePath": "design/stitch/furniture-store/screens/rooms-desktop.png",
+      "updatedAt": "2026-04-14T04:45:51.158Z"
+    },
+    "rooms:mobile": {
+      "screenId": "be59e151ff174dee9090382f3f04772e",
+      "pageSlug": "rooms",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/furniture-store/screens/rooms-mobile.html",
+      "imagePath": "design/stitch/furniture-store/screens/rooms-mobile.png",
+      "updatedAt": "2026-04-14T04:46:57.363Z"
+    },
+    "planner:desktop": {
+      "screenId": "c78647fa9ec34277969bce04aeeee5e0",
+      "pageSlug": "planner",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/furniture-store/screens/planner-desktop.html",
+      "imagePath": "design/stitch/furniture-store/screens/planner-desktop.png",
+      "updatedAt": "2026-04-14T04:48:11.745Z"
+    },
+    "planner:mobile": {
+      "screenId": "ca6d06180277417d8bf9fab0debced15",
+      "pageSlug": "planner",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/furniture-store/screens/planner-mobile.html",
+      "imagePath": "design/stitch/furniture-store/screens/planner-mobile.png",
+      "updatedAt": "2026-04-14T04:49:34.392Z"
+    },
+    "cart:desktop": {
+      "screenId": "0451709e76704e17a5bf7746056b2b17",
+      "pageSlug": "cart",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/furniture-store/screens/cart-desktop.html",
+      "imagePath": "design/stitch/furniture-store/screens/cart-desktop.png",
+      "updatedAt": "2026-04-14T04:50:49.432Z"
+    },
+    "cart:mobile": {
+      "screenId": "55e6f043e7374d5f938080b79b6a3459",
+      "pageSlug": "cart",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/furniture-store/screens/cart-mobile.html",
+      "imagePath": "design/stitch/furniture-store/screens/cart-mobile.png",
+      "updatedAt": "2026-04-14T04:51:51.185Z"
+    },
+    "service:desktop": {
+      "screenId": "ad8bda58d15d4e0bbbd80f34c9b4112a",
+      "pageSlug": "service",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/furniture-store/screens/service-desktop.html",
+      "imagePath": "design/stitch/furniture-store/screens/service-desktop.png",
+      "updatedAt": "2026-04-14T04:53:31.846Z"
+    },
+    "service:mobile": {
+      "screenId": "5dbb218712eb4aafa5f52e72ce484257",
+      "pageSlug": "service",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/furniture-store/screens/service-mobile.html",
+      "imagePath": "design/stitch/furniture-store/screens/service-mobile.png",
+      "updatedAt": "2026-04-14T04:55:01.817Z"
+    }
+  }
+}

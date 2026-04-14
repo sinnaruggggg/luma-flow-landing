@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Plus+Jakarta+Sans:wght@300..800&amp;family=Work+Sans:wght@300..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#675c00",
+                      "error-container": "#f95630",
+                      "tertiary-fixed-dim": "#6cc3eb",
+                      "secondary-dim": "#992027",
+                      "secondary-fixed": "#ffc3c0",
+                      "primary-fixed-dim": "#eedc56",
+                      "error": "#b02500",
+                      "on-secondary": "#ffefee",
+                      "inverse-surface": "#0e0e0e",
+                      "surface-container": "#eae7e7",
+                      "on-surface": "#2f2e2e",
+                      "surface-container-high": "#e5e2e1",
+                      "on-error": "#ffefec",
+                      "surface-container-highest": "#dfdcdc",
+                      "inverse-primary": "#fdea62",
+                      "on-secondary-container": "#8d1620",
+                      "surface": "#f9f6f5",
+                      "on-tertiary": "#e5f5ff",
+                      "outline": "#787676",
+                      "on-surface-variant": "#5c5b5b",
+                      "background": "#f9f6f5",
+                      "inverse-on-surface": "#9e9c9c",
+                      "tertiary-fixed": "#7bd1fa",
+                      "on-tertiary-fixed": "#003041",
+                      "primary-fixed": "#fdea62",
+                      "secondary-fixed-dim": "#ffafac",
+                      "tertiary": "#006382",
+                      "error-dim": "#b92902",
+                      "tertiary-dim": "#005672",
+                      "on-tertiary-container": "#00465d",
+                      "on-background": "#2f2e2e",
+                      "surface-tint": "#675c00",
+                      "primary-dim": "#5a5000",
+                      "on-primary-container": "#605600",
+                      "secondary": "#aa2c32",
+                      "surface-variant": "#dfdcdc",
+                      "surface-container-low": "#f3f0ef",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed": "#4b4300",
+                      "outline-variant": "#afacac",
+                      "on-primary-fixed-variant": "#6b6000",
+                      "on-tertiary-fixed-variant": "#004f69",
+                      "tertiary-container": "#7bd1fa",
+                      "on-secondary-fixed-variant": "#9a2128",
+                      "surface-dim": "#d6d4d3",
+                      "on-error-container": "#520c00",
+                      "surface-bright": "#f9f6f5",
+                      "on-secondary-fixed": "#6f0011",
+                      "primary-container": "#fdea62",
+                      "on-primary": "#fff4b6",
+                      "secondary-container": "#ffc3c0"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Space Grotesk"],
+                      "body": ["Plus Jakarta Sans"],
+                      "label": ["Work Sans"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-scroll::-webkit-scrollbar { display: none; }
+        .kinetic-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-[#f9f6f5] dark:bg-zinc-950 flex justify-between items-center px-6 py-4">
+<button class="text-[#675c00] dark:text-[#F7E45D] hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors active:translate-y-0.5 transition-transform duration-75 p-2 rounded-sm">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="text-2xl font-black italic tracking-tighter text-[#675c00] dark:text-[#F7E45D] font-headline uppercase">RIFT/01</div>
+<button class="text-[#675c00] dark:text-[#F7E45D] hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors active:translate-y-0.5 transition-transform duration-75 p-2 rounded-sm">
+<span class="material-symbols-outlined">search</span>
+</button>
+</header>
+<main class="pb-24">
+<!-- Hero Section: AERO-01 -->
+<section class="relative h-[751px] w-full bg-surface-container-lowest overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="AERO-01 Campaign" class="w-full h-full object-cover grayscale contrast-125 brightness-90" data-alt="high-contrast urban streetwear photo of a premium yellow sneaker on a concrete surface with harsh cinematic lighting and long shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4euE3RW6RKbJFM6QJgc3xJWJ5SrQ9mnOlFnXdlJvRPZMzFrxszQNkaqZ5J2fdVD2HIqoCot_HEWR179h1CRc8WgsNh3sldHX6SVV9dT3g7uYraFaXaUA2FgGGtWQGBDXWlgk0SSqXlM3dAM2aWu21nUEwUbDW3R24S46lPqVjpLYK_HXIjZQphbkBLzKDRFJd1TiOd7HNBvH17CL2Xs4P3PU2-McNnXAWQtguCcxtZ7H0ty1qRl6RoQTl4uyg-4boV724Xg7b7Q"/>
+</div>
+<!-- Sticker Overlay -->
+<div class="absolute top-8 left-6 z-20">
+<div class="bg-primary text-on-primary-fixed font-headline font-bold px-4 py-2 text-xl -rotate-3 shadow-xl transform hover:rotate-0 transition-transform">
+                    STREET LAUNCH LAB
+                </div>
+<div class="bg-white text-primary font-label font-black px-3 py-1 mt-2 text-xs uppercase tracking-widest border border-primary/20">
+                    STATUS: LIVE NOW
+                </div>
+</div>
+<!-- Countdown Break-the-Grid -->
+<div class="absolute right-0 top-1/4 z-20 flex flex-col gap-1 items-end pr-4">
+<div class="bg-secondary p-4 rotate-6 shadow-2xl">
+<p class="font-label text-[10px] text-white font-bold tracking-tighter mb-1 uppercase">Next Drop Counter</p>
+<div class="font-headline text-4xl text-white font-black leading-none">02:14:55</div>
+</div>
+</div>
+<!-- Product Info Overlay -->
+<div class="absolute bottom-0 left-0 w-full z-10 p-6 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+<div class="mb-4">
+<h1 class="font-headline text-6xl font-black text-white leading-none tracking-tighter italic uppercase">AERO-01</h1>
+<p class="font-body text-white/80 text-sm max-w-[280px] mt-2">초경량 기술력과 서울의 스트릿 감성이 만난 RIFT/01의 첫 번째 에디션.</p>
+</div>
+<!-- Price & Size Rail -->
+<div class="bg-surface-container-lowest/90 backdrop-blur-md p-4 rounded-sm shadow-2xl">
+<div class="flex justify-between items-center mb-4">
+<span class="font-label text-xl font-black text-primary italic">229,000원</span>
+<span class="font-label text-[10px] bg-secondary-container text-secondary px-2 py-1 rounded-full font-bold uppercase">Limited Stock</span>
+</div>
+<div class="flex gap-2 overflow-x-auto kinetic-scroll pb-2 mb-4">
+<button class="flex-shrink-0 w-12 h-12 flex items-center justify-center border-2 border-primary bg-primary text-white font-label font-bold text-sm">240</button>
+<button class="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-outline-variant hover:border-primary text-on-surface font-label font-bold text-sm transition-colors">250</button>
+<button class="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-outline-variant hover:border-primary text-on-surface font-label font-bold text-sm transition-colors">260</button>
+<button class="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-outline-variant hover:border-primary text-on-surface font-label font-bold text-sm transition-colors">270</button>
+<button class="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-outline-variant hover:border-primary text-on-surface font-label font-bold text-sm transition-colors opacity-30">280</button>
+</div>
+<button class="w-full bg-primary py-4 text-white font-headline font-black text-xl flex items-center justify-center gap-3 active:scale-95 transition-all shadow-lg hover:-translate-y-1">
+<span class="uppercase tracking-widest">바로 구매</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Filter/Navigation Anchors -->
+<nav class="sticky top-[72px] z-40 bg-surface/90 backdrop-blur-sm px-6 py-4 flex gap-6 overflow-x-auto kinetic-scroll">
+<a class="font-headline text-lg font-black text-primary border-b-4 border-primary pb-1 flex-shrink-0 uppercase italic" href="#">All</a>
+<a class="font-headline text-lg font-bold text-outline hover:text-on-surface pb-1 flex-shrink-0 uppercase" href="#">New</a>
+<a class="font-headline text-lg font-bold text-outline hover:text-on-surface pb-1 flex-shrink-0 uppercase" href="#">Upcoming</a>
+<a class="font-headline text-lg font-bold text-outline hover:text-on-surface pb-1 flex-shrink-0 uppercase" href="#">Archive</a>
+</nav>
+<!-- Product Grid -->
+<section class="px-6 mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Card 1 -->
+<div class="group relative flex flex-col bg-surface-container-low p-4">
+<div class="relative aspect-[4/5] overflow-hidden mb-4">
+<img alt="NEO-Vibe 02" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="dynamic shot of a white and purple designer sneaker floating in mid-air against a clean grey background with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCadYOxhVZGIVjVzf7cyLk_CX-yTF3IZ3BkVy2qXdGI72Nf5ieBt_IOp5pL9j3Qxxuxk0hYJHB07Zz6qUl4jLrK4Vw4k-jofC2hVL2lTxeousze5jPxJttM8p_Fdq_b3rfaaQIoAsnP90DgZcc70iVjBs6TxTN2TfFI8NgHek07PrQAFuAUwX-9ETCrEjKYHryYWrUJIxTJtTU7hZYyN_alKPpb89_Usg0tphbgxiP1GZyH3LjIQOLZImgeUiniBtIe7IRZKzA_6A"/>
+<div class="absolute top-2 left-2 flex flex-col gap-1">
+<span class="bg-error text-white font-label text-[10px] font-black px-2 py-1 w-fit uppercase">SOLD OUT</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-2xl font-black text-on-surface leading-tight uppercase italic">NEO-Vibe 02</h3>
+<p class="font-label text-sm text-outline-variant mt-1 italic">Vanguard Edition</p>
+</div>
+<div class="text-right">
+<span class="font-label font-black text-on-surface block">189,000원</span>
+<button class="mt-2 w-10 h-10 bg-surface-container-highest flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative flex flex-col bg-surface-container-lowest p-4 shadow-sm">
+<div class="relative aspect-[4/5] overflow-hidden mb-4">
+<img alt="Cinder Block Low" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="rugged industrial style black leather sneaker presented on a metal grid surface with cold blue and orange neon highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQVHA_TmygSbULRR7tHn3o8DaMEPAv5JAnfPfHspXk2JObsaXAZXF0Px4pC7mTNY0DaKu7P4OrBwr5yotLztenhdO9WNazKPIi1FTQIADwBDXy3tQAp_F6rCUA6wbiroZEn4V91LuQo99TUQtlLm2bN_6sHbun4uTQCL5FRTbbpoPuSSjDQiO-iINrNqMtFesz97uzCrKApROwlhMq5kFyW1Ni89k9x3l4gUOI_ftj2IHif1vbABTrn111MToPdmH8U6mBcSSJPA"/>
+<div class="absolute top-2 left-2 flex flex-col gap-1">
+<span class="bg-tertiary text-white font-label text-[10px] font-black px-2 py-1 w-fit uppercase italic tracking-tighter">LIMITED: 150/500</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-2xl font-black text-on-surface leading-tight uppercase italic">CINDER BLOCK</h3>
+<p class="font-label text-sm text-outline-variant mt-1 italic">Industrial Series</p>
+</div>
+<div class="text-right">
+<span class="font-label font-black text-on-surface block">254,000원</span>
+<button class="mt-2 w-10 h-10 bg-primary flex items-center justify-center text-white active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-xl">shopping_bag</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Kinetic Archive Section -->
+<section class="mt-16 bg-inverse-surface py-12 px-6">
+<div class="flex items-center gap-4 mb-8">
+<div class="h-[2px] flex-grow bg-outline-variant/30"></div>
+<h2 class="font-headline text-3xl font-black text-white italic uppercase tracking-tighter">Verified Archive</h2>
+<div class="h-[2px] flex-grow bg-outline-variant/30"></div>
+</div>
+<div class="flex gap-6 overflow-x-auto kinetic-scroll py-4">
+<!-- Archive Item 1 -->
+<div class="flex-shrink-0 w-64 bg-zinc-900 border border-zinc-800 p-4 transform -rotate-1 hover:rotate-0 transition-transform">
+<div class="grayscale aspect-square mb-4 bg-zinc-800">
+<img alt="Archive 01" class="w-full h-full object-cover opacity-60 mix-blend-luminosity" data-alt="monochrome technical blueprint photography of an vintage athletic shoe with annotated dimensions and line work" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAisJbOPHW4qb4Yc72MnLxtpvScdEaZqAoBXnGML4Dj3QYcMhrrvaeF45lOhqoRd45pvtSC1jGJS21mFltVC6wVLp-KoUXzIguW4W5_bGQ23OAouXMrStRK478MZFpoyQyD8cXi7AZ2h6eXuCP1L_oyiFzGZxFcy7SE0c7rle00bc0gt88-NtoCqtUIi0_Sq8eE8LF-yD1fsX0YD5Jd9DKANos5lbgHgjwQ6ls3fOfiX2wFrlvw5FMV9Ud19w1bej3aJ4PtifDjGQ"/>
+</div>
+<div class="font-label text-[10px] text-zinc-500 mb-1 uppercase tracking-widest">SKU: RIFT-ARC-01</div>
+<h4 class="font-headline text-lg font-bold text-white uppercase italic">ORBITER / 2023</h4>
+<p class="font-label text-primary-fixed text-xs mt-2">RESALE VALUE: ₩450,000+</p>
+</div>
+<!-- Archive Item 2 -->
+<div class="flex-shrink-0 w-64 bg-zinc-900 border border-zinc-800 p-4 transform rotate-2 hover:rotate-0 transition-transform">
+<div class="grayscale aspect-square mb-4 bg-zinc-800">
+<img alt="Archive 02" class="w-full h-full object-cover opacity-60 mix-blend-luminosity" data-alt="black and white top-down view of a classic sneaker design with architectural grid lines overlaid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI9KxdWO0aDoNl2zHJm6Qo8KXtrhFGCN_5fqdMMFyhmF_G45Xcx2Civ7TEw0-62Ja6wDd8vKYXO_qBUB1oYMvBblxzhytXIm-B2ZfWn6PGS-Qvhu934P_ssnwRsr0Okpu9mn-l_iw9I0mM0aiOISwTZooFgpyL8tewSDNuRxW5TtnR9ary-W6Xg2dtD5mOMxZIdF60Om675K5B8UVopdCoonVRzunMWJiemNWktiBy92dLcvPnaNJkBr2dTnKPH-Mv7iVIF3wFKQ"/>
+</div>
+<div class="font-label text-[10px] text-zinc-500 mb-1 uppercase tracking-widest">SKU: RIFT-ARC-09</div>
+<h4 class="font-headline text-lg font-bold text-white uppercase italic">FLUX HI / 2022</h4>
+<p class="font-label text-primary-fixed text-xs mt-2">RESALE VALUE: ₩620,000+</p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="mt-12 px-6 py-12 border-t border-surface-container">
+<div class="grid grid-cols-2 gap-8 mb-12">
+<div>
+<h5 class="font-headline text-xs font-black uppercase text-outline-variant tracking-widest mb-4">Support</h5>
+<ul class="space-y-2 font-label text-sm text-on-surface-variant font-medium">
+<li><a class="hover:text-primary" href="#">배송 정보</a></li>
+<li><a class="hover:text-primary" href="#">환불 정책</a></li>
+<li><a class="hover:text-primary" href="#">사이즈 가이드</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-headline text-xs font-black uppercase text-outline-variant tracking-widest mb-4">Connect</h5>
+<ul class="space-y-2 font-label text-sm text-on-surface-variant font-medium">
+<li><a class="hover:text-primary" href="#">Instagram</a></li>
+<li><a class="hover:text-primary" href="#">Discord</a></li>
+<li><a class="hover:text-primary" href="#">Twitter</a></li>
+</ul>
+</div>
+</div>
+<div class="flex justify-between items-end border-t border-surface-container-high pt-8">
+<div class="font-headline text-xl font-black italic tracking-tighter text-primary/40 uppercase">RIFT/01</div>
+<p class="font-label text-[10px] text-outline-variant uppercase">© 2024 RIFT LAB. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl z-50 shadow-[0px_-20px_40px_rgba(18,18,18,0.06)]">
+<a class="flex flex-col items-center justify-center text-zinc-500 dark:text-zinc-400 px-4 py-1 hover:opacity-80 active:scale-95 transition-all duration-150" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold uppercase">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#675c00] dark:bg-[#F7E45D] text-white dark:text-black rounded-sm px-4 py-1 transform -rotate-2 active:scale-95 transition-all duration-150" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">rebase_edit</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold uppercase">Drops</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 dark:text-zinc-400 px-4 py-1 hover:opacity-80 active:scale-95 transition-all duration-150" href="#">
+<span class="material-symbols-outlined mb-1">shopping_bag</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold uppercase">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 dark:text-zinc-400 px-4 py-1 hover:opacity-80 active:scale-95 transition-all duration-150" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold uppercase">Profile</span>
+</a>
+</nav>
+</body></html>

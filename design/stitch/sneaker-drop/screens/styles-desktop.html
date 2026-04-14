@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Work+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#eedc56",
+                    "tertiary-fixed": "#7bd1fa",
+                    "on-background": "#2f2e2e",
+                    "primary-dim": "#5a5000",
+                    "inverse-on-surface": "#9e9c9c",
+                    "surface-variant": "#dfdcdc",
+                    "on-error": "#ffefec",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-dim": "#005672",
+                    "on-primary-fixed": "#4b4300",
+                    "surface-container-high": "#e5e2e1",
+                    "background": "#f9f6f5",
+                    "error-container": "#f95630",
+                    "error-dim": "#b92902",
+                    "secondary-fixed-dim": "#ffafac",
+                    "inverse-surface": "#0e0e0e",
+                    "primary": "#675c00",
+                    "secondary-container": "#ffc3c0",
+                    "on-secondary": "#ffefee",
+                    "on-surface": "#2f2e2e",
+                    "surface": "#f9f6f5",
+                    "on-secondary-container": "#8d1620",
+                    "inverse-primary": "#fdea62",
+                    "on-primary": "#fff4b6",
+                    "on-surface-variant": "#5c5b5b",
+                    "on-primary-fixed-variant": "#6b6000",
+                    "surface-bright": "#f9f6f5",
+                    "surface-tint": "#675c00",
+                    "secondary-dim": "#992027",
+                    "on-secondary-fixed": "#6f0011",
+                    "surface-container-low": "#f3f0ef",
+                    "tertiary-container": "#7bd1fa",
+                    "outline": "#787676",
+                    "surface-container": "#eae7e7",
+                    "secondary-fixed": "#ffc3c0",
+                    "on-primary-container": "#605600",
+                    "tertiary": "#006382",
+                    "on-tertiary-container": "#00465d",
+                    "primary-fixed": "#fdea62",
+                    "error": "#b02500",
+                    "on-tertiary-fixed": "#003041",
+                    "on-secondary-fixed-variant": "#9a2128",
+                    "surface-container-highest": "#dfdcdc",
+                    "on-tertiary-fixed-variant": "#004f69",
+                    "secondary": "#aa2c32",
+                    "on-tertiary": "#e5f5ff",
+                    "tertiary-fixed-dim": "#6cc3eb",
+                    "outline-variant": "#afacac",
+                    "primary-container": "#fdea62",
+                    "surface-dim": "#d6d4d3",
+                    "on-error-container": "#520c00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Work Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-scroll-container {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .kinetic-scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+        .sticker-rotate { transform: rotate(-2deg); }
+        .stamp-effect {
+            border: 3px solid currentColor;
+            padding: 0.5rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            transform: rotate(-15deg);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation -->
+<nav class="bg-[#f9f6f5] dark:bg-neutral-900 w-full top-0 sticky z-50 flex justify-between items-center w-full px-8 py-6 max-w-[1920px] mx-auto">
+<div class="text-3xl font-black tracking-tighter text-[#121212] dark:text-white">RIFT/01</div>
+<div class="hidden md:flex gap-12 items-center font-['Space_Grotesk'] uppercase tracking-widest font-bold">
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-[#121212] dark:hover:text-white transition-colors" href="#">ARCHIVE</a>
+<a class="text-[#675c00] dark:text-[#F7E45D] border-b-4 border-[#675c00] dark:border-[#F7E45D] pb-1" href="#">DROPS</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-[#121212] dark:hover:text-white transition-colors" href="#">LAB</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-[#121212] dark:hover:text-white transition-colors" href="#">COMMUNITY</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="hover:opacity-80 transition-opacity duration-200 scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-2xl">shopping_bag</span>
+</button>
+<button class="hover:opacity-80 transition-opacity duration-200 scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-2xl">person</span>
+</button>
+</div>
+</nav>
+<div class="flex">
+<!-- Side Navigation (Active) -->
+<aside class="hidden lg:flex flex-col pt-32 pb-8 px-6 h-screen w-64 left-0 fixed z-40 bg-white/84 dark:bg-black/84 backdrop-blur-xl border-r border-neutral-200/20 dark:border-neutral-800/20 shadow-[0px_20px_40px_rgba(18,18,18,0.06)]">
+<div class="mb-12">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-sm bg-surface-container-high overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="close up profile photo of a young man with buzz cut and streetwear styling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKPraeXkrKqAGFYn9HD0OuuippxLa16TUNHyvhG14MJy5yAWMzG1n-kB3fCfTmv-IVwhW-RJW-6j3MADYO77mNqI6FUsyiIjWiQOi_23G61awHJu2YIivPo3QYBNIdM3h6k_3DMLr6Rhw_Up31neQvLsSDCGQcgDLlf_pa7RbA-rAzHzFRYXyq5d6-8mXGw25sEm2gefw9lLSxuv5GjDBBe5YDEtZILDR7UeWKGrwg8IhRz8Jq8Z5isotoU7NV-wOWDM7kBzFDlw"/>
+</div>
+<div>
+<p class="font-['Work_Sans'] font-medium text-[10px] uppercase text-neutral-400">STREET_LAB_MEMBER</p>
+<p class="font-['Work_Sans'] font-black text-xs uppercase text-primary">RANK: ELITE_ARCHIVIST</p>
+</div>
+</div>
+</div>
+<nav class="flex flex-col gap-8 font-['Work_Sans'] font-medium text-xs uppercase">
+<a class="flex items-center gap-3 text-[#675c00] dark:text-[#F7E45D] font-black border-l-4 border-[#675c00] pl-4 translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined text-lg">auto_stories</span> STYLE_DIARY
+                </a>
+<a class="flex items-center gap-3 text-neutral-400 dark:text-neutral-600 pl-4 hover:text-[#121212] hover:bg-[#F7E45D]/10 transition-all" href="#">
+<span class="material-symbols-outlined text-lg">collections</span> LOOKBOOK_01
+                </a>
+<a class="flex items-center gap-3 text-neutral-400 dark:text-neutral-600 pl-4 hover:text-[#121212] hover:bg-[#F7E45D]/10 transition-all" href="#">
+<span class="material-symbols-outlined text-lg">architecture</span> TECHNICAL_SPECS
+                </a>
+<a class="flex items-center gap-3 text-neutral-400 dark:text-neutral-600 pl-4 hover:text-[#121212] hover:bg-[#F7E45D]/10 transition-all" href="#">
+<span class="material-symbols-outlined text-lg">shopping_cart</span> SHOP_COLLECTION
+                </a>
+</nav>
+<button class="mt-auto bg-secondary text-on-secondary px-4 py-3 font-['Work_Sans'] font-bold text-xs uppercase tracking-widest hover:translate-y-[-2px] transition-transform">
+                SUBMIT_LOOK
+            </button>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 lg:ml-64 bg-background">
+<!-- Hero Section -->
+<section class="relative h-[972px] w-full overflow-hidden flex items-end px-12 pb-24">
+<div class="absolute inset-0 z-0">
+<img alt="STYLE ARCHIVE 01 Campaign" class="w-full h-full object-cover grayscale-[20%] brightness-90" data-alt="cinematic wide shot of a model in a neon-lit industrial Seoul alleyway wearing technical streetwear and limited edition sneakers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYjTH9DUtTmqy-Q8xFKwyXG8_bV2RnFq30XGEtu-IhdlcSmEHsY-3rDpZLOUSTu3ufO_m9QNbBr5ETZ5Gdgr0qOsP2fFLUUpWolvISA12MHinjHEHjd_6RCUyEUSySUNQZ0a3KZVuTJFiGR_x2hKJSqcRsSdxobQkdE5yB0FdpquPEuY4PR8VeepUa6bqt5moWRIgVKuDqJPaRkd0A2XwKRZhvJPpdTRCeg8ODagwo0rnlqFF7eq8-awTMIc-gddoAb5QufFx65A"/>
+</div>
+<div class="relative z-10 w-full flex flex-col md:flex-row justify-between items-end gap-12">
+<div class="max-w-4xl">
+<h1 class="font-headline text-[12vw] leading-[0.8] font-black tracking-tighter text-white drop-shadow-2xl">
+                            STYLE<br/>ARCHIVE<br/>01
+                        </h1>
+</div>
+<!-- Sticker Style UI Block -->
+<div class="bg-primary-container p-6 w-80 sticker-rotate shadow-2xl border-4 border-on-background relative">
+<div class="absolute -top-4 -right-4 stamp-effect text-secondary bg-surface px-2 py-1 text-sm">VERIFIED_LAB</div>
+<div class="font-label space-y-4 text-on-primary-container">
+<div class="flex justify-between border-b border-on-primary-container/20 pb-2">
+<span class="font-bold opacity-60">MODEL</span>
+<span class="font-black">K-04 [S.HOON]</span>
+</div>
+<div class="flex justify-between border-b border-on-primary-container/20 pb-2">
+<span class="font-bold opacity-60">LOCATION</span>
+<span class="font-black">SEOUL_CORE_02</span>
+</div>
+<div class="flex justify-between border-b border-on-primary-container/20 pb-2">
+<span class="font-bold opacity-60">FEATURED</span>
+<span class="font-black">VORTEX WHITE</span>
+</div>
+<div class="flex justify-between">
+<span class="font-bold opacity-60">DROP_ID</span>
+<span class="font-black">R-01.992</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Diary Grid -->
+<section class="py-24 px-12 max-w-[1600px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+<!-- Card 01: Polaroid Full Outfit -->
+<div class="md:col-span-7 bg-surface-container-lowest p-6 shadow-xl border border-outline-variant/10">
+<div class="aspect-[4/5] bg-surface overflow-hidden mb-6 relative group">
+<img alt="Look 01" class="w-full h-full object-cover" data-alt="street style photography of a person wearing an oversized utility vest and technical cargo pants in a minimal urban setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSJyendVkPnFxpSMaTAJW0NnxW6AaZgnzmIa5jabcaEQPZlONcs3Kr0oYcrERn-jh0kw09nxef8F3Pz8-WocHmOsbTQe_Rgz8FxckFkbdqxt2K54n2BIqIfAeFqBlgkLlegWYgzwfHN1LisiKg8Csy7DnIxEJG8D3bQw6Q3O92bYGOFZBlYYEqLY0UlDa7V6NUWi_AZJiAHr-GqpwFQBPr6iGTefgtyZZFXznYrrMXVPqg51352wPHkt7sFXXSPLd3BOv6-FVtDg"/>
+<!-- Shop the Look Sticker -->
+<div class="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-secondary text-white px-4 py-2 font-label font-bold text-xs flex items-center gap-2 shadow-lg scale-110">
+<span class="material-symbols-outlined text-sm">shopping_cart</span> SHOP_VORTEX_VEST
+                                </button>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label text-xs text-neutral-400 mb-1 italic">ARCHIVE_REF: #L01-2024</p>
+<h3 class="font-headline text-2xl font-bold uppercase">Urban Infiltration Unit</h3>
+<p class="font-body text-sm mt-4 leading-relaxed max-w-md">
+                                    레이어드된 텍티컬 베스트와 와이드 카고 팬츠의 조화. 도심 속에서의 활동성을 극대화한 실루엣입니다.
+                                </p>
+</div>
+<div class="text-right">
+<span class="font-label text-4xl font-black text-surface-container-highest">01</span>
+</div>
+</div>
+</div>
+<!-- Card 02: Sneaker Detail -->
+<div class="md:col-span-5 md:mt-24 bg-surface-container-low p-4 shadow-md rotate-1">
+<div class="aspect-square overflow-hidden mb-4 grayscale">
+<img alt="Technical Detail" class="w-full h-full object-cover" data-alt="extreme close up of a technical sneaker with complex lacing system and mesh textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9Gu83gMX3RybtWJyMegaAxGra2W77eLZL-qpp2IciAi7u9d_fE4E7DF2nhpGv5R5n0zoo4eADvtPyx8a22MDyUlI1iUnftB_Y5BJdkJ7U-u2zoK3_tHGUBJ7oDNT4yKPiKb8AyxGqINQxF1yq52tkxkxLVaPr_CIOOzSIjc39nnqquwrysyvvBBUwi93JGrm0rrRPIy9RgtrUdHuttodJo-aLpZnQX_haerasnVRitsQpB0TEnaGlZzVtBjcZUOg0tJyh6LgRUA"/>
+</div>
+<div class="font-label">
+<div class="bg-primary px-2 py-1 inline-block text-on-primary text-[10px] mb-2">TECHNICAL_DATA_SHEET</div>
+<h4 class="font-headline font-bold uppercase text-lg">Vortex White R1</h4>
+<ul class="text-[10px] mt-2 space-y-1 opacity-70">
+<li>MIDSOLE: AERO-CELL TECH</li>
+<li>UPPER: BALISTIC NYLON</li>
+<li>TRACTION: GRIP-X COMPOUND</li>
+</ul>
+</div>
+<!-- Buy now sticker -->
+<div class="mt-6 flex justify-end">
+<div class="bg-primary-container p-3 border-2 border-primary sticker-rotate">
+<span class="font-label font-black text-xs">KRW 289,000</span>
+<button class="block font-headline font-black text-sm uppercase mt-1 text-primary hover:underline">GET_ACCESS</button>
+</div>
+</div>
+</div>
+<!-- Card 03: Atmosphere -->
+<div class="md:col-span-4 bg-surface-container-high p-8 shadow-inner">
+<div class="aspect-[3/4] mb-6 border-4 border-white overflow-hidden rotate-[-2deg]">
+<img alt="Atmosphere" class="w-full h-full object-cover contrast-125" data-alt="urban architectural shot showing concrete structures and sharp shadows in a modern district" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDN9gWmYZYgdNkji5_0MTZpv_5jQkNP1flj6-Epm0yhY45DNN4G9qLe_0wq54BTt7psOztASjSoN4b1UbRVoKaPvmqLp0Us8Gd1AbrgL7KQzLGkVIUooqS6C6quYSG6ryvvhVODh-NM63cI9gqbOYTAqhR6Re1uY9yU7DBBCbzBHEKgTCQXJl1aPk3vwrP01RDzYQB68Ka_Bn-kkMdmbX5fooVobqIgAT3gpdfQcJpUb8VlVBkMuNvfGVMVzHtyAUbrcrmqtEGyIA"/>
+</div>
+<p class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Environment_Report</p>
+<p class="font-body text-xs mt-2 italic">"The city is our testing ground. Every concrete edge defines the movement."</p>
+</div>
+<!-- Card 04: Large Feature -->
+<div class="md:col-span-8 bg-on-background text-background p-12 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<div class="stamp-effect text-primary-container border-primary-container opacity-40">CLASSIFIED</div>
+</div>
+<div class="grid grid-cols-2 gap-12">
+<div class="space-y-6">
+<h2 class="font-headline text-5xl font-black leading-none">CORE<br/>EQUIPMENT</h2>
+<p class="font-body text-sm opacity-60 leading-relaxed">
+                                    RIFT/01의 모든 제품은 단순한 패션을 넘어, 도시 생활의 거친 환경 속에서도 최상의 퍼포먼스를 유지할 수 있도록 설계되었습니다. 실험적인 소재와 해체주의적 디자인의 결합을 만나보세요.
+                                </p>
+<button class="border-2 border-primary-container text-primary-container px-6 py-3 font-label font-bold text-xs uppercase hover:bg-primary-container hover:text-on-primary-container transition-colors">
+                                    VIEW_FULL_COLLECTION
+                                </button>
+</div>
+<div class="aspect-square bg-surface-variant/10 overflow-hidden">
+<img alt="Backpack Detail" class="w-full h-full object-cover" data-alt="minimal product shot of a black technical backpack with many straps and buckles against a clean grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWrCPMuDWbVyD3KMZtUJPo3dkcqGXc8R_Gubc9UO95KvttPAlTjobV1Y_TPRJBvpA7fFfV3XdJUrTMuYO12QxRt18g7ljDytyO3H_AVcy87LzTCI0WymludZVgwZsIXEE-6KFMhsDFfgYTO-m0XhJ5cR6ArwbF2mnLAHBLMuODCTqmksVhtRZ01EqF7QuiWYtb4tgo9Q_LronCCkvUWwxvF40dUBLzCje45mulVjTSYeoeFoz0NUPSSc7OG1nYObiUkfQY446fLA"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-[#121212] dark:bg-black w-full mt-auto flex flex-col md:flex-row justify-between items-center w-full px-12 py-10 border-t border-neutral-800">
+<div class="text-[#F7E45D] font-black italic mb-6 md:mb-0">RIFT/01 ARCHIVE</div>
+<div class="flex flex-col md:flex-row gap-8 items-center font-['Work_Sans'] text-[10px] tracking-tighter">
+<a class="text-neutral-500 hover:text-[#F7E45D] transition-colors" href="#">PRIVACY_PROTOCOL</a>
+<a class="text-neutral-500 hover:text-[#F7E45D] transition-colors" href="#">SHIPPING_LOGISTICS</a>
+<a class="text-neutral-500 hover:text-[#F7E45D] transition-colors" href="#">CONTACT_TERMINAL</a>
+</div>
+<div class="mt-8 md:mt-0 font-['Work_Sans'] text-[10px] tracking-tighter text-neutral-500">
+            ©2024 RIFT_LAB_ARCHIVE / ALL RIGHTS RESERVED
+        </div>
+</footer>
+</body></html>

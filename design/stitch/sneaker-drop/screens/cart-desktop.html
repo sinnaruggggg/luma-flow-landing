@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Plus+Jakarta+Sans:wght@200..800&amp;family=Work+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#9e9c9c",
+                        "error": "#b02500",
+                        "error-dim": "#b92902",
+                        "on-tertiary-fixed-variant": "#004f69",
+                        "tertiary": "#006382",
+                        "surface-container-high": "#e5e2e1",
+                        "surface-variant": "#dfdcdc",
+                        "surface-tint": "#675c00",
+                        "secondary-dim": "#992027",
+                        "on-surface": "#2f2e2e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#00465d",
+                        "tertiary-container": "#7bd1fa",
+                        "primary-container": "#fdea62",
+                        "primary-dim": "#5a5000",
+                        "on-error-container": "#520c00",
+                        "surface-container-highest": "#dfdcdc",
+                        "surface": "#f9f6f5",
+                        "primary": "#675c00",
+                        "on-primary": "#fff4b6",
+                        "on-primary-fixed": "#4b4300",
+                        "on-surface-variant": "#5c5b5b",
+                        "on-background": "#2f2e2e",
+                        "secondary-fixed": "#ffc3c0",
+                        "on-secondary-fixed-variant": "#9a2128",
+                        "outline-variant": "#afacac",
+                        "primary-fixed-dim": "#eedc56",
+                        "secondary-container": "#ffc3c0",
+                        "background": "#f9f6f5",
+                        "inverse-surface": "#0e0e0e",
+                        "on-tertiary-fixed": "#003041",
+                        "tertiary-fixed": "#7bd1fa",
+                        "outline": "#787676",
+                        "error-container": "#f95630",
+                        "tertiary-fixed-dim": "#6cc3eb",
+                        "secondary-fixed-dim": "#ffafac",
+                        "on-error": "#ffefec",
+                        "primary-fixed": "#fdea62",
+                        "surface-dim": "#d6d4d3",
+                        "surface-bright": "#f9f6f5",
+                        "on-tertiary": "#e5f5ff",
+                        "on-secondary": "#ffefee",
+                        "surface-container-low": "#f3f0ef",
+                        "surface-container": "#eae7e7",
+                        "on-secondary-fixed": "#6f0011",
+                        "inverse-primary": "#fdea62",
+                        "tertiary-dim": "#005672",
+                        "secondary": "#aa2c32",
+                        "on-primary-container": "#605600",
+                        "on-secondary-container": "#8d1620",
+                        "on-primary-fixed-variant": "#6b6000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Work Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .meshtexture {
+            background-image: radial-gradient(circle at 2px 2px, rgba(0,0,0,0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col meshtexture">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-surface-container-low dark:bg-zinc-900 border-b-0 shadow-none">
+<div class="flex justify-between items-center px-6 py-4 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-3xl font-black italic tracking-tighter text-zinc-900 dark:text-white font-['Space_Grotesk']">RIFT/01</span>
+<nav class="hidden md:flex gap-6">
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase font-bold text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:translate-y-[-2px] transition-transform duration-200" href="#">ARCHIVE</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase font-bold text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:translate-y-[-2px] transition-transform duration-200" href="#">DROPS</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase font-bold text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:translate-y-[-2px] transition-transform duration-200" href="#">LAB</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase font-bold text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:translate-y-[-2px] transition-transform duration-200" href="#">COMMUNITY</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface hover:scale-110 transition-transform" data-icon="shopping_cart">shopping_cart</button>
+<button class="material-symbols-outlined text-on-surface hover:scale-110 transition-transform" data-icon="person">person</button>
+</div>
+</div>
+</header>
+<main class="flex-grow max-w-[1440px] mx-auto w-full px-6 py-12">
+<!-- Header Section -->
+<div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="text-7xl font-headline font-black italic tracking-tighter leading-none text-on-background">
+                    SHOPPING CART
+                </h1>
+<p class="font-label text-on-surface-variant tracking-widest mt-2">장바구니 리스트 / KINETIC ARCHIVE v1.0</p>
+</div>
+<!-- Urgency Counter -->
+<div class="bg-primary px-6 py-3 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] border border-on-surface-variant flex items-center gap-4">
+<span class="material-symbols-outlined font-bold" data-icon="timer" style="font-variation-settings: 'FILL' 1;">timer</span>
+<div>
+<p class="font-label text-[10px] uppercase font-bold leading-none text-on-primary-fixed">Hold Stock For</p>
+<p class="font-headline text-2xl font-black leading-none text-on-primary-fixed">14:59</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left Column: Items List -->
+<div class="lg:col-span-8 space-y-6">
+<!-- Cart Item 1 -->
+<div class="bg-surface-container-lowest border-l-8 border-primary p-6 flex flex-col sm:flex-row gap-6 relative overflow-hidden">
+<div class="w-full sm:w-48 aspect-square bg-surface-container flex-shrink-0 relative">
+<img alt="RIFT/01 AER Sneaker" class="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-300" data-alt="Technical high-end sneaker render with translucent materials and yellow neon accents on a neutral industrial background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClefujEc2ppkPwJY0fCZ8HH1S-atfQbF6RGbyHR5el43pc6ktA_FvRmqbzgX-mfZM5C5-az3A9Lq7PfR0vph2vIbf2EHaxaQn96iN6fpTjh9igIal9yAcFfG0P7s3G92FTTPU0Nrtw5zylrdSwpxrwjrn1a84zWSRJS8DZTiT_bwUhNrjFJvNjJMWhVKhwcOx-lLV54V2FRYuDsQKNzLZdSJ8Fpg4aWwDEfSmKKRPI9_Rmx52Ys6-edAo-mMrBs4bOi_jSZvhlcw"/>
+<div class="absolute top-2 left-2 bg-primary text-on-primary-fixed px-2 py-1 font-label text-[10px] font-bold tracking-tighter uppercase">LIMITED DROP</div>
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-3xl font-bold tracking-tight text-on-surface">RIFT/01 AER "VOLT"</h3>
+<button class="material-symbols-outlined text-outline hover:text-error transition-colors" data-icon="close">close</button>
+</div>
+<p class="font-label text-sm text-on-surface-variant mt-1 uppercase">SKU: RIFT-AER-001</p>
+<div class="mt-4 flex gap-8">
+<div>
+<p class="font-label text-[10px] text-outline uppercase font-bold">Size (KR)</p>
+<p class="font-body font-bold text-lg">270</p>
+</div>
+<div>
+<p class="font-label text-[10px] text-outline uppercase font-bold">Quantity</p>
+<div class="flex items-center gap-3 mt-1">
+<button class="w-8 h-8 flex items-center justify-center border border-outline-variant hover:bg-surface-container transition-colors">-</button>
+<span class="font-body font-bold text-lg w-4 text-center">1</span>
+<button class="w-8 h-8 flex items-center justify-center border border-outline-variant hover:bg-surface-container transition-colors">+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6 flex justify-between items-baseline">
+<span class="font-headline text-3xl font-black text-on-surface italic">229,000원</span>
+<span class="font-label text-[10px] text-primary font-bold">IN STOCK &amp; READY</span>
+</div>
+</div>
+</div>
+<!-- Cart Item 2 -->
+<div class="bg-surface-container-lowest border-l-8 border-on-surface-variant p-6 flex flex-col sm:flex-row gap-6 opacity-80">
+<div class="w-full sm:w-48 aspect-square bg-surface-container flex-shrink-0 relative">
+<img alt="RIFT/01 CORE Sneaker" class="w-full h-full object-cover grayscale" data-alt="Sleek white and black brutalist sneaker with thick chunky soles in a studio lighting setting with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA_37dXdzh_2nOCOC7iIErDrLVvhCXvAIQTYuBF-NCgRCmEqgIAgnfWjAFOXrDSoqFY9F449Qvfd-Lnf-sFVGGUVPtmbKLYsPza9HiNdpoK1zJjt5odKF3t6Gzr0hJIs9wXKqZ-FPLCbxkfaPv3o-GfVHdPJ_MbIe8kuA32xiV1K5RbULVvLu9OAfPXyreHAohIh52QXxdEjANGLer0M8cbvrKRE0mxhIrOfq9YacMC0pR4wS7BHcruUjoEPcpxGqkQPGaguad7w"/>
+<div class="absolute inset-0 bg-on-surface/40 flex items-center justify-center">
+<span class="bg-error text-on-error px-4 py-2 font-headline font-black italic text-xl uppercase tracking-widest transform -rotate-12">SOLD OUT</span>
+</div>
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-3xl font-bold tracking-tight text-outline">RIFT/01 CORE "ONYX"</h3>
+<button class="material-symbols-outlined text-outline hover:text-error transition-colors" data-icon="close">close</button>
+</div>
+<p class="font-label text-sm text-on-surface-variant mt-1 uppercase">SKU: RIFT-CORE-42</p>
+<div class="mt-4 flex gap-8">
+<div>
+<p class="font-label text-[10px] text-outline uppercase font-bold">Size (KR)</p>
+<p class="font-body font-bold text-lg text-outline">265</p>
+</div>
+</div>
+</div>
+<div class="mt-6 flex justify-between items-baseline">
+<span class="font-headline text-3xl font-black text-outline italic">189,000원</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sticky Summary -->
+<div class="lg:col-span-4 sticky top-28">
+<div class="bg-on-surface p-8 text-surface relative overflow-hidden shadow-[16px_16px_0px_0px_rgba(103,92,0,1)]">
+<div class="absolute -right-8 -top-8 w-24 h-24 bg-primary rotate-45 flex items-end justify-center pb-2">
+<span class="material-symbols-outlined text-on-primary-fixed" data-icon="qr_code_2">qr_code_2</span>
+</div>
+<h2 class="font-headline text-4xl font-black italic tracking-tighter mb-8 border-b-2 border-primary pb-4">
+                        주문 요약
+                    </h2>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between font-label tracking-tight text-sm">
+<span class="text-outline-variant">SUBTOTAL</span>
+<span>418,000원</span>
+</div>
+<div class="flex justify-between font-label tracking-tight text-sm">
+<span class="text-outline-variant">SHIPPING (배송비)</span>
+<span class="text-primary-container">FREE</span>
+</div>
+<div class="flex justify-between font-label tracking-tight text-sm">
+<span class="text-outline-variant">TAX (VAT 10%)</span>
+<span>INCLUDED</span>
+</div>
+<div class="pt-6 border-t border-outline/30 flex justify-between items-baseline">
+<span class="font-headline font-bold text-xl uppercase tracking-widest">TOTAL</span>
+<span class="font-headline text-4xl font-black text-primary italic">229,000원</span>
+</div>
+<p class="text-[10px] font-label text-outline-variant italic leading-tight mt-2">
+                            * 품절된 상품 'RIFT/01 CORE'는 결제 금액에서 제외되었습니다.
+                        </p>
+</div>
+<button class="w-full bg-primary hover:bg-primary-fixed-dim text-on-primary-fixed font-headline font-black italic text-2xl py-6 flex items-center justify-center gap-4 group transition-all active:scale-95 shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+                        CHECKOUT (결제하기)
+                        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<div class="mt-8 pt-6 border-t border-dashed border-outline/30 flex items-center gap-4 text-outline-variant">
+<span class="material-symbols-outlined text-sm" data-icon="security" style="font-variation-settings: 'FILL' 1;">security</span>
+<p class="font-label text-[10px] uppercase">Encrypted Tactical Protocol v2.4 Secured Transaction</p>
+</div>
+</div>
+<!-- Floating Promo Sticker -->
+<div class="mt-12 bg-secondary text-on-secondary px-6 py-4 -rotate-1 shadow-lg flex items-center justify-between border border-on-secondary/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-3xl" data-icon="local_fire_department">local_fire_department</span>
+<div>
+<p class="font-headline font-bold leading-none italic">MEMBERS ONLY</p>
+<p class="font-label text-[10px] opacity-80">EXTRA 5% OFF WITH 'RIFT-LAB-ACCESS'</p>
+</div>
+</div>
+<span class="material-symbols-outlined" data-icon="content_copy">content_copy</span>
+</div>
+</div>
+</div>
+<!-- Recommended Drops Section -->
+<div class="mt-32">
+<div class="flex items-baseline gap-4 mb-8">
+<h2 class="font-headline text-4xl font-black italic tracking-tighter">RECOMMENDED DROPS</h2>
+<div class="h-[2px] flex-grow bg-surface-container"></div>
+<a class="font-label text-xs font-bold hover:text-primary transition-colors underline decoration-2 underline-offset-4" href="#">VIEW ARCHIVE</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Rec Card 1 -->
+<div class="bg-surface-container-low group cursor-pointer border border-transparent hover:border-primary transition-all p-4">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container relative">
+<img alt="RIFT/01 LAB EDITION" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Conceptual sneaker design with bold neon green accents and tactical straps against a dark concrete background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAamut4H4nnhfZbq86-J0Z2wDR5GCCZuUm6jSHlsFaLTZCWssdkoEwpihUawyV4k7_zHdnKqi7WOWkKRRBnKqwL3UXACTdKE3r4UAWG5GKuKT9LIAM4oKwPBaDee7E6bqyvh7dyvKDLtmeyEuCk9FMIwL4o6R_WJGgMwQQA93108dsPdtu7Z9-9r-zOG8XX8K_c21_IQe312GXza2-Nc3BYXSWQkl-Lbg05JdPqVs8mKriIqPAPAd2ZeM13F-KOjFEyaC9GkjbE5g"/>
+<div class="absolute bottom-0 left-0 bg-on-surface text-surface px-3 py-1 font-label text-[10px] font-bold">NEW LAB ENTRY</div>
+</div>
+<div class="mt-4 flex justify-between items-start">
+<div>
+<h4 class="font-headline font-bold text-lg tracking-tight">RIFT/01 NITRO</h4>
+<p class="font-label text-[10px] text-outline font-bold">AVAILABLE SOON</p>
+</div>
+<span class="font-headline font-black italic text-lg">249,000원</span>
+</div>
+</div>
+<!-- Rec Card 2 -->
+<div class="bg-surface-container-low group cursor-pointer border border-transparent hover:border-primary transition-all p-4">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container relative">
+<img alt="RIFT/01 KINETIC" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Bright red performance running shoe with futuristic design and black dynamic lines in high key studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYZuw5_pB9zbgOAt3R_-IFuDhXt3Ss9Phu31gx8JD4u9tO4PTvi5t20lU23n_batRlBZ-mYviyzAStdJbhzcEPpoNf9nPLbYTcgYW0gQLDQSgqbXlgys2Jjf_QsxLm2Z9OGTCHKY0gIfbGpzY9vrFjwVHjRc3jU08pxuEkmh9xZTy78O4kmVcKl0A-iEZ42rncFuOP-IY0TZPi77_vcIN0qZA1ueVjkBxcguzreYjerWtPD5XdCDSiqtLb-TDBv7eEGhfQL9lkNQ"/>
+<div class="absolute bottom-0 left-0 bg-secondary text-on-secondary px-3 py-1 font-label text-[10px] font-bold">ARCHIVE RESTOCK</div>
+</div>
+<div class="mt-4 flex justify-between items-start">
+<div>
+<h4 class="font-headline font-bold text-lg tracking-tight">RIFT/01 KINETIC</h4>
+<p class="font-label text-[10px] text-outline font-bold">READY TO SHIP</p>
+</div>
+<span class="font-headline font-black italic text-lg">199,000원</span>
+</div>
+</div>
+<!-- Rec Card 3 -->
+<div class="bg-surface-container-low group cursor-pointer border border-transparent hover:border-primary transition-all p-4">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container relative">
+<img alt="RIFT/01 SHADOW" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Triple black tactical boot-inspired sneaker with mesh panels and rugged soles on a rainy urban street" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIZqIYhc7sNQjoVac4w6OuyVEGQiH_2GN-n0lmHntjI-9Cxig2i9fUkZg7AW3eyIY-JrqDBO9XKHNxuwUZYzb6qxluwRlsFt4k8fvkTD7lbW0LLIo0dRALZW1rcrn0dg5Blaq2tDy_qjIHfyByoFzpKU3iJXSdjFg8rW5sJSGb_2QBOUSC3RR1u76oLdNimMiD8nJfFGZFgpCL18zWkY65YK80aYcm7xBRbMkcWailsemnobQ2VYA57-Ia9dQc79IQdlYZf09_2A"/>
+</div>
+<div class="mt-4 flex justify-between items-start">
+<div>
+<h4 class="font-headline font-bold text-lg tracking-tight">RIFT/01 SHADOW</h4>
+<p class="font-label text-[10px] text-outline font-bold">RESTOCKING 12/24</p>
+</div>
+<span class="font-headline font-black italic text-lg">219,000원</span>
+</div>
+</div>
+<!-- Rec Card 4 -->
+<div class="bg-surface-container-low group cursor-pointer border border-transparent hover:border-primary transition-all p-4">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container relative">
+<img alt="RIFT/01 BLANC" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="All-white high top sneaker with complex paneling and chunky geometric sole on a minimalist grey pedestal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZlGCDVayPZbv9e7u0WZBp8qa-38eftMuoP1Y-DyJd7u58FOgwDwaOCvUn3F1-6jXNIb9DPhkWIpDb_TcrzG7XeCuqiLkrVIsWV8FbXplHGL8uYyL8D1uqz_SBQF81sQWKZEFsfkBk5jqFMMrNn95aWLeR8Bgfj5i7QQTemBdYRNux08o8EfhpC5GYd_Nn3NuQEei5pE9famE_pwASN3SaImoylq-nz6VHzhdiOrjPTImbGdDicJMZZeH4IfsZyic788W_g57awQ"/>
+</div>
+<div class="mt-4 flex justify-between items-start">
+<div>
+<h4 class="font-headline font-bold text-lg tracking-tight">RIFT/01 BLANC</h4>
+<p class="font-label text-[10px] text-outline font-bold">LIMITED QUANTITY</p>
+</div>
+<span class="font-headline font-black italic text-lg">229,000원</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-zinc-100 dark:bg-zinc-900 bg-surface-container-low dark:bg-zinc-800">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 w-full max-w-[1440px] mx-auto">
+<div class="mb-8 md:mb-0">
+<span class="font-['Space_Grotesk'] font-bold text-2xl text-zinc-900 dark:text-white">RIFT/01</span>
+<p class="font-['Work_Sans'] font-medium text-xs tracking-widest uppercase text-zinc-500 dark:text-zinc-400 mt-2">©2024 RIFT/01 KINETIC ARCHIVE</p>
+</div>
+<nav class="flex flex-wrap justify-center gap-8">
+<a class="font-['Work_Sans'] font-medium text-xs tracking-widest uppercase text-zinc-500 dark:text-zinc-400 hover:text-[#aa2c32] dark:hover:text-[#ef4444] transition-colors" href="#">SHIPPING</a>
+<a class="font-['Work_Sans'] font-medium text-xs tracking-widest uppercase text-zinc-500 dark:text-zinc-400 hover:text-[#aa2c32] dark:hover:text-[#ef4444] transition-colors" href="#">PRIVACY</a>
+<a class="font-['Work_Sans'] font-medium text-xs tracking-widest uppercase text-zinc-500 dark:text-zinc-400 hover:text-[#aa2c32] dark:hover:text-[#ef4444] transition-colors" href="#">TERMS</a>
+<a class="font-['Work_Sans'] font-medium text-xs tracking-widest uppercase text-zinc-500 dark:text-zinc-400 hover:text-[#aa2c32] dark:hover:text-[#ef4444] transition-colors" href="#">RETURNS</a>
+</nav>
+</div>
+</footer>
+</body></html>

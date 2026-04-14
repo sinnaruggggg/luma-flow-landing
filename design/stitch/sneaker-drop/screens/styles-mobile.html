@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RIFT/01 - STYLES</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Plus+Jakarta+Sans:wght@200..800&amp;family=Work+Sans:wght@300..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#675c00",
+                        "tertiary-container": "#7bd1fa",
+                        "surface-variant": "#dfdcdc",
+                        "on-tertiary": "#e5f5ff",
+                        "on-secondary-fixed": "#6f0011",
+                        "inverse-primary": "#fdea62",
+                        "surface-container-low": "#f3f0ef",
+                        "surface-container": "#eae7e7",
+                        "outline-variant": "#afacac",
+                        "on-tertiary-fixed-variant": "#004f69",
+                        "secondary-dim": "#992027",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e5e2e1",
+                        "surface-container-highest": "#dfdcdc",
+                        "surface": "#f9f6f5",
+                        "on-primary-fixed-variant": "#6b6000",
+                        "error-container": "#f95630",
+                        "tertiary-fixed-dim": "#6cc3eb",
+                        "outline": "#787676",
+                        "on-secondary-container": "#8d1620",
+                        "error": "#b02500",
+                        "on-primary-container": "#605600",
+                        "on-error-container": "#520c00",
+                        "on-secondary-fixed-variant": "#9a2128",
+                        "background": "#f9f6f5",
+                        "tertiary-fixed": "#7bd1fa",
+                        "on-error": "#ffefec",
+                        "inverse-surface": "#0e0e0e",
+                        "primary-container": "#fdea62",
+                        "tertiary": "#006382",
+                        "primary-dim": "#5a5000",
+                        "tertiary-dim": "#005672",
+                        "on-secondary": "#ffefee",
+                        "on-primary": "#fff4b6",
+                        "secondary-fixed": "#ffc3c0",
+                        "secondary": "#aa2c32",
+                        "on-primary-fixed": "#4b4300",
+                        "inverse-on-surface": "#9e9c9c",
+                        "on-surface": "#2f2e2e",
+                        "primary-fixed-dim": "#eedc56",
+                        "secondary-container": "#ffc3c0",
+                        "on-background": "#2f2e2e",
+                        "surface-dim": "#d6d4d3",
+                        "secondary-fixed-dim": "#ffafac",
+                        "on-tertiary-fixed": "#003041",
+                        "error-dim": "#b92902",
+                        "on-surface-variant": "#5c5b5b",
+                        "primary": "#675c00",
+                        "on-tertiary-container": "#00465d",
+                        "surface-bright": "#f9f6f5",
+                        "primary-fixed": "#fdea62"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Work Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sticker-shadow {
+            filter: drop-shadow(4px 4px 0px rgba(103, 92, 0, 0.2));
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-[#f9f6f5] dark:bg-neutral-900 flex justify-between items-center px-6 py-4">
+<button class="text-[#675c00] dark:text-[#f7e45d] hover:opacity-80 transition-opacity active:translate-y-[2px]">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-['Space_Grotesk'] font-bold tracking-tight text-2xl font-black text-[#675c00] dark:text-[#f7e45d] uppercase">RIFT/01</h1>
+<button class="text-[#675c00] dark:text-[#f7e45d] hover:opacity-80 transition-opacity active:translate-y-[2px]">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</header>
+<main class="pb-24">
+<!-- Hero Visual Section -->
+<section class="relative h-[751px] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Cinematic low angle shot of a fashion model in Seoul streetwear standing against a concrete industrial wall with dramatic harsh sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6K3zwaSlFnh6YRPvoYnf-QPMLRuWBpi981Yn8ObvS9KfqBaKTzTa0GpSBt5ZYojlZOYlWwL-GqWUP-ZcZLo-tL6idQ-L6JL0qEmMe2xLLYrquI0X8x4nLBHcFDlnby5yqbUOTqcozA4Mp6ytVAOwGsmPfOFySa2XoffhnClflgN2Stl0ev34rQifHBktasRquK6iwCkPr2vKrkLqqKiicxLaJfQMaqwBdP2WkPRUoGyAw_1A68BiHqz3ozNE23mm8gaB_dvsgMQ"/>
+<!-- Sticker Label Floating Panel -->
+<div class="absolute top-12 right-6 bg-primary-container p-4 sticker-shadow transform rotate-2 z-10">
+<p class="font-label text-[10px] font-bold text-on-primary-container tracking-widest uppercase">Style ID</p>
+<p class="font-headline text-xl font-black text-on-primary-container">S-04-SEOUL</p>
+</div>
+<!-- Hero Action Overlay -->
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-on-surface/80 to-transparent">
+<div class="flex flex-col gap-4">
+<h2 class="font-headline text-4xl font-bold text-surface-container-lowest leading-none uppercase tracking-tighter">
+                        KINETIC<br/>ARCHIVE
+                    </h2>
+<div class="bg-surface-container-lowest/90 backdrop-blur-xl p-6 rounded-none border-l-4 border-primary">
+<div class="flex justify-between items-end mb-4">
+<div>
+<p class="font-label text-xs font-bold text-primary uppercase mb-1">Featured Drop</p>
+<h3 class="font-headline text-xl font-bold">V-01 HYPER-STRIKE</h3>
+</div>
+<p class="font-headline font-bold text-lg">₩249,000</p>
+</div>
+<div class="grid grid-cols-4 gap-2 mb-4">
+<button class="h-10 border border-outline-variant hover:border-primary font-label text-sm flex items-center justify-center transition-colors">240</button>
+<button class="h-10 border border-primary bg-primary text-on-primary font-label text-sm flex items-center justify-center">250</button>
+<button class="h-10 border border-outline-variant hover:border-primary font-label text-sm flex items-center justify-center transition-colors">260</button>
+<button class="h-10 border border-outline-variant hover:border-primary font-label text-sm flex items-center justify-center transition-colors">270</button>
+</div>
+<button class="w-full bg-primary text-surface-container-lowest font-headline font-bold py-4 uppercase tracking-widest hover:bg-primary-dim transition-all active:scale-95">
+                            Shop this Look
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Style Archive 01 Feed -->
+<section class="mt-12 px-6">
+<div class="flex items-center gap-4 mb-8">
+<div class="h-[2px] flex-1 bg-on-surface/10"></div>
+<h2 class="font-headline text-2xl font-black italic uppercase">Style Archive 01</h2>
+<div class="h-[2px] w-8 bg-primary"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Archive Card 1 -->
+<div class="relative group">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Close up of high-end white sneakers with neon yellow accents on wet asphalt background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSKnuhD5PM328VJkYAjQeHuw-rsVcWiyMy7dUXa4RiwG2CqCGn8uLQbWLACI-3t_wykTNQu-nbKDpFkIeW2djHXer5inuq-tuw--FGtKJ2CFPUfm0wjF35TDyF54x_LwKjqC7XAEgQZiux472JpvvU-jhPGLsH_Ojl8hvnNJ3OsDi9glI6FhDU5HQfzJSnnF9yqM6XVgKUn3V8gprB_yxiNoSQMnRwHvzm4BEmhKikwmR1_4CP1VNr3oC4I10OFprq3hDUVeM3BA"/>
+</div>
+<div class="absolute -bottom-2 -left-2 bg-secondary p-2 sticker-shadow">
+<p class="font-label text-[8px] text-on-secondary font-bold uppercase tracking-tighter">User Upload</p>
+<p class="font-headline text-xs text-on-secondary font-black">@HYPER_VIBE</p>
+</div>
+</div>
+<!-- Archive Card 2 -->
+<div class="relative group mt-6">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Street style fashion portrait of a person wearing an oversized utility vest and techwear trousers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3vLtwbTxb681im03OyldWJXRH5-bBufbETKJkbC1ar7antznn-UeMtLpUeSo924tG5VH3boyDYuZ8nGN6ilzi2GMnzTMih6hOBbz7j1zUieq7cpQ1a6DGmjjg3OOY0xgCJKWRaBGsCLwpBEv7gvE4u_T4bBYWd1IiHc-T75NQjmeYBL_xl2jyEW__0IDIWXAmLx632yhZ0CutTTHJnQZA4MB32sOvxaDDUdHIFg38HbrllaOH1_DAbyVpxUR50oBCQln3_1Encw"/>
+</div>
+<div class="absolute -top-2 -right-2 bg-primary p-2 sticker-shadow transform -rotate-3">
+<p class="font-headline text-xs text-on-primary-container font-black">CORE-TECH</p>
+</div>
+</div>
+<!-- Archive Card 3 -->
+<div class="relative group col-span-2 mt-4">
+<div class="aspect-video bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Technical product photography of footwear components laid out in a flat lay grid style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnOibacb-uScU7cZvHeRixgzIQac5J4fIZXQNsEhf0AmVx2QHh-Oh7BwDG9ZzPko1yfSuJDwpwkn4ln5-0SFbJpXs9AyzduucfrMAsC7vYu7vvHfx_-rnIwoUnLbnJpITe-gs-aU6bgHpk_-VFSqrSHZZQDHIJUJAqC3KoraGSR5HqV_IB1FhXgHwHKifqD-B8HwTsY4KSSA73jiqdgSYdloh-OYog9HxDBt1R6u6LxPrKdJm1-rB-hVvkcVWidjuOiguidKnu6w"/>
+</div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="font-headline text-6xl font-black text-surface-container-lowest/20 uppercase">Tactical</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Lab Notes Section -->
+<section class="mt-16 bg-on-surface text-surface py-12 px-6">
+<div class="flex justify-between items-start mb-10">
+<div>
+<span class="inline-block px-2 py-1 bg-primary text-on-primary-fixed text-[10px] font-bold font-label mb-2">SYSTEM UPDATE</span>
+<h2 class="font-headline text-3xl font-bold uppercase leading-none">Lab Notes</h2>
+</div>
+<div class="font-label text-xs opacity-50 text-right">
+                    REF: 2024-STYL<br/>VER: 1.02.0
+                </div>
+</div>
+<div class="space-y-8">
+<div class="border-l-2 border-primary pl-6">
+<h3 class="font-headline text-lg font-bold text-primary uppercase mb-2">Technical Specs</h3>
+<p class="font-body text-sm text-surface-container-high leading-relaxed">
+                        RIFT/01 'V-01' 모델은 고밀도 메쉬와 프리미엄 신세틱 오버레이를 결합하여 내구성과 통기성을 극대화했습니다. 도시적 움직임에 최적화된 아웃솔 디자인을 확인하세요.
+                    </p>
+</div>
+<div class="border-l-2 border-secondary pl-6">
+<h3 class="font-headline text-lg font-bold text-secondary uppercase mb-2">Styling Tips</h3>
+<p class="font-body text-sm text-surface-container-high leading-relaxed">
+                        와이드한 카고 팬츠 혹은 테크니컬 쇼츠와 매치하여 실루엣의 대비를 강조하십시오. 하이-비즈 양말을 포인트로 활용하면 더욱 돋보이는 룩을 연출할 수 있습니다.
+                    </p>
+</div>
+</div>
+<div class="mt-12 overflow-x-auto no-scrollbar flex gap-4">
+<div class="min-w-[140px] aspect-square bg-surface-container-highest/10 border border-surface-container-highest/20 p-4 flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary">architecture</span>
+<p class="font-label text-[10px] font-bold">ERGONOMIC<br/>CONSTRUCTION</p>
+</div>
+<div class="min-w-[140px] aspect-square bg-surface-container-highest/10 border border-surface-container-highest/20 p-4 flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary">eco</span>
+<p class="font-label text-[10px] font-bold">RECYCLED<br/>POLYMERS</p>
+</div>
+<div class="min-w-[140px] aspect-square bg-surface-container-highest/10 border border-surface-container-highest/20 p-4 flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary">shield</span>
+<p class="font-label text-[10px] font-bold">WEATHER<br/>RESISTANCE</p>
+</div>
+</div>
+</section>
+<!-- Submit Your Look CTA -->
+<section class="mt-16 px-6 mb-12">
+<div class="relative bg-surface-container p-8 overflow-hidden">
+<!-- Background Pattern -->
+<div class="absolute -top-10 -right-10 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'FILL' 1;">add_a_photo</span>
+</div>
+<div class="relative z-10">
+<h2 class="font-headline text-4xl font-black uppercase mb-4 leading-none">Submit<br/>Your Look</h2>
+<p class="font-body text-sm text-on-surface-variant mb-8 max-w-[240px]">
+                        RIFT 커뮤니티의 일원이 되어 당신만의 스타일을 아카이브에 등록하세요. 매달 최고의 스타일러에게는 단독 드롭 구매권이 제공됩니다.
+                    </p>
+<button class="group flex items-center gap-4 bg-on-surface text-surface px-6 py-4 font-headline font-bold uppercase tracking-widest hover:bg-primary transition-colors">
+                        Upload Archive
+                        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-xl border-t border-neutral-200/20 dark:border-neutral-800/20 shadow-[0px_-10px_30px_rgba(0,0,0,0.04)]">
+<a class="flex flex-col items-center justify-center text-neutral-400 dark:text-neutral-600 hover:text-[#aa2c32] dark:hover:text-[#aa2c32]" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold leading-[1.1]">홈</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-400 dark:text-neutral-600 hover:text-[#aa2c32] dark:hover:text-[#aa2c32]" href="#">
+<span class="material-symbols-outlined">release_alert</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold leading-[1.1]">드롭</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#675c00] dark:text-[#f7e45d] scale-110 transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined">style</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold leading-[1.1]">스타일</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-400 dark:text-neutral-600 hover:text-[#aa2c32] dark:hover:text-[#aa2c32]" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold leading-[1.1]">카트</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-400 dark:text-neutral-600 hover:text-[#aa2c32] dark:hover:text-[#aa2c32]" href="#">
+<span class="material-symbols-outlined">identity_platform</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold leading-[1.1]">브랜드</span>
+</a>
+</nav>
+</body></html>

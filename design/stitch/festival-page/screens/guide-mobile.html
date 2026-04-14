@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NOISE WAVE - GUIDE PROTOCOL</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#00596e",
+                        "surface-variant": "#2c3544",
+                        "on-error": "#690005",
+                        "outline": "#869398",
+                        "surface-container-lowest": "#060e1b",
+                        "surface-container": "#17202e",
+                        "secondary-fixed": "#ffd7f0",
+                        "background": "#0b1421",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#b5ebff",
+                        "error-container": "#93000a",
+                        "tertiary": "#ffdcaa",
+                        "on-primary-fixed": "#001f28",
+                        "on-tertiary-container": "#6e4b00",
+                        "surface-container-high": "#222a38",
+                        "surface-bright": "#313a48",
+                        "on-background": "#dae3f6",
+                        "surface-tint": "#45d6ff",
+                        "on-primary": "#003543",
+                        "tertiary-fixed": "#ffdeae",
+                        "primary-fixed-dim": "#45d6ff",
+                        "on-surface-variant": "#bbc9ce",
+                        "on-primary-fixed-variant": "#004e60",
+                        "tertiary-container": "#ffb837",
+                        "on-secondary-fixed": "#3a0033",
+                        "surface-container-low": "#131c29",
+                        "inverse-on-surface": "#28313f",
+                        "secondary-container": "#980388",
+                        "tertiary-fixed-dim": "#ffba3f",
+                        "outline-variant": "#3c494e",
+                        "surface-dim": "#0b1421",
+                        "primary-container": "#39d5ff",
+                        "primary": "#b1eaff",
+                        "surface": "#0b1421",
+                        "on-secondary-container": "#fface8",
+                        "inverse-primary": "#00677e",
+                        "on-secondary": "#5e0053",
+                        "on-surface": "#dae3f6",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-highest": "#2c3544",
+                        "on-tertiary-fixed-variant": "#604100",
+                        "on-secondary-fixed-variant": "#840076",
+                        "on-tertiary-fixed": "#281800",
+                        "on-tertiary": "#432c00",
+                        "secondary-fixed-dim": "#fface8",
+                        "secondary": "#fface8",
+                        "inverse-surface": "#dae3f6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0rem",
+                        "lg": "0rem",
+                        "xl": "0rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0b1421;
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+        .technical-glitch {
+            text-shadow: 2px 0 #fface8, -2px 0 #39d5ff;
+        }
+        .scanline {
+            background: linear-gradient(to bottom, transparent 50%, rgba(57, 213, 255, 0.05) 50%);
+            background-size: 100% 4px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-6 h-16 bg-[#0b1421] fixed top-0 z-50 shadow-[0_4px_30px_rgba(57,213,255,0.1)]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#39d5ff]" data-icon="terminal">terminal</span>
+<h1 class="text-lg font-black text-[#39d5ff] tracking-widest font-['Space_Grotesk'] uppercase">NOISE_WAVE.SYS</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#39d5ff]" data-icon="sensors">sensors</span>
+</div>
+</header>
+<main class="pt-20 pb-32 px-4 space-y-8 max-w-md mx-auto">
+<!-- VISIT_PROTOCOL -->
+<section class="space-y-4">
+<div class="flex items-center justify-between border-b border-outline-variant pb-2">
+<h2 class="font-headline font-bold text-xl tracking-tighter text-primary-container uppercase">VISIT_PROTOCOL</h2>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 bg-primary-container animate-pulse"></span>
+<span class="font-label text-[10px] text-primary-container tracking-widest">SYSTEM_READY</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-px bg-outline-variant">
+<div class="bg-surface-container p-4">
+<p class="font-label text-[10px] text-outline tracking-[0.2em] mb-1 uppercase">DATE_STAMP</p>
+<p class="font-headline text-lg font-bold text-on-background">08.15 - 08.17</p>
+</div>
+<div class="bg-surface-container p-4">
+<p class="font-label text-[10px] text-outline tracking-[0.2em] mb-1 uppercase">COORDINATES</p>
+<p class="font-headline text-lg font-bold text-on-background">SEOUL_YC</p>
+</div>
+</div>
+<div class="bg-surface-container-highest p-3 flex justify-between items-center">
+<span class="font-label text-[10px] text-secondary tracking-widest uppercase">Encryption_Level: HIGH</span>
+<span class="font-label text-[10px] text-on-surface-variant">v2.0.48_GUIDE</span>
+</div>
+</section>
+<!-- SECTOR_MAP -->
+<section class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="text-primary material-symbols-outlined text-sm" data-icon="grid_view">grid_view</span>
+<h2 class="font-headline font-bold text-sm tracking-widest text-on-background uppercase">SECTOR_MAP</h2>
+</div>
+<div class="relative aspect-square bg-surface-container-lowest overflow-hidden group">
+<div class="absolute inset-0 scanline opacity-20 pointer-events-none"></div>
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent"></div>
+<!-- Mock Technical Map Image -->
+<img class="w-full h-full object-cover grayscale opacity-40 mix-blend-screen" data-alt="Technical blueprint architectural map of a futuristic event space with blue glowing grid lines and data overlays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwYl8II4ye6wuj7ta2sw1McZ9PiRjZuTaBD5afw2Cv5IN9ku_W5u1CpYoXpDpWqlAyOYDyHjFJRYVX2XWpEm6S4IjHEJvnCmvdiachL74CtLJWH5rFI37u1LfIOZ_NuV89xNnT8QGO9ssOU9oyRBfqwX44uPNQm2K69Hg1EYjLgTFhN_Eb26oWiDtQXYMe2RLRkuU64caB6X4kuribuHjrntY67RSEfXK7vQ4Wru8LBr49Pns6df1vnzTC423P2hXRq7sHT9zv4CQ"/>
+<!-- Overlay Nodes -->
+<div class="absolute top-[20%] left-[30%] flex flex-col items-start">
+<span class="w-3 h-3 bg-primary-container border-4 border-background"></span>
+<span class="mt-1 font-label text-[9px] bg-background/80 px-1 text-primary-container font-bold uppercase tracking-tighter">CORE_STAGE</span>
+</div>
+<div class="absolute bottom-[35%] right-[25%] flex flex-col items-end">
+<span class="w-3 h-3 bg-secondary border-4 border-background"></span>
+<span class="mt-1 font-label text-[9px] bg-background/80 px-1 text-secondary font-bold uppercase tracking-tighter">PULSE_ZONE</span>
+</div>
+<div class="absolute bottom-[15%] left-[15%] flex flex-col items-start">
+<span class="w-3 h-3 bg-on-background border-4 border-background"></span>
+<span class="mt-1 font-label text-[9px] bg-background/80 px-1 text-on-background font-bold uppercase tracking-tighter">RECHARGE_HUB</span>
+</div>
+</div>
+</section>
+<!-- ADMISSION_RULES -->
+<section class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="text-primary material-symbols-outlined text-sm" data-icon="lock_open">lock_open</span>
+<h2 class="font-headline font-bold text-sm tracking-widest text-on-background uppercase">ADMISSION_RULES</h2>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- ID Card -->
+<div class="bg-surface-container-low p-4 border-l-2 border-primary-container space-y-2">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="badge">badge</span>
+<h3 class="font-headline text-xs font-bold text-on-background tracking-tighter uppercase">IDENTIFICATION</h3>
+<p class="text-[12px] text-on-surface-variant leading-tight font-medium">신분증 지참 필수<br/>(원본만 인정)</p>
+</div>
+<!-- Ticket -->
+<div class="bg-surface-container-low p-4 border-l-2 border-secondary space-y-2">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="qr_code_2">qr_code_2</span>
+<h3 class="font-headline text-xs font-bold text-on-background tracking-tighter uppercase">MOBILE TICKET</h3>
+<p class="text-[12px] text-on-surface-variant leading-tight font-medium">모바일 티켓 확인<br/>(스크린샷 불가)</p>
+</div>
+<!-- Prohibited -->
+<div class="bg-surface-container-low p-4 border-l-2 border-error space-y-2">
+<span class="material-symbols-outlined text-error text-xl" data-icon="block">block</span>
+<h3 class="font-headline text-xs font-bold text-on-background tracking-tighter uppercase">PROHIBITED</h3>
+<p class="text-[12px] text-on-surface-variant leading-tight font-medium">반입 금지 품목<br/>(음식, 화기류)</p>
+</div>
+<!-- Re-Entry -->
+<div class="bg-surface-container-low p-4 border-l-2 border-outline space-y-2">
+<span class="material-symbols-outlined text-outline text-xl" data-icon="cached">cached</span>
+<h3 class="font-headline text-xs font-bold text-on-background tracking-tighter uppercase">RE-ENTRY</h3>
+<p class="text-[12px] text-on-surface-variant leading-tight font-medium">재입장 규정<br/>(전용 팔찌 착용)</p>
+</div>
+</div>
+</section>
+<!-- FAQ_NODES -->
+<section class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="text-primary material-symbols-outlined text-sm" data-icon="help">help</span>
+<h2 class="font-headline font-bold text-sm tracking-widest text-on-background uppercase">FAQ_NODES</h2>
+</div>
+<div class="space-y-px bg-outline-variant">
+<div class="bg-surface-container p-4 flex justify-between items-center cursor-pointer group hover:bg-surface-container-high transition-colors">
+<p class="text-sm font-medium text-on-background">Q: 사진 촬영이 가능한가요?</p>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+<div class="bg-surface-container p-4 flex justify-between items-center cursor-pointer group hover:bg-surface-container-high transition-colors">
+<p class="text-sm font-medium text-on-background">Q: 물품 보관소 위치는?</p>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+<div class="bg-surface-container p-4 flex justify-between items-center cursor-pointer group hover:bg-surface-container-high transition-colors">
+<p class="text-sm font-medium text-on-background">Q: 우천 시에도 진행되나요?</p>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+<div class="bg-surface-container p-4 flex justify-between items-center cursor-pointer group hover:bg-surface-container-high transition-colors">
+<p class="text-sm font-medium text-on-background">Q: 현장 티켓 구매가 가능한가요?</p>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+</div>
+</section>
+<!-- ACCESS_ROUTE -->
+<section class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="text-primary material-symbols-outlined text-sm" data-icon="directions_bus">directions_bus</span>
+<h2 class="font-headline font-bold text-sm tracking-widest text-on-background uppercase">ACCESS_ROUTE</h2>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-4 bg-surface-container-high p-4">
+<div class="w-10 h-10 flex items-center justify-center bg-surface-container text-primary-container">
+<span class="material-symbols-outlined" data-icon="subway">subway</span>
+</div>
+<div>
+<p class="font-headline text-xs font-bold uppercase tracking-widest text-primary">SUBWAY</p>
+<p class="text-sm text-on-background font-medium">9호선 올림픽공원역 3번 출구</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-high p-4">
+<div class="w-10 h-10 flex items-center justify-center bg-surface-container text-secondary">
+<span class="material-symbols-outlined" data-icon="shuttle_bus">airport_shuttle</span>
+</div>
+<div>
+<p class="font-headline text-xs font-bold uppercase tracking-widest text-secondary">SHUTTLE</p>
+<p class="text-sm text-on-background font-medium">강남/잠실 노선 (30분 간격 운행)</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-high p-4">
+<div class="w-10 h-10 flex items-center justify-center bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="local_parking">local_parking</span>
+</div>
+<div>
+<p class="font-headline text-xs font-bold uppercase tracking-widest text-on-surface-variant">PARKING</p>
+<p class="text-sm text-on-background font-medium">단지 내 유료 주차 (공간 협소 권장X)</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Disclaimer -->
+<div class="pt-8 opacity-40">
+<p class="font-label text-[8px] text-center tracking-[0.4em] uppercase text-on-surface-variant">End of Transmission // Noise_Wave_Protocol_v.1</p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-stretch h-20 bg-[#060e1b] shadow-[0_-4px_40px_rgba(57,213,255,0.08)] bg-gradient-to-t from-[#0b1421] to-[#060e1b]">
+<a class="flex flex-col items-center justify-center text-[#2c3544] px-4 py-2 opacity-60 scale-100 active:scale-95 transition-transform duration-100 hover:bg-[#fface8]/10 hover:text-[#fface8]" href="#">
+<span class="material-symbols-outlined" data-icon="home_max">home_max</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-widest mt-1 uppercase">HOME</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2c3544] px-4 py-2 opacity-60 scale-100 active:scale-95 transition-transform duration-100 hover:bg-[#fface8]/10 hover:text-[#fface8]" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-widest mt-1 uppercase">LINEUP</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2c3544] px-4 py-2 opacity-60 scale-100 active:scale-95 transition-transform duration-100 hover:bg-[#fface8]/10 hover:text-[#fface8]" href="#">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-widest mt-1 uppercase">TIME</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#2c3544] text-[#39d5ff] px-4 py-2 border-t-2 border-[#39d5ff] scale-100 active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="info_i_line">info_i</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-widest mt-1 uppercase">GUIDE</span>
+</a>
+</nav>
+</body></html>

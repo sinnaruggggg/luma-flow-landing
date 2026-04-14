@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SIGNAL GRID | Case Explorer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-primary-container": "#5479ff",
+                  "surface": "#111318",
+                  "on-primary-fixed-variant": "#0038b6",
+                  "outline-variant": "#44474e",
+                  "on-surface-variant": "#c4c6cf",
+                  "surface-container-highest": "#333539",
+                  "surface-container-lowest": "#0c0e12",
+                  "on-tertiary": "#3c0090",
+                  "tertiary-fixed": "#e9ddff",
+                  "surface-tint": "#b7c4ff",
+                  "tertiary": "#d1bcff",
+                  "on-primary": "#002682",
+                  "secondary-fixed": "#9cf0ff",
+                  "on-secondary-fixed-variant": "#004f58",
+                  "on-secondary-fixed": "#001f24",
+                  "inverse-surface": "#e2e2e8",
+                  "primary-fixed": "#dde1ff",
+                  "on-background": "#e2e2e8",
+                  "on-primary-fixed": "#001452",
+                  "secondary-container": "#00e3fd",
+                  "secondary": "#bdf4ff",
+                  "inverse-on-surface": "#2f3035",
+                  "on-surface": "#e2e2e8",
+                  "surface-dim": "#111318",
+                  "on-secondary": "#00363d",
+                  "on-tertiary-fixed-variant": "#5700c9",
+                  "on-secondary-container": "#00616d",
+                  "surface-variant": "#333539",
+                  "error-container": "#93000a",
+                  "background": "#111318",
+                  "error": "#ffb4ab",
+                  "surface-container-low": "#1a1c20",
+                  "on-error-container": "#ffdad6",
+                  "primary-container": "#001451",
+                  "tertiary-fixed-dim": "#d1bcff",
+                  "surface-container": "#1e2024",
+                  "outline": "#8e9099",
+                  "surface-container-high": "#282a2e",
+                  "on-tertiary-container": "#9565ff",
+                  "tertiary-container": "#23005b",
+                  "primary": "#b7c4ff",
+                  "secondary-fixed-dim": "#00daf3",
+                  "on-error": "#690005",
+                  "inverse-primary": "#004ced",
+                  "primary-fixed-dim": "#b7c4ff",
+                  "surface-bright": "#37393e",
+                  "on-tertiary-fixed": "#23005b"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.125rem",
+                  "lg": "0.25rem",
+                  "xl": "0.5rem",
+                  "full": "0.75rem"
+          },
+          "fontFamily": {
+                  "headline": ["Space Grotesk"],
+                  "body": ["Inter"],
+                  "label": ["Inter"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .mesh-gradient {
+      background: radial-gradient(circle at 50% 0%, #001451 0%, #111318 70%);
+    }
+    .technical-glow {
+      box-shadow: 0 0 30px 2px rgba(189, 244, 255, 0.1);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #0c0e12;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #333539;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary/30">
+<!-- TopNavBar Implementation -->
+<nav class="fixed top-0 w-full z-50 bg-[#111318]/80 backdrop-blur-xl transition-all duration-300 ease-out h-16 flex justify-between items-center px-8 max-w-full mx-auto">
+<div class="flex items-center gap-8">
+<div class="text-xl font-bold tracking-tighter text-[#e2e2e8] font-headline uppercase">SIGNAL GRID</div>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-[#c4c6cf] hover:text-[#e2e2e8] transition-colors font-['Space_Grotesk'] tracking-tight" href="#">Workflows</a>
+<a class="text-[#c4c6cf] hover:text-[#e2e2e8] transition-colors font-['Space_Grotesk'] tracking-tight" href="#">Solutions</a>
+<a class="text-[#bdf4ff] border-b-2 border-[#bdf4ff] pb-1 font-['Space_Grotesk'] tracking-tight" href="#">Cases</a>
+<a class="text-[#c4c6cf] hover:text-[#e2e2e8] transition-colors font-['Space_Grotesk'] tracking-tight" href="#">Pricing</a>
+<a class="text-[#c4c6cf] hover:text-[#e2e2e8] transition-colors font-['Space_Grotesk'] tracking-tight" href="#">Docs</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-5 py-1.5 bg-primary text-on-primary font-bold rounded-lg text-sm transition-all active:scale-95">Deploy AI</button>
+</div>
+<div class="bg-gradient-to-b from-[#1e2024] to-transparent h-[1px] w-full absolute bottom-0 left-0"></div>
+</nav>
+<!-- SideNavBar Implementation (Desktop) -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 bg-[#1a1c20] border-r border-[#44474e]/15 hidden md:flex flex-col py-6 z-40 font-['Inter'] text-sm">
+<div class="px-6 mb-8">
+<div class="text-[#b7c4ff] font-semibold text-xs tracking-widest uppercase mb-1">Case Explorer</div>
+<div class="text-[#8e9099] text-[10px]">Industry Vertical Filter</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 bg-[#001451] text-[#bdf4ff] font-semibold rounded-r-full px-6 py-3 transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined text-lg">grid_view</span>
+<span>All Cases</span>
+</a>
+<a class="flex items-center gap-3 text-[#8e9099] hover:text-[#e2e2e8] hover:bg-[#282a2e] px-6 py-3 transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined text-lg">payments</span>
+<span>Finance</span>
+</a>
+<a class="flex items-center gap-3 text-[#8e9099] hover:text-[#e2e2e8] hover:bg-[#282a2e] px-6 py-3 transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined text-lg">medical_services</span>
+<span>Healthcare</span>
+</a>
+<a class="flex items-center gap-3 text-[#8e9099] hover:text-[#e2e2e8] hover:bg-[#282a2e] px-6 py-3 transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined text-lg">terminal</span>
+<span>Tech</span>
+</a>
+<a class="flex items-center gap-3 text-[#8e9099] hover:text-[#e2e2e8] hover:bg-[#282a2e] px-6 py-3 transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined text-lg">shopping_cart</span>
+<span>Retail</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-64 pt-16 min-h-screen mesh-gradient relative overflow-x-hidden">
+<!-- Hero Section -->
+<section class="relative px-8 pt-24 pb-32 text-center md:text-left md:px-16 overflow-hidden">
+<div class="absolute top-0 right-0 w-2/3 h-full opacity-30 pointer-events-none">
+<div class="absolute inset-0 bg-gradient-to-l from-secondary-container/20 to-transparent blur-3xl"></div>
+</div>
+<div class="relative z-10 max-w-4xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary-container text-secondary border border-secondary/20 rounded-full text-xs font-bold tracking-widest uppercase mb-6">
+<span class="material-symbols-outlined text-sm">bolt</span>
+          Engineering Impact
+        </div>
+<h1 class="font-headline text-4xl md:text-6xl font-bold leading-tight text-on-surface mb-6 tracking-tighter">
+          AI 기술이 비즈니스 성과로<br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-white">직결되는 순간</span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
+          SIGNAL GRID의 에테르 엔진은 복잡한 워크플로우를 실시간 지능형 시스템으로 변환합니다. <br class="hidden md:block"/>
+          평균 <span class="text-secondary font-bold">300% 이상의 운영 효율성 향상</span>을 직접 확인하십시오.
+        </p>
+</div>
+</section>
+<!-- Success Metrics Rail -->
+<section class="px-8 md:px-16 -mt-16 mb-24 overflow-hidden">
+<div class="flex gap-6 overflow-x-auto pb-8 custom-scrollbar no-scrollbar">
+<!-- KPI Block 1 -->
+<div class="min-w-[280px] bg-surface-container-low p-6 rounded-lg border-l-4 border-primary technical-glow">
+<div class="text-on-surface-variant text-xs font-bold tracking-widest uppercase mb-2">Total Efficiency</div>
+<div class="font-headline text-3xl font-bold text-primary mb-1">324%</div>
+<div class="text-on-surface-variant text-[10px] leading-tight">평균 작업 처리 속도 개선율 (전체 고객사 기준)</div>
+</div>
+<!-- KPI Block 2 -->
+<div class="min-w-[280px] bg-surface-container-low p-6 rounded-lg border-l-4 border-secondary technical-glow">
+<div class="text-on-surface-variant text-xs font-bold tracking-widest uppercase mb-2">Cost Reduction</div>
+<div class="font-headline text-3xl font-bold text-secondary mb-1">$4.2M</div>
+<div class="text-on-surface-variant text-[10px] leading-tight">2023년 절감된 총 인건비 및 운영 비용</div>
+</div>
+<!-- KPI Block 3 -->
+<div class="min-w-[280px] bg-surface-container-low p-6 rounded-lg border-l-4 border-tertiary-fixed-dim technical-glow">
+<div class="text-on-surface-variant text-xs font-bold tracking-widest uppercase mb-2">AI Accuracy</div>
+<div class="font-headline text-3xl font-bold text-tertiary-fixed-dim mb-1">99.8%</div>
+<div class="text-on-surface-variant text-[10px] leading-tight">금융권 자동화 모델 데이터 무결성 검증</div>
+</div>
+<!-- KPI Block 4 -->
+<div class="min-w-[280px] bg-surface-container-low p-6 rounded-lg border-l-4 border-secondary-fixed technical-glow">
+<div class="text-on-surface-variant text-xs font-bold tracking-widest uppercase mb-2">Deployment Speed</div>
+<div class="font-headline text-3xl font-bold text-secondary-fixed mb-1">2 Weeks</div>
+<div class="text-on-surface-variant text-[10px] leading-tight">평균 엔터프라이즈 레벨 시스템 구축 기간</div>
+</div>
+</div>
+</section>
+<!-- Case Explorer Main Stage -->
+<section class="px-8 md:px-16 pb-32">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-headline text-2xl font-bold tracking-tight">Active Implementations</h2>
+<div class="text-on-surface-variant text-sm font-medium">128개 사례 중 6개 표시</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-10">
+<!-- Case Card 1: Finance -->
+<div class="bg-surface-container-low rounded-lg p-8 group border border-outline-variant/10 hover:border-secondary/30 transition-all">
+<div class="flex justify-between items-start mb-10">
+<div>
+<div class="inline-block px-3 py-1 bg-primary-container text-primary-fixed-dim text-[10px] font-bold rounded mb-4">금융 / 핀테크</div>
+<h3 class="font-headline text-2xl font-bold">K-Bank AI 리스크 자동화</h3>
+</div>
+<div class="px-4 py-2 bg-surface-container-high rounded-full border border-secondary/10 flex items-center gap-2">
+<span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
+<span class="text-secondary text-xs font-bold">비용 45% 절감</span>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex items-center gap-6">
+<div class="w-24 text-[10px] font-bold text-outline uppercase tracking-tighter">수동 프로세스</div>
+<div class="flex-1 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-full h-full bg-outline-variant/50"></div>
+</div>
+<div class="w-12 text-xs font-mono text-on-surface-variant">120h</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-24 text-[10px] font-bold text-secondary uppercase tracking-tighter">Signal Grid</div>
+<div class="flex-1 h-3 bg-primary-container rounded-full overflow-hidden">
+<div class="w-[8%] h-full bg-secondary shadow-[0_0_10px_#bdf4ff]"></div>
+</div>
+<div class="w-12 text-xs font-mono text-secondary font-bold">4.5h</div>
+</div>
+</div>
+<div class="mt-12 flex justify-between items-center">
+<div class="text-[11px] text-on-surface-variant leading-relaxed max-w-[70%]">
+              복잡한 여신 심사 알고리즘을 AI 워크플로우로 자동화하여 심사 기간을 10일에서 2시간으로 단축했습니다.
+            </div>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-secondary hover:text-on-secondary transition-all">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Case Card 2: Health -->
+<div class="bg-surface-container-low rounded-lg p-8 group border border-outline-variant/10 hover:border-secondary/30 transition-all">
+<div class="flex justify-between items-start mb-10">
+<div>
+<div class="inline-block px-3 py-1 bg-tertiary-container text-tertiary-fixed-dim text-[10px] font-bold rounded mb-4">헬스케어 / 의료</div>
+<h3 class="font-headline text-2xl font-bold">MediFlow 진단 보조 시스템</h3>
+</div>
+<div class="px-4 py-2 bg-surface-container-high rounded-full border border-secondary/10 flex items-center gap-2">
+<span class="w-2 h-2 bg-secondary-fixed rounded-full animate-pulse"></span>
+<span class="text-secondary-fixed text-xs font-bold">정확도 98% 향상</span>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex items-center gap-6">
+<div class="w-24 text-[10px] font-bold text-outline uppercase tracking-tighter">수동 프로세스</div>
+<div class="flex-1 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-full h-full bg-outline-variant/50"></div>
+</div>
+<div class="w-12 text-xs font-mono text-on-surface-variant">420ms</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-24 text-[10px] font-bold text-secondary-fixed uppercase tracking-tighter">Signal Grid</div>
+<div class="flex-1 h-3 bg-primary-container rounded-full overflow-hidden">
+<div class="w-[15%] h-full bg-secondary-fixed shadow-[0_0_10px_#9cf0ff]"></div>
+</div>
+<div class="w-12 text-xs font-mono text-secondary-fixed font-bold">18ms</div>
+</div>
+</div>
+<div class="mt-12 flex justify-between items-center">
+<div class="text-[11px] text-on-surface-variant leading-relaxed max-w-[70%]">
+              병리 데이터 라벨링 및 이상 징후 감지 워크플로우를 구축하여 전문의의 판단 정확도를 보조합니다.
+            </div>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-secondary hover:text-on-secondary transition-all">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Case Card 3: Retail -->
+<div class="bg-surface-container-low rounded-lg p-8 group border border-outline-variant/10 hover:border-secondary/30 transition-all">
+<div class="flex justify-between items-start mb-10">
+<div>
+<div class="inline-block px-3 py-1 bg-surface-container-high text-on-surface-variant text-[10px] font-bold rounded mb-4">리테일 / 커머스</div>
+<h3 class="font-headline text-2xl font-bold">Glo-Mart 물류 최적화</h3>
+</div>
+<div class="px-4 py-2 bg-surface-container-high rounded-full border border-secondary/10 flex items-center gap-2">
+<span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+<span class="text-primary text-xs font-bold">처리 속도 10배 향상</span>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex items-center gap-6">
+<div class="w-24 text-[10px] font-bold text-outline uppercase tracking-tighter">수동 프로세스</div>
+<div class="flex-1 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-full h-full bg-outline-variant/50"></div>
+</div>
+<div class="w-12 text-xs font-mono text-on-surface-variant">Daily</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-24 text-[10px] font-bold text-primary uppercase tracking-tighter">Signal Grid</div>
+<div class="flex-1 h-3 bg-primary-container rounded-full overflow-hidden">
+<div class="w-[10%] h-full bg-primary shadow-[0_0_10px_#b7c4ff]"></div>
+</div>
+<div class="w-12 text-xs font-mono text-primary font-bold">Realtime</div>
+</div>
+</div>
+<div class="mt-12 flex justify-between items-center">
+<div class="text-[11px] text-on-surface-variant leading-relaxed max-w-[70%]">
+              수동 재고 관리를 AI 수요 예측 엔진으로 전환하여 품절률을 0.5% 미만으로 유지하고 있습니다.
+            </div>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-secondary hover:text-on-secondary transition-all">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Case Card 4: Tech -->
+<div class="bg-surface-container-low rounded-lg p-8 group border border-outline-variant/10 hover:border-secondary/30 transition-all">
+<div class="flex justify-between items-start mb-10">
+<div>
+<div class="inline-block px-3 py-1 bg-surface-container-high text-on-surface-variant text-[10px] font-bold rounded mb-4">테크 / 인프라</div>
+<h3 class="font-headline text-2xl font-bold">Cloud-Ops 자동 모니터링</h3>
+</div>
+<div class="px-4 py-2 bg-surface-container-high rounded-full border border-secondary/10 flex items-center gap-2">
+<span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
+<span class="text-secondary text-xs font-bold">MTTR 80% 감소</span>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex items-center gap-6">
+<div class="w-24 text-[10px] font-bold text-outline uppercase tracking-tighter">수동 프로세스</div>
+<div class="flex-1 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-full h-full bg-outline-variant/50"></div>
+</div>
+<div class="w-12 text-xs font-mono text-on-surface-variant">45m</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-24 text-[10px] font-bold text-secondary uppercase tracking-tighter">Signal Grid</div>
+<div class="flex-1 h-3 bg-primary-container rounded-full overflow-hidden">
+<div class="w-[20%] h-full bg-secondary shadow-[0_0_10px_#bdf4ff]"></div>
+</div>
+<div class="w-12 text-xs font-mono text-secondary font-bold">8m</div>
+</div>
+</div>
+<div class="mt-12 flex justify-between items-center">
+<div class="text-[11px] text-on-surface-variant leading-relaxed max-w-[70%]">
+              서버 장애 감지 및 초기 대응(Triage)을 AI가 담당하여 수천 개의 서비스 로그를 초당 처리합니다.
+            </div>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-secondary hover:text-on-secondary transition-all">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CTA Section -->
+<div class="mt-32 p-12 bg-surface-container rounded-lg relative overflow-hidden border border-outline-variant/20 text-center">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary blur-[120px]"></div>
+</div>
+<div class="relative z-10">
+<h2 class="font-headline text-3xl font-bold mb-6">당신의 비즈니스도<br/>SIGNAL GRID와 함께 혁신될 수 있습니다</h2>
+<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+<button class="px-8 py-3 bg-primary text-on-primary font-bold rounded-lg transition-all hover:shadow-[0_0_20px_rgba(183,196,255,0.4)] active:scale-95">지금 시작하기</button>
+<button class="px-8 py-3 bg-transparent border border-outline text-on-surface font-bold rounded-lg hover:bg-surface-container-high transition-all">성공 사례 더 보기</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 mt-auto bg-[#0c0e12] border-t-4 border-[#1e2024] flex flex-col md:flex-row justify-between items-center px-12 gap-8 font-['Inter'] text-xs uppercase tracking-widest">
+<div class="text-[#bdf4ff] font-bold">SIGNAL GRID</div>
+<div class="text-[#44474e]">© 2024 SIGNAL GRID. THE ETHEREAL ENGINE.</div>
+<div class="flex gap-6">
+<a class="text-[#44474e] hover:text-[#b7c4ff] transition-colors" href="#">Privacy Protocol</a>
+<a class="text-[#44474e] hover:text-[#b7c4ff] transition-colors" href="#">System Status</a>
+<a class="text-[#44474e] hover:text-[#b7c4ff] transition-colors" href="#">Security</a>
+<a class="text-[#44474e] hover:text-[#b7c4ff] transition-colors" href="#">API</a>
+<a class="text-[#44474e] hover:text-[#b7c4ff] transition-colors" href="#">Github</a>
+</div>
+</footer>
+</main>
+<!-- Mobile Navigation Bar -->
+<div class="md:hidden fixed bottom-0 w-full h-16 bg-[#1a1c20] flex justify-around items-center z-50 border-t border-outline-variant/10">
+<a class="flex flex-col items-center gap-1 text-secondary" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-[10px] font-bold uppercase">Cases</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-outline" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-[10px] font-bold uppercase">Fin</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-outline" href="#">
+<span class="material-symbols-outlined">terminal</span>
+<span class="text-[10px] font-bold uppercase">Tech</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-outline" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-[10px] font-bold uppercase">Retail</span>
+</a>
+</div>
+</body></html>

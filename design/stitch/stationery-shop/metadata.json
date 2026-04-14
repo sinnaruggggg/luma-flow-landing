@@ -1,0 +1,89 @@
+{
+  "siteId": "stationery-shop",
+  "brand": "CUT & NOTE",
+  "projectId": "11004441881737688034",
+  "projectTitle": "CUT & NOTE Stitch",
+  "updatedAt": "2026-04-14T05:06:11.415Z",
+  "screens": {
+    "home:desktop": {
+      "screenId": "5cf31de7d0fe4c64bf8b14598d82c1f8",
+      "pageSlug": "home",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/stationery-shop/screens/home-desktop.html",
+      "imagePath": "design/stitch/stationery-shop/screens/home-desktop.png",
+      "updatedAt": "2026-04-13T23:48:27.160Z"
+    },
+    "home:mobile": {
+      "screenId": "a3f7c2be95d64332821846fdaadcd300",
+      "pageSlug": "home",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/stationery-shop/screens/home-mobile.html",
+      "imagePath": "design/stitch/stationery-shop/screens/home-mobile.png",
+      "updatedAt": "2026-04-13T23:49:36.963Z"
+    },
+    "kits:desktop": {
+      "screenId": "79b03f596c834f6eb6873dd85b40022c",
+      "pageSlug": "kits",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/stationery-shop/screens/kits-desktop.html",
+      "imagePath": "design/stitch/stationery-shop/screens/kits-desktop.png",
+      "updatedAt": "2026-04-14T04:56:26.248Z"
+    },
+    "kits:mobile": {
+      "screenId": "bece7a7b621c466b938b396894cb50db",
+      "pageSlug": "kits",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/stationery-shop/screens/kits-mobile.html",
+      "imagePath": "design/stitch/stationery-shop/screens/kits-mobile.png",
+      "updatedAt": "2026-04-14T04:57:44.481Z"
+    },
+    "colors:desktop": {
+      "screenId": "9f6de178e96e41c29be49219ac458eca",
+      "pageSlug": "colors",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/stationery-shop/screens/colors-desktop.html",
+      "imagePath": "design/stitch/stationery-shop/screens/colors-desktop.png",
+      "updatedAt": "2026-04-14T04:59:07.763Z"
+    },
+    "colors:mobile": {
+      "screenId": "cb91208780b34b8c847325105d7d4448",
+      "pageSlug": "colors",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/stationery-shop/screens/colors-mobile.html",
+      "imagePath": "design/stitch/stationery-shop/screens/colors-mobile.png",
+      "updatedAt": "2026-04-14T05:00:32.544Z"
+    },
+    "basket:desktop": {
+      "screenId": "a04741521e2e430186faedd774804ae0",
+      "pageSlug": "basket",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/stationery-shop/screens/basket-desktop.html",
+      "imagePath": "design/stitch/stationery-shop/screens/basket-desktop.png",
+      "updatedAt": "2026-04-14T05:02:02.428Z"
+    },
+    "basket:mobile": {
+      "screenId": "af5d3ed984954e92b66a3b764bc0d775",
+      "pageSlug": "basket",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/stationery-shop/screens/basket-mobile.html",
+      "imagePath": "design/stitch/stationery-shop/screens/basket-mobile.png",
+      "updatedAt": "2026-04-14T05:03:04.525Z"
+    },
+    "brand:desktop": {
+      "screenId": "2260f496e4c9432e9e16d48d310d810e",
+      "pageSlug": "brand",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/stationery-shop/screens/brand-desktop.html",
+      "imagePath": "design/stitch/stationery-shop/screens/brand-desktop.png",
+      "updatedAt": "2026-04-14T05:04:18.532Z"
+    },
+    "brand:mobile": {
+      "screenId": "d91f3487a8d8420286cf9a25a31054c3",
+      "pageSlug": "brand",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/stationery-shop/screens/brand-mobile.html",
+      "imagePath": "design/stitch/stationery-shop/screens/brand-mobile.png",
+      "updatedAt": "2026-04-14T05:06:11.416Z"
+    }
+  }
+}

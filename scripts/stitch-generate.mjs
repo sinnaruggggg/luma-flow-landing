@@ -57,12 +57,14 @@ const sdk = new Stitch(client);
 const desiredTitle = args.title || `${site.brand} Stitch`;
 const project = !forceNewProject && metadata.projectId ? sdk.project(metadata.projectId) : await sdk.createProject(desiredTitle);
 
-const screen = await project.generate(prompt, deviceType);
-const screenRaw = await client.callTool("get_screen", {
+const generated = await generateScreenWithRetry(client, {
   projectId: project.projectId,
-  screenId: screen.screenId,
-  name: `projects/${project.projectId}/screens/${screen.screenId}`,
+  prompt,
+  deviceType,
 });
+const outputComponents = Array.isArray(generated?.outputComponents) ? generated.outputComponents : [];
+const screenRaw = outputComponents.find((component) => component?.design?.screens?.[0])?.design?.screens?.[0] ?? generated;
+const screenId = screenRaw?.id || screenRaw?.screenId || screenRaw?.name?.split("/").pop() || "";
 const htmlUrl = screenRaw?.htmlCode?.downloadUrl || "";
 const imageUrl = screenRaw?.screenshot?.downloadUrl || "";
 if (!htmlUrl || !imageUrl) {
@@ -82,13 +84,35 @@ await writeJson(metadataPath, {
   updatedAt: new Date().toISOString(),
   screens: {
     ...(metadata.screens ?? {}),
-    [getScreenKey(pageSlug, deviceType)]: buildScreenRecord({ screenId: screen.screenId, pageSlug, deviceType, htmlPath, imagePath }),
+    [getScreenKey(pageSlug, deviceType)]: buildScreenRecord({ screenId, pageSlug, deviceType, htmlPath, imagePath }),
   },
 });
 
 await client.close();
 console.log(`Generated ${siteId}/${pageSlug} (${deviceType})`);
 console.log(`Project: ${project.projectId}`);
-console.log(`Screen: ${screen.screenId}`);
+console.log(`Screen: ${screenId}`);
 console.log(`HTML: ${htmlPath}`);
 console.log(`Image: ${imagePath}`);
+
+async function generateScreenWithRetry(toolClient, request) {
+  let attempt = 0;
+  let lastError = null;
+
+  while (attempt < 3) {
+    try {
+      return await toolClient.callTool("generate_screen_from_text", request);
+    } catch (error) {
+      lastError = error;
+      const message = `${error?.message || error}`.toLowerCase();
+      const retryable = message.includes("service is currently unavailable") || message.includes("rate limit") || message.includes("429");
+      attempt += 1;
+      if (!retryable || attempt >= 3) break;
+      const delayMs = attempt * 5000;
+      console.warn(`Retrying generate_screen_from_text in ${delayMs / 1000}s (${attempt}/3)...`);
+      await new Promise((resolve) => setTimeout(resolve, delayMs));
+    }
+  }
+
+  throw lastError;
+}

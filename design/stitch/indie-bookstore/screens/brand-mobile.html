@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Be+Vietnam+Pro:wght@100;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#1d1c15",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#221a10",
+                    "surface-container-highest": "#e8e2d7",
+                    "on-surface-variant": "#4e4635",
+                    "on-secondary-fixed": "#001e2b",
+                    "primary-fixed": "#ffdfa0",
+                    "on-error": "#ffffff",
+                    "surface": "#fff9ee",
+                    "on-primary-fixed-variant": "#5c4300",
+                    "surface-bright": "#fff9ee",
+                    "on-secondary-fixed-variant": "#024d67",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#dfd9cf",
+                    "primary-fixed-dim": "#f2bf4c",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#d2c5af",
+                    "tertiary-container": "#d7c7b7",
+                    "surface-container-low": "#f9f3e8",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#6d5000",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#c1e8ff",
+                    "inverse-primary": "#f2bf4c",
+                    "tertiary-fixed": "#f0e0cf",
+                    "secondary-fixed-dim": "#96ceed",
+                    "surface-tint": "#795900",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#ede8dd",
+                    "secondary-container": "#a7dffe",
+                    "tertiary": "#685c50",
+                    "inverse-on-surface": "#f6f0e5",
+                    "on-primary-fixed": "#261a00",
+                    "on-tertiary-fixed-variant": "#504539",
+                    "outline": "#807663",
+                    "primary": "#795900",
+                    "tertiary-fixed-dim": "#d4c4b4",
+                    "on-secondary-container": "#27647e",
+                    "secondary": "#296580",
+                    "background": "#fff9ee",
+                    "primary-container": "#f5c24f",
+                    "on-tertiary-container": "#5e5346",
+                    "on-surface": "#1d1c15",
+                    "surface-variant": "#e8e2d7",
+                    "surface-container": "#f3ede2",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#333029"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Be Vietnam Pro", "sans-serif"],
+                    "label": ["Be Vietnam Pro", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fff9ee;
+            color: #1d1c15;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .paper-shadow {
+            box-shadow: 0 12px 32px -4px rgba(35, 29, 23, 0.06);
+        }
+        .torn-edge-bottom {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 98% 97%, 95% 94%, 92% 98%, 88% 95%, 85% 97%, 80% 94%, 75% 98%, 70% 95%, 65% 97%, 60% 94%, 55% 98%, 50% 95%, 45% 97%, 40% 94%, 35% 98%, 30% 95%, 25% 97%, 20% 94%, 15% 98%, 10% 95%, 5% 97%, 0% 94%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50 bg-[#fff9ee] dark:bg-[#1d1c15]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#795900] dark:text-[#f5c24f]">menu</span>
+<h1 class="font-serif italic text-3xl font-light tracking-tight text-[#795900] dark:text-[#f5c24f]">The Living Archive</h1>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#1d1c15] dark:text-[#fff9ee]">search</span>
+</div>
+</header>
+<main class="pt-20 pb-24 overflow-x-hidden">
+<!-- Hero: The Living Archive -->
+<section class="relative px-6 py-12 flex flex-col items-start gap-8 min-h-[707px] justify-center">
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden">
+<div class="absolute top-10 right-[-20px] w-64 h-80 bg-surface-container rotate-6 paper-shadow"></div>
+<div class="absolute bottom-20 left-[-40px] w-72 h-96 bg-surface-container-high -rotate-3 paper-shadow"></div>
+</div>
+<div class="relative z-10 w-full">
+<div class="inline-block bg-primary-container px-3 py-1 mb-6">
+<span class="font-label text-[10px] uppercase tracking-widest font-bold">Concept No. 001</span>
+</div>
+<h2 class="font-headline text-5xl leading-[1.1] mb-6">종이와 기록,<br/><span class="italic text-primary font-light">그 이상의 아카이브</span></h2>
+<p class="text-on-surface-variant leading-relaxed max-w-[280px] body-md">
+                    잊혀진 기록 속에서 가치를 발견합니다. <br/>
+                    우리는 흩어진 파편들을 모아 <br/>
+                    새로운 맥락의 이야기를 재구성합니다.
+                </p>
+</div>
+<div class="relative z-10 mt-12 w-full flex justify-end pr-4">
+<div class="w-48 h-64 relative bg-white paper-shadow transform hover:-translate-y-2 transition-transform duration-500">
+<img alt="Vintage books" class="w-full h-full object-cover grayscale opacity-80" data-alt="Close-up of old weathered book spines stacked on a wooden shelf with warm atmospheric lighting and dust motes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQaVajZk3ZlyPBEIh1v5J-kbHUFKixN9W1RXfKOntzX389X2V66EMsoZFtbBufRZeA5A01q_6jwVJfpk0_iQRadJ4VvvtdYUQlgm9IJWRvAILklyGjfGFVjHg_DOmKx3m3YU0nqh9Zkhq0jd75LjF36opyPFAMYmGYFqVA4atzVAI5TbdLtjiq2uEGJWpPu1EBwy9qAsHTnfcEAG_P5LIYf4D2rj8OAzeuDykrUi73iBHDauncqMPuF9R3fAB3qmcqW_DzeKj2efQ"/>
+<div class="absolute -bottom-4 -left-4 bg-secondary-container p-4 rotate-[-4deg] paper-shadow">
+<span class="font-label text-[10px] font-bold block mb-1">NOTES</span>
+<p class="text-[11px] font-medium leading-tight">Archive: Paper Nook<br/>Location: Bukchon</p>
+</div>
+</div>
+</div>
+</section>
+<!-- The Process: 아카이빙의 과정 -->
+<section class="bg-surface-container-low py-20 px-6 relative">
+<div class="mb-12">
+<h3 class="font-headline text-3xl mb-2">아카이빙의 과정</h3>
+<div class="w-12 h-1 bg-primary"></div>
+</div>
+<div class="space-y-16">
+<!-- Selection -->
+<div class="flex flex-col gap-4 group">
+<div class="flex items-baseline gap-4">
+<span class="font-headline text-4xl text-outline-variant italic">01</span>
+<h4 class="font-headline text-2xl">SELECTION (선별)</h4>
+</div>
+<div class="bg-surface-container-highest p-6 relative ml-8 group-hover:-translate-y-1 transition-transform duration-300">
+<p class="body-md leading-relaxed">수많은 파편 속에서 본질적인 가치를 지닌 기록물을 골라내는 첫 번째 작업입니다.</p>
+<span class="material-symbols-outlined absolute -right-3 -top-3 text-secondary" style="font-variation-settings: 'FILL' 1;">keep</span>
+</div>
+</div>
+<!-- Curation -->
+<div class="flex flex-col gap-4 group items-end">
+<div class="flex items-baseline gap-4 flex-row-reverse">
+<span class="font-headline text-4xl text-outline-variant italic">02</span>
+<h4 class="font-headline text-2xl">CURATION (큐레이션)</h4>
+</div>
+<div class="bg-surface-container-lowest p-6 relative mr-8 group-hover:-translate-y-1 transition-transform duration-300 paper-shadow w-[85%]">
+<p class="body-md leading-relaxed">선별된 기록들에 고유한 맥락을 부여하여 새로운 질서를 만듭니다.</p>
+<div class="absolute -bottom-2 left-6 bg-primary w-8 h-1"></div>
+</div>
+</div>
+<!-- Preservation -->
+<div class="flex flex-col gap-4 group">
+<div class="flex items-baseline gap-4">
+<span class="font-headline text-4xl text-outline-variant italic">03</span>
+<h4 class="font-headline text-2xl">PRESERVATION (보존)</h4>
+</div>
+<div class="bg-secondary-container p-6 relative ml-8 group-hover:-translate-y-1 transition-transform duration-300 rotate-[1deg]">
+<p class="body-md leading-relaxed text-on-secondary-container">시간의 흐름에 바래지 않도록 물리적, 디지털적 보존 처리를 진행합니다.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Location: 서울, 북촌의 서재 -->
+<section class="py-24 px-6 overflow-hidden">
+<div class="relative mb-12">
+<img alt="Library space" class="w-full h-[400px] object-cover grayscale brightness-90" data-alt="Sunlit traditional Korean library interior with wooden shelves filled with books and warm afternoon light filtering through windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJawJvr5SI3mDLrlzVB--b30NUhu3608psKGDpq7z58bxtY6DBMoIRb2cKYagT3sCvHKyM-Ty675LDGh32_rUTUTLPdiKGvYusKzeRnW9eP3LGv4SyUgpjgLTWr893sgTmmxuo4_xlB-ab91kFC-kf3elmhzjfFUmrZ1KwcOtBltYsY7WXuYulrc9hVHpFMYdVuOJWxaIUUnreUcOZGM9WianEWPJE-N23TT0NDcDt4M9EygtIELXWR45jCW7SFyB1GMFUIg4BqhQ"/>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 bg-surface p-8 paper-shadow border border-outline-variant/10">
+<h3 class="font-headline text-2xl mb-4 text-center">서울, 북촌의 서재</h3>
+<p class="body-md text-center text-on-surface-variant mb-6">오래된 한옥의 숨결이 닿은 공간에서 종이의 질감을 직접 경험해보세요.</p>
+<div class="flex flex-col gap-2 border-t border-outline-variant/20 pt-4 font-label text-[11px] uppercase tracking-tighter">
+<div class="flex justify-between">
+<span>Opening Hours</span>
+<span>11:00 - 19:00</span>
+</div>
+<div class="flex justify-between">
+<span>Monday</span>
+<span class="text-error">Closed</span>
+</div>
+</div>
+<button class="mt-8 w-full bg-primary-container py-4 font-label font-bold uppercase tracking-widest text-[11px] hover:translate-y-[-2px] transition-transform">
+                        Book a Private Tour
+                    </button>
+</div>
+</div>
+</section>
+<!-- Philosophy Quote -->
+<section class="bg-[#1d1c15] text-[#fff9ee] py-24 px-8 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-2 bg-primary"></div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-6">format_quote</span>
+<blockquote class="font-headline text-3xl leading-snug italic mb-8">
+                    "글자는 종이 위에 머물 때<br/>비로소 살아있는 역사가 된다."
+                </blockquote>
+<div class="w-16 h-px bg-outline-variant/30 mb-4"></div>
+<cite class="font-label text-[10px] uppercase tracking-[0.2em] opacity-60 not-italic">The Living Archive Philosophy</cite>
+</div>
+<div class="absolute bottom-[-50px] right-[-30px] opacity-10">
+<span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+</div>
+</section>
+<!-- Proof/Trust -->
+<section class="py-20 px-6 bg-surface-container flex flex-col gap-12">
+<h4 class="font-label text-[11px] uppercase tracking-widest text-center opacity-70">기록의 가치를 나누는 사람들</h4>
+<div class="grid grid-cols-2 gap-px bg-outline-variant/20">
+<div class="bg-surface p-8 flex flex-col items-center gap-2">
+<span class="font-headline text-4xl text-primary italic">4.2k+</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">아카이브</span>
+</div>
+<div class="bg-surface p-8 flex flex-col items-center gap-2">
+<span class="font-headline text-4xl text-primary italic">128</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">독립 작가</span>
+</div>
+<div class="bg-surface p-8 flex flex-col items-center gap-2">
+<span class="font-headline text-4xl text-primary italic">15</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">큐레이터</span>
+</div>
+<div class="bg-surface p-8 flex flex-col items-center gap-2">
+<span class="font-headline text-4xl text-primary italic">8.5k</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">방문객</span>
+</div>
+</div>
+</section>
+<!-- Librarian's Note -->
+<section class="py-20 px-6 flex justify-center items-center">
+<div class="w-full max-w-sm bg-secondary-container p-8 rotate-[-2deg] paper-shadow relative group">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 w-16 h-8 bg-surface-container-highest opacity-40 shadow-sm rotate-2"></div>
+<span class="font-label text-[10px] uppercase font-bold text-on-secondary-container mb-4 block">Librarian's Note</span>
+<p class="font-body text-sm leading-relaxed text-on-secondary-container mb-6 italic">
+                    "디지털의 파도는 빠르지만, 종이 위의 잉크는 깊게 스며듭니다. 우리는 그 깊이가 만드는 시간을 믿습니다. 당신의 기록도 이곳에서 하나의 역사가 되기를 바랍니다."
+                </p>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-dim">
+<img alt="Librarian portrait" data-alt="Portrait of a woman curator in a library wearing glasses and a soft knit sweater, warm soft light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfo7rl9NaeNnwYaRjVhniMjYLBnw5ydN3FerRBMw4v_wxS42OjWAw440rMrbnMMeaEllH__FKiZeBjTarrb5WOlnzSlWWh5dv4L1T5dxltErOZsA1iOD4dVRUjGb9WfE_LvJWBAiI80L4uT5dtiEyXAh2CjF-3d_7W_cg1WpoTD2JSOQ6HZwOOOhcGWfP2VRR8tsD9qYeVWxAQUrjswhOBR_GrIsiM8MQH15ptUV0TkkawogYIqrE-CPk6u-6UG1tmvmqVEaCHd6o"/>
+</div>
+<span class="font-label text-[11px] font-bold">Manager, Paper Nook</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-[#fff9ee] dark:bg-[#1d1c15] shadow-[0_-12px_32px_-4px_rgba(35,29,23,0.06)]">
+<div class="flex flex-col items-center justify-center text-[#1d1c15] dark:text-[#fff9ee] opacity-60 p-2 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">home_app_logo</span>
+<span class="font-sans uppercase tracking-widest text-[10px] font-semibold">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#1d1c15] dark:text-[#fff9ee] opacity-60 p-2 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-sans uppercase tracking-widest text-[10px] font-semibold">Shelf</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#f5c24f] dark:bg-[#795900] text-[#1d1c15] dark:text-[#fff9ee] p-2 Active: scale-95 transition-all duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-sans uppercase tracking-widest text-[10px] font-semibold">Picks</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#1d1c15] dark:text-[#fff9ee] opacity-60 p-2 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">card_giftcard</span>
+<span class="font-sans uppercase tracking-widest text-[10px] font-semibold">Gift</span>
+</div>
+</nav>
+<!-- Floating Action Button (Optional based on design strategy) -->
+<button class="fixed bottom-24 right-6 bg-primary text-white w-14 h-14 flex items-center justify-center paper-shadow z-40 hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined">edit_note</span>
+</button>
+<!-- Content Separation Line (Simulated from JSON separation_logic) -->
+<div class="fixed top-[68px] left-0 bg-[#f2ead3] dark:bg-[#2c2b22] h-px w-full z-40"></div>
+</body></html>

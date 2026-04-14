@@ -1,0 +1,89 @@
+{
+  "siteId": "youth-fashion",
+  "brand": "BOP BOP",
+  "projectId": "10202922374111577035",
+  "projectTitle": "BOP BOP Stitch",
+  "updatedAt": "2026-04-14T04:44:24.614Z",
+  "screens": {
+    "home:desktop": {
+      "screenId": "9f1bcd3ce67a4b4fa2f1766ab9c8f5db",
+      "pageSlug": "home",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/youth-fashion/screens/home-desktop.html",
+      "imagePath": "design/stitch/youth-fashion/screens/home-desktop.png",
+      "updatedAt": "2026-04-13T23:53:43.026Z"
+    },
+    "home:mobile": {
+      "screenId": "2524fe9e0cb449ff835bbcffb6583471",
+      "pageSlug": "home",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/youth-fashion/screens/home-mobile.html",
+      "imagePath": "design/stitch/youth-fashion/screens/home-mobile.png",
+      "updatedAt": "2026-04-13T23:54:50.889Z"
+    },
+    "looks:desktop": {
+      "screenId": "ed70b595f64749f29c93419897f90681",
+      "pageSlug": "looks",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/youth-fashion/screens/looks-desktop.html",
+      "imagePath": "design/stitch/youth-fashion/screens/looks-desktop.png",
+      "updatedAt": "2026-04-14T04:33:53.707Z"
+    },
+    "looks:mobile": {
+      "screenId": "b78f0c28da40432fa36deed7d9dc558a",
+      "pageSlug": "looks",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/youth-fashion/screens/looks-mobile.html",
+      "imagePath": "design/stitch/youth-fashion/screens/looks-mobile.png",
+      "updatedAt": "2026-04-14T04:35:26.660Z"
+    },
+    "shop:desktop": {
+      "screenId": "b2597252d4f34ee39ba8e8965bab400a",
+      "pageSlug": "shop",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/youth-fashion/screens/shop-desktop.html",
+      "imagePath": "design/stitch/youth-fashion/screens/shop-desktop.png",
+      "updatedAt": "2026-04-14T04:36:52.853Z"
+    },
+    "shop:mobile": {
+      "screenId": "25eb85ba51224e86bdf00a3f12649925",
+      "pageSlug": "shop",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/youth-fashion/screens/shop-mobile.html",
+      "imagePath": "design/stitch/youth-fashion/screens/shop-mobile.png",
+      "updatedAt": "2026-04-14T04:38:10.523Z"
+    },
+    "cart:desktop": {
+      "screenId": "db65c9406a414bf5be344c030f4d9088",
+      "pageSlug": "cart",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/youth-fashion/screens/cart-desktop.html",
+      "imagePath": "design/stitch/youth-fashion/screens/cart-desktop.png",
+      "updatedAt": "2026-04-14T04:39:40.614Z"
+    },
+    "cart:mobile": {
+      "screenId": "a4da2bb6fc804d91a406fc43087ce34f",
+      "pageSlug": "cart",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/youth-fashion/screens/cart-mobile.html",
+      "imagePath": "design/stitch/youth-fashion/screens/cart-mobile.png",
+      "updatedAt": "2026-04-14T04:40:53.804Z"
+    },
+    "brand:desktop": {
+      "screenId": "5e304e6961124698a5a8df4e2fc03060",
+      "pageSlug": "brand",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/youth-fashion/screens/brand-desktop.html",
+      "imagePath": "design/stitch/youth-fashion/screens/brand-desktop.png",
+      "updatedAt": "2026-04-14T04:42:45.795Z"
+    },
+    "brand:mobile": {
+      "screenId": "e368e152537a4bc28b952798ef62a9ab",
+      "pageSlug": "brand",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/youth-fashion/screens/brand-mobile.html",
+      "imagePath": "design/stitch/youth-fashion/screens/brand-mobile.png",
+      "updatedAt": "2026-04-14T04:44:24.616Z"
+    }
+  }
+}

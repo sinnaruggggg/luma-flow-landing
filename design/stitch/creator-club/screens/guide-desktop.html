@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Guide - CREATOR NEON</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#fed74c",
+                      "tertiary-dim": "#8355ef",
+                      "surface-tint": "#ff83d1",
+                      "on-secondary": "#5d4b00",
+                      "on-primary-fixed-variant": "#65004c",
+                      "on-tertiary-container": "#000000",
+                      "secondary-container": "#725c00",
+                      "background": "#140629",
+                      "surface-bright": "#352156",
+                      "primary-fixed-dim": "#ed6dbf",
+                      "on-tertiary-fixed": "#1e0053",
+                      "on-secondary-fixed-variant": "#685400",
+                      "surface-container-lowest": "#000000",
+                      "on-tertiary-fixed-variant": "#4600a8",
+                      "secondary": "#fed74c",
+                      "primary": "#ff83d1",
+                      "on-background": "#eee0ff",
+                      "surface": "#140629",
+                      "primary-dim": "#f070c2",
+                      "tertiary-fixed-dim": "#b091ff",
+                      "on-primary-container": "#480036",
+                      "on-secondary-container": "#fff7e8",
+                      "outline-variant": "#4f4166",
+                      "outline": "#7e6e96",
+                      "error-dim": "#d73357",
+                      "primary-container": "#f473c5",
+                      "on-error-container": "#ffb2b9",
+                      "on-secondary-fixed": "#473800",
+                      "on-primary": "#5d0046",
+                      "surface-container-low": "#1a0b31",
+                      "surface-variant": "#2e1b4c",
+                      "on-primary-fixed": "#200016",
+                      "inverse-surface": "#fef7ff",
+                      "on-surface": "#eee0ff",
+                      "on-tertiary": "#280068",
+                      "on-surface-variant": "#b5a4ce",
+                      "on-error": "#490013",
+                      "secondary-dim": "#efc93f",
+                      "surface-dim": "#140629",
+                      "tertiary-container": "#8e60fa",
+                      "primary-fixed": "#fd7acd",
+                      "inverse-on-surface": "#5d4e74",
+                      "error-container": "#a70138",
+                      "surface-container": "#21103a",
+                      "tertiary": "#ab8aff",
+                      "inverse-primary": "#a32f7f",
+                      "tertiary-fixed": "#bca2ff",
+                      "error": "#ff6e84",
+                      "secondary-fixed-dim": "#efc93f",
+                      "surface-container-high": "#271643",
+                      "surface-container-highest": "#2e1b4c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Epilogue"],
+                      "body": ["Be Vietnam Pro"],
+                      "label": ["Plus Jakarta Sans"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Be Vietnam Pro', sans-serif; background-color: #140629; color: #eee0ff; overflow-x: hidden; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .aurora-bg {
+            background: radial-gradient(circle at 20% 30%, rgba(255, 131, 209, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(254, 215, 76, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 50%, rgba(171, 138, 255, 0.1) 0%, transparent 70%);
+        }
+        .glass-panel {
+            background: rgba(33, 16, 58, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .neon-glow-primary { text-shadow: 0 0 10px rgba(255, 131, 209, 0.5); }
+        .neon-glow-secondary { text-shadow: 0 0 10px rgba(254, 215, 76, 0.5); }
+    </style>
+</head>
+<body class="aurora-bg min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#140629]/60 backdrop-blur-xl shadow-[0_0_20px_rgba(255,131,209,0.1)] flex justify-between items-center px-8 py-4 max-w-full">
+<div class="text-2xl font-black text-[#ff83d1] italic font-['Epilogue'] tracking-tighter uppercase">CREATOR NEON</div>
+<div class="hidden md:flex gap-10">
+<a class="font-['Epilogue'] tracking-tighter uppercase text-[#eee0ff] hover:text-[#fed74c] transition-colors hover:scale-105 duration-300" href="#">Explore</a>
+<a class="font-['Epilogue'] tracking-tighter uppercase text-[#eee0ff] hover:text-[#fed74c] transition-colors hover:scale-105 duration-300" href="#">Maps</a>
+<a class="font-['Epilogue'] tracking-tighter uppercase text-[#ff83d1] border-b-2 border-[#ff83d1] pb-1 hover:scale-105 duration-300" href="#">Rules</a>
+<a class="font-['Epilogue'] tracking-tighter uppercase text-[#eee0ff] hover:text-[#fed74c] transition-colors hover:scale-105 duration-300" href="#">FAQ</a>
+</div>
+<button class="bg-[#ff83d1] text-[#480036] px-6 py-2 rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform">Join Now</button>
+</nav>
+<main class="pt-24 pb-20 px-6 md:px-12 max-w-7xl mx-auto space-y-32">
+<!-- First Viewport: Module Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6 min-h-[716px] items-stretch">
+<!-- Main Title Module -->
+<div class="md:col-span-2 flex flex-col justify-center space-y-6 glass-panel p-12 rounded-xl">
+<div class="font-label text-[#fed74c] text-sm tracking-[0.3em] uppercase">RALLY HOUSE GUIDE</div>
+<h1 class="font-headline text-6xl md:text-8xl font-black tracking-tighter text-[#eee0ff] leading-[0.9]">
+                    THE <span class="text-[#ff83d1]">NEON</span><br/>FLOW.
+                </h1>
+<p class="font-body text-lg text-[#eee0ff]/70 max-w-md">
+                    디지털 오로라의 흐름을 따라 크리에이터 하우스의 모든 규칙과 공간을 탐험하세요.
+                </p>
+</div>
+<!-- Map Summary Module -->
+<div class="md:col-span-1 glass-panel p-8 rounded-xl flex flex-col justify-between group cursor-pointer hover:bg-surface-container-high transition-all">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-[#ff83d1] text-4xl">map</span>
+<span class="font-label text-xs text-[#eee0ff]/40">01</span>
+</div>
+<div>
+<h3 class="font-headline text-2xl font-bold mb-2">Space Layout</h3>
+<p class="font-body text-sm text-[#eee0ff]/60">물리적 공간과 디지털 레이어의 결합.</p>
+</div>
+</div>
+<!-- FAQ Quick Access -->
+<div class="md:col-span-1 glass-panel p-8 rounded-xl flex flex-col justify-between group cursor-pointer hover:bg-surface-container-high transition-all">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-[#fed74c] text-4xl">quiz</span>
+<span class="font-label text-xs text-[#eee0ff]/40">02</span>
+</div>
+<div>
+<h3 class="font-headline text-2xl font-bold mb-2">Instant Help</h3>
+<p class="font-body text-sm text-[#eee0ff]/60">자주 묻는 질문과 답변.</p>
+</div>
+</div>
+<!-- Rules Module -->
+<div class="md:col-span-1 glass-panel p-8 rounded-xl flex flex-col justify-between group cursor-pointer hover:bg-surface-container-high transition-all border-t-2 border-[#ff83d1]/30">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-[#ab8aff] text-4xl">gavel</span>
+<span class="font-label text-xs text-[#eee0ff]/40">03</span>
+</div>
+<div>
+<h3 class="font-headline text-2xl font-bold mb-2">The Rules</h3>
+<p class="font-body text-sm text-[#eee0ff]/60">모두를 위한 크리에이티브 에티켓.</p>
+</div>
+</div>
+<!-- Price module -->
+<div class="md:col-span-1 glass-panel p-8 rounded-xl bg-gradient-to-br from-[#ff83d1]/10 to-transparent flex flex-col justify-center items-center text-center">
+<div class="font-label text-xs mb-2 text-[#ff83d1]">STARTER PASS</div>
+<div class="font-headline text-4xl font-black">29,900원</div>
+<div class="font-body text-xs text-[#eee0ff]/50 mt-2">일일 이용권 (Day Pass)</div>
+</div>
+<!-- Price module 2 -->
+<div class="md:col-span-2 glass-panel p-8 rounded-xl bg-[#fed74c]/5 border border-[#fed74c]/20 flex flex-row items-center justify-between">
+<div>
+<div class="font-label text-xs text-[#fed74c] mb-1">CREATOR PRO</div>
+<div class="font-headline text-4xl font-black">월 39,000원</div>
+</div>
+<div class="text-right">
+<p class="font-body text-sm text-[#eee0ff]/70">모든 세션 무제한 입장<br/>&amp; 전용 락커 제공</p>
+</div>
+</div>
+</section>
+<!-- Section 1: Operational Guidance -->
+<section class="space-y-12">
+<div class="flex items-end justify-between">
+<div>
+<span class="font-label text-[#ff83d1] text-xs font-bold tracking-widest uppercase">System</span>
+<h2 class="font-headline text-5xl font-extrabold tracking-tighter">OPERATIONAL MODEL</h2>
+</div>
+<div class="hidden md:block w-32 h-1 bg-gradient-to-r from-[#ff83d1] to-transparent"></div>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="glass-panel p-10 rounded-xl space-y-6 relative overflow-hidden">
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-[#ff83d1]/10 blur-3xl"></div>
+<div class="font-headline text-4xl font-black text-outline-variant/30">01</div>
+<h4 class="font-headline text-xl font-bold">24/7 Digital Sync</h4>
+<p class="font-body text-[#eee0ff]/60 leading-relaxed">디지털 오로라 시스템은 연중무휴로 운영되며, 크리에이터의 활동 상태에 따라 공간의 조명과 무드가 실시간으로 동기화됩니다.</p>
+</div>
+<div class="glass-panel p-10 rounded-xl space-y-6 border-t border-[#fed74c]/20">
+<div class="font-headline text-4xl font-black text-outline-variant/30">02</div>
+<h4 class="font-headline text-xl font-bold">Mobile First Access</h4>
+<p class="font-body text-[#eee0ff]/60 leading-relaxed">모든 입출입은 전용 앱을 통한 QR 코드로 관리됩니다. 별도의 대기 시간 없이 즉시 몰입의 공간으로 입장하세요.</p>
+</div>
+<div class="glass-panel p-10 rounded-xl space-y-6">
+<div class="font-headline text-4xl font-black text-outline-variant/30">03</div>
+<h4 class="font-headline text-xl font-bold">Fluid Collaboration</h4>
+<p class="font-body text-[#eee0ff]/60 leading-relaxed">고정된 좌석은 없습니다. 매일 새로운 영감을 주는 위치를 선택하고, 주변 크리에이터와 자연스럽게 연결되세요.</p>
+</div>
+</div>
+</section>
+<!-- Section 2: Visit Rules & Philosophy -->
+<section class="relative">
+<div class="absolute inset-0 bg-gradient-to-b from-[#140629] via-[#21103a]/50 to-[#140629] -z-10 rounded-3xl"></div>
+<div class="p-12 md:p-20 grid md:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<h2 class="font-headline text-5xl font-black tracking-tighter leading-none">THE RALLY<br/><span class="text-[#fed74c]">PHILOSOPHY</span></h2>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-[#ff83d1]">check_circle</span>
+<div class="space-y-1">
+<span class="font-headline font-bold block">존중과 경계 (Respect Boundaries)</span>
+<span class="font-body text-sm text-[#eee0ff]/60">서로의 집중 시간을 존중합니다. 협업 존 이외에서는 저소음을 유지합니다.</span>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-[#ff83d1]">check_circle</span>
+<div class="space-y-1">
+<span class="font-headline font-bold block">무한 공유 (Open Share)</span>
+<span class="font-body text-sm text-[#eee0ff]/60">영감은 나눌수록 커집니다. 디지털 보드를 통해 오늘의 작업을 공유하세요.</span>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-[#ff83d1]">check_circle</span>
+<div class="space-y-1">
+<span class="font-headline font-bold block">공간 소유권 (No Ownership)</span>
+<span class="font-body text-sm text-[#eee0ff]/60">사용한 자리는 다음 크리에이터를 위해 처음과 같이 정돈합니다.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="relative group">
+<div class="absolute inset-0 bg-[#ff83d1] blur-[100px] opacity-10 group-hover:opacity-20 transition-opacity"></div>
+<img alt="Creative Lab" class="rounded-xl shadow-2xl relative z-10 grayscale-[0.5] hover:grayscale-0 transition-all duration-700" data-alt="Modern high-tech creative lab with neon purple lighting, sleek workstations, and glass partitions in a futuristic setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcoQ-AhsELO05uQBCSSBsgOw8xzuxx-72NoWv5ysEHRaKbq7xE62rjy9Va3XoYvs_bIKlqvSqhF7OGP-mjC2VrQoCXRuMgJvpW2mrtufJzax8K-bQuxB5LXZ7h0C42NLDTe79s6f2sJ76RRYgGaHD5KcGPKv5_hUUaK5NUOehggEpuf-xQ8PH3R4hYAQShmQW2LVl7_FPVYh7aAwfk81FicysE_Im2d4m0VvtkhGysksF4XJZluSGBeDfwayDFwRa0bssOiflXLTot"/>
+</div>
+</div>
+</section>
+<!-- Section 3: Map Visualization -->
+<section class="space-y-12">
+<div class="text-center space-y-4">
+<span class="font-label text-[#ab8aff] text-xs font-bold tracking-[0.4em] uppercase">Architecture</span>
+<h2 class="font-headline text-5xl font-black tracking-tighter">SPACE NAVIGATION</h2>
+</div>
+<div class="glass-panel p-4 rounded-xl relative overflow-hidden aspect-[16/9] md:aspect-[21/9]">
+<div class="absolute inset-0 flex items-center justify-center">
+<img alt="Interior Design Map" class="w-full h-full object-cover opacity-40 mix-blend-overlay" data-alt="Top down architectural 3D rendering of a modern workspace with neon floor outlines and floating glass dividers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk696PC0-65woQEJ5k4S_bx4wwN2lzu7m3IBgh_lPNBAsf00VrYwIXsfxRScZkkWszsI-TL78OYNSTub1xno2jTP3_bqdB3QewUwKSX3xoiOiZ6gECiA8jPq70d-z0rh5-rVFDXcKaC7sgsOSQZ2z0LFFBj6yKNlQdfXq6YjMHuScd-mvYVd4Ff4k3F7UaVyZqJigfMPqGjGbxpv3aQ7XryfBQNGxfnzj8-WKpmpbvxkH6_gicuob_aV_Yty_l2aCuC5OSKxdH2OkQ"/>
+</div>
+<!-- Floating Map Markers -->
+<div class="absolute top-1/4 left-1/4 group cursor-pointer">
+<div class="w-4 h-4 bg-[#ff83d1] rounded-full animate-pulse shadow-[0_0_15px_#ff83d1]"></div>
+<div class="absolute top-6 left-0 bg-surface-container-highest p-3 rounded-lg border border-[#ff83d1]/30 w-40 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-headline font-bold text-xs block mb-1">THE CORE</span>
+<span class="font-body text-[10px] text-[#eee0ff]/60">메인 스트리밍 스튜디오 및 편집 데스크 구역</span>
+</div>
+</div>
+<div class="absolute bottom-1/3 right-1/3 group cursor-pointer">
+<div class="w-4 h-4 bg-[#fed74c] rounded-full animate-pulse shadow-[0_0_15px_#fed74c]"></div>
+<div class="absolute top-6 left-0 bg-surface-container-highest p-3 rounded-lg border border-[#fed74c]/30 w-40 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-headline font-bold text-xs block mb-1">SILENCE POD</span>
+<span class="font-body text-[10px] text-[#eee0ff]/60">고도의 집중을 위한 1인 방음 작업실</span>
+</div>
+</div>
+<div class="absolute top-1/2 right-1/4 group cursor-pointer">
+<div class="w-4 h-4 bg-[#ab8aff] rounded-full animate-pulse shadow-[0_0_15px_#ab8aff]"></div>
+<div class="absolute top-6 left-0 bg-surface-container-highest p-3 rounded-lg border border-[#ab8aff]/30 w-40 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-headline font-bold text-xs block mb-1">NEON LOUNGE</span>
+<span class="font-body text-[10px] text-[#eee0ff]/60">커피와 대화가 있는 크리에이터 사교 구역</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="text-center p-4 border-l border-outline-variant/30">
+<div class="font-headline text-lg font-bold">1F: Lounge</div>
+<div class="font-label text-[10px] text-[#eee0ff]/40 mt-1 uppercase">Social &amp; Network</div>
+</div>
+<div class="text-center p-4 border-l border-outline-variant/30">
+<div class="font-headline text-lg font-bold">2F: Lab</div>
+<div class="font-label text-[10px] text-[#eee0ff]/40 mt-1 uppercase">Production &amp; Edit</div>
+</div>
+<div class="text-center p-4 border-l border-outline-variant/30">
+<div class="font-headline text-lg font-bold">3F: Focus</div>
+<div class="font-label text-[10px] text-[#eee0ff]/40 mt-1 uppercase">Private Work</div>
+</div>
+<div class="text-center p-4 border-l border-outline-variant/30">
+<div class="font-headline text-lg font-bold">RF: Sky Deck</div>
+<div class="font-label text-[10px] text-[#eee0ff]/40 mt-1 uppercase">Outdoor Creation</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Preparation Notes -->
+<section class="grid md:grid-cols-2 gap-8 items-start">
+<div class="glass-panel p-12 rounded-xl space-y-10">
+<h3 class="font-headline text-4xl font-black">BEFORE YOU<br/><span class="text-[#ff83d1]">RALLY</span></h3>
+<div class="space-y-8">
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 flex-shrink-0 bg-primary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[#480036]">smartphone</span>
+</div>
+<div class="space-y-1">
+<h5 class="font-headline font-bold">Digital ID</h5>
+<p class="font-body text-sm text-[#eee0ff]/60">RALLY 앱을 다운로드하고 로그인을 완료하세요. 디지털 키가 활성화되어야 입장이 가능합니다.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 flex-shrink-0 bg-secondary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[#fff7e8]">headphones</span>
+</div>
+<div class="space-y-1">
+<h5 class="font-headline font-bold">Personal Gear</h5>
+<p class="font-body text-sm text-[#eee0ff]/60">개인 헤드셋과 작업 도구를 준비하세요. 현장에서 대여 가능한 장비 목록은 앱에서 실시간으로 확인 가능합니다.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 flex-shrink-0 bg-tertiary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-white">bolt</span>
+</div>
+<div class="space-y-1">
+<h5 class="font-headline font-bold">Creative Mindset</h5>
+<p class="font-body text-sm text-[#eee0ff]/60">열린 마음으로 참여하세요. 랠리 하우스는 개인의 작업을 넘어 연대와 성장을 지향합니다.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="h-full space-y-8">
+<div class="glass-panel p-8 rounded-xl bg-gradient-to-r from-[#ff83d1]/10 to-transparent flex gap-6 items-center">
+<img alt="Team Discussion" class="w-24 h-24 rounded-full object-cover border-2 border-[#ff83d1]" data-alt="Group of young diverse creators discussing ideas over digital tablets in a brightly lit modern lounge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMBzkoQy1Qcfchh6ljMeXIQm9vO_PIUae-VtsXyeSffFmJV01K74MJlc9eLG5gqbvWxQlDIXRtuf94gv3JuwocFA_5qQZ-Ppb3N4cmTNXSXsBIiEFHVJp7p3TztGgGhBd8XQ2vH8gBi9vJRs0_KJDdVcXyl9ZOabyt-YEK4g7RLS2WMOW4xdGK8QIWIEGcGb62VjGmLMUvihbE48EZC65tvqXbk_0WdYsWnHlIFroxFuYYPL6pwdHYNKTsiXe0L1IjW-XhLdp514jZ"/>
+<div>
+<p class="font-body italic text-sm">"첫 방문이라면 주저하지 말고 1층의 하우스 매니저를 찾으세요. 시스템 적응을 도와드립니다."</p>
+<span class="font-label text-xs text-[#ff83d1] mt-2 block font-bold">- HOUSE MANAGER LEO</span>
+</div>
+</div>
+<div class="bg-surface-container-highest p-12 rounded-xl border-l-4 border-[#fed74c]">
+<h4 class="font-headline text-xl font-bold mb-4">Location Detail</h4>
+<p class="font-body text-sm text-[#eee0ff]/70 mb-6">서울특별시 성동구 아차산로 17길 48, 디지털 오로라 타워 1-4F</p>
+<div class="w-full h-48 bg-[#140629] rounded-lg relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80')] bg-cover opacity-50 grayscale" data-location="Seoul" style=""></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#fed74c] text-4xl animate-bounce" data-weight="fill">location_on</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: FAQ Grid -->
+<section class="space-y-16">
+<div class="flex flex-col items-center text-center space-y-4">
+<h2 class="font-headline text-5xl font-black tracking-tighter">COMMON QUESTIONS</h2>
+<p class="font-body text-[#eee0ff]/50 max-w-lg">방문 전 궁금한 사항들을 미리 확인하세요.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-6">
+<!-- FAQ Item 1 -->
+<div class="glass-panel p-8 rounded-xl hover:translate-y-[-4px] transition-transform cursor-pointer">
+<div class="flex items-start gap-4">
+<span class="font-label text-[#ff83d1] font-bold">Q.</span>
+<div class="space-y-2">
+<h4 class="font-headline font-bold">예약 없이 방문해도 되나요?</h4>
+<p class="font-body text-sm text-[#eee0ff]/60">당일 권(Day Pass)은 현장 상황에 따라 구매 가능하나, Pro 멤버십 회원 우선 입장 원칙으로 인해 만석 시 대기가 발생할 수 있습니다.</p>
+</div>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="glass-panel p-8 rounded-xl hover:translate-y-[-4px] transition-transform cursor-pointer">
+<div class="flex items-start gap-4">
+<span class="font-label text-[#ff83d1] font-bold">Q.</span>
+<div class="space-y-2">
+<h4 class="font-headline font-bold">주차 지원이 가능한가요?</h4>
+<p class="font-body text-sm text-[#eee0ff]/60">건물 내 기계식 주차장을 이용 가능하며, 멤버십 등급에 따라 일일 2시간에서 종일 무료 주차가 제공됩니다.</p>
+</div>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="glass-panel p-8 rounded-xl hover:translate-y-[-4px] transition-transform cursor-pointer">
+<div class="flex items-start gap-4">
+<span class="font-label text-[#ff83d1] font-bold">Q.</span>
+<div class="space-y-2">
+<h4 class="font-headline font-bold">촬영 장비를 가져와도 되나요?</h4>
+<p class="font-body text-sm text-[#eee0ff]/60">네, 가능합니다. 다만 타인의 초상권 및 작업 환경을 방해하지 않는 선에서 허용되며, 상업적 대형 장비 반입은 사전 협의가 필요합니다.</p>
+</div>
+</div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="glass-panel p-8 rounded-xl hover:translate-y-[-4px] transition-transform cursor-pointer">
+<div class="flex items-start gap-4">
+<span class="font-label text-[#ff83d1] font-bold">Q.</span>
+<div class="space-y-2">
+<h4 class="font-headline font-bold">음식물 반입은 어떻게 되나요?</h4>
+<p class="font-body text-sm text-[#eee0ff]/60">1층 라운지에서는 음료와 간단한 스낵 취식이 가능하지만, 2층 이상의 작업 공간에서는 밀폐형 용기에 담긴 음료만 허용됩니다.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-center">
+<button class="bg-[#fed74c] text-[#473800] px-10 py-4 rounded-full font-bold uppercase tracking-widest hover:shadow-[0_0_20px_#fed74c] transition-all">More Questions</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#21103a] w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-8 w-full">
+<div class="text-[#ff83d1] font-bold font-['Plus_Jakarta_Sans'] text-xs tracking-widest uppercase">© 2024 DIGITAL AURORA CREATOR COLLECTIVE</div>
+<div class="flex gap-8">
+<a class="font-['Plus_Jakarta_Sans'] text-xs tracking-widest uppercase text-[#eee0ff]/60 hover:text-[#fed74c] transition-all" href="#">Privacy</a>
+<a class="font-['Plus_Jakarta_Sans'] text-xs tracking-widest uppercase text-[#eee0ff]/60 hover:text-[#fed74c] transition-all" href="#">Terms</a>
+<a class="font-['Plus_Jakarta_Sans'] text-xs tracking-widest uppercase text-[#eee0ff]/60 hover:text-[#fed74c] transition-all" href="#">Discord</a>
+<a class="font-['Plus_Jakarta_Sans'] text-xs tracking-widest uppercase text-[#eee0ff]/60 hover:text-[#fed74c] transition-all" href="#">Contact</a>
+</div>
+</footer>
+</body></html>

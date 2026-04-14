@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,800;0,900;1,900&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#871368",
+                    "tertiary-fixed": "#e2e2e2",
+                    "surface-container": "#26193b",
+                    "primary-fixed-dim": "#e9c339",
+                    "outline": "#a18b95",
+                    "surface-bright": "#403356",
+                    "on-secondary-container": "#ff97d5",
+                    "surface-container-high": "#312346",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "error-container": "#93000a",
+                    "surface-container-highest": "#3c2e52",
+                    "surface-tint": "#e9c339",
+                    "on-tertiary-container": "#3d3f3f",
+                    "on-secondary-fixed": "#3c002c",
+                    "on-error": "#690005",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "surface": "#190c2e",
+                    "inverse-on-surface": "#372a4d",
+                    "outline-variant": "#54424b",
+                    "on-tertiary": "#2f3131",
+                    "on-surface": "#ecdcff",
+                    "primary-fixed": "#ffe07e",
+                    "on-primary-container": "#4c3d00",
+                    "on-secondary-fixed-variant": "#841065",
+                    "tertiary": "#c6c6c7",
+                    "on-surface-variant": "#d9c0cb",
+                    "on-primary": "#3b2f00",
+                    "on-primary-fixed-variant": "#564500",
+                    "primary": "#e9c339",
+                    "on-error-container": "#ffdad6",
+                    "surface-dim": "#190c2e",
+                    "inverse-surface": "#ecdcff",
+                    "secondary-fixed-dim": "#ffaedc",
+                    "surface-variant": "#3c2e52",
+                    "surface-container-low": "#221537",
+                    "on-secondary": "#600049",
+                    "on-background": "#ecdcff",
+                    "secondary": "#ffaedc",
+                    "primary-container": "#caa71a",
+                    "tertiary-container": "#a9aaaa",
+                    "background": "#190c2e",
+                    "surface-container-lowest": "#140629",
+                    "secondary-fixed": "#ffd8eb",
+                    "inverse-primary": "#725c00",
+                    "on-primary-fixed": "#231b00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Epilogue"],
+                    "body": ["Manrope"],
+                    "label": ["Epilogue"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        .font-epilogue { font-family: 'Epilogue', sans-serif; }
+        .kinetic-layer { position: relative; }
+        .glossy-overlay { background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%); }
+        .text-glow { text-shadow: 0 0 10px rgba(233, 195, 57, 0.4); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#190c2e] dark:bg-[#190c2e] flex justify-between items-center px-4 h-16 w-full">
+<button class="active:scale-95 duration-150 transition-opacity hover:opacity-80">
+<span class="material-symbols-outlined text-[#e9c339] dark:text-[#e9c339]">menu</span>
+</button>
+<h1 class="text-2xl font-black text-[#e9c339] tracking-tighter italic font-['Epilogue'] uppercase tracking-[-0.04em]">MELT POP</h1>
+<button class="active:scale-95 duration-150 transition-opacity hover:opacity-80">
+<span class="material-symbols-outlined text-[#e9c339] dark:text-[#e9c339]">shopping_bag</span>
+</button>
+</header>
+<main class="pt-16 pb-24">
+<!-- Category Anchors -->
+<section class="px-4 py-6 overflow-x-auto whitespace-nowrap no-scrollbar flex gap-3">
+<div class="px-6 py-2 bg-primary text-on-primary font-epilogue font-black rounded-lg border-none active:scale-95 transition-transform">NEW</div>
+<div class="px-6 py-2 bg-surface-container-high text-on-surface-variant font-epilogue font-bold rounded-lg active:scale-95 transition-transform">KITS</div>
+<div class="px-6 py-2 bg-surface-container-high text-on-surface-variant font-epilogue font-bold rounded-lg active:scale-95 transition-transform">LIPS</div>
+<div class="px-6 py-2 bg-surface-container-high text-on-surface-variant font-epilogue font-bold rounded-lg active:scale-95 transition-transform">EYES</div>
+</section>
+<!-- Hero Flash Sale Kit -->
+<section class="px-4 mb-10">
+<div class="relative w-full aspect-[3/4] bg-surface-container-low overflow-hidden rounded-xl border-none kinetic-layer">
+<img class="w-full h-full object-cover opacity-80" data-alt="Close-up of vibrant neon eyeshadow palette with metallic gloss finish, high-fashion editorial lighting on deep purple background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwp41AEt1Lk-04UZG_GtLyhX7as63zABzTwGCSiGF1vLD63Vj-LbwBHGauXPgoF2abazD3KoS9KD11Ld7sMCvRiVKPNovmx-tPbh2OH5A72KsbJZd4lMT6LlNxf4W6yx5ePV1TG0gcYb2Hvz9N2RNrH41epNXI0N4KIu_F0z5TEZIJOXxLf1TYF1J-DOFz4VhANSYjYwWY7m96DtGNrf3DHQiCuHEWZiW35Fw3173qAJmLu9Ib_lY5JbLJz-GXozGdJmHNJ3GqQ2NR"/>
+<div class="absolute inset-0 glossy-overlay"></div>
+<!-- Floating Sticker -->
+<div class="absolute top-6 right-[-10px] bg-secondary text-on-secondary px-6 py-2 font-epilogue font-black text-xl rotate-[12deg] uppercase shadow-lg">
+                    Flash Sale!
+                </div>
+<div class="absolute bottom-8 left-6 right-6">
+<p class="font-epilogue font-black text-secondary tracking-tighter text-2xl uppercase mb-1">Neon Pulse Kit</p>
+<div class="flex items-baseline gap-2 mb-4">
+<span class="font-epilogue font-black text-6xl text-primary tracking-tighter text-glow">29,900</span>
+<span class="font-epilogue font-bold text-2xl text-primary">원</span>
+</div>
+<button class="w-full py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary font-epilogue font-black text-lg active:scale-95 transition-all uppercase tracking-widest">Buy Now</button>
+</div>
+</div>
+</section>
+<!-- Section: Now On Sale -->
+<section class="mb-10">
+<div class="px-4 mb-6 flex justify-between items-end">
+<h2 class="font-epilogue font-black text-3xl uppercase tracking-tighter leading-none">Now On<br/><span class="text-secondary">Sale</span></h2>
+<span class="font-epilogue font-bold text-sm text-outline border-b-2 border-primary pb-1">View All</span>
+</div>
+<div class="flex overflow-x-auto gap-4 px-4 no-scrollbar">
+<!-- Product Card 1 -->
+<div class="min-w-[280px] bg-surface-container-high p-4 rounded-xl relative overflow-hidden group">
+<div class="relative mb-4 aspect-square bg-surface rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Macro shot of vibrant pink melting lipstick texture with high-gloss wet look and neon highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADXZWNfFMFe5uuseEKXGUxWITJHZ1vo7iWlPbAG0l5ly0baiB2W8PcInfw0Cc7VOtcyqf-dm-1bM-SDrP5O-dk89xD1LXvwSshNb8Romqk5jTh88Q5g6vm3Dpc0x-jn8GNoNK0OZVVNN25ZmWYQ5O6TPTFwgsTqKli955m-bj3iQl7vb1W09byR62BMAjN3wSCXT5q8mWUV1rBxQGEZsa474fXKY-EXsS4Y4cpVPnB2qrqTPWvKC1Yv7YFm2ANqAkxgbzA6s_91Ofe"/>
+<div class="absolute top-2 left-2 bg-secondary text-on-secondary px-2 py-0.5 font-epilogue font-black text-[10px] uppercase rounded-sm">40% Off</div>
+</div>
+<h3 class="font-epilogue font-extrabold text-lg uppercase leading-tight mb-2">Electric Lip Gloss</h3>
+<div class="flex justify-between items-center">
+<span class="font-epilogue font-black text-xl text-primary">12,000원</span>
+<div class="flex gap-1">
+<span class="w-4 h-4 rounded-full bg-[#ff00ff]"></span>
+<span class="w-4 h-4 rounded-full bg-[#00ffff]"></span>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="min-w-[280px] bg-surface-container-high p-4 rounded-xl relative overflow-hidden group">
+<div class="relative mb-4 aspect-square bg-surface rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Single pan of bright yellow pressed pigment with embossed brand logo, sharp lighting on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyi3SawMOLkAi9lAebUTaV5cPrOoiGOjlHbdUkL5T8XFUo3Kuny-4fDEel1QnVboBuMyBXtww2MyNQJR0IgBhNltqyXjNhLpeSypOP4Vubi27cUn80XVJST_bVbeyROj8jVe3_C2cDZb0dv9U1WHrCX64VAHj8t2kiFYpAhi-GJEeqx9VaaRj3ToNvh-3dsOVZskeNN3ibm5jQ-lBUekW2EL7xEh0kHegOE4ler7CNlXOYc-lkGVI0eooJBrR72QaY4otlvqWn9L1F"/>
+<div class="absolute top-2 left-2 bg-secondary text-on-secondary px-2 py-0.5 font-epilogue font-black text-[10px] uppercase rounded-sm">Hot</div>
+</div>
+<h3 class="font-epilogue font-extrabold text-lg uppercase leading-tight mb-2">Solar Flare Shadow</h3>
+<div class="flex justify-between items-center">
+<span class="font-epilogue font-black text-xl text-primary">8,900원</span>
+<div class="flex gap-1">
+<span class="w-4 h-4 rounded-full bg-[#ffcc00]"></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Best Kits -->
+<section class="px-4 mb-10">
+<h2 class="font-epilogue font-black text-3xl uppercase tracking-tighter mb-6">Best <span class="text-primary italic">Kits</span></h2>
+<div class="grid grid-cols-2 gap-3">
+<!-- Large Bento Item -->
+<div class="col-span-2 aspect-[16/9] bg-surface-container-low rounded-xl relative overflow-hidden">
+<img class="w-full h-full object-cover opacity-60" data-alt="Complete makeup kit collection with brushes and palettes scattered on a reflective metallic surface, neon purple lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ-vZV5VbJQgYQbhWDPd-sT5LF7Ngkh5NhLtz1z-Oy2u9QVldSml6whutd6x43iE8jt74A0uQFsXP8aAfQkJ5ZZTn05AST4JCnYvyvUArXvT0M3rcrXcr3PRkT6EfqHOlOO9Vq45hLSlvEmm1PPiVZGvCkYE_IDqdMm5QAgFCmSg8AX-_956MRdqBw6xOmYNSFXBKCe61WswylpVEHqwfrnaDEqThIVxTPQpCbwL1hu_Q6qsrMtlzLVc1PsaKeUIMkCfCFTsevaKGR"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-primary text-on-primary px-2 py-1 font-epilogue font-black text-[10px] uppercase mb-2 inline-block">Best Seller</span>
+<p class="font-epilogue font-black text-xl uppercase italic">Full Voltage Set</p>
+<p class="font-epilogue font-bold text-primary">54,000원</p>
+</div>
+</div>
+<!-- Small Bento Item 1 -->
+<div class="aspect-square bg-surface-container-highest rounded-xl p-4 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-secondary">auto_awesome</span>
+<span class="font-epilogue font-black text-[10px] text-outline uppercase">Eye Duo</span>
+</div>
+<div>
+<p class="font-epilogue font-extrabold text-sm uppercase leading-none mb-1">Glow Kit</p>
+<p class="font-epilogue font-black text-primary">19,900원</p>
+</div>
+</div>
+<!-- Small Bento Item 2 -->
+<div class="aspect-square bg-secondary-container rounded-xl p-4 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-on-secondary-container">bolt</span>
+<span class="font-epilogue font-black text-[10px] text-on-secondary-container uppercase">Limited</span>
+</div>
+<div>
+<p class="font-epilogue font-extrabold text-sm uppercase leading-none mb-1">Pink Bolt</p>
+<p class="font-epilogue font-black text-secondary">22,000원</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Filter Surface -->
+<section class="px-4 mb-10">
+<div class="bg-surface-container-low p-6 rounded-xl border-none">
+<p class="font-epilogue font-black text-sm uppercase tracking-widest mb-4">Find your palette</p>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full border border-outline-variant text-sm font-bold active:bg-primary active:text-on-primary active:border-primary transition-colors">NEON PINK</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-sm font-bold">CYBER BLUE</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-sm font-bold">ACID GREEN</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-sm font-bold">GLOSS CLEAR</button>
+</div>
+</div>
+</section>
+</main>
+<!-- NavigationDrawer (Hidden by default, semantic structure) -->
+<aside class="hidden fixed top-0 left-0 h-full w-[280px] bg-[#190c2e] dark:bg-[#190c2e] shadow-2xl flex flex-col py-8 px-6 z-[60]">
+<div class="font-['Epilogue'] font-extrabold uppercase text-[#e9c339] mb-8">CATEGORIES</div>
+<nav class="flex flex-col gap-4">
+<div class="text-[#e9c339] bg-[#312346] font-black border-l-4 border-[#ff7ccf] px-4 py-3 flex items-center gap-3">
+<span class="material-symbols-outlined">new_releases</span> New Arrivals
+            </div>
+<div class="text-[#403356] font-bold px-4 py-3 flex items-center gap-3 hover:text-[#ff7ccf] transition-all">
+<span class="material-symbols-outlined">timer</span> Flash Sales
+            </div>
+<div class="text-[#403356] font-bold px-4 py-3 flex items-center gap-3 hover:text-[#ff7ccf] transition-all">
+<span class="material-symbols-outlined">star</span> Best Sellers
+            </div>
+<div class="text-[#403356] font-bold px-4 py-3 flex items-center gap-3 hover:text-[#ff7ccf] transition-all">
+<span class="material-symbols-outlined">visibility</span> Eye Gloss
+            </div>
+<div class="text-[#403356] font-bold px-4 py-3 flex items-center gap-3 hover:text-[#ff7ccf] transition-all">
+<span class="material-symbols-outlined">dry_cleaning</span> Lip Kits
+            </div>
+</nav>
+</aside>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center pt-2 pb-safe px-4 bg-[#221537]/80 backdrop-blur-xl dark:bg-[#221537]/80 z-50 border-t border-[#403356]/15 shadow-[0_-4px_40px_rgba(135,19,104,0.08)]">
+<a class="flex flex-col items-center justify-center text-[#ff7ccf] bg-[#312346] rounded-xl px-3 py-1 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">bolt</span>
+<span class="font-['Epilogue'] font-bold text-[10px] uppercase">SHOP</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#403356] px-3 py-1 hover:text-[#ff7ccf] transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">sell</span>
+<span class="font-['Epilogue'] font-bold text-[10px] uppercase">DROPS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#403356] px-3 py-1 hover:text-[#ff7ccf] transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-['Epilogue'] font-bold text-[10px] uppercase">KITS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#403356] px-3 py-1 hover:text-[#ff7ccf] transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Epilogue'] font-bold text-[10px] uppercase">ME</span>
+</a>
+</nav>
+</body></html>

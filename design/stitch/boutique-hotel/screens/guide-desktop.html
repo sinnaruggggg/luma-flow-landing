@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#a2948b",
+                    "on-background": "#201b13",
+                    "primary": "#25180d",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#f0e0d0",
+                    "tertiary-fixed-dim": "#d3c3ba",
+                    "surface-tint": "#6e5a4c",
+                    "on-primary-container": "#aa9282",
+                    "primary-fixed-dim": "#dcc2b0",
+                    "surface-variant": "#ece1d4",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#353027",
+                    "secondary": "#685c50",
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#f2e6d9",
+                    "on-error": "#ffffff",
+                    "on-surface": "#201b13",
+                    "surface-container-low": "#fdf2e4",
+                    "surface-container": "#f8ecdf",
+                    "surface": "#fff8f3",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#6e6256",
+                    "surface-container-highest": "#ece1d4",
+                    "inverse-primary": "#dcc2b0",
+                    "on-primary-fixed": "#26190e",
+                    "on-tertiary-fixed-variant": "#4f453e",
+                    "on-surface-variant": "#4e453f",
+                    "background": "#fff8f3",
+                    "outline-variant": "#d2c4bc",
+                    "outline": "#80756e",
+                    "on-primary-fixed-variant": "#554336",
+                    "on-secondary-fixed-variant": "#50453a",
+                    "tertiary-container": "#372d27",
+                    "surface-bright": "#fff8f3",
+                    "on-secondary-fixed": "#221a11",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#e3d8cb",
+                    "tertiary-fixed": "#f0dfd6",
+                    "inverse-on-surface": "#faefe2",
+                    "primary-fixed": "#f9ddcb",
+                    "on-tertiary-fixed": "#221a14",
+                    "secondary-fixed-dim": "#d4c4b5",
+                    "primary-container": "#3c2c20",
+                    "tertiary": "#211913",
+                    "secondary-container": "#f0e0d0",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAJV1Iv5rZakh68z1zV-2D0TBXLtYMreN30bHcwn7aKtkn5Zj-S0ID4OrDLFta9CdF7zBdU0K8mJmmyFX59hBZReD8zjbwUuQxpLtN6lA8kwA6SjXYurnLVQgSUIYWoQkz7AiOz_psZL4_mtqpAnWW2XW7PeE7iMTstcpX-92stKg0Ex2OfYUa8MV0xVEceJdjtbGvZ6AxVI0uaMUvJpycD2-neyUDulJtrGNtbeb9AY-0x5pFJ3aOacRUn8PPsI9GhH02uw64G2fCa);
+    opacity: 0.03;
+    pointer-events: none
+    }</style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-fixed selection:text-on-primary-fixed overflow-x-hidden">
+<div class="fixed inset-0 grain-overlay z-[100]"></div>
+<!-- Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#fff8f3]/80 dark:bg-[#201b13]/80 backdrop-blur-xl transition-colors duration-500">
+<div class="flex justify-between items-center px-8 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif tracking-[0.2em] text-[#25180d] dark:text-[#fdf2e4]">HOTEL STILL</div>
+<div class="hidden md:flex items-center gap-10 font-serif text-lg tracking-tight">
+<a class="text-[#685c50] dark:text-[#ece1d4]/60 hover:text-[#25180d] transition-colors duration-500" href="#">The Rooms</a>
+<a class="text-[#685c50] dark:text-[#ece1d4]/60 hover:text-[#25180d] transition-colors duration-500" href="#">The Atelier</a>
+<a class="text-[#25180d] dark:text-[#fdf2e4] font-semibold border-b border-[#25180d]/20 hover:text-[#25180d] transition-colors duration-500" href="#">Guidance</a>
+<a class="text-[#685c50] dark:text-[#ece1d4]/60 hover:text-[#25180d] transition-colors duration-500" href="#">Journal</a>
+<a class="text-[#685c50] dark:text-[#ece1d4]/60 hover:text-[#25180d] transition-colors duration-500" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#25180d] dark:text-[#fdf2e4] text-2xl" data-icon="menu">menu</button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[921px] w-full flex items-center justify-center pt-24 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="" class="w-full h-full object-cover grayscale-[0.2] contrast-[1.1]" data-alt="Cinematic atmospheric shot of a minimalist luxury hotel corridor with soft architectural shadows and warm natural light hitting textured plaster walls." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNecppLVgvXdGP417hV20PlyzyeK3D4Fqt3HKotOcZdEwT4SHExV6EU9I1EO-oFcURZaZMAbV88-4omwuyEpxVfI4zk6046ZeWQ0VFbtRFWOnm9gLPpxAM4C-F1xC4cVffE3Vfv9kSeZ8tGHOgYLz39ZXhHwoNy64tu3r0ypowMDjAS9KulRBlgFIQVwgIS63dMO6Dxy26XBj1iDyXBGNnIjaGY3ljpKCiHSsMaCpvsX02mG7oT47yv-jVFf_ZsKclrdbWp9E70cmJ"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background"></div>
+</div>
+<div class="relative z-10 w-full max-w-3xl px-6">
+<div class="bg-surface/90 backdrop-blur-md p-10 md:p-16 rounded-lg shadow-tinted border border-outline-variant/10 text-center flex flex-col items-center">
+<span class="label-md uppercase tracking-[0.4em] text-secondary mb-6">Experience Silence</span>
+<h1 class="font-headline text-5xl md:text-7xl text-primary leading-tight mb-8">GUIDE: THE ART OF STAYING</h1>
+<p class="text-on-surface-variant leading-relaxed max-w-lg mb-12">호텔 스틸에 머무는 것은 하나의 정적인 예술입니다. 공간의 철학을 이해하고 깊은 휴식으로 나아가기 위한 안내를 확인해 보세요.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+<a class="py-3 px-2 border-b border-outline-variant/30 text-xs tracking-widest uppercase hover:border-primary transition-all duration-300" href="#location">Location</a>
+<a class="py-3 px-2 border-b border-outline-variant/30 text-xs tracking-widest uppercase hover:border-primary transition-all duration-300" href="#checkin">Check-In</a>
+<a class="py-3 px-2 border-b border-outline-variant/30 text-xs tracking-widest uppercase hover:border-primary transition-all duration-300" href="#rules">Rules</a>
+<a class="py-3 px-2 border-b border-outline-variant/30 text-xs tracking-widest uppercase hover:border-primary transition-all duration-300" href="#faq">FAQ</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Location & Map -->
+<section class="py-32 px-8 bg-surface" id="location">
+<div class="max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+<div class="lg:col-span-5 mb-12 lg:mb-0">
+<h2 class="font-headline text-4xl text-primary mb-8 leading-snug">위치 및 찾아오시는 길</h2>
+<div class="space-y-6 text-on-surface-variant font-light">
+<p class="text-xl">서울 종로구 가회동 1-1</p>
+<p class="leading-relaxed">북촌의 고요한 한옥 자락 끝에 위치한 호텔 스틸은 번잡한 도심에서 한 걸음 물러나 있습니다. 안국역에서 도보 10분 거리이며, 고즈넉한 골목의 정취를 따라 오시면 됩니다.</p>
+<div class="pt-8">
+<button class="flex items-center gap-3 py-4 px-8 bg-primary text-on-primary text-sm tracking-widest uppercase hover:bg-primary-container transition-all duration-300">
+<span>Google Maps</span>
+<span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7">
+<div class="aspect-[16/9] bg-surface-dim relative overflow-hidden group">
+<img alt="" class="w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="A minimalist and aesthetic map illustration of Bukchon Hanok Village area in Seoul with muted earthy tones and elegant typography." data-location="Seoul, South Korea" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMGMGjYQ6dFcTmb8CvPYbqROFu8AJOARA41AW1kwuvoIdnuCNHyPuzmpiwZHV5gh9ndR7k0FvwEgcw4XYKw8T8WuGXxkUbtU8itPymHU0xZI1CJbxh2r_44B4UJeU0iGU4qH9EST13vZTPToanOUT4KN89w6NQ5mcw8zOJdOhZXUZ4Pu2kR10ekZUgtkNs79z-nGY5aGV1KNC3SOgC8TECAsstJkmx8fkvJpkwFMWvUH_vrAiGJf-z5gFL1nPEpTgMXeuYzVVyubwh"/>
+<div class="absolute inset-0 border-[24px] border-surface pointer-events-none"></div>
+<div class="absolute bottom-12 right-12 bg-white/40 backdrop-blur-md p-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+<span class="text-xs font-bold tracking-tighter uppercase">The Still Quarter</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Preparation & Flow -->
+<section class="py-32 px-8 bg-surface-container-low" id="checkin">
+<div class="max-w-screen-2xl mx-auto">
+<div class="mb-20 text-center">
+<span class="label-md uppercase tracking-[0.4em] text-secondary mb-4 block">Preparation</span>
+<h2 class="font-headline text-4xl text-primary">공간의 조우</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-y border-outline-variant/20">
+<div class="p-12 md:p-16 border-b md:border-b-0 md:border-r border-outline-variant/20 flex flex-col items-start">
+<span class="font-headline text-5xl text-primary-fixed-dim mb-8">01</span>
+<span class="material-symbols-outlined text-4xl text-primary mb-6" data-icon="door_front">door_front</span>
+<h3 class="text-xl font-bold mb-4">비대면 입장</h3>
+<p class="text-on-surface-variant font-light leading-relaxed">체크인 당일 오전, 휴대전화로 전송되는 모바일 키를 확인해 주세요. 별도의 절차 없이 현관부터 객실까지 바로 입장 가능합니다.</p>
+</div>
+<div class="p-12 md:p-16 border-b md:border-b-0 md:border-r border-outline-variant/20 flex flex-col items-start">
+<span class="font-headline text-5xl text-primary-fixed-dim mb-8">02</span>
+<span class="material-symbols-outlined text-4xl text-primary mb-6" data-icon="local_tea_shop">local_cafe</span>
+<h3 class="text-xl font-bold mb-4">웰컴 리츄얼</h3>
+<p class="text-on-surface-variant font-light leading-relaxed">객실 내 준비된 차와 향기는 스틸이 제안하는 첫 번째 휴식입니다. 준비된 다기를 통해 마음의 온도를 낮추어 보세요.</p>
+</div>
+<div class="p-12 md:p-16 flex flex-col items-start">
+<span class="font-headline text-5xl text-primary-fixed-dim mb-8">03</span>
+<span class="material-symbols-outlined text-4xl text-primary mb-6" data-icon="concierge_bell">doorbell</span>
+<h3 class="text-xl font-bold mb-4">스테이 가이드</h3>
+<p class="text-on-surface-variant font-light leading-relaxed">태블릿을 통해 어메니티 추가 요청 및 체크아웃 연장이 가능합니다. 궁금한 점은 24시간 열려있는 메신저로 문의주세요.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- House Rules (Asymmetric Grid) -->
+<section class="py-32 px-8 bg-surface" id="rules">
+<div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row gap-16">
+<div class="w-full md:w-1/3">
+<div class="sticky top-32">
+<h2 class="font-headline text-4xl text-primary mb-6">고요를 위한 약속</h2>
+<p class="text-on-surface-variant leading-relaxed mb-8">모두의 평온한 시간을 위해 아래의 규칙을 준수해 주시길 부탁드립니다. HOTEL STILL은 머무는 이들의 소리 없는 약속으로 완성됩니다.</p>
+<div class="h-px w-24 bg-primary/20"></div>
+</div>
+</div>
+<div class="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-8">
+<!-- Rule Card -->
+<div class="p-8 bg-surface-container-lowest border border-outline-variant/5">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="no_smoking">smoke_free</span>
+</div>
+<span class="text-sm font-bold tracking-widest uppercase">Smoke Free</span>
+</div>
+<h4 class="text-lg font-headline mb-4">전 구역 금연</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">한옥의 특성과 쾌적한 환경을 위해 실내외 모든 공간에서의 흡연(전자담배 포함)을 금합니다.</p>
+</div>
+<!-- Rule Card -->
+<div class="p-8 bg-surface-container-lowest border border-outline-variant/5">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="volume_off">volume_off</span>
+</div>
+<span class="text-sm font-bold tracking-widest uppercase">Quiet Hours</span>
+</div>
+<h4 class="text-lg font-headline mb-4">매너 타임 (21:00 - 08:00)</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">밤이 깊은 시간에는 타 객실에 방해가 되지 않도록 대화 소리와 음향 기기의 볼륨을 낮춰주세요.</p>
+</div>
+<!-- Rule Card -->
+<div class="p-8 bg-surface-container-lowest border border-outline-variant/5">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="pets">pets</span>
+</div>
+<span class="text-sm font-bold tracking-widest uppercase">Pet Policy</span>
+</div>
+<h4 class="text-lg font-headline mb-4">반려동물 동반 불가</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">동물 알러지가 있는 고객님들과 위생적인 관리를 위해 반려동물의 동반 입실은 제한하고 있습니다.</p>
+</div>
+<!-- Rule Card -->
+<div class="p-8 bg-surface-container-lowest border border-outline-variant/5">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="groups">groups</span>
+</div>
+<span class="text-sm font-bold tracking-widest uppercase">Capacity</span>
+</div>
+<h4 class="text-lg font-headline mb-4">정원 외 방문객 제한</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">예약된 인원 외의 외부인 방문 및 숙박은 엄격히 제한됩니다. 방문이 필요하신 경우 미리 문의 바랍니다.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-32 px-8 bg-surface-dim" id="faq">
+<div class="max-w-3xl mx-auto">
+<div class="mb-16 text-center">
+<h2 class="font-headline text-4xl text-primary mb-4">자주 묻는 질문</h2>
+<p class="text-secondary tracking-widest uppercase text-xs">Curated Inquiries</p>
+</div>
+<div class="space-y-4">
+<!-- FAQ Item -->
+<details class="group bg-surface-container-low p-6 transition-all duration-300 open:bg-surface-container-highest">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="text-lg font-medium text-primary">발렛 파킹 및 주차 서비스가 제공되나요?</span>
+<span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-6 text-on-surface-variant font-light leading-relaxed border-t border-outline-variant/20 pt-6">
+                            호텔 전용 주차장이 마련되어 있으며, 투숙 기간 중 1회 무료 발렛 서비스를 제공합니다. 만차 시 근처 공영주차장 이용권을 지급해 드립니다.
+                        </div>
+</details>
+<!-- FAQ Item -->
+<details class="group bg-surface-container-low p-6 transition-all duration-300 open:bg-surface-container-highest">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="text-lg font-medium text-primary">체크아웃 시간 연장이 가능한가요?</span>
+<span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-6 text-on-surface-variant font-light leading-relaxed border-t border-outline-variant/20 pt-6">
+                            객실 상황에 따라 유동적이며, 최대 2시간까지 유료 연장이 가능합니다(시간당 3만원). 당일 오전 10시까지 프런트로 요청해 주세요.
+                        </div>
+</details>
+<!-- FAQ Item -->
+<details class="group bg-surface-container-low p-6 transition-all duration-300 open:bg-surface-container-highest">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="text-lg font-medium text-primary">객실 내 어메니티는 어떤 것들이 있나요?</span>
+<span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-6 text-on-surface-variant font-light leading-relaxed border-t border-outline-variant/20 pt-6">
+                            스틸 시그니처 배스 솔트, 이솝(Aesop) 샴푸 및 바디 케어, 대나무 칫솔, 실크 침구류 및 가운이 구비되어 있습니다. 면도기 등 추가 일회용품은 요청 시 제공됩니다.
+                        </div>
+</details>
+<!-- FAQ Item -->
+<details class="group bg-surface-container-low p-6 transition-all duration-300 open:bg-surface-container-highest">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="text-lg font-medium text-primary">근처에 추천할 만한 식당이나 카페가 있나요?</span>
+<span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-6 text-on-surface-variant font-light leading-relaxed border-t border-outline-variant/20 pt-6">
+                            객실 비치된 'Neighborhood Guide' 책자를 확인해 보세요. 저희 큐레이터가 엄선한 가회동과 삼청동의 숨은 미식 공간들을 테마별로 정리해 두었습니다.
+                        </div>
+</details>
+</div>
+</div>
+</section>
+<!-- Final CTA / Visual Wrap -->
+<section class="h-[614px] relative flex items-center justify-center overflow-hidden">
+<img alt="" class="absolute inset-0 w-full h-full object-cover" data-alt="Close-up of a perfectly prepared tea set on a dark wood tray with soft morning mist visible through a traditional window screen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4eNlmVaM-rVUQgPMqF7fBqGdW3Nw4H46bSzkShe9G7O2szWylTyoSKel0tuO8XLhwxCsmIQWSeBDVATWwYzRDaaV1gOtel8EH4n2X8HDaS9B_ivKRYGS9jm5S5HwL5hvkdcM9vWbaL-mLQsVcRBrbm5evkRl9ObV537jCdS_jAWtehJvJYFcfVIoCSn0QpTKfRCQb-aBRp8EhW2v9YpHGHyUxGxcLsCgI7mPQ5QXsYws50vU84l_xGtOUTl2mg3_zuPzz7gBH4BJS"/>
+<div class="absolute inset-0 bg-primary/40"></div>
+<div class="relative z-10 text-center px-6">
+<h2 class="font-headline text-4xl md:text-5xl text-white mb-8">이제, 고요 속으로 침잠할 시간입니다.</h2>
+<a class="inline-block py-5 px-12 border border-white/50 text-white text-sm tracking-widest uppercase hover:bg-white hover:text-primary transition-all duration-500" href="#">객실 확인하기</a>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full mt-0 py-16 px-8 bg-[#fdf2e4] dark:bg-[#25180d]">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 w-full border-t border-[#d2c4bc]/20 pt-16 max-w-screen-2xl mx-auto">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="text-xl font-serif tracking-widest text-[#25180d] dark:text-[#fdf2e4]">HOTEL STILL</div>
+<p class="font-sans text-xs tracking-widest uppercase text-[#3c2c20] dark:text-[#ece1d4]">© 2024 HOTEL STILL. A Silent Curator Experience.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 font-sans text-xs tracking-widest uppercase">
+<a class="text-[#685c50] dark:text-[#d2c4bc]/40 hover:text-[#25180d] transition-opacity duration-300 opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-[#685c50] dark:text-[#d2c4bc]/40 hover:text-[#25180d] transition-opacity duration-300 opacity-80 hover:opacity-100" href="#">Terms of Residence</a>
+<a class="text-[#685c50] dark:text-[#d2c4bc]/40 hover:text-[#25180d] transition-opacity duration-300 opacity-80 hover:opacity-100" href="#">Press Kit</a>
+<a class="text-[#685c50] dark:text-[#d2c4bc]/40 hover:text-[#25180d] transition-opacity duration-300 opacity-80 hover:opacity-100" href="#">Accessibility</a>
+</div>
+</div>
+</footer>
+</body></html>

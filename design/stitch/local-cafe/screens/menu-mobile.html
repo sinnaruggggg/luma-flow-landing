@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TABLE WARM | Artisanal Menu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#f3dfce",
+                        "secondary": "#6a5c4f",
+                        "primary-container": "#5d3b24",
+                        "on-surface-variant": "#50443e",
+                        "surface-container-high": "#f1e7d6",
+                        "on-primary-fixed-variant": "#613f27",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#706255",
+                        "on-tertiary-fixed-variant": "#5b4220",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fff8f1",
+                        "primary-fixed-dim": "#eebc9d",
+                        "outline": "#82746c",
+                        "on-tertiary-container": "#ccaa7f",
+                        "on-primary-fixed": "#2f1503",
+                        "surface-dim": "#e2d9c8",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#353025",
+                        "surface-variant": "#ebe1d1",
+                        "surface-tint": "#7c563d",
+                        "on-secondary-fixed": "#231a10",
+                        "on-background": "#1f1b11",
+                        "tertiary": "#3d2808",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#faf0de",
+                        "surface-container-highest": "#ebe1d1",
+                        "surface-container": "#f7eddc",
+                        "primary": "#432510",
+                        "on-secondary": "#ffffff",
+                        "background": "#fff8f1",
+                        "surface": "#fff8f1",
+                        "tertiary-fixed": "#ffddb5",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#514438",
+                        "on-primary-container": "#d6a688",
+                        "on-tertiary-fixed": "#2a1800",
+                        "surface-container-low": "#fdf2e1",
+                        "outline-variant": "#d4c3ba",
+                        "tertiary-fixed-dim": "#e4c195",
+                        "inverse-primary": "#eebc9d",
+                        "secondary-fixed": "#f3dfce",
+                        "tertiary-container": "#563e1d",
+                        "primary-fixed": "#ffdbc7",
+                        "on-surface": "#1f1b11",
+                        "secondary-fixed-dim": "#d6c3b3",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif KR", "serif"],
+                        "body": ["Be Vietnam Pro", "sans-serif"],
+                        "label": ["Work Sans", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .notch-edge {
+            mask-image: radial-gradient(circle at 0 50%, transparent 8px, black 8.5px);
+            -webkit-mask-image: radial-gradient(circle at 0 50%, transparent 8px, black 8.5px);
+        }
+        .custom-scrollbar::-webkit-scrollbar { display: none; }
+        .glass-header {
+            background: rgba(255, 248, 241, 0.86);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-white">
+<!-- TopAppBar Shared Component -->
+<header class="fixed top-0 w-full z-50 glass-header flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#432510] dark:text-[#f7eddc]">menu</span>
+</div>
+<h1 class="text-2xl font-headline font-bold text-[#432510] dark:text-[#f7eddc] uppercase tracking-widest">TABLE WARM</h1>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30">
+<img alt="Profile" data-alt="Close-up portrait of a professional male customer with a soft bokeh background in a warm lit environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKorvDYvAiKe25gxbmcb_HgsrxBxWioIkTFg39lIq7GwvGx4BlXDDhx-Rc2wKEMWvq6UTClEvIFX-z6UGUfapFNX-q-UuudMCRmsKPqYiGvOG6gANQxi2SCfps3QqqdzQriAvLAxgJ8dUgnZYRfTWIUFK4ue2oH3TQ1nPM36oSGL-jDjYdYLNNUQiSzcLiI8PCEf9YytbrWgo9VBEKNzW2UQ9-M__ndY4H5_JkrcsoALygs4VAbR45RbnH-FZk2NLtrwqQEwIStpI"/>
+</div>
+</header>
+<main class="pt-16 pb-32">
+<!-- Hero Storefront Section -->
+<section class="relative h-[751px] w-full overflow-hidden">
+<div class="absolute inset-0 bg-primary/20 z-10"></div>
+<img alt="Cafe Exterior" class="absolute inset-0 w-full h-full object-cover object-center" data-alt="Artisanal cafe storefront with large glass windows reflecting golden hour sunlight, wooden furniture, and lush green plants outside" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx4BPpjJtHq89jsIZuTHUpcnBC6gaCk5DvwnChl0QWxde2nUFBZTLxhXGzJgtMqGkpn6niSy2r-aJq9eQvXwGctE1l59QChibiy96WkHWYqSS77yCoPeB36GGFzgR83L4cbSliZnThixVmA_MxI5HypSFGgVUrqjHPuj8IxEIcQgk9-qUbQTVDWG79gJSTrRK7GxO3r_We88JCMt0ILxDxI1RhgfEMXNayFZd7igTNK9yYz60ABR2SzfgN9RhoZ8HuBd_EtK2owME"/>
+<div class="absolute inset-0 z-20 flex flex-col justify-end p-6 pb-24">
+<div class="bg-surface-container/90 backdrop-blur-md p-6 rounded-xl notch-edge">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold mb-2 block">Available Now</span>
+<h2 class="font-headline text-3xl font-bold text-primary mb-1">실시간 좌석 예약</h2>
+<p class="text-on-surface-variant text-sm mb-4">지금 바로 따뜻한 테이블을 선점하세요.</p>
+<div class="flex items-center gap-3">
+<button class="flex-1 bg-gradient-to-br from-primary to-primary-container text-white py-3 rounded-xl font-medium text-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">event_available</span>
+                            Reserve Table
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Today's Special Board -->
+<section class="px-6 -mt-16 relative z-30">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_12px_40px_rgba(43,34,26,0.06)] border-b-4 border-primary-container/10">
+<div class="flex justify-between items-end mb-4">
+<div>
+<span class="font-label text-[10px] uppercase tracking-wider text-outline mb-1 block">Chef's Recommendation</span>
+<h3 class="font-headline text-2xl font-bold text-primary">오늘의 메뉴</h3>
+</div>
+<span class="font-label text-xs font-semibold text-tertiary">05. 24 FRIDAY</span>
+</div>
+<div class="flex gap-4 items-center">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0">
+<img alt="Today Special" class="w-full h-full object-cover" data-alt="Top down view of a creamy vanilla bean latte with intricate heart-shaped latte art in a ceramic brown mug" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDAZRd3ijuFO3GndtcJ0ujxbE7STEsPmpmW5sRm86BK05L6HNCFsqpWKWsAkv-nbtAhlww6p2pbBRaEc21KkCHTR5TIJP9iajFk8zFfrD0wiLT5Ki0J2mIXZ0MoFExwdGuSJo6gYrb-0tKvWZPdRWsicNl4GPSTjl12WUYMe_df4Rw6vZW3O7Kgl-Y_OiH1u09hJ92MaxN1rB7KFFDvmnk-tfPp7qDtqOLc85LUIn-gtDViF8w4LkLsI5QdMQDNSnfETQRk2fibKU"/>
+</div>
+<div>
+<h4 class="font-headline font-bold text-lg text-primary">시그니처 바닐라 빈 라떼</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed mb-1">마다가스카르산 생바닐라 빈의 진한 풍미가 느껴지는 테이블 웜의 대표 메뉴</p>
+<span class="font-medium text-primary-container">6,800원</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Sticky Navigation -->
+<nav class="sticky top-16 z-40 bg-background/95 backdrop-blur-sm py-4 border-y border-outline-variant/10 mt-8">
+<div class="flex overflow-x-auto gap-2 px-6 custom-scrollbar">
+<button class="shrink-0 px-6 py-2 rounded-full bg-primary text-white text-xs font-label uppercase tracking-widest">Coffee</button>
+<button class="shrink-0 px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-label uppercase tracking-widest">Tea</button>
+<button class="shrink-0 px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-label uppercase tracking-widest">Dessert</button>
+<button class="shrink-0 px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-label uppercase tracking-widest">Brunch</button>
+</div>
+</nav>
+<!-- Menu Catalog Section -->
+<section class="px-6 space-y-12 mt-8">
+<!-- Coffee Section -->
+<div>
+<div class="flex items-center gap-4 mb-6">
+<h3 class="font-headline text-xl font-bold text-primary">Coffee</h3>
+<div class="h-px flex-1 bg-outline-variant/30"></div>
+</div>
+<div class="grid gap-6">
+<!-- Item 1 -->
+<div class="flex gap-4 items-start">
+<div class="w-24 h-24 rounded-xl overflow-hidden shrink-0 bg-surface-container-low">
+<img alt="Cafe Latte" class="w-full h-full object-cover" data-alt="Rich café latte in a minimal white cup on a rustic wooden table with soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3bylyY5MDBMpN2i6MCiWkYjqkPoCrx_CjKi7e2WJrCHnVNsSCwWNEwwzsEyJKNePW15pVtChpOJCwE48n1wOfjjHZ-U950oTWYXriDcACrPkGLzUDVtWHBvCZSB19hS7BpsjBv5BQXw0AsroHxsVoU97yGLrMeNPQwc8x3WfZR9lSZvg5TN6hVrQAfnIMO1_eTBJ3uzeWGlmeNRMM8KyOZ6eVUOiL9ZzgMQ-E18XmoemHKO5UtWK8YeYYb0xrjkRkbuhNY8yEQRw"/>
+</div>
+<div class="flex-1 border-b border-outline-variant/20 pb-4">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-on-surface">카페 라떼</h4>
+<span class="font-medium text-primary text-sm">6,000원</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">고소한 우유와 에스프레소의 완벽한 밸런스</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-4 items-start">
+<div class="w-24 h-24 rounded-xl overflow-hidden shrink-0 bg-surface-container-low">
+<img alt="Einspanner" class="w-full h-full object-cover" data-alt="A dark coffee topped with thick white cream served in a clear glass with a dusting of cocoa powder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8-ovXnlVfMnU7ftGHFq_S8vHYkYgNA_qgZE48jgbuv6jfNgzWBWnC70uxVPxVZpSaqOD4ZgnH9SnbBewzFZyoGy3eyCd5TQd0apuUXsGav6eiOseejzG5kP8pLAIYX46m1iHx7Y35PtdnBOY7F_D8A4UBt5IhK-4Ec7lBWD7tuEMlzW3OwSUqm6yNSHf9oud0eE77Llmj5opYWMsOBIiyg0hP-DuQ0sICAh9K8kJc2QYYT-MyyWmjm7liqlqJxqPlV1gyOyL7ZfU"/>
+</div>
+<div class="flex-1 border-b border-outline-variant/20 pb-4">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-on-surface">아인슈페너</h4>
+<span class="font-medium text-primary text-sm">7,000원</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">쫀득한 수제 크림을 얹은 클래식 비엔나 커피</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Dessert Section (Bento Style) -->
+<div>
+<div class="flex items-center gap-4 mb-6">
+<h3 class="font-headline text-xl font-bold text-primary">Dessert</h3>
+<div class="h-px flex-1 bg-outline-variant/30"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-2 bg-surface-container-low rounded-2xl overflow-hidden p-4">
+<img alt="Fig Financier" class="w-full h-40 object-cover rounded-xl mb-4" data-alt="Close up of golden brown financiers with dried figs and sea salt sprinkles on a linen cloth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuU4hzWqFIhQNCNXwWLN6TxMPzG6TRXUExtbltsf6oJAmLooT1J6biFzlq-cwJ7eL-S-6OnBF9Q2yYcaVKK3G4BUIFNFkIfyA1K9XCfQXJCZwe5fiPEB6XC3rENj1LQHjFbhD42wlzJy_ZIkbhJWKv_kHapr6nz6R4FWxsJeFbNXFXj4ghI9nBTdw40TRLmYIQGpKLla95iVh9EyuuSm2GQM889Wz-CvMyJ7kpWQaIAP4btF7hJq1WClaivbmchWjJKFtZNtMio-s"/>
+<div class="flex justify-between items-end">
+<div>
+<h4 class="font-bold text-on-surface">무화과 크림치즈 휘낭시에</h4>
+<p class="text-[10px] text-on-surface-variant">쫀득한 반죽과 달콤한 무화과</p>
+</div>
+<span class="font-medium text-primary text-sm">3,800원</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-2xl p-4 flex flex-col justify-between">
+<h4 class="font-bold text-on-surface text-sm mb-2">크루아상 플래터</h4>
+<span class="font-medium text-primary text-sm">8,500원</span>
+</div>
+<div class="bg-surface-container-low rounded-2xl p-4 flex flex-col justify-between">
+<h4 class="font-bold text-on-surface text-sm mb-2">멜팅 브라우니</h4>
+<span class="font-medium text-primary text-sm">7,500원</span>
+</div>
+</div>
+</div>
+<!-- Brunch Section -->
+<div>
+<div class="flex items-center gap-4 mb-6">
+<h3 class="font-headline text-xl font-bold text-primary">Brunch</h3>
+<div class="h-px flex-1 bg-outline-variant/30"></div>
+</div>
+<div class="space-y-4">
+<div class="relative rounded-2xl overflow-hidden aspect-[16/9]">
+<img alt="Jambon Beurre" class="absolute inset-0 w-full h-full object-cover" data-alt="Classic French Jambon Beurre sandwich with thin slices of ham and thick butter in a crusty baguette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC85w5PJEbXBGfGHFCTFOxCP6WZ9DLTPExqIkqkqPBSZfg4qpSJh9r5ptpP-BckpVue5wrQwnOyJSpLFV58X_6286paj5rDLJg3lWGjdxsRonO0kItjMj4S0xMdsCBkJ4ZNXZF2wiZrLJep6ZDJdLp85u1TJNbhyVdSy7yokdUc9h5J_RO5-b1PsiWG238NQRJIILsqQBMSi8lKLQy9UgLUpkrJZbZw6gV1mZyCX0PDOjoYxm8z5EKrxb70gbjQw-OlLnYdOhKj7tw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-4">
+<h4 class="text-white font-bold text-lg">잠봉뵈르 샌드위치</h4>
+<div class="flex justify-between items-center">
+<p class="text-white/80 text-xs">최상급 잠봉과 이즈니 버터의 조화</p>
+<span class="text-white font-bold">12,000원</span>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center p-4 bg-surface-container-low rounded-xl">
+<div>
+<h4 class="font-bold text-on-surface">오늘의 수프</h4>
+<p class="text-xs text-on-surface-variant">신선한 제철 채소로 끓여낸 건강한 맛</p>
+</div>
+<span class="font-medium text-primary">8,000원</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Shared Component -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#fff8f1] dark:bg-[#1a140f] backdrop-blur-md bg-opacity-95 z-50 rounded-t-[2rem] border-t border-[#5d3b24]/10 shadow-[0_-12px_40px_rgba(43,34,26,0.06)]">
+<div class="flex flex-col items-center justify-center bg-gradient-to-br from-[#432510] to-[#5d3b24] text-white rounded-xl py-2 px-4 translate-y-[-2px] transition-transform duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-['Work_Sans'] text-[10px] uppercase tracking-[0.05em] mt-1">Discover</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5d3b24] opacity-60 py-2 px-4 hover:text-[#432510] transition-colors">
+<span class="material-symbols-outlined">event_available</span>
+<span class="font-['Work_Sans'] text-[10px] uppercase tracking-[0.05em] mt-1">Book</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5d3b24] opacity-60 py-2 px-4 hover:text-[#432510] transition-colors">
+<span class="material-symbols-outlined">history</span>
+<span class="font-['Work_Sans'] text-[10px] uppercase tracking-[0.05em] mt-1">History</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5d3b24] opacity-60 py-2 px-4 hover:text-[#432510] transition-colors">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Work_Sans'] text-[10px] uppercase tracking-[0.05em] mt-1">Account</span>
+</div>
+</nav>
+</body></html>

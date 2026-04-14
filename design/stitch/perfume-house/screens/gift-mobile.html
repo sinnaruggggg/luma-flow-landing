@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&amp;family=Manrope:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#6e5a4c",
+                    "surface-variant": "#ece1d4",
+                    "on-background": "#201b13",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#50453a",
+                    "inverse-on-surface": "#faefe2",
+                    "surface": "#fff8f3",
+                    "secondary-fixed": "#f0e0d0",
+                    "on-primary-container": "#aa9282",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#26190e",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#dcc2b0",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#f9ddcb",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#fff8f3",
+                    "on-secondary-container": "#6e6256",
+                    "secondary-fixed-dim": "#d4c4b5",
+                    "primary-container": "#3c2c20",
+                    "surface-container-low": "#fdf2e4",
+                    "secondary-container": "#f0e0d0",
+                    "outline-variant": "#d2c4bc",
+                    "tertiary-fixed": "#f3dfcd",
+                    "on-tertiary-fixed-variant": "#514438",
+                    "on-primary-fixed-variant": "#554336",
+                    "on-tertiary-container": "#a59484",
+                    "tertiary": "#23190e",
+                    "inverse-surface": "#353027",
+                    "secondary": "#685c50",
+                    "tertiary-container": "#392d21",
+                    "tertiary-fixed-dim": "#d6c3b2",
+                    "surface-container": "#f8ecdf",
+                    "inverse-primary": "#dcc2b0",
+                    "on-surface": "#201b13",
+                    "on-secondary-fixed": "#221a11",
+                    "surface-container-high": "#f2e6d9",
+                    "surface-dim": "#e3d8cb",
+                    "on-surface-variant": "#4e453f",
+                    "background": "#fff8f3",
+                    "surface-container-highest": "#ece1d4",
+                    "primary": "#25180d",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed": "#241a0f",
+                    "on-secondary": "#ffffff",
+                    "outline": "#80756e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif KR", "serif"],
+                    "body": ["Manrope", "sans-serif"],
+                    "label": ["Manrope", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24
+    }
+.grain-texture {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuA-Cj_xyJlBye-WiT13qyXvefcKP-DGJTRkXP2NllyfYgpesoAabyaVkYYmiiF8X9hCFScQMCljChXc0zxklFAmetnuRPSWtlwOuGns-xrk87FXackI4MSJWAg9bsrXtti9j5VSw8jYyfBO_eFgcurOBRvJ6JarryiiEW8Pnyof7SYtDSc3AEMpWwEWEDIXwHV_I2b44YylQJXrpHnk1kHZ0bwIIAZFk20Z5vXr7p2pHecBtocC6JOvW4YuXr9alruKYcFruQy0QDrX);
+    opacity: 0.03;
+    pointer-events: none
+    }
+.editorial-shadow {
+    box-shadow: 0 20px 40px -10px rgba(37, 24, 13, 0.04)
+    }
+body {
+    -webkit-font-smoothing: antialiased;
+    background-color: #fff8f3
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body text-primary selection:bg-primary-fixed-dim">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#fff8f3] transition-colors duration-300">
+<div class="hover:opacity-70 transition-opacity active:scale-95 duration-200 cursor-pointer">
+<span class="material-symbols-outlined text-[#25180d]">menu</span>
+</div>
+<h1 class="font-headline font-bold text-[#25180d] text-lg tracking-widest uppercase">이끼와 호박</h1>
+<div class="hover:opacity-70 transition-opacity active:scale-95 duration-200 cursor-pointer">
+<span class="material-symbols-outlined text-[#25180d]">shopping_bag</span>
+</div>
+</header>
+<main class="pt-16 pb-32">
+<!-- Editorial Mood Canvas (First Viewport) -->
+<section class="relative w-full h-[751px] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="luxury perfume gift box wrapped in textured cream paper with a deep brown silk ribbon, soft editorial lighting, minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcyu0YWKAYPloo9jadZ8NQbNs2DUfG5tU-0uW_HPl1D702YueKapBUBVDW2zbzvUsX4MMpYwAOMrWMIXdLQoiXa9PsqXiksK1zLID2qmxs29eljmIhtrSGwztxniXe6YwK5__1epItYt-h35OVnEMyQ7yWbLp0VhZ40h2Awt5Ew40jSoDtFxtHwW05j-UcZfQHyWHTcy6olLTHAtqmTn38czAZqU_UlbBPOYwH3JalOvaE0MpooOTyURRhGqJQto_mj57FnvSV3xFd"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+<!-- Floating Layered Block -->
+<div class="absolute bottom-12 left-6 right-6 p-8 bg-surface/84 backdrop-blur-xl editorial-shadow">
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-secondary mb-3 block">Exclusive Collection</span>
+<h2 class="font-headline text-3xl leading-snug mb-4">The Art of Giving:<br/>기프트 에디션</h2>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed">향기로 전하는 우아한 진심. 모스앤엠버가 제안하는 감각적인 선물 큐레이션을 만나보세요.</p>
+</div>
+</section>
+<!-- Product Selection State -->
+<section class="px-6 py-12 bg-surface-container-low">
+<div class="flex flex-col gap-8">
+<div class="space-y-4">
+<label class="font-label text-[10px] uppercase tracking-widest text-secondary block">Select Your Edition</label>
+<div class="grid grid-cols-2 gap-4">
+<button class="p-4 bg-surface-container-highest border border-primary text-left active:scale-[0.98] transition-transform">
+<span class="block font-headline text-base mb-1">Signature Set</span>
+<span class="block text-xs text-secondary">베스트셀러 3종 구성</span>
+</button>
+<button class="p-4 bg-surface-container text-left opacity-60 active:scale-[0.98] transition-transform">
+<span class="block font-headline text-base mb-1">Discovery Kit</span>
+<span class="block text-xs text-secondary">6가지 향의 탐험</span>
+</button>
+</div>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant pb-6">
+<div>
+<span class="font-label text-[10px] uppercase tracking-widest text-secondary block mb-1">Total Amount</span>
+<span class="font-headline text-2xl font-bold">124,000원</span>
+</div>
+<span class="text-xs text-secondary font-light">무료 배송 및 선물 포장 포함</span>
+</div>
+</div>
+</section>
+<!-- Gift Curation Grid -->
+<section class="px-6 py-16 space-y-12">
+<div class="text-center space-y-2">
+<h3 class="font-headline text-2xl tracking-tight">Curated Gifts</h3>
+<div class="w-8 h-[1px] bg-primary mx-auto opacity-30"></div>
+</div>
+<div class="grid grid-cols-1 gap-12">
+<!-- Product 1 -->
+<div class="group">
+<div class="aspect-[3/4] overflow-hidden mb-6 bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="luxury perfume bottle on a piece of raw amber stone with moss in the background, organic textures, cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJDch6sOtK89-9GSGWtr951VX3YLXN61Nw2siUOghYIdWnkbyo574zwrClCWH1vH3Unv2w_4PR9zitED_-69TNNnM-BP6lpsk-55aCtgPrAvHjmeGqtcWUWdc0khjWFtxpZz2A8Pxz8lOO67782whmfA4V5kdcjHvMgxlVJGFQdRHaj8iuCwdd6Jg0iqLeA0v4YK7nIn5b2XTHTwCt7EaQz_bYFY1PoFXtSaz2LcqQsapmce2lRJI8EMx1Lu3egVxRndQ9GoSE7Sa1"/>
+</div>
+<div class="space-y-2">
+<h4 class="font-headline text-xl">The Amber Silence Set</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed font-light">고요한 숲의 향기를 담은 시그니처 향수와 핸드 케어 세트.</p>
+<span class="block font-label text-sm mt-4">158,000원</span>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group">
+<div class="aspect-[3/4] overflow-hidden mb-6 bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="set of small luxury perfume testers in a minimal cream box, overhead shot, soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPoLeKWV8mYaLjABC-tbjBxJT96E5AhGLxJI8cD0SHe3KeOe_hL8wOCR-5827KLWuBUnzT2owvyF80i4_UbyqJL9q2NMfjU6Pi6LhatVT7o0Us-ieTFFjylSZR7yJ7mhSDo4GrTTVQwn_ReQdoXJI7_T_5mDBVe9drp6jqZoX91ySNMZTCaWLhdaHuRecTczLD-NpMSeRk5sTJOEDw__c2CwolX2diDfzqxzBd7d4-3u0aSPfWYwsZbYsQHd1rodLlSqMrkBcoIXhX"/>
+</div>
+<div class="space-y-2">
+<h4 class="font-headline text-xl">Discovery Atelier Kit</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed font-light">모스앤엠버의 전 라인업을 경험할 수 있는 특별한 시작.</p>
+<span class="block font-label text-sm mt-4">42,000원</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Wrapping Options -->
+<section class="bg-surface-container py-16 px-6">
+<div class="max-w-md mx-auto space-y-8">
+<div class="space-y-2">
+<h3 class="font-headline text-xl">Wrapping Options</h3>
+<p class="text-xs text-secondary font-light">선택하신 선물에 품격을 더하는 패키지 서비스를 제공합니다.</p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-5 bg-surface-container-lowest border border-outline-variant">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary">inventory_2</span>
+<div>
+<span class="block text-sm font-medium">Standard</span>
+<span class="block text-[10px] text-secondary uppercase tracking-wider">Free Service</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+<div class="flex items-center justify-between p-5 bg-surface-container-lowest opacity-40">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary">card_giftcard</span>
+<div>
+<span class="block text-sm font-medium">Premium Atelier Wrapping</span>
+<span class="block text-[10px] text-secondary uppercase tracking-wider">+ 5,000원</span>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full border border-outline-variant"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Message Card -->
+<section class="py-16 px-6">
+<div class="max-w-md mx-auto space-y-6">
+<h3 class="font-headline text-xl text-center">Message Card</h3>
+<div class="relative bg-surface-container-low p-8 min-h-[200px] flex flex-col items-center justify-center text-center">
+<div class="absolute inset-4 border border-outline-variant opacity-20"></div>
+<textarea class="bg-transparent border-none focus:ring-0 w-full text-center font-headline text-lg placeholder:text-secondary/40 placeholder:font-light" placeholder="전하고 싶은 진심을 입력해주세요..." rows="3"></textarea>
+<div class="mt-4 font-label text-[10px] uppercase tracking-[0.2em] text-secondary">Moss &amp; Amber Atelier</div>
+</div>
+</div>
+</section>
+<!-- Trust Layers -->
+<section class="bg-surface-container-high py-12 px-6">
+<div class="grid grid-cols-3 gap-4">
+<div class="flex flex-col items-center text-center space-y-3">
+<span class="material-symbols-outlined text-primary font-light text-3xl">local_shipping</span>
+<span class="text-[10px] uppercase tracking-tighter leading-tight font-medium">Fast<br/>Shipping</span>
+</div>
+<div class="flex flex-col items-center text-center space-y-3">
+<span class="material-symbols-outlined text-primary font-light text-3xl">verified</span>
+<span class="text-[10px] uppercase tracking-tighter leading-tight font-medium">Authenticity<br/>Guaranteed</span>
+</div>
+<div class="flex flex-col items-center text-center space-y-3">
+<span class="material-symbols-outlined text-primary font-light text-3xl">featured_seasonal_and_gifts</span>
+<span class="text-[10px] uppercase tracking-tighter leading-tight font-medium">Luxury<br/>Packaging</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Buy Action -->
+<div class="fixed bottom-20 left-0 w-full px-6 pb-6 z-40 bg-gradient-to-t from-background via-background to-transparent pt-12">
+<button class="w-full bg-primary text-on-primary py-5 font-headline text-lg tracking-widest active:scale-[0.98] transition-all shadow-2xl">
+            선물하기
+        </button>
+</div>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe px-4 bg-[#f8ecdf]/80 backdrop-blur-xl z-50">
+<a class="flex flex-col items-center justify-center text-[#6b5f53] opacity-60 hover:text-[#25180d] transition-all active:translate-y-[-2px]" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label text-[10px] uppercase tracking-[0.1em] font-medium mt-1">컬렉션</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#6b5f53] opacity-60 hover:text-[#25180d] transition-all active:translate-y-[-2px]" href="#">
+<span class="material-symbols-outlined">fluid</span>
+<span class="font-label text-[10px] uppercase tracking-[0.1em] font-medium mt-1">향조</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#25180d] font-bold active:translate-y-[-2px]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">featured_seasonal_and_gifts</span>
+<span class="font-label text-[10px] uppercase tracking-[0.1em] font-medium mt-1">선물</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#6b5f53] opacity-60 hover:text-[#25180d] transition-all active:translate-y-[-2px]" href="#">
+<span class="material-symbols-outlined">storm</span>
+<span class="font-label text-[10px] uppercase tracking-[0.1em] font-medium mt-1">브랜드</span>
+</a>
+</nav>
+</body></html>

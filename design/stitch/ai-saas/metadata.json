@@ -3,7 +3,7 @@
   "brand": "SIGNAL GRID",
   "projectId": "2675822646159988702",
   "projectTitle": "SIGNAL GRID Stitch",
-  "updatedAt": "2026-04-13T14:07:47.886Z",
+  "updatedAt": "2026-04-14T02:15:02.712Z",
   "screens": {
     "home:desktop": {
       "screenId": "eb348f0c068242d986ffe43581b74f83",
@@ -20,6 +20,70 @@
       "htmlPath": "design/stitch/ai-saas/screens/home-mobile.html",
       "imagePath": "design/stitch/ai-saas/screens/home-mobile.png",
       "updatedAt": "2026-04-13T14:10:00.000Z"
+    },
+    "flows:desktop": {
+      "screenId": "a8e5ffe33a724238944799fc686c59fb",
+      "pageSlug": "flows",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/ai-saas/screens/flows-desktop.html",
+      "imagePath": "design/stitch/ai-saas/screens/flows-desktop.png",
+      "updatedAt": "2026-04-14T02:05:56.262Z"
+    },
+    "flows:mobile": {
+      "screenId": "4478ec2099ee44829fbe2c30a6c49aa3",
+      "pageSlug": "flows",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/ai-saas/screens/flows-mobile.html",
+      "imagePath": "design/stitch/ai-saas/screens/flows-mobile.png",
+      "updatedAt": "2026-04-14T02:07:08.205Z"
+    },
+    "cases:desktop": {
+      "screenId": "37469b9c3a1843ca8d96151323ad3d4b",
+      "pageSlug": "cases",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/ai-saas/screens/cases-desktop.html",
+      "imagePath": "design/stitch/ai-saas/screens/cases-desktop.png",
+      "updatedAt": "2026-04-14T02:08:35.645Z"
+    },
+    "cases:mobile": {
+      "screenId": "10f77fee601e468eaf2cdaf27c65d41e",
+      "pageSlug": "cases",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/ai-saas/screens/cases-mobile.html",
+      "imagePath": "design/stitch/ai-saas/screens/cases-mobile.png",
+      "updatedAt": "2026-04-14T02:09:48.797Z"
+    },
+    "pricing:desktop": {
+      "screenId": "8494da4289044ed9a2eb40f4704f4f88",
+      "pageSlug": "pricing",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/ai-saas/screens/pricing-desktop.html",
+      "imagePath": "design/stitch/ai-saas/screens/pricing-desktop.png",
+      "updatedAt": "2026-04-14T02:11:14.888Z"
+    },
+    "pricing:mobile": {
+      "screenId": "001ffb4b1b9e47c2b2a001b135bddbbd",
+      "pageSlug": "pricing",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/ai-saas/screens/pricing-mobile.html",
+      "imagePath": "design/stitch/ai-saas/screens/pricing-mobile.png",
+      "updatedAt": "2026-04-14T02:12:26.096Z"
+    },
+    "contact:desktop": {
+      "screenId": "e906d9e4ddd4475381c15b1a16255bd6",
+      "pageSlug": "contact",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/ai-saas/screens/contact-desktop.html",
+      "imagePath": "design/stitch/ai-saas/screens/contact-desktop.png",
+      "updatedAt": "2026-04-14T02:13:43.119Z"
+    },
+    "contact:mobile": {
+      "screenId": "5b4f8a8947e04f5fa37bba6641a8791b",
+      "pageSlug": "contact",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/ai-saas/screens/contact-mobile.html",
+      "imagePath": "design/stitch/ai-saas/screens/contact-mobile.png",
+      "updatedAt": "2026-04-14T02:15:02.713Z"
     }
   }
 }

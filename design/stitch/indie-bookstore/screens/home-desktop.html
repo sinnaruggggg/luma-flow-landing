@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PAPER NOOK - The Living Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#795900",
+                    "secondary-container": "#a7dffe",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#333029",
+                    "on-surface-variant": "#4e4635",
+                    "primary-container": "#f5c24f",
+                    "tertiary-fixed": "#f0e0cf",
+                    "surface-container-low": "#f9f3e8",
+                    "primary-fixed": "#ffdfa0",
+                    "surface-container-highest": "#e8e2d7",
+                    "tertiary-fixed-dim": "#d4c4b4",
+                    "on-primary-fixed-variant": "#5c4300",
+                    "on-tertiary-fixed-variant": "#504539",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#c1e8ff",
+                    "surface-bright": "#fff9ee",
+                    "primary-fixed-dim": "#f2bf4c",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#001e2b",
+                    "secondary-fixed-dim": "#96ceed",
+                    "outline-variant": "#d2c5af",
+                    "tertiary-container": "#d7c7b7",
+                    "on-secondary-container": "#27647e",
+                    "surface-container": "#f3ede2",
+                    "inverse-primary": "#f2bf4c",
+                    "background": "#fff9ee",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e8e2d7",
+                    "on-tertiary-fixed": "#221a10",
+                    "surface": "#fff9ee",
+                    "surface-container-high": "#ede8dd",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f6f0e5",
+                    "secondary": "#296580",
+                    "surface-dim": "#dfd9cf",
+                    "outline": "#807663",
+                    "on-tertiary-container": "#5e5346",
+                    "on-background": "#1d1c15",
+                    "on-primary-container": "#6d5000",
+                    "on-primary-fixed": "#261a00",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#024d67",
+                    "surface-tint": "#795900",
+                    "on-surface": "#1d1c15",
+                    "tertiary": "#685c50"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Be Vietnam Pro", "sans-serif"],
+                    "label": ["Be Vietnam Pro", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>body {
+    background-color: #fff9ee;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuD__HZ-8NNQ9X98SQ4quFAJKciYSJkJ84kPtxFhBQ4k_GhWEjmO6s3SIhaEWpuK9K8xxDWFi476JvPIjGEAvdC9gDEh_xeIT5BadHUwiLwU0wv1ZGa0oWFzQD1VCwIlpud6E9IiA65IBoJDt1Vsy38GfRehljGz4ykVSLfhL8cxee7lQ0bxs40DfYVdK2OvYv_BOcdUtMUe0I1mG6izPnCtwZybaS6FH5FQgq4IxXwz4BWC6p3BJte0oYYPq5EUrYe1g6darqMvzVw);
+    font-family: "Be Vietnam Pro", sans-serif
+    }
+.newsreader {
+    font-family: "Newsreader", serif
+    }
+.ambient-shadow {
+    box-shadow: 0 12px 32px -4px rgba(35, 29, 23, 0.06)
+    }
+.torn-edge-bottom {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 24' preserveAspectRatio='none'%3E%3Cpath d='M0 24h1200V0c-30 8-60 12-90 12s-60-4-90-12-60-8-90-12-60 4-90 12-60 8-90 12-60-4-90-12-60-8-90-12-60 4-90 12-60 8-90 12-60-4-90-12-60-8-90-12-60 4-90 12z' fill='%23000'/%3E%3C/svg%3E");
+    mask-size: 100% 24px;
+    mask-repeat: no-repeat;
+    mask-position: bottom
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }</style>
+</head>
+<body class="text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-[#fff9ee] flex justify-between items-center w-full px-8 py-6 max-w-none fixed top-0 z-50 transition-colors duration-300">
+<div class="flex items-center gap-12">
+<h1 class="font-['Newsreader'] text-2xl font-bold italic text-[#1d1c15]">PAPER NOOK</h1>
+<nav class="hidden md:flex gap-8 items-baseline">
+<a class="font-['Newsreader'] text-lg tracking-tight text-[#795900] font-bold border-b-2 border-[#795900] pb-1 hover:opacity-100 transition-opacity duration-300" href="#">Shelf</a>
+<a class="font-['Newsreader'] text-lg tracking-tight text-[#1d1c15] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Picks</a>
+<a class="font-['Newsreader'] text-lg tracking-tight text-[#1d1c15] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Gift</a>
+<a class="font-['Newsreader'] text-lg tracking-tight text-[#1d1c15] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Brand</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-[#1d1c15] opacity-70 hover:opacity-100 transition-all duration-300 hover:-translate-y-0.5">shopping_bag</button>
+<button class="material-symbols-outlined text-[#1d1c15] opacity-70 hover:opacity-100 transition-all duration-300 hover:-translate-y-0.5">person</button>
+</div>
+</header>
+<!-- SideNavBar (Hidden on desktop as per Shell Visibility rules for home page) -->
+<main class="pt-24">
+<!-- Hero Viewport (Shelf-and-Note) -->
+<section class="relative w-full min-h-[921px] px-8 flex items-center justify-center overflow-hidden">
+<div class="relative w-full max-w-6xl aspect-[16/9] bg-surface-container-low overflow-visible">
+<img alt="Curated Bookshelf" class="w-full h-full object-cover grayscale-[20%] sepia-[10%] brightness-90" data-alt="A beautifully curated aesthetic bookshelf in a sun-drenched library with vintage book spines and a warm, inviting atmospheric glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXZNXxyxjgMyeHCpqA58gI9TIXB5FBc4CvumVEKn5zY3PjUCjedcs2W4LXFpjz9KG-orc5sGeD501EAidij8-FRODrEkpeTPWkWtqCkKX9tFW_0J1sS14KaZNLKG4P3QCwHylV4ficiUzSRYw-wiwCfYCVLbRQQx5kkt1rswwmp7Zs9uKU-hgVkjS-D_Snu47krxmf2jZpWd96KPfszuDmH2S1ouIy8t8Cq5BTwHK7kkvntBzVWDj81o3JBcSFZYLhrp_EIxVFRzM"/>
+<!-- Floating Notes -->
+<div class="absolute top-12 -left-12 bg-secondary-container p-6 w-64 -rotate-2 ambient-shadow transition-transform hover:rotate-0 duration-500 cursor-default">
+<span class="newsreader italic text-secondary text-sm block mb-2">Editorial 01</span>
+<h2 class="newsreader text-2xl font-bold leading-tight text-on-secondary-container">이달의 발견:<br/>종이의 질감</h2>
+<p class="text-xs mt-4 opacity-80 leading-relaxed font-body">손끝에서 느껴지는 미세한 섬유의 질감, 우리가 잊고 지낸 진짜 책의 감각을 다시 일깨웁니다.</p>
+</div>
+<div class="absolute bottom-12 -right-8 bg-primary-container p-6 w-72 rotate-3 ambient-shadow transition-transform hover:rotate-0 duration-500 cursor-default">
+<span class="newsreader italic text-on-primary-container text-sm block mb-2">Curator's Note</span>
+<h2 class="newsreader text-2xl font-bold leading-tight text-on-primary-container">독립 출판의 즐거움</h2>
+<p class="text-xs mt-4 opacity-80 leading-relaxed font-body">대형 서점에는 없는, 누군가의 진심이 담긴 작은 목소리들을 PAPER NOOK에서 선별했습니다.</p>
+<button class="mt-6 bg-on-primary-container text-primary-container px-6 py-2 text-xs font-bold transition-all duration-300 hover:opacity-90">Explore Shelf</button>
+</div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none">
+<h1 class="newsreader text-[8rem] font-black italic text-white/20 tracking-tighter leading-none select-none">Living Archive</h1>
+</div>
+</div>
+</section>
+<!-- First Browse Module: Staggered Grid -->
+<section class="py-24 px-8 max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div>
+<span class="text-primary font-label text-xs tracking-widest uppercase block mb-2">New Arrivals</span>
+<h2 class="newsreader text-4xl font-bold">지금 가장 주목받는 책들</h2>
+</div>
+<a class="text-on-surface-variant font-label text-xs border-b border-outline-variant pb-1 hover:text-primary hover:border-primary transition-colors" href="#">View All Archive</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<!-- Book Card 1 -->
+<div class="flex flex-col group">
+<div class="bg-surface-container-high aspect-[3/4] p-8 ambient-shadow transition-all duration-500 group-hover:-translate-y-2 mb-6">
+<img alt="Book Cover 1" class="w-full h-full object-cover ambient-shadow rotate-1 group-hover:rotate-0 transition-transform duration-500" data-alt="Elegant minimal book cover design on cream paper background with artistic typography and soft natural shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIbUxHf7MmKYsOA6qEfi_auPAoJfnyGfQDneb47SRcKzf-M8BHlo-oyNbSgrBErL7Tk6nKN6Zx5D6TSpIlWFYL9u4LRelrlc4xbEGebRWkCEplpprf0xoDrZAQlnb2kmUfcLp8XZkZ65z8ADA-Fe7-J6eSmQN8NO90-1xZfpC2PjnQL5e9_rrHLiB8Cqd6Nmd2E_Yb2OrdBR_a7YefO8tBUH-tSnGfIhJeKO-M1sfM7YKy_bBnQMtDjjSW6GrhLWt4Oo_ecdodkq8"/>
+</div>
+<span class="text-xs text-primary mb-1 font-body">시집 / 문학</span>
+<h3 class="newsreader text-xl font-bold mb-2">우리가 사랑한 계절</h3>
+<div class="flex justify-between items-center mt-auto">
+<span class="text-sm opacity-60">최유진 저</span>
+<span class="text-sm font-bold text-on-surface">18,000원</span>
+</div>
+</div>
+<!-- Book Card 2 (Offset) -->
+<div class="flex flex-col group md:mt-12">
+<div class="bg-surface-container-high aspect-[3/4] p-8 ambient-shadow transition-all duration-500 group-hover:-translate-y-2 mb-6">
+<img alt="Book Cover 2" class="w-full h-full object-cover ambient-shadow -rotate-2 group-hover:rotate-0 transition-transform duration-500" data-alt="A vintage style book cover with intricate botanical illustrations and gold foil details on deep green background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6VTX1K1cVrcC3rUmYFFDCMmWMnlZ2BS9AIXpat_M1aL-PREg_IQfg6XXLJn1ebUJM6KcpRUVoXlZ8VLE1xTub-_vZIuE4meh9_iKUwU5uUyVNTx3mCQ1pFJ9RqFIIHncOdErCR7NnOcoj3LNqvb7OClfmx59m_mXksSPdP_GDzz6RGfeW4Mp8-I9r1HEgCQF917PI26CAxazRzggeW_QY0lIgAPA3wMnLWL1W1gSzOHpFpuoorzg8DNsjvpCC9ztRB-Y_5lzhbmU"/>
+</div>
+<span class="text-xs text-primary mb-1 font-body">에세이</span>
+<h3 class="newsreader text-xl font-bold mb-2">조용한 산책자의 일기</h3>
+<div class="flex justify-between items-center mt-auto">
+<span class="text-sm opacity-60">데이비드 로</span>
+<span class="text-sm font-bold text-on-surface">22,000원</span>
+</div>
+</div>
+<!-- Book Card 3 -->
+<div class="flex flex-col group">
+<div class="bg-surface-container-high aspect-[3/4] p-8 ambient-shadow transition-all duration-500 group-hover:-translate-y-2 mb-6">
+<img alt="Book Cover 3" class="w-full h-full object-cover ambient-shadow rotate-2 group-hover:rotate-0 transition-transform duration-500" data-alt="A modern minimalist book cover with abstract geometric shapes in muted earth tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnzKD3SDu4q_eU9W4yaHergZ2nBgKOTqNa1qVMUMEP0M4785CE66SNFZ8JkPiqFr3FfHg7Okm63hVfds8SfsaRC427i-L0x2jj0KJBgOV9d9XtZ7v-2Hw5yGeZJMz26Pv3KK_AKrV60ETQUvjPKQjo-x2f-13e8-Wu5LLwGd0VOa6IXtHvPtb_rD_L4QiSMjl9aejovrv-jJSec9y0uQRcYlzRhQCJtGWwwPKoLGM4aQp1dHEuOtQJWmc_sMHNZY1L6bcb3iRhdsE"/>
+</div>
+<span class="text-xs text-primary mb-1 font-body">디자인 / 예술</span>
+<h3 class="newsreader text-xl font-bold mb-2">공간의 사유</h3>
+<div class="flex justify-between items-center mt-auto">
+<span class="text-sm opacity-60">한태준 저</span>
+<span class="text-sm font-bold text-on-surface">24,500원</span>
+</div>
+</div>
+<!-- Book Card 4 (Offset) -->
+<div class="flex flex-col group md:mt-12">
+<div class="bg-surface-container-high aspect-[3/4] p-8 ambient-shadow transition-all duration-500 group-hover:-translate-y-2 mb-6">
+<img alt="Book Cover 4" class="w-full h-full object-cover ambient-shadow -rotate-1 group-hover:rotate-0 transition-transform duration-500" data-alt="A collection of handmade zines with hand-drawn illustrations and raw textured edges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcKQJFoXBd1sc8HFHWvSdC-TGXGYWHMTVxrwxZ_bJuMDBeeYymsaDho-X9kC81Ik3iYnhPTq7JvzRDhTMGQDPmulRXXC3SQQMQsaCEYYaQP8dEFPmSXaksDkfHAcWCpycZ_tEI21wYkR-hlMGf8kaXENAaGt2febg6IJiT_zzYkJicueMYWY4rREl3jD6Yz9j_aqEfC6fbPYgnPG_vHAfwgak0J_IgQCnpQma6I7-Nhlj6ZHQVwJ-o6ykbZ5LY3Jy9Ekon4b4B208"/>
+</div>
+<span class="text-xs text-primary mb-1 font-body">독립잡지</span>
+<h3 class="newsreader text-xl font-bold mb-2">FRAGMENT Vol.04</h3>
+<div class="flex justify-between items-center mt-auto">
+<span class="text-sm opacity-60">Fragment Team</span>
+<span class="text-sm font-bold text-on-surface">15,000원</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Gift & Curation Section -->
+<section class="w-full bg-surface-container relative py-32 mt-12">
+<div class="absolute top-0 left-0 w-full h-6 bg-[#fff9ee] torn-edge-bottom -translate-y-full rotate-180"></div>
+<div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="bg-white p-4 ambient-shadow rotate-2">
+<img alt="Gift Wrapped Book" class="w-full aspect-square object-cover" data-alt="A book wrapped in high-quality brown craft paper with a delicate twine ribbon and a dried sprig of lavender" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTIThy3b5lO9D7sIVL4QeeyuGY3SdHY8TmZEYF3_ZmsWDCzhGpmfvSkhPm5yrYbIDg_3W-gSx0yKPlUP9XtLu7LRaqMBrhz_e7-eDUYIKWnmUfQ7FoLbcAbwj6fgwPVIAxV_DWe4Wh1bFO7COeeWjrKJbIpd3behXxfaGbU99HsaUkzoLy7T3ZnlN_qFfv7uZQcfV8KKzxA0BpNmdt6ptN2Y0Vt5v0NweiFAqRFhLT24P-IX8h1WtU1e--dCbP1TsAYBrmKdXL-RY"/>
+</div>
+<div class="absolute -bottom-8 -right-8 bg-primary text-white p-6 rotate-[-4deg] ambient-shadow">
+<span class="newsreader italic text-lg tracking-tight">Gift for You</span>
+</div>
+</div>
+<div>
+<h2 class="newsreader text-5xl font-bold leading-tight mb-8">당신을 위한 가장 완벽한 한 권의 선물</h2>
+<p class="text-on-surface-variant leading-relaxed text-lg mb-12">책은 한 사람의 세계를 선물하는 일입니다. PAPER NOOK의 세심한 큐레이션과 함께, 소중한 이에게 어울리는 종이의 온기를 전하세요. 정성스러운 핸드메이드 패키징 서비스가 포함됩니다.</p>
+<div class="flex gap-4">
+<button class="bg-primary text-white px-8 py-4 font-bold transition-all duration-300 hover:opacity-90">선물하기 보러가기</button>
+<button class="border border-outline px-8 py-4 font-bold hover:bg-surface-container-high transition-all">큐레이션 상담</button>
+</div>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 w-full h-6 bg-[#fff9ee] torn-edge-bottom translate-y-full"></div>
+</section>
+<!-- Editorial Picks (Magazine Deck) -->
+<section class="py-32 px-8 max-w-7xl mx-auto">
+<div class="grid md:grid-cols-12 gap-8 items-start">
+<div class="md:col-span-5">
+<div class="sticky top-32">
+<span class="text-secondary font-label text-xs tracking-[0.2em] uppercase block mb-4 underline decoration-secondary-container decoration-4 underline-offset-4">Editorial Spread</span>
+<h2 class="newsreader text-6xl font-bold italic leading-none mb-8">Words<br/>Matter.</h2>
+<blockquote class="border-l-4 border-primary pl-8 py-4 my-12 italic text-2xl newsreader text-on-surface-variant">
+                            "종이 위에 남겨진 글자들은 영구적이며, 우리의 사유는 그 여백 위에서 비로소 완성된다."
+                        </blockquote>
+<div class="flex items-center gap-4 group cursor-pointer">
+<span class="w-12 h-px bg-on-surface transition-all duration-500 group-hover:w-24"></span>
+<span class="font-label text-xs uppercase tracking-widest">Read Magazine Vol.12</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-7 grid grid-cols-1 gap-16">
+<div class="bg-surface-container-lowest p-12 ambient-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container opacity-20 -mr-16 -mt-16 rounded-full"></div>
+<div class="flex items-start gap-8">
+<span class="newsreader text-6xl text-primary-container font-black opacity-40">01</span>
+<div>
+<h3 class="newsreader text-2xl font-bold mb-4">느린 독서의 미학</h3>
+<p class="text-sm leading-relaxed opacity-70 mb-6">빠르게 소비되는 디지털 정보들 사이에서, 우리는 왜 여전히 무거운 종이책을 펼쳐 드는가. 그 본질적인 질문에 대한 고찰.</p>
+<img alt="Slow Reading" class="w-full h-64 object-cover mb-4" data-alt="An open book on a wooden table with a steaming cup of coffee and spectacles, soft morning light filtering through a window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNmDJjgpgKkUBRoYUVcjdRkjqDUHNmrctzs_-mCt7xTAYVm0qPNgszOvBx4abU33GbbFxGkX8FuQZGD_9Qjh-KhbquHu02i7S9WHmb5ZqhW-8geMrCQ-KF_oq7gjR4uPrKrfdcEL-DWqKlwOwGo2Yfw6KGbt_9-CR-aCRZpls0alBx0tbyr9tCUboMSD8EFdcIhTU-96ygKG2yl1g_g-rYHbNauj231SDC18LOuBYoWv-JlKtgeW0dILsmDQwzNjEtpxo71AoWn9Q"/>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-12 ambient-shadow relative overflow-hidden -mt-8 ml-12">
+<div class="flex items-start gap-8">
+<span class="newsreader text-6xl text-secondary-container font-black opacity-40">02</span>
+<div>
+<h3 class="newsreader text-2xl font-bold mb-4">공간을 채우는 종이 냄새</h3>
+<p class="text-sm leading-relaxed opacity-70 mb-6">어떤 이들은 책의 내용을 넘어 책이 머무는 공간과 그 분위기 자체를 사랑한다. 서재라는 안식처에 대하여.</p>
+<img alt="Bookstore Atmosphere" class="w-full h-64 object-cover mb-4" data-alt="A cozy narrow bookstore aisle with floor-to-ceiling shelves packed with books and a warm soft lamp lighting up the dust motes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3Fj9D3LBTeh6vlYdCZfzQREzhnKtZiDvBxyODgYkBygHsYW7hiENvWUDTl0UCrDd2GaRrnGGz_VXNNhYJ8X01nEoUviPI7ZMqydcKUrPCzn8rz8-VacyPdPotH9CdTA9aUh1B63vDg8oCu5_-cWtAx6RLsRXIEyK1r9alQmEKQe3ufDOuZuuu4k-dN_D3-FWu_vHCWc3LvzTaDpPCftl2JJsCwBmuh7gE9tA2EJvfVJAqLaNPXpJY-Y1WZpa4niUW_FylX-0xbKY"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Proof: Our Story -->
+<section class="py-24 border-t border-outline-variant/10">
+<div class="max-w-4xl mx-auto px-8 text-center">
+<div class="flex justify-center mb-12">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">auto_stories</span>
+</div>
+</div>
+<h2 class="newsreader text-3xl font-bold italic mb-8">Our Philosophy</h2>
+<p class="newsreader text-xl text-on-surface-variant leading-relaxed italic mb-12">
+                    PAPER NOOK는 단순히 책을 파는 곳이 아닌, 디지털 홍수 속에서 우리가 잃어버린 '몰입의 가치'를 수집하고 보관하는 현대적인 기록 저장소입니다. 모든 종이는 각자의 이야기를 품고 있으며, 우리는 그 이야기를 가장 아름다운 방식으로 당신의 손에 닿게 합니다.
+                </p>
+<div class="grid grid-cols-3 gap-8 border-t border-outline-variant/20 pt-12">
+<div>
+<span class="font-label text-xs block mb-2 opacity-50">SINCE</span>
+<span class="newsreader text-2xl font-bold">2018</span>
+</div>
+<div>
+<span class="font-label text-xs block mb-2 opacity-50">LOCATION</span>
+<span class="newsreader text-2xl font-bold">Seoul, KR</span>
+</div>
+<div>
+<span class="font-label text-xs block mb-2 opacity-50">VISION</span>
+<span class="newsreader text-2xl font-bold">Living Archive</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1d1c15] w-full py-12 px-8 flex flex-col items-center gap-6">
+<h2 class="font-['Newsreader'] text-white text-xl italic">PAPER NOOK</h2>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Be_Vietnam_Pro'] text-[0.6875rem] uppercase tracking-widest text-white/50 hover:text-[#f5c24f] transition-colors" href="#">이용약관</a>
+<a class="font-['Be_Vietnam_Pro'] text-[0.6875rem] uppercase tracking-widest text-white/50 hover:text-[#f5c24f] transition-colors" href="#">개인정보처리방침</a>
+<a class="font-['Be_Vietnam_Pro'] text-[0.6875rem] uppercase tracking-widest text-white/50 hover:text-[#f5c24f] transition-colors" href="#">문의하기</a>
+<a class="font-['Be_Vietnam_Pro'] text-[0.6875rem] uppercase tracking-widest text-white/50 hover:text-[#f5c24f] transition-colors" href="#">인스타그램</a>
+</div>
+<p class="font-['Be_Vietnam_Pro'] text-[0.6875rem] uppercase tracking-widest text-white/50 text-center mt-4">
+            © 2024 PAPER NOOK. All rights reserved. Printed on digital fiber.
+        </p>
+</footer>
+</body></html>

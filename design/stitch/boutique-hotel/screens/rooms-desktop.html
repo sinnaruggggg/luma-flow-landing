@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "surface-container-lowest": "#ffffff",
+                  "on-tertiary-fixed": "#221a14",
+                  "on-secondary-fixed": "#221a11",
+                  "outline": "#80756e",
+                  "on-error-container": "#93000a",
+                  "on-error": "#ffffff",
+                  "error-container": "#ffdad6",
+                  "secondary": "#685c50",
+                  "tertiary-fixed-dim": "#d3c3ba",
+                  "secondary-fixed-dim": "#d4c4b5",
+                  "on-primary-fixed-variant": "#554336",
+                  "surface-bright": "#fff8f3",
+                  "error": "#ba1a1a",
+                  "outline-variant": "#d2c4bc",
+                  "on-primary-fixed": "#26190e",
+                  "surface-container": "#f8ecdf",
+                  "on-tertiary-container": "#a2948b",
+                  "on-surface": "#201b13",
+                  "surface-tint": "#6e5a4c",
+                  "primary-fixed-dim": "#dcc2b0",
+                  "primary-fixed": "#f9ddcb",
+                  "surface-dim": "#e3d8cb",
+                  "on-background": "#201b13",
+                  "primary-container": "#3c2c20",
+                  "on-tertiary": "#ffffff",
+                  "on-surface-variant": "#4e453f",
+                  "surface-variant": "#ece1d4",
+                  "on-tertiary-fixed-variant": "#4f453e",
+                  "tertiary-fixed": "#f0dfd6",
+                  "on-primary": "#ffffff",
+                  "secondary-fixed": "#f0e0d0",
+                  "on-secondary-container": "#6e6256",
+                  "tertiary": "#211913",
+                  "primary": "#25180d",
+                  "surface-container-high": "#f2e6d9",
+                  "on-primary-container": "#aa9282",
+                  "surface-container-highest": "#ece1d4",
+                  "inverse-on-surface": "#faefe2",
+                  "secondary-container": "#f0e0d0",
+                  "on-secondary": "#ffffff",
+                  "tertiary-container": "#372d27",
+                  "on-secondary-fixed-variant": "#50453a",
+                  "inverse-primary": "#dcc2b0",
+                  "background": "#fff8f3",
+                  "inverse-surface": "#353027",
+                  "surface": "#fff8f3",
+                  "surface-container-low": "#fdf2e4"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.125rem",
+                  "lg": "0.25rem",
+                  "xl": "0.5rem",
+                  "full": "0.75rem"
+          },
+          "fontFamily": {
+                  "headline": ["Noto Serif", "Noto Serif KR", "serif"],
+                  "body": ["Manrope", "sans-serif"],
+                  "label": ["Manrope", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>body {
+    background-color: #fff8f3;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAVYRCwR-hvIhcfmImPHOJsSOB9DIxbPgxfyKdwpa8nriP4egDRBIwWnhbP_bxbVhVnXniMhTTHuLaeR_2M8wQ0InlajXsLwuyYiSZe1iAnu1-UciF8C7bZsBpvDJIjCpFQccruxblBFTcscK421yY6wIW09YOPaLyTFRLELRJtmtE6ZYJf0dWfwPUExtRXgKpWg0hGK_GD4oIBZRhRZ06InBjV8Bh5oNOOwa1yTEjLivEtCUvoMrGSLw5-DweBSj3Kr1kQEiQGWnln);
+    background-blend-mode: multiply
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24
+    }
+.glass-nav {
+    background: rgba(255, 248, 243, 0.8);
+    backdrop-filter: blur(20px)
+    }
+.editorial-gradient {
+    background: radial-gradient(circle at center, transparent 0%, rgba(37, 24, 13, 0.03) 100%)
+    }</style>
+</head>
+<body class="text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 w-full bg-[#fff8f3]/80 dark:bg-[#201b13]/80 backdrop-blur-xl">
+<div class="text-2xl font-serif tracking-tighter text-[#25180d] dark:text-[#fdf2e4]">LUXE MONOGRAPH</div>
+<div class="hidden md:flex gap-10 font-['Noto_Serif'] text-sm tracking-widest uppercase items-center">
+<a class="text-[#685c50] dark:text-[#d2c4bc] hover:text-[#25180d] transition-colors duration-300" href="#">Home</a>
+<a class="text-[#25180d] dark:text-[#ffffff] border-b border-[#25180d] pb-1 hover:text-[#25180d] transition-colors duration-300" href="#">Rooms</a>
+<a class="text-[#685c50] dark:text-[#d2c4bc] hover:text-[#25180d] transition-colors duration-300" href="#">Offers</a>
+<a class="text-[#685c50] dark:text-[#d2c4bc] hover:text-[#25180d] transition-colors duration-300" href="#">Booking</a>
+<a class="text-[#685c50] dark:text-[#d2c4bc] hover:text-[#25180d] transition-colors duration-300" href="#">Guide</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-[#25180d] dark:text-[#fdf2e4] cursor-pointer">account_circle</span>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- First Viewport: Editorial Header -->
+<section class="px-12 mb-24 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+<div class="md:col-span-7">
+<span class="font-label text-secondary tracking-[0.2em] uppercase text-xs mb-4 block">Editorial Vol. 04</span>
+<h1 class="font-headline text-5xl md:text-7xl text-primary leading-[1.1] mb-8">
+            공간의 미학<br/>
+<span class="italic font-normal text-4xl md:text-5xl">The Art of Space</span>
+</h1>
+<p class="font-body text-on-surface-variant max-w-md leading-relaxed text-lg">
+            우리는 단순히 머무는 곳을 넘어, 침묵과 빛이 어우러진 예술적 사유의 공간을 제안합니다. 정제된 미니멀리즘 속에서 진정한 휴식을 발견하십시오.
+          </p>
+</div>
+<div class="md:col-span-5 flex flex-col gap-6 items-start md:items-end">
+<div class="flex gap-2 p-1 bg-surface-container rounded-full">
+<button class="px-6 py-2 rounded-full text-xs font-label uppercase tracking-widest bg-primary text-on-primary">All</button>
+<button class="px-6 py-2 rounded-full text-xs font-label uppercase tracking-widest text-secondary hover:text-primary transition-colors">Standard</button>
+<button class="px-6 py-2 rounded-full text-xs font-label uppercase tracking-widest text-secondary hover:text-primary transition-colors">Deluxe</button>
+<button class="px-6 py-2 rounded-full text-xs font-label uppercase tracking-widest text-secondary hover:text-primary transition-colors">Suite</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Content: Magazine Spread Room Cards -->
+<section class="space-y-40 px-6 md:px-12 max-w-[1400px] mx-auto">
+<!-- Card 01: Suite -->
+<div class="relative group">
+<div class="aspect-[16/9] overflow-hidden bg-surface-variant p-4">
+<img alt="Suite One" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 ease-in-out" data-alt="Minimalist luxury hotel suite with floor to ceiling windows showing a misty mountain view, soft linen bedding in beige and warm evening sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5RMGbq25jom86ieWA6XJAgPVE3ERheTopuafLJTwwBDkjWPyx9HmEhmu0twcxGs5SMiX9aHi9eoLAYVpqDOdluCY2Ry6SSM4wmOA7_wTMIHURodXxrGNjReW5YNycs1NSUh2LjvSfmx8gzEe0SSHMJHhHW9dyGrd2opfXJdajPj9ukd0w_9uecFRbZT5NJo7KIXE3MPo1xbU3VkDTKQdrMVNuBUr_4hBvgu5NclrsYjqgh7lwcJilrBhK65D-6ivGc83Z2c2QSH14"/>
+</div>
+<div class="absolute -bottom-12 right-6 md:right-24 bg-surface-container-low p-8 md:p-12 max-w-md shadow-[40px_40px_80px_-20px_rgba(32,27,19,0.1)] border-l-4 border-primary">
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="font-label text-secondary text-[10px] tracking-[0.3em] uppercase block mb-2">Signature Suite</span>
+<h3 class="font-headline text-3xl text-primary">고요의 방 (Silence)</h3>
+</div>
+<div class="text-right">
+<p class="font-label text-primary font-bold text-lg leading-none">840,000원~</p>
+<p class="font-label text-secondary text-[10px] uppercase mt-1">per night</p>
+</div>
+</div>
+<div class="flex gap-4 mb-8 text-on-surface-variant font-body text-sm border-y border-outline-variant/30 py-4">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">forest</span> Garden View</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">bathtub</span> Private Bath</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">square_foot</span> 120m²</span>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary font-label text-xs tracking-[0.2em] uppercase hover:bg-primary-container transition-colors duration-300">
+            View Room Details
+          </button>
+</div>
+</div>
+<!-- Card 02: Deluxe (Asymmetric Layout) -->
+<div class="relative group flex flex-col md:flex-row items-center gap-0">
+<div class="w-full md:w-3/5 aspect-[4/5] overflow-hidden bg-surface-variant p-4">
+<img alt="Deluxe Room" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Luxury hotel bathroom with a freestanding black stone tub and a single wooden stool, atmospheric shadows and warm spotlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQD2U19qjxHDz0dc3VtKhzqPaogNpRuYr7n4orwLj793mjPYk8Z-6HNbwlGD3zkUbWaMoAAuzF5gkB2xyc9h-bnLctLE-Yd4tJij4YuwKi_DuntzDCiM7iKd77r8gSnKo9At9d2oX7jGqFkq4TgNQZ17tR08JzyO3I7txReKP3jnaYHTtpUL1bEcVy153swoY_kazoz4cPOf7HM3Rz_T3HcKsI12G3cSMQFGWifj-eJode4Ap7Pva-4J1P3ArtVeuJiKDGU4FLCxYp"/>
+</div>
+<div class="w-full md:w-2/5 md:-ml-24 z-10 bg-surface-container-highest p-10 md:p-16 shadow-2xl">
+<span class="font-label text-secondary text-[10px] tracking-[0.3em] uppercase block mb-4">Deluxe Series</span>
+<h3 class="font-headline text-4xl text-primary leading-tight mb-6">그림자의 유희<br/><span class="italic font-normal">Play of Shadows</span></h3>
+<p class="font-body text-on-surface-variant mb-8 leading-relaxed">
+            빛과 어둠이 만드는 리듬감이 공간에 깊이를 더합니다. 섬세하게 큐레이션된 목재 가구와 부드러운 패브릭이 조화를 이룹니다.
+          </p>
+<div class="mb-10">
+<p class="font-label text-primary font-bold text-xl">420,000원~</p>
+</div>
+<a class="inline-flex items-center gap-4 text-primary font-label text-xs tracking-widest uppercase group/link" href="#">
+            Explore Space
+            <span class="w-12 h-px bg-primary group-hover/link:w-20 transition-all duration-300"></span>
+</a>
+</div>
+</div>
+<!-- Card 03: Standard (Bento Grid Style) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+<div class="md:col-span-8 relative overflow-hidden bg-surface-container h-[500px]">
+<img alt="Standard King" class="w-full h-full object-cover opacity-90" data-alt="Minimalist modern bedroom with warm wood paneling, a large window letting in soft morning light, and a single branch in a ceramic vase" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf-l_IzNPEoE8OITqFm_kZydTFJafaB72DnPB5DiMaZF6NNZqaxOWrHR-o7Elnix2qUbEsZcXPx74SO0MZcLoXUGsGskL-RnNB71Zxn3NgA92EMEE1lTAUbmqWaUgHKJPAZD-pyIMfZxF4vK0Ebgwn6_hRYAZviZ3D42fPljHxxNwDnVh26TsBwTiimUqRwvsYslKJ2f2g3lDdFhuB-vUKwbc65ew8tWc0t771-DE9BeAe5pP3mUaJyqnT7NW9ndEKLi2MmkIleDxg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-on-primary">
+<h3 class="font-headline text-3xl mb-2">스테이 스탠다드</h3>
+<p class="font-body opacity-80">본질에 충실한 안락함</p>
+</div>
+</div>
+<div class="md:col-span-4 grid grid-rows-2 gap-4">
+<div class="bg-surface-container-high p-8 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="font-label text-[10px] tracking-widest uppercase">Essentials</span>
+<span class="material-symbols-outlined text-secondary">eco</span>
+</div>
+<div>
+<p class="font-headline text-xl text-primary">Eco-Linen Set</p>
+<p class="font-body text-sm text-secondary">Organic materials for deep rest.</p>
+</div>
+</div>
+<div class="bg-primary p-8 flex flex-col justify-between text-on-primary">
+<div class="text-right">
+<p class="font-label text-[10px] tracking-widest uppercase opacity-60">Price Range</p>
+<p class="text-2xl font-headline">299,000원~</p>
+</div>
+<button class="w-full border border-white/20 py-3 text-[10px] tracking-[0.2em] uppercase hover:bg-white hover:text-primary transition-all">Book Now</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full py-16 px-12 bg-[#fdf2e4] dark:bg-[#25180d] flex flex-col md:flex-row justify-between items-center w-full gap-8">
+<div class="font-['Manrope'] text-[10px] tracking-[0.1em] uppercase text-[#685c50]">
+      © 2024 THE SILENT CURATOR. ALL RIGHTS RESERVED.
+    </div>
+<div class="flex gap-12 font-['Manrope'] text-[10px] tracking-[0.1em] uppercase">
+<a class="text-[#685c50] hover:text-[#25180d] transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="text-[#685c50] hover:text-[#25180d] transition-colors duration-300" href="#">Terms of Service</a>
+<a class="text-[#685c50] hover:text-[#25180d] transition-colors duration-300" href="#">Press</a>
+<a class="text-[#685c50] hover:text-[#25180d] transition-colors duration-300" href="#">Contact</a>
+</div>
+<div class="flex gap-6">
+<div class="w-4 h-4 rounded-full border border-outline/30 flex items-center justify-center">
+<div class="w-1 h-1 bg-secondary rounded-full"></div>
+</div>
+</div>
+</footer>
+</body></html>

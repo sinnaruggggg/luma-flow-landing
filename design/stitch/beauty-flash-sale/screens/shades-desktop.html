@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#352156",
+                    "on-tertiary-container": "#4c3966",
+                    "error-container": "#b92902",
+                    "tertiary-container": "#d7bff5",
+                    "surface-dim": "#140629",
+                    "surface-container-lowest": "#000000",
+                    "secondary-dim": "#f070c2",
+                    "on-surface-variant": "#b5a4ce",
+                    "primary-dim": "#efc93f",
+                    "secondary-container": "#841065",
+                    "outline-variant": "#4f4166",
+                    "inverse-surface": "#fef7ff",
+                    "outline": "#7e6e96",
+                    "on-secondary-container": "#ffbde1",
+                    "surface-variant": "#2e1b4c",
+                    "on-tertiary-fixed-variant": "#554270",
+                    "surface-container-low": "#1a0b31",
+                    "inverse-primary": "#725d00",
+                    "on-primary": "#5d4b00",
+                    "primary-fixed-dim": "#efc93f",
+                    "on-background": "#eee0ff",
+                    "on-surface": "#eee0ff",
+                    "secondary": "#fd7acd",
+                    "on-error-container": "#ffd2c8",
+                    "tertiary": "#e4ceff",
+                    "surface-container-high": "#271643",
+                    "on-primary-container": "#2b2200",
+                    "primary-container": "#bf9d09",
+                    "surface": "#140629",
+                    "on-tertiary": "#55426f",
+                    "tertiary-fixed": "#d7bff5",
+                    "tertiary-dim": "#c9b2e7",
+                    "on-secondary-fixed-variant": "#911e70",
+                    "error": "#ff7351",
+                    "on-tertiary-fixed": "#372551",
+                    "primary-fixed": "#fed74c",
+                    "on-error": "#450900",
+                    "primary": "#fed74c",
+                    "background": "#140629",
+                    "tertiary-fixed-dim": "#c9b2e7",
+                    "error-dim": "#d53d18",
+                    "on-secondary": "#550040",
+                    "secondary-fixed": "#ffbfe2",
+                    "secondary-fixed-dim": "#ffaada",
+                    "surface-container": "#21103a",
+                    "on-secondary-fixed": "#67004e",
+                    "inverse-on-surface": "#5d4e74",
+                    "surface-container-highest": "#2e1b4c",
+                    "surface-tint": "#fed74c",
+                    "on-primary-fixed": "#473800",
+                    "on-primary-fixed-variant": "#685400"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Epilogue"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(254, 215, 76, 0.4);
+        }
+        .sticker-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.3);
+        }
+        body {
+            background-color: #140629;
+            color: #eee0ff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-surface select-none">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#140629]/60 backdrop-blur-xl flex justify-between items-center px-6 py-4 w-full shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)]">
+<div class="flex items-center gap-8">
+<span class="text-3xl font-black italic text-[#fed74c] tracking-tight font-headline">MELT POP</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-headline font-black uppercase tracking-tighter text-white/80 hover:text-white transition-colors hover:scale-105 duration-200" href="#">SHOP ALL</a>
+<a class="font-headline font-black uppercase tracking-tighter text-white/80 hover:text-white transition-colors hover:scale-105 duration-200" href="#">NEW IN</a>
+<a class="font-headline font-black uppercase tracking-tighter text-white/80 hover:text-white transition-colors hover:scale-105 duration-200" href="#">SETS</a>
+<a class="font-headline font-black uppercase tracking-tighter text-white/80 hover:text-white transition-colors hover:scale-105 duration-200" href="#">STORY</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:scale-105 transition-transform text-[#fed74c] active:scale-95">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="p-2 hover:scale-105 transition-transform text-[#fed74c] active:scale-95">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="h-full w-72 fixed left-0 top-0 z-40 bg-[#140629] shadow-2xl flex flex-col pt-24 h-full hidden lg:flex">
+<div class="px-6 mb-8">
+<h2 class="text-[#fd7acd] font-black font-headline text-2xl tracking-tighter">GLOSS CLUB</h2>
+<p class="text-white/60 text-[10px] font-label tracking-widest uppercase">Exclusive Member Access</p>
+</div>
+<div class="flex flex-col gap-1 bg-[#2e1b4c]">
+<a class="flex items-center gap-4 text-white px-4 py-3 hover:bg-[#2e1b4c] font-headline font-extrabold uppercase hover:translate-x-2 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="magic_button">magic_button</span>
+<span>LIPS</span>
+</a>
+<a class="flex items-center gap-4 text-white px-4 py-3 hover:bg-[#2e1b4c] font-headline font-extrabold uppercase hover:translate-x-2 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+<span>EYES</span>
+</a>
+<a class="flex items-center gap-4 text-white px-4 py-3 hover:bg-[#2e1b4c] font-headline font-extrabold uppercase hover:translate-x-2 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="face_6">face_6</span>
+<span>FACE</span>
+</a>
+<a class="flex items-center gap-4 text-white px-4 py-3 hover:bg-[#2e1b4c] font-headline font-extrabold uppercase hover:translate-x-2 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span>SKIN</span>
+</a>
+<a class="flex items-center gap-4 text-white px-4 py-3 hover:bg-[#2e1b4c] font-headline font-extrabold uppercase hover:translate-x-2 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="brush">brush</span>
+<span>TOOLS</span>
+</a>
+</div>
+<div class="mt-auto p-6">
+<button class="w-full bg-[#fed74c] text-[#140629] font-black py-4 font-headline uppercase tracking-tighter sticker-shadow hover:scale-105 active:scale-95 transition-all">
+                JOIN THE LIST
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-72 pt-16">
+<!-- Hero Section -->
+<section class="relative h-[921px] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="extreme close-up of high-gloss vibrant pink lip gloss application with sparkling micro-glitter and dramatic studio lighting on dark background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbnxGY1T0YpoIKj5UUaPPOUjmB2owiSDOWH5Zm42MvebT9vmJhZNuYd6CUOOp3QQAlOkq5m_ePjXnqWPyk28bDxNPBciiqngGZ_E07K_OnrjoW1qbdybVYVriiBPbV7MtMpFXSBzjei1cKHFkJHCVQQqBedKf1bu8hIpc3KZ21sssjVWQFiTGeXeAFN4Lwqk2QvFiQDXRH1yLMhXKxvLlFIbUQal-XZtVkboROfe9CyKJvWHxIEsq8GLt_bXjES-IfaautkNBcD5yr')">
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+</div>
+<!-- Overlapping Poster UI -->
+<div class="relative h-full flex flex-col justify-end p-12 lg:p-20 z-10">
+<div class="mb-6">
+<span class="inline-block bg-secondary text-on-secondary px-3 py-1 font-label text-xs font-bold mb-4 sticker-shadow rotate-[-2deg]">NEW DROP</span>
+<h1 class="font-headline font-black text-7xl md:text-9xl leading-[0.8] tracking-tighter text-white drop-shadow-2xl">
+                        SHADES<br/>
+<span class="text-primary italic">EXPLORER</span>
+</h1>
+</div>
+<div class="flex flex-wrap gap-4 items-end justify-between">
+<div class="flex flex-wrap gap-4">
+<div class="bg-surface-container-highest p-4 sticker-shadow hover:scale-110 transition-transform cursor-pointer group">
+<div class="w-12 h-12 bg-[#FF1493] mb-2"></div>
+<p class="font-label text-[10px] text-white">ELECTRIC PINK</p>
+</div>
+<div class="bg-surface-container-highest p-4 sticker-shadow hover:scale-110 transition-transform cursor-pointer group">
+<div class="w-12 h-12 bg-[#DFFF00] mb-2"></div>
+<p class="font-label text-[10px] text-white">ACID YELLOW</p>
+</div>
+<div class="bg-surface-container-highest p-4 sticker-shadow hover:scale-110 transition-transform cursor-pointer group">
+<div class="w-12 h-12 bg-[#0000FF] mb-2"></div>
+<p class="font-label text-[10px] text-white">CYBER BLUE</p>
+</div>
+<div class="bg-surface-container-highest p-4 sticker-shadow hover:scale-110 transition-transform cursor-pointer group backdrop-blur-md bg-white/10">
+<div class="w-12 h-12 bg-white/20 border border-white/30 mb-2"></div>
+<p class="font-label text-[10px] text-white">GLOSS CLEAR</p>
+</div>
+</div>
+<div class="text-right flex flex-col items-end">
+<span class="bg-primary text-on-primary-container px-4 py-2 font-headline font-black text-xl mb-2 sticker-shadow transform rotate-3">BEST SHADE</span>
+<div class="font-headline font-black text-7xl md:text-[10rem] text-primary tracking-tighter leading-none">12,000<span class="text-3xl md:text-5xl ml-2">원</span></div>
+</div>
+</div>
+</div>
+<!-- Story Floating Sticker -->
+<button class="absolute top-1/2 right-[-20px] transform -translate-y-1/2 rotate-90 bg-secondary text-surface font-headline font-black text-2xl px-10 py-4 hover:pr-16 transition-all group z-20">
+                STORY <span class="material-symbols-outlined ml-4 align-middle group-hover:scale-125 transition-transform" data-icon="play_arrow">play_arrow</span>
+</button>
+</section>
+<!-- Main Section: The Color Universe -->
+<section class="px-6 py-24 md:px-12 bg-surface">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div>
+<h2 class="font-headline font-black text-6xl md:text-8xl tracking-tighter uppercase leading-none">The Color<br/><span class="text-secondary italic">Universe</span></h2>
+<p class="font-label text-sm tracking-[0.2em] mt-4 opacity-50 uppercase">Explore the high-tempo texture catalog</p>
+</div>
+<div class="flex gap-2 font-label text-xs uppercase">
+<button class="border-2 border-primary px-6 py-2 text-primary font-bold hover:bg-primary hover:text-on-primary transition-all">Filter</button>
+<button class="border-2 border-outline-variant px-6 py-2 text-white/50 font-bold">Sort By</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-20 gap-x-8">
+<!-- Product Card 1 -->
+<div class="relative group">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden">
+<img alt="" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="macro texture of thick pink cosmetic cream being spread showing rich pigment and smooth glossy finish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb62iFF20CL66QDVUiLyh2x213whxD81SSgI-4jXFoQp1eBdYJ9FgbuUu8XQzC03VXTjLQS2QHYYWDHH-V33xO-kos6ehKJGFhqdoC46wTb_7yxc_7eBqBcPEmKUJPx0_lwFpc_5uXF2AoSOvlXMQphhweXsWeHjRaJQaM77ZPNEDfZQ2DwGmebsmY6CB0wvGujsHlNtg4iggMUcHWbDT0ZHbq4MFFYEANoj-lSekzWn1t5Vd6zLucO-3aLf6uMZRM6ok-O6ldxl5d"/>
+<div class="absolute top-[-12px] left-[-12px] bg-secondary text-on-secondary p-3 sticker-shadow z-10 rotate-[-5deg]">
+<p class="font-headline font-black text-2xl">-30% OFF</p>
+</div>
+</div>
+<div class="mt-8 flex justify-between items-start">
+<div class="max-w-[60%]">
+<span class="font-label text-[10px] tracking-widest text-secondary font-bold uppercase mb-2 block">MATTE TEXTURE</span>
+<h3 class="font-headline font-extrabold text-3xl uppercase leading-none mb-4">CRUSHED VELVET</h3>
+<button class="bg-primary hover:bg-primary-dim text-on-primary-container px-8 py-3 font-headline font-black uppercase text-sm transition-all active:scale-95">BUY NOW</button>
+</div>
+<div class="text-right">
+<p class="font-headline font-black text-5xl text-primary leading-none">9,800</p>
+<p class="font-label text-xs text-white/40 line-through">14,000</p>
+</div>
+</div>
+</div>
+<!-- Product Card 2 (Floating Style) -->
+<div class="relative group mt-12 md:mt-24">
+<div class="aspect-[4/5] bg-surface-container-highest overflow-hidden">
+<img alt="" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" data-alt="dramatic macro shot of iridescent holographic lip gloss with rainbow reflections and high-shine liquid texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtCChP_DUkAwOR7M3awiXbnWvezs10y_6nn5ZMl1HMHVqiNVeuWyYx1bvraQxh0HLqmotHfA9lz2BWYDbAw0VcglcgHKr4_5zKijPygv1g9nMEuWCbjEnwsiOmD0XNCWgy906dFDg5YvKHtLLZiVJx7c9Oo4Z6rLhaUQzZmGmY78o_f7YA8eAZUWdgneFnUhaRI4F3KqqQkZaDNDteDqyZZGkbdE2pYPZnj84Nnmx8puW6mh28VQ6-4MpYsEjFOM98spRfBtgrBsH7"/>
+<div class="absolute bottom-4 right-[-10px] bg-primary text-on-primary-container px-6 py-2 sticker-shadow z-10 rotate-3">
+<p class="font-headline font-black text-xl italic">LIMITED EDITION</p>
+</div>
+</div>
+<div class="mt-8 flex justify-between items-start">
+<div class="max-w-[60%]">
+<span class="font-label text-[10px] tracking-widest text-secondary font-bold uppercase mb-2 block">GLOSS TEXTURE</span>
+<h3 class="font-headline font-extrabold text-3xl uppercase leading-none mb-4">PLASMA DRIP</h3>
+<button class="bg-primary hover:bg-primary-dim text-on-primary-container px-8 py-3 font-headline font-black uppercase text-sm transition-all active:scale-95">BUY NOW</button>
+</div>
+<div class="text-right">
+<p class="font-headline font-black text-5xl text-primary leading-none">15,000</p>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="relative group">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden">
+<img alt="" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="extreme close up of coarse gold glitter particles suspended in a clear gel background with bright cinematic sparkles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7iayZ2v6ceACqkyJ2bgAq6Fx6a3T0AC5t2Svq32rgFbu4c27UaCxrHdjkmRQHW-Nc4n-qG16E-RLpPq5KXhNnA5xkNHXNPNldgihF4cbef86TX2ZTTATSMUR-KtTtA9uHUKrdCn3E08z0GLrN6hEIDfelIiiJp9ld8C3h8Pl6_foZhQZ8UxHRI0F4ZX12JfY5IhIDpcrIgfaNPP3k-eH8BRFkfLwcwiEAatNulTdeG8eLZDGkPXJJKrS3dtEbGJuZbDMbMzAme4Fh"/>
+</div>
+<div class="mt-8 flex justify-between items-start">
+<div class="max-w-[60%]">
+<span class="font-label text-[10px] tracking-widest text-secondary font-bold uppercase mb-2 block">SHIMMER TEXTURE</span>
+<h3 class="font-headline font-extrabold text-3xl uppercase leading-none mb-4">GOLD DUST</h3>
+<button class="bg-primary hover:bg-primary-dim text-on-primary-container px-8 py-3 font-headline font-black uppercase text-sm transition-all active:scale-95">BUY NOW</button>
+</div>
+<div class="text-right">
+<p class="font-headline font-black text-5xl text-primary leading-none">12,000</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Strip -->
+<section class="bg-surface-variant py-20 px-6 border-y-8 border-secondary overflow-hidden relative">
+<div class="absolute top-0 left-0 text-9xl font-black text-white/5 whitespace-nowrap select-none pointer-events-none translate-y-[-20%]">URGENT BEAUTY URGENT BEAUTY URGENT BEAUTY</div>
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<h2 class="font-headline font-black text-5xl md:text-7xl tracking-tighter uppercase mb-8">JOIN THE <span class="text-primary">CHAOS</span></h2>
+<div class="flex flex-col md:flex-row gap-4">
+<input class="flex-grow bg-transparent border-0 border-b-4 border-outline-variant focus:ring-0 focus:border-primary font-headline text-2xl uppercase p-4 text-white placeholder:text-white/20 transition-colors" placeholder="EMAIL ADDRESS" type="email"/>
+<button class="bg-secondary text-surface font-headline font-black text-2xl px-12 py-4 sticker-shadow hover:translate-y-[-4px] transition-transform">SUBSCRIBE</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full border-t-8 border-[#fd7acd] mt-20 bg-[#140629] flex flex-col md:flex-row justify-between items-center px-10 py-16 gap-8 w-full">
+<div class="flex flex-col gap-2">
+<span class="text-5xl font-black text-[#fed74c] opacity-20 font-headline">MELT POP</span>
+<p class="font-space-grotesk font-bold text-xs tracking-widest text-white/50">©2024 MELT POP - URGENT BEAUTY. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-space-grotesk font-bold text-xs tracking-widest text-white/50 hover:text-[#fd7acd] transition-colors" href="#">TERMS</a>
+<a class="font-space-grotesk font-bold text-xs tracking-widest text-white/50 hover:text-[#fd7acd] transition-colors" href="#">SHIPPING</a>
+<a class="font-space-grotesk font-bold text-xs tracking-widest text-white/50 hover:text-[#fd7acd] transition-colors" href="#">PRIVACY</a>
+<a class="font-space-grotesk font-bold text-xs tracking-widest text-white/50 hover:text-[#fd7acd] transition-colors" href="#">CONTACT</a>
+</div>
+</footer>
+</main>
+</body></html>

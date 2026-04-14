@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RIFT/01 | Kinetic Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Work+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-dim": "#005672",
+                        "inverse-primary": "#fdea62",
+                        "on-secondary-fixed": "#6f0011",
+                        "on-tertiary": "#e5f5ff",
+                        "on-tertiary-fixed": "#003041",
+                        "on-secondary": "#ffefee",
+                        "on-primary": "#fff4b6",
+                        "tertiary-fixed": "#7bd1fa",
+                        "surface-dim": "#d6d4d3",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#006382",
+                        "inverse-on-surface": "#9e9c9c",
+                        "primary": "#675c00",
+                        "surface-container-high": "#e5e2e1",
+                        "on-surface-variant": "#5c5b5b",
+                        "on-tertiary-fixed-variant": "#004f69",
+                        "on-primary-fixed-variant": "#6b6000",
+                        "background": "#f9f6f5",
+                        "secondary-fixed-dim": "#ffafac",
+                        "secondary-fixed": "#ffc3c0",
+                        "tertiary-container": "#7bd1fa",
+                        "secondary-container": "#ffc3c0",
+                        "on-error": "#ffefec",
+                        "outline-variant": "#afacac",
+                        "on-surface": "#2f2e2e",
+                        "primary-container": "#fdea62",
+                        "surface-variant": "#dfdcdc",
+                        "on-primary-fixed": "#4b4300",
+                        "on-secondary-fixed-variant": "#9a2128",
+                        "surface-container": "#eae7e7",
+                        "tertiary-fixed-dim": "#6cc3eb",
+                        "on-secondary-container": "#8d1620",
+                        "primary-fixed": "#fdea62",
+                        "on-primary-container": "#605600",
+                        "outline": "#787676",
+                        "secondary-dim": "#992027",
+                        "on-tertiary-container": "#00465d",
+                        "surface": "#f9f6f5",
+                        "surface-container-low": "#f3f0ef",
+                        "surface-bright": "#f9f6f5",
+                        "surface-container-highest": "#dfdcdc",
+                        "primary-fixed-dim": "#eedc56",
+                        "surface-tint": "#675c00",
+                        "error-container": "#f95630",
+                        "on-background": "#2f2e2e",
+                        "primary-dim": "#5a5000",
+                        "error-dim": "#b92902",
+                        "error": "#b02500",
+                        "on-error-container": "#520c00",
+                        "inverse-surface": "#0e0e0e",
+                        "secondary": "#aa2c32"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Work Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f9f6f5; color: #2f2e2e; }
+        .text-korean { line-height: 1.25; letter-spacing: -0.01em; }
+        .sticker-panel { box-shadow: 8px 8px 0px rgba(103, 92, 0, 0.15); }
+        .kinetic-hover:hover { transform: translate(-4px, -4px); box-shadow: 12px 12px 0px rgba(103, 92, 0, 0.2); }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 z-50 w-full bg-[#f9f6f5] dark:bg-stone-950 flex justify-between items-center px-6 py-4 max-w-full">
+<div class="text-2xl font-black tracking-tighter text-stone-900 dark:text-white font-['Space_Grotesk']">RIFT/01</div>
+<div class="hidden md:flex gap-8 items-center font-['Space_Grotesk'] uppercase tracking-wider">
+<a class="text-[#675c00] dark:text-[#F7E45D] font-bold border-b-2 border-[#675c00] dark:border-[#F7E45D] translate-y-[-2px] transition-transform" href="#">Drops</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-black dark:hover:text-white transition-colors" href="#">Styles</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-black dark:hover:text-white transition-colors" href="#">Brand</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-stone-900 dark:text-white" data-icon="search">search</button>
+<button class="material-symbols-outlined text-stone-900 dark:text-white" data-icon="shopping_cart">shopping_cart</button>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 z-40 hidden lg:flex flex-col p-6 bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl shadow-[0px_20px_40px_rgba(18,18,18,0.06)] pt-24">
+<div class="mb-8">
+<h2 class="text-xl font-black text-stone-900 dark:text-white font-['Space_Grotesk']">RIFT/LAB</h2>
+<p class="text-sm font-medium text-stone-500 font-['Work_Sans']">Verified Archive</p>
+</div>
+<nav class="flex flex-col gap-2 font-['Space_Grotesk'] font-bold">
+<a class="flex items-center gap-3 text-stone-500 dark:text-stone-400 px-4 py-3 hover:bg-stone-100 dark:hover:bg-stone-800 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span> Shop
+            </a>
+<a class="flex items-center gap-3 text-stone-500 dark:text-stone-400 px-4 py-3 hover:bg-stone-100 dark:hover:bg-stone-800 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span> Vault
+            </a>
+<a class="flex items-center gap-3 text-stone-500 dark:text-stone-400 px-4 py-3 hover:bg-stone-100 dark:hover:bg-stone-800 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span> Community
+            </a>
+<a class="flex items-center gap-3 text-stone-500 dark:text-stone-400 px-4 py-3 hover:bg-stone-100 dark:hover:bg-stone-800 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span> Support
+            </a>
+</nav>
+<div class="mt-auto">
+<button class="w-full bg-primary text-white font-bold py-4 rounded-sm scale-95 duration-200 active:scale-90 font-['Space_Grotesk']">
+                Join the Drop
+            </button>
+</div>
+</aside>
+<main class="lg:ml-64 pt-20 pb-24 md:pb-0">
+<!-- Hero Section: Kinetic Archive -->
+<section class="relative w-full h-[921px] overflow-hidden bg-primary px-6 py-12 flex flex-col md:flex-row items-center justify-center gap-8">
+<!-- Background Image -->
+<div class="absolute inset-0 opacity-40 mix-blend-overlay pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="high-resolution cinematic close-up of a futuristic limited edition sneaker with metallic accents and neon details in a dark gritty urban setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6HELaliYy56d6v-7J0fX2X-grEvOK67fhaW4MWfmj5DmWRCRlwQpg_ohPjjgund9gh07RMkesqe0GhxOjatOFMicTE0en4C19nGD6mtL3vrAFCYR2qP9m3ncwt22y54dIftsV990hkbn-5aPtdzmynmpIa-4QpL8orMj0zHs4e6CkeQGBIiUCSsOzImWs71XgQ_kJmYlb0dFWOhO077t6Pr54rkDwaFHiPmyQeTsV6luLfsAM8ZpO5VVdgj_jgXRRrquzpt5GsA"/>
+</div>
+<!-- Side Countdown (Sticker Style) -->
+<div class="absolute right-0 top-1/4 z-30 transform rotate-90 origin-right translate-x-4">
+<div class="bg-secondary text-white font-headline font-black text-2xl px-6 py-2 sticker-panel flex gap-4 items-center">
+<span class="text-sm font-label uppercase">Next Drop</span>
+<span class="tracking-tighter">02:14:55</span>
+</div>
+</div>
+<!-- Headline Layer -->
+<div class="relative z-20 flex flex-col items-start gap-4 max-w-4xl">
+<div class="bg-white p-2 mb-4 sticker-panel -rotate-2">
+<span class="font-label text-xs font-black uppercase text-primary tracking-widest">Limited Launch Lab / 01</span>
+</div>
+<h1 class="font-headline font-black text-7xl md:text-9xl text-on-primary-container leading-none tracking-tighter">
+                    격차를 벌리다
+                </h1>
+<p class="font-body text-xl md:text-3xl font-bold text-white max-w-xl text-korean mt-4 bg-primary p-2">
+                    다음 세대의 움직임. RIFT/01 에어로-다이내믹 시리즈 정식 공개.
+                </p>
+</div>
+<!-- Fast Cart Commerce Module (Tactile Panel) -->
+<div class="relative z-20 bg-surface-container-lowest p-8 w-full max-w-md sticker-panel border-2 border-primary mt-8 md:mt-0">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline font-black text-2xl">RIFT/01-AER</h3>
+<p class="font-label text-on-surface-variant font-medium">SKU: RFT-2024-X</p>
+</div>
+<div class="text-2xl font-black text-secondary">229,000원</div>
+</div>
+<div class="mb-6">
+<label class="font-label text-xs font-black uppercase mb-3 block">Size Selection (KR)</label>
+<div class="grid grid-cols-4 gap-2">
+<button class="py-2 border border-outline font-label text-sm hover:bg-primary-container hover:border-primary transition-all">230</button>
+<button class="py-2 border border-outline font-label text-sm hover:bg-primary-container hover:border-primary transition-all">240</button>
+<button class="py-2 border-2 border-primary bg-primary-container font-label text-sm font-bold">250</button>
+<button class="py-2 border border-outline font-label text-sm hover:bg-primary-container hover:border-primary transition-all">260</button>
+<button class="py-2 border border-outline font-label text-sm hover:bg-primary-container hover:border-primary transition-all">270</button>
+<button class="py-2 border border-outline font-label text-sm hover:bg-primary-container hover:border-primary transition-all">280</button>
+<button class="py-2 border border-outline font-label text-sm opacity-50 cursor-not-allowed">290</button>
+<button class="py-2 border border-outline font-label text-sm hover:bg-primary-container hover:border-primary transition-all">300</button>
+</div>
+</div>
+<button class="w-full bg-secondary text-white font-headline font-black py-5 text-xl kinetic-hover transition-all flex items-center justify-center gap-3">
+                    바로 구매 <span class="material-symbols-outlined" data-icon="shopping_bag" data-weight="fill">shopping_bag</span>
+</button>
+</div>
+</section>
+<!-- Latest Drops (Bento Grid) -->
+<section class="p-6 md:p-12 bg-surface">
+<div class="flex items-end justify-between mb-12">
+<h2 class="font-headline font-black text-5xl tracking-tighter uppercase">최근 드롭 <span class="text-primary">.</span></h2>
+<a class="font-label font-bold text-sm underline underline-offset-4 hover:text-primary" href="#">View All Drops</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Drop 1 -->
+<div class="bg-surface-container-low p-4 sticker-panel group cursor-pointer overflow-hidden flex flex-col">
+<div class="relative overflow-hidden h-64 bg-white mb-4">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="studio photograph of a white and purple high-tech running shoe on a minimalist platform with soft professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNh7o_WZ4pjelw2ldrpi8HWQ-uzUdT2kDPCnk7FnZlMWrmF5zkgrPENcYIjMCSGcVtgaNZDzVVx9FvR0I7Fe3nHnCLKAAjC4RtrVNWwLLsNCPUV00aOQzb5Q7uBah6DBPKjsqEJA_yYoQ2_cs_4HxQmHkjCSatFXTrOynELv4KOJoUxAk-hu9gRRsI-MhrBu8H_nMFpgE2ryvc3fZ_C-yAXvr6r-ZmmfDAzZeqkchJjjHO-PmCEYfiBUU3iNKnwuLh4GZBGE-uZQ"/>
+<div class="absolute top-2 right-2 bg-secondary text-white px-3 py-1 font-label text-[10px] font-bold uppercase rounded-full">Sold Out</div>
+</div>
+<div class="flex justify-between items-center">
+<h4 class="font-headline font-bold text-lg">VORTEX WHITE</h4>
+<span class="font-label font-black">189,000₩</span>
+</div>
+</div>
+<!-- Drop 2 -->
+<div class="bg-primary-container p-4 sticker-panel group cursor-pointer overflow-hidden flex flex-col md:translate-y-8">
+<div class="relative overflow-hidden h-64 bg-white mb-4">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="top view of vibrant lime green athletic shoes on a concrete texture background with sharp shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt4QcWq3jsCLI8eHQZAE5V17BjmfN2ORtPNakqziynicsy4RqgaErWRXO_QYp0D-LGEOOquRWMyhHd2bh6g2HY5uuAtZMjMVTCjjD68On2Eh9N8SwVLE686aSv-i0XyQeujtSwvMrCOUggQfs5z_Oja74EBaF8cBtFWMG8SdgXVM4nlMYw4DMK7YPwlKRuiIh90rag1pt5jHjF-V570Ko0BQ1jZ0tiLHQdXAL_leKMLwIEfnl7cCflU76pDXARTKvVxCFGae482A"/>
+<div class="absolute top-2 right-2 bg-primary text-white px-3 py-1 font-label text-[10px] font-bold uppercase rounded-full">New Arrival</div>
+</div>
+<div class="flex justify-between items-center">
+<h4 class="font-headline font-bold text-lg">NEON PULSE</h4>
+<span class="font-label font-black">219,000₩</span>
+</div>
+</div>
+<!-- Drop 3 -->
+<div class="bg-surface-container-low p-4 sticker-panel group cursor-pointer overflow-hidden flex flex-col">
+<div class="relative overflow-hidden h-64 bg-white mb-4">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="side profile of a classic red and black sneaker with dynamic lighting and reflection on a dark glass surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD-IS-dJI_d_zSnHirKG0dg3HorUsiNecojad2PaMYJkmdLXFHm9_NBX_FhOB1MiW3YfJIn9627mw_DVVDyUnIabRU9RjAjx9LGG14paFn3Eloca6Edipl-DtDsLb93wk2IyjPITVNlgeisfGqkbMhC2CB_ta5CwzhaCoBdE8CJtCMamPosBYUZMRaox4xj3XzhHvEoEMpLdb-yv3yMbWd-X7xrcda7foMSmtufjIxyswM30wAap-CZG14fKYiPXdiyV8fkasCiA"/>
+</div>
+<div class="flex justify-between items-center">
+<h4 class="font-headline font-bold text-lg">CRIMSON CORE</h4>
+<span class="font-label font-black">229,000₩</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Style Archive (Editorial Layout) -->
+<section class="p-6 md:p-12 mt-12 bg-white relative">
+<div class="absolute left-0 top-0 w-2 h-full bg-secondary"></div>
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="w-full md:w-1/3">
+<h2 class="font-headline font-black text-6xl md:text-8xl tracking-tighter mb-6">스타일 아카이브</h2>
+<p class="font-body text-lg text-on-surface-variant mb-8 text-korean">
+                        리프트/01의 독보적인 실루엣이 완성하는 스트릿의 새로운 규칙. 커뮤니티가 증명하는 스타일의 진화.
+                    </p>
+<button class="bg-primary text-white px-8 py-4 font-headline font-bold rounded-sm kinetic-hover transition-all">
+                        커뮤니티 참여하기
+                    </button>
+</div>
+<div class="w-full md:w-2/3 grid grid-cols-2 gap-4">
+<div class="space-y-4">
+<img class="w-full aspect-[3/4] object-cover sticker-panel border-4 border-white grayscale hover:grayscale-0 transition-all duration-700" data-alt="street style fashion photo of a person wearing techwear outfit and futuristic sneakers in a Tokyo alleyway" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwXve_3cI-7YwlsIF12VVLLS0fpvigpIVjfXGy5LCJ-fWsFkYNrRfMjR3okY2GKmxiNVEtKeHJjXh7rIU5QD_ANs_AVLV3yESf5KlOB5bhk62dwosbMmKq8IETWIz7yT4MrwHr2xLS2VSJ_kXJeMeZEd4u363SywOROTDMb41To7CGyi2bScWKORuFMlPfhBAWkr-ID11yKcNut5Q5HXoJszAQJPOfab8CqpRk50kSToancrx3FHJiQX7BtQnOvgWiRDBosF8H_w"/>
+<img class="w-full aspect-square object-cover sticker-panel border-4 border-white" data-alt="edgy urban fashion shot of a woman in oversized streetwear sitting on a concrete ledge with a cityscape background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD799yYQEp10NcNeqDecZ1-HihQUedsVavLP3PUHJp7tP7V6PdphRXztaTDmF5BndjargtXmoHxz3YvWZyL-b8ghP11mmEn_82nWhdET527au7pds_Nya2F-2OZxe5Nx4f8QAPErc1F8Jix725l5frl8j0aXY3W5MORsxoLiliRN9xM6koxym-J2czwrlLC-_SPp40YT1YoMudZC9EZu_bBN_3bdeRn0xz-SbWzWt3d59UF9lQ5TDA48S7xSJ-kC2HWIU9L90fezQ"/>
+</div>
+<div class="space-y-4 pt-12">
+<img class="w-full aspect-square object-cover sticker-panel border-4 border-white" data-alt="high fashion editorial of a male model in avant-garde black clothing posing in an industrial warehouse" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3QzxKj40D4hUe3NCbW5Dl2xjMGGi03rbBfBKr7xPnOZPU1Vu8Cg5FjgFG1KPAznNyrH31fjoz8YC3FdA7bl8e80ecAd1o8cdukZbBV8NST5x0lqVQ0ZTorZFaSFsr6vf9-6nP5_JvcxEPrtuSdyN8NjFvJ0e4mG-HKY0XyveTC69BQKOK0KF3Puv8tHbGdTWrmSLEssLSKhnYePjYIJ0b4V8Wy8JYMKM9k55hfkJgGLIkUErX3dkZCkGtmY_1ikb8nLG9qa7eKg"/>
+<img class="w-full aspect-[3/4] object-cover sticker-panel border-4 border-white grayscale hover:grayscale-0 transition-all duration-700" data-alt="close-up of stylish sneakers on feet walking over yellow tactile paving in a modern subway station" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3eknJT3aHBTJ9BtXsFjzAcCQLGDMnjXZL3rS1BAbU0o9pn0NbPgDcgf2tGSLy77UiisBom5b1jkuKSVNJdyTVGJ-_MxDZvNAlQ19LwydBtIg98mttSoez6r9ok2y-5NTHl4NZAY0a_p6IlqsoABWeibpIIlH5ZBHnebGlvmBBqFA-Z0id97c4wCQIEveH2zwbvhrcBshRqioq0ZapKLk6UrxsP9QZNPgu_tYvjulHGZxk6SkuQ57BSFL6QMryJ90qkHiA9XYoCA"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer / CTA -->
+<footer class="bg-inverse-surface text-surface p-12 mt-24">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-2">
+<h3 class="font-headline font-black text-5xl mb-6">RIFT/01</h3>
+<p class="font-body text-surface-variant max-w-sm mb-8 text-korean opacity-60">
+                        서울을 기반으로 전개되는 스트릿웨어 아카이브. 우리는 매 순간 새로운 경계를 허물고 있습니다.
+                    </p>
+<div class="flex gap-4">
+<span class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="public">public</span>
+</span>
+<span class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="share">share</span>
+</span>
+</div>
+</div>
+<div>
+<h4 class="font-headline font-bold text-xl mb-4 text-primary">NAVIGATE</h4>
+<ul class="space-y-2 font-label text-sm opacity-80">
+<li><a class="hover:text-primary" href="#">Drops History</a></li>
+<li><a class="hover:text-primary" href="#">Style Lab</a></li>
+<li><a class="hover:text-primary" href="#">Store Locator</a></li>
+<li><a class="hover:text-primary" href="#">Contact Support</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline font-bold text-xl mb-4 text-primary">LEGAL</h4>
+<ul class="space-y-2 font-label text-sm opacity-80">
+<li><a class="hover:text-primary" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary" href="#">Shipping Info</a></li>
+<li><a class="hover:text-primary" href="#">Authenticity Check</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-24 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4 font-label text-xs opacity-40">
+<p>© 2024 RIFT/LAB. ALL RIGHTS RESERVED. DESIGNED FOR THE KINETIC GENERATION.</p>
+<p>SOUTH KOREA / SEOUL / 122-01-ARCHIVE</p>
+</div>
+</footer>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 lg:hidden bg-[#f9f6f5] dark:bg-stone-950 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center justify-center bg-[#675c00] text-white rounded-sm p-2 mx-1 scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold uppercase">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 p-2 hover:text-[#675c00] dark:hover:text-[#F7E45D]" href="#">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold uppercase">Drops</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 p-2 hover:text-[#675c00] dark:hover:text-[#F7E45D]" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold uppercase">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 p-2 hover:text-[#675c00] dark:hover:text-[#F7E45D]" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold uppercase">Profile</span>
+</a>
+</nav>
+</body></html>

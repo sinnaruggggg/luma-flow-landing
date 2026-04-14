@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PLAIN GRID | CONTACT</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&amp;family=Manrope:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f9f3e9",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#444748",
+                        "on-background": "#1d1b16",
+                        "surface-variant": "#e8e2d8",
+                        "on-tertiary-container": "#94918e",
+                        "surface-container": "#f3ede3",
+                        "on-secondary-container": "#656464",
+                        "on-tertiary-fixed-variant": "#484644",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fff9ee",
+                        "surface": "#fff9ee",
+                        "primary-container": "#2a2a2a",
+                        "secondary-container": "#e5e2e1",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "inverse-on-surface": "#f6f0e6",
+                        "outline-variant": "#c4c7c7",
+                        "primary-fixed": "#e4e2e1",
+                        "primary": "#151616",
+                        "on-primary-container": "#929191",
+                        "background": "#fff9ee",
+                        "surface-tint": "#5f5e5e",
+                        "tertiary-container": "#2b2a28",
+                        "on-primary-fixed": "#1b1c1c",
+                        "surface-dim": "#dfd9d0",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "outline": "#747878",
+                        "on-primary-fixed-variant": "#474746",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#c9c6c3",
+                        "tertiary-fixed": "#e6e2de",
+                        "surface-container-highest": "#e8e2d8",
+                        "secondary": "#5f5e5e",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#474646",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#1c1b1a",
+                        "inverse-surface": "#33302a",
+                        "surface-container-high": "#ede7dd",
+                        "on-surface": "#1d1b16",
+                        "inverse-primary": "#c8c6c5",
+                        "secondary-fixed-dim": "#c9c6c5",
+                        "tertiary": "#161614",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif KR", "Noto Serif", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #fff9ee;
+            color: #151616;
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .serif-text { font-family: 'Noto Serif KR', serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none !important;
+            border-bottom: 1px solid #151616 !important;
+            box-shadow: none !important;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Top Navigation (Shared Component Logic) -->
+<nav class="fixed top-0 w-full z-50 bg-[#fff9ee]/80 dark:bg-[#151616]/80 backdrop-blur-md">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold font-headline uppercase tracking-widest text-primary">STUDIO</div>
+<div class="hidden md:flex gap-12 font-headline uppercase tracking-widest text-sm">
+<a class="text-primary/60 hover:text-primary transition-colors" href="#">Works</a>
+<a class="text-primary/60 hover:text-primary transition-colors" href="#">Services</a>
+<a class="text-primary/60 hover:text-primary transition-colors" href="#">Brief</a>
+<a class="text-primary dark:text-primary border-b border-primary pb-1 transition-colors" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-2 text-sm uppercase tracking-widest transition-transform active:scale-95">Inquire</button>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex flex-col md:flex-row items-end px-12 pb-24 overflow-hidden">
+<div class="absolute inset-0 z-0 md:w-2/3 ml-auto">
+<img alt="Architectural Interior" class="w-full h-full object-cover grayscale opacity-90 contrast-110" data-alt="Minimalist architectural interior with stark linear shadows cast by afternoon light on warm concrete walls and a stone floor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWJQ__tJ2dYEUayW8vsgOm0paTXB-nHmsvPCeffLXBt_0LV3mgmiaMo3YQA8kLRdfkNPvP6b8TUq-IRZTeCMCtvPcxfDiwoVq1xQiU0sn0BcsCqb2cPN0SO_Iz6UVaDwYKiWdJdl_J9saBtPUqsgw7e76MjZonjfZ3OyRfZoqDRwSkq47z4trfyusBcbCQSFml0byA_Za3JFmmUbGjN4H17MDdRKulnlPlD-Y7D3bA55KGy17zfKyQTBZ6EvhOrE_5QklqC2CHTZE"/>
+</div>
+<div class="relative z-10 w-full md:w-1/2 flex flex-col items-start bg-surface p-12 md:p-24 shadow-2xl shadow-on-surface/5">
+<span class="font-label text-xs tracking-[0.3em] uppercase text-primary/40 mb-4">Inquiry</span>
+<h1 class="font-headline text-6xl md:text-8xl lg:text-9xl tracking-tighter leading-none text-primary mb-8">CONTACT</h1>
+<p class="serif-text text-xl md:text-2xl font-light text-primary/80 leading-relaxed max-w-md">
+                    공간의 시작,<br/>대화로부터
+                </p>
+</div>
+</section>
+<!-- Studio Info & Philosophy -->
+<section class="px-12 py-32 bg-surface-container-low grid grid-cols-1 md:grid-cols-12 gap-16 border-t border-outline-variant/10">
+<div class="md:col-span-5 flex flex-col justify-center">
+<h2 class="font-headline text-3xl mb-8 tracking-tight">Studio Archive</h2>
+<div class="space-y-12">
+<div>
+<span class="font-label text-[10px] uppercase tracking-widest text-primary/50 block mb-3">Address</span>
+<p class="font-headline text-lg">서울특별시 강남구 논현로 124길 7</p>
+<p class="text-sm text-primary/60 mt-1">7, Nonhyeon-ro 124-gil, Gangnam-gu, Seoul</p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<span class="font-label text-[10px] uppercase tracking-widest text-primary/50 block mb-3">Phone</span>
+<p class="font-body text-lg">+82 (0)2 543 0000</p>
+</div>
+<div>
+<span class="font-label text-[10px] uppercase tracking-widest text-primary/50 block mb-3">Email</span>
+<p class="font-body text-lg underline underline-offset-4 decoration-outline-variant hover:decoration-primary transition-all">hello@plaingrid.kr</p>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-7 flex flex-col justify-end">
+<div class="border-l border-primary/20 pl-12 py-4">
+<p class="serif-text text-2xl md:text-3xl font-light leading-relaxed text-primary/90 italic">
+                        "우리는 모든 문의를 새로운 건축적 내러티브의 시작으로 대합니다. 
+                        당신의 상상이 물리적 실체로 변모하는 첫 단추를 진중하게 마주하겠습니다."
+                    </p>
+<p class="font-label text-xs uppercase tracking-widest text-primary/40 mt-8">
+                        The start of a new narrative.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Inquiry Form -->
+<section class="px-12 py-32 bg-surface grid grid-cols-1 md:grid-cols-12 gap-16">
+<div class="md:col-span-4">
+<h3 class="font-headline text-4xl mb-6">Briefing</h3>
+<p class="font-body text-sm text-primary/60 leading-loose">
+                    보내주신 문의는 면밀히 검토 후<br/>48시간 이내에 회신 드립니다.
+                </p>
+<div class="mt-12">
+<div class="w-12 h-[1px] bg-primary"></div>
+</div>
+</div>
+<div class="md:col-span-8">
+<form class="space-y-16">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="relative">
+<label class="font-label text-[10px] uppercase tracking-widest text-primary/50 block mb-2">이름 (Name)</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 font-body text-lg focus:border-primary transition-colors" placeholder="Full Name" type="text"/>
+</div>
+<div class="relative">
+<label class="font-label text-[10px] uppercase tracking-widest text-primary/50 block mb-2">이메일 (Email)</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 font-body text-lg focus:border-primary transition-colors" placeholder="email@address.com" type="email"/>
+</div>
+</div>
+<div class="relative">
+<label class="font-label text-[10px] uppercase tracking-widest text-primary/50 block mb-2">프로젝트 성격 (Project Type)</label>
+<select class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 font-body text-lg appearance-none cursor-pointer focus:border-primary transition-colors">
+<option value="">Select Project Type</option>
+<option value="residential">Residential 주거</option>
+<option value="commercial">Commercial 상업</option>
+<option value="renovation">Renovation 리노베이션</option>
+<option value="etc">Other 기타</option>
+</select>
+<span class="absolute right-0 bottom-4 material-symbols-outlined text-primary/40 pointer-events-none">expand_more</span>
+</div>
+<div class="relative">
+<label class="font-label text-[10px] uppercase tracking-widest text-primary/50 block mb-2">문의 내용 (Message)</label>
+<textarea class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 font-body text-lg resize-none focus:border-primary transition-colors" placeholder="Tell us about your project goals and site location..." rows="4"></textarea>
+</div>
+<div class="flex justify-end pt-8">
+<button class="group flex items-center gap-4 bg-primary text-on-primary px-12 py-5 font-label text-xs uppercase tracking-[0.2em] transition-all hover:bg-primary-container" type="submit">
+<span>문의 전송하기</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</section>
+<!-- Map/Location Image -->
+<section class="h-[600px] w-full overflow-hidden grayscale relative">
+<img alt="Studio Entrance" class="w-full h-full object-cover" data-alt="Exterior view of a minimalist modern building entrance with clean lines, textured concrete walls and a large pivot glass door." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1Vi-U1MWcb4UHqKFDx4GoMJSpOIzAyscWE7ddUIJVdXPlB1oe5jWJWiyCnhglhIvY0NBtKQPk8PaiXVoYfCvTGnAacumh8_QzVzY2cNxqtUGCL0AxnNaGKkLQ5deiwX58EJZ3L8DPkhhX63zGxC_HSAIe5-LRowjHfPfhqq4KPbRe--BCp2eBh8HmkR6XwyOcRnqAejMxmabkYqhdfbfcAz4u3u5xnTHTojrwBN5rmk1D7CI4UxDBIXzvcmtnv9VesrItqel0hBA"/>
+<div class="absolute bottom-12 right-12 bg-surface p-8 shadow-xl max-w-xs">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary/50 block mb-2">Studio Location</span>
+<p class="font-headline text-lg leading-tight mb-4">Seoul Headquarters</p>
+<div class="flex items-center gap-2 text-xs font-body text-primary/60 border-t border-outline-variant/30 pt-4 cursor-pointer hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>View on Google Maps</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component Logic) -->
+<footer class="bg-[#f2ece0] dark:bg-[#1a1a1a] w-full min-h-[300px] flex items-end">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 px-12 py-16 w-full">
+<div class="flex flex-col justify-between h-full">
+<div class="font-headline font-semibold text-lg text-primary uppercase tracking-[0.3em]">STUDIO</div>
+<div class="font-body text-xs tracking-tighter opacity-70 mt-12">© 2024 The Living Archive. Built for the Architect.</div>
+</div>
+<div class="flex flex-col md:items-end justify-between h-full space-y-8 md:space-y-0">
+<nav class="flex flex-wrap gap-8 font-body text-xs tracking-tighter">
+<a class="opacity-70 hover:opacity-100 transition-opacity" href="#">Instagram</a>
+<a class="opacity-70 hover:opacity-100 transition-opacity" href="#">LinkedIn</a>
+<a class="opacity-70 hover:opacity-100 transition-opacity" href="#">Journal</a>
+<a class="opacity-70 hover:opacity-100 transition-opacity" href="#">Privacy</a>
+</nav>
+<div class="text-right">
+<span class="font-label text-[10px] uppercase tracking-widest opacity-40">Plain Grid Architecture</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#131c29",
+                      "surface-container": "#17202e",
+                      "outline": "#869398",
+                      "on-primary-container": "#00596e",
+                      "error-container": "#93000a",
+                      "primary": "#b1eaff",
+                      "on-error": "#690005",
+                      "on-tertiary-fixed-variant": "#604100",
+                      "surface-container-high": "#222a38",
+                      "on-secondary": "#5e0053",
+                      "surface-container-lowest": "#060e1b",
+                      "surface-bright": "#313a48",
+                      "surface-container-highest": "#2c3544",
+                      "secondary-fixed-dim": "#fface8",
+                      "on-secondary-fixed": "#3a0033",
+                      "on-primary-fixed": "#001f28",
+                      "tertiary": "#ffdcaa",
+                      "error": "#ffb4ab",
+                      "outline-variant": "#3c494e",
+                      "on-surface": "#dae3f6",
+                      "secondary-container": "#980388",
+                      "surface": "#0b1421",
+                      "on-primary": "#003543",
+                      "on-surface-variant": "#bbc9ce",
+                      "on-primary-fixed-variant": "#004e60",
+                      "surface-dim": "#0b1421",
+                      "secondary": "#fface8",
+                      "tertiary-fixed": "#ffdeae",
+                      "surface-tint": "#45d6ff",
+                      "primary-container": "#39d5ff",
+                      "inverse-primary": "#00677e",
+                      "surface-variant": "#2c3544",
+                      "on-tertiary-container": "#6e4b00",
+                      "on-error-container": "#ffdad6",
+                      "inverse-surface": "#dae3f6",
+                      "on-secondary-container": "#fface8",
+                      "inverse-on-surface": "#28313f",
+                      "on-tertiary": "#432c00",
+                      "primary-fixed": "#b5ebff",
+                      "tertiary-fixed-dim": "#ffba3f",
+                      "on-background": "#dae3f6",
+                      "on-secondary-fixed-variant": "#840076",
+                      "tertiary-container": "#ffb837",
+                      "secondary-fixed": "#ffd7f0",
+                      "primary-fixed-dim": "#45d6ff",
+                      "background": "#0b1421",
+                      "on-tertiary-fixed": "#281800"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0px",
+                      "lg": "0px",
+                      "xl": "0px",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Space Grotesk"],
+                      "body": ["Be Vietnam Pro"],
+                      "label": ["Space Grotesk"]
+              }
+            },
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0b1421;
+            color: #ecfbff;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-image: radial-gradient(circle at 50% 50%, rgba(57, 213, 255, 0.03) 0%, transparent 80%);
+        }
+        .technical-glow {
+            box-shadow: 0 0 40px rgba(57, 213, 255, 0.15);
+        }
+        .poster-stack-item {
+            border-left: 4px solid #39d5ff;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#0b1421] dark:bg-[#0b1421] shadow-[0_0_40px_rgba(57,213,255,0.08)]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#39d5ff]" data-icon="menu">menu</span>
+<h1 class="font-['Space_Grotesk'] tracking-tighter uppercase text-xl font-bold text-[#39d5ff]">NOISE WAVE</h1>
+</div>
+<button class="bg-[#39d5ff] text-[#003543] px-4 py-1.5 font-['Space_Grotesk'] text-sm font-bold uppercase active:scale-95 transition-transform">
+            티켓 구매
+        </button>
+</header>
+<main class="pt-16 pb-24 overflow-x-hidden">
+<!-- Hero: Poster Stack -->
+<section class="relative min-h-[795px] flex flex-col justify-end px-6 pb-12 pt-8">
+<div class="absolute inset-0 z-0">
+<img alt="Cyberpunk festival crowd" class="w-full h-full object-cover opacity-60 grayscale-[0.5] contrast-[1.2]" data-alt="Distant silhouette of a DJ on a massive stage with cyan and magenta laser beams cutting through a hazy dark atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJqvlV6LuAFLsemd8kHxdSX_0OBpgmNnXJTzuRMte8JoolB7Khp35ceiYyJWsMJj6diVfzvCDSHiuwGzLV0VG7eQepGpJZhAHPOxSfJqN2DzYjrIFHEJVlWzlxdPiCsUYAa5dWe2dqeyMxFVDUDvBMZIzh2ABxKZkOMI2q5RTuO7jcvwOLRJDRbYy7_QpYR1nCHSgYijx9ZTuTzxNRFTFnLsxKvDU8011uB6QKykUmub-zhG66NKawTmofPyl3OrwI3V_98ddQAL4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 space-y-6">
+<div class="inline-block bg-primary-container text-on-primary px-3 py-1 font-headline text-xs font-bold tracking-[0.2em]">
+                    2024 08.15-17
+                </div>
+<div class="space-y-1">
+<h2 class="font-headline text-5xl font-extrabold tracking-tighter leading-[0.9] text-primary">
+                        TECH-CORE<br/>SOUND<br/>PHASE 01
+                    </h2>
+<p class="font-body text-sm text-secondary tracking-widest uppercase mt-4">
+                        featuring headliners
+                    </p>
+<div class="flex flex-wrap gap-4 mt-2">
+<span class="font-headline text-2xl font-bold border-b-2 border-primary">WAVE ALPHA</span>
+<span class="font-headline text-2xl font-bold border-b-2 border-secondary">NEON PULSE</span>
+</div>
+</div>
+<div class="pt-8 flex flex-col gap-4">
+<button class="w-full bg-primary-container text-on-primary h-16 font-headline font-bold text-lg flex items-center justify-between px-6 active:translate-y-0.5 transition-transform">
+<span>티켓 구매</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<div class="flex justify-between items-center text-[10px] font-headline tracking-tighter text-outline opacity-60 uppercase">
+<span>Status: Tickets Live</span>
+<span>Location: SYC SEOUL</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Lineup Highlights -->
+<section class="mt-12 px-6">
+<div class="flex justify-between items-end mb-8 border-b border-outline-variant/30 pb-4">
+<h3 class="font-headline text-3xl font-bold text-primary">아티스트 라인업</h3>
+<span class="font-label text-xs text-secondary-fixed-dim tracking-widest uppercase">Phase 01</span>
+</div>
+<div class="flex flex-col gap-1">
+<!-- Artist Card 1 -->
+<div class="group relative bg-surface-container-high p-4 flex items-center justify-between hover:bg-surface-container-highest transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 bg-surface-container-lowest overflow-hidden">
+<img alt="Artist" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="Close up portrait of a digital artist with neon reflective makeup and tech-wear gear in cool blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkmTqnQb7grrATPgTrd1xB9bYxc2Oy8eyz0TsHn0aVG2PDxHoF67uMcrdP8DiHyrWBPViXfXzgdppf3ihWcnE_NdisjTe7NsCseYNL7ciSrMhCzhJlJHVs3xTo7SOK5ToOQpEgjLhNJeizaDly85000zf_Cd6iZgHoqArGeUO3DLcZxHJSfNPjcPoGBIML0u--aHH7UimGtN1sE74EhIG0MC4pA4Ro_e2Ptr-hCClCMU0OvLsTcLyj1wKQbIyOUU5O-SB8QXS_C64"/>
+</div>
+<div>
+<p class="font-headline text-xl font-bold text-on-surface">WAVE ALPHA</p>
+<p class="font-body text-[10px] text-outline uppercase tracking-widest">Techno / Hardcore</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform" data-icon="add">add</span>
+</div>
+<!-- Artist Card 2 -->
+<div class="group relative bg-surface-container p-4 flex items-center justify-between hover:bg-surface-container-highest transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 bg-surface-container-lowest overflow-hidden">
+<img alt="Artist" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="Electronic music producer sitting in front of complex synthesizer setup with vibrant pink glow from studio monitors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsgG4eAmVEmjQcWV5XJ5raxjDtMgVSJQ5MNBHR2ThzG7ifB3-WQZJcExhCqw0SVNQbdDIUcOsDDcrDaLEUx5ZbFE0ZibZ6netWKsJGiV6H4tC0_Igj-qj4WFlXBeQ_Ja7LYITleBAvzvVdfzQnPCkzAEGkbEEVFR1Jv1_P98unspivIcxwaHgeXUGsknwOS7qwjFiWev4lkPkcma8F9sI020vRHt3gNJgOw5c5pQIPYfeXYD0AxwzrPV9TIkJx7gWy5yq62zGP6Gg"/>
+</div>
+<div>
+<p class="font-headline text-xl font-bold text-on-surface">NEON PULSE</p>
+<p class="font-body text-[10px] text-outline uppercase tracking-widest">Synthwave / Cyber</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform" data-icon="add">add</span>
+</div>
+<!-- Artist Card 3 -->
+<div class="group relative bg-surface-container-low p-4 flex items-center justify-between hover:bg-surface-container-highest transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 bg-surface-container-lowest overflow-hidden">
+<img alt="Artist" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="Abstract silhouette of a vocalist singing into a vintage microphone with dramatic purple lens flare and glitch effects" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy9E7i48d6jmU5dOq584y7A51W5-KmFFI74xtjdt9A5asvTUK3qzpK_VrBSWMKYjVh1UyLKq4xAodI9Xl_yYXhIj96OmT7vx_GFye3EfmU3GI3R-kebjEYLbFrd5eu7uMhrwJimyZM3jKz_pmS4C22TSZugrj-ds19JFsz1XG03GzU4xrUTxdk-yv9KMDyIK-99X5CwMIAOHcSXLAb6KKNNQwkW4Iv-KnpcL-z5Yow0mGQ0xYDiQBX0EYVa0P13MEtIQ-AyIYwPc4"/>
+</div>
+<div>
+<p class="font-headline text-xl font-bold text-on-surface">VOID RUNNER</p>
+<p class="font-body text-[10px] text-outline uppercase tracking-widest">Ambient / Glitch</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform" data-icon="add">add</span>
+</div>
+</div>
+<button class="w-full mt-6 py-4 font-headline text-sm tracking-[0.3em] text-outline border border-outline-variant/30 uppercase">
+                전체 라인업 보기
+            </button>
+</section>
+<!-- Ticket Matrix -->
+<section class="mt-20 px-6">
+<h3 class="font-headline text-3xl font-bold text-primary mb-8 border-l-4 border-secondary pl-4">패스 예약</h3>
+<div class="grid grid-cols-1 gap-6">
+<!-- 1-Day Pass -->
+<div class="bg-surface-container-high border-t-2 border-primary p-6 relative overflow-hidden">
+<div class="absolute -right-4 -top-4 opacity-5 rotate-12">
+<span class="material-symbols-outlined text-[120px]" data-icon="confirmation_number">confirmation_number</span>
+</div>
+<div class="flex justify-between items-start mb-12">
+<div>
+<p class="font-headline text-xs font-bold text-primary mb-1 uppercase">Standard access</p>
+<h4 class="font-headline text-3xl font-bold">1-DAY PASS</h4>
+</div>
+<div class="text-right">
+<p class="font-headline text-2xl font-bold text-secondary">149,000원</p>
+</div>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-3 text-xs font-body text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span>
+                            선택 일자 입장권 1매
+                        </li>
+<li class="flex items-center gap-3 text-xs font-body text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span>
+                            스탠딩 존 출입 권한
+                        </li>
+</ul>
+<button class="w-full bg-surface-container-lowest border border-primary text-primary py-4 font-headline font-bold uppercase hover:bg-primary hover:text-on-primary transition-colors">
+                        SELECT PASS
+                    </button>
+</div>
+<!-- 3-Day Pass -->
+<div class="bg-surface-container-highest border-t-2 border-secondary p-6 relative overflow-hidden">
+<div class="absolute -right-4 -top-4 opacity-10 -rotate-12">
+<span class="material-symbols-outlined text-[120px] text-secondary" data-icon="verified">verified</span>
+</div>
+<div class="flex justify-between items-start mb-12">
+<div>
+<p class="font-headline text-xs font-bold text-secondary mb-1 uppercase">Full experience</p>
+<h4 class="font-headline text-3xl font-bold">3-DAY PASS</h4>
+</div>
+<div class="text-right">
+<p class="font-headline text-2xl font-bold text-secondary">349,000원</p>
+</div>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-3 text-xs font-body text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            전 기간 입장권 1매
+                        </li>
+<li class="flex items-center gap-3 text-xs font-body text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            얼리 액세스 및 전용 라운지
+                        </li>
+<li class="flex items-center gap-3 text-xs font-body text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            리미티드 에디션 굿즈 패키지
+                        </li>
+</ul>
+<button class="w-full bg-secondary-container text-white py-4 font-headline font-bold uppercase shadow-[0_0_20px_rgba(255,172,232,0.3)]">
+                        SELECT PASS
+                    </button>
+</div>
+</div>
+</section>
+<!-- Venue Info -->
+<section class="mt-20 px-6 pb-12">
+<h3 class="font-headline text-3xl font-bold text-primary mb-8 border-b border-outline-variant/30 pb-4">장소 안내</h3>
+<div class="bg-surface-container-low p-1 border border-outline-variant/20 mb-6">
+<div class="relative aspect-video bg-surface-container-highest overflow-hidden">
+<img alt="Map" class="w-full h-full object-cover opacity-80 mix-blend-screen" data-alt="Abstract dark stylized 3D map of a city block with glowing cyan neon roads and markers" data-location="Seoul Youth Complex" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX50I2BYEzwEVpDiqviCA5EB1XEt-u8BbRFJ2Of768Xi_Xo_KWX50Z8u9ftFN_GvgMqa6OQkpHY1jBbNcfzEMkUtxi0pCqQ2O3rYaqUYZE2oDbJIZO7ReudxIqixnERu_z1WA_TG4kB7tDRUWxQzVCF4Wr1zie9qm7uCw0q8xv8Km3u6Kjew4LIoHwBvmgsaI4OQAj-KVoGw06d6ll92II-tW9lvWOUYN0u3MefcMtNTwHHMXtfA_LBrJeKZtWa2v2yta-Su31GoY"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-primary text-on-primary p-2 flex flex-col items-center">
+<span class="material-symbols-outlined text-2xl" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="font-headline text-[10px] font-bold">SYC</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container p-4">
+<p class="font-headline text-[10px] text-secondary tracking-widest uppercase mb-2">Location</p>
+<p class="font-body text-sm font-bold leading-tight">서울 유스 컴플렉스<br/>(SYC)</p>
+</div>
+<div class="bg-surface-container p-4">
+<p class="font-headline text-[10px] text-secondary tracking-widest uppercase mb-2">Access</p>
+<p class="font-body text-sm font-bold leading-tight">가양역 4번 출구<br/>도보 5분</p>
+</div>
+</div>
+<div class="mt-6 flex flex-col gap-2">
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest border-l-2 border-outline">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline" data-icon="shuttle_bus">airport_shuttle</span>
+<span class="font-body text-xs">순환 셔틀버스 운영 안내</span>
+</div>
+<span class="material-symbols-outlined text-outline text-sm" data-icon="open_in_new">open_in_new</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest border-l-2 border-outline">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline" data-icon="parking">local_parking</span>
+<span class="font-body text-xs">주차 및 인근 주차장 현황</span>
+</div>
+<span class="material-symbols-outlined text-outline text-sm" data-icon="open_in_new">open_in_new</span>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 px-6 flex flex-col gap-8 mb-20 bg-[#060e1b]">
+<div class="space-y-4">
+<h2 class="font-['Space_Grotesk'] text-[#39d5ff] text-2xl font-bold tracking-tighter uppercase">NOISE WAVE</h2>
+<div class="flex flex-wrap gap-4">
+<a class="font-['Be_Vietnam_Pro'] text-xs uppercase text-[#ecfbff]/40 hover:text-[#fface8] transition-colors" href="#">이용약관</a>
+<a class="font-['Be_Vietnam_Pro'] text-xs uppercase text-[#ecfbff]/40 hover:text-[#fface8] transition-colors" href="#">개인정보처리방침</a>
+<a class="font-['Be_Vietnam_Pro'] text-xs uppercase text-[#ecfbff]/40 hover:text-[#fface8] transition-colors" href="#">문의하기</a>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/10">
+<p class="font-['Be_Vietnam_Pro'] text-[10px] text-[#ecfbff]/20 tracking-[0.2em]">© 2024 NOISE WAVE FESTIVAL. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center h-20 pb-safe bg-[#0b1421]/90 backdrop-blur-xl border-t border-[#2c3544]/30">
+<a class="flex flex-col items-center justify-center text-[#39d5ff] font-bold active:translate-y-0.5 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-widest">홈</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#ecfbff]/60 hover:text-[#fface8] active:translate-y-0.5 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="Theater_Comedy">theater_comedy</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-widest">라인업</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#ecfbff]/60 hover:text-[#fface8] active:translate-y-0.5 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="schedule">schedule</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-widest">타임테이블</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#ecfbff]/60 hover:text-[#fface8] active:translate-y-0.5 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-widest">내 정보</span>
+</a>
+</nav>
+</body></html>

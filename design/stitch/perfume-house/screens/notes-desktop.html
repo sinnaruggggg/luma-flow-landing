@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MOSS &amp; AMBER | Notes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;400;700&amp;family=Manrope:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#25180d",
+                    "secondary-fixed-dim": "#d4c4b5",
+                    "secondary-fixed": "#f0e0d0",
+                    "inverse-surface": "#353027",
+                    "background": "#fff8f3",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#201b13",
+                    "on-tertiary-container": "#a59484",
+                    "on-error": "#ffffff",
+                    "surface-dim": "#e3d8cb",
+                    "on-secondary": "#ffffff",
+                    "inverse-on-surface": "#faefe2",
+                    "tertiary-fixed-dim": "#d6c3b2",
+                    "outline-variant": "#d2c4bc",
+                    "on-background": "#201b13",
+                    "surface": "#fff8f3",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#dcc2b0",
+                    "inverse-primary": "#dcc2b0",
+                    "surface-container-high": "#f2e6d9",
+                    "primary-container": "#3c2c20",
+                    "on-primary-container": "#aa9282",
+                    "outline": "#80756e",
+                    "surface-container": "#f8ecdf",
+                    "on-surface-variant": "#4e453f",
+                    "surface-variant": "#ece1d4",
+                    "on-secondary-fixed-variant": "#50453a",
+                    "tertiary": "#23190e",
+                    "surface-container-highest": "#ece1d4",
+                    "on-tertiary-fixed-variant": "#514438",
+                    "on-primary-fixed-variant": "#554336",
+                    "on-secondary-fixed": "#221a11",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#6e5a4c",
+                    "tertiary-fixed": "#f3dfcd",
+                    "surface-bright": "#fff8f3",
+                    "on-tertiary-fixed": "#241a0f",
+                    "error-container": "#ffdad6",
+                    "secondary": "#685c50",
+                    "on-primary": "#ffffff",
+                    "primary-fixed": "#f9ddcb",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#26190e",
+                    "surface-container-low": "#fdf2e4",
+                    "tertiary-container": "#392d21",
+                    "on-secondary-container": "#6e6256"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif KR", "serif"],
+                    "body": ["Manrope", "sans-serif"],
+                    "label": ["Manrope", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        .soft-grain {
+            position: relative;
+        }
+        .soft-grain::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 10;
+        }
+        .drifting {
+            transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease;
+        }
+    </style>
+</head>
+<body class="bg-background text-primary font-body selection:bg-primary-fixed-dim selection:text-primary">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-8 py-6 bg-[#f8f2ea]/80 dark:bg-[#2c231d]/80 backdrop-blur-md z-50">
+<div class="flex items-center gap-12">
+<span class="text-xl font-medium tracking-[0.2em] text-[#2c231d] dark:text-[#f8f2ea] font-headline">MOSS &amp; AMBER</span>
+<div class="hidden md:flex gap-8 items-center font-['Noto_Serif_KR'] uppercase tracking-[0.1em] text-[12px]">
+<a class="text-[#2c231d]/60 dark:text-[#f8f2ea]/60 hover:text-[#2c231d] transition-colors duration-300" href="#">Sets</a>
+<a class="text-[#2c231d] dark:text-[#f8f2ea] border-b border-[#2c231d]/20 hover:text-[#2c231d] transition-colors duration-300" href="#">Notes</a>
+<a class="text-[#2c231d]/60 dark:text-[#f8f2ea]/60 hover:text-[#2c231d] transition-colors duration-300" href="#">Gift</a>
+<a class="text-[#2c231d]/60 dark:text-[#f8f2ea]/60 hover:text-[#2c231d] transition-colors duration-300" href="#">Brand</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#2c231d] dark:text-[#f8f2ea]" data-icon="shopping_bag">shopping_bag</button>
+</div>
+</nav>
+<main class="soft-grain">
+<!-- Editorial Mood Canvas (Hero) -->
+<section class="relative h-screen w-full flex items-center overflow-hidden">
+<div class="absolute inset-0">
+<img class="w-full h-full object-cover grayscale-[20%] blur-[2px] brightness-90" data-alt="Cinematic macro shot of damp green moss and dark amber resin crystals on earthy forest floor with moody soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLL3IbLI2VKfHSMAaHnHg0I-wVp6-e4JGdRU5kcAfLgiNIz_d0ZA4Z9Mepk5wGcHtKQH6LFJ-r2OBFjVeJK3BRGnMsbzIXDHxsyJ6qzcZ057YZJnNO92aqtMXfNBJ_PMIUD1PTCPgCjeiFXjSnkFojVaSr1VsoK7c1Brvb4-gnX1denJZPTnlYuGqnU1sKRTp9v6hAAltEWkriRiILYUFu5vrZWWCHV1gbq56xxKvKf1XkNqn1DBEAmaR5lug700DWPkOXd20G1lSv"/>
+<div class="absolute inset-0 bg-primary/10"></div>
+</div>
+<div class="container mx-auto px-12 relative z-20 grid grid-cols-12 gap-6">
+<div class="col-span-12 md:col-span-8 lg:col-span-6 bg-surface-container-lowest/90 p-12 md:p-20 backdrop-blur-sm drifting">
+<h1 class="font-headline text-5xl md:text-7xl leading-tight mb-8 tracking-tighter">
+                        향의 근원, <span class="block italic font-light opacity-80">Notes</span>
+</h1>
+<p class="font-headline text-lg md:text-xl text-primary/80 leading-relaxed max-w-md">
+                        자연의 가장 깊은 곳에서 추출한 원료들이 빚어내는 후각의 기록. 모스 앤 앰버의 모든 향기는 대지의 기억으로부터 시작됩니다.
+                    </p>
+</div>
+<!-- Floating Layered Panel -->
+<div class="hidden lg:block col-start-8 col-span-4 self-end mb-24">
+<div class="bg-[#f8f2ea]/84 backdrop-blur-xl p-8 border-l border-primary/5 drifting">
+<span class="block text-[10px] tracking-[0.3em] uppercase mb-4 opacity-60">The Philosophy</span>
+<h3 class="font-headline text-2xl mb-4 text-primary">후각의 기록학</h3>
+<p class="text-sm leading-loose text-on-surface-variant font-light">
+                            우리는 단순히 향을 섞지 않습니다. 시간과 계절, 그리고 공기의 밀도를 채집하여 하나의 노트로 정의합니다. 각각의 원료가 가진 고유한 서사를 발견해보세요.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- The Note Library -->
+<section class="py-32 px-8 md:px-20 bg-background">
+<div class="max-w-screen-2xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-baseline mb-24 gap-6">
+<h2 class="font-headline text-4xl md:text-5xl tracking-tight">Curated Library</h2>
+<div class="flex gap-8 text-[11px] uppercase tracking-[0.2em] opacity-60">
+<span class="cursor-pointer border-b border-primary pb-1">All Ingredients</span>
+<span class="cursor-pointer hover:opacity-100 transition-opacity">Woody</span>
+<span class="cursor-pointer hover:opacity-100 transition-opacity">Floral</span>
+<span class="cursor-pointer hover:opacity-100 transition-opacity">Earthy</span>
+</div>
+</div>
+<!-- Note Cards Grid (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0.5 bg-outline-variant/10 border border-outline-variant/10">
+<!-- Card 1: Moss -->
+<div class="group relative aspect-[4/5] overflow-hidden bg-surface-container hover:bg-surface-variant transition-colors duration-500 p-8 flex flex-col justify-between">
+<div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+<img class="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000" data-alt="Extreme macro of bright green forest moss texture with tiny dew drops and soft depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd5uMiwQ8k3yhpzJwBpgy9v5308Gw1ed_BLiFfKyRCaMbJfQa70ssmTdFe4IQUrBtrAYUCpGIOz3bhePY359Bgz-SwFV6UvNNRWCeMuTsjZVvLqGxYp0Jt8VR92PLxFq7nFlXatK3b5IZUHi71MjE0BXagBYETUibtW9BGsDc3-krocxPLo2IFsIybtc8To43sXcQJYAKjNqYB-ePO8YC88sKogRZ1BFAAeYmMrtJwCnqhtf6WpZjeyQV_JKs-CBimX5y37czlA1dY"/>
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px]"></div>
+</div>
+<div class="relative z-10">
+<span class="block text-[10px] tracking-widest text-primary/40 uppercase mb-2">Base Note</span>
+<h3 class="font-headline text-3xl mb-1 group-hover:text-background transition-colors">Oakmoss</h3>
+<p class="font-headline text-lg opacity-60 group-hover:text-background transition-colors">이끼의 깊은 숲</p>
+</div>
+<div class="relative z-10 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+<p class="text-sm leading-relaxed mb-6 text-background">새벽 숲의 차가운 공기와 젖은 흙의 진한 여운을 남기는 시그니처 베이스입니다.</p>
+<div class="text-[11px] uppercase tracking-wider text-background/80 border-t border-background/20 pt-4">
+                                Featured In: <span class="font-semibold italic">Deep Forest, Silence</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Amber -->
+<div class="group relative aspect-[4/5] overflow-hidden bg-surface-container-low hover:bg-surface-variant transition-colors duration-500 p-8 flex flex-col justify-between">
+<div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+<img class="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000" data-alt="Warm golden glowing amber resin pieces on a dark minimal background with dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA495BhlvQxwiiC1vWG25VH7ZJgqw8Hok_B-vTeEttNvlgEYBw0-vADYjLsnVHe747O-8rirZAzMg16NuDqwlmvZ9jBOinpVsB6jPfCqLVbSDuuKAKNVZUZ5Duiw4wKDmOnAX1zX-wX-BK6PGvCLlGDXObVNvBIfZ_P8yzttmVMCwvMdI-bJq2aALx0Wjpk9nsaNuB1610bJolCYs6qSQKyshobuMW4IXYyuhkjKJAr4Z8VFAsQxEsgRZoR9vQkHQ8S_kfepXn8RAaS"/>
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px]"></div>
+</div>
+<div class="relative z-10">
+<span class="block text-[10px] tracking-widest text-primary/40 uppercase mb-2">Base Note</span>
+<h3 class="font-headline text-3xl mb-1 group-hover:text-background transition-colors">Amber Resin</h3>
+<p class="font-headline text-lg opacity-60 group-hover:text-background transition-colors">따뜻한 수지의 향기</p>
+</div>
+<div class="relative z-10 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+<p class="text-sm leading-relaxed mb-6 text-background">수천 년의 시간을 머금은 나무의 눈물처럼, 달콤하면서도 묵직한 온기를 전합니다.</p>
+<div class="text-[11px] uppercase tracking-wider text-background/80 border-t border-background/20 pt-4">
+                                Featured In: <span class="font-semibold italic">Aged Amber, Sunset</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Bergamot -->
+<div class="group relative aspect-[4/5] overflow-hidden bg-surface-container hover:bg-surface-variant transition-colors duration-500 p-8 flex flex-col justify-between">
+<div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+<img class="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000" data-alt="Sliced fresh green bergamot fruit on clean minimalist white surface with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwixJooqwcg85cZlkK15bPDroUdiX-bF6Dlcm8iObkoqAtd_tdpv_wqSC2WB4rGSP6ANXPwB8YbBFpjjl-NYIs7y8tCWkmWPgC-jLhPwYdb1LJgN7R24LLdXQFTFQ692wc9wfOY1SUPkZM0a4u52QzQhI0SRX5u7Nq0oGZMr5pYXB1YKpSUHhGp5oQG9_XoB-luWwA_MNv2l-EKp4qJuj67SpD9gt1Sid3UZdqj88sVoyayLs73URimZ59L08ArNRmiobYv2XNIepL"/>
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px]"></div>
+</div>
+<div class="relative z-10">
+<span class="block text-[10px] tracking-widest text-primary/40 uppercase mb-2">Top Note</span>
+<h3 class="font-headline text-3xl mb-1 group-hover:text-background transition-colors">Bergamot</h3>
+<p class="font-headline text-lg opacity-60 group-hover:text-background transition-colors">지중해의 첫 공기</p>
+</div>
+<div class="relative z-10 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+<p class="text-sm leading-relaxed mb-6 text-background">코끝을 스치는 청량하고 상큼한 시트러스의 조각들이 감각을 일깨웁니다.</p>
+<div class="text-[11px] uppercase tracking-wider text-background/80 border-t border-background/20 pt-4">
+                                Featured In: <span class="font-semibold italic">Morning Dew, Citrus Garden</span>
+</div>
+</div>
+</div>
+<!-- Card 4: Vetiver -->
+<div class="group relative aspect-[4/5] overflow-hidden bg-surface-container-low hover:bg-surface-variant transition-colors duration-500 p-8 flex flex-col justify-between">
+<div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+<img class="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000" data-alt="Earthy dried vetiver roots bundled on dark textured stone background with soft highlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2_nxpn-JzGza8R_yQK5FrnHt7xhpRkroXDYR5G0tHX6Afk24C9Wh65lSsYLqWh7FdNIB-I2ekgewqxU85zSwu3L7mOrrthq_khPDatUPAkYIEZIuBZIzGf7w3N8A1LXWsFoEur2glk1bToVsZi1vf0LGXJ5cZu4OG0YTcvbu8NWfX6bcP_n2aDQxlcumJ-b6rFNo8_OsTm1KoTaSlG7iXmnT4c5XA_vJ04s4zTFUsSsO83-YCHUVfIvno-d_zbYGV7HCm5_rNVgyl"/>
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px]"></div>
+</div>
+<div class="relative z-10">
+<span class="block text-[10px] tracking-widest text-primary/40 uppercase mb-2">Heart Note</span>
+<h3 class="font-headline text-3xl mb-1 group-hover:text-background transition-colors">Vetiver</h3>
+<p class="font-headline text-lg opacity-60 group-hover:text-background transition-colors">뿌리의 견고함</p>
+</div>
+<div class="relative z-10 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+<p class="text-sm leading-relaxed mb-6 text-background">대지 아래로 뻗은 뿌리의 강인함과 그윽한 흙 내음이 조화를 이룹니다.</p>
+<div class="text-[11px] uppercase tracking-wider text-background/80 border-t border-background/20 pt-4">
+                                Featured In: <span class="font-semibold italic">Earth, Rooted</span>
+</div>
+</div>
+</div>
+<!-- Card 5: Sandalwood -->
+<div class="group relative aspect-[4/5] overflow-hidden bg-surface-container hover:bg-surface-variant transition-colors duration-500 p-8 flex flex-col justify-between">
+<div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+<img class="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000" data-alt="Smooth creamy sandalwood wood blocks and shavings with soft shadows on linen fabric" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYx1RkhwbJ45XBVg8-LiP5HtGo15AZfkpQKSbaSzBhu03c1W4Og_1LPShBb1cnfNqIKe7GfeLG8lna-AeqkrPpYUiZXhHVkjA53j6a4Wx8jPh2s3c6OOa2te4_V4kyGSnryAdPcnJSMeiDffxdahrCIu42tI47BHIPslBaGKuv449AyBKJCV3n1LCHHF7Y90guka5SemzhnhYbPhocFmgfp2SCRlLYx4VEOeb-HJZjl9jvp1dTNRV8yRu_6K_wYRhgNcSS62OP1ijM"/>
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px]"></div>
+</div>
+<div class="relative z-10">
+<span class="block text-[10px] tracking-widest text-primary/40 uppercase mb-2">Base Note</span>
+<h3 class="font-headline text-3xl mb-1 group-hover:text-background transition-colors">Sandalwood</h3>
+<p class="font-headline text-lg opacity-60 group-hover:text-background transition-colors">명상의 나무</p>
+</div>
+<div class="relative z-10 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+<p class="text-sm leading-relaxed mb-6 text-background">부드럽고 크리미한 목재의 향이 마음의 평온을 가져다주는 깊은 울림입니다.</p>
+<div class="text-[11px] uppercase tracking-wider text-background/80 border-t border-background/20 pt-4">
+                                Featured In: <span class="font-semibold italic">Inner Peace, Sanctuary</span>
+</div>
+</div>
+</div>
+<!-- Card 6: Black Pepper -->
+<div class="group relative aspect-[4/5] overflow-hidden bg-surface-container-low hover:bg-surface-variant transition-colors duration-500 p-8 flex flex-col justify-between">
+<div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+<img class="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000" data-alt="Close up of black peppercorns scattered on dark slate with moody dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4OT-hi0RINyMdca-KkxHYhV2ek3izyW0KGNpvL2Z4wc3WZVF1zLiljZCi56sXr2-RAjhG2EkHL6NNExi4FGZUl3w0nF18uZ68PDE6cguzML_30VEKaMTIeozP1W9ZLtkUAT2O6oJw5uIsQ3AZgTgKEdO6V8XAYdu2WxgPsN9u2kGD8e1erDWm1N42q01az0mM0UGoI6q_fwp36poX9xHI2Sm-xO601NRyEFkzD2JZvo-e5-PxcFq8Txx2wrm2fTbkyrtcTwtR9lyE"/>
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px]"></div>
+</div>
+<div class="relative z-10">
+<span class="block text-[10px] tracking-widest text-primary/40 uppercase mb-2">Top Note</span>
+<h3 class="font-headline text-3xl mb-1 group-hover:text-background transition-colors">Black Pepper</h3>
+<p class="font-headline text-lg opacity-60 group-hover:text-background transition-colors">스파이시한 긴장감</p>
+</div>
+<div class="relative z-10 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+<p class="text-sm leading-relaxed mb-6 text-background">톡 쏘는 듯한 자극 뒤에 숨겨진 정제된 에너지가 향의 입체감을 더합니다.</p>
+<div class="text-[11px] uppercase tracking-wider text-background/80 border-t border-background/20 pt-4">
+                                Featured In: <span class="font-semibold italic">Obsidian, Night Air</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Scent Pairing Section -->
+<section class="py-32 bg-surface-container overflow-hidden">
+<div class="container mx-auto px-8 md:px-20">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-4">
+<span class="text-[10px] tracking-[0.4em] uppercase opacity-60 mb-6 block">The Resonance</span>
+<h2 class="font-headline text-4xl md:text-5xl leading-tight mb-8">Scent Pairing:<br/>조화로운 공명</h2>
+<p class="text-on-surface-variant leading-relaxed font-light mb-10 max-w-sm">
+                            서로 다른 노트들이 만나 만들어내는 의외의 아름다움. 모스 앤 앰버가 제안하는 레이어링 가이드를 통해 나만의 시그니처 향기를 완성하세요.
+                        </p>
+<button class="px-10 py-4 bg-primary text-on-primary text-[11px] tracking-[0.2em] uppercase hover:bg-primary-container transition-all">Explore Layering</button>
+</div>
+<div class="lg:col-span-8 relative">
+<div class="flex gap-6 overflow-x-auto pb-12 snap-x hide-scrollbar">
+<!-- Pairing Card 1 -->
+<div class="min-w-[320px] md:min-w-[400px] snap-start group cursor-pointer">
+<div class="aspect-[3/4] mb-6 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Minimalist flat lay of a perfume bottle, moss, and bergamot slices on linen with elegant shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0ZXne0M6XJphJRs41htgujG6Mb2-rxf6Jw18038eBuBWHrLhkWOH8zfuUF8P3ZBFCfm0AzoVzM2xasJAXZa2cdMXcV8dYvjNb7Df_maDybpiBfoMjQ-cZRs_L9s3L22mI6h4xDixn6F5qfFZncgvWyLKgFcDvNO3hX5ZgJv1laAlKIIWEbiNPH4xr1YRkQXK563cItPvlSpKQnDaJtDCEE8rEXHDdN12p4g_1KK0Teb1xw8P11iwgm3BWNlUUUGJcn10GwcCv6FmS"/>
+<div class="absolute bottom-6 left-6 right-6 p-6 bg-surface-container-lowest/90 backdrop-blur">
+<div class="flex justify-between items-center mb-4">
+<span class="text-[9px] tracking-widest uppercase opacity-60">Combination 01</span>
+<span class="material-symbols-outlined text-primary/40" data-icon="add">add</span>
+</div>
+<h4 class="font-headline text-xl mb-1">Oakmoss + Bergamot</h4>
+<p class="text-xs opacity-60">"비 갠 뒤의 오렌지 숲"</p>
+</div>
+</div>
+</div>
+<!-- Pairing Card 2 -->
+<div class="min-w-[320px] md:min-w-[400px] snap-start group cursor-pointer">
+<div class="aspect-[3/4] mb-6 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Artistic arrangement of amber pieces and charred cedar wood on a dark ceramic plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNbDSGZx-XnmToy6fDSVHiEXxliwyXvlgzSbYzOJl1ckB2yCTUmlJp49EoFCb3vqaivljS84hO1Nt0VYv9_3GuIRTfgdm2U-fXyPHZHvR027Vkp3p9p-qDTW3G9Bj0LCChrbu6ex3WGLSjUYKH96jxoPTepm2XLByYvVYwlc79v1aZ3_QTxJdu_Hx_ePumeKfroJqSAnowodbnrRYshE3dLfQPo120RPjaXDLnzHrbDh9zebe3K1acoe_HtDb2JnFttopsqcBF04AP"/>
+<div class="absolute bottom-6 left-6 right-6 p-6 bg-surface-container-lowest/90 backdrop-blur">
+<div class="flex justify-between items-center mb-4">
+<span class="text-[9px] tracking-widest uppercase opacity-60">Combination 02</span>
+<span class="material-symbols-outlined text-primary/40" data-icon="add">add</span>
+</div>
+<h4 class="font-headline text-xl mb-1">Amber + Sandalwood</h4>
+<p class="text-xs opacity-60">"한겨울 벽난로의 온기"</p>
+</div>
+</div>
+</div>
+<!-- Pairing Card 3 -->
+<div class="min-w-[320px] md:min-w-[400px] snap-start group cursor-pointer">
+<div class="aspect-[3/4] mb-6 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Vibrant green tea leaves and black pepper on a textured gray surface with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdwnPvxK78kj5OQP89Ke5as_h67yS8ADjl-6Nps58fUoWiSV6vMtZnDdlYXnHaLV7442VzUsz3uADHUlTsb8OJja8vnA6RiPDRHXEslr_WoaqR9vrTHGgJmNNmgqUL0B47L29SU-dUAN56NQuifm-oSCTZWDzsv7FDLh0a6pbzWjIo5wlWyq4QlIM9Psgg2cSkUcTWxrDWVuezsJtk_F_yCnB93zAw0BVHX4-KekdnW8y-0m1bYbHBABXlwmjvpHMOnfY58CCgPwWC"/>
+<div class="absolute bottom-6 left-6 right-6 p-6 bg-surface-container-lowest/90 backdrop-blur">
+<div class="flex justify-between items-center mb-4">
+<span class="text-[9px] tracking-widest uppercase opacity-60">Combination 03</span>
+<span class="material-symbols-outlined text-primary/40" data-icon="add">add</span>
+</div>
+<h4 class="font-headline text-xl mb-1">Vetiver + Black Pepper</h4>
+<p class="text-xs opacity-60">"도시의 날카로운 정적"</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full flex flex-col md:flex-row justify-between items-start gap-12 px-12 bg-[#e8ddd0] dark:bg-[#2c231d] py-16">
+<div class="flex flex-col gap-6 max-w-sm">
+<span class="text-lg font-medium tracking-widest text-[#2c231d] dark:text-[#f8f2ea] font-headline uppercase">MOSS &amp; AMBER</span>
+<p class="font-['Noto_Serif_KR'] text-[11px] leading-relaxed tracking-wider text-[#2c231d]/70 dark:text-[#f8f2ea]/70">
+                향기는 기억의 문을 여는 가장 오래된 열쇠입니다. 모스 앤 앰버는 당신의 소중한 순간들을 기록하는 조용한 동반자가 되겠습니다.
+            </p>
+</div>
+<div class="flex flex-col md:flex-row gap-16">
+<div class="flex flex-col gap-4">
+<span class="text-[10px] tracking-[0.2em] font-bold opacity-40 uppercase">Journal</span>
+<div class="flex flex-col gap-2 font-['Noto_Serif_KR'] text-[11px] leading-relaxed tracking-wider">
+<a class="text-[#2c231d]/70 hover:opacity-50 transition-opacity" href="#">Archive</a>
+<a class="text-[#2c231d]/70 hover:opacity-50 transition-opacity" href="#">Philosophy</a>
+<a class="text-[#2c231d]/70 hover:opacity-50 transition-opacity" href="#">Contact</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-[10px] tracking-[0.2em] font-bold opacity-40 uppercase">Support</span>
+<div class="flex flex-col gap-2 font-['Noto_Serif_KR'] text-[11px] leading-relaxed tracking-wider">
+<a class="text-[#2c231d]/70 hover:opacity-50 transition-opacity" href="#">Privacy</a>
+<a class="text-[#2c231d]/70 hover:opacity-50 transition-opacity" href="#">Terms</a>
+<a class="text-[#2c231d]/70 hover:opacity-50 transition-opacity" href="#">Shipping</a>
+</div>
+</div>
+</div>
+<div class="mt-auto">
+<p class="font-['Noto_Serif_KR'] text-[11px] leading-relaxed tracking-wider text-[#2c231d]/60">
+                © 2024 MOSS &amp; AMBER. ALL RIGHTS RESERVED.
+            </p>
+</div>
+</footer>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

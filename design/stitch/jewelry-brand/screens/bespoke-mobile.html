@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LUNE FORM | Bespoke</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#9f403d",
+                    "primary-fixed": "#dbe3f3",
+                    "on-primary-fixed-variant": "#545c6a",
+                    "primary-dim": "#4b5360",
+                    "primary": "#575f6d",
+                    "secondary-container": "#d6e3fa",
+                    "on-surface-variant": "#54616a",
+                    "on-error": "#fff7f6",
+                    "secondary-dim": "#475466",
+                    "on-secondary": "#f7f9ff",
+                    "surface": "#f7fafe",
+                    "on-tertiary-container": "#484f57",
+                    "on-secondary-fixed": "#334052",
+                    "on-error-container": "#752121",
+                    "on-background": "#27343c",
+                    "tertiary-dim": "#4d545c",
+                    "inverse-primary": "#e6eeff",
+                    "surface-variant": "#d7e4ef",
+                    "outline": "#6f7c86",
+                    "on-primary-container": "#4a5260",
+                    "surface-container-low": "#eff4fa",
+                    "inverse-on-surface": "#9a9da1",
+                    "surface-container": "#e7eff6",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#d7e4ef",
+                    "on-secondary-container": "#465365",
+                    "on-primary-fixed": "#38404d",
+                    "error-container": "#fe8983",
+                    "tertiary": "#596068",
+                    "primary-fixed-dim": "#cdd5e5",
+                    "primary-container": "#dbe3f3",
+                    "surface-container-high": "#dfeaf3",
+                    "outline-variant": "#a6b4be",
+                    "error-dim": "#4e0309",
+                    "tertiary-fixed": "#d7dde7",
+                    "inverse-surface": "#0b0f12",
+                    "tertiary-container": "#d7dde7",
+                    "on-tertiary-fixed": "#363c44",
+                    "secondary-fixed-dim": "#c8d5eb",
+                    "on-tertiary": "#f7f9ff",
+                    "tertiary-fixed-dim": "#c9cfd9",
+                    "surface-tint": "#575f6d",
+                    "secondary-fixed": "#d6e3fa",
+                    "on-surface": "#27343c",
+                    "surface-dim": "#ccdce9",
+                    "secondary": "#536073",
+                    "on-tertiary-fixed-variant": "#525861",
+                    "on-secondary-fixed-variant": "#4f5c6f",
+                    "surface-bright": "#f7fafe",
+                    "background": "#f7fafe",
+                    "on-primary": "#f6f7ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .tonal-shift-no-border {
+            border: none !important;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-background selection:bg-primary-fixed antialiased">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl shadow-sm shadow-slate-200/40 dark:shadow-none flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-200 hover:opacity-70 transition-opacity">menu</span>
+</div>
+<h1 class="text-lg font-bold tracking-[0.2em] text-slate-800 dark:text-slate-100 font-manrope">LUNE ARGENT</h1>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-200 hover:opacity-70 transition-opacity">shopping_bag</span>
+</div>
+</nav>
+<main class="pt-16 pb-24 overflow-x-hidden">
+<!-- Hero Section: Macro Product -->
+<section class="relative h-[751px] w-full overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="extreme close-up of a master jeweler's hands meticulously carving a wax mold for a bespoke diamond ring, soft cinematic lighting, silver tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWh2r0YkC6zjhEBrkOwvuFXnEJ0-OKPE6TQr6pw4ciVc934bT2U9-RX-PQ9wkJtHj60FnTG3kJ3Q_awq0R2xPAW9XC4PmvXYPVBGvdtuhNBD6ay6JC-ebYyKqmzVEBERZUdOieBRv-1NKUWnHvON3rocvnTbc20Iai-HxiLJcCO1hfRs1zAF-KlLSQ629hHUaz7lA_hypeFRtTgXtejpIref6sdBaHuQbH8z3U7XkIQILR38m9l4zRT2cGNNtPSyQGPoA4M01_oNcP"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-surface"></div>
+</div>
+<div class="relative z-10 h-full flex flex-col justify-end px-6 pb-20">
+<div class="glass-panel p-8 rounded-sm shadow-sm space-y-6 max-w-xs">
+<div class="space-y-1">
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Bespoke Jewelry Service</span>
+<h2 class="font-headline text-3xl font-light tracking-tight text-on-surface leading-tight">LUNE FORM<br/>Bespoke</h2>
+</div>
+<div class="space-y-4">
+<div class="flex flex-col">
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-wider">Starting from</span>
+<span class="font-headline text-xl font-medium text-on-surface">2,900,000원 ~</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 text-xs font-label tracking-widest hover:bg-primary-dim transition-colors rounded-sm uppercase">
+                            CONSULT NOW
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Bespoke Process Section -->
+<section class="px-6 py-20 bg-surface-container-low">
+<header class="mb-12">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary mb-2 block">Our Craft</span>
+<h2 class="font-headline text-2xl font-light tracking-tight text-on-surface">비스포크 프로세스</h2>
+<div class="h-px w-12 bg-outline-variant/30 mt-4"></div>
+</header>
+<div class="space-y-16">
+<!-- Step 1 -->
+<div class="flex flex-col gap-6">
+<span class="font-headline text-4xl font-extralight text-outline-variant/40">01</span>
+<div class="space-y-3">
+<h3 class="font-headline text-lg font-medium text-on-surface">Concept &amp; Sketch</h3>
+<p class="font-label text-[11px] uppercase tracking-wider text-primary mb-1">컨셉 및 스케치</p>
+<p class="text-sm leading-relaxed text-on-surface-variant font-light">전문 디자이너와의 1:1 상담을 통해 당신만의 스토리를 디자인으로 구체화합니다. 첫 만남에서 완성되는 초안은 단 하나의 걸작을 위한 시작입니다.</p>
+</div>
+<div class="aspect-[4/3] overflow-hidden rounded-sm">
+<img class="w-full h-full object-cover" data-alt="hand drawing intricate jewelry sketches with a fine pencil on textured paper, professional studio lighting, monochromatic desk setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQh7AbwMcLnvxKaRemrWWNVnq10RDkAXjZezBY_bpPMS98X-zwmCBo7RD14ujRaseWkKzh2THBXL9te4oHAtc36iI8387qElOGuyjmsO_w5p1v_3vAF4D0uwOu2zxEtHnnlHrcRvxda9dYp-af5HZxH6nyhnB6Pima-0C3PhEnGLIlm5j4xP_fyxWLGkg5AyZgAOrKTvCa9fKNxuvA1F00rVwrUZZh-0qagGfKmIXOs7JF_IzD-oqLSkqYTUKti1sW9NyxNY6HF1W6"/>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col gap-6">
+<span class="font-headline text-4xl font-extralight text-outline-variant/40">02</span>
+<div class="space-y-3">
+<h3 class="font-headline text-lg font-medium text-on-surface">Material Selection</h3>
+<p class="font-label text-[11px] uppercase tracking-wider text-primary mb-1">소재 선정</p>
+<p class="text-sm leading-relaxed text-on-surface-variant font-light">18K Gold, Platinum 그리고 엄선된 희귀 원석 중 최상의 품질만을 제안합니다. 금속의 질감부터 스톤의 광채까지 모든 요소가 조화롭게 구성됩니다.</p>
+</div>
+<div class="aspect-[4/3] overflow-hidden rounded-sm">
+<img class="w-full h-full object-cover" data-alt="macro photo of raw unpolished diamonds and gold nuggets on a minimalist white stone tray, high-end catalog style lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw30fv9vns4TJtvSYFNpKKcJ11riV3bp34Ig6meTNZN_MwkGf1UOKdK6-XaQEuE0QZa0Nox8dabM7tQKqd3wIH_wvhKZ-4SjsBUuTXZKFYUSL6Y1vLTrAOUlja6a5zPcH3ntE7cjM57utr_zlWg4UUw48N8JamUw8nyqP9NTK4VVyFQHYdIVQnj5pAH5gI6BAi0XrISE8FY4FUhaN3vaIANpIymeyYMaJLNmdQ3lZD7I7b_-EB-fvrQwFlEBAZ4ZR3GOlvSHbJaouS"/>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col gap-6">
+<span class="font-headline text-4xl font-extralight text-outline-variant/40">03</span>
+<div class="space-y-3">
+<h3 class="font-headline text-lg font-medium text-on-surface">Master Craftsmanship</h3>
+<p class="font-label text-[11px] uppercase tracking-wider text-primary mb-1">장인의 손길</p>
+<p class="text-sm leading-relaxed text-on-surface-variant font-light">수십 년 경력의 마스터 아티잔이 전통적인 핸드 포지드(Hand-forged) 기법으로 제작합니다. 기성품으로는 담아낼 수 없는 미세한 디테일과 내구성을 경험하십시오.</p>
+</div>
+<div class="aspect-[4/3] overflow-hidden rounded-sm">
+<img class="w-full h-full object-cover" data-alt="close-up of a jeweler using a small hammer on a silver ring band, sparks and metallic texture, dark industrial but elegant workshop atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGG-UctRn62wsiULCpEO8Ah_2tNw8EvLrIJ-IJyNw7f2FR0FJXn-2M0E_eObceZyOSblIiiTF6KPO0JtI5vFyVDROMjohiGJeL6rH_dPFoTWoKjfjPSRUh5QT3QIKgJFuoC1JYsFW65XDkLRXR_5HLgJZj77_7lQBnVZVSZrdKEIy53PG7Ekd7prA8U7gHLqjb1gqS60fe_zTI7ZbBpsRqhF2Q5DBgGMqhRlrJOG0CmlSa4y5cxGUP-zrDZddjmCgPVnwM2VLJTUAD"/>
+</div>
+</div>
+</div>
+</section>
+<!-- The Art of Choice Section -->
+<section class="py-24 bg-surface">
+<header class="px-6 mb-12 text-center">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary mb-2 block">Finishing Details</span>
+<h2 class="font-headline text-2xl font-light tracking-tight text-on-surface">선택의 미학</h2>
+<p class="mt-4 text-sm text-on-surface-variant/80 font-light max-w-xs mx-auto">The Art of Choice: 표면의 질감이 완성하는 비스포크의 깊이</p>
+</header>
+<div class="flex overflow-x-auto no-scrollbar gap-4 px-6 snap-x snap-mandatory">
+<!-- Texture Card: Hammered -->
+<div class="min-w-[280px] snap-center bg-surface-container-lowest p-4 rounded-sm">
+<div class="aspect-square overflow-hidden mb-6">
+<img class="w-full h-full object-cover" data-alt="extreme macro photo of hammered silver texture, reflecting soft light, organic indentations, sculptural feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQS2y0kKrFQaKNRas3lyE_U2mSOPtam5jKzC-LyyQHJ_2Ny_FF_uh4Pbd-nKnqEDzS03FLsvT1R-H3EVRXeIEVDQxNVOKeXxt8FCBK1rfnOfRzcswAe1d8BcAx66JGxpeLypLPueoZIgsFt-a4mNMDroLre_9fIJarCWCbUfy9JOfFYZvOPgJBlU-ttKYsd-SQLkMXiMsqPegczaRcLtRUhQZptVtQgTKGji0uMgRkkHr9l7gAZEjbP6MpKv5NgPv8DY-noTYriFoK"/>
+</div>
+<h4 class="font-headline text-lg font-light text-on-surface">Hammered</h4>
+<p class="font-label text-[10px] text-primary tracking-widest mb-2">해머드 피니시</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">수작업의 흔적이 고스란히 담긴 불규칙한 반사광이 매력적인 텍스처</p>
+</div>
+<!-- Texture Card: Polished -->
+<div class="min-w-[280px] snap-center bg-surface-container-lowest p-4 rounded-sm">
+<div class="aspect-square overflow-hidden mb-6">
+<img class="w-full h-full object-cover" data-alt="macro photo of a perfectly polished platinum ring band, mirror-like reflection, pure and bright metallic surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgRvmhEbHDVsE7zXQiFMx_bKzRKcbJgpoyS2I4cOwayHU7Qux1K9AT1k82Utqr3TO-zG0_zp88hKNNCa142aqID8dWRzZMLTTJ7vp0zDgRURWKLh7ne17Yw-X4-OMtG2NP59ss1SSMsSeqU0FtERq_Ae9c5TBzq3T2eXGLPTSI4ehHyZXu90e1MoW2pbJBgS_vzZ6Dg8kvHoQi0ZfoqKAsr2GTlXm9pUBas390hmNSy9ntB8dmFqw3kwYYkV9fWC2Ra-r30WFtGNj_"/>
+</div>
+<h4 class="font-headline text-lg font-light text-on-surface">Polished</h4>
+<p class="font-label text-[10px] text-primary tracking-widest mb-2">폴리쉬드 피니시</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">거울처럼 맑은 광택이 금속 본연의 우아함과 화려함을 극대화합니다</p>
+</div>
+<!-- Texture Card: Matte -->
+<div class="min-w-[280px] snap-center bg-surface-container-lowest p-4 rounded-sm">
+<div class="aspect-square overflow-hidden mb-6">
+<img class="w-full h-full object-cover" data-alt="close-up of brushed matte silver surface, soft satin sheen, contemporary and subtle aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAItwhEAKoq7WP4bHlWT6hZ9WnHQi37LZ1Bn-4GKOrnvauf2wfetfRAXoqm0r8cbP_NvTr6aKj1X9us60F_5z-IDYkjWU3ij2FmlalLJF1FRuaj5JlmNlsN7Vbd4K4A2yrV_kzgHVovxW-o8bqd0v9IG7-g-dL-uvJz8qncjRFjKx0pIebHs_wSlDxsT5qKfsDJK4yBeNgd_s9bKO8KrLYeS4SS-W9Gm6YGgJ3LBTolEqm9kv7gBpmu18pjDE737uN-FudR2_DPd-5I"/>
+</div>
+<h4 class="font-headline text-lg font-light text-on-surface">Matte</h4>
+<p class="font-label text-[10px] text-primary tracking-widest mb-2">매트 피니시</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">부드러운 사틴 광택으로 차분하고 현대적인 감성을 선사합니다</p>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="px-6 py-20 bg-surface-container">
+<div class="text-center space-y-8">
+<div class="space-y-2">
+<h3 class="font-headline text-2xl font-light text-on-surface">당신만의 서사를 시작하세요</h3>
+<p class="text-sm text-on-surface-variant font-light">LUNE FORM은 당신의 기억을 영원한 형태로 기록합니다.</p>
+</div>
+<div class="flex flex-col gap-3 max-w-xs mx-auto">
+<button class="bg-primary text-on-primary py-5 text-xs font-label tracking-widest rounded-sm">
+                        RESERVE APPOINTMENT
+                    </button>
+<button class="bg-transparent border border-outline-variant/30 text-on-surface-variant py-5 text-xs font-label tracking-widest rounded-sm">
+                        VIEW GALLERY
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-safe h-20 bg-white/60 dark:bg-slate-950/60 backdrop-blur-2xl shadow-[0_-4px_20px_rgba(39,52,60,0.04)] z-50">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 pt-2 transition-all duration-500 ease-out hover:text-slate-700 dark:hover:text-slate-300" href="#">
+<span class="material-symbols-outlined mb-1">diamond</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-medium">Collections</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 pt-2 transition-all duration-500 ease-out hover:text-slate-700 dark:hover:text-slate-300" href="#">
+<span class="material-symbols-outlined mb-1">search</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-medium">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 pt-2 transition-all duration-500 ease-out hover:text-slate-700 dark:hover:text-slate-300" href="#">
+<span class="material-symbols-outlined mb-1">favorite</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-medium">Wishlist</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-900 dark:text-white border-t-2 border-slate-900 dark:border-white pt-2 transition-all duration-500 ease-out" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-medium">Profile</span>
+</a>
+</nav>
+</body></html>

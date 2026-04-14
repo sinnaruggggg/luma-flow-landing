@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Be+Vietnam+Pro:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#fff2a9",
+                    "primary-fixed-dim": "#748aff",
+                    "on-error-container": "#510017",
+                    "tertiary-fixed-dim": "#f0e49c",
+                    "on-primary-fixed": "#000000",
+                    "on-primary-container": "#00166c",
+                    "on-background": "#352f00",
+                    "secondary": "#a22e64",
+                    "on-secondary-fixed": "#6b003b",
+                    "background": "#fff7d5",
+                    "tertiary-dim": "#585018",
+                    "on-primary": "#f2f1ff",
+                    "inverse-primary": "#7187ff",
+                    "error-container": "#f74b6d",
+                    "on-tertiary-container": "#635b21",
+                    "surface-bright": "#fff7d5",
+                    "surface-tint": "#2448e3",
+                    "primary-dim": "#0a39d7",
+                    "secondary-fixed-dim": "#ffacc9",
+                    "secondary-dim": "#922158",
+                    "outline-variant": "#b9ae6c",
+                    "inverse-surface": "#110e00",
+                    "secondary-fixed": "#ffc1d5",
+                    "on-error": "#ffefef",
+                    "on-primary-fixed-variant": "#001d83",
+                    "tertiary-container": "#fff2a9",
+                    "on-secondary-container": "#87174f",
+                    "on-tertiary-fixed": "#504810",
+                    "tertiary": "#655c23",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#fff7d5",
+                    "error": "#b41340",
+                    "on-secondary": "#ffeff2",
+                    "surface-dim": "#e5d674",
+                    "error-dim": "#a70138",
+                    "surface-variant": "#edde81",
+                    "on-secondary-fixed-variant": "#932259",
+                    "surface-container": "#f8ea96",
+                    "surface-container-high": "#f3e48b",
+                    "on-surface-variant": "#655c23",
+                    "surface-container-highest": "#edde81",
+                    "outline": "#81783b",
+                    "primary-container": "#879aff",
+                    "on-tertiary-fixed-variant": "#6e652b",
+                    "primary-fixed": "#879aff",
+                    "surface-container-low": "#fff2a9",
+                    "inverse-on-surface": "#a99e5d",
+                    "primary": "#2448e3",
+                    "secondary-container": "#ffc1d5",
+                    "on-tertiary": "#fff4b8",
+                    "on-surface": "#352f00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Be Vietnam Pro"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Be Vietnam Pro', sans-serif; background-color: #fff7d5; }
+        .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-[#fff2a9] dark:bg-yellow-900/20 flex items-center w-full px-6 py-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#0f3bd9] dark:text-blue-400 cursor-pointer" data-icon="arrow_back">arrow_back</span>
+</div>
+<h1 class="mx-auto font-['Space_Grotesk'] font-bold tracking-tight text-[#0f3bd9] dark:text-blue-400 text-xl">장바구니</h1>
+<div class="w-6"></div> <!-- Spacer to center title -->
+</nav>
+<main class="pt-20 px-4 space-y-8">
+<!-- Editorial Section Title -->
+<section class="mt-6 overflow-hidden">
+<h2 class="font-headline text-5xl font-extrabold text-primary leading-none tracking-tighter opacity-10">MY BAG<br/>SELECTION</h2>
+<div class="-mt-6 flex justify-between items-end">
+<span class="bg-secondary text-on-secondary px-3 py-1 rounded-full text-xs font-bold -rotate-3">2 ITEMS</span>
+<span class="text-xs font-medium text-outline">BOP BOP / SPRING 2024</span>
+</div>
+</section>
+<!-- Cart Items List -->
+<section class="space-y-6">
+<!-- Item 1: Cyber Cargo Pants -->
+<div class="relative bg-surface-container-lowest rounded-lg p-4 flex gap-4 overflow-hidden group">
+<div class="w-32 h-44 bg-surface-container rounded-lg flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Modern cyber cargo pants with multiple tactical pockets and metallic details on a clean studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiCBX94J1wI08jxznWizm8VCWacAjPTsWmcCwIzt1hhm_7hCxjjNygRJIjF8x1TY2x16krPcc7RrN8Ws3-xpZqmTVZwEdsTl63_v1boWa1WnmWlfEH08r6fJP4XOuGPYfH5RBJ2QoFx1gD6zwxXTnx3g3GkP3_PpJuO_Et5Yqw67CCGHmcwpplMvWkFRo0Ey_NAwg1X_ukjP_5JXn7Flhk7u1mPgV63J-7I3DxBJhoL0BsrzJY08m5CFaqs_EYm3fc2qVJzUrCnHQC"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-headline font-bold text-lg leading-tight uppercase">CYBER CARGO PANTS</h3>
+<button class="text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="close">close</span>
+</button>
+</div>
+<p class="text-primary font-headline font-black mt-1">129,000원</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<div class="bg-surface-container-low px-3 py-1 rounded-full text-[10px] font-bold border border-outline-variant/10">SIZE: L</div>
+<div class="bg-surface-container-low px-3 py-1 rounded-full text-[10px] font-bold border border-outline-variant/10">COLOR: NOIR</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-4">
+<div class="flex items-center bg-surface-container-highest rounded-full px-2 py-1 gap-4">
+<button class="w-6 h-6 flex items-center justify-center hover:bg-white rounded-full transition-colors">
+<span class="material-symbols-outlined text-xs" data-icon="remove">remove</span>
+</button>
+<span class="font-headline font-bold text-sm">01</span>
+<button class="w-6 h-6 flex items-center justify-center hover:bg-white rounded-full transition-colors">
+<span class="material-symbols-outlined text-xs" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2: Graphic Over-Hoodie -->
+<div class="relative bg-surface-container-lowest rounded-lg p-4 flex gap-4 overflow-hidden group">
+<div class="w-32 h-44 bg-surface-container rounded-lg flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Oversized premium graphic hoodie with bold artistic back print in streetwear style soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpx9f13ROg-uS7fVN2rxHnvm8t0K6hrYcrZ-W90ghtb2DVHd4cw9ajVn0qzHZ-gK8fVKnEutjppmO5oV-KaXoWwtc9VL69Q6_4yZASOb4_DNX1RgOHwk6rZF8y3CljgBuWudQpsCOSnwgr-NESUS2SCMAtHXXaXb70xBGIiVcZRfcy5hC0VBmRMSl0E95sfaciMWEcAjYrNncOHh4Blo0C0BbjH44dBbvRzopEoDFkAcy8d4w5BLRuLhG0jK84tm6dzUbhXSSs7UVp"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-headline font-bold text-lg leading-tight uppercase">GRAPHIC OVER-HOODIE</h3>
+<button class="text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="close">close</span>
+</button>
+</div>
+<p class="text-primary font-headline font-black mt-1">89,000원</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<div class="bg-surface-container-low px-3 py-1 rounded-full text-[10px] font-bold border border-outline-variant/10">SIZE: XL</div>
+<div class="bg-surface-container-low px-3 py-1 rounded-full text-[10px] font-bold border border-outline-variant/10">COLOR: GREY</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-4">
+<div class="flex items-center bg-surface-container-highest rounded-full px-2 py-1 gap-4">
+<button class="w-6 h-6 flex items-center justify-center hover:bg-white rounded-full transition-colors">
+<span class="material-symbols-outlined text-xs" data-icon="remove">remove</span>
+</button>
+<span class="font-headline font-bold text-sm">01</span>
+<button class="w-6 h-6 flex items-center justify-center hover:bg-white rounded-full transition-colors">
+<span class="material-symbols-outlined text-xs" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Promo Code -->
+<section class="bg-secondary-container/30 rounded-lg p-5">
+<label class="font-headline text-[10px] font-bold uppercase tracking-widest text-secondary block mb-2">PROMO CODE</label>
+<div class="flex gap-2">
+<input class="flex-1 bg-white/50 border-none rounded-full px-4 text-sm focus:ring-2 focus:ring-secondary/50 placeholder:text-outline/50" placeholder="코드를 입력하세요" type="text"/>
+<button class="bg-secondary text-white px-6 py-2 rounded-full font-headline text-xs font-bold hover:scale-105 transition-transform">APPLY</button>
+</div>
+</section>
+<!-- Order Summary -->
+<section class="bg-surface-container rounded-lg p-6 space-y-4">
+<h2 class="font-headline font-bold text-lg border-b border-outline-variant/10 pb-4">주문 요약</h2>
+<div class="space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant font-medium">상품 소계</span>
+<span class="font-headline font-bold">218,000원</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant font-medium">배송비</span>
+<span class="font-headline font-bold">0원</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant font-medium">할인 금액</span>
+<span class="font-headline font-bold text-error">-0원</span>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant flex justify-between items-baseline">
+<span class="font-headline font-black text-xl">총 합계</span>
+<span class="font-headline font-black text-2xl text-primary">218,000원</span>
+</div>
+</section>
+</main>
+<!-- Bottom Action Area -->
+<div class="fixed bottom-0 left-0 w-full z-50 px-6 pb-10 pt-4 bg-white/80 backdrop-blur-xl rounded-t-[40px] shadow-[0_-20px_40px_rgba(53,47,0,0.08)]">
+<button class="w-full bg-[#0f3bd9] text-white rounded-full py-5 flex items-center justify-center gap-3 font-headline font-black text-lg tracking-widest hover:scale-[1.02] active:scale-95 transition-all">
+            주문하기
+            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Bottom Navigation Bar (Hidden for Task focus but referenced in JSON) -->
+<nav class="fixed bottom-0 left-0 w-full z-[60] flex justify-around items-center px-4 pb-8 pt-4 bg-white/80 dark:bg-black/80 backdrop-blur-xl rounded-t-[40px] shadow-[0_-20px_40px_rgba(53,47,0,0.08)] opacity-0 pointer-events-none">
+<div class="flex flex-col items-center justify-center text-black/40 dark:text-white/40 px-4 py-2">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase font-bold tracking-widest mt-1">HOME</span>
+</div>
+<div class="flex flex-col items-center justify-center text-black/40 dark:text-white/40 px-4 py-2">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase font-bold tracking-widest mt-1">SHOP</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#0f3bd9] text-white rounded-full px-6 py-2 scale-110">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase font-bold tracking-widest mt-1">CART</span>
+</div>
+<div class="flex flex-col items-center justify-center text-black/40 dark:text-white/40 px-4 py-2">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase font-bold tracking-widest mt-1">MY</span>
+</div>
+</nav>
+</body></html>

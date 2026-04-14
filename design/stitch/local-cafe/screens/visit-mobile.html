@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;family=Work+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#ccaa7f",
+                    "secondary-fixed-dim": "#d6c3b3",
+                    "outline-variant": "#d4c3ba",
+                    "outline": "#82746c",
+                    "surface-tint": "#7c563d",
+                    "surface-container": "#f7eddc",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#e4c195",
+                    "surface-container-highest": "#ebe1d1",
+                    "on-tertiary-fixed-variant": "#5b4220",
+                    "tertiary-fixed": "#ffddb5",
+                    "on-surface-variant": "#50443e",
+                    "on-primary-fixed": "#2f1503",
+                    "tertiary": "#3d2808",
+                    "on-tertiary-fixed": "#2a1800",
+                    "background": "#fff8f1",
+                    "inverse-surface": "#353025",
+                    "secondary-container": "#f3dfce",
+                    "surface": "#fff8f1",
+                    "tertiary-container": "#563e1d",
+                    "primary-fixed": "#ffdbc7",
+                    "inverse-on-surface": "#faf0de",
+                    "on-background": "#1f1b11",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#d6a688",
+                    "inverse-primary": "#eebc9d",
+                    "secondary-fixed": "#f3dfce",
+                    "primary": "#432510",
+                    "error": "#ba1a1a",
+                    "on-surface": "#1f1b11",
+                    "primary-container": "#5d3b24",
+                    "on-primary-fixed-variant": "#613f27",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#706255",
+                    "on-secondary-fixed": "#231a10",
+                    "primary-fixed-dim": "#eebc9d",
+                    "on-secondary-fixed-variant": "#514438",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#fdf2e1",
+                    "surface-bright": "#fff8f1",
+                    "surface-variant": "#ebe1d1",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#e2d9c8",
+                    "secondary": "#6a5c4f",
+                    "surface-container-high": "#f1e7d6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Be Vietnam Pro"],
+                    "label": ["Work Sans"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Be Vietnam Pro', sans-serif; background-color: #fff8f1; color: #1f1b11; }
+        .font-serif { font-family: 'Noto Serif', serif; }
+        .font-sans { font-family: 'Work Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .notch-edge {
+            mask-image: radial-gradient(circle at 0 50%, transparent 8px, black 8px);
+            -webkit-mask-image: radial-gradient(circle at 0 50%, transparent 8px, black 8px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="pb-32">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fff8f1]/86 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full max-w-none">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#432510]" data-icon="menu">menu</span>
+<span class="font-serif text-xl font-bold text-[#432510]">TABLE WARM</span>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Professional user profile portrait with warm natural lighting and soft background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhOtgIOPJGLeUnoPHg5rU5VSxVDkF0ZZRTRJ7n3UTFwXv-cwzHkS74wQN0mn7XnTOg1PVZa9iEcKMhPgSzwxugxZkClBlrLQfbRN0oKj-ackryDcI77a8BNUvSEULZweb-2FjfXRQQGUbsmE7RywTvvy-DtcQU7Wuq83ToU6rDNQ8opkxU1AxJmvJnVPS8SoCc7x7PEgI_2z7fQQOuNtwPHk-2iXPu7nVRxgnXqVdXFNHK7W9tNHYRGpocAasxDoGkHczOmpDkSVE"/>
+</div>
+</nav>
+<!-- Content Canvas -->
+<main class="mt-16 px-5 space-y-10">
+<!-- FIRST BLOCK: Storefront Hero & Reservation -->
+<section class="relative pt-6">
+<div class="relative w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Sun-drenched artisanal cafe storefront with large glass windows, wooden textures, and lush green plants in the morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCoJ69k_PQaQqRRlH6PQ5DqkBF-COONecpByhdNNTzacmmksrnehj0_-3bpIBhPB-LGQ1aYzByEejkxrd-rsyNmOk9_kX4qdEBb5LZ7eC1yb3rJkdNa9Fo8zqtWuHDz0gCKJLtO7YpfZ9H7pyF9N0PXVE1HtqSSx-INvkSNmy7R4CCgru_xynfA5avCUDW7JlW8jyi_yOJc9SYbOUCEr8qapLHR9cu6WIpqXTQ0EXNTqpWpMqCHXhcQX7KvjbsBDSePBEyR_oKQEg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#2b221a]/60 via-transparent to-transparent"></div>
+<!-- Today's Special Floating Note -->
+<div class="absolute top-6 left-6 right-6 bg-[#ffffff]/90 backdrop-blur-md p-5 rounded-2xl shadow-lg border-l-4 border-[#432510]">
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium text-[#5d3b24] mb-2 block">Today's Special</span>
+<h2 class="font-serif text-xl text-[#432510] leading-snug">핸드드립 과테말라 안티구아 &amp; 무화과 타르트 세트</h2>
+<p class="text-[#432510]/70 text-sm mt-1">18,500원</p>
+</div>
+</div>
+<!-- Direct Reservation Module -->
+<div class="mt-[-60px] relative z-10 mx-4 bg-white p-6 rounded-3xl shadow-[0_12px_40px_rgba(43,34,26,0.06)] space-y-5">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="font-sans text-[10px] uppercase tracking-widest font-medium text-[#82746c]">Date</label>
+<div class="flex items-center gap-2 border-b border-[#d4c3ba]/40 py-2">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span>
+<span class="text-sm font-medium">10월 24일</span>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-sans text-[10px] uppercase tracking-widest font-medium text-[#82746c]">Time</label>
+<div class="flex items-center gap-2 border-b border-[#d4c3ba]/40 py-2">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+<span class="text-sm font-medium">14:00</span>
+</div>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-sans text-[10px] uppercase tracking-widest font-medium text-[#82746c]">Guests</label>
+<div class="flex items-center gap-2 border-b border-[#d4c3ba]/40 py-2">
+<span class="material-symbols-outlined text-sm" data-icon="group">group</span>
+<span class="text-sm font-medium">성인 2명</span>
+</div>
+</div>
+<button class="w-full py-4 bg-gradient-to-br from-[#432510] to-[#5d3b24] text-white rounded-full font-medium text-sm tracking-wide shadow-md active:scale-[0.98] transition-transform">
+                    예약 가능 여부 확인
+                </button>
+</div>
+</section>
+<!-- SECOND BLOCK: Space & Vibe -->
+<section class="space-y-6">
+<div class="flex items-baseline justify-between">
+<h3 class="font-serif text-2xl text-[#432510]">Space &amp; Vibe</h3>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium text-[#5d3b24]">Explore Rooms</span>
+</div>
+<div class="flex overflow-x-auto pb-4 gap-5 no-scrollbar">
+<!-- Main Hall -->
+<div class="min-w-[280px] space-y-4">
+<div class="aspect-[4/5] rounded-3xl overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Elegant cafe interior with warm lighting, wooden tables, and high ceilings with artisanal decorations" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAirO3U-7J3AfAEK_lBXYI4FOSHlkR3G2zTREvk-Lg55ZsRu9Qm0WDzv6HXBwxa7YZr9p8Qa_wgZlHuAa_P6vehXKSeflBOpnkvCt4jjeDN_IszCwRD9uFpgnkBoPDxRg9ZHj2sr-zQXHHF54CRhOYbw9L90rzVMup4H3Zh9DQVHJm_mGhGg8kO-y74ea6EzzAEQVPLwwW1gWH2N10Q8x2TtDk8UmGmFfAPoMqpi3pPDCZIfnhDUW7atZWaDOx4aEkfcV6RRmyQAcs"/>
+</div>
+<div>
+<h4 class="font-serif text-lg text-[#432510]">메인 홀 (Main Hall)</h4>
+<div class="flex items-center gap-3 mt-1 text-[#5d3b24]/70 text-xs">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs" data-icon="person">person</span> 최대 24인</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs" data-icon="wifi">wifi</span> Free WiFi</span>
+</div>
+</div>
+</div>
+<!-- Terrace -->
+<div class="min-w-[280px] space-y-4">
+<div class="aspect-[4/5] rounded-3xl overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Outdoor cafe terrace with wicker furniture and potted lemon trees under a linen umbrella" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCljX_JknlLgtbaLffHA3uQoiqe6J_eXoGwlDcAIv8ATPMGK_t68BW4dwOiI9400UW33VI94J08Gl5UkLBYhQF-u9vxj3z-49AWAY4P1O-eUqBMFnAeLUi7oQiazCMolbXo0eKGhn6ZLHvMNwmUtrmL317h_uIdiabjycGoDs4VESziyZjRA_r9jRfz4NYf34E_vJDgDldk8v1fOAMojuiwblG8tjfpUUbiRydnNq9mydLzNQWICIwl2-84IrSuYdvF5uH6ZLH1R3c"/>
+</div>
+<div>
+<h4 class="font-serif text-lg text-[#432510]">테라스 (Terrace)</h4>
+<div class="flex items-center gap-3 mt-1 text-[#5d3b24]/70 text-xs">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs" data-icon="person">person</span> 최대 12인</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs" data-icon="pets">pets</span> 애견 동반</span>
+</div>
+</div>
+</div>
+<!-- Roasting Room -->
+<div class="min-w-[280px] space-y-4">
+<div class="aspect-[4/5] rounded-3xl overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Industrial style roasting room with a vintage copper roaster and sacks of green coffee beans" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZj7-dKJbXoaOHWq64DF0wPTkUTSRg2mqrmtn0JVQULaNRqwl8JwcMrMyc761QvOnSep8WDGx52Tb9lV1ysiwciOpl9163G8QCoYe4SarECioqdogcSgxrkxbcol1BIgNhtSNe35dybYQJ_e0Qmet2vXnWXKO1AYmREEJDk9uDC3wcqHcrSsognobA6F5G599KFxF474Mz7oZgHCQWL46TXCT0n5xk_2hvNP0Xhfs_BQOrgjUlWhZXwhi3xDVA3sRrHyv3Xc1ydmg"/>
+</div>
+<div>
+<h4 class="font-serif text-lg text-[#432510]">로스팅 룸 (Roasting Room)</h4>
+<div class="flex items-center gap-3 mt-1 text-[#5d3b24]/70 text-xs">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs" data-icon="person">person</span> 최대 4인</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs" data-icon="coffee">coffee</span> 커핑 가능</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- THIRD BLOCK: Special Programs -->
+<section class="space-y-6">
+<h3 class="font-serif text-2xl text-[#432510]">Special Programs</h3>
+<div class="grid grid-cols-1 gap-4">
+<!-- Program 1 -->
+<div class="bg-[#f7eddc] p-5 rounded-2xl flex items-center gap-4 border border-[#e8c498]/20">
+<div class="w-20 h-20 rounded-xl overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close-up of coffee beans falling into a roaster with warm dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY24k12NbAFSofZlQnuNk-HhYY7vO0UMbyPCaPYwew5VWrvyPKRsW62tnYVjKomR8Q-5VIl7IDzN43PQp9zg1eORQ_es4X2yb1KfhX20kC5k_yoEbrp7o96igbQZCaef3qhHf2DPI7WIYFwTkoVAdx_02K86EzflyBgA7o2iAv2k1JI7qE3h5rIcGo-ZQOV2LDncI0oJc2SmCImrmSF-YER5LwievQEQFzedsXSKBp9wR19Yh8hyEpscnMB2RZb2TTQ8sFZShgQpM"/>
+</div>
+<div class="flex-1">
+<h5 class="font-serif text-base text-[#432510]">주간 로스팅 세션</h5>
+<p class="text-xs text-[#5d3b24]/70 mt-1">매주 토요일 10:00 - 12:00</p>
+<p class="text-sm font-semibold text-[#432510] mt-2">45,000원</p>
+</div>
+<span class="material-symbols-outlined text-[#432510]" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Program 2 -->
+<div class="bg-[#f7eddc] p-5 rounded-2xl flex items-center gap-4 border border-[#e8c498]/20">
+<div class="w-20 h-20 rounded-xl overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Professional cupping session with small spoons and white ceramic cups on a wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtTNlvPyYUagR2kln_Pis3RvLWg6YU2OjTRGaLKRdKo9hqhdhzUFtm1w089Uh_RfexAUFEVB8mJdSeJvTDFT3LoHq_fVGFL1soMdp17yiTNZZq3ZstZf5ZBt94V8q6V9qOF_S3roIa8CEBL4Fe655l3fBCxNG6i0UAa4P3aYnqzUzhkPd5jePdhet-RDLprQUXwFCZy2pjodH7CHQNwJXpm5Wpq77FfYCDGHHnsiVEZ_mylbOz8IKZFd6uUcRmEYVx8jqhatZFCbk"/>
+</div>
+<div class="flex-1">
+<h5 class="font-serif text-base text-[#432510]">프라이빗 커핑 클래스</h5>
+<p class="text-xs text-[#5d3b24]/70 mt-1">예약제 운영 (최대 4인)</p>
+<p class="text-sm font-semibold text-[#432510] mt-2">60,000원</p>
+</div>
+<span class="material-symbols-outlined text-[#432510]" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- FOURTH BLOCK: Usage Guidelines -->
+<section class="bg-white rounded-3xl p-8 space-y-8 notch-edge">
+<h3 class="font-serif text-2xl text-[#432510]">Usage Guidelines</h3>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#e8c498]" data-icon="auto_awesome">auto_awesome</span>
+<div>
+<h6 class="font-sans text-[10px] uppercase tracking-widest font-medium text-[#82746c] mb-1">Atmosphere</h6>
+<p class="text-sm leading-relaxed text-[#50443e]">테이블 웜은 대화와 휴식을 위한 차분한 공간을 지향합니다. 타인에게 방해가 되는 고성방가는 삼가 주시기 바랍니다.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#e8c498]" data-icon="info">info</span>
+<div>
+<h6 class="font-sans text-[10px] uppercase tracking-widest font-medium text-[#82746c] mb-1">Capacity</h6>
+<p class="text-sm leading-relaxed text-[#50443e]">원활한 운영을 위해 5인 이상의 단체 방문 시 사전에 매장으로 확인 연락을 부탁드립니다.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#e8c498]" data-icon="location_on">location_on</span>
+<div>
+<h6 class="font-sans text-[10px] uppercase tracking-widest font-medium text-[#82746c] mb-1">Location</h6>
+<p class="text-sm leading-relaxed text-[#50443e]">서울 종로구 삼청로 123-4<br/>전용 주차장이 협소하므로 가급적 대중교통 이용을 권장합니다.</p>
+<div class="mt-4 rounded-2xl overflow-hidden aspect-video">
+<img class="w-full h-full object-cover opacity-60" data-alt="Soft focused map view of a historic city district with vintage parchment tones" data-location="Seoul, Jongno-gu" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjtl8Xi0EgIoRqyEIVPaPr5ljA3uclIjbtFaNGm1tLmJEolB1m7n3PFUZlkWvnZtnZ6l2y7sVst3vCYMhIm6zFSPvHIEXJxjXdjGY-6kqHdH9ynfrVLrQjmzoMJOGL45yR7CEDqja8JXIVOdo4I9d8FGtY6BnNyRc7C7VKyHVHQ0cpeVg7Ha3rdtCeJSkotFfrEVgDDpJsokEWqkrh2O_uRiqIG2tGh6BpbXDu4_glowO0I1uM3YxxEp_sykoI40N32GPhRgbcWNM"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-6 bg-[#f7eddc] shadow-[0_-4px_20px_rgba(43,34,26,0.04)] z-50 rounded-t-3xl">
+<div class="flex flex-col items-center justify-center bg-gradient-to-br from-[#432510] to-[#5d3b24] text-white rounded-xl py-2 px-4">
+<span class="material-symbols-outlined mb-0.5" data-icon="explore">explore</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium">Discover</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5d3b24] py-2 px-4">
+<span class="material-symbols-outlined mb-0.5" data-icon="event_available">event_available</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium">Book</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5d3b24] py-2 px-4">
+<span class="material-symbols-outlined mb-0.5" data-icon="history">history</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium">History</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5d3b24] py-2 px-4">
+<span class="material-symbols-outlined mb-0.5" data-icon="person">person</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium">Account</span>
+</div>
+</nav>
+</body></html>

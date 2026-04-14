@@ -1,0 +1,89 @@
+{
+  "siteId": "supplement-brand",
+  "brand": "PUNCH FUEL",
+  "projectId": "3648898675634426629",
+  "projectTitle": "PUNCH FUEL Stitch",
+  "updatedAt": "2026-04-14T04:32:22.601Z",
+  "screens": {
+    "home:desktop": {
+      "screenId": "2f8c84dcca42473cb05432b1e1882cae",
+      "pageSlug": "home",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/supplement-brand/screens/home-desktop.html",
+      "imagePath": "design/stitch/supplement-brand/screens/home-desktop.png",
+      "updatedAt": "2026-04-13T23:51:00.407Z"
+    },
+    "home:mobile": {
+      "screenId": "dbdf13fe769b4487b6eeabba4894780b",
+      "pageSlug": "home",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/supplement-brand/screens/home-mobile.html",
+      "imagePath": "design/stitch/supplement-brand/screens/home-mobile.png",
+      "updatedAt": "2026-04-13T23:52:07.847Z"
+    },
+    "routine:desktop": {
+      "screenId": "e6ffd67dd5b84a09aab5e75141641ff0",
+      "pageSlug": "routine",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/supplement-brand/screens/routine-desktop.html",
+      "imagePath": "design/stitch/supplement-brand/screens/routine-desktop.png",
+      "updatedAt": "2026-04-14T04:22:44.604Z"
+    },
+    "routine:mobile": {
+      "screenId": "fcf0472c2c704287b397caa93827149a",
+      "pageSlug": "routine",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/supplement-brand/screens/routine-mobile.html",
+      "imagePath": "design/stitch/supplement-brand/screens/routine-mobile.png",
+      "updatedAt": "2026-04-14T04:23:50.172Z"
+    },
+    "compare:desktop": {
+      "screenId": "74f9889f302b4ad78d93485470bb2531",
+      "pageSlug": "compare",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/supplement-brand/screens/compare-desktop.html",
+      "imagePath": "design/stitch/supplement-brand/screens/compare-desktop.png",
+      "updatedAt": "2026-04-14T04:25:08.480Z"
+    },
+    "compare:mobile": {
+      "screenId": "2a787131f86b4e99b1ee89b7fe7e364b",
+      "pageSlug": "compare",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/supplement-brand/screens/compare-mobile.html",
+      "imagePath": "design/stitch/supplement-brand/screens/compare-mobile.png",
+      "updatedAt": "2026-04-14T04:26:29.239Z"
+    },
+    "subscribe:desktop": {
+      "screenId": "9462eadd643a4d79a059bef9ab85a66d",
+      "pageSlug": "subscribe",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/supplement-brand/screens/subscribe-desktop.html",
+      "imagePath": "design/stitch/supplement-brand/screens/subscribe-desktop.png",
+      "updatedAt": "2026-04-14T04:27:53.869Z"
+    },
+    "subscribe:mobile": {
+      "screenId": "ceb545d19833467f85cbf509b5bb2a6f",
+      "pageSlug": "subscribe",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/supplement-brand/screens/subscribe-mobile.html",
+      "imagePath": "design/stitch/supplement-brand/screens/subscribe-mobile.png",
+      "updatedAt": "2026-04-14T04:29:06.722Z"
+    },
+    "brand:desktop": {
+      "screenId": "c91a4ad9889748dba835416b88b64312",
+      "pageSlug": "brand",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/supplement-brand/screens/brand-desktop.html",
+      "imagePath": "design/stitch/supplement-brand/screens/brand-desktop.png",
+      "updatedAt": "2026-04-14T04:30:45.503Z"
+    },
+    "brand:mobile": {
+      "screenId": "d7aab35b05414b20bb675911fc432585",
+      "pageSlug": "brand",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/supplement-brand/screens/brand-mobile.html",
+      "imagePath": "design/stitch/supplement-brand/screens/brand-mobile.png",
+      "updatedAt": "2026-04-14T04:32:22.602Z"
+    }
+  }
+}

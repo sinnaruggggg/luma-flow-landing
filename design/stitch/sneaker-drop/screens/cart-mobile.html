@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Plus+Jakarta+Sans:wght@200..800&amp;family=Work+Sans:wght@300..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-dim": "#5a5000",
+                      "on-surface": "#2f2e2e",
+                      "outline": "#787676",
+                      "primary": "#675c00",
+                      "on-secondary-container": "#8d1620",
+                      "surface-tint": "#675c00",
+                      "surface-container-high": "#e5e2e1",
+                      "tertiary": "#006382",
+                      "secondary-fixed-dim": "#ffafac",
+                      "outline-variant": "#afacac",
+                      "tertiary-dim": "#005672",
+                      "surface-dim": "#d6d4d3",
+                      "primary-fixed-dim": "#eedc56",
+                      "surface": "#f9f6f5",
+                      "secondary-dim": "#992027",
+                      "on-secondary-fixed-variant": "#9a2128",
+                      "surface-container-highest": "#dfdcdc",
+                      "error": "#b02500",
+                      "surface-container": "#eae7e7",
+                      "on-secondary": "#ffefee",
+                      "inverse-surface": "#0e0e0e",
+                      "secondary": "#aa2c32",
+                      "background": "#f9f6f5",
+                      "primary-container": "#fdea62",
+                      "on-tertiary-container": "#00465d",
+                      "surface-variant": "#dfdcdc",
+                      "tertiary-fixed-dim": "#6cc3eb",
+                      "on-primary-fixed": "#4b4300",
+                      "on-tertiary-fixed-variant": "#004f69",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-container": "#ffc3c0",
+                      "inverse-on-surface": "#9e9c9c",
+                      "tertiary-fixed": "#7bd1fa",
+                      "on-primary-container": "#605600",
+                      "on-primary": "#fff4b6",
+                      "secondary-fixed": "#ffc3c0",
+                      "inverse-primary": "#fdea62",
+                      "tertiary-container": "#7bd1fa",
+                      "surface-container-low": "#f3f0ef",
+                      "error-container": "#f95630",
+                      "on-error-container": "#520c00",
+                      "on-tertiary": "#e5f5ff",
+                      "on-primary-fixed-variant": "#6b6000",
+                      "surface-bright": "#f9f6f5",
+                      "on-secondary-fixed": "#6f0011",
+                      "primary-fixed": "#fdea62",
+                      "on-error": "#ffefec",
+                      "error-dim": "#b92902",
+                      "on-tertiary-fixed": "#003041",
+                      "on-surface-variant": "#5c5b5b",
+                      "on-background": "#2f2e2e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Space Grotesk"],
+                      "body": ["Plus Jakarta Sans"],
+                      "label": ["Work Sans"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sticker-shadow {
+            filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.1));
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-[#f9f6f5] dark:bg-neutral-950 flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#675c00] dark:text-[#F7E45D]">menu</span>
+</div>
+<h1 class="text-2xl font-black tracking-tighter text-black dark:text-white font-['Space_Grotesk'] uppercase tracking-widest font-bold">RIFT/01</h1>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#675c00] dark:text-[#F7E45D]">shopping_bag</span>
+</div>
+</header>
+<main class="pb-32">
+<!-- Hero Section: Product Item -->
+<section class="relative w-full aspect-[3/4] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="High-resolution portrait photography of futuristic yellow and black sneakers on a minimalist concrete pedestal with harsh studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6BCcNyjK8EHda4XQzC775OjLYse_iMP9mOb3yLmgXeSKrznyz4qeWFSoGZsElVkEdSp9IyE5y0QAmDhlu97VbfMyVynhvC_NiKSWDeAdY58TsShMdixv56R7LsZ4gpI12Yxd7KH5Dx5NSz8qVXsBQgNk0zpEDvH9dy7GS4bCXW-Ckr9DpHGpgHonB-q6Kh6Kh6JXO9E_yzQn0iPUdaIANFZUbfXP8v_kTxRNYI97-yRjhjcpkUIOfazLzGuKy8Mq4_s1zwWtfDg"/>
+<!-- Sticky Label UI Overlay -->
+<div class="absolute top-6 left-6 flex flex-col gap-2">
+<span class="bg-primary text-on-primary px-3 py-1 font-label text-xs tracking-tighter sticker-shadow">LIMITED DROP</span>
+<span class="bg-inverse-surface text-surface px-3 py-1 font-headline text-lg font-bold tracking-widest">AER_SYSTEM</span>
+</div>
+<!-- Price Sticker -->
+<div class="absolute bottom-12 right-0 bg-[#F7E45D] text-black px-6 py-4 font-headline font-black text-3xl translate-x-2 sticker-shadow">
+                229,000원
+            </div>
+</section>
+<!-- First Viewport Actions -->
+<section class="px-6 -mt-6 relative z-10">
+<div class="bg-surface-container-lowest p-6 shadow-2xl space-y-6">
+<div class="flex justify-between items-end">
+<div class="space-y-1">
+<p class="font-label text-xs text-outline font-bold tracking-tighter">SELECT SIZE (KR)</p>
+<div class="flex gap-2 overflow-x-auto no-scrollbar py-2">
+<button class="flex-shrink-0 w-12 h-12 flex items-center justify-center border-2 border-primary bg-primary text-on-primary font-bold">260</button>
+<button class="flex-shrink-0 w-12 h-12 flex items-center justify-center border-2 border-outline-variant hover:border-primary transition-colors font-bold">265</button>
+<button class="flex-shrink-0 w-12 h-12 flex items-center justify-center border-2 border-outline-variant hover:border-primary transition-colors font-bold">270</button>
+<button class="flex-shrink-0 w-12 h-12 flex items-center justify-center border-2 border-outline-variant hover:border-primary transition-colors font-bold">275</button>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-fixed py-5 font-headline font-black text-xl tracking-[0.2em] flex items-center justify-center gap-3 hover:translate-y-[-2px] transition-transform active:scale-95 shadow-lg">
+                    CHECKOUT
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Product Details -->
+<section class="px-6 mt-12 space-y-8">
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-headline text-3xl font-bold tracking-tighter leading-none">RIFT/01 AER</h2>
+<p class="text-on-surface-variant font-medium mt-1">에어로 다이내믹 스트릿 슈즈</p>
+</div>
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full font-label text-[10px] font-bold">IN STOCK</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-4">
+<p class="font-label text-[10px] text-outline font-bold">SKU REFERENCE</p>
+<p class="font-headline font-bold">RF01-2024-V2</p>
+</div>
+<div class="bg-surface-container-low p-4 flex flex-col justify-between">
+<p class="font-label text-[10px] text-outline font-bold">QUANTITY</p>
+<div class="flex items-center justify-between mt-2">
+<span class="material-symbols-outlined text-sm cursor-pointer">remove</span>
+<span class="font-headline font-bold">01</span>
+<span class="material-symbols-outlined text-sm cursor-pointer">add</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Order Summary -->
+<div class="border-t-4 border-black pt-6 space-y-4">
+<div class="flex justify-between font-label font-bold text-sm">
+<span class="text-outline">SUBTOTAL / 소계</span>
+<span>229,000원</span>
+</div>
+<div class="flex justify-between font-label font-bold text-sm">
+<span class="text-outline">SHIPPING / 배송비</span>
+<span class="text-primary font-black uppercase">FREE</span>
+</div>
+<div class="flex justify-between items-center pt-2">
+<span class="font-headline font-black text-xl tracking-tighter">TOTAL ORDER / 총 결제 금액</span>
+<span class="font-headline font-black text-2xl">229,000원</span>
+</div>
+</div>
+<!-- Trust / Status -->
+<div class="bg-on-surface text-surface-container-lowest p-4 flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-fixed">security</span>
+<div class="flex-1">
+<p class="font-label text-[10px] font-black tracking-widest opacity-80">ENCRYPTED TACTICAL PROTOCOL</p>
+<p class="text-[10px] leading-tight">본 주문은 RIFT 암호화 보안 프로토콜을 통해 안전하게 보호됩니다.</p>
+</div>
+</div>
+</section>
+<!-- Extra Detail / Aesthetic Overlay -->
+<section class="mt-12 px-6">
+<div class="relative h-40 bg-surface-container-highest overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center opacity-10">
+<p class="font-headline font-black text-8xl whitespace-nowrap">TACTICAL SYSTEM</p>
+</div>
+<div class="relative p-6 h-full flex flex-col justify-end">
+<p class="font-label text-[10px] font-bold tracking-widest mb-2">PRODUCT CARE INFO</p>
+<p class="text-xs max-w-[200px]">고기능성 소재의 내구성을 위해 직사광선을 피하고 통풍이 잘되는 곳에 보관하십시오.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-white/80 dark:bg-black/80 backdrop-blur-xl z-50 shadow-[0px_-10px_30px_rgba(0,0,0,0.04)]">
+<div class="flex flex-col items-center justify-center text-neutral-400 dark:text-neutral-600 px-4 py-1 hover:text-black dark:hover:text-white transition-all">
+<span class="material-symbols-outlined">home_max</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold uppercase tracking-tighter">HOME</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-400 dark:text-neutral-600 px-4 py-1 hover:text-black dark:hover:text-white transition-all">
+<span class="material-symbols-outlined">release_alert</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold uppercase tracking-tighter">DROPS</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#F7E45D] text-black rounded-sm px-4 py-1 translate-y-[-4px] shadow-lg scale-95 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold uppercase tracking-tighter">CART</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-400 dark:text-neutral-600 px-4 py-1 hover:text-black dark:hover:text-white transition-all">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold uppercase tracking-tighter">PROFILE</span>
+</div>
+</nav>
+</body></html>

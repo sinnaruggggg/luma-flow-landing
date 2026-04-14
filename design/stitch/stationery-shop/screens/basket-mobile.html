@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>장바구니 - THE CURATED DESK</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffdfa0",
+                        "on-secondary-fixed": "#001e2b",
+                        "on-surface-variant": "#4e4635",
+                        "surface-container-highest": "#ede0d6",
+                        "on-tertiary-fixed": "#221a10",
+                        "error": "#ba1a1a",
+                        "on-background": "#201b15",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#f2bf4c",
+                        "surface-dim": "#e4d8ce",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#024d67",
+                        "surface-bright": "#fff8f4",
+                        "surface": "#fff8f4",
+                        "on-primary-fixed-variant": "#5c4300",
+                        "tertiary": "#685c50",
+                        "inverse-on-surface": "#fbeee4",
+                        "surface-tint": "#795900",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#f3e6dc",
+                        "secondary-container": "#a7dffe",
+                        "tertiary-fixed": "#f0e0cf",
+                        "secondary-fixed-dim": "#96ceed",
+                        "secondary-fixed": "#c1e8ff",
+                        "inverse-primary": "#f2bf4c",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#6d5000",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#fef1e7",
+                        "tertiary-container": "#d7c7b7",
+                        "outline-variant": "#d2c5af",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#362f29",
+                        "surface-container": "#f8ece2",
+                        "surface-variant": "#ede0d6",
+                        "primary-container": "#f5c24f",
+                        "on-tertiary-container": "#5e5346",
+                        "on-surface": "#201b15",
+                        "secondary": "#296580",
+                        "background": "#fff8f4",
+                        "tertiary-fixed-dim": "#d4c4b4",
+                        "on-secondary-container": "#27647e",
+                        "primary": "#795900",
+                        "outline": "#807663",
+                        "on-tertiary-fixed-variant": "#504539",
+                        "on-primary-fixed": "#261a00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Space Grotesk", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #f7f1e6; }
+        .font-serif { font-family: 'Newsreader', serif; }
+        .font-mono { font-family: 'Space Grotesk', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .tape-effect { position: relative; }
+        .tape-effect::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-2deg);
+            width: 80px;
+            height: 24px;
+            background: rgba(167, 223, 254, 0.4);
+            backdrop-blur: 2px;
+            z-index: 10;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background min-h-screen pb-40">
+<!-- TopAppBar -->
+<header class="bg-[#fff8f4]/80 backdrop-blur-xl rounded-none sticky top-0 z-50 flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#795900]">menu</span>
+<h1 class="font-serif uppercase tracking-[0.2em] text-sm text-[#795900]">장바구니</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#795900]">search</span>
+</div>
+<div class="absolute bottom-0 left-0 bg-[#ede0d6] h-[1px] w-full block"></div>
+</header>
+<main class="px-6 py-8 space-y-12">
+<!-- Basket Items List -->
+<section class="space-y-10">
+<!-- Item 1 -->
+<div class="tape-effect bg-surface-container-lowest p-5 flex gap-5 shadow-[20px_20px_40px_-5px_rgba(32,27,21,0.05)] relative transform rotate-1">
+<div class="w-24 h-32 flex-shrink-0 overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close-up of a rustic handcrafted scrapbooking kit with textured paper and vintage ephemera on a wooden desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwyN-pa1gQn428yJw_bLQGH_GbPEOvD_tBUhyEXZgSBQYrWnW2-05BvwgZqK2iHTRIyyc1lS6xUhzqSOk_kQVg9STDsmTq-T4srE169gR8P0Djfxpj3vJ7SvPHH2oGIiN9_PztqkX-bZTMq7zin7jjqkhsdWb55RU3wXbVUpJVYyT7_4kQe6TT6NHlqBde8p5ccrhG1AInnJwB76XQUU-eyDG0vlE75QwxV0X0wxluzLW6GjQuN1ERKST0NqpwDUrW3wqA06hreZ6f"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div class="flex justify-between items-start">
+<h2 class="font-serif text-lg leading-tight">Signature Scrap Kit</h2>
+<button class="material-symbols-outlined text-outline text-sm active:scale-90 transition-transform">close</button>
+</div>
+<div class="space-y-4">
+<p class="font-mono text-sm tracking-tighter">29,900원</p>
+<div class="flex items-center border border-outline-variant/30 self-start">
+<button class="px-2 py-1 material-symbols-outlined text-xs">remove</button>
+<span class="px-3 font-mono text-xs">01</span>
+<button class="px-2 py-1 material-symbols-outlined text-xs">add</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-lowest p-5 flex gap-5 shadow-[20px_20px_40px_-5px_rgba(32,27,21,0.05)] relative transform -rotate-1 ml-4">
+<!-- Mini "Tape" for second item variant -->
+<div class="absolute -top-3 right-8 w-12 h-6 bg-primary-container/20 rotate-12 backdrop-blur-sm"></div>
+<div class="w-24 h-32 flex-shrink-0 overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Misty morning forest themed stationery set with grey and muted blue envelopes and papers on a light linen fabric" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHycyldH5-MnyAqXESsI4rufwb9Xm673KMiDALv-4QsRnb3OgKAQ4mrYGe3ebvf5pkHtOvvx9KP2EsEytidle90rwCU4RlLwZ8TXxR3-KxdNDA1iKsjM61iYUzaeWJJLzTZfeTUiFBEonN2Z96D4UDPxJnURRCw9irCHcT2r-dD6lFbDUVUPTE8NvVxkbiGWFzO9nJ_Lf-ebGMOTRbIRSVYhtRrzK2AqgmeKKmYShWWDZtcZzYykHdzdHmK-ELgMlIkK0tsFnBYxjM"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div class="flex justify-between items-start">
+<h2 class="font-serif text-lg leading-tight">Morning Fog Set</h2>
+<button class="material-symbols-outlined text-outline text-sm active:scale-90 transition-transform">close</button>
+</div>
+<div class="space-y-4">
+<p class="font-mono text-sm tracking-tighter">18,000원</p>
+<div class="flex items-center border border-outline-variant/30 self-start">
+<button class="px-2 py-1 material-symbols-outlined text-xs">remove</button>
+<span class="px-3 font-mono text-xs">01</span>
+<button class="px-2 py-1 material-symbols-outlined text-xs">add</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Order Summary -->
+<section class="bg-surface-container p-6 space-y-4">
+<h3 class="font-serif italic text-xl border-b border-outline-variant/20 pb-2">주문 요약</h3>
+<div class="space-y-2 font-body text-sm">
+<div class="flex justify-between">
+<span class="text-on-surface/60">상품 금액</span>
+<span class="font-mono">47,900원</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface/60">배송비</span>
+<span class="font-mono">3,000원</span>
+</div>
+<div class="flex justify-between pt-4 border-t border-outline-variant/40 mt-4">
+<span class="font-bold">총 결제 금액</span>
+<span class="font-mono text-lg font-bold text-primary">50,900원</span>
+</div>
+</div>
+</section>
+<!-- Recommendations -->
+<section class="space-y-6">
+<h3 class="font-serif text-center text-sm uppercase tracking-[0.3em]">마무리를 위한 추천 제품</h3>
+<div class="flex gap-4 overflow-x-auto pb-4 -mx-6 px-6 no-scrollbar">
+<!-- Rec Item 1 -->
+<div class="min-w-[140px] bg-white p-3 shadow-sm transform rotate-1">
+<div class="aspect-square bg-surface-container mb-3 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Antique brass clips arranged on a sheet of textured cream paper with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj4OH6um8SZHS0A__FBsjXTi0v9r9Nm4Apg8bzOvF8gWgnv_gyxJiZpjF-MF6XagrLpB_XRSXESjHhPrKqtPnvoZNJ-Y_lxDuFRxt5Tcmo19jKVrrbcV2xcqDVTYEQ1PaObo3WXs_jozfzAzA80OsT5wovleXeqHRyGs02BoQhFnyPwA5qnwmSkx08nW5rCGH-RXy2EQTOZaDjPIgkBbxK5G9FIqG08gbSYTCKUVoH7G2zTk9j3CLgcyaXz-Vo4sOPIHZa2QlAchV4"/>
+</div>
+<p class="font-serif text-sm">Brass Clips</p>
+<p class="font-mono text-[10px] text-primary">4,500원</p>
+</div>
+<!-- Rec Item 2 -->
+<div class="min-w-[140px] bg-white p-3 shadow-sm transform -rotate-1">
+<div class="aspect-square bg-surface-container mb-3 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Natural hemp twine roll on a rustic background with a warm editorial feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUGyaOMDVYJrleRsbYio9LM5FYM24aqJwDKt5WpNqjmaj35ghN7QZfF14hlJd63ctj5HAwyYUCH7DxiJTXLkupDPudDgwAEFtNxq-HAdCRZMswq7P8XQUmFdLY8utA3KYLbIFboncVmL41l6CRZwpwlhBX6H8eW4dcoZCX-IKEE5jDuOidashZBLxpRfMhw5LppXDYKQ-9kgXPdCJb2kRHom5qk3NV_1mg3Rcm7qxvCjlk2G43oRZEpO6K9GycVjrU4corFa93LVK7"/>
+</div>
+<p class="font-serif text-sm">Hemp Twine</p>
+<p class="font-mono text-[10px] text-primary">3,000원</p>
+</div>
+<!-- Rec Item 3 -->
+<div class="min-w-[140px] bg-white p-3 shadow-sm transform rotate-2">
+<div class="aspect-square bg-surface-container mb-3 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Rolls of textured washi tape in earth tones stacked on a desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyM_4w_kMQ4c4xJwfulleIc5DH2StgefHGwkVYT2eTHEq15fWTdPqy9AEzoLl730e8BiQGZRLJQxqjvljWJKHct_gk7JwIz6gJZqeBQ9L_AA2DnoXnqVZ-bbAEUFKcfARv75yZma4auVeTQuujWR8b61J6vgzVSFff9s_eu89bzIVbCkMsiInBxDF4UUW9SRSwTPubAmgdJ9M3tBU_B_049E2RiYiG1R9UxFB10dLFjx0KytqU4Wx12YQ_oJPdQdN6rlH1M3Z8NOQT"/>
+</div>
+<p class="font-serif text-sm">Washi Tape</p>
+<p class="font-mono text-[10px] text-primary">5,200원</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Checkout Button -->
+<div class="fixed bottom-20 left-0 w-full px-6 py-4 z-40 bg-gradient-to-t from-background via-background/80 to-transparent">
+<button class="w-full bg-primary text-on-primary py-4 font-serif italic text-lg shadow-xl active:translate-y-[1px] active:scale-[0.98] transition-all flex justify-between items-center px-8 group">
+<span>결제하기</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<!-- BottomNavBar -->
+<nav class="bg-[#fff8f4] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe h-20 border-t border-[#ede0d6]">
+<a class="flex flex-col items-center justify-center text-[#201b15]/60 pt-2 transition-transform duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined mb-1">storefront</span>
+<span class="font-mono text-[10px] uppercase tracking-widest">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#201b15]/60 pt-2 transition-transform duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined mb-1">auto_stories</span>
+<span class="font-mono text-[10px] uppercase tracking-widest">Journal</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#201b15]/60 pt-2 transition-transform duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined mb-1">inventory_2</span>
+<span class="font-mono text-[10px] uppercase tracking-widest">Archive</span>
+</a>
+<!-- Active Tab: Bag -->
+<a class="flex flex-col items-center justify-center text-[#795900] border-t-2 border-[#795900] pt-2 transition-transform duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+<span class="font-mono text-[10px] uppercase tracking-widest font-bold">Bag</span>
+</a>
+</nav>
+</body></html>

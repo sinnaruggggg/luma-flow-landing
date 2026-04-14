@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=Be+Vietnam+Pro:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-secondary-fixed-variant": "#024d67",
+                "on-secondary-fixed": "#001e2b",
+                "inverse-primary": "#f2bf4c",
+                "secondary": "#296580",
+                "primary-fixed-dim": "#f2bf4c",
+                "on-secondary-container": "#27647e",
+                "on-error": "#ffffff",
+                "on-error-container": "#93000a",
+                "surface-container-low": "#f9f3e8",
+                "on-surface-variant": "#4e4635",
+                "primary-container": "#f5c24f",
+                "outline": "#807663",
+                "surface-container-lowest": "#ffffff",
+                "surface-container-high": "#ede8dd",
+                "secondary-container": "#a7dffe",
+                "background": "#fff9ee",
+                "on-tertiary-fixed": "#221a10",
+                "primary-fixed": "#ffdfa0",
+                "surface-variant": "#e8e2d7",
+                "secondary-fixed": "#c1e8ff",
+                "tertiary-container": "#d7c7b7",
+                "surface-container-highest": "#e8e2d7",
+                "surface-container": "#f3ede2",
+                "secondary-fixed-dim": "#96ceed",
+                "on-primary": "#ffffff",
+                "error-container": "#ffdad6",
+                "inverse-surface": "#333029",
+                "on-secondary": "#ffffff",
+                "on-primary-fixed": "#261a00",
+                "error": "#ba1a1a",
+                "on-primary-container": "#6d5000",
+                "surface-tint": "#795900",
+                "primary": "#795900",
+                "tertiary": "#685c50",
+                "on-surface": "#1d1c15",
+                "inverse-on-surface": "#f6f0e5",
+                "on-tertiary": "#ffffff",
+                "tertiary-fixed": "#f0e0cf",
+                "outline-variant": "#d2c5af",
+                "tertiary-fixed-dim": "#d4c4b4",
+                "surface": "#fff9ee",
+                "on-background": "#1d1c15",
+                "on-primary-fixed-variant": "#5c4300",
+                "surface-bright": "#fff9ee",
+                "surface-dim": "#dfd9cf",
+                "on-tertiary-container": "#5e5346",
+                "on-tertiary-fixed-variant": "#504539"
+            },
+            "fontFamily": {
+                "headline": ["Newsreader", "serif"],
+                "body": ["Be Vietnam Pro", "sans-serif"],
+                "label": ["Be Vietnam Pro", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>body {
+    background-color: #fff9ee;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBnI3NEaJN_vd_NQH5FTkONTxgf2l2wpp3QsCLM2JciKxN-e6zE_RK4qvJ74cy0i8QF_cT-oSBfcyVX4T8HABeRd-V3VAiVc6b9vwd9Hc1kQnj32srhGuKzX5s9agk4RUlgQCp0kHZdn_6Mmazi0ar6hfuE7qRKhd2L4MWzc-HSSPuxjRX8_CIP-wuNHmDlwIGnXVEyOpgTLvwWpFV0hNiPc6zbZi3AFvKG4gTHV6dIuEC5gJwfiEJ2H79AcZv5oeWCxgZwDaVUKmA);
+    background-blend-mode: multiply
+    }
+.paper-shadow {
+    box-shadow: 0 12px 32px -4px rgba(35, 29, 23, 0.08)
+    }
+.torn-edge {
+    mask-image: url("data:image/svg+xml;utf8,<svg viewBox=\"0 0 100 10\" preserveAspectRatio=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 0 L10 2 L20 0 L30 3 L40 1 L50 4 L60 0 L70 3 L80 1 L90 4 L100 0 V10 H0 Z\" fill=\"black\"/></svg>");
+    mask-size: 100% 12px;
+    mask-repeat: no-repeat;
+    mask-position: bottom
+    }
+.handwritten {
+    font-family: "Newsreader", serif;
+    font-style: italic
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 bg-[#fff9ee] dark:bg-[#1d1c15] flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#795900] dark:text-[#f5c24f]">menu</span>
+<h1 class="text-2xl font-headline italic text-[#1d1c15] dark:text-[#fff9ee] tracking-tight">The Living Archive</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#795900] dark:text-[#f5c24f]">search</span>
+</div>
+</header>
+<main class="pb-32 overflow-hidden">
+<!-- Pick of the Month Section -->
+<section class="relative px-6 pt-8 pb-12">
+<div class="flex flex-col gap-6">
+<div class="relative z-10 w-4/5 mx-auto">
+<div class="label-sm font-label uppercase text-[10px] tracking-widest text-primary mb-2">Pick of the Month</div>
+<!-- Overlapping Book Cover -->
+<div class="relative -rotate-2 paper-shadow">
+<img alt="Featured book cover" class="w-full aspect-[3/4] object-cover border-4 border-white" data-alt="A vintage hardcover book with a cream dust jacket and minimalist typography resting on a rustic wooden desk with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZchrSxUO0vP0CjBHgzHUwf3jZ4JCAaOI2mjMndQn1FUyICsNukDYzyWboa1RkuExXDBdsOgWzgEEEhIx0Fi1h4CNElpqLVKqDUDquKYqrqRpnuerb0x_ildV4_EWs4a-g3IE5ygL2vtU5WxXq5U3xa7cbAWeMqiYaZv0aTru2EkdoepbT--a8M5wCvMk65ca13dWwl7IgPy4d9Oa3mv6ge3s563CXzYf7JOjqVXim_omyD2eHEVZLnNIVZ4jsUayxGiJYqq3b0Ak"/>
+<div class="absolute -bottom-6 -right-4 bg-secondary-container p-4 -rotate-1 paper-shadow w-40">
+<p class="handwritten text-on-secondary-container text-sm leading-tight">
+                                "종이 위로 흐르는 사유의 흔적, 우리가 잊고 지낸 촉각의 기록입니다."
+                            </p>
+</div>
+</div>
+</div>
+<div class="mt-8 z-20">
+<h2 class="font-headline text-3xl italic text-on-surface leading-tight">침묵의 문장들: 기록되지 않은 기억</h2>
+<p class="font-body text-sm text-on-surface-variant mt-3 leading-relaxed opacity-80">
+                        한 권의 책이 완성되기까지의 공백과 여백, 그리고 그 사이를 채우는 독자의 시선을 다룹니다. 물성이 주는 감동을 다시 한번 느껴보세요.
+                    </p>
+<button class="mt-6 w-full bg-primary-container text-on-primary-container py-4 font-label uppercase tracking-widest text-sm flex justify-between px-6 items-center hover:translate-y-[-2px] transition-transform duration-300">
+<span>Add to Shelf</span>
+<span class="font-bold">22,000원</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Divider Space -->
+<div class="h-16"></div>
+<!-- The Weekly Archive Section -->
+<section class="px-6 bg-surface-container-low py-12">
+<div class="flex flex-col gap-10">
+<div class="border-l-2 border-primary pl-4">
+<h3 class="font-headline text-2xl italic">The Weekly Archive</h3>
+<p class="font-label text-[10px] uppercase tracking-widest text-outline mt-1">Curated fragments of thought</p>
+</div>
+<!-- Magazine Card 1 -->
+<article class="bg-surface-container-lowest paper-shadow p-6 relative flex flex-col gap-4 hover:translate-y-[-2px] transition-transform duration-300">
+<div class="flex justify-between items-start">
+<div class="w-2/3">
+<h4 class="font-headline text-xl italic mb-2">잉크가 마르는 시간</h4>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">손글씨가 주는 고유한 리듬과 속도에 대한 고찰. 디지털 시대에 우리가 잃어버린 '기다림'의 미학을 담았습니다.</p>
+</div>
+<div class="w-24 -mr-10 rotate-3 paper-shadow">
+<img alt="Ink and pen photo" class="w-full h-32 object-cover" data-alt="Close-up of a fountain pen nib touching textured paper with a small pool of dark blue ink forming" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGjz2tAeQlJlMLod0m4N_W2-YFBVof2Xp5VeX1UtLNc1jkqkH9a7XB5-aNk__RsWn0MiutkDBULCqUoqQpFn_SK3f7OxudGKJhp6boxVxA8MI9W3ux_USQKEEyMt7bRbBoRv1YIbFgpSRceZNu8ZotTsUNUi-eAxRHJHQF-gM3_RU4JwmdqIIR1S4cZZ8S8yrLk9K8b4DGBBwSdPy3URQa1W6jyPd3x_VNC3TM57N5mWxSk8zroWyIOXFYmkgKoL5E8hL11b67X4Q"/>
+</div>
+</div>
+<div class="flex justify-between items-center mt-4">
+<span class="font-label text-xs font-bold text-primary">18,500원</span>
+<span class="material-symbols-outlined text-outline">add_circle</span>
+</div>
+</article>
+<!-- Magazine Card 2 -->
+<article class="bg-surface-container-lowest paper-shadow p-6 relative flex flex-col gap-4 -rotate-1 hover:translate-y-[-2px] transition-transform duration-300">
+<div class="flex flex-row-reverse justify-between items-start">
+<div class="w-2/3 pl-4">
+<h4 class="font-headline text-xl italic mb-2">여백의 미학</h4>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">비워냄으로써 비로소 채워지는 공간. 한국 전통 가옥의 창호지 사이로 스며드는 빛의 기록입니다.</p>
+</div>
+<div class="w-24 -ml-10 -rotate-6 paper-shadow">
+<img alt="Minimalist paper art" class="w-full h-32 object-cover" data-alt="Abstract paper sculpture with delicate folds creating soft shadows on a warm off-white surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH8ZzD-Arn0M3jA88JZvWo4PDlY-rA-AvB-mUtgxVZZxyt8H-2JCMpXzkXXpCLt3r1kXDvWd7SbnLHynu5428joSfiwQKKDEPJrQ65IsWy1LT4eAwHzzUNI8NPVG7f0fkbib6C2zzOtKS5h6edbWn2mSVxJ7HSP8wO5B_hhdITq50B48pYcUxrb2LLTimDZQxNkLbba--7OTJwe276uvFN9JntxES8uflRRZVN4bHG2XrVEv5NQZOFCs8HpsQ1hRTd9JXIkfaqLrk"/>
+</div>
+</div>
+<div class="flex justify-between items-center mt-4">
+<span class="font-label text-xs font-bold text-primary">24,000원</span>
+<span class="material-symbols-outlined text-outline">add_circle</span>
+</div>
+</article>
+<!-- Magazine Card 3 (Clipped appearance) -->
+<article class="bg-surface-variant/30 border border-outline-variant/20 p-6 relative hover:translate-y-[-2px] transition-transform duration-300">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary/10 px-3 py-1 text-[8px] font-label uppercase tracking-[0.2em] text-primary border border-primary/20">
+                        Archivist's Pick
+                    </div>
+<h4 class="font-headline text-xl italic mb-3">파피루스의 꿈</h4>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed mb-6">고대 이집트의 기록물부터 현대의 양장본까지, 종이라는 매체가 견뎌온 인류의 지혜를 추적합니다.</p>
+<div class="flex justify-between items-center">
+<span class="font-label text-xs font-bold text-primary">21,000원</span>
+<span class="font-label text-[10px] text-secondary underline decoration-secondary/30">Read Notes</span>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col items-start gap-6 bg-[#1d1c15] dark:bg-[#000000]">
+<div class="text-lg font-headline italic text-white opacity-90">The Living Archive</div>
+<div class="flex flex-wrap gap-4">
+<a class="text-[#fff9ee]/70 font-body text-xs hover:text-white transition-opacity" href="#">Archives</a>
+<a class="text-[#fff9ee]/70 font-body text-xs hover:text-white transition-opacity" href="#">Librarian Notes</a>
+<a class="text-[#fff9ee]/70 font-body text-xs hover:text-white transition-opacity" href="#">Terms</a>
+<a class="text-[#fff9ee]/70 font-body text-xs hover:text-white transition-opacity" href="#">Privacy</a>
+</div>
+<p class="text-[#f5c24f] font-body text-xs leading-relaxed">© 2024 THE LIVING ARCHIVE. PULP &amp; INK.</p>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 px-4 pb-safe bg-[#fff9ee] dark:bg-[#1d1c15] shadow-[0_-4px_24px_rgba(35,29,23,0.04)] z-50">
+<a class="flex flex-col items-center justify-center text-[#1d1c15]/50 dark:text-[#fff9ee]/40 hover:text-[#795900] transition-colors scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label uppercase text-[10px] tracking-widest mt-1">Shelf</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#795900] dark:text-[#f5c24f] font-bold scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label uppercase text-[10px] tracking-widest mt-1">Picks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1d1c15]/50 dark:text-[#fff9ee]/40 hover:text-[#795900] transition-colors scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">redeem</span>
+<span class="font-label uppercase text-[10px] tracking-widest mt-1">Gift</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1d1c15]/50 dark:text-[#fff9ee]/40 hover:text-[#795900] transition-colors scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">fingerprint</span>
+<span class="font-label uppercase text-[10px] tracking-widest mt-1">Brand</span>
+</a>
+</nav>
+<!-- Floating Buy Action (Contextual for Picks Page) -->
+<div class="fixed bottom-24 right-6 z-40">
+<button class="bg-primary text-white w-14 h-14 rounded-none flex items-center justify-center shadow-lg hover:translate-y-[-2px] transition-transform duration-300">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</body></html>

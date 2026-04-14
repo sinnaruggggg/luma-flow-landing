@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#39d5ff",
+                    "on-surface-variant": "#bbc9ce",
+                    "inverse-surface": "#dae3f6",
+                    "secondary-container": "#980388",
+                    "error": "#ffb4ab",
+                    "primary": "#b1eaff",
+                    "primary-fixed-dim": "#45d6ff",
+                    "on-error": "#690005",
+                    "secondary-fixed": "#ffd7f0",
+                    "surface-bright": "#313a48",
+                    "on-tertiary-fixed-variant": "#604100",
+                    "error-container": "#93000a",
+                    "tertiary-fixed-dim": "#ffba3f",
+                    "on-primary-fixed-variant": "#004e60",
+                    "surface-container-low": "#131c29",
+                    "primary-fixed": "#b5ebff",
+                    "surface-container-highest": "#2c3544",
+                    "tertiary-fixed": "#ffdeae",
+                    "on-tertiary-fixed": "#281800",
+                    "surface": "#0b1421",
+                    "on-secondary": "#5e0053",
+                    "surface-variant": "#2c3544",
+                    "on-error-container": "#ffdad6",
+                    "inverse-primary": "#00677e",
+                    "background": "#0b1421",
+                    "surface-container": "#17202e",
+                    "secondary-fixed-dim": "#fface8",
+                    "outline-variant": "#3c494e",
+                    "on-secondary-fixed": "#3a0033",
+                    "tertiary-container": "#ffb837",
+                    "on-secondary-container": "#fface8",
+                    "tertiary": "#ffdcaa",
+                    "on-surface": "#dae3f6",
+                    "surface-tint": "#45d6ff",
+                    "on-tertiary": "#432c00",
+                    "on-secondary-fixed-variant": "#840076",
+                    "outline": "#869398",
+                    "on-tertiary-container": "#6e4b00",
+                    "on-background": "#dae3f6",
+                    "on-primary-fixed": "#001f28",
+                    "on-primary-container": "#00596e",
+                    "surface-dim": "#0b1421",
+                    "secondary": "#fface8",
+                    "surface-container-lowest": "#060e1b",
+                    "surface-container-high": "#222a38",
+                    "on-primary": "#003543",
+                    "inverse-on-surface": "#28313f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Manrope"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .mesh-pattern {
+            background-image: radial-gradient(rgba(57, 213, 255, 0.1) 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+        .scanline {
+            background: linear-gradient(to bottom, rgba(57, 213, 255, 0) 50%, rgba(57, 213, 255, 0.05) 50.5%, rgba(57, 213, 255, 0) 51%);
+            background-size: 100% 4px;
+        }
+        .glow-cyan {
+            box-shadow: 0 0 15px rgba(57, 213, 255, 0.4);
+        }
+        .text-glow {
+            text-shadow: 0 0 8px rgba(57, 213, 255, 0.6);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0b1421]/80 backdrop-blur-xl border-b border-[#39d5ff]/10 flex justify-between items-center px-4 h-16 shadow-[0_4px_20px_rgba(11,20,33,0.5)]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#39d5ff]" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<h1 class="font-headline font-bold text-[#39d5ff] drop-shadow-[0_0_8px_rgba(57,213,255,0.5)] uppercase tracking-widest text-sm">VOID_ARC//CMD</h1>
+</div>
+<button class="transition-all duration-300 active:scale-95 hover:bg-[#39d5ff]/10 p-2 rounded-lg">
+<span class="material-symbols-outlined text-[#39d5ff]">settings_input_component</span>
+</button>
+</header>
+<main class="pt-16 pb-32">
+<!-- Hero Section -->
+<section class="relative w-full h-[751px] overflow-hidden flex flex-col justify-end p-6">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-60 scale-110" data-alt="Ultra-modern gaming setup with backlit mechanical keyboard, ergonomic mouse, and wireless headset glowing in vibrant cyan RGB light on a dark desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-NkYDJRIeI3FEOjdmBs8DYBcJwlCJ7pl2fkpF_W84RjO8rjeuyjPsco1xKgbdCzPHfpc9H6zmHmDXRFriXirH_NFnESIln0_UwoywdssFErn-LK--4JD-V1cj234RezEsSAeXEwvUGq5ungwuOqQZzh-uXIf1yfLDrja_ZCy4mIoDZTV7hdb0Ev3FmwYd9johM9nBToZ7LB5btjT4IuKxkS9dGI0BuPPk5zO0C19MRPC1144Z2u-FcgPWpV6tKatZ3SkGuP5HWdF2"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute inset-0 mesh-pattern opacity-30"></div>
+</div>
+<div class="relative z-10 space-y-6">
+<div class="space-y-1">
+<span class="text-primary-container font-headline text-xs tracking-[0.3em] font-bold uppercase">PREMIUM PROTOCOL</span>
+<h2 class="text-4xl font-headline font-extrabold text-white leading-tight">ARC-OMEGA<br/><span class="text-primary-container text-glow">BUNDLE</span></h2>
+</div>
+<div class="flex flex-wrap gap-2">
+<div class="bg-surface-container-highest/60 backdrop-blur-md border border-outline-variant/30 px-3 py-2 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-sm">speed</span>
+<span class="text-[10px] font-label font-bold text-on-surface tracking-tighter">8,000Hz POLLING</span>
+</div>
+<div class="bg-surface-container-highest/60 backdrop-blur-md border border-outline-variant/30 px-3 py-2 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-sm">bolt</span>
+<span class="text-[10px] font-label font-bold text-on-surface tracking-tighter">0.1ms LATENCY</span>
+</div>
+<div class="bg-surface-container-highest/60 backdrop-blur-md border border-outline-variant/30 px-3 py-2 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-sm">palette</span>
+<span class="text-[10px] font-label font-bold text-on-surface tracking-tighter">UNIFIED RGB</span>
+</div>
+</div>
+<button class="w-full py-4 bg-primary-container text-on-primary-container font-headline font-bold text-sm tracking-widest rounded-lg glow-cyan active:scale-95 transition-transform">
+                    INITIALIZE BUNDLE
+                </button>
+</div>
+</section>
+<!-- Section 1: Bundle Configurator -->
+<section class="px-6 py-12 space-y-8 bg-surface-container-lowest">
+<div class="space-y-2">
+<h3 class="font-headline text-xl font-bold border-l-2 border-primary-container pl-4">BUNDLE CONFIGURATOR</h3>
+<p class="text-on-surface-variant text-sm font-medium">전술적 우위를 위한 커스텀 장비 구성</p>
+</div>
+<div class="space-y-4">
+<!-- Toggle Item 1 -->
+<div class="bg-surface-container border border-outline-variant/20 p-4 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-high rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container">keyboard</span>
+</div>
+<div>
+<p class="text-[10px] font-label text-primary-container/70 font-bold uppercase">UNIT_01</p>
+<h4 class="text-sm font-bold">K-800 MECHANICAL</h4>
+</div>
+</div>
+<div class="w-12 h-6 bg-primary-container/20 rounded-full relative p-1 flex items-center">
+<div class="w-4 h-4 bg-primary-container rounded-full ml-auto"></div>
+</div>
+</div>
+<!-- Toggle Item 2 -->
+<div class="bg-surface-container border border-outline-variant/20 p-4 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-high rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container">mouse</span>
+</div>
+<div>
+<p class="text-[10px] font-label text-primary-container/70 font-bold uppercase">UNIT_02</p>
+<h4 class="text-sm font-bold">M-PRO WIRELESS</h4>
+</div>
+</div>
+<div class="w-12 h-6 bg-primary-container/20 rounded-full relative p-1 flex items-center">
+<div class="w-4 h-4 bg-primary-container rounded-full ml-auto"></div>
+</div>
+</div>
+<!-- Toggle Item 3 -->
+<div class="bg-surface-container border border-outline-variant/20 p-4 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-high rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container">headset</span>
+</div>
+<div>
+<p class="text-[10px] font-label text-primary-container/70 font-bold uppercase">UNIT_03</p>
+<h4 class="text-sm font-bold">H-X SONAR AUDIO</h4>
+</div>
+</div>
+<div class="w-12 h-6 bg-primary-container/20 rounded-full relative p-1 flex items-center">
+<div class="w-4 h-4 bg-primary-container rounded-full ml-auto"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Performance Data -->
+<section class="px-6 py-12 space-y-8 relative overflow-hidden">
+<div class="absolute inset-0 scanline opacity-20 pointer-events-none"></div>
+<div class="space-y-2">
+<h3 class="font-headline text-xl font-bold text-right border-r-2 border-primary-container pr-4">PERFORMANCE DATA</h3>
+<p class="text-on-surface-variant text-sm font-medium text-right uppercase">System diagnostics active</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-high p-5 rounded-lg border-l border-t border-primary-container/20 space-y-4">
+<div class="space-y-1">
+<p class="text-[10px] font-label text-primary-container/60 font-bold tracking-widest">ACCURACY</p>
+<h4 class="text-2xl font-headline font-bold text-white">99.8%</h4>
+</div>
+<div class="h-1 bg-surface-container-highest w-full rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[99.8%] glow-cyan"></div>
+</div>
+</div>
+<div class="bg-surface-container-high p-5 rounded-lg border-l border-t border-primary-container/20 space-y-4">
+<div class="space-y-1">
+<p class="text-[10px] font-label text-primary-container/60 font-bold tracking-widest">LIFESPAN</p>
+<h4 class="text-2xl font-headline font-bold text-white">100M+</h4>
+</div>
+<div class="h-1 bg-surface-container-highest w-full rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[85%] glow-cyan"></div>
+</div>
+</div>
+<div class="bg-surface-container-high p-5 rounded-lg border-l border-t border-primary-container/20 space-y-4">
+<div class="space-y-1">
+<p class="text-[10px] font-label text-primary-container/60 font-bold tracking-widest">RESPONSE</p>
+<h4 class="text-2xl font-headline font-bold text-white">0.1ms</h4>
+</div>
+<div class="h-1 bg-surface-container-highest w-full rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[95%] glow-cyan"></div>
+</div>
+</div>
+<div class="bg-surface-container-high p-5 rounded-lg border-l border-t border-primary-container/20 space-y-4">
+<div class="space-y-1">
+<p class="text-[10px] font-label text-primary-container/60 font-bold tracking-widest">STABILITY</p>
+<h4 class="text-2xl font-headline font-bold text-white">CORE</h4>
+</div>
+<div class="h-1 bg-surface-container-highest w-full rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-full glow-cyan"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Bundle Optimization -->
+<section class="px-6 py-12">
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/10 shadow-2xl">
+<div class="h-48 relative">
+<img class="w-full h-full object-cover" data-alt="Abstract visualization of high-speed data processing with digital circuit board patterns and glowing cyan light pulses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJergBP3VL62UosfP16KoBUAPXceRSII0goerntH4snRNbm9vYCSlHFKiISsfED5P5drAIxyCkDmA7qEiWznIEZetExt_c7_JNWrJ77i8TE4JO9P4g0pUOrpzS9d3X3ovQimXX4Man34_Z7mLScplYISakdu8NK3SfH7x5_iZiR383JF6DXBvxgudgMmTFyCkb5YulPi14zrS3H3hW4EQAAvIMmi4O_l5FHWxlnsFtuRRwnR1tTZUogCewpGbX-uGxSDUlmBnL4aQ4"/>
+<div class="absolute inset-0 bg-primary-container/10 mix-blend-overlay"></div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-primary-container rounded-full animate-pulse"></span>
+<h4 class="font-headline font-bold tracking-tight text-white uppercase">VOID SYSTEM ENGINE</h4>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                        모든 디바이스를 단일 커널에서 제어합니다. <span class="text-primary-container">ZERO-LAG</span> 프로세싱 기술을 통해 하드웨어 간의 통신 지연을 완벽하게 제거하고 최상의 성능을 보장합니다.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Footer Footer -->
+<footer class="px-6 py-10 opacity-40">
+<div class="font-label text-[9px] space-y-1 uppercase tracking-widest border-t border-outline-variant/10 pt-4">
+<p>SYSTEM STATUS: OPERATIONAL</p>
+<p>ENCRYPTION: AES-256 ACTIVE</p>
+<p>LATENCY_SYNC: 0.0003MS</p>
+<p class="pt-4 font-headline">© 2024 VOID_ARC_SYSTEMS</p>
+</div>
+</footer>
+</main>
+<!-- Sticky Bottom Buy Section -->
+<div class="fixed bottom-20 left-0 w-full px-4 z-40">
+<div class="bg-[#0b1421]/90 backdrop-blur-2xl border border-primary-container/20 rounded-xl p-4 flex items-center justify-between shadow-[0_0_30px_rgba(0,0,0,0.8)]">
+<div class="flex flex-col">
+<span class="text-[10px] font-label text-primary-container font-bold uppercase tracking-tighter">BUNDLE PRICE</span>
+<span class="text-xl font-headline font-extrabold text-white">₩ 429,000</span>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-3 rounded-lg font-headline font-bold text-xs tracking-tighter active:scale-95 transition-transform flex items-center gap-2">
+                ADD TO CART
+                <span class="material-symbols-outlined text-sm">shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-lg bg-[#0b1421]/90 backdrop-blur-lg border-t border-[#39d5ff]/15 shadow-[0_-4px_20px_rgba(0,0,0,0.6)] flex justify-around items-center h-20 pb-safe px-2">
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-[#39d5ff]/70 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tighter uppercase">ARSENAL</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#39d5ff] bg-[#39d5ff]/10 rounded-sm py-1 px-3 shadow-[inset_0_0_10px_rgba(57,213,255,0.2)] active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="bundle" style="font-variation-settings: 'FILL' 1;">package</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tighter uppercase">LOADOUT</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-[#39d5ff]/70 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tighter uppercase">INTEL</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-[#39d5ff]/70 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tighter uppercase">PROFILE</span>
+</a>
+</nav>
+</body></html>

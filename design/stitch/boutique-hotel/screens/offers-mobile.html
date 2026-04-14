@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;700&amp;family=Manrope:wght@200;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#dcc2b0",
+                    "on-secondary-fixed-variant": "#50453a",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#fdf2e4",
+                    "surface-bright": "#fff8f3",
+                    "surface-dim": "#e3d8cb",
+                    "secondary": "#685c50",
+                    "surface-variant": "#ece1d4",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#f2e6d9",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#aa9282",
+                    "secondary-fixed": "#f0e0d0",
+                    "inverse-primary": "#dcc2b0",
+                    "primary": "#25180d",
+                    "error": "#ba1a1a",
+                    "primary-container": "#3c2c20",
+                    "on-surface": "#201b13",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#554336",
+                    "on-secondary-fixed": "#221a11",
+                    "on-secondary-container": "#6e6256",
+                    "on-tertiary-fixed": "#221a14",
+                    "background": "#fff8f3",
+                    "inverse-surface": "#353027",
+                    "secondary-container": "#f0e0d0",
+                    "tertiary-container": "#372d27",
+                    "surface": "#fff8f3",
+                    "inverse-on-surface": "#faefe2",
+                    "primary-fixed": "#f9ddcb",
+                    "on-background": "#201b13",
+                    "on-tertiary-container": "#a2948b",
+                    "secondary-fixed-dim": "#d4c4b5",
+                    "surface-tint": "#6e5a4c",
+                    "surface-container": "#f8ecdf",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#d2c4bc",
+                    "outline": "#80756e",
+                    "tertiary-fixed-dim": "#d3c3ba",
+                    "surface-container-highest": "#ece1d4",
+                    "on-tertiary-fixed-variant": "#4f453e",
+                    "tertiary": "#211913",
+                    "tertiary-fixed": "#f0dfd6",
+                    "on-surface-variant": "#4e453f",
+                    "on-primary-fixed": "#26190e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
+    font-size: 20px
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAfE82zJmnTspZLpNR3gO2ZJYuCUdYQ8HlG1d0bAzuHr3Cbus9ETJGsxiFZRK90rysBULZuM_mcW34YwX-g8SBOLtwoP_Ud7sj9RMMdaB00ua1-cuBQoYUcuuFsqGwchBlbSBTI4CCoBsIUtbVdvjBvhj6MZ507R6qG4XCki-1IrhVoLpT44YvxbFMjx5YFhP0KK7Ljr_aBZ9VQOVPYHUgjiZnAP-YVD9r1ajnD768LgEy3EBAtmL9uvnajONwNl2xOPYso5M1eHEzq);
+    opacity: 0.03;
+    pointer-events: none
+    }
+.cinematic-shadow {
+    box-shadow: 0 8px 32px rgba(32, 27, 19, 0.06)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<div class="fixed inset-0 grain-overlay z-[100]"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fdf2e4]/80 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full">
+<div class="w-10">
+<span class="material-symbols-outlined text-[#25180d]">menu</span>
+</div>
+<h1 class="text-xl font-headline tracking-[0.2em] uppercase text-[#25180d]">HOTEL STILL</h1>
+<div class="w-10 flex justify-end">
+<span class="material-symbols-outlined text-[#25180d]">shopping_bag</span>
+</div>
+</header>
+<main class="pb-24">
+<!-- Hero Section -->
+<section class="relative h-[751px] w-full overflow-hidden">
+<div class="absolute inset-0">
+<img alt="Serene Hotel Lounge" class="w-full h-full object-cover" data-alt="Interior of a luxury minimalist hotel lounge with soft sunlight filtering through linen curtains, warm plaster walls and mid-century furniture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD7ASwVfFxI9DIX1C3A_aQEnTErITRY45cxjiHluxsnZ0DBgulvZNHYNxkTHzPy9j4nMLM3ny5J3ejGQaVMmwk5U9utfB82DZH3yuF4Cu7HsmkN-XON-1R_rybXpOVu-Pn1oUSlAKnRae81EMT-w2EXNeAfvzo-PEn09gt2xKPL8RVGawQ0RR6t_MQ-33UcFDT1lf9GlPQmJTnqfr1FKQQ8O9jiG4npI3gCDAuvOPRJeJmTRjGoy8ZeycQveC-YMjQMDKGATCOiiFA"/>
+<div class="absolute inset-0 bg-gradient-to-b from-primary/20 via-transparent to-background"></div>
+</div>
+<!-- Hero Title -->
+<div class="absolute inset-x-0 top-[20%] flex flex-col items-center justify-center">
+<span class="font-label text-[10px] uppercase tracking-[0.4em] mb-4 text-white/80">Special Curation</span>
+<h2 class="font-headline text-5xl md:text-7xl text-white tracking-tighter">OFFERS</h2>
+</div>
+<!-- Floating Stay Finder -->
+<div class="absolute bottom-12 inset-x-6">
+<div class="bg-surface-container-low/90 backdrop-blur-2xl p-6 rounded-lg cinematic-shadow border border-white/20">
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="flex flex-col space-y-1">
+<label class="text-[10px] font-label uppercase tracking-widest text-secondary">Check-in</label>
+<span class="text-sm font-medium border-b border-outline-variant/30 pb-1">2024.11.12</span>
+</div>
+<div class="flex flex-col space-y-1">
+<label class="text-[10px] font-label uppercase tracking-widest text-secondary">Check-out</label>
+<span class="text-sm font-medium border-b border-outline-variant/30 pb-1">2024.11.14</span>
+</div>
+<div class="col-span-2 flex flex-col space-y-1">
+<label class="text-[10px] font-label uppercase tracking-widest text-secondary">Guests</label>
+<span class="text-sm font-medium border-b border-outline-variant/30 pb-1">성인 2, 유아 0</span>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary font-label text-[12px] tracking-[0.2em] rounded-md transition-all hover:opacity-90 active:scale-[0.98]">
+                        AVAILABILITY
+                    </button>
+</div>
+</div>
+</section>
+<!-- Body Content -->
+<section class="px-6 pt-12 space-y-20">
+<!-- Seasonal Package -->
+<div class="relative">
+<div class="mb-6 flex flex-col items-center text-center">
+<span class="font-label text-[10px] uppercase tracking-widest text-secondary mb-2">Seasonal Package</span>
+<h3 class="font-headline text-2xl tracking-tight">고요한 가을의 정취</h3>
+</div>
+<div class="relative">
+<div class="aspect-[4/5] overflow-hidden rounded-lg">
+<img alt="Autumn Garden" class="w-full h-full object-cover" data-alt="A serene Japanese-style garden in autumn with vibrant red maple leaves, moss-covered stones, and a soft morning mist." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWUSetKsS_rNUFYfCV3zYglHtri1FGDajAurfJZ3dqY4cPRyMUSx4CbWenmlJlK1odbWgokKPWtRruZNglQN1A18YKOApHdfVAGRkAyJhiPRAGSxqk7_nFRNskvrPf-COOEinxN8K2AD0xoBBPtDKyy9b-5dgazVhrCT8Vx_zaClCiLTPsqTdjLJv9DWt27W2Slb0qQtjZULj22MNvor0CGAzuOy0z0fK-j6PpMgbiqZ8XFnpsY2gy0ZbQ1z5hGSf0qrLtixkr_TFy"/>
+</div>
+<!-- Overlapping Sheet Card -->
+<div class="absolute -bottom-10 left-4 right-4 bg-surface-container-lowest p-6 cinematic-shadow rounded-lg border border-outline-variant/10">
+<div class="flex justify-between items-end mb-4">
+<div>
+<h4 class="font-headline text-lg mb-1">Autumn Stillness Package</h4>
+<p class="text-sm text-secondary leading-relaxed">프라이빗 가든에서의 명상과 가을 차 세레모니를 제안합니다.</p>
+</div>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-surface-variant">
+<span class="font-label text-sm font-bold">520,000원~</span>
+<button class="text-[11px] font-label tracking-widest uppercase border-b border-primary pb-1">View Details</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Experience Section -->
+<div class="relative pt-12">
+<div class="mb-6 flex flex-col items-center text-center">
+<span class="font-label text-[10px] uppercase tracking-widest text-secondary mb-2">Experience</span>
+<h3 class="font-headline text-2xl tracking-tight">심야의 큐레이션</h3>
+</div>
+<div class="relative">
+<div class="aspect-[4/5] overflow-hidden rounded-lg">
+<img alt="Moody Library" class="w-full h-full object-cover" data-alt="A dark, moody hotel library at night with leather armchairs, low amber lighting, and shelves full of old books." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGldinXdKQTyUeVr6g6sx145E6ma1efStCsHxKKR4EqdsxpbSwATIaIzU9Z7-QMFrsqgtDTU9jaegy-mqoSjlML6-Bzrqgu2Q00dKu0F5i85ckc4XfAmNyzOqkGm3JQ4HAWcuwdrN5ozbJYEyVLL-2ocIz4GTcS5Y4GrNBpC7O9luhY7_iWUQBAmTAuoF7hABU9grCPGp80gb86-sher-qlcds0jIlYC_sxHqKhbtUQMCW52J1gEa2T0YcZIT3mz_JriiPjPoDyYLK"/>
+</div>
+<!-- Overlapping Sheet Card -->
+<div class="absolute -bottom-10 left-4 right-4 bg-primary text-on-primary p-6 cinematic-shadow rounded-lg">
+<div class="flex justify-between items-end mb-4">
+<div>
+<h4 class="font-headline text-lg mb-1">Midnight Curator Visit</h4>
+<p class="text-sm opacity-70 leading-relaxed">자정의 라이브러리에서 즐기는 큐레이터의 위스키 페어링 스토리.</p>
+</div>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-white/10">
+<span class="font-label text-sm font-bold">480,000원~</span>
+<button class="text-[11px] font-label tracking-widest uppercase border-b border-on-primary pb-1">View Details</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Member Benefits -->
+<div class="pt-20 pb-10">
+<div class="text-center mb-12">
+<h3 class="font-headline text-2xl tracking-tight mb-2">Member Benefits</h3>
+<p class="text-xs font-label text-secondary tracking-widest uppercase">Stay Still Membership</p>
+</div>
+<div class="grid grid-cols-1 gap-12">
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary scale-125">loyalty</span>
+</div>
+<div>
+<h5 class="font-headline text-base mb-1">Exclusive Rates</h5>
+<p class="text-sm text-secondary px-10">멤버십 회원만을 위한 최적의 요금 체계를 제안합니다.</p>
+</div>
+</div>
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary scale-125">upgrade</span>
+</div>
+<div>
+<h5 class="font-headline text-base mb-1">Room Upgrades</h5>
+<p class="text-sm text-secondary px-10">가능한 경우, 한 단계 더 높은 휴식을 위한 객실 업그레이드를 제공합니다.</p>
+</div>
+</div>
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary scale-125">schedule</span>
+</div>
+<div>
+<h5 class="font-headline text-base mb-1">Early Access</h5>
+<p class="text-sm text-secondary px-10">신규 패키지 및 시즈널 이벤트를 가장 먼저 만나보실 수 있습니다.</p>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center">
+<button class="px-8 py-4 border border-outline text-[11px] font-label tracking-[0.2em] uppercase rounded-md">Join Membership</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 bg-[#fdf2e4]/80 backdrop-blur-xl flex justify-around items-center px-4 pb-safe z-50 shadow-[0_-8px_32px_rgba(32,27,19,0.06)]">
+<a class="flex flex-col items-center justify-center text-[#685c50] transition-transform duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label text-[10px] uppercase tracking-widest font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#685c50] transition-transform duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1">bed</span>
+<span class="font-label text-[10px] uppercase tracking-widest font-medium">Rooms</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#25180d] font-semibold transition-transform duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="font-label text-[10px] uppercase tracking-widest">Reserve</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#685c50] transition-transform duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label text-[10px] uppercase tracking-widest font-medium">Account</span>
+</a>
+</nav>
+</body></html>

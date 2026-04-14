@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ORBIT E | CHARGE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#003543",
+                    "surface-container": "#17202e",
+                    "inverse-on-surface": "#28313f",
+                    "tertiary-fixed": "#ffd7f0",
+                    "error": "#ffb4ab",
+                    "secondary-fixed-dim": "#bac6e6",
+                    "primary-container": "#39d5ff",
+                    "primary": "#b1eaff",
+                    "on-surface": "#dae3f6",
+                    "on-tertiary-fixed-variant": "#840076",
+                    "on-secondary-fixed-variant": "#3b4761",
+                    "surface-bright": "#313a48",
+                    "on-primary-fixed": "#001f28",
+                    "surface-container-highest": "#2c3544",
+                    "secondary": "#bac6e6",
+                    "on-error-container": "#ffdad6",
+                    "inverse-surface": "#dae3f6",
+                    "on-surface-variant": "#bbc9ce",
+                    "on-primary-fixed-variant": "#004e60",
+                    "surface-variant": "#2c3544",
+                    "surface-container-lowest": "#060e1b",
+                    "on-background": "#dae3f6",
+                    "inverse-primary": "#00677e",
+                    "surface-container-high": "#222a38",
+                    "surface": "#0b1421",
+                    "outline": "#869398",
+                    "on-tertiary-container": "#970187",
+                    "secondary-fixed": "#d8e2ff",
+                    "tertiary-container": "#ffaae8",
+                    "surface-container-low": "#131c29",
+                    "tertiary-fixed-dim": "#fface8",
+                    "on-tertiary-fixed": "#3a0033",
+                    "primary-fixed-dim": "#45d6ff",
+                    "outline-variant": "#3c494e",
+                    "on-tertiary": "#5e0053",
+                    "on-secondary-fixed": "#0e1b33",
+                    "error-container": "#93000a",
+                    "tertiary": "#ffd5f0",
+                    "on-secondary": "#243049",
+                    "on-primary-container": "#00596e",
+                    "secondary-container": "#3d4963",
+                    "on-error": "#690005",
+                    "primary-fixed": "#b5ebff",
+                    "on-secondary-container": "#acb8d7",
+                    "surface-tint": "#45d6ff",
+                    "surface-dim": "#0b1421",
+                    "background": "#0b1421"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0b1421;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #dae3f6;
+        }
+        .mesh-depth {
+            background-image: radial-gradient(circle at 2px 2px, rgba(57, 213, 255, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .glass-panel {
+            background: rgba(10, 22, 42, 0.82);
+            backdrop-filter: blur(20px);
+        }
+        .ghost-border {
+            outline: 1px solid rgba(134, 147, 152, 0.15);
+        }
+        .glow-accent {
+            box-shadow: 0 0 40px rgba(57, 213, 255, 0.08);
+        }
+        .active-nav-glow {
+            border-bottom: 2px solid #39d5ff;
+            padding-bottom: 4px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-10 py-4 bg-[#07101d]/82 backdrop-blur-[20px] shadow-[0_8px_32px_rgba(7,16,29,0.8)]">
+<div class="flex items-center gap-12">
+<span class="text-2xl font-black tracking-[-0.02em] text-[#b1eaff] font-headline">ORBIT E</span>
+<nav class="hidden md:flex gap-8">
+<a class="font-label uppercase tracking-[0.1em] text-label-sm text-slate-400 hover:text-[#39d5ff] hover:bg-white/5 transition-all duration-300" href="#">Models</a>
+<a class="font-label uppercase tracking-[0.1em] text-label-sm text-slate-400 hover:text-[#39d5ff] hover:bg-white/5 transition-all duration-300" href="#">Mission</a>
+<a class="font-label uppercase tracking-[0.1em] text-label-sm text-slate-400 hover:text-[#39d5ff] hover:bg-white/5 transition-all duration-300" href="#">Telemetry</a>
+<a class="font-label uppercase tracking-[0.1em] text-label-sm text-[#b1eaff] border-b-2 border-[#39d5ff] pb-1" href="#">Network</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#39d5ff] cursor-pointer hover:text-[#b1eaff]">settings</span>
+<span class="material-symbols-outlined text-[#39d5ff] cursor-pointer hover:text-[#b1eaff]">sensors</span>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-sm font-label uppercase text-xs font-bold tracking-widest hover:brightness-110 active:scale-[0.97] transition-all">Login</button>
+</div>
+</header>
+<main class="pt-[72px]">
+<!-- Section 1: Hyper-Charging Dashboard -->
+<section class="relative min-height-[1024px] flex flex-col justify-end px-10 pb-20 mesh-depth">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-60 mix-blend-screen" data-alt="futuristic electric vehicle charging at a sleek neon-lit station at night with glowing blue light trails and high-tech interface vibes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGgGD3Aptn3fcg0qWn2PRv4SBv4RphOdj7V0O1v-4GutQuX50cXner7LEyaxegdAXrUYP2d9JrapkXFuz0u_lHpTc2KqXx7nktNJ2BpNhpSH4yGO6gZUqeVn53REwY9L3l_aZUDTB_zfIhMcGEOqBOJHzWG9MwncGGI7X--hR2qXzbpJIWx2ZVg4lcM6-NYgeKxZ-sPZ-Mz3PmSBqRBv_xf8pvEzB6mr5RYJtJpgGq3Wabm2O2jNuJKhQBI2eBaGXmLbClKJb1Klw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0b1421] via-transparent to-[#0b1421]/40"></div>
+</div>
+<div class="relative z-10 grid grid-cols-12 gap-6 items-end">
+<div class="col-span-12 lg:col-span-7 mb-12">
+<span class="font-label text-[#39d5ff] tracking-[0.2em] uppercase text-sm mb-4 block">ENERGY CORE SYSTEM</span>
+<h1 class="font-headline text-6xl md:text-8xl font-black text-[#b1eaff] leading-tight mb-6 tracking-tight">ORBIT E<br/>초급속 충전 네트워크</h1>
+<p class="text-xl text-slate-300 max-w-xl font-body leading-relaxed mb-8">
+                        시간의 한계를 넘어서는 에너지 하이웨이. 단 18분 만에 10%에서 80%까지, 중단 없는 모빌리티를 위한 지능형 전력 분배 시스템.
+                    </p>
+<div class="flex gap-4">
+<button class="bg-primary-container text-on-primary-container px-8 py-4 rounded-sm font-label uppercase text-sm font-black tracking-widest flex items-center gap-2 glow-accent hover:brightness-110 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                            충전소 찾기
+                        </button>
+<button class="glass-panel ghost-border text-primary px-8 py-4 rounded-sm font-label uppercase text-sm font-black tracking-widest hover:bg-white/10 transition-all">
+                            홈 충전기 신청
+                        </button>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
+<!-- Real-time Station Map -->
+<div class="glass-panel ghost-border p-6 rounded-lg relative overflow-hidden group">
+<div class="flex justify-between items-center mb-4">
+<span class="font-label text-xs tracking-widest text-slate-400">REAL-TIME STATION MAP</span>
+<span class="flex items-center gap-2 text-[#39d5ff] text-[10px] font-label">
+<span class="w-1.5 h-1.5 rounded-full bg-[#39d5ff] animate-pulse"></span>
+                                LIVE UPDATING
+                            </span>
+</div>
+<div class="h-48 w-full bg-surface-container-lowest rounded overflow-hidden relative">
+<img class="w-full h-full object-cover opacity-40 grayscale brightness-50" data-alt="abstract dark blue map of Seoul Korea with glowing neon points representing electric charging stations and data nodes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIFdZpag2NKyeTWPwXybWU6W_bdD5fuzpcAOroTu_RPUCVzhaft-RJn0yBzaFTWWGfd7cVxsGs17rbK1UJA52AJ2YPvrKCxLrCcRkDa7eMpH0lNpGD3bjR8SuSrWR8QR7TfHUj-2DqqUYyGincuNRGZM7OWQZKqNFLPzpw1oIllZOoFO6MVVHUlt54Rm3C9ytChnL6tuLDChQ-akZCnwu405sLCWRr9eUglUso0xI5al2PttQ9L45-ZknAo6BIFB1dXUMHx6HhmV0"/>
+<!-- Fake UI Overlay -->
+<div class="absolute inset-0 p-4 pointer-events-none">
+<div class="w-3 h-3 bg-[#39d5ff] rounded-full absolute top-1/4 left-1/3 shadow-[0_0_10px_#39d5ff]"></div>
+<div class="w-3 h-3 bg-[#39d5ff] rounded-full absolute top-1/2 left-2/3 shadow-[0_0_10px_#39d5ff]"></div>
+<div class="w-3 h-3 bg-[#39d5ff] rounded-full absolute bottom-1/4 left-1/2 shadow-[0_0_10px_#39d5ff]"></div>
+</div>
+</div>
+<div class="mt-4 flex justify-between text-[10px] font-label text-slate-500">
+<span>GRID LATENCY: 12ms</span>
+<span>TOTAL NODES: 3,428</span>
+</div>
+</div>
+<!-- Live Telemetry -->
+<div class="glass-panel ghost-border p-6 rounded-lg relative overflow-hidden">
+<div class="flex justify-between items-center mb-6">
+<span class="font-label text-xs tracking-widest text-slate-400">LIVE TELEMETRY V2.0</span>
+<span class="material-symbols-outlined text-[#39d5ff] text-sm">wifi_tethering</span>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<span class="block font-label text-[10px] text-slate-500 mb-1">CHARGING SPEED</span>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-black text-[#b1eaff] font-headline tracking-tighter">245</span>
+<span class="text-xs text-[#39d5ff] font-label">kW</span>
+</div>
+</div>
+<div>
+<span class="block font-label text-[10px] text-slate-500 mb-1">TIME REMAINING</span>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-black text-[#b1eaff] font-headline tracking-tighter">12</span>
+<span class="text-xs text-[#39d5ff] font-label">MIN</span>
+</div>
+</div>
+<div class="col-span-2">
+<div class="flex justify-between text-[10px] font-label text-slate-400 mb-2">
+<span>BATTERY HEALTH: 98%</span>
+<span>80% TARGET</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-[#39d5ff] to-[#b1eaff] w-[64%] shadow-[0_0_10px_#39d5ff]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Technical Core -->
+<section class="py-24 px-10 bg-surface-container-lowest">
+<div class="mb-16">
+<span class="font-label text-[#39d5ff] tracking-[0.2em] uppercase text-xs mb-2 block">HARDWARE SPECIFICATIONS</span>
+<h2 class="font-headline text-4xl font-bold tracking-tight">기술적 진보의 핵심</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Card 1 -->
+<div class="bg-surface-container-low p-8 rounded-sm ghost-border hover:bg-surface-container-high transition-all duration-500 group">
+<span class="material-symbols-outlined text-[#39d5ff] text-3xl mb-6 block group-hover:scale-110 transition-transform">brightness_high</span>
+<h3 class="font-headline text-lg font-bold mb-4 uppercase tracking-wide">800V Architecture</h3>
+<p class="text-slate-400 text-sm font-body leading-relaxed">전압 손실을 최소화하고 충전 시간을 혁명적으로 단축시키는 고전압 시스템 설계.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-low p-8 rounded-sm ghost-border hover:bg-surface-container-high transition-all duration-500 group">
+<span class="material-symbols-outlined text-[#39d5ff] text-3xl mb-6 block group-hover:scale-110 transition-transform">ac_unit</span>
+<h3 class="font-headline text-lg font-bold mb-4 uppercase tracking-wide">Liquid Cooled Cables</h3>
+<p class="text-slate-400 text-sm font-body leading-relaxed">최대 출력 시 발생하는 열을 실시간으로 제어하여 안정적인 초고속 충전을 보장합니다.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-low p-8 rounded-sm ghost-border hover:bg-surface-container-high transition-all duration-500 group">
+<span class="material-symbols-outlined text-[#39d5ff] text-3xl mb-6 block group-hover:scale-110 transition-transform">monitoring</span>
+<h3 class="font-headline text-lg font-bold mb-4 uppercase tracking-wide">Predictive Maintenance</h3>
+<p class="text-slate-400 text-sm font-body leading-relaxed">AI 알고리즘이 부품의 상태를 실시간 분석하여 다운타임을 제로에 가깝게 유지합니다.</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-low p-8 rounded-sm ghost-border hover:bg-surface-container-high transition-all duration-500 group">
+<span class="material-symbols-outlined text-[#39d5ff] text-3xl mb-6 block group-hover:scale-110 transition-transform">electric_car</span>
+<h3 class="font-headline text-lg font-bold mb-4 uppercase tracking-wide">Universal Compatibility</h3>
+<p class="text-slate-400 text-sm font-body leading-relaxed">모든 표준 충전 프로토콜을 지원하여 어떤 상황에서도 유연한 에너지 공급이 가능합니다.</p>
+</div>
+</div>
+</section>
+<!-- Section 3: Charging Network Status -->
+<section class="py-24 px-10">
+<div class="glass-panel ghost-border rounded-xl overflow-hidden shadow-2xl">
+<div class="bg-surface-container-highest/50 px-8 py-4 border-b border-white/5 flex justify-between items-center">
+<span class="font-label text-xs tracking-[0.2em] text-[#39d5ff]">LIVE GRID STATUS // 1920:NETWORK_CLUSTER</span>
+<div class="flex gap-4">
+<span class="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_#10b981]"></span>
+<span class="font-label text-[10px] text-slate-400">SYSTEM STABLE</span>
+</div>
+</div>
+<div class="p-10 grid grid-cols-1 lg:grid-cols-12 gap-12">
+<div class="lg:col-span-8">
+<div class="flex justify-between items-end mb-8">
+<div>
+<span class="font-label text-xs text-slate-500 uppercase">Load Balance History</span>
+<h4 class="text-2xl font-bold font-headline">네트워크 부하 가동률</h4>
+</div>
+<div class="text-right">
+<span class="text-3xl font-black text-[#b1eaff] font-headline">99.98%</span>
+<span class="block font-label text-[10px] text-slate-500">AVG UPTIME</span>
+</div>
+</div>
+<!-- Sparkline Visualization -->
+<div class="h-48 w-full bg-surface-container-lowest/50 rounded-lg relative flex items-end px-4 gap-1">
+<div class="flex-1 bg-[#39d5ff]/10 h-[60%] rounded-t-sm border-t border-[#39d5ff]/40"></div>
+<div class="flex-1 bg-[#39d5ff]/10 h-[65%] rounded-t-sm border-t border-[#39d5ff]/40"></div>
+<div class="flex-1 bg-[#39d5ff]/10 h-[55%] rounded-t-sm border-t border-[#39d5ff]/40"></div>
+<div class="flex-1 bg-[#39d5ff]/10 h-[80%] rounded-t-sm border-t border-[#39d5ff]/40 shadow-[0_-10px_20px_rgba(57,213,255,0.1)]"></div>
+<div class="flex-1 bg-[#39d5ff]/10 h-[70%] rounded-t-sm border-t border-[#39d5ff]/40"></div>
+<div class="flex-1 bg-[#39d5ff]/10 h-[75%] rounded-t-sm border-t border-[#39d5ff]/40"></div>
+<div class="flex-1 bg-[#39d5ff]/10 h-[85%] rounded-t-sm border-t border-[#39d5ff]/40"></div>
+<div class="flex-1 bg-[#b1eaff]/20 h-[92%] rounded-t-sm border-t border-[#b1eaff] shadow-[0_-15px_30px_rgba(177,234,255,0.2)]"></div>
+<div class="flex-1 bg-[#39d5ff]/10 h-[70%] rounded-t-sm border-t border-[#39d5ff]/40"></div>
+<div class="flex-1 bg-[#39d5ff]/10 h-[60%] rounded-t-sm border-t border-[#39d5ff]/40"></div>
+<div class="flex-1 bg-[#39d5ff]/10 h-[65%] rounded-t-sm border-t border-[#39d5ff]/40"></div>
+</div>
+<div class="flex justify-between mt-4 font-label text-[10px] text-slate-500">
+<span>00:00 UTC</span>
+<span>CURRENT: 14:42 KST</span>
+</div>
+</div>
+<div class="lg:col-span-4 grid grid-cols-1 gap-6">
+<div class="p-6 bg-surface-container-high rounded-lg border-l-4 border-[#39d5ff]">
+<span class="font-label text-[10px] text-slate-500 block mb-1">ACTIVE NODES</span>
+<span class="text-4xl font-black font-headline text-[#b1eaff]">3,428+</span>
+</div>
+<div class="p-6 bg-surface-container-high rounded-lg border-l-4 border-[#39d5ff]">
+<span class="font-label text-[10px] text-slate-500 block mb-1">GLOBAL LATENCY</span>
+<span class="text-4xl font-black font-headline text-[#b1eaff]">24ms</span>
+</div>
+<div class="p-6 bg-surface-container-high rounded-lg border-l-4 border-primary-container">
+<span class="font-label text-[10px] text-slate-500 block mb-1">POWER DELIVERED</span>
+<span class="text-4xl font-black font-headline text-[#b1eaff]">1.2 GW</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Charging Ecosystem -->
+<section class="py-24 px-10 mesh-depth">
+<div class="text-center mb-20">
+<span class="font-label text-[#39d5ff] tracking-[0.2em] uppercase text-xs mb-2 block">CHARGE ANYWHERE</span>
+<h2 class="font-headline text-5xl font-bold tracking-tight">당신의 일상과 연결된 에너지</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+<!-- Home Charging -->
+<div class="group relative aspect-[4/5] md:aspect-square overflow-hidden rounded-lg ghost-border">
+<img class="absolute inset-0 w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0" data-alt="luxury home garage with a minimalist wall-mounted electric car charger glowing with soft blue ambient light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeoN1CHqCn-3KLq4TK8tQi1dWrg_6DRX6kI7nPFf5-g9nGlS_KAKXW3iZM-IRGR2tv3aRxTxUKFVvxbzHMdqJdFh7MyRRH-LHGZseV8CCYQiWhuYMd1C7zM3a9VTg9nasjkL2HzdeACrzsmWpgXKSu91743qjHV7u1TodR1KmHUbohJmZGwKZEPFHoi-VHw3cZAOLA6sFdahagqAXyBgJ4dyv_qmlbQhNOd8fYbEzbGDYpcdeQkArIp6wFt4tHm1_sHckKeeozer0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 w-full p-10">
+<span class="font-label text-[#39d5ff] text-xs mb-2 block">PERSONAL INFRASTRUCTURE</span>
+<h3 class="text-3xl font-bold font-headline mb-4">Home Orbiter</h3>
+<p class="text-slate-300 font-body mb-8 max-w-sm">당신의 차고를 가장 진보된 충전소로 만듭니다. 수면 중에 충전하고, 최상의 배터리 컨디션으로 하루를 시작하세요.</p>
+<button class="bg-white/10 backdrop-blur-md px-6 py-3 rounded-sm font-label uppercase text-xs font-bold tracking-widest ghost-border group-hover:bg-[#39d5ff] group-hover:text-on-primary-container transition-all">신청하기</button>
+</div>
+</div>
+<!-- Workplace/Public -->
+<div class="group relative aspect-[4/5] md:aspect-square overflow-hidden rounded-lg ghost-border">
+<img class="absolute inset-0 w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0" data-alt="modern glass office building at sunset with high-tech charging rows for electric car fleets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIYn-17dqVTjTl6T4oV7dPWJJXaMaLKLnL3CCNrfY0hG6_MzWsglLY_aqBJHLQbQScS7CfgHOyZONgvYGOIzG9Jzz0Bp8JyZOCbHNH3MJ_w4lb-BazWulaQH44qzZNh8TM94XOePFQdBovtjALOZPQyy3-oU0-w-iXecunDJVpEuuHVoMlwH7Y6i8t_MoFdDmwJWZ6M0WdlR2kUP2Z2Y9i5cLMwcmXq9ExkurgXEj1poEy8pAcZGWhBeCVmD53KKBBlSYg7ySiDC0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 w-full p-10">
+<span class="font-label text-[#39d5ff] text-xs mb-2 block">WORKPLACE SOLUTIONS</span>
+<h3 class="text-3xl font-bold font-headline mb-4">Enterprise Grid</h3>
+<p class="text-slate-300 font-body mb-8 max-w-sm">비즈니스 파트너를 위한 지능형 플릿 매니지먼트. 대규모 충전 수요를 최적의 비용으로 관리하는 기업용 충전 솔루션.</p>
+<button class="bg-white/10 backdrop-blur-md px-6 py-3 rounded-sm font-label uppercase text-xs font-bold tracking-widest ghost-border group-hover:bg-[#39d5ff] group-hover:text-on-primary-container transition-all">상담 신청</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0b1421] w-full border-t border-[#39d5ff]/10">
+<div class="max-w-[1920px] mx-auto px-12 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col gap-2">
+<span class="font-black text-[#39d5ff] font-headline tracking-wider">ORBIT E</span>
+<p class="font-label text-[10px] tracking-[0.15em] uppercase text-slate-500">© 2024 ORBIT E SYSTEM TELEMETRY. ALL RIGHTS RESERVED.</p>
+</div>
+<nav class="flex gap-8">
+<a class="font-label text-[10px] tracking-[0.15em] uppercase text-slate-500 hover:text-[#b1eaff] transition-colors cursor-pointer" href="#">Technical Specs</a>
+<a class="font-label text-[10px] tracking-[0.15em] uppercase text-slate-500 hover:text-[#b1eaff] transition-colors cursor-pointer" href="#">System Status</a>
+<a class="font-label text-[10px] tracking-[0.15em] uppercase text-slate-500 hover:text-[#b1eaff] transition-colors cursor-pointer" href="#">Legal Info</a>
+<a class="font-label text-[10px] tracking-[0.15em] uppercase text-slate-500 hover:text-[#b1eaff] transition-colors cursor-pointer" href="#">Privacy Policy</a>
+</nav>
+</div>
+</footer>
+</body></html>

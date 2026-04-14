@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,700;0,800;0,900;1,800;1,900&amp;family=Manrope:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#871368",
+                        "surface-container-high": "#312346",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-bright": "#403356",
+                        "on-secondary-container": "#ff97d5",
+                        "outline": "#a18b95",
+                        "primary-fixed-dim": "#e9c339",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container": "#26193b",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-error": "#690005",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#e9c339",
+                        "on-tertiary-container": "#3d3f3f",
+                        "on-secondary-fixed": "#3c002c",
+                        "surface-container-highest": "#3c2e52",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#ffe07e",
+                        "on-primary-container": "#4c3d00",
+                        "on-surface": "#ecdcff",
+                        "outline-variant": "#54424b",
+                        "on-tertiary": "#2f3131",
+                        "surface": "#190c2e",
+                        "inverse-on-surface": "#372a4d",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-primary": "#3b2f00",
+                        "on-surface-variant": "#d9c0cb",
+                        "tertiary": "#c6c6c7",
+                        "on-secondary-fixed-variant": "#841065",
+                        "secondary-fixed-dim": "#ffaedc",
+                        "surface-dim": "#190c2e",
+                        "inverse-surface": "#ecdcff",
+                        "primary": "#e9c339",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#564500",
+                        "tertiary-container": "#a9aaaa",
+                        "secondary": "#ffaedc",
+                        "primary-container": "#caa71a",
+                        "on-secondary": "#600049",
+                        "on-background": "#ecdcff",
+                        "surface-variant": "#3c2e52",
+                        "surface-container-low": "#221537",
+                        "on-primary-fixed": "#231b00",
+                        "inverse-primary": "#725c00",
+                        "surface-container-lowest": "#140629",
+                        "secondary-fixed": "#ffd8eb",
+                        "background": "#190c2e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Epilogue"],
+                        "body": ["Manrope"],
+                        "label": ["Epilogue"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-tilt {
+            transform: rotate(-5deg);
+        }
+        .glass-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#190c2e]/80 backdrop-blur-xl shadow-[0_0_40px_0_rgba(135,19,104,0.08)]">
+<div class="flex justify-between items-center px-6 h-16">
+<button class="active:scale-95 transition-transform duration-150 text-[#e9c339] hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-2xl font-black text-[#e9c339] tracking-[-0.04em] font-headline uppercase">MELT POP</h1>
+<button class="active:scale-95 transition-transform duration-150 text-[#e9c339] hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+<div class="bg-[#221537] h-[1px] w-full opacity-50"></div>
+</header>
+<main class="pb-32 pt-16">
+<!-- Hero Section -->
+<section class="relative w-full h-[751px] overflow-hidden">
+<img alt="High gloss lip gloss texture" class="w-full h-full object-cover" data-alt="extreme close-up of glossy wet pink lip texture with high-gloss shine and dramatic editorial lighting on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe73hAa7a7e4HFVRNxiBisf5148yDDQyZnzU_dlOyh6rQbF2ChL0WNz7QTzedO-Cxg-wEuqh5i0wUusU7Yz8c9ufikf1msaFcKs_PqlNByxh6NlMfEMzOLf0JrCpKOLdSF3m18AgsajpZMvs_UtWzkXq5ocMwQLP4Znfml3e6sJ9lN5oOf02xHJ4aeSuxIa5B61AB9ocQbtAW4J8x0xQFMvObRrOMs304Skxb8x03Tvebxsb2wLksAOb06f0mvxTxEv_EUE5fgk-gO"/>
+<!-- Floating Stickers/Badges -->
+<div class="absolute top-10 left-6 kinetic-tilt bg-secondary text-on-secondary px-4 py-2 font-headline font-black text-sm tracking-widest z-10">
+                LIMITED EDITION
+            </div>
+<div class="absolute bottom-20 right-[-10px] kinetic-tilt bg-primary text-on-primary px-8 py-3 font-headline font-black text-3xl tracking-tighter z-10">
+                12,000원
+            </div>
+<!-- Hero Content Overlay -->
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-surface to-transparent">
+<h2 class="font-headline font-black italic text-5xl leading-none tracking-tighter text-on-surface mb-2">
+                    SHADES<br/>EXPLORER
+                </h2>
+<p class="font-body font-bold text-primary text-lg">가장 대담한 컬러를 탐험하세요</p>
+</div>
+</section>
+<!-- Product Summary Section -->
+<section class="px-6 py-12 bg-surface-container-low">
+<div class="space-y-4">
+<p class="font-body text-on-surface-variant leading-relaxed">
+                    MELT POP의 시그니처 하이-템포 텍스처는 단 한 번의 터치로 강렬한 광택과 압도적인 발색을 선사합니다. 끈적임 없는 글래스 피니시로 당신의 입술에 빛나는 에너지를 더하세요.
+                </p>
+<div class="flex gap-4 items-center">
+<span class="font-headline font-bold text-xs uppercase tracking-[0.2em] text-secondary opacity-80">Texture: Liquid Gloss</span>
+<span class="font-headline font-bold text-xs uppercase tracking-[0.2em] text-secondary opacity-80">Finish: High-Voltage</span>
+</div>
+</div>
+</section>
+<!-- Shade Selector (Bento Style) -->
+<section class="px-6 py-12">
+<h3 class="font-headline font-black text-2xl uppercase tracking-tight mb-8">Select Your Shade</h3>
+<div class="grid grid-cols-2 gap-4">
+<!-- Shade 1 -->
+<div class="col-span-1 bg-surface-container-high p-1 border-2 border-primary">
+<div class="bg-[#ff7ccf] w-full aspect-square mb-2"></div>
+<div class="p-2">
+<span class="block font-headline font-black text-xs uppercase">Electric Pink</span>
+<span class="block font-body text-[10px] text-on-surface-variant">Vivid Neon Burst</span>
+</div>
+</div>
+<!-- Shade 2 -->
+<div class="col-span-1 bg-surface-container-high p-1 opacity-60">
+<div class="bg-[#ffd84d] w-full aspect-square mb-2"></div>
+<div class="p-2">
+<span class="block font-headline font-black text-xs uppercase">Acid Yellow</span>
+<span class="block font-body text-[10px] text-on-surface-variant">Experimental Glow</span>
+</div>
+</div>
+<!-- Shade 3 -->
+<div class="col-span-2 bg-surface-container-high p-1 opacity-60 flex gap-4">
+<div class="bg-[#4d287e] w-24 h-24 shrink-0"></div>
+<div class="flex flex-col justify-center">
+<span class="block font-headline font-black text-xs uppercase">Deep Violet</span>
+<span class="block font-body text-[10px] text-on-surface-variant">Midnight Gloss Ritual</span>
+<span class="mt-2 font-headline font-black text-sm text-primary">15,000원</span>
+</div>
+</div>
+</div>
+</section>
+<!-- The Color Universe Catalog -->
+<section class="py-12 bg-surface-container-lowest">
+<div class="px-6 mb-8">
+<h3 class="font-headline font-black text-3xl italic tracking-tighter uppercase leading-none">The Color<br/>Universe</h3>
+</div>
+<div class="flex overflow-x-auto gap-6 px-6 no-scrollbar">
+<!-- Universe Item 1 -->
+<div class="min-w-[280px] shrink-0">
+<div class="relative mb-4">
+<img alt="Crushed Velvet Texture" class="w-full aspect-[3/4] object-cover grayscale brightness-50 contrast-125" data-alt="abstract close-up of crushed velvet cosmetic texture with deep purple shadows and iridescent highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG9FOUNTc2wZ8A8gjXYpKq8vdQSb_jX6J47UZIo-e54ltmJWnEejcdsW_oum6exNA7yiZobQxzMIPp1xBqa7YKcBnC-b3qCYXpz6QRX-l6SekpU484hm1TlZ5kk0eA6S92s73w-p4qXoyNQwZ87-8N-lrpOuk0fTWiQPbj-4vOdALabv951N8YUNJxA-2895bI0Oiqo6DJXcc_oWLtV8jT6bcQWEukp8ya04wOMMed2Ce6Ap9NLIwF2Et4iYLRUjgDwhIQAt1pavV1"/>
+<div class="absolute inset-0 bg-secondary-container/20 mix-blend-overlay"></div>
+<div class="absolute top-4 left-4 font-headline font-black text-4xl text-white mix-blend-difference">01</div>
+</div>
+<h4 class="font-headline font-black text-xl uppercase tracking-tighter">Crushed Velvet</h4>
+<p class="font-body text-sm text-on-surface-variant">압도적인 매트함과 부드러운 깊이감</p>
+</div>
+<!-- Universe Item 2 -->
+<div class="min-w-[280px] shrink-0">
+<div class="relative mb-4">
+<img alt="Plasma Drip Texture" class="w-full aspect-[3/4] object-cover contrast-150" data-alt="liquid neon pink cosmetic drip falling against a dark purple background with hyper-realistic reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKLFl0Jem55TFNBwcE2-WsJY8Ev2HkGy0ibVtBIby2WGOF5ukQSoHLfG0kOnH9qX6-vWt4BfSSd7T_e3jglIclb9szW1w8HEE5vR1cWTWg0rO3MnUo3_hU24AfKHKrHBaKlzimeRhUWh4zL8_ImK3rphXj0sPO_jmoGOqEsQ1W3jNNPsd7vZykXz7hcJxWBoKvHp-R38wI6Lt2eCIypaC_dKRoGlYJ4ZzYhbfDhzExP60eH1zyi3tucN-eE1xA3_R6x-JJYwz3M3cB"/>
+<div class="absolute top-4 left-4 font-headline font-black text-4xl text-white mix-blend-difference">02</div>
+</div>
+<h4 class="font-headline font-black text-xl uppercase tracking-tighter text-secondary">Plasma Drip</h4>
+<p class="font-body text-sm text-on-surface-variant">초고광택 액체 텍스처의 흐르는 빛</p>
+</div>
+<!-- Universe Item 3 -->
+<div class="min-w-[280px] shrink-0">
+<div class="relative mb-4">
+<div class="w-full aspect-[3/4] bg-surface-container-highest flex items-center justify-center p-8 overflow-hidden">
+<div class="w-full h-full bg-gradient-to-br from-primary via-[#ffd84d] to-primary-container rounded-full blur-2xl opacity-50"></div>
+<span class="absolute font-headline font-black text-2xl text-primary text-center">GOLD<br/>DUST</span>
+</div>
+<div class="absolute top-4 left-4 font-headline font-black text-4xl text-white mix-blend-difference">03</div>
+</div>
+<h4 class="font-headline font-black text-xl uppercase tracking-tighter">Gold Dust</h4>
+<p class="font-body text-sm text-on-surface-variant">미세한 골드 펄이 만드는 신비로운 섬광</p>
+</div>
+</div>
+</section>
+<!-- Purchase Action Dock -->
+<div class="fixed bottom-[88px] left-0 w-full px-4 z-40">
+<button class="w-full bg-primary py-5 flex items-center justify-between px-8 shadow-[0_10px_30px_rgba(233,195,57,0.3)] active:scale-95 transition-all">
+<span class="font-headline font-black text-2xl text-on-primary italic tracking-tighter">BUY NOW</span>
+<span class="font-headline font-bold text-on-primary text-lg">12,000원</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-2 pb-6 bg-[#190c2e]/60 backdrop-blur-2xl border-t border-white/5 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-[#e9c339] bg-[#312346]/50 rounded-xl px-4 py-1 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-headline font-bold text-[10px] tracking-widest uppercase">SHOP</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/50 hover:text-[#ff7ccf] transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">bolt</span>
+<span class="font-headline font-bold text-[10px] tracking-widest uppercase">DROPS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/50 hover:text-[#ff7ccf] transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-headline font-bold text-[10px] tracking-widest uppercase">KITS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/50 hover:text-[#ff7ccf] transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-headline font-bold text-[10px] tracking-widest uppercase">PROFILE</span>
+</a>
+</nav>
+</body></html>

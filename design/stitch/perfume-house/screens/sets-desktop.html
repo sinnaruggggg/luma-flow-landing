@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;400;700&amp;family=Manrope:wght@200;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#80756e",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#ece1d4",
+                    "surface-bright": "#fff8f3",
+                    "secondary-container": "#f0e0d0",
+                    "on-primary-fixed": "#26190e",
+                    "on-primary-container": "#aa9282",
+                    "on-surface": "#201b13",
+                    "primary-fixed": "#f9ddcb",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#554336",
+                    "tertiary-fixed": "#f3dfcd",
+                    "secondary-fixed": "#f0e0d0",
+                    "surface-container-highest": "#ece1d4",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#d2c4bc",
+                    "surface-container-low": "#fdf2e4",
+                    "secondary": "#685c50",
+                    "surface-container-high": "#f2e6d9",
+                    "surface-container": "#f8ecdf",
+                    "inverse-surface": "#353027",
+                    "surface-dim": "#e3d8cb",
+                    "inverse-on-surface": "#faefe2",
+                    "secondary-fixed-dim": "#d4c4b5",
+                    "inverse-primary": "#dcc2b0",
+                    "tertiary-container": "#392d21",
+                    "on-background": "#201b13",
+                    "surface-tint": "#6e5a4c",
+                    "primary-container": "#3c2c20",
+                    "on-tertiary-fixed": "#241a0f",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#d6c3b2",
+                    "on-secondary-fixed-variant": "#50453a",
+                    "surface": "#fff8f3",
+                    "on-tertiary-fixed-variant": "#514438",
+                    "tertiary": "#23190e",
+                    "primary": "#25180d",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#6e6256",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#4e453f",
+                    "on-secondary-fixed": "#221a11",
+                    "background": "#fff8f3",
+                    "on-tertiary-container": "#a59484",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#dcc2b0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif KR", "serif"],
+                    "body": ["Manrope", "sans-serif"],
+                    "label": ["Manrope", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24
+    }
+.soft-grain {
+    position: relative
+    }
+.soft-grain::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuC9PAC6O65RG94e13gOiNZtiTWQnvNkBidjGMCMf6NGROpMdbG71Wj-pxWBD4H-80Vi9ipEe7u94mJuCt8Ogju-Ve2DngUXT51bSw1FYn2MWqGtSgpvAQgW31J3hxB3quflYqXUcc9RIMdsTxD2gTxkVbWxqFNmWnydjNgJHtztfiKfS-YjNGS_b9Zfh5nDA5j3pWtsQFfACuy-f8CeMErKYcZWOz7HpTA1LmgeFJ-Onq0Cnhry4xPuwbkQIYOnAccdGU8BH1GiIT37);
+    opacity: 0.05;
+    pointer-events: none
+    }
+.editorial-shadow {
+    box-shadow: 0 20px 40px rgba(37, 24, 13, 0.04)
+    }</style>
+</head>
+<body class="bg-background text-primary font-body soft-grain selection:bg-primary-container selection:text-on-primary">
+<!-- Top Navigation -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-[#fff8f3]/80 backdrop-blur-md flex justify-between items-center px-12 py-6">
+<div class="font-headline text-2xl font-light tracking-[0.2em] text-primary">MOSS &amp; AMBER</div>
+<div class="hidden md:flex gap-12 items-center">
+<a class="font-label tracking-wide uppercase text-sm text-[#6b5f53] hover:text-primary transition-colors duration-300" href="#">Collections</a>
+<a class="font-label tracking-wide uppercase text-sm text-[#6b5f53] hover:text-primary transition-colors duration-300" href="#">Scent Profiles</a>
+<a class="font-label tracking-wide uppercase text-sm text-primary font-bold border-b border-primary/20" href="#">The Sets</a>
+<a class="font-label tracking-wide uppercase text-sm text-[#6b5f53] hover:text-primary transition-colors duration-300" href="#">Journal</a>
+<a class="font-label tracking-wide uppercase text-sm text-[#6b5f53] hover:text-primary transition-colors duration-300" href="#">Archive</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-primary">search</button>
+<button class="material-symbols-outlined text-primary" data-icon="shopping_bag">shopping_bag</button>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Discovery: The Editorial Mood Canvas -->
+<section class="relative h-[921px] flex items-center overflow-hidden px-12">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover grayscale-[20%]" data-alt="Cinematic close-up of amber liquid in a minimalist glass bottle resting on a weathered stone surface with soft morning light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbV_jvwLa6rqtthRZ7v3-p-4lL1kq8u73U2DE8GuHy7DxnxTP6fwqOlIzSBk8Qu6q8l9KXI1re_TQCkmOTmtEZVBkBY_u6Nvnm3zyDGQtA8Og3U-7yS4O07Yg4hCTdZRTzOHyiUxiQ8qSDwhVzbUP-0ipHkHd24_-IVFJvNoGJeZrvqnWpHyszLRMs7jXGP17Cf-_cIT1r7Vo5si7bnkvBzHmHpcdIevkULxubXZlFnXItIBU2EiHtx3jHZnGhQJyH_ukSo08Rm3kF"/>
+<div class="absolute inset-0 bg-primary/5"></div>
+</div>
+<!-- Layer 1: The Sheet -->
+<div class="relative z-10 bg-surface-container-lowest p-16 max-w-xl editorial-shadow">
+<span class="font-label text-xs tracking-[0.3em] uppercase text-on-primary-container mb-6 block">Editorial Curation 01</span>
+<h1 class="font-headline text-5xl md:text-6xl font-light leading-tight mb-8">향의 조각들,<br/>The Signature Set</h1>
+<p class="font-body text-secondary leading-relaxed mb-10">모스앤앰버의 정수를 담은 시그니처 세트. 공간과 시간을 아우르는 세 가지 감각적 여정을 제안합니다.</p>
+<button class="bg-primary text-on-primary px-10 py-5 font-label uppercase tracking-widest text-sm hover:bg-primary-container transition-all">Explore Discovery</button>
+</div>
+<!-- Layer 2: Drifting Note Card -->
+<div class="absolute bottom-20 right-20 z-20 bg-white/80 backdrop-blur-xl p-10 max-w-xs editorial-shadow hidden lg:block">
+<div class="flex flex-col gap-4">
+<span class="font-label text-[10px] tracking-widest uppercase border-b border-primary/10 pb-2">Selected Notes</span>
+<h3 class="font-headline text-xl">시더우드 &amp; 샌달우드</h3>
+<p class="font-body text-sm text-secondary leading-loose">새벽 녘 숲의 차가운 공기와 흙 내음이 어우러진 차분한 우디 계열의 조화.</p>
+</div>
+</div>
+</section>
+<!-- Category Anchors & Filter System -->
+<section class="sticky top-[88px] z-40 bg-surface border-y border-outline-variant/15 px-12 py-6 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex gap-12 overflow-x-auto no-scrollbar">
+<button class="font-label text-xs tracking-[0.2em] uppercase text-primary border-b border-primary pb-1">All Sets</button>
+<button class="font-label text-xs tracking-[0.2em] uppercase text-secondary hover:text-primary transition-colors">Woody</button>
+<button class="font-label text-xs tracking-[0.2em] uppercase text-secondary hover:text-primary transition-colors">Floral</button>
+<button class="font-label text-xs tracking-[0.2em] uppercase text-secondary hover:text-primary transition-colors">Citrus</button>
+<button class="font-label text-xs tracking-[0.2em] uppercase text-secondary hover:text-primary transition-colors">Earthy</button>
+</div>
+<div class="flex items-center gap-4 text-secondary">
+<span class="font-label text-[10px] uppercase tracking-widest">Filter by:</span>
+<select class="bg-transparent border-none focus:ring-0 font-label text-xs uppercase tracking-widest text-primary cursor-pointer p-0">
+<option>Scent Profile</option>
+<option>Woody</option>
+<option>Floral</option>
+<option>Musky</option>
+</select>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="px-12 py-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-24">
+<!-- Set 1 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-8 aspect-[3/4]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Minimalist perfume set with three dark glass bottles arranged on a cream linen cloth with sharp diagonal shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiLQbav0IEMwIbTaoyqRoIEPLXOdrWXx3qVYbfFyisArae_wPxXyHWrj3aFOorLYKIKe3R6N-tDT_aTx3tNlnQVkGjJ2leqDs3qRkj-muXMB7bgvJdEsIn9hJFZRTcyR_DuGbjS7DDTaDq1bUhF6IQ6tPvzG20xGuHKDkQxVl7tAJ0hKTMpId5q3czfUksAighXhcMV67-8HDpfG6inlHHSv51zSDMNobI4NPVM6B0SrFsoPAEQkiDqYLU-qVV2mEfJifJYb-_GvAk"/>
+<div class="absolute top-6 left-6 bg-surface-container-lowest px-4 py-2 text-[10px] font-label uppercase tracking-widest editorial-shadow">Limited</div>
+</div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-2xl">The Forest Archive</h3>
+<span class="font-label text-sm tracking-tight">145,000원</span>
+</div>
+<div class="flex flex-col gap-1 border-t border-outline-variant/15 pt-4">
+<div class="flex gap-2 items-baseline">
+<span class="font-label text-[9px] uppercase tracking-tighter text-secondary w-12">Top</span>
+<span class="font-body text-xs">Bergamot, Pine Needle</span>
+</div>
+<div class="flex gap-2 items-baseline">
+<span class="font-label text-[9px] uppercase tracking-tighter text-secondary w-12">Heart</span>
+<span class="font-body text-xs">Cedarwood, Moss</span>
+</div>
+<div class="flex gap-2 items-baseline">
+<span class="font-label text-[9px] uppercase tracking-tighter text-secondary w-12">Base</span>
+<span class="font-body text-xs">Amber, Wet Earth</span>
+</div>
+</div>
+</div>
+<!-- Set 2 -->
+<div class="group cursor-pointer mt-12 lg:mt-24">
+<div class="relative overflow-hidden mb-8 aspect-[3/4]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close up of an elegant perfume bottle next to a single white petal on a dark wooden surface, moody lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVnDPIC7YsghSsryuVRwV7UdaTD9vWmeYwwtjespOp0tgkHaw9OBuLHmHVX4DDs6VvKgUQpdy-Vx4KT0yLzH2_5UVS_7GaaeO6oT8MShdhiGplRFC33AJ1uPZH4qV3pN5s4CJ_-fA9nBCTpSQEL32Qiq4PiiKmC9g5luLfi-klHmJ73Nr3dUup-fbhp8-iZG6VztNT8P3puns58qBQiABiw44Jx1Votb1chVykFZN8rqaoPQ9qbMM5nR9lmPAggVqIBYFk-oBFHLry"/>
+</div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-2xl">Morning Veil Trio</h3>
+<span class="font-label text-sm tracking-tight">128,000원</span>
+</div>
+<div class="flex flex-col gap-1 border-t border-outline-variant/15 pt-4">
+<div class="flex gap-2 items-baseline">
+<span class="font-label text-[9px] uppercase tracking-tighter text-secondary w-12">Top</span>
+<span class="font-body text-xs">White Tea, Neroli</span>
+</div>
+<div class="flex gap-2 items-baseline">
+<span class="font-label text-[9px] uppercase tracking-tighter text-secondary w-12">Heart</span>
+<span class="font-body text-xs">Jasmine, Cotton</span>
+</div>
+<div class="flex gap-2 items-baseline">
+<span class="font-label text-[9px] uppercase tracking-tighter text-secondary w-12">Base</span>
+<span class="font-body text-xs">White Musk, Iris</span>
+</div>
+</div>
+</div>
+<!-- Set 3 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-8 aspect-[3/4]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Abstract composition of glass textures and amber light, suggesting a sensory olfactory experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0aduG_20cbeSbKVvwikj9j4mpE_vQxN-0x6KE4FPIPfBIzXU7e9rXGjzv6--2D5m4Uwqjlhom1hgU8G2AyDabrlfoN6mt7d03WXPOlehqj9iYBLEjqQEmQY0i7M5IglhCgvbYUpzHZOADmL7Y3_Re5k33-8e04ps7JxQH_y0aKA4-8xybKakjsMnbW5JM4w73cd4Yr0g_DDan7w2-hOuxFZ7PpWBwAUyffJH4G0T6ee0SB2VtjdK4LCBeAVv5pYRAQX1m0BzvbrYy"/>
+</div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-2xl">Afternoon Ink</h3>
+<span class="font-label text-sm tracking-tight">89,000원</span>
+</div>
+<div class="flex flex-col gap-1 border-t border-outline-variant/15 pt-4">
+<div class="flex gap-2 items-baseline">
+<span class="font-label text-[9px] uppercase tracking-tighter text-secondary w-12">Top</span>
+<span class="font-body text-xs">Saffron, Black Pepper</span>
+</div>
+<div class="flex gap-2 items-baseline">
+<span class="font-label text-[9px] uppercase tracking-tighter text-secondary w-12">Heart</span>
+<span class="font-body text-xs">Tobacco, Vetiver</span>
+</div>
+<div class="flex gap-2 items-baseline">
+<span class="font-label text-[9px] uppercase tracking-tighter text-secondary w-12">Base</span>
+<span class="font-body text-xs">Leather, Sandalwood</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Philosophy of Sets -->
+<section class="bg-surface-container py-32 px-12 mt-24 overflow-hidden relative">
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-20">
+<div class="w-full md:w-1/2">
+<img class="w-full h-[600px] object-cover editorial-shadow" data-alt="An open notebook with charcoal sketches of perfume bottles and botanical elements on a rustic table." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWAP07T7WIcvcafGQEhUFLfa4XWiaw6gytnzivmdBfUyNoNhS-Q0CxXqRfTPf_XK9697uHM72sEnIARot9OusZ-XR5parfgi0USVThQbNS-k3aRt1TD8f7--7KvGl8OtMOcnxFSFtwbYkeXgmOp5-vwUUkcYc6n_p4rgmhv_p0veOaQenyyx5t9yrcI3D3PE8P4RiJLrpf00Y0hInDLG8T2GKkHfHxhEhJj5efunVGDGR2-eQT89yC_hbVRSeUd117qxPtzgnS8_23"/>
+</div>
+<div class="w-full md:w-1/2">
+<span class="font-label text-[11px] tracking-[0.4em] uppercase text-secondary mb-8 block">Our Ethos</span>
+<h2 class="font-headline text-4xl md:text-5xl font-light leading-tight mb-12">향을 레이어링하다,<br/>Philosophy of Sets</h2>
+<div class="space-y-8 max-w-md">
+<p class="font-body text-secondary leading-loose">
+                            하나의 향기는 하나의 이야기일 뿐입니다. 모스앤앰버의 세트 컬렉션은 서로 다른 두 개 이상의 향을 조합하여, 당신만의 고유한 서사를 완성할 수 있도록 설계되었습니다.
+                        </p>
+<p class="font-body text-secondary leading-loose">
+                            때로는 대조적으로, 때로는 보완적으로. 피부의 온도와 시간의 흐름에 따라 변화하는 향의 변주를 경험해 보세요.
+                        </p>
+</div>
+<div class="mt-16 flex items-center gap-6">
+<div class="w-24 h-[1px] bg-primary"></div>
+<span class="font-headline text-lg italic">The Archive in Seoul</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-variant dark:bg-[#3c2c20] flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full mt-24 border-t border-primary/5">
+<div class="font-headline text-lg font-light tracking-widest text-primary mb-8 md:mb-0">MOSS &amp; AMBER</div>
+<div class="flex flex-wrap justify-center gap-12 mb-8 md:mb-0">
+<a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#6b5f53] hover:text-primary underline decoration-from-font underline-offset-4" href="#">The Fragrance Archive</a>
+<a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#6b5f53] hover:text-primary underline decoration-from-font underline-offset-4" href="#">Shipping &amp; Returns</a>
+<a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#6b5f53] hover:text-primary underline decoration-from-font underline-offset-4" href="#">Privacy Policy</a>
+<a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#6b5f53] hover:text-primary underline decoration-from-font underline-offset-4" href="#">Instagram</a>
+</div>
+<div class="font-label text-[11px] tracking-[0.1em] uppercase text-primary text-center md:text-right">
+            © 2024 MOSS &amp; AMBER. ALL FRAGRANCES ARCHIVED IN SEOUL.
+        </div>
+</footer>
+</body></html>

@@ -1,0 +1,89 @@
+{
+  "siteId": "beauty-flash-sale",
+  "brand": "MELT POP",
+  "projectId": "13178359332848383345",
+  "projectTitle": "MELT POP Stitch",
+  "updatedAt": "2026-04-14T00:04:42.959Z",
+  "screens": {
+    "home:desktop": {
+      "screenId": "5f92e1b3ff434daab4e9e3091fb87d6d",
+      "pageSlug": "home",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/beauty-flash-sale/screens/home-desktop.html",
+      "imagePath": "design/stitch/beauty-flash-sale/screens/home-desktop.png",
+      "updatedAt": "2026-04-13T23:11:04.177Z"
+    },
+    "home:mobile": {
+      "screenId": "e920d04b72af427e8f9d82394beece42",
+      "pageSlug": "home",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/beauty-flash-sale/screens/home-mobile.html",
+      "imagePath": "design/stitch/beauty-flash-sale/screens/home-mobile.png",
+      "updatedAt": "2026-04-13T23:12:47.788Z"
+    },
+    "shop:desktop": {
+      "screenId": "a6ebb83456b0453397bd0ed7e9bdf26f",
+      "pageSlug": "shop",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/beauty-flash-sale/screens/shop-desktop.html",
+      "imagePath": "design/stitch/beauty-flash-sale/screens/shop-desktop.png",
+      "updatedAt": "2026-04-13T23:56:54.627Z"
+    },
+    "shop:mobile": {
+      "screenId": "cae462c78da34e81afdbd19de337638f",
+      "pageSlug": "shop",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/beauty-flash-sale/screens/shop-mobile.html",
+      "imagePath": "design/stitch/beauty-flash-sale/screens/shop-mobile.png",
+      "updatedAt": "2026-04-13T23:57:57.978Z"
+    },
+    "shades:desktop": {
+      "screenId": "5a1be5f4afee41769d736c7d9bb3036d",
+      "pageSlug": "shades",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/beauty-flash-sale/screens/shades-desktop.html",
+      "imagePath": "design/stitch/beauty-flash-sale/screens/shades-desktop.png",
+      "updatedAt": "2026-04-13T23:59:02.910Z"
+    },
+    "shades:mobile": {
+      "screenId": "a9f39ff2faa74b3299eeb4e2fac197a8",
+      "pageSlug": "shades",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/beauty-flash-sale/screens/shades-mobile.html",
+      "imagePath": "design/stitch/beauty-flash-sale/screens/shades-mobile.png",
+      "updatedAt": "2026-04-14T00:00:03.933Z"
+    },
+    "cart:desktop": {
+      "screenId": "dcf9385e49234ab98fe1a709793064f3",
+      "pageSlug": "cart",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/beauty-flash-sale/screens/cart-desktop.html",
+      "imagePath": "design/stitch/beauty-flash-sale/screens/cart-desktop.png",
+      "updatedAt": "2026-04-14T00:01:02.261Z"
+    },
+    "cart:mobile": {
+      "screenId": "31e9735e423444dda4d74f03c53a88ef",
+      "pageSlug": "cart",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/beauty-flash-sale/screens/cart-mobile.html",
+      "imagePath": "design/stitch/beauty-flash-sale/screens/cart-mobile.png",
+      "updatedAt": "2026-04-14T00:02:05.285Z"
+    },
+    "brand:desktop": {
+      "screenId": "81f8549bf2d44f0c9131c1dcc82899f4",
+      "pageSlug": "brand",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/beauty-flash-sale/screens/brand-desktop.html",
+      "imagePath": "design/stitch/beauty-flash-sale/screens/brand-desktop.png",
+      "updatedAt": "2026-04-14T00:03:31.881Z"
+    },
+    "brand:mobile": {
+      "screenId": "1c1d42c3edaa49b9bfd0814bda530b3b",
+      "pageSlug": "brand",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/beauty-flash-sale/screens/brand-mobile.html",
+      "imagePath": "design/stitch/beauty-flash-sale/screens/brand-mobile.png",
+      "updatedAt": "2026-04-14T00:04:42.960Z"
+    }
+  }
+}

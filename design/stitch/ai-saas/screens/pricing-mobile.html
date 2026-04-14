@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SIGNAL GRID - Pricing Plans</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#b7c4ff",
+                        "surface": "#111318",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#282a2e",
+                        "tertiary-fixed-dim": "#d1bcff",
+                        "error": "#ffb4ab",
+                        "on-tertiary-container": "#9565ff",
+                        "on-surface": "#e2e2e8",
+                        "on-primary-fixed": "#001452",
+                        "on-primary-container": "#5479ff",
+                        "primary-container": "#001451",
+                        "inverse-primary": "#004ced",
+                        "on-secondary-fixed": "#001f24",
+                        "surface-tint": "#b7c4ff",
+                        "secondary-fixed-dim": "#00daf3",
+                        "surface-dim": "#111318",
+                        "secondary-fixed": "#9cf0ff",
+                        "inverse-surface": "#e2e2e8",
+                        "on-primary": "#002682",
+                        "secondary": "#bdf4ff",
+                        "on-tertiary-fixed": "#23005b",
+                        "on-secondary": "#00363d",
+                        "secondary-container": "#00e3fd",
+                        "surface-container-highest": "#333539",
+                        "outline": "#8e9099",
+                        "surface-bright": "#37393e",
+                        "on-surface-variant": "#c4c6cf",
+                        "surface-container-lowest": "#0c0e12",
+                        "on-background": "#e2e2e8",
+                        "on-tertiary": "#3c0090",
+                        "on-error": "#690005",
+                        "surface-container": "#1e2024",
+                        "on-tertiary-fixed-variant": "#5700c9",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "inverse-on-surface": "#2f3035",
+                        "tertiary": "#d1bcff",
+                        "primary": "#b7c4ff",
+                        "surface-variant": "#333539",
+                        "outline-variant": "#44474e",
+                        "tertiary-container": "#23005b",
+                        "background": "#111318",
+                        "tertiary-fixed": "#e9ddff",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "surface-container-low": "#1a1c20",
+                        "primary-fixed": "#dde1ff",
+                        "error-container": "#93000a",
+                        "on-secondary-container": "#00616d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .mesh-gradient {
+            background: radial-gradient(circle at 50% 0%, #001451 0%, #111318 70%);
+        }
+        .aura-glow {
+            box-shadow: 0 0 40px 0 rgba(0, 227, 253, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-secondary antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#111318]/80 backdrop-blur-xl border-b border-[#44474e]/15 flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#b7c4ff]" data-icon="grid_view">grid_view</span>
+<span class="text-xl font-bold tracking-widest text-[#bdf4ff] drop-shadow-[0_0_8px_rgba(189,244,255,0.4)] font-['Space_Grotesk']">SIGNAL GRID</span>
+</div>
+<button class="text-[#c4c6cf] hover:text-[#bdf4ff] transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</header>
+<main class="pt-16 pb-32 mesh-gradient min-h-screen">
+<!-- Hero Section -->
+<section class="px-6 py-12 text-center">
+<div class="inline-block px-3 py-1 mb-6 rounded-full bg-primary-container/30 border border-primary/20">
+<span class="text-[10px] uppercase tracking-widest text-secondary font-bold">Scaling Intelligence</span>
+</div>
+<h1 class="font-headline text-4xl font-bold tracking-tight text-on-surface mb-4 leading-tight">
+                계획에 맞는<br/><span class="text-secondary drop-shadow-[0_0_15px_rgba(189,244,255,0.3)]">최적의 플랜</span>
+</h1>
+<p class="text-on-surface-variant text-sm font-light max-w-[280px] mx-auto leading-relaxed">
+                워크플로우 규모에 맞춘 정밀한 요금 체계로 데이터 처리 효율을 극대화하세요.
+            </p>
+<div class="mt-8">
+<button class="w-full py-4 bg-primary text-on-primary font-bold rounded-xl active:scale-95 transition-transform duration-200 shadow-lg shadow-primary/10">
+                    지금 시작하기
+                </button>
+</div>
+</section>
+<!-- KPI Context / Stats Bar -->
+<section class="px-6 mb-12">
+<div class="bg-surface-container-low rounded-xl p-4 flex justify-between items-center border border-outline-variant/15">
+<div class="text-center flex-1">
+<p class="text-[10px] text-outline uppercase tracking-tighter mb-1">Global Nodes</p>
+<p class="font-headline font-bold text-secondary text-lg">1.4M+</p>
+</div>
+<div class="w-px h-8 bg-outline-variant/20"></div>
+<div class="text-center flex-1">
+<p class="text-[10px] text-outline uppercase tracking-tighter mb-1">Pipelines</p>
+<p class="font-headline font-bold text-secondary text-lg">82.1k</p>
+</div>
+<div class="w-px h-8 bg-outline-variant/20"></div>
+<div class="text-center flex-1">
+<p class="text-[10px] text-outline uppercase tracking-tighter mb-1">Latency</p>
+<p class="font-headline font-bold text-secondary text-lg">4ms</p>
+</div>
+</div>
+</section>
+<!-- Pricing Cards -->
+<section class="px-6 space-y-6">
+<!-- Starter Plan -->
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/10 aura-glow">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Starter</h3>
+<p class="text-xs text-outline mt-1">개인 개발자 및 소규모 프로젝트</p>
+</div>
+</div>
+<div class="mb-6">
+<span class="font-headline text-3xl font-bold text-on-surface">29,900원</span>
+<span class="text-outline text-sm ml-1">/ 월</span>
+</div>
+<div class="space-y-4 mb-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="hub">hub</span>
+<span class="text-sm text-on-surface-variant font-medium">10 Active Nodes</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="account_tree">account_tree</span>
+<span class="text-sm text-on-surface-variant font-medium">3 Pipelines</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="bolt">bolt</span>
+<span class="text-sm text-on-surface-variant font-medium">표준 처리 속도</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container-highest text-on-surface font-semibold rounded-lg border border-outline-variant/20 active:scale-95 transition-all">
+                    플랜 선택
+                </button>
+</div>
+<!-- Professional Plan (Featured) -->
+<div class="bg-[#001451]/40 rounded-xl p-6 border-2 border-secondary/30 relative overflow-hidden shadow-[0_0_30px_rgba(0,227,253,0.15)]">
+<div class="absolute top-0 right-0 bg-secondary px-3 py-1 rounded-bl-lg">
+<span class="text-[10px] font-bold text-on-secondary uppercase">Recommended</span>
+</div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline text-xl font-bold text-secondary">Professional</h3>
+<p class="text-xs text-secondary-fixed-dim/70 mt-1">성장하는 팀을 위한 강력한 도구</p>
+</div>
+</div>
+<div class="mb-6">
+<span class="font-headline text-3xl font-bold text-on-surface">89,000원</span>
+<span class="text-outline text-sm ml-1">/ 월</span>
+</div>
+<div class="space-y-4 mb-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="hub">hub</span>
+<span class="text-sm text-on-surface font-semibold">50 Active Nodes</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="account_tree">account_tree</span>
+<span class="text-sm text-on-surface font-semibold">Unlimited Pipelines</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="insights">insights</span>
+<span class="text-sm text-on-surface font-semibold">실시간 KPI 대시보드</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="support_agent">support_agent</span>
+<span class="text-sm text-on-surface font-semibold">우선 순위 기술 지원</span>
+</div>
+</div>
+<button class="w-full py-3 bg-secondary text-on-secondary font-bold rounded-lg active:scale-95 transition-all shadow-lg shadow-secondary/20">
+                    지금 시작하기
+                </button>
+</div>
+<!-- Enterprise Plan -->
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/10">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Enterprise</h3>
+<p class="text-xs text-outline mt-1">대규모 인프라 및 맞춤형 솔루션</p>
+</div>
+</div>
+<div class="mb-6">
+<span class="font-headline text-3xl font-bold text-on-surface font-body">별도 문의</span>
+</div>
+<div class="space-y-4 mb-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="all_inclusive">all_inclusive</span>
+<span class="text-sm text-on-surface-variant font-medium">무제한 Nodes &amp; Pipelines</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="security">security</span>
+<span class="text-sm text-on-surface-variant font-medium">SSO &amp; 엔터프라이즈 보안</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="cloud_sync">cloud_sync</span>
+<span class="text-sm text-on-surface-variant font-medium">전용 클라우드 인스턴스</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container-highest text-on-surface font-semibold rounded-lg border border-outline-variant/20 active:scale-95 transition-all">
+                    영업팀에 문의하기
+                </button>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="px-6 mt-20">
+<h2 class="font-headline text-2xl font-bold text-on-surface mb-8">자주 묻는 질문</h2>
+<div class="space-y-4">
+<div class="bg-surface-container rounded-lg p-4 border border-outline-variant/10">
+<div class="flex justify-between items-center">
+<p class="text-sm font-medium text-on-surface">플랜을 언제든지 변경할 수 있나요?</p>
+<span class="material-symbols-outlined text-outline text-sm" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="bg-surface-container rounded-lg p-4 border border-outline-variant/10">
+<div class="flex justify-between items-center">
+<p class="text-sm font-medium text-on-surface">결제 수단은 무엇을 지원하나요?</p>
+<span class="material-symbols-outlined text-outline text-sm" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="bg-surface-container rounded-lg p-4 border border-outline-variant/10">
+<div class="flex justify-between items-center">
+<p class="text-sm font-medium text-on-surface">기업용 커스텀 설정이 가능한가요?</p>
+<span class="material-symbols-outlined text-outline text-sm" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Background Image Decor -->
+<div class="mt-20 px-6 opacity-40">
+<div class="h-48 w-full rounded-2xl overflow-hidden relative">
+<img alt="Technical Grid" class="w-full h-full object-cover grayscale" data-alt="abstract dark blue technical grid background with cyan glowing nodes and digital circuit patterns representing high-tech intelligence" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfaomxq8yjns8w-VrgPhM1zbcptZOQQ6Z8B2-TXqUGs1VkKKL5aPe8yKhkDlaKWqVt2pZuocDgFEFwNUOkIimiGtE2s_VXL0ct0FdaFznbZbMRdaqByCZ77GC-w9qERIV4CgS-MFcTClaJ0H3mH3YIGO_0GZbUeU05sBHGVPOFtN-139O6sDSq-VagdvGxWGo0-T_OKbrkVE3qLv-y0SLlkWXdy76grvyTzpbUOWZDBVhHeaNgP5cTPulvMvnlnprYbfo-V3TZIVs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-6 bg-[#1a1c20]/90 backdrop-blur-2xl border-t border-[#44474e]/20 z-50 rounded-t-2xl shadow-[0_-8px_40px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-[#8e9099] opacity-70 hover:opacity-100 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="account_tree">account_tree</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide">Flows</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#8e9099] opacity-70 hover:opacity-100 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="hub">hub</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide">Nodes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#8e9099] opacity-70 hover:opacity-100 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="database">database</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide">Data</span>
+</a>
+<!-- Pricing implies context of managing alerts or dashboard, but usually stays neutral -->
+<a class="flex flex-col items-center justify-center text-[#bdf4ff] bg-[#001451] rounded-xl px-3 py-1 shadow-[0_0_15px_rgba(0,227,253,0.1)] active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="notifications_active">notifications_active</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide">Alerts</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest px-6 pt-12 pb-32 border-t border-outline-variant/10">
+<div class="flex items-center gap-2 mb-6">
+<span class="text-secondary font-headline font-bold tracking-widest text-lg">SIGNAL GRID</span>
+</div>
+<div class="grid grid-cols-2 gap-8 mb-8">
+<div class="space-y-3">
+<h4 class="text-xs font-bold text-on-surface uppercase tracking-widest">Platform</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-xs text-outline hover:text-secondary transition-colors" href="#">Overview</a>
+<a class="text-xs text-outline hover:text-secondary transition-colors" href="#">Security</a>
+<a class="text-xs text-outline hover:text-secondary transition-colors" href="#">Documentation</a>
+</nav>
+</div>
+<div class="space-y-3">
+<h4 class="text-xs font-bold text-on-surface uppercase tracking-widest">Company</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-xs text-outline hover:text-secondary transition-colors" href="#">About</a>
+<a class="text-xs text-outline hover:text-secondary transition-colors" href="#">Contact</a>
+<a class="text-xs text-outline hover:text-secondary transition-colors" href="#">Terms</a>
+</nav>
+</div>
+</div>
+<p class="text-[10px] text-outline/50">© 2024 SIGNAL GRID Systems. Engineered for the future of decentralized intelligence.</p>
+</footer>
+</body></html>

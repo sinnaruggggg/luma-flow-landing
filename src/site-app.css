@@ -251,10 +251,23 @@
   overflow: hidden;
   min-height: 100%;
   text-align: left;
+  cursor: pointer;
   border-radius: 34px;
   border: 1px solid rgba(18, 18, 18, 0.08);
   background: rgba(255, 255, 255, 0.7);
   box-shadow: 0 24px 72px rgba(18, 18, 18, 0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+}
+
+.hub-card:hover:not(:disabled) {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 84px rgba(18, 18, 18, 0.12);
+}
+
+.hub-card--disabled,
+.hub-card:disabled {
+  cursor: not-allowed;
+  opacity: 0.76;
 }
 
 .hub-card__visual {
@@ -336,6 +349,10 @@
   color: #111111;
   font-weight: 800;
 }
+
+.hub-card--disabled .hub-card__action {
+  color: rgba(18, 18, 18, 0.52);
+}
 .site-shell__frame {
   position: relative;
   padding: 18px;
@@ -373,6 +390,12 @@
   background: var(--site-accent);
   color: var(--site-button-text);
   border-color: transparent;
+}
+
+.site-nav button:disabled,
+.route-link:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
 }
 
 .site-main {
@@ -463,6 +486,12 @@
 .cta--primary {
   background: var(--site-accent);
   color: var(--site-button-text);
+}
+
+.cta--secondary {
+  border: 1px solid rgba(18, 18, 18, 0.12);
+  background: rgba(255, 255, 255, 0.56);
+  color: inherit;
 }
 
 .missing-card {

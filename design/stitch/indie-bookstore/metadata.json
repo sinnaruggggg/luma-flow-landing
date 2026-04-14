@@ -1,0 +1,89 @@
+{
+  "siteId": "indie-bookstore",
+  "brand": "PAPER NOOK",
+  "projectId": "1957432540672177782",
+  "projectTitle": "PAPER NOOK Stitch",
+  "updatedAt": "2026-04-14T03:46:15.070Z",
+  "screens": {
+    "home:desktop": {
+      "screenId": "168ed4e0570345f0a653b81ecadc0586",
+      "pageSlug": "home",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/indie-bookstore/screens/home-desktop.html",
+      "imagePath": "design/stitch/indie-bookstore/screens/home-desktop.png",
+      "updatedAt": "2026-04-13T23:34:34.622Z"
+    },
+    "home:mobile": {
+      "screenId": "52e60e1a3d2546a1b56699b6b508590c",
+      "pageSlug": "home",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/indie-bookstore/screens/home-mobile.html",
+      "imagePath": "design/stitch/indie-bookstore/screens/home-mobile.png",
+      "updatedAt": "2026-04-13T23:35:59.179Z"
+    },
+    "shelf:desktop": {
+      "screenId": "0aafb9397f9743ec8dd90b4377ec4956",
+      "pageSlug": "shelf",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/indie-bookstore/screens/shelf-desktop.html",
+      "imagePath": "design/stitch/indie-bookstore/screens/shelf-desktop.png",
+      "updatedAt": "2026-04-14T03:36:10.202Z"
+    },
+    "shelf:mobile": {
+      "screenId": "cce95ac809834df7ac3b2b1c3f867884",
+      "pageSlug": "shelf",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/indie-bookstore/screens/shelf-mobile.html",
+      "imagePath": "design/stitch/indie-bookstore/screens/shelf-mobile.png",
+      "updatedAt": "2026-04-14T03:37:40.893Z"
+    },
+    "picks:desktop": {
+      "screenId": "6adb63bab3a5450ebed57039ab8d7290",
+      "pageSlug": "picks",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/indie-bookstore/screens/picks-desktop.html",
+      "imagePath": "design/stitch/indie-bookstore/screens/picks-desktop.png",
+      "updatedAt": "2026-04-14T03:39:15.003Z"
+    },
+    "picks:mobile": {
+      "screenId": "d29c2f8ca1e84932828d87e257bad3cb",
+      "pageSlug": "picks",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/indie-bookstore/screens/picks-mobile.html",
+      "imagePath": "design/stitch/indie-bookstore/screens/picks-mobile.png",
+      "updatedAt": "2026-04-14T03:40:32.531Z"
+    },
+    "gift:desktop": {
+      "screenId": "53d0a19adf934454992fbf02a569dae9",
+      "pageSlug": "gift",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/indie-bookstore/screens/gift-desktop.html",
+      "imagePath": "design/stitch/indie-bookstore/screens/gift-desktop.png",
+      "updatedAt": "2026-04-14T03:41:49.850Z"
+    },
+    "gift:mobile": {
+      "screenId": "38590c5b5cb24edc8f26c40bb0a312bb",
+      "pageSlug": "gift",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/indie-bookstore/screens/gift-mobile.html",
+      "imagePath": "design/stitch/indie-bookstore/screens/gift-mobile.png",
+      "updatedAt": "2026-04-14T03:43:16.428Z"
+    },
+    "brand:desktop": {
+      "screenId": "03290152c8674449ade4558dd40d2513",
+      "pageSlug": "brand",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/indie-bookstore/screens/brand-desktop.html",
+      "imagePath": "design/stitch/indie-bookstore/screens/brand-desktop.png",
+      "updatedAt": "2026-04-14T03:44:51.096Z"
+    },
+    "brand:mobile": {
+      "screenId": "a5622be2c0be48b0b42aecd533f8c1b4",
+      "pageSlug": "brand",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/indie-bookstore/screens/brand-mobile.html",
+      "imagePath": "design/stitch/indie-bookstore/screens/brand-mobile.png",
+      "updatedAt": "2026-04-14T03:46:15.071Z"
+    }
+  }
+}

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#b8c5e5",
+                    "secondary": "#fface8",
+                    "primary-container": "#39d5ff",
+                    "on-background": "#dae3f6",
+                    "on-secondary": "#5e0053",
+                    "surface-variant": "#2c3544",
+                    "surface-container-low": "#131c29",
+                    "on-primary-fixed": "#001f28",
+                    "inverse-primary": "#00677e",
+                    "surface-container-lowest": "#060e1b",
+                    "secondary-fixed": "#ffd7f0",
+                    "background": "#0b1421",
+                    "on-primary": "#003543",
+                    "on-surface-variant": "#bbc9ce",
+                    "tertiary": "#d6e1ff",
+                    "on-secondary-fixed-variant": "#840076",
+                    "secondary-fixed-dim": "#fface8",
+                    "inverse-surface": "#dae3f6",
+                    "surface-dim": "#0b1421",
+                    "on-error-container": "#ffdad6",
+                    "primary": "#b1eaff",
+                    "on-primary-fixed-variant": "#004e60",
+                    "tertiary-fixed-dim": "#bac6e6",
+                    "error": "#ffb4ab",
+                    "on-error": "#690005",
+                    "surface-tint": "#45d6ff",
+                    "on-tertiary-container": "#45516c",
+                    "on-secondary-fixed": "#3a0033",
+                    "surface-container-highest": "#2c3544",
+                    "error-container": "#93000a",
+                    "on-primary-container": "#00596e",
+                    "primary-fixed": "#b5ebff",
+                    "on-surface": "#dae3f6",
+                    "outline-variant": "#3c494e",
+                    "on-tertiary": "#243049",
+                    "surface": "#0b1421",
+                    "inverse-on-surface": "#28313f",
+                    "on-tertiary-fixed-variant": "#3b4761",
+                    "secondary-container": "#980388",
+                    "surface-container-high": "#222a38",
+                    "on-tertiary-fixed": "#0e1b33",
+                    "on-secondary-container": "#fface8",
+                    "surface-bright": "#313a48",
+                    "outline": "#869398",
+                    "primary-fixed-dim": "#45d6ff",
+                    "surface-container": "#17202e",
+                    "tertiary-fixed": "#d8e2ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Manrope"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0b1421;
+            color: #dae3f6;
+            font-family: 'Manrope', sans-serif;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(19, 28, 41, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .mesh-bg {
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(57, 213, 255, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(255, 172, 232, 0.05) 0px, transparent 50%),
+                linear-gradient(rgba(60, 73, 78, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(60, 73, 78, 0.05) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 20px 20px, 20px 20px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="mesh-bg min-h-screen selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-xl bg-gradient-to-b from-slate-900 to-transparent shadow-2xl shadow-cyan-900/20 flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#39d5ff]">menu</span>
+<span class="text-xl font-bold tracking-widest text-[#39d5ff] font-['Space_Grotesk'] tracking-tighter">ORBIT E</span>
+</div>
+<button class="text-[#39d5ff] font-['Space_Grotesk'] text-sm tracking-tighter font-bold transition-transform active:scale-95 border border-[#39d5ff]/30 px-3 py-1 rounded">시승 예약</button>
+</header>
+<main class="pt-16 pb-24">
+<!-- Hero: Kinetic Cockpit Dashboard -->
+<section class="px-4 pt-6">
+<div class="flex flex-col gap-6">
+<!-- Model Selector Mesh -->
+<div class="relative overflow-hidden rounded-lg bg-surface-container-lowest border-l-2 border-primary-container p-4">
+<div class="flex justify-between items-end mb-4">
+<div>
+<p class="font-label text-[10px] uppercase tracking-[0.2em] text-primary">System Status</p>
+<h1 class="font-headline text-3xl font-bold tracking-tighter text-on-surface">MODEL LINEUP</h1>
+</div>
+<div class="text-right">
+<span class="font-label text-xs text-secondary-fixed-dim">V 1.0.4</span>
+</div>
+</div>
+<!-- Comparison Rows -->
+<div class="space-y-4">
+<!-- Model One -->
+<div class="group relative bg-surface-container hover:bg-surface-container-high transition-colors p-4 flex items-center justify-between">
+<div class="z-10">
+<h2 class="font-headline text-2xl font-black text-on-surface">ORBIT ONE</h2>
+<div class="flex gap-2 mt-1">
+<span class="text-[10px] font-label px-2 py-0.5 border border-outline-variant/30 text-on-surface-variant">RANGE 580km</span>
+<span class="text-[10px] font-label px-2 py-0.5 border border-outline-variant/30 text-on-surface-variant">0-100 3.2s</span>
+</div>
+</div>
+<div class="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity">
+<img class="w-full h-full object-cover grayscale" data-alt="sleek modern electric sedan parked on high-tech grid floor with cyan ambient lighting and dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEA7aEcztLRpIErmCitOu1b77SrENqho7wRxJzcGi6fk0vojODSXTrLajzkPinh7mlIaIN3vbIR66JjYJT7RxxNt4v9qFj4jNFnnENI-0u_9R9lyny0h8RL0Lubbf0X92_KMxiw3G7H5dsYMsp-9Ud6_lGg5OEda8vh3RPn0DoVmaA7gcMYgNDYnww3RwsTMtO0KcHpdk6yS3K8No9OC9cgunHZywpcq7ljGzolslpPiLItejV9A-rxgZ7VSdJ6w9TaLJyeQIPQCE"/>
+</div>
+<div class="z-10 text-right">
+<p class="text-primary font-headline font-bold text-lg">74,900,000원</p>
+<p class="text-[8px] font-label uppercase text-outline">Starting Price</p>
+</div>
+</div>
+<!-- Model X -->
+<div class="group relative bg-surface-container-high p-4 flex items-center justify-between border-l-4 border-secondary">
+<div class="z-10">
+<h2 class="font-headline text-2xl font-black text-on-surface">ORBIT X</h2>
+<div class="flex gap-2 mt-1">
+<span class="text-[10px] font-label px-2 py-0.5 border border-outline-variant/30 text-on-surface-variant">RANGE 620km</span>
+<span class="text-[10px] font-label px-2 py-0.5 border border-outline-variant/30 text-on-surface-variant">0-100 2.8s</span>
+</div>
+</div>
+<div class="absolute inset-0 opacity-30">
+<img class="w-full h-full object-cover grayscale brightness-50" data-alt="luxury electric sports car with glowing pink taillights in a futuristic dark underground garage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgmP8PzhuTK2M5waAV1Ipp82OXb3atvz6RxPr5LNBfKW_bunlsIkzJvAsIIvS1V7vppRszTBBGXLn19wdG269ieN2EJNhy-1iwWUmGnqV9UrDraW9a83v0uP3JPu7Y8wrs_0q8lER3sBe9D-J3UYBWx4Vr21aikFzsJYbLTMlC-5MSuImJF2d4KA0kAXuxWY6vTmvZoBso7SSIuQq_tPLhSPWjR0ax-VZUPgMznZ4DyREEEsQs_3udHxkvTC6SGBg5fEBLC4Y86Po"/>
+</div>
+<div class="z-10 text-right">
+<p class="text-secondary font-headline font-bold text-lg">92,500,000원</p>
+<p class="text-[8px] font-label uppercase text-outline">Performance Grade</p>
+</div>
+</div>
+<!-- Model S -->
+<div class="group relative bg-surface-container p-4 flex items-center justify-between">
+<div class="z-10">
+<h2 class="font-headline text-2xl font-black text-on-surface">ORBIT S</h2>
+<div class="flex gap-2 mt-1">
+<span class="text-[10px] font-label px-2 py-0.5 border border-outline-variant/30 text-on-surface-variant">RANGE 450km</span>
+<span class="text-[10px] font-label px-2 py-0.5 border border-outline-variant/30 text-on-surface-variant">0-100 4.5s</span>
+</div>
+</div>
+<div class="absolute inset-0 opacity-20">
+<img class="w-full h-full object-cover grayscale" data-alt="compact electric suv with modern led signature lights in a misty neon city setting at night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC0fUJ73I8tPhjLfAF_UCEfY8E-iSYWrix6wQcYhBE0ZUgOik-RaHttBeLQ4fXN0A28Sn2j6LZIoCdjNyfp5hRXuBKwE41VjUHAETad2CJxkyX6Jl3Gjq-uTXtTWhxmu8mgomvdRUggKBfDTY1TYdCVGQH1l-rFkva4HH4tAZt9P6dMLJqxwa-S18XNc_aonrOwk36J7BGE3HGKQg7CenrzzjFmjk4DcNzBZ6QOqzF0rNjVg0iYIeJeiRjG5KNgbKxFIvlUX9OKMY"/>
+</div>
+<div class="z-10 text-right">
+<p class="text-on-surface font-headline font-bold text-lg">59,900,000원</p>
+<p class="text-[8px] font-label uppercase text-outline">Essential Edition</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Integrated Booking Module -->
+<div class="glass-panel p-6 border-b-2 border-secondary-container">
+<div class="mb-4">
+<h3 class="font-headline text-sm font-bold tracking-widest text-primary-fixed uppercase">Quick Terminal</h3>
+<p class="text-on-surface-variant text-xs">시승 예약 시스템 활성화</p>
+</div>
+<div class="grid grid-cols-3 gap-2 mb-4">
+<button class="bg-primary-container text-on-primary-container py-3 text-[10px] font-bold font-label tracking-tighter">ONE</button>
+<button class="bg-surface-container-highest text-on-surface py-3 text-[10px] font-bold font-label tracking-tighter">X-SERIES</button>
+<button class="bg-surface-container-highest text-on-surface py-3 text-[10px] font-bold font-label tracking-tighter">S-CORE</button>
+</div>
+<div class="flex gap-2 mb-6">
+<div class="flex-1 bg-surface-container-lowest border-b border-outline-variant/30 p-3">
+<p class="text-[8px] font-label text-outline uppercase mb-1">Select Date</p>
+<p class="text-xs font-bold font-headline">2024. 05. 24</p>
+</div>
+<div class="flex-1 bg-surface-container-lowest border-b border-outline-variant/30 p-3">
+<p class="text-[8px] font-label text-outline uppercase mb-1">Location</p>
+<p class="text-xs font-bold font-headline">SEOUL HUD</p>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-4 font-headline font-black tracking-widest text-sm shadow-[0_0_20px_rgba(57,213,255,0.4)]">
+                        INITIATE DRIVE SEQUENCE
+                    </button>
+</div>
+</div>
+</section>
+<!-- Hyper-Efficiency Engine Section -->
+<section class="mt-12 px-6">
+<div class="flex items-center gap-2 mb-8">
+<div class="h-[2px] w-8 bg-secondary"></div>
+<h3 class="font-headline text-xs font-bold tracking-[0.3em] text-secondary uppercase">Technical Core</h3>
+</div>
+<div class="grid grid-cols-1 gap-8">
+<div class="flex items-start gap-6">
+<div class="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-primary-container/20">
+<span class="material-symbols-outlined text-primary-container text-3xl">bolt</span>
+</div>
+<div>
+<p class="font-headline text-2xl font-bold text-on-surface">580 kW</p>
+<p class="text-xs text-on-surface-variant mb-2">Max Power Output</p>
+<div class="w-full h-1 bg-surface-container-highest overflow-hidden">
+<div class="w-4/5 h-full bg-primary-container"></div>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<div class="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-primary-container/20">
+<span class="material-symbols-outlined text-primary-container text-3xl">speed</span>
+</div>
+<div>
+<p class="font-headline text-2xl font-bold text-on-surface">0.20 Cd</p>
+<p class="text-xs text-on-surface-variant mb-2">Drag Coefficient</p>
+<div class="w-full h-1 bg-surface-container-highest overflow-hidden">
+<div class="w-1/2 h-full bg-primary-container"></div>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<div class="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-primary-container/20">
+<span class="material-symbols-outlined text-primary-container text-3xl">ev_station</span>
+</div>
+<div>
+<p class="font-headline text-2xl font-bold text-on-surface">18 min</p>
+<p class="text-xs text-on-surface-variant mb-2">Ultra-Charge (10-80%)</p>
+<div class="w-full h-1 bg-surface-container-highest overflow-hidden">
+<div class="w-3/4 h-full bg-primary-container"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Network Ecosystem -->
+<section class="mt-16 bg-surface-container-lowest p-8 relative overflow-hidden">
+<!-- Decorative Blueprint Grid -->
+<div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(#39d5ff 1px, transparent 0); background-size: 20px 20px;"></div>
+<div class="relative z-10">
+<h4 class="font-headline text-lg font-black tracking-tight text-on-surface mb-6">ORBIT GRID <span class="text-primary-container">LIVE</span></h4>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container p-4">
+<p class="font-label text-[10px] text-outline uppercase">Active Points</p>
+<p class="font-headline text-xl font-bold text-on-surface">1,204</p>
+</div>
+<div class="bg-surface-container p-4">
+<p class="font-label text-[10px] text-outline uppercase">Up-Time</p>
+<p class="font-headline text-xl font-bold text-primary">99.9%</p>
+</div>
+<div class="bg-surface-container p-4 col-span-2">
+<div class="flex justify-between items-center mb-2">
+<p class="font-label text-[10px] text-outline uppercase">Avg Charging Speed</p>
+<p class="font-headline text-lg font-bold text-secondary">245 kW/h</p>
+</div>
+<div class="flex gap-1">
+<div class="h-1 flex-1 bg-secondary opacity-20"></div>
+<div class="h-1 flex-1 bg-secondary opacity-40"></div>
+<div class="h-1 flex-1 bg-secondary opacity-60"></div>
+<div class="h-1 flex-1 bg-secondary opacity-80"></div>
+<div class="h-1 flex-1 bg-secondary"></div>
+</div>
+</div>
+</div>
+<div class="mt-8 flex justify-center">
+<div class="w-full h-40 bg-slate-900 overflow-hidden relative border border-outline-variant/20">
+<img class="w-full h-full object-cover opacity-40" data-alt="abstract dark digital map of city infrastructure with glowing blue data points and lines" data-location="Seoul" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5Yaeoxil9pAgUU1hpNjjVxV6q0TeG9h0fjYYu_U9G6aI8Arkqw2liwNhTFgN2tOJozx2jIF1Q9e3TwnFjhZAVO1Mz-EktnXLvqihcW7__9EeHFY990EPESSY4q1qwPZXf9Gjsyuhjhg9fJzokwmfj--ThBBGW5-kzU57bbN-TpKhjqb4QH_-VwQUvnZcKF9pImnpb8I4UBBmmJGuRvnuJ4gKDK6tbXwT7moEG5UG4KS4xFe9VaHzlzgfqcTtFLWrAN0jjESiFA5g"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-3 h-3 bg-primary-container rounded-full animate-ping"></div>
+<div class="w-2 h-2 bg-primary-container rounded-full absolute"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mt-16 px-6 text-center">
+<h2 class="font-headline text-3xl font-black tracking-tighter text-on-surface leading-none mb-4">EXPERIENCE THE<br/>FUTURE TODAY.</h2>
+<p class="text-on-surface-variant text-sm mb-8 font-light">궤도를 넘어서는 새로운 모빌리티의 기준, ORBIT E와 함께하십시오.</p>
+<div class="flex flex-col gap-3">
+<button class="bg-primary-container text-on-primary-container py-4 font-headline font-bold text-sm tracking-widest transition-all hover:shadow-[0_0_20px_rgba(57,213,255,0.4)] active:scale-95">
+                    시승 신청하기
+                </button>
+<button class="bg-transparent border border-outline-variant text-on-surface py-4 font-headline font-bold text-sm tracking-widest hover:bg-surface-container transition-all">
+                    카탈로그 다운로드
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pb-24 pt-10 bg-slate-950 border-t border-slate-900 flex flex-col items-center space-y-4 px-8 text-center">
+<p class="font-['Space_Grotesk'] text-[10px] tracking-tight text-slate-500">© 2024 ORBIT E MOBILITY. ALL SYSTEMS OPERATIONAL.</p>
+<div class="flex gap-4">
+<a class="font-['Space_Grotesk'] text-[10px] tracking-tight text-slate-600 hover:text-slate-300" href="#">법적 고지</a>
+<a class="font-['Space_Grotesk'] text-[10px] tracking-tight text-slate-600 hover:text-slate-300" href="#">개인정보처리방침</a>
+<a class="font-['Space_Grotesk'] text-[10px] tracking-tight text-slate-600 hover:text-slate-300" href="#">시스템 상태</a>
+</div>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-slate-950/90 backdrop-blur-2xl border-t border-slate-800/50 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] flex justify-around items-center h-20 pb-safe w-full">
+<div class="flex flex-col items-center justify-center text-[#39d5ff] drop-shadow-[0_0_8px_rgba(57,213,255,0.6)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">electric_car</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest mt-1">모델</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 hover:text-[#39d5ff]/80 active:translate-y-0.5 transition-all">
+<span class="material-symbols-outlined">ev_station</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest mt-1">충전</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 hover:text-[#39d5ff]/80 active:translate-y-0.5 transition-all">
+<span class="material-symbols-outlined">sports_motorsports</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest mt-1">드라이브</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 hover:text-[#39d5ff]/80 active:translate-y-0.5 transition-all">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest mt-1">고객지원</span>
+</div>
+</nav>
+</body></html>

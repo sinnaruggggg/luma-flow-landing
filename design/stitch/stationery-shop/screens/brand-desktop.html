@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Brand World | CUT &amp; NOTE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#685c50",
+                    "surface-container-low": "#fef1e7",
+                    "secondary": "#296580",
+                    "primary-fixed": "#ffdfa0",
+                    "on-secondary-fixed": "#001e2b",
+                    "on-primary": "#ffffff",
+                    "surface-tint": "#795900",
+                    "secondary-fixed": "#c1e8ff",
+                    "outline": "#807663",
+                    "inverse-primary": "#f2bf4c",
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#f3e6dc",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#ede0d6",
+                    "surface": "#fff8f4",
+                    "error-container": "#ffdad6",
+                    "inverse-on-surface": "#fbeee4",
+                    "primary": "#795900",
+                    "on-secondary-fixed-variant": "#024d67",
+                    "on-background": "#201b15",
+                    "tertiary-container": "#d7c7b7",
+                    "surface-bright": "#fff8f4",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#5c4300",
+                    "on-primary-container": "#6d5000",
+                    "surface-container": "#f8ece2",
+                    "tertiary-fixed": "#f0e0cf",
+                    "on-tertiary-container": "#5e5346",
+                    "background": "#fff8f4",
+                    "on-surface": "#201b15",
+                    "outline-variant": "#d2c5af",
+                    "primary-fixed-dim": "#f2bf4c",
+                    "primary-container": "#f5c24f",
+                    "on-secondary-container": "#27647e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#4e4635",
+                    "secondary-container": "#a7dffe",
+                    "on-tertiary-fixed": "#221a10",
+                    "inverse-surface": "#362f29",
+                    "on-tertiary-fixed-variant": "#504539",
+                    "tertiary-fixed-dim": "#d4c4b4",
+                    "surface-dim": "#e4d8ce",
+                    "on-primary-fixed": "#261a00",
+                    "secondary-fixed-dim": "#96ceed",
+                    "surface-variant": "#ede0d6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Manrope", "sans-serif"],
+                    "label": ["Space Grotesk", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .paper-shadow {
+            box-shadow: 40px 0 40px -5px rgba(32, 27, 21, 0.04);
+        }
+        .tape-effect {
+            background: rgba(167, 223, 254, 0.4);
+            backdrop-blur: 2px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fff8f4]/80 backdrop-blur-xl">
+<div class="flex justify-between items-center w-full px-6 md:px-12 py-6">
+<div class="text-2xl font-headline italic tracking-tighter text-[#201b15]">CUT &amp; NOTE</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-headline uppercase tracking-[0.2em] text-sm text-[#201b15]/60 hover:text-[#795900] transition-colors duration-300" href="#">Archive</a>
+<a class="font-headline uppercase tracking-[0.2em] text-sm text-[#201b15]/60 hover:text-[#795900] transition-colors duration-300" href="#">Collections</a>
+<a class="font-headline uppercase tracking-[0.2em] text-sm text-[#201b15]/60 hover:text-[#795900] transition-colors duration-300" href="#">The Desk</a>
+<a class="font-headline uppercase tracking-[0.2em] text-sm text-[#795900] border-b border-[#795900] pb-1" href="#">Journal</a>
+</div>
+<div class="flex gap-6 items-center">
+<span class="material-symbols-outlined cursor-pointer text-[#795900]">shopping_bag</span>
+<span class="material-symbols-outlined cursor-pointer text-[#795900]">person</span>
+</div>
+</div>
+<div class="bg-[#ede0d6]/30 h-[1px] w-full"></div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section: The Editorial Canvas -->
+<section class="relative min-h-screen flex items-center justify-center px-6 md:px-12 overflow-hidden">
+<div class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-surface-container-low to-background"></div>
+<div class="relative z-10 grid grid-cols-12 gap-6 max-w-7xl w-full">
+<!-- Asymmetric Collage -->
+<div class="col-span-12 md:col-span-7 relative">
+<div class="relative w-full aspect-[4/5] bg-surface-container shadow-xl transform -rotate-1 z-20 overflow-hidden">
+<img alt="Editorial Brand Image" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Close-up of a vintage fountain pen resting on handmade linen paper with delicate shadows and warm natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKgekTceHYBmB-h4hw96pPYKwrQy8LWZ6k1o3Hj9cHfKSkxa4pn-kQw7iezTN3dWKy3Q3O87qEt3gAUdkjEEAWn4mqGGVeHM7NBtXmEf-3_bOMgmPLH_pDFtF4lGq6DovF7SnvtW-IpNhI2yb6BJS1ReXlEGCNFXxIYEQvbco1TKV00XtcFtIifvZiL-NkLWru9cVgZmIB4Iv3ES9wcZ4ns1KkcoJkpkB31X9RKsnE7RTc42uc09AkEFhoVvhR7wxRKc_MWs2KUj1q"/>
+<div class="absolute top-4 right-4 tape-effect w-16 h-6 rotate-12"></div>
+</div>
+<div class="absolute -bottom-12 -right-8 md:-right-24 w-64 h-80 bg-surface-container-highest p-8 shadow-2xl transform rotate-3 z-30 hidden md:block">
+<p class="font-headline text-lg italic mb-4">"The Desk is a stage for the mind's quietest performances."</p>
+<p class="font-label text-[10px] tracking-widest opacity-60">ESSENTIALS NO. 01</p>
+</div>
+</div>
+<div class="col-span-12 md:col-span-5 flex flex-col justify-center gap-8 mt-12 md:mt-0">
+<h1 class="font-headline text-6xl md:text-8xl leading-tight tracking-tighter">
+                        Crafting <br/>
+<span class="italic text-primary">Moments.</span>
+</h1>
+<p class="text-lg leading-relaxed text-on-surface-variant max-w-sm">
+                        우리는 단순히 도구를 만드는 것이 아니라, 기록하는 그 숭고한 시간을 디자인합니다.
+                    </p>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 font-label tracking-widest text-sm hover:translate-y-[-2px] active:translate-y-[1px] transition-all">
+                            DISCOVER OUR STORY
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- The Philosophy: 기록의 가치 -->
+<section class="py-32 px-6 md:px-12 bg-surface-container">
+<div class="max-w-7xl mx-auto flex flex-col items-center">
+<div class="font-label text-xs tracking-[0.3em] text-primary mb-6 uppercase">01. The Philosophy</div>
+<h2 class="font-headline text-4xl md:text-5xl text-center mb-16 italic">기록의 가치</h2>
+<div class="relative w-full max-w-4xl min-h-[500px]">
+<!-- Layered Paper Scraps -->
+<div class="absolute top-0 left-0 w-full md:w-3/4 bg-surface-container-lowest p-12 shadow-sm transform -rotate-1 border-l-4 border-primary/20">
+<h3 class="font-headline text-2xl mb-6 italic">Memory as Material</h3>
+<p class="text-on-surface-variant leading-relaxed mb-4">
+                            기록은 흩어지는 찰나의 생각을 붙잡아 두는 행위입니다. CUT &amp; NOTE는 그 행위가 더 촉각적이고 명상적인 경험이 되길 바랍니다. 
+                        </p>
+</div>
+<div class="absolute top-48 right-0 w-full md:w-1/2 bg-surface-container-highest p-10 shadow-lg transform rotate-2 z-10">
+<p class="font-body text-sm leading-relaxed italic opacity-80">
+                            "A note is a conversation between who you are now and who you will become."
+                        </p>
+<div class="mt-6 flex gap-2">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-xs text-primary">edit</span>
+</div>
+<span class="font-label text-[10px] tracking-tighter uppercase self-center">Brand Essence</span>
+</div>
+</div>
+<div class="absolute bottom-[-40px] left-1/4 w-48 h-20 bg-secondary-container opacity-40 transform -rotate-3 z-0 blur-sm"></div>
+</div>
+</div>
+</section>
+<!-- The Process: 손끝에서 시작되는 영감 -->
+<section class="py-32 px-6 md:px-12">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="order-2 md:order-1">
+<div class="font-label text-xs tracking-[0.3em] text-primary mb-6 uppercase">02. The Process</div>
+<h2 class="font-headline text-4xl md:text-5xl mb-8 italic">손끝에서 시작되는 영감</h2>
+<p class="text-lg text-on-surface-variant leading-loose mb-12">
+                        우리의 모든 제품은 장인의 세밀한 손길과 수많은 테스트를 거쳐 완성됩니다. 소재의 선택부터 제본 방식 하나까지, 당신의 기록이 가장 아름답게 머물 수 있는 최적의 환경을 고민합니다.
+                    </p>
+<ul class="space-y-8">
+<li class="flex gap-6 items-start">
+<span class="font-label text-primary font-bold">01</span>
+<div>
+<h4 class="font-bold text-sm uppercase tracking-widest mb-1">Curation</h4>
+<p class="text-sm opacity-60">가장 순수한 펄프만을 선별하여 종이 본연의 질감을 살립니다.</p>
+</div>
+</li>
+<li class="flex gap-6 items-start">
+<span class="font-label text-primary font-bold">02</span>
+<div>
+<h4 class="font-bold text-sm uppercase tracking-widest mb-1">Testing</h4>
+<p class="text-sm opacity-60">만년필, 연필, 수채화 등 다양한 도구와의 결합을 실험합니다.</p>
+</div>
+</li>
+<li class="flex gap-6 items-start">
+<span class="font-label text-primary font-bold">03</span>
+<div>
+<h4 class="font-bold text-sm uppercase tracking-widest mb-1">Hand-Finish</h4>
+<p class="text-sm opacity-60">모든 노트는 수작업으로 검수되어 고유의 번호를 부여받습니다.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="order-1 md:order-2 relative">
+<div class="aspect-square bg-surface-container-high relative overflow-hidden group">
+<img alt="Process Illustration" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Artisan hands carefully folding thick textured cream paper on a dark wood workbench with tools nearby" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA8Yo70bviCbAsOILVOOD4ZOzuRktJDlb-nsimxM_kzKYNIMTE4vVvoCTJOoCs-4aZVB1QQysEPDU8ikiFYbpXY6hXwXPLS3Z0jF3SvTEH6vS1kZHi00xpDIgNETykC-TkzcDzZ11L9d1KHArvD2Z7FnpQonhn4eqyQAedBpHJTvyis2SxQ5_Hl6Wx18zR9pRVTGHOcQyg5BjPbtxLEeFyeDcRUxuRjxkZPfJVuKFpZkKxp1Va8Z7ZMQWLnLhGWyEJ1-ymQ4UDeSPG"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+</div>
+<div class="absolute -top-6 -right-6 w-32 h-32 bg-primary-container flex flex-col items-center justify-center p-4 transform rotate-12 shadow-lg">
+<span class="material-symbols-outlined text-4xl mb-2" data-weight="fill">auto_awesome</span>
+<span class="font-label text-[10px] text-center font-bold">CRAFTED BY HAND</span>
+</div>
+</div>
+</div>
+</section>
+<!-- The Material: 종이와 질감 -->
+<section class="py-32 px-6 md:px-12 bg-surface-container-low overflow-hidden">
+<div class="max-w-7xl mx-auto relative">
+<div class="grid grid-cols-12 gap-4">
+<div class="col-span-12 md:col-span-4 mb-12 md:mb-0">
+<div class="font-label text-xs tracking-[0.3em] text-primary mb-6 uppercase">03. The Material</div>
+<h2 class="font-headline text-5xl italic leading-tight">종이와 <br/> 질감.</h2>
+<p class="mt-8 text-on-surface-variant italic">The tactile feedback of quality paper is the heartbeat of stationary.</p>
+</div>
+<div class="col-span-12 md:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-1">
+<!-- Textured Cards -->
+<div class="bg-surface-container-lowest p-12 flex flex-col gap-12 group hover:bg-surface-bright transition-colors duration-500">
+<div class="w-12 h-[1px] bg-primary"></div>
+<div>
+<h5 class="font-headline text-2xl italic mb-4">Linen Grain</h5>
+<p class="text-sm opacity-60 leading-relaxed">자연스러운 리넨 조직의 결이 느껴지는 200g 헤비 텍스처 페이퍼입니다.</p>
+</div>
+</div>
+<div class="bg-surface-container-high p-12 flex flex-col gap-12 group hover:bg-surface-bright transition-colors duration-500">
+<div class="w-12 h-[1px] bg-primary"></div>
+<div>
+<h5 class="font-headline text-2xl italic mb-4">Cotton Pulp</h5>
+<p class="text-sm opacity-60 leading-relaxed">순수 코튼 함량이 높아 부드럽고 따뜻한 촉감을 선사하는 내지입니다.</p>
+</div>
+</div>
+<div class="bg-surface-container p-12 flex flex-col gap-12 group hover:bg-surface-bright transition-colors duration-500">
+<div class="w-12 h-[1px] bg-primary"></div>
+<div>
+<h5 class="font-headline text-2xl italic mb-4">Uncoated Ivory</h5>
+<p class="text-sm opacity-60 leading-relaxed">빛의 반사가 적어 장시간 기록에도 눈이 편안한 아이보리 톤의 종이입니다.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Texture Background Detail -->
+<div class="absolute -bottom-24 -right-24 opacity-10 pointer-events-none">
+<span class="font-headline text-[24rem] italic leading-none">Paper</span>
+</div>
+</div>
+</section>
+<!-- Trust/Proof: 전달되는 마음 -->
+<section class="py-48 px-6 md:px-12 flex flex-col items-center justify-center text-center">
+<div class="max-w-2xl">
+<span class="material-symbols-outlined text-primary text-4xl mb-12">format_quote</span>
+<blockquote class="font-headline text-3xl md:text-4xl italic leading-relaxed mb-12">
+                    "CUT &amp; NOTE의 노트를 만나는 순간, 복잡했던 머릿속이 정돈되는 기분을 느꼈습니다. 종이의 질감이 손끝에 닿을 때 비로소 진정한 기록이 시작됩니다."
+                </blockquote>
+<div class="h-[1px] w-24 bg-outline-variant mx-auto mb-6"></div>
+<p class="font-label text-xs tracking-widest uppercase">전달되는 마음 — Our Collective Legacy</p>
+</div>
+</section>
+<!-- SideNavBar (Floating Desktop Component) -->
+<aside class="hidden xl:flex fixed left-0 top-0 h-full w-64 bg-[#fef1e7] flex-col p-8 gap-12 z-40 shadow-[40px_0_40px_-5px_rgba(32,27,21,0.04)]">
+<div class="mt-24">
+<p class="font-label text-[10px] tracking-[0.3em] text-primary uppercase mb-2">CURATED SELECTION</p>
+<p class="font-headline text-xs italic opacity-40">The Editorial Suite</p>
+</div>
+<nav class="flex flex-col gap-6">
+<a class="text-[#201b15]/40 flex items-center gap-3 font-medium tracking-wide hover:translate-x-2 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined">auto_awesome</span> New Arrivals
+                </a>
+<a class="text-[#201b15]/40 flex items-center gap-3 font-medium tracking-wide hover:translate-x-2 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined">description</span> Paper Goods
+                </a>
+<a class="text-[#201b15]/40 flex items-center gap-3 font-medium tracking-wide hover:translate-x-2 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined">edit</span> Writing Tools
+                </a>
+<a class="text-[#201b15]/40 flex items-center gap-3 font-medium tracking-wide hover:translate-x-2 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined">grid_view</span> Desk Objects
+                </a>
+</nav>
+<button class="mt-auto bg-primary/10 text-primary py-4 px-6 text-xs font-label tracking-widest uppercase border border-primary/20 hover:bg-primary/20 transition-colors">
+                Request Catalog
+            </button>
+</aside>
+<!-- CTA Section -->
+<section class="mb-32 px-6 md:px-12">
+<div class="max-w-7xl mx-auto relative h-[600px] bg-primary flex items-center justify-center overflow-hidden">
+<img alt="Call to Action Background" class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay" data-alt="Mood board collage with scraps of paper, fabric swatches, and pressed flowers on a cork surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCCalhJYELDlu94fk4cuQweqtjnV4BENf6k2liOaz4jLmtFlsl36tLDHzj5z0VDdtulvKoX9yja7jlzt04W67smCQKxbis2V-OCeJMNwlSUVMObvMmvcn3S13f7LFa379ttEeeuIY_8-Ys4fIY9RyolacIOIjhc7ZVL0-yZzxrTqFotIhJTEcJNrNqpqhR94Yi5jLTcM9uBHZLmD92aMbQvDRKwxdYH_w2B3NBWp5pJV9g36ejdAaNe7YVQ4TOR7EA4pTBRTn35kTa"/>
+<div class="relative z-10 text-center flex flex-col items-center gap-8">
+<h2 class="font-headline text-5xl md:text-7xl text-on-primary italic">Begin Your <br/> Journal.</h2>
+<button class="bg-surface-container-lowest text-primary px-12 py-5 font-label tracking-[0.2em] text-sm hover:translate-y-[-4px] transition-transform">
+                        SHOP THE COLLECTION
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#ede0d6] w-full mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full gap-8">
+<div class="font-headline text-lg">CUT &amp; NOTE</div>
+<div class="flex gap-8">
+<a class="font-label text-[10px] uppercase tracking-widest opacity-60 hover:opacity-100 transition-opacity" href="#">Privacy</a>
+<a class="font-label text-[10px] uppercase tracking-widest opacity-60 hover:opacity-100 transition-opacity" href="#">Shipping</a>
+<a class="font-label text-[10px] uppercase tracking-widest opacity-60 hover:opacity-100 transition-opacity" href="#">Wholesale</a>
+<a class="font-label text-[10px] uppercase tracking-widest opacity-60 hover:opacity-100 transition-opacity" href="#">Contact</a>
+</div>
+<div class="font-label text-[10px] uppercase tracking-widest opacity-40">
+                © 2024 CUT &amp; NOTE. A TACTILE EDITORIAL SPACE.
+            </div>
+</div>
+</footer>
+</body></html>

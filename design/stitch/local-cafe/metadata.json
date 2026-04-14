@@ -1,0 +1,89 @@
+{
+  "siteId": "local-cafe",
+  "brand": "TABLE WARM",
+  "projectId": "7135745222730086952",
+  "projectTitle": "TABLE WARM Stitch",
+  "updatedAt": "2026-04-14T04:09:07.883Z",
+  "screens": {
+    "home:desktop": {
+      "screenId": "347717c0417c413fba88937393f1c6fd",
+      "pageSlug": "home",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/local-cafe/screens/home-desktop.html",
+      "imagePath": "design/stitch/local-cafe/screens/home-desktop.png",
+      "updatedAt": "2026-04-13T23:40:17.493Z"
+    },
+    "home:mobile": {
+      "screenId": "f0035b724a054c89a56f747688554a00",
+      "pageSlug": "home",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/local-cafe/screens/home-mobile.html",
+      "imagePath": "design/stitch/local-cafe/screens/home-mobile.png",
+      "updatedAt": "2026-04-13T23:41:27.255Z"
+    },
+    "menu:desktop": {
+      "screenId": "286f579491b8464694c026ece6266232",
+      "pageSlug": "menu",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/local-cafe/screens/menu-desktop.html",
+      "imagePath": "design/stitch/local-cafe/screens/menu-desktop.png",
+      "updatedAt": "2026-04-14T03:58:55.092Z"
+    },
+    "menu:mobile": {
+      "screenId": "daadff411618414a9bab0707b7c6eecb",
+      "pageSlug": "menu",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/local-cafe/screens/menu-mobile.html",
+      "imagePath": "design/stitch/local-cafe/screens/menu-mobile.png",
+      "updatedAt": "2026-04-14T04:00:10.552Z"
+    },
+    "visit:desktop": {
+      "screenId": "38f18edd01d245da86033712976d912f",
+      "pageSlug": "visit",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/local-cafe/screens/visit-desktop.html",
+      "imagePath": "design/stitch/local-cafe/screens/visit-desktop.png",
+      "updatedAt": "2026-04-14T04:01:51.541Z"
+    },
+    "visit:mobile": {
+      "screenId": "0bf26cb7fa564d3b95043c9d52796d8b",
+      "pageSlug": "visit",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/local-cafe/screens/visit-mobile.html",
+      "imagePath": "design/stitch/local-cafe/screens/visit-mobile.png",
+      "updatedAt": "2026-04-14T04:03:23.249Z"
+    },
+    "reserve:desktop": {
+      "screenId": "8bed218d649e4d9981f79bb4cf6faa38",
+      "pageSlug": "reserve",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/local-cafe/screens/reserve-desktop.html",
+      "imagePath": "design/stitch/local-cafe/screens/reserve-desktop.png",
+      "updatedAt": "2026-04-14T04:04:47.512Z"
+    },
+    "reserve:mobile": {
+      "screenId": "c0a3ba4d2dcf42b88fc6c4ab67b0bb3e",
+      "pageSlug": "reserve",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/local-cafe/screens/reserve-mobile.html",
+      "imagePath": "design/stitch/local-cafe/screens/reserve-mobile.png",
+      "updatedAt": "2026-04-14T04:05:58.747Z"
+    },
+    "info:desktop": {
+      "screenId": "6991b8e2e66f443ba5ff7b262fe44855",
+      "pageSlug": "info",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/local-cafe/screens/info-desktop.html",
+      "imagePath": "design/stitch/local-cafe/screens/info-desktop.png",
+      "updatedAt": "2026-04-14T04:07:06.071Z"
+    },
+    "info:mobile": {
+      "screenId": "1498c5051cb34104bd352865116a5fa4",
+      "pageSlug": "info",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/local-cafe/screens/info-mobile.html",
+      "imagePath": "design/stitch/local-cafe/screens/info-mobile.png",
+      "updatedAt": "2026-04-14T04:09:07.884Z"
+    }
+  }
+}

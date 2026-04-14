@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#dce2f7",
+                    "tertiary-dim": "#54595d",
+                    "on-secondary-container": "#485266",
+                    "secondary-container": "#d9e3fb",
+                    "on-primary-container": "#4b5263",
+                    "error": "#a64542",
+                    "surface": "#fdffd8",
+                    "secondary-fixed": "#d9e3fb",
+                    "on-primary": "#f7f7ff",
+                    "primary-fixed": "#dce2f7",
+                    "primary-fixed-dim": "#ced4e9",
+                    "on-primary-fixed": "#383f50",
+                    "on-secondary-fixed": "#364053",
+                    "outline": "#818172",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#575e70",
+                    "background": "#fdffd8",
+                    "on-tertiary-container": "#575c61",
+                    "tertiary-fixed-dim": "#e2e6eb",
+                    "tertiary-container": "#f0f4f9",
+                    "secondary": "#5b6579",
+                    "inverse-surface": "#0e0e0a",
+                    "secondary-fixed-dim": "#cad4ec",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#fdffd8",
+                    "on-tertiary-fixed-variant": "#62676b",
+                    "tertiary-fixed": "#f0f4f9",
+                    "secondary-dim": "#4f586d",
+                    "outline-variant": "#bbbaa9",
+                    "surface-container-low": "#fcf9ef",
+                    "on-secondary-fixed-variant": "#525c70",
+                    "inverse-on-surface": "#9f9d96",
+                    "surface-variant": "#eae9d7",
+                    "on-background": "#38392c",
+                    "surface-tint": "#575e70",
+                    "error-container": "#fe8983",
+                    "on-error": "#ffffff",
+                    "surface-dim": "#e4e4cf",
+                    "on-surface-variant": "#656557",
+                    "surface-container-high": "#f0eedf",
+                    "primary-dim": "#4b5264",
+                    "on-surface": "#38392c",
+                    "inverse-primary": "#d9dff5",
+                    "error-dim": "#4e0309",
+                    "on-tertiary-fixed": "#454a4e",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#752121",
+                    "surface-container-highest": "#eae9d7",
+                    "on-primary-fixed-variant": "#545b6d",
+                    "surface-container": "#f6f4e7",
+                    "tertiary": "#606569"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .mesh-gradient {
+            background-color: #fdffd8;
+            background-image: radial-gradient(at 0% 0%, rgba(252, 249, 239, 1) 0, transparent 50%), 
+                              radial-gradient(at 100% 100%, rgba(220, 226, 247, 0.4) 0, transparent 50%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-surface selection:bg-primary-container">
+<!-- Top Navigation -->
+<nav class="w-full top-0 sticky bg-[#fcf9ef] dark:bg-[#1f2937] shadow-[0px_4px_20px_rgba(56,57,44,0.04)] z-50 flex items-center justify-between px-6 py-4">
+<div class="text-xl font-bold tracking-tighter text-[#111827] dark:text-[#f7f7ff] font-headline">CLARO</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#575e70] dark:text-[#dce2f7] cursor-pointer ease-out duration-400 active:scale-95" data-icon="support_agent">support_agent</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant/10">
+<img class="w-full h-full object-cover" data-alt="professional male financial advisor portrait in soft corporate studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlI0HZByPu7wTSQQOEj4WINzdKibGRMm8XAAG6ykFre0nX4ldExiG-obhOX4FbokeRSZFrVz-WVsULdZD16OjELVuboGflXmc1n435laspKQDxnD6P1X57zfErgfc-3WCHWsGuCTw8iGAAaaeyZJYJ8eMGG8dXMpg4j2XLZQfNQZ1vndEtjaT6kurPe7R89NtgN__MarsN8-sa7-2HUJJFF1noAvXsezErbwl08IloApw4KoyOvRoLakVIHipI7Daj5ReKaFVhIgc"/>
+</div>
+</div>
+</nav>
+<main class="mesh-gradient min-h-screen pb-32">
+<!-- Hero Section -->
+<section class="px-6 pt-12 pb-8">
+<div class="max-w-md mx-auto space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container/30 text-primary text-[10px] font-bold uppercase tracking-widest font-headline">
+                    Inquiry &amp; Support
+                </div>
+<h1 class="text-3xl font-extrabold tracking-tight font-headline leading-tight text-on-background">
+                    전문적인 자산 관리의 시작, <br/>
+                    CLARO와 상담하세요
+                </h1>
+<p class="text-on-surface-variant text-base leading-relaxed">
+                    24시간 이내 전문 어드바이저의 <br/>
+                    답변을 약속합니다.
+                </p>
+</div>
+</section>
+<!-- Form Section -->
+<section class="px-6 mb-12">
+<div class="max-w-md mx-auto bg-surface-container-lowest rounded-xl shadow-[0px_12px_40px_rgba(56,57,44,0.08)] p-6 space-y-6">
+<div class="space-y-4">
+<div class="space-y-1.5">
+<label class="block text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider font-label ml-1">이름</label>
+<input class="w-full h-12 px-4 bg-surface-container-high rounded-lg border-none focus:ring-1 focus:ring-primary/20 focus:bg-white transition-all outline-none text-on-surface placeholder:text-outline-variant/60" placeholder="성함을 입력해주세요" type="text"/>
+</div>
+<div class="space-y-1.5">
+<label class="block text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider font-label ml-1">이메일</label>
+<input class="w-full h-12 px-4 bg-surface-container-high rounded-lg border-none focus:ring-1 focus:ring-primary/20 focus:bg-white transition-all outline-none text-on-surface placeholder:text-outline-variant/60" placeholder="example@claro.com" type="email"/>
+</div>
+<div class="space-y-1.5">
+<label class="block text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider font-label ml-1">문의 유형</label>
+<div class="relative">
+<select class="w-full h-12 px-4 bg-surface-container-high rounded-lg border-none appearance-none focus:ring-1 focus:ring-primary/20 focus:bg-white transition-all outline-none text-on-surface">
+<option>개인 자산 관리 문의</option>
+<option>기관 및 파트너십</option>
+<option>서비스 기술 지원</option>
+<option>기타 문의</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="block text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider font-label ml-1">상담 내용</label>
+<textarea class="w-full p-4 bg-surface-container-high rounded-lg border-none focus:ring-1 focus:ring-primary/20 focus:bg-white transition-all outline-none text-on-surface placeholder:text-outline-variant/60 resize-none" placeholder="상세 내용을 입력해주세요" rows="4"></textarea>
+</div>
+</div>
+<button class="w-full h-14 bg-[#111827] text-[#f7f7ff] rounded-lg font-bold tracking-wide shadow-lg active:scale-95 transition-transform ease-out">
+                    상담 신청하기
+                </button>
+</div>
+</section>
+<!-- Trust Signals: Locations -->
+<section class="px-6 mb-12">
+<div class="max-w-md mx-auto">
+<h3 class="text-[11px] font-bold text-on-surface-variant uppercase tracking-[0.2em] mb-6 text-center">Global Presence</h3>
+<div class="grid grid-cols-1 gap-4">
+<div class="bg-surface-container-low rounded-xl p-5 flex items-center gap-4 transition-all hover:bg-surface-container-lowest">
+<div class="w-12 h-12 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="modern skyscraper in Seoul business district under a clear blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA06v-vw071MNqfipoDnGuKhnKH8Yac9M8egg159tPM4HrQAbiqMG-9TeGk5QddLjjJ16EUMFC4-BjL2jC1eSF6OJvsKuqgCwo4JMpmFIlMIU-xSSx_LdI6tlc7j05E9I1UGYjpaSvwThnOZC6GZXSLld3WzYT1Cz2hR6p9r9ZcbVj4tPbMPpSSvG7VjQgSIKElu4ynMDYZHSIh17IYw18__hTMJshQ335t8zaO-TqsvCMSHOryItpRvoiv0FNJqFhOM8kQcknApMw"/>
+</div>
+<div>
+<p class="font-bold text-on-surface font-headline">Seoul Office</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">서울특별시 중구 세종대로 110</p>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-5 flex items-center gap-4 transition-all hover:bg-surface-container-lowest">
+<div class="w-12 h-12 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Singapore skyline with Marina Bay Sands and modern architecture during twilight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXIOz50ESAWiSgl7F2e-NLi_HcyhIeg9dJdVGiuG33QndnyCFTBfYIuVR_pYD1D5Moj9lwo4ZrpAOtaUpSJsRX55YrHSifAF9tYtlI0f_HGQokUZI0v8ZrTXEtuiUwgCU_eiZyScy1CYXpjXYT46hWrxastg2KshOI_gZl926pPrHUmoRW-qQJikjpCRMG1sCSpHzgNpqgoK92u1HbyxuTUNbUgt9sZDR5B5UEKgzOv7iaMXXEHhJ_sfA2F9hPF-mLHmH4PZW-3GA"/>
+</div>
+<div>
+<p class="font-bold text-on-surface font-headline">Singapore Office</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">8 Marina View, Asia Square Tower 1</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Security Badges -->
+<section class="px-6 mb-16">
+<div class="max-w-md mx-auto bg-surface-container-high/50 rounded-2xl p-6">
+<div class="flex justify-around items-center opacity-70 grayscale">
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-3xl" data-icon="verified_user">verified_user</span>
+<span class="text-[10px] font-bold font-headline uppercase tracking-tighter">ISO 27001</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-3xl" data-icon="security">security</span>
+<span class="text-[10px] font-bold font-headline uppercase tracking-tighter">SOC2 Type II</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-3xl" data-icon="policy">policy</span>
+<span class="text-[10px] font-bold font-headline uppercase tracking-tighter">GDPR COMPLIANT</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Institutional CTA -->
+<section class="px-6 mb-12">
+<div class="max-w-md mx-auto p-8 rounded-3xl bg-secondary text-on-secondary relative overflow-hidden">
+<div class="relative z-10 space-y-4">
+<h3 class="text-xl font-bold font-headline leading-tight">Institutional <br/>Advisory</h3>
+<p class="text-sm opacity-80 leading-relaxed">전문 기관 및 기업용 맞춤 자산 운용 솔루션을 제안해 드립니다.</p>
+<button class="flex items-center gap-2 px-5 py-2.5 bg-surface-container-lowest text-secondary rounded-lg font-bold text-xs shadow-xl active:scale-95 transition-all">
+<span>파트너십 제안서 요청</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Abstract decorative element -->
+<div class="absolute -right-4 -bottom-4 w-32 h-32 bg-on-secondary/10 rounded-full blur-3xl"></div>
+</div>
+</section>
+</main>
+<!-- Floating Live Chat -->
+<div class="fixed bottom-24 right-6 z-[60] group">
+<div class="absolute right-0 bottom-full mb-4 w-64 bg-surface-container-lowest p-4 rounded-2xl shadow-2xl scale-0 group-hover:scale-100 transition-transform origin-bottom-right duration-300">
+<p class="text-xs font-bold font-headline mb-2">실시간 채팅 상담</p>
+<p class="text-[11px] text-on-surface-variant mb-3">평균 응답 시간: 5분 이내</p>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-primary-container">
+<img class="w-full h-full object-cover" data-alt="professional female advisor portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2vsaM-odZQZYFFpwjWYuEY7VL0cv1PjplNQ91Y9uKAtSMmgOuP8Kzmgd8CrSE89bPP3IOSGSZ0wp8gCXxkTcRWSbu1HZV99sc3Ioi1oAGYL0UwkSWVxu5G6ZpXKZhVM7hm_a4ARaeEjg3wexxoqMTWbSfcwB7r4Bq9C76jl-DpLDhWjVrCZnyql7PF7R-5qlnntnJ9YKd6rjstXw5UoikOxT6XQM_OLD3nor0w_DsUTPFLpa4y1B9eg6eiaskWT1HUEbRkfTTukc"/>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-secondary-container">
+<img class="w-full h-full object-cover" data-alt="professional male advisor portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs5IeCa3oMmVQquHKtrgRWAg8iiXNZddlNb7DcFSg9h-n3QQEYPDkV-TZvo2fkeUlqgmYSEaTqPsnrEQgXeRgGmrvzNid0g-s_Srp7-887MlxA2GsjTSD1JUolqSLrc6RDyouZycToDNz-epjDib7UQVo4DDdU91_YRSa0hqWXdCoGjw8LbOquqeaO1nEU98FYUUujrT4gpD7ftUzDUQEo2s-rXakXZdxnLy2ptxbAUMgC8EyRdNCOB-AnMrse8qzJ0h1DxVlm1C0"/>
+</div>
+</div>
+</div>
+<button class="w-14 h-14 bg-[#111827] text-white rounded-full shadow-[0px_8px_24px_rgba(17,24,39,0.3)] flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="chat_bubble" data-weight="fill">chat_bubble</span>
+</button>
+</div>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#ffffff]/80 dark:bg-[#111827]/80 backdrop-blur-xl rounded-t-2xl shadow-[0px_-4px_20px_rgba(56,57,44,0.04)]">
+<div class="flex flex-col items-center justify-center text-[#656557] dark:text-[#bbbaa9] px-4 py-1.5 hover:text-[#111827] dark:hover:text-[#ffffff] transition-colors ease-out duration-400 transform active:scale-90">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-manrope text-[11px] font-medium tracking-wide uppercase">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#656557] dark:text-[#bbbaa9] px-4 py-1.5 hover:text-[#111827] dark:hover:text-[#ffffff] transition-colors ease-out duration-400 transform active:scale-90">
+<span class="material-symbols-outlined mb-1" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-manrope text-[11px] font-medium tracking-wide uppercase">Assets</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#656557] dark:text-[#bbbaa9] px-4 py-1.5 hover:text-[#111827] dark:hover:text-[#ffffff] transition-colors ease-out duration-400 transform active:scale-90">
+<span class="material-symbols-outlined mb-1" data-icon="notifications">notifications</span>
+<span class="font-manrope text-[11px] font-medium tracking-wide uppercase">Alerts</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#111827] dark:text-[#f7f7ff] bg-[#f0eedf] dark:bg-[#374151] rounded-xl px-4 py-1.5 transition-colors ease-out duration-400 transform active:scale-90">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span class="font-manrope text-[11px] font-medium tracking-wide uppercase">Settings</span>
+</div>
+</nav>
+</body></html>

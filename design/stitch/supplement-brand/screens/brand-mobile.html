@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,700;0,900;1,900&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#fbe431",
+                        "primary": "#5c5b5b",
+                        "inverse-primary": "#ffffff",
+                        "on-primary": "#f5f2f1",
+                        "surface-bright": "#fff7d4",
+                        "tertiary-fixed-dim": "#6cc3eb",
+                        "on-tertiary-container": "#00465d",
+                        "on-secondary-container": "#8d1620",
+                        "primary-dim": "#504f4f",
+                        "surface-container-low": "#fff2a6",
+                        "on-secondary-fixed-variant": "#9a2128",
+                        "secondary-dim": "#992027",
+                        "on-tertiary-fixed-variant": "#004f69",
+                        "primary-container": "#edeaea",
+                        "inverse-surface": "#110e00",
+                        "surface-container-highest": "#f6de0b",
+                        "on-surface-variant": "#675c00",
+                        "tertiary-fixed": "#7bd1fa",
+                        "on-tertiary": "#e5f5ff",
+                        "on-error-container": "#520c00",
+                        "on-primary-fixed": "#454444",
+                        "on-secondary": "#ffefee",
+                        "inverse-on-surface": "#ae9e18",
+                        "surface-dim": "#edd600",
+                        "error-container": "#f95630",
+                        "tertiary-container": "#7bd1fa",
+                        "on-primary-container": "#575656",
+                        "error": "#b02500",
+                        "secondary-fixed-dim": "#ffafac",
+                        "surface": "#fff7d4",
+                        "error-dim": "#b92902",
+                        "primary-fixed": "#edeaea",
+                        "secondary-fixed": "#ffc3c0",
+                        "on-secondary-fixed": "#6f0011",
+                        "surface-container": "#ffea50",
+                        "surface-tint": "#5c5b5b",
+                        "surface-variant": "#f6de0b",
+                        "tertiary-dim": "#005672",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffefec",
+                        "on-primary-fixed-variant": "#626060",
+                        "secondary-container": "#ffc3c0",
+                        "primary-fixed-dim": "#dfdcdc",
+                        "tertiary": "#006382",
+                        "on-background": "#352f00",
+                        "outline": "#857800",
+                        "secondary": "#aa2c32",
+                        "on-surface": "#352f00",
+                        "on-tertiary-fixed": "#003041",
+                        "background": "#fff7d4",
+                        "outline-variant": "#bfae2b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Epilogue"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #fff7d4;
+            color: #352f00;
+            overflow-x: hidden;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-grid {
+            background-image: radial-gradient(#857800 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+        }
+        .sticker-rotate { transform: rotate(-3deg); }
+        .text-stroke {
+            -webkit-text-stroke: 1px #352f00;
+            color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-[#fff7d4] dark:bg-[#121212] border-b-4 border-[#352f00] dark:border-[#f6de0b] flex justify-between items-center h-16 px-6 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#352f00] dark:text-[#f7e45d]">menu</span>
+<h1 class="text-2xl font-['Epilogue'] font-black uppercase tracking-tighter text-[#352f00] dark:text-[#f7e45d]">PUNCH FUEL</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#352f00] dark:text-[#f7e45d]">shopping_cart</span>
+</div>
+</header>
+<main class="relative pb-24">
+<!-- Hero Section -->
+<section class="relative bg-surface p-6 flex flex-col gap-6 overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-64 bg-secondary opacity-10 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
+<div class="relative z-10 space-y-4">
+<span class="font-label font-bold text-xs tracking-widest bg-secondary text-on-secondary px-2 py-1 sticker-rotate inline-block">HYPER-CONCENTRATED</span>
+<h2 class="font-headline font-black text-5xl leading-none uppercase tracking-tighter italic">FUEL YOUR<br/>CALCULATED<br/>GRIND.</h2>
+</div>
+<div class="relative w-full aspect-square bg-surface-container rounded-lg overflow-hidden border-2 border-outline">
+<img alt="Performance supplement container" class="w-full h-full object-cover grayscale contrast-125" data-alt="Close-up high-resolution shot of a sleek black supplement container against a bold yellow background with sharp dramatic industrial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCLO1i58Sd36Q_z9WELhgNynY8oUxTjfTyx2qlihzeDlJcpslP9OD5VIoJUlYZeRvyCh3jJKSZBrHW2OJ_c02R6f88hY6gyfH5aNOyYjHuEyXm_2TpPquZd-wwbXt9gq-0yeggN8pZBuIb-N8aVChRN7Gd9FJCKLmSbFVyWR3nSYzJl_jN6kIWy9BhrDDY7HYuDPY0GPb6vmKf8UDP8yeg5S_yPhyyqC_WoiPazN3_t9VrLWgRsjmX0qEUos4TcXacY7fJtYnXm4c"/>
+<div class="absolute bottom-4 left-4 right-4 bg-surface-container-lowest border-2 border-outline p-4 flex flex-col gap-3">
+<div class="flex gap-2">
+<button class="flex-1 font-label font-bold text-[10px] py-2 border-2 border-outline bg-tertiary text-on-tertiary flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-sm">bolt</span> ENERGY
+                        </button>
+<button class="flex-1 font-label font-bold text-[10px] py-2 border-2 border-outline bg-surface text-on-surface flex items-center justify-center gap-1 opacity-60">
+<span class="material-symbols-outlined text-sm">refresh</span> RECOVERY
+                        </button>
+</div>
+<div class="flex items-end justify-between">
+<div>
+<p class="font-label text-[10px] uppercase opacity-60">Monthly Plan Starting</p>
+<p class="font-headline font-black text-2xl tracking-tighter">39,000원</p>
+</div>
+<button class="bg-secondary text-on-secondary font-headline font-black px-6 py-2 uppercase text-sm border-2 border-on-secondary-container transition-transform active:translate-y-1 shadow-[4px_4px_0px_0px_#8d1620]">
+                            SUBSCRIBE
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Operating Context -->
+<section class="bg-on-background text-surface p-8 space-y-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 font-headline font-black text-8xl text-stroke opacity-10 -rotate-12 translate-x-12 translate-y-4">DATA</div>
+<div class="relative z-10">
+<p class="font-label text-xs uppercase tracking-[0.2em] mb-2 text-surface-container-highest">Mission Protocol</p>
+<h3 class="font-headline font-black text-4xl leading-tight uppercase mb-6 italic">OUR OPERATING<br/>CONTEXT</h3>
+<p class="font-body text-base leading-relaxed opacity-80 max-w-[85%]">
+                    우리는 단순한 보충제 제조사가 아닙니다. 우리는 신체 데이터를 기반으로 최고 수준의 퍼포먼스를 설계하는 <span class="text-surface-container-highest font-bold italic">BIO-ENGINEERS</span>입니다. 영양학적 직관이 아닌, 정밀한 계산이 연료의 핵심입니다.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="border border-surface-variant p-4 space-y-2">
+<span class="material-symbols-outlined text-surface-container-highest">query_stats</span>
+<h4 class="font-label font-bold text-xs uppercase">Precision Ratio</h4>
+<p class="font-body text-[10px] opacity-70">1:1.2 Metabolite balance for sustained output.</p>
+</div>
+<div class="border border-surface-variant p-4 space-y-2">
+<span class="material-symbols-outlined text-surface-container-highest">biotech</span>
+<h4 class="font-label font-bold text-xs uppercase">Engineered Lab</h4>
+<p class="font-body text-[10px] opacity-70">Controlled environment molecular milling.</p>
+</div>
+</div>
+</section>
+<!-- Kinetic Lab (Purity) -->
+<section class="p-6 bg-surface-container-low kinetic-grid">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline font-black text-2xl uppercase italic">KINETIC LAB</h3>
+<div class="bg-inverse-surface text-surface font-label font-black px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">verified</span>
+                    99.9% PURITY
+                </div>
+</div>
+<div class="relative group">
+<div class="absolute -top-4 -left-2 bg-secondary text-white px-3 py-1 font-label text-[10px] font-black z-20">BATCH: #P-8821</div>
+<div class="relative aspect-video border-4 border-on-background overflow-hidden">
+<img alt="Laboratory precision" class="w-full h-full object-cover saturate-0 contrast-150" data-alt="Futuristic clinical laboratory with robotic arms and glowing blue highlights, minimalist tech aesthetic, high precision environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfOK9zceMYYvLuScM6y35Eks4h42w0GQLDefJC3CcgxOb2pEjQm2r0QbsQQ7CnQ1Ki7swixEt5QcSZ6ZiHHTSZpPIy52VeNXWmzJCj2VQbd9HadhbFoPiCfp9enWh3Z6mxCRLhy9QWLp2Yb-zXTBTRgfNrRo738oH4ZC039nJuC7eUeO7Z4JdKng0CMJLi3A69Sqb22F0swj4Q6yGLxvYyEU8648_8jegoeC8WsHAUqFDGAC_gD0Z6UEN3_hLSsAxyKKeTWZ_rnbw"/>
+<div class="absolute inset-0 bg-secondary opacity-20 mix-blend-multiply"></div>
+</div>
+</div>
+<div class="mt-6 p-4 bg-surface-container border-2 border-outline space-y-4">
+<div class="flex justify-between items-center border-b border-outline pb-2">
+<span class="font-label text-xs uppercase font-bold">Milling Standard</span>
+<span class="font-headline font-bold text-sm tracking-tighter">ULTRA-MICRONIZED</span>
+</div>
+<p class="font-body text-sm leading-snug">
+                    모든 입자는 200메시 이하로 정밀하게 그라인딩되어, 일반 제품 대비 흡수율을 42% 상향 시켰습니다. 타협 없는 순도가 극강의 에너지를 만듭니다.
+                </p>
+</div>
+</section>
+<!-- Ingredient Deep Dive -->
+<section class="p-6 bg-surface space-y-8">
+<h3 class="font-headline font-black text-3xl uppercase tracking-tighter">CORE FUEL SPECS</h3>
+<div class="flex flex-col gap-6">
+<!-- Ingredient 1 -->
+<div class="flex gap-4 items-start">
+<div class="w-20 h-20 bg-surface-container-highest border-2 border-on-background flex-shrink-0 flex items-center justify-center p-2">
+<img alt="Creapure" class="w-full h-full object-contain grayscale" data-alt="Microscopic view of crystalline white powder with professional studio lighting on a yellow background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh164vKufGgWs9AXr-O9cCrXkIxNglE7FAXlxQSbqAMEXGNX4oBBVaBuRM64XfneDPBc3eKwq7ZefObpBOG8XsuYM6BGAYNvWK-C10ofSDYNe4TqBw6w89fJB2hJ_xYIYO1eR4WV8xmajoWZGKwnu0wR1QW4K2SmDlrOz6Mck6YZ5XaxDm3HsC3rDMjfFywVtFysoeER8MteiMlLof-_k04oDB0IRQwK8CgmB-n6yLCMc_FgBxwXQv3GqgAt3mZkv7ID4HdLhltEM"/>
+</div>
+<div class="flex-1 space-y-1">
+<div class="flex justify-between items-center">
+<h4 class="font-headline font-bold text-lg">CREAPURE®</h4>
+<span class="text-[10px] font-label font-bold bg-on-background text-surface px-2">GERMANY</span>
+</div>
+<p class="font-body text-xs opacity-70">순도 99.99%의 독일 정품 크레아틴. 근력과 폭발적 에너지의 원천.</p>
+<p class="font-label font-black text-secondary text-sm">5,000MG / SERVING</p>
+</div>
+</div>
+<!-- Ingredient 2 -->
+<div class="flex gap-4 items-start">
+<div class="w-20 h-20 bg-tertiary-container border-2 border-on-background flex-shrink-0 flex items-center justify-center p-2">
+<img alt="Ajipure" class="w-full h-full object-contain grayscale" data-alt="Abstract molecules and chemical structures visualized in a modern scientific illustration style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNAnoC0NtDwZdjPUaLiI_D7hj5YhEy-AtxKdDCyLLHenOH_TDbZciynvqRS5xQv-_DZqWcrx50VHjZl0dBa65eIZY9ddPniF_GZF74onLR-1PpYbyqnmdX-sWfy2dCT5YroCDpPdnOFOd_SrKYI-oecyOe811ED74or6i1RG1Xa3GojxiWFry2hKqBXtNllm9wEjmQuv8cV_o-PjkWR7RCkSaQF2PoM-d7bda0nzTXoSaj1v1vj0yzRpi9hwHEcK1ypfGcKMiSUs0"/>
+</div>
+<div class="flex-1 space-y-1">
+<div class="flex justify-between items-center">
+<h4 class="font-headline font-bold text-lg">AJIPURE®</h4>
+<span class="text-[10px] font-label font-bold bg-on-background text-surface px-2">JAPAN</span>
+</div>
+<p class="font-body text-xs opacity-70">발효 공법으로 추출된 식물성 아미노산. 최적의 회복 메커니즘 지원.</p>
+<p class="font-label font-black text-tertiary text-sm">3,000MG / SERVING</p>
+</div>
+</div>
+<!-- Ingredient 3 -->
+<div class="flex gap-4 items-start">
+<div class="w-20 h-20 bg-secondary-container border-2 border-on-background flex-shrink-0 flex items-center justify-center p-2">
+<img alt="CoQ10" class="w-full h-full object-contain grayscale" data-alt="Golden enzyme capsule isolated on a textured background, macro photography with warm golden hour lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYwnhOYP-ic_-JMVRGtbYX7Pd_WFbzYmQdN0jQiIHtsR09vQ4UD8v6zAjDJcnPjd8kxxM6WOBPvr8huGBbpW1I3V1OiFrotuywcOfPV6VfZKiWfRvQIads02nKmaVbBrQC5HJ1j6TPpVL-oWNjG4Be6tO8GOMo7TyD9PFSF54NoFAb0L8UsiFhBF3Lb_ZrMc_ccuAfLBCgIctEvQoh13uoQdl-mv2GALS2anflmqCEqqIV20edZuaavn3Lww0hndowtG_wC3XoReg"/>
+</div>
+<div class="flex-1 space-y-1">
+<div class="flex justify-between items-center">
+<h4 class="font-headline font-bold text-lg">CoQ10</h4>
+<span class="text-[10px] font-label font-bold bg-on-background text-surface px-2">USA</span>
+</div>
+<p class="font-body text-xs opacity-70">심혈관 건강 및 에너지 대사 핵심 효소. 지치지 않는 심장 동력.</p>
+<p class="font-label font-black text-on-secondary-container text-sm">100MG / SERVING</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Ethos -->
+<section class="p-12 bg-on-background text-surface flex flex-col items-center text-center gap-6 relative">
+<div class="w-1 h-24 bg-surface-container-highest absolute -top-12"></div>
+<span class="material-symbols-outlined text-4xl text-surface-container-highest">format_quote</span>
+<h2 class="font-headline font-black italic text-4xl uppercase tracking-tighter leading-tight">
+                LIMITLESS PERFORMANCE<br/>
+                IS A <span class="text-surface-container-highest">CALCULATED</span><br/>
+                OUTCOME.
+            </h2>
+<p class="font-body text-xs opacity-60 tracking-widest uppercase">PUNCH PERFORMANCE ETHOS — VOL.01</p>
+</section>
+<!-- CTA Section -->
+<section class="p-8 bg-surface-container-highest flex flex-col gap-6 items-center">
+<div class="space-y-2 text-center">
+<h3 class="font-headline font-black text-2xl uppercase">ARE YOU READY?</h3>
+<p class="font-body text-sm">지금 당신의 데이터를 입력하고 커스텀 루틴을 설계하세요.</p>
+</div>
+<button class="w-full bg-on-background text-surface font-headline font-black py-5 text-xl border-4 border-on-background active:scale-95 transition-all shadow-[8px_8px_0px_0px_#857800]">
+                BUILD YOUR ROUTINE
+            </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 mb-20 bg-[#352f00] dark:bg-[#000000] flex flex-col items-center gap-6 px-8 w-full text-center">
+<h2 class="text-[#f7e45d] font-black italic text-3xl font-headline tracking-tighter">PUNCH FUEL</h2>
+<div class="flex gap-6">
+<a class="font-['Space_Grotesk'] text-xs font-bold tracking-widest text-[#fff2a6] opacity-70 hover:text-[#ff6b6b]" href="#">이용약관</a>
+<a class="font-['Space_Grotesk'] text-xs font-bold tracking-widest text-[#fff2a6] opacity-70 hover:text-[#ff6b6b]" href="#">개인정보처리방침</a>
+<a class="font-['Space_Grotesk'] text-xs font-bold tracking-widest text-[#fff2a6] opacity-70 hover:text-[#ff6b6b]" href="#">고객센터</a>
+</div>
+<p class="font-['Space_Grotesk'] text-[10px] font-bold tracking-widest text-[#f7e45d]">© 2024 PUNCH PERFORMANCE. ALL RIGHTS RESERVED.</p>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe px-4 bg-[#ffea50] dark:bg-[#121212] z-50 border-t-4 border-[#352f00]">
+<div class="flex flex-col items-center justify-center text-[#352f00] dark:text-[#f7e45d] p-2 hover:bg-[#f6de0b]">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] uppercase">쇼핑</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#352f00] dark:text-[#f7e45d] p-2 hover:bg-[#f6de0b]">
+<span class="material-symbols-outlined">fitness_center</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] uppercase">루틴</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#352f00] dark:text-[#f7e45d] p-2 hover:bg-[#f6de0b]">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] uppercase">프로필</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#352f00] dark:text-[#f7e45d] p-2 hover:bg-[#f6de0b]">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] uppercase">장바구니</span>
+</div>
+</nav>
+</body></html>

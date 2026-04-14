@@ -1,0 +1,314 @@
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;700&amp;family=Space+Grotesk:wght@500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "surface-bright": "#313a48",
+                  "on-background": "#dae3f6",
+                  "error": "#ffb4ab",
+                  "secondary": "#fface8",
+                  "tertiary": "#ffdcaa",
+                  "background": "#0b1421",
+                  "surface-container": "#17202e",
+                  "on-surface-variant": "#bbc9ce",
+                  "secondary-fixed-dim": "#fface8",
+                  "outline-variant": "#3c494e",
+                  "surface-container-high": "#222a38",
+                  "primary-fixed": "#b5ebff",
+                  "on-primary-fixed": "#001f28",
+                  "primary-fixed-dim": "#45d6ff",
+                  "on-secondary-container": "#fface8",
+                  "inverse-surface": "#dae3f6",
+                  "on-tertiary": "#432c00",
+                  "on-secondary-fixed-variant": "#840076",
+                  "on-primary-container": "#00596e",
+                  "inverse-on-surface": "#28313f",
+                  "surface": "#0b1421",
+                  "on-tertiary-fixed-variant": "#604100",
+                  "on-surface": "#dae3f6",
+                  "on-error-container": "#ffdad6",
+                  "on-error": "#690005",
+                  "inverse-primary": "#00677e",
+                  "tertiary-fixed": "#ffdeae",
+                  "on-tertiary-container": "#6e4b00",
+                  "error-container": "#93000a",
+                  "on-primary-fixed-variant": "#004e60",
+                  "secondary-fixed": "#ffd7f0",
+                  "on-secondary-fixed": "#3a0033",
+                  "on-primary": "#003543",
+                  "surface-dim": "#0b1421",
+                  "surface-container-lowest": "#060e1b",
+                  "surface-variant": "#2c3544",
+                  "surface-tint": "#45d6ff",
+                  "tertiary-fixed-dim": "#ffba3f",
+                  "tertiary-container": "#ffb837",
+                  "secondary-container": "#980388",
+                  "primary-container": "#39d5ff",
+                  "primary": "#b1eaff",
+                  "on-secondary": "#5e0053",
+                  "outline": "#869398",
+                  "surface-container-highest": "#2c3544",
+                  "surface-container-low": "#131c29",
+                  "on-tertiary-fixed": "#281800"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0px",
+                  "lg": "0px",
+                  "xl": "0px",
+                  "full": "0px"
+          },
+          "fontFamily": {
+                  "headline": ["Space Grotesk"],
+                  "body": ["Be Vietnam Pro"],
+                  "label": ["Space Grotesk"]
+          }
+        },
+      },
+    }
+  </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.noise-bg {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCowBvGz1XluE0Lcc5XF0VTHn0maR2mO94W44tgVxiBWlY2Tbl_U8KFx4s8UbuKM4qW4kuezMktOlxSj4M6nNWhJMsWFXEKnN2c_pvKjPlgZF4-1mJzBPP0Zj_SFiP1I3_j4KcRP1NAI1HHL4JIZiK62zuE6zRz9C2Tf3FW_XBvxoxSV1UqcWjpw_22oFroBxxc3AQWXEvF1GqxZcmF5hp2i5BWynp8y9OPCpJDcnBGC41lUGYhCw92p2rCWvMWp1sRzz0Qp2S2Sr8);
+    opacity: 0.05;
+    pointer-events: none
+    }
+.mesh-gradient {
+    background: radial-gradient(circle at 50% 50%, rgba(57, 213, 255, 0.08) 0%, rgba(11, 20, 33, 1) 100%)
+    }
+.glass-panel {
+    background: rgba(44, 53, 68, 0.6);
+    backdrop-filter: blur(20px)
+    }
+body {
+    background-color: #0b1421;
+    color: #dae3f6
+    }</style>
+</head>
+<body class="font-body selection:bg-secondary selection:text-on-secondary">
+<!-- TopNavBar Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 border-none bg-[#0b1421] h-16 flex justify-between items-center px-8 w-full max-w-full">
+<div class="text-2xl font-black text-[#39d5ff] tracking-tighter font-['Space_Grotesk'] uppercase">NOISE WAVE</div>
+<div class="hidden md:flex gap-8 items-center h-full">
+<a class="font-['Space_Grotesk'] uppercase tracking-tighter font-bold text-[#ecfbff] opacity-80 hover:text-[#fface8] hover:opacity-100 transition-all duration-150" href="#">HOME</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-tighter font-bold text-[#ecfbff] opacity-80 hover:text-[#fface8] hover:opacity-100 transition-all duration-150" href="#">LINEUP</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-tighter font-bold text-[#ecfbff] opacity-80 hover:text-[#fface8] hover:opacity-100 transition-all duration-150" href="#">TIMETABLE</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-tighter font-bold text-[#ecfbff] opacity-80 hover:text-[#fface8] hover:opacity-100 transition-all duration-150" href="#">GUIDE</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 font-['Space_Grotesk'] font-bold text-sm tracking-tighter uppercase active:scale-95 transition-transform">
+      BUY TICKETS
+    </button>
+<div class="bg-[#2c3544] h-[2px] w-full absolute bottom-0 left-0"></div>
+</nav>
+<main class="pt-32 pb-24 px-8 min-h-screen mesh-gradient relative">
+<div class="noise-bg absolute inset-0"></div>
+<!-- Metadata Header Strip -->
+<div class="max-w-7xl mx-auto mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 relative">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<span class="w-3 h-3 bg-primary animate-pulse"></span>
+<span class="font-label text-xs tracking-[0.3em] text-primary uppercase">PURCHASE STATUS: OPERATIONAL</span>
+</div>
+<h1 class="text-6xl md:text-8xl font-headline font-black tracking-tighter leading-none">
+          티켓 아카이브<br/>
+<span class="text-secondary">TICKET ARCHIVE</span>
+</h1>
+</div>
+<div class="flex flex-col text-right">
+<p class="font-label text-[10px] text-outline opacity-60 uppercase tracking-widest">Server Time: 2024.11.05_09:22:41</p>
+<p class="font-label text-[10px] text-outline opacity-60 uppercase tracking-widest">Protocol: NOISE_SECURE_GATEWAY_V4</p>
+</div>
+</div>
+<!-- Ticket Matrix -->
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-0 relative border-[1px] border-outline-variant/30">
+<!-- Tier 01: Entry -->
+<div class="group flex flex-col bg-surface-container-low border-b md:border-b-0 md:border-r border-outline-variant/30 relative overflow-hidden">
+<div class="p-8 border-b border-outline-variant/30 bg-surface-container-lowest">
+<span class="font-label text-sm text-primary tracking-widest">01 // ENTRY</span>
+<h2 class="text-4xl font-headline font-bold tracking-tighter mt-2">1-DAY PASS</h2>
+</div>
+<div class="p-8 flex-grow space-y-8">
+<div class="h-48 w-full bg-surface-container-high relative overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 opacity-40 group-hover:opacity-100" data-alt="vibrant abstract digital waves with cyan and navy blue colors representing high-frequency audio visualizers in a dark space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2VlI1VUBJdqQGWIwT2f3i4XQpnsGfxMDhukuW7OcKeHBmHCDVTSE2aO9Gu-IJPGLreXZPtTbogAHCzI-Sfbr-nomX12sxYcoSXd1tN0MjrPwwOehKXMXUEwwJD4yW7nVs2as05cs_RT3j_7fDP0oweB_M4FN4sJR_aVmFj-ycVB5Fes-WOJpW1nQI6901NsZObEl8714_MkEZubvHHyOf3SDGgsrTEDSXGhBXMcXLJHR1rJMjRkwplogunQkwAKMSZZAfVjhUAvY"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+</div>
+<div class="space-y-4">
+<p class="text-sm font-medium leading-relaxed">페스티벌 1일 입장권. 기본적인 스테이지 접근 권한 및 페스티벌 구역 이용이 포함됩니다.</p>
+<ul class="space-y-2">
+<li class="flex items-center gap-2 text-xs text-on-surface-variant uppercase tracking-tight">
+<span class="material-symbols-outlined text-[14px]">check</span> ALL STAGES ACCESS
+              </li>
+<li class="flex items-center gap-2 text-xs text-on-surface-variant uppercase tracking-tight">
+<span class="material-symbols-outlined text-[14px]">check</span> F&amp;B ZONE ACCESS
+              </li>
+<li class="flex items-center gap-2 text-xs text-on-surface-variant uppercase tracking-tight line-through opacity-30">
+<span class="material-symbols-outlined text-[14px]">close</span> OFFICIAL MERCH PACK
+              </li>
+</ul>
+</div>
+</div>
+<div class="p-8 bg-surface-container-high/50">
+<div class="flex flex-col mb-6">
+<span class="font-label text-[10px] text-outline uppercase tracking-widest">CREDIT_AMOUNT</span>
+<span class="text-3xl font-headline font-black text-primary">149,000원</span>
+</div>
+<button class="w-full py-4 border-2 border-primary text-primary font-headline font-bold text-sm tracking-widest uppercase hover:bg-primary hover:text-on-primary transition-all duration-150 active:scale-95">
+            INITIALIZE PURCHASE
+          </button>
+</div>
+</div>
+<!-- Tier 02: Core -->
+<div class="group flex flex-col bg-surface-container relative z-10 scale-100 md:scale-105 shadow-[0_0_50px_rgba(57,213,255,0.1)] border-b md:border-b-0 md:border-x border-outline-variant/30">
+<div class="p-8 border-b border-outline-variant/30 bg-surface-container-high">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label text-sm text-secondary tracking-widest">02 // CORE</span>
+<h2 class="text-4xl font-headline font-bold tracking-tighter mt-2">3-DAY PASS</h2>
+</div>
+<span class="bg-secondary text-on-secondary px-2 py-1 text-[10px] font-bold tracking-tighter">RECOMMENDED</span>
+</div>
+</div>
+<div class="p-8 flex-grow space-y-8">
+<div class="h-48 w-full bg-surface-container-high relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="dynamic close-up of a high-tech circuit board glowing with magenta and blue neon lights representing core data processing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5_heHeNy0FGAm8j3bt93SAfaPpr2FlGCU-1oUsxknIOoPhsrAU28xk0DcYffT2SYtRIUi174XQkxy8ANUDwm1mvulwQ7HY8XE0R8m04Qk_hP2YgetKYrb21nokYc6ojxl6HsutC7hSGg3xwgUTdGL33TCTdxC1iyaKg0N59oIjSiiNmt8p8A8pVuDR-SCd4wtKrH3FGowY8Hc5blIovRBmUp9mpED5eA9rIVd4xBOVmrKDf3piWOuksehk7ZO_SDRqjUcggTCxBo"/>
+<div class="absolute inset-0 bg-secondary/10 mix-blend-screen"></div>
+</div>
+<div class="space-y-4">
+<p class="text-sm font-medium leading-relaxed">페스티벌 전 기간 입장권. 공식 굿즈 팩이 포함된 노이즈 웨이브의 정수를 경험할 수 있는 티켓입니다.</p>
+<ul class="space-y-2">
+<li class="flex items-center gap-2 text-xs text-on-surface-variant uppercase tracking-tight">
+<span class="material-symbols-outlined text-secondary text-[14px]" style="font-variation-settings: 'FILL' 1;">bolt</span> FULL 3-DAY ACCESS
+              </li>
+<li class="flex items-center gap-2 text-xs text-on-surface-variant uppercase tracking-tight">
+<span class="material-symbols-outlined text-secondary text-[14px]" style="font-variation-settings: 'FILL' 1;">bolt</span> OFFICIAL MERCH PACK (LTD)
+              </li>
+<li class="flex items-center gap-2 text-xs text-on-surface-variant uppercase tracking-tight">
+<span class="material-symbols-outlined text-secondary text-[14px]" style="font-variation-settings: 'FILL' 1;">bolt</span> EARLY ENTRY PRIVILEGE
+              </li>
+</ul>
+</div>
+</div>
+<div class="p-8 bg-surface-container-high">
+<div class="flex flex-col mb-6">
+<span class="font-label text-[10px] text-outline uppercase tracking-widest">CREDIT_AMOUNT</span>
+<span class="text-3xl font-headline font-black text-secondary">349,000원</span>
+</div>
+<button class="w-full py-4 bg-primary-container text-on-primary-container font-headline font-bold text-sm tracking-widest uppercase hover:brightness-110 transition-all duration-150 active:scale-95 shadow-[0_0_20px_rgba(57,213,255,0.3)]">
+            SECURE ACCESS
+          </button>
+</div>
+</div>
+<!-- Tier 03: Premium -->
+<div class="group flex flex-col bg-surface-container-low relative border-outline-variant/30">
+<div class="p-8 border-b border-outline-variant/30 bg-surface-container-lowest">
+<span class="font-label text-sm text-tertiary tracking-widest">03 // PREMIUM</span>
+<h2 class="text-4xl font-headline font-bold tracking-tighter mt-2">VIP ARCHIVE</h2>
+</div>
+<div class="p-8 flex-grow space-y-8">
+<div class="h-48 w-full bg-surface-container-high relative overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 opacity-40 group-hover:opacity-100" data-alt="luxurious minimal futuristic architectural interior with floating holographic displays and warm golden lighting accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7rwLn74IuxCCpiXCPb454UjKpGSbV_I8Y5jwB1sHZdsY0rN7zJkA0-clZPZ7BGjwoyCfCsfRb00wuTJBxI-_wwuOOl80NUmC9yYVu93ckGSqo1fb793C0BymCk7FnwFJp2Z0hCTcFeh3f31Js8zmfMm11wmcjjbUhCpD83YVOh84ZagQD7Vwvl8dGny37pKtDBdjDjoFaWBMHPMZsm-EwnVQZ1EK9aUrAPbxeXCkX4QDYNBwS8WovicUlMVCWkUL1Z7OCjoY_AW0"/>
+<div class="absolute inset-0 bg-tertiary/10 mix-blend-overlay"></div>
+</div>
+<div class="space-y-4">
+<p class="text-sm font-medium leading-relaxed">최상위 단계의 아카이브 접근 권한. VIP 라운지 및 전용 뷰잉 존, 아티스트 밋앤그릿 우선 순위가 제공됩니다.</p>
+<ul class="space-y-2">
+<li class="flex items-center gap-2 text-xs text-on-surface-variant uppercase tracking-tight">
+<span class="material-symbols-outlined text-tertiary text-[14px]">star</span> VIP EXCLUSIVE LOUNGE
+              </li>
+<li class="flex items-center gap-2 text-xs text-on-surface-variant uppercase tracking-tight">
+<span class="material-symbols-outlined text-tertiary text-[14px]">star</span> FRONT-ROW VIEWING ZONE
+              </li>
+<li class="flex items-center gap-2 text-xs text-on-surface-variant uppercase tracking-tight">
+<span class="material-symbols-outlined text-tertiary text-[14px]">star</span> ARTIST MEET &amp; GREET (PRIORITY)
+              </li>
+</ul>
+</div>
+</div>
+<div class="p-8 bg-surface-container-high/50">
+<div class="flex flex-col mb-6">
+<span class="font-label text-[10px] text-outline uppercase tracking-widest">CREDIT_AMOUNT</span>
+<span class="text-3xl font-headline font-black text-tertiary">599,000원</span>
+</div>
+<button class="w-full py-4 border-2 border-tertiary text-tertiary font-headline font-bold text-sm tracking-widest uppercase hover:bg-tertiary hover:text-on-tertiary transition-all duration-150 active:scale-95">
+            UPGRADE PROTOCOL
+          </button>
+</div>
+</div>
+</div>
+<!-- Protocol Document Section -->
+<section class="max-w-7xl mx-auto mt-24">
+<div class="bg-surface-container-lowest p-12 border-l-4 border-primary/30 relative">
+<div class="absolute top-4 right-4 text-[60px] font-black text-outline/5 select-none pointer-events-none">NOISE_WAVE_T&amp;C</div>
+<div class="flex items-center gap-4 mb-8">
+<span class="material-symbols-outlined text-primary">description</span>
+<h3 class="font-headline font-bold text-xl tracking-tight uppercase">PROTOCOL DOCUMENT // 이용 약관</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-6">
+<div>
+<h4 class="font-label text-[10px] text-primary uppercase tracking-widest mb-2">01 // REFUND POLICY</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed font-light">
+                티켓 예매 후 7일 이내에는 취소 수수료 없이 환불이 가능합니다. 단, 페스티벌 개최 30일 전부터는 단계별 취소 수수료가 부과되며, 개최 7일 전부터는 환불이 절대 불가합니다.
+              </p>
+</div>
+<div>
+<h4 class="font-label text-[10px] text-primary uppercase tracking-widest mb-2">02 // ADMISSION REQUIREMENTS</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed font-light">
+                모든 티켓은 디지털 QR 코드로 발송되며, 현장에서 본인 확인을 위해 정부 발행 신분증(주민등록증, 운전면허증, 여권 등) 지참이 필수적입니다.
+              </p>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<h4 class="font-label text-[10px] text-primary uppercase tracking-widest mb-2">03 // PROHIBITED ITEMS</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed font-light">
+                전문 촬영 장비, 외부 음식물 및 주류, 인화성 물질, 타인에게 위해를 가할 수 있는 모든 물품의 반입을 엄격히 금지합니다. 적발 시 즉시 퇴장 조치될 수 있습니다.
+              </p>
+</div>
+<div>
+<h4 class="font-label text-[10px] text-primary uppercase tracking-widest mb-2">04 // LIABILITY LIMITS</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed font-light">
+                주최측은 귀중품 분실이나 개인 부주의로 인한 사고에 대해 책임을 지지 않습니다. 페스티벌 구역 내에서는 안전 요원의 지시에 적극 협조해 주시기 바랍니다.
+              </p>
+</div>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-outline-variant/20 flex flex-wrap gap-4">
+<div class="bg-surface-container px-4 py-2 border border-outline-variant/30 font-label text-[10px] uppercase tracking-widest text-outline">
+            HASH_VAL: 8FA1-C092-B7F2
+          </div>
+<div class="bg-surface-container px-4 py-2 border border-outline-variant/30 font-label text-[10px] uppercase tracking-widest text-outline">
+            ENCRYPTION: AES-256-GCM
+          </div>
+<div class="bg-surface-container px-4 py-2 border border-outline-variant/30 font-label text-[10px] uppercase tracking-widest text-outline">
+            ORIGIN: SEOUL_NODE_01
+          </div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-[#060e1b] w-full border-none flex flex-col md:flex-row justify-between items-center px-8 py-12 w-full">
+<div class="bg-[#2c3544] h-[1px] w-full mb-8 absolute top-0 left-0"></div>
+<div class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-widest text-[#ecfbff] opacity-50 mb-6 md:mb-0">
+      ©2024 NOISE WAVE ARCHIVE // STATUS: OPERATIONAL
+    </div>
+<div class="flex gap-8">
+<a class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-widest text-[#ecfbff] opacity-50 hover:text-[#fface8] transition-colors active:opacity-80" href="#">NODES</a>
+<a class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-widest text-[#ecfbff] opacity-50 hover:text-[#fface8] transition-colors active:opacity-80" href="#">CONTACT</a>
+<a class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-widest text-[#ecfbff] opacity-50 hover:text-[#fface8] transition-colors active:opacity-80" href="#">LEGAL</a>
+<a class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-widest text-[#ecfbff] opacity-50 hover:text-[#fface8] transition-colors active:opacity-80" href="#">DATA</a>
+</div>
+</footer>
+</body></html>

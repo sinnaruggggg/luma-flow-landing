@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#96ceed",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#d7c7b7",
+                    "primary-fixed": "#ffdfa0",
+                    "on-surface": "#201b15",
+                    "secondary-fixed": "#c1e8ff",
+                    "tertiary-fixed-dim": "#d4c4b4",
+                    "inverse-primary": "#f2bf4c",
+                    "surface-container-low": "#fef1e7",
+                    "outline-variant": "#d2c5af",
+                    "on-tertiary-fixed": "#221a10",
+                    "on-primary-container": "#6d5000",
+                    "on-secondary-fixed-variant": "#024d67",
+                    "tertiary-fixed": "#f0e0cf",
+                    "error": "#ba1a1a",
+                    "surface": "#fff8f4",
+                    "background": "#fff8f4",
+                    "on-secondary": "#ffffff",
+                    "primary": "#795900",
+                    "surface-container": "#f8ece2",
+                    "surface-container-highest": "#ede0d6",
+                    "tertiary": "#685c50",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#fbeee4",
+                    "on-background": "#201b15",
+                    "on-secondary-fixed": "#001e2b",
+                    "surface-variant": "#ede0d6",
+                    "surface-tint": "#795900",
+                    "inverse-surface": "#362f29",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#e4d8ce",
+                    "outline": "#807663",
+                    "on-tertiary-container": "#5e5346",
+                    "on-primary-fixed": "#261a00",
+                    "primary-fixed-dim": "#f2bf4c",
+                    "surface-bright": "#fff8f4",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#504539",
+                    "on-secondary-container": "#27647e",
+                    "on-primary-fixed-variant": "#5c4300",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#f3e6dc",
+                    "secondary": "#296580",
+                    "primary-container": "#f5c24f",
+                    "on-surface-variant": "#4e4635",
+                    "secondary-container": "#a7dffe",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader"],
+                    "body": ["Manrope"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .paper-shadow {
+            box-shadow: 0 40px 40px -5px rgba(32,27,21,0.06);
+        }
+        .washi-tape {
+            background-color: rgba(167, 223, 254, 0.4);
+            backdrop-blur: 2px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-none bg-[#fffaf2]/80 backdrop-blur-xl dark:bg-stone-900/80 shadow-[0_40px_40px_-5px_rgba(32,27,21,0.06)]">
+<div class="flex justify-between items-center w-full px-12 py-6 max-w-full mx-auto">
+<div class="flex items-center gap-12">
+<a class="text-2xl font-bold tracking-tighter uppercase text-stone-900 dark:text-stone-50 font-['Newsreader']" href="#">CUT &amp; NOTE</a>
+<div class="hidden md:flex gap-8">
+<a class="text-stone-900 dark:text-stone-50 border-b-2 border-stone-400 pb-1 font-['Newsreader'] italic tracking-wide" href="#">Kits</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:translate-y-[-1px] hover:text-stone-900 transition-all duration-300 font-['Newsreader'] italic tracking-wide" href="#">Colors</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:translate-y-[-1px] hover:text-stone-900 transition-all duration-300 font-['Newsreader'] italic tracking-wide" href="#">Brand</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:block relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-400">search</span>
+<input class="bg-surface-container-high border-none px-10 py-2 text-sm focus:ring-1 focus:ring-primary" placeholder="Search kits..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-stone-800 dark:text-stone-100 scale-95 duration-150">shopping_basket</button>
+<button class="md:hidden material-symbols-outlined text-stone-800">menu</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Hero Section: Editorial Intro -->
+<section class="px-12 mb-32 grid grid-cols-12 gap-8 items-end">
+<div class="col-span-12 md:col-span-7">
+<span class="font-label text-xs tracking-widest text-primary uppercase mb-4 block">Selected Archive / 01</span>
+<h1 class="font-headline italic text-7xl md:text-8xl leading-tight tracking-tighter mb-8">
+                    The Art of <br/> <span class="pl-16">Collecting Bits.</span>
+</h1>
+<p class="font-body text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                    단순한 도구를 넘어, 당신의 일상을 수집하는 즐거움을 제안합니다. <br/>
+                    엄선된 종이의 질감과 색의 조화가 담긴 'CUT &amp; NOTE' 키트 시리즈.
+                </p>
+</div>
+<div class="col-span-12 md:col-span-5 relative">
+<div class="relative z-10 paper-shadow bg-white p-2 transform rotate-2">
+<img alt="Kit preview" class="w-full aspect-square object-cover" data-alt="Close-up of an aesthetic stationery kit with vintage papers, stamps, and ribbons arranged on a warm wooden desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvvxz3STozmXnDad3P9nAWtsOaEi6FSylgUn0SaB-2cDYN7OmNiBFo1k-UlX3fOIAvcywmJhz2jcSbQhwglL8ZJNOUqlpDiYpKK7dDf0UoPnZNO9E2FvyZqLFBcR-8G3pdPg5BCpo1V9oNUXXxDrQxrcGWJgUZ7-CWnO7fYh_X3U0pZAia_MpYX0tiHM1JYPm0MlNaYmu7775DMd9g87v_My2RWMAaudgg42pEgokW25PNDxU8SpqcmWyI-cRNgowMH_HPyL-7LtXY"/>
+</div>
+<div class="absolute -top-8 -left-8 w-32 h-12 washi-tape -rotate-12 z-20"></div>
+<div class="absolute -bottom-4 -right-4 bg-primary-container p-6 paper-shadow z-0 -rotate-3">
+<span class="font-label text-on-primary-container text-sm font-bold">LIMITED EDITION</span>
+</div>
+</div>
+</section>
+<!-- Category Anchors -->
+<section class="px-12 mb-20">
+<div class="flex flex-wrap gap-4 border-b border-outline-variant/20 pb-8">
+<button class="bg-on-surface text-white px-8 py-3 font-label text-sm tracking-widest">모든 키트</button>
+<button class="border border-outline-variant px-8 py-3 font-label text-sm tracking-widest hover:bg-surface-container transition-colors">저널링 키트</button>
+<button class="border border-outline-variant px-8 py-3 font-label text-sm tracking-widest hover:bg-surface-container transition-colors">스크랩 키트</button>
+<button class="border border-outline-variant px-8 py-3 font-label text-sm tracking-widest hover:bg-surface-container transition-colors">스탬프 콜렉션</button>
+</div>
+</section>
+<!-- Kit Browsing Surface: Asymmetric Collage Grid -->
+<section class="px-12 grid grid-cols-1 md:grid-cols-3 gap-16 items-start">
+<!-- Category Group 1: 기록의 조각 -->
+<div class="md:col-span-3 mb-8">
+<h2 class="font-headline italic text-4xl mb-2">기록의 조각</h2>
+<p class="font-body text-stone-500 uppercase tracking-widest text-xs">Fragments of Memory</p>
+</div>
+<!-- Card 1 -->
+<div class="group relative">
+<div class="relative bg-surface-container p-4 pb-12 transition-transform duration-500 group-hover:-translate-y-2">
+<div class="aspect-[3/4] overflow-hidden mb-6">
+<img alt="Memory Fragments Kit" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Handcrafted stationery kit showing various paper textures, old stamps, and ink pens in a flatlay arrangement" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSRREYH0VHgKjKwr7n2sAno0jp_HU-X7-NXb_UkY3h74eaEo_iuzepNQ3X-Zo5oz4xfxRUSRioOYpzAI5-tGeuMsqmY4NOZ9AAhOipJw7BlM-YXDqLKAqli0oW_o3YQLA2raRai_GTZ0Szm1Jkk60FbdRWkt6h4KnOHlFHlWihitEGJJeB3_UXII9ASdKujAfqdStxah3R4tb1dB79Eq-FKf8sGctarddV1p1_2vIZdHAwGX0cqM-k0MH2vWOPJWG6ECjZLHXcsBgg"/>
+</div>
+<div class="px-2">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-2xl">Daily Archive Kit v.1</h3>
+<span class="font-label text-sm font-bold">38,000원</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">매일의 사소한 순간을 기록하기 위한 베이직 페이퍼 세트입니다.</p>
+</div>
+</div>
+<div class="absolute -top-4 -right-2 washi-tape w-20 h-8 rotate-12 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<!-- Card 2: Overlapping / Offset -->
+<div class="group relative mt-24">
+<div class="relative bg-white p-4 pb-12 paper-shadow transition-transform duration-500 group-hover:scale-[1.02]">
+<div class="aspect-square overflow-hidden mb-6">
+<img alt="Collage Kit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Overhead view of a scrapbooking kit with colorful paper scraps, vintage washi tapes, and small dried flowers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-mG32yplkTOFGAGinY1rf6ezGEuNWVjSuDasZ-ZppsyeuMkDw5yoEG_1sl39i8-8b9DKzqrtQ0npFNAlit8IlC2TJXXQ_F7M-I1Ztgg4CWVVaNrtA9KQ4uWvUGSMnhL3y9qkGQczOkxVSnRWNAqCdLFlS9HlHiif7ukUZv857ACG9o492pjc3bPdXBadtNEpiRqtsJlzp5kKiwGSsvBf2Q4uOMttFoaCsuSibMvsD6catrRftZdKOoj8rya-zoZDsPjCMtHiyXEBp"/>
+</div>
+<div class="px-2">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-2xl">Collage Scrap Kit</h3>
+<span class="font-label text-sm font-bold">29,900원</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">다양한 질감의 종이 조각들로 구성된 스크랩 전용 키트.</p>
+</div>
+<div class="mt-8 flex justify-end">
+<button class="font-label text-xs border-b border-primary text-primary pb-1 tracking-widest hover:text-on-surface transition-colors">ADD TO COLLECTION</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative">
+<div class="relative bg-surface-container-highest p-4 pb-12 transition-transform duration-500 group-hover:translate-x-2">
+<div class="aspect-[3/4] overflow-hidden mb-6">
+<img alt="Stamp Collection" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Collection of wooden rubber stamps with botanical illustrations and ink pads on a textured paper background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyWIPm9XoSC9rD7k8yi9awHt_7ZP4uERLkNrMylaiLLWj7oJ9wK65ELWPJ1woWRKcZG4VkxIVbpCtTv8QJYJnonQI4QhelR7tgTqb1eOJ44OQtKwW2miqRryMh3G-9BE8VOLZsk9_ffLARuy_GXgcClOPnqXNKqrOXfTB1-Nz6q0bSsWZJTI5FIhujIwoOkHa8jGLbhjGaF33Nl5fubmWxgv-boECBimgl-Xm9U0QCf6G1P8f6bQdZEUmpnS7pCu0e6z5PZ_iVbdMF"/>
+</div>
+<div class="px-2">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-2xl">Botanical Stamp Set</h3>
+<span class="font-label text-sm font-bold">45,000원</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">자연의 선을 담은 6종의 수제 우드 스탬프 세트입니다.</p>
+</div>
+</div>
+</div>
+<!-- Category Group 2: 색의 조합 -->
+<div class="md:col-span-3 mt-32 mb-8">
+<h2 class="font-headline italic text-4xl mb-2">색의 조합</h2>
+<p class="font-body text-stone-500 uppercase tracking-widest text-xs">Harmony of Colors</p>
+</div>
+<!-- Card 4: Bento Style Double Width -->
+<div class="md:col-span-2 group relative">
+<div class="flex flex-col md:flex-row bg-surface-container-low paper-shadow transition-all duration-500 hover:shadow-2xl">
+<div class="md:w-1/2 aspect-video md:aspect-auto overflow-hidden">
+<img alt="Color Palette Kit" class="w-full h-full object-cover" data-alt="Arrangement of pastel-colored envelopes and cards with artistic watercolor splashes and gold foil accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxf2UoZzMR7IJqOqjjbC2NDAMRdMcLviFwKhn2M8tPXcakWUsKaQ367wMhZpgWMgnVTGtHqsRTxt0nay10f1Te_OtrBFf5aZ69Y_9yoIs4n2tpflrTqmr49XuMxDnPe_THQQv0ASYjyd9JDYAo5E0iJyOJP1sZSir0eGF4c_FP0JcGvAW9KwxDG7wjerWch2ANIVvkB4AyTOyGZplFvT0e4TbTcmwUVwpHbjwHCIkHcBoO9qfztWsex0gsboowfZ2b6_EldGMs0V1j"/>
+</div>
+<div class="md:w-1/2 p-12 flex flex-col justify-center">
+<span class="font-label text-[10px] tracking-[0.2em] text-primary mb-4">ESSENTIAL SERIES</span>
+<h3 class="font-headline text-4xl mb-6 italic">Season's Palette : Autumn</h3>
+<p class="font-body text-on-surface-variant mb-8 leading-relaxed">
+                            가을의 바스락거림을 닮은 채도 낮은 브라운과 차분한 오렌지 톤의 색지 세트.
+                        </p>
+<div class="flex items-center gap-6">
+<span class="font-label text-xl">52,000원</span>
+<button class="bg-primary text-white px-8 py-3 text-sm font-label tracking-widest transition-transform active:scale-95">ORDER NOW</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 5: Vertical Narrow -->
+<div class="group relative">
+<div class="bg-white p-6 paper-shadow -rotate-2 group-hover:rotate-0 transition-transform duration-500">
+<div class="aspect-[4/5] bg-surface-container mb-6 flex items-center justify-center p-8">
+<img alt="Minimalist Kit" class="w-full h-full object-contain mix-blend-multiply" data-alt="Close-up of minimalist white and beige stationery items, including a fountain pen and a leather-bound notebook" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYIZr0tyfm1fzqMCf0TkP8WycSEhEZHjHt3z9oIrJlCq_7wkdoD3XVJE89y0cldmH7o19Y3PjgM2wK8uH0m2KWCvN8rVaWPS7A-ETrE8lkESn9DrajRqOK8-ShSs5LP91lJaRkxqwTSVMUI56_0s8rIgR7h4scsQB9UnAaphVFlItHrVa3iQ5PhnGV7IcO9j1vzbkm9SIQjpNiK1uzZVKQittfwiHcXNNdzBTic7Y1JiJnS2a5Z_s03H1K0VObt6x0v9AEQ4GztEYD"/>
+</div>
+<h3 class="font-headline text-2xl mb-2">The Linen Note Kit</h3>
+<span class="font-label text-sm text-stone-400 block mb-4">32,000원</span>
+<p class="font-body text-xs text-on-surface-variant uppercase tracking-tighter">Limited stock available</p>
+</div>
+</div>
+</section>
+<!-- Newsletter / Editorial Callout -->
+<section class="mt-40 px-12">
+<div class="bg-surface-container-highest py-24 px-12 text-center relative overflow-hidden">
+<div class="max-w-2xl mx-auto relative z-10">
+<h2 class="font-headline italic text-5xl mb-6">Join the Desk Archive</h2>
+<p class="font-body text-on-surface-variant mb-12">
+                        매주 새로운 키트 소식과 기록의 영감을 보내드립니다. <br/>
+                        우리의 서재에 당신의 자리를 마련해두었습니다.
+                    </p>
+<div class="flex max-w-md mx-auto border-b border-outline">
+<input class="bg-transparent border-none w-full py-4 px-2 focus:ring-0 font-label text-sm uppercase tracking-widest" placeholder="Your Email Address" type="email"/>
+<button class="font-label text-sm font-bold uppercase py-4 px-6 hover:text-primary transition-colors">Submit</button>
+</div>
+</div>
+<!-- Decorative floated elements -->
+<div class="absolute -top-10 -left-10 w-48 h-48 bg-primary-container/20 rounded-full blur-3xl"></div>
+<div class="absolute top-20 right-10 w-24 h-40 washi-tape rotate-45 opacity-50"></div>
+<div class="absolute bottom-10 left-1/4 font-headline italic text-9xl text-on-surface/5 pointer-events-none select-none">Note</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 px-12 border-t border-stone-200/15 bg-[#f7f1e6] dark:bg-stone-950 text-stone-800 dark:text-stone-200">
+<div class="grid grid-cols-2 md:grid-cols-4 w-full items-end gap-12">
+<div class="flex flex-col gap-6">
+<a class="font-['Newsreader'] text-xl italic" href="#">CUT &amp; NOTE</a>
+<p class="font-['Space_Grotesk'] text-[10px] uppercase tracking-tighter text-stone-400">
+                    © 2024 CUT &amp; NOTE. Curated with Intention.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest font-bold mb-2">Explore</h4>
+<a class="font-['Space_Grotesk'] text-[10px] uppercase tracking-tighter text-stone-400 hover:opacity-70 transition-opacity" href="#">Archives</a>
+<a class="font-['Space_Grotesk'] text-[10px] uppercase tracking-tighter text-stone-400 hover:opacity-70 transition-opacity" href="#">Shipping</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest font-bold mb-2">Craft</h4>
+<a class="font-['Space_Grotesk'] text-[10px] uppercase tracking-tighter text-stone-400 hover:opacity-70 transition-opacity" href="#">Process</a>
+<a class="font-['Space_Grotesk'] text-[10px] uppercase tracking-tighter text-stone-400 hover:opacity-70 transition-opacity" href="#">Contact</a>
+</div>
+<div class="flex flex-col items-end gap-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-xl">share</span>
+<span class="material-symbols-outlined text-xl">person</span>
+</div>
+<span class="font-['Newsreader'] italic text-sm">Every piece tells a story.</span>
+</div>
+</div>
+</footer>
+<!-- Floating UI Element: Side Collector Info (SideNavBar variant) -->
+<div class="hidden lg:flex fixed left-0 top-1/2 -translate-y-1/2 flex-col h-[614px] w-16 bg-white/50 backdrop-blur-md items-center py-8 gap-10 border-r border-outline-variant/10">
+<div class="[writing-mode:vertical-lr] font-label text-[10px] uppercase tracking-widest text-stone-400 rotate-180">Collections / 2024</div>
+<div class="flex flex-col gap-8">
+<span class="material-symbols-outlined text-stone-300 hover:text-primary transition-colors cursor-pointer">edit_note</span>
+<span class="material-symbols-outlined text-stone-300 hover:text-primary transition-colors cursor-pointer">auto_awesome_mosaic</span>
+<span class="material-symbols-outlined text-stone-300 hover:text-primary transition-colors cursor-pointer">calendar_today</span>
+<span class="material-symbols-outlined text-stone-300 hover:text-primary transition-colors cursor-pointer">approval</span>
+</div>
+</div>
+</body></html>

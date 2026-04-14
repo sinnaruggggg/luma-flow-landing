@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;family=Inter:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#d7e4ef",
+                    "on-error-container": "#752121",
+                    "on-surface-variant": "#54616a",
+                    "on-tertiary-fixed": "#363c44",
+                    "inverse-on-surface": "#9a9da1",
+                    "on-background": "#27343c",
+                    "secondary-dim": "#475466",
+                    "primary-container": "#dbe3f3",
+                    "outline": "#6f7c86",
+                    "outline-variant": "#a6b4be",
+                    "tertiary": "#596068",
+                    "on-surface": "#27343c",
+                    "on-error": "#fff7f6",
+                    "secondary-container": "#d6e3fa",
+                    "surface-container-low": "#eff4fa",
+                    "error-dim": "#4e0309",
+                    "secondary": "#536073",
+                    "surface-container-high": "#dfeaf3",
+                    "inverse-surface": "#0b0f12",
+                    "tertiary-fixed-dim": "#c9cfd9",
+                    "on-tertiary": "#f7f9ff",
+                    "tertiary-fixed": "#d7dde7",
+                    "on-primary-container": "#4a5260",
+                    "surface-tint": "#575f6d",
+                    "on-tertiary-fixed-variant": "#525861",
+                    "primary-fixed": "#dbe3f3",
+                    "on-secondary": "#f7f9ff",
+                    "surface": "#f7fafe",
+                    "error-container": "#fe8983",
+                    "secondary-fixed": "#d6e3fa",
+                    "primary-fixed-dim": "#cdd5e5",
+                    "on-tertiary-container": "#484f57",
+                    "tertiary-container": "#d7dde7",
+                    "secondary-fixed-dim": "#c8d5eb",
+                    "inverse-primary": "#e6eeff",
+                    "surface-dim": "#ccdce9",
+                    "tertiary-dim": "#4d545c",
+                    "error": "#9f403d",
+                    "on-primary": "#f6f7ff",
+                    "surface-bright": "#f7fafe",
+                    "on-primary-fixed": "#38404d",
+                    "surface-container": "#e7eff6",
+                    "primary-dim": "#4b5360",
+                    "on-secondary-fixed-variant": "#4f5c6f",
+                    "on-secondary-container": "#465365",
+                    "primary": "#575f6d",
+                    "surface-variant": "#d7e4ef",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#334052",
+                    "background": "#f7fafe",
+                    "on-primary-fixed-variant": "#545c6a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            background-color: #f7fafe;
+            color: #27343c;
+            overflow-x: hidden;
+        }
+        .metallic-gradient {
+            background: linear-gradient(135deg, #d7e4ef 0%, #ffffff 50%, #d7e4ef 100%);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-surface-container-highest">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#f7fafe]/50 dark:bg-[#1c2430]/50 backdrop-blur-xl shadow-[0_4px_40px_rgba(39,52,60,0.04)] flex justify-between items-center px-6 h-16 w-full">
+<button class="text-[#575f6d] dark:text-[#d7e4ef] hover:opacity-70 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="font-['Manrope'] tracking-[0.2em] text-lg font-light text-[#1c2430] dark:text-[#f7fafe]">LUNE FORM</span>
+<button class="text-[#575f6d] dark:text-[#d7e4ef] hover:opacity-70 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</nav>
+<main class="pt-16 pb-24">
+<!-- Editorial Hero -->
+<section class="relative min-h-[751px] flex flex-col justify-end px-6 pb-12 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Macro close-up of a liquid silver ring with dramatic reflections and sharp highlights on a neutral cool gray background" class="w-full h-full object-cover grayscale brightness-95" data-alt="Macro close-up of a liquid silver ring with dramatic reflections and sharp highlights on a neutral cool gray background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCulGud4dfX2_TD_KpI1ZKxEmrPMfRQywseiApr-zbxa_kXtG9P7xCmkgk97A1FaJ8rIUePHBuARktS0dPCGxwAaGFcPtU36H3xsES_IWd1mQsYI3BI_LbGv4PwXNCc0mhTPqIRQy9hHYp2VyK2lzwLGYrmoaA0exYVvCXUJDB7SgfQdI7jr6SqvfLYxoSqIGe1FJNaURoDtx6qIXYFd2BJboUNzRIC8pPcd7w3178QcpgsrRTIVUTgVu6_YLGz_4aqwy9LTZjxf1ZT"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+</div>
+<div class="relative z-10 max-w-sm">
+<h1 class="font-headline text-5xl font-extrabold tracking-[-0.04em] leading-none mb-6 text-on-surface">
+                    THE DIGITAL<br/>CURATOR
+                </h1>
+<p class="font-body text-lg leading-relaxed text-on-surface-variant font-light">
+                    빛과 형태의 정수를 포착하는 룬 폼의 미학. 우리는 금속이 가진 본연의 차가움 속에 따뜻한 서사를 담아내어, 당신의 일상에 정교한 예술적 가치를 제안합니다.
+                </p>
+<div class="mt-8 flex gap-4 items-center">
+<span class="font-label text-xs uppercase tracking-[0.2em] font-bold text-primary">Est. 2024</span>
+<div class="h-[1px] w-12 bg-outline-variant/30"></div>
+</div>
+</div>
+</section>
+<!-- Craftsmanship Process -->
+<section class="py-24 px-6 space-y-24">
+<div class="space-y-6">
+<span class="font-label text-xs tracking-widest text-primary font-bold uppercase">Our Process</span>
+<h2 class="font-headline text-3xl font-bold tracking-tight">The Sculptural Journey</h2>
+</div>
+<!-- THE WORKBENCH -->
+<div class="group">
+<div class="aspect-[4/5] overflow-hidden mb-6">
+<img alt="Detailed view of a jeweler's workbench with precision tools, metal dust, and a partially shaped platinum ring" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Detailed view of a jeweler's workbench with precision tools, metal dust, and a partially shaped platinum ring" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlcUHEAuUEsf9uoSbosHEf9sp_rLStwBdUM8VNy2Ud5ojx5pNL7XgzTLmP2UCNuNlnD-3WCuIn0WSN_9F3d58mjyBLphW1W13oN4ltFev_E6wTfBKhbU5xgYHPr0nRgJcj3yldi-lIYFRyyKyfMz8X33q-uBzaa-R5guHvZHdYiea0DB84qNrq0rYmNv6OIdgb5f3p2LoAQID8QKWGaXK1Cuzu80CnxdTwX9WOetFwkB0x67ATWoYpGY1NUuGy7WhUQM5UMsxQVXFs"/>
+</div>
+<h3 class="font-headline text-xl font-bold mb-2 tracking-wide">THE WORKBENCH</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">정교한 도구들이 빚어내는 무한한 가능성. 룬 폼의 모든 조각은 숙련된 장인의 섬세한 손길에서 시작됩니다.</p>
+</div>
+<!-- PHYSICAL DEPTH -->
+<div class="group">
+<div class="aspect-[4/5] overflow-hidden mb-6">
+<img alt="Close-up of molten silver being poured into a mold, glowing intensely with sparks and metallic texture" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of molten silver being poured into a mold, glowing intensely with sparks and metallic texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaPCs2UHe6jNrYYfAGzyNF5TjQHrCZoeEOInKCuZz1vW6kk4oUY-xXwIjNfVhb-om2U_QVm_7vwIM-NUvwGGmb8rhUEfOP0MrCI--G0OKalYlbD6hwh6aESS3_yaLQHCrIVlzclWkOYWYtY8BtKUlOLhcmQ0vLI_P3wp0DGgV0rfo24uuewGvVoPi41NHFEwK0owvVowo5R_ZmfdcEyAULim7qtFv6bBf66rGDshVKIYvthOjTjkrqAIrmBiuIUFVRcY9SkfLRDPbK"/>
+</div>
+<h3 class="font-headline text-xl font-bold mb-2 tracking-wide">PHYSICAL DEPTH</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">열기가 닿은 금속이 액체가 되어 새로운 생명을 얻는 순간. 물질의 깊이감을 더하는 룬 폼만의 고유한 캐스팅 기법.</p>
+</div>
+<!-- THE POLISH -->
+<div class="group">
+<div class="aspect-[4/5] overflow-hidden mb-6">
+<img alt="Close-up of a high-polish silver surface reflecting light like a mirror, showcasing flawless texture and curves" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of a high-polish silver surface reflecting light like a mirror, showcasing flawless texture and curves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1WEIqYT0a9eNdM4s0BkNEQBj-5Puz3rgpthWJEcBpr1n0ss6SHWRS5XcsBaoM9Tohh0tP6AFQyCK-7e3MlNaJhDaxS-5vWRTxnp4BXjCQuRnUmEj68uehyHFPkmHffSuWUSMxoyc1G8ZGI5tJdFDkVDy-a6I_bsmSMV6IIVx3lBbl8vD-kdppujyFWUIuQBo9E8zTz5zvJcJlr1WD5qBt9ueNVOL-ZXduZR1b1pTZx2ZsBP08b8zNvNGxqsFjZwfkZzQVUgPOQEvO"/>
+</div>
+<h3 class="font-headline text-xl font-bold mb-2 tracking-wide">THE POLISH</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">마지막 한 점의 티끌까지 제거된 궁극의 매끄러움. 빛을 반사하는 크롬의 광택은 룬 폼이 추구하는 완벽의 상징입니다.</p>
+</div>
+</section>
+<!-- Trust & Standards -->
+<section class="bg-surface-container-low py-20 px-6">
+<div class="grid grid-cols-2 gap-y-12 gap-x-8">
+<div class="space-y-4">
+<span class="material-symbols-outlined text-primary text-3xl">verified</span>
+<h4 class="font-headline text-xs font-bold tracking-widest uppercase">GIA Certified</h4>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">엄격한 국제 기준을 통과한 최상급 다이아몬드만을 선별하여 세팅합니다.</p>
+</div>
+<div class="space-y-4">
+<span class="material-symbols-outlined text-primary text-3xl">diamond</span>
+<h4 class="font-headline text-xs font-bold tracking-widest uppercase">950 Platinum</h4>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">변하지 않는 가치, 가장 순수한 형태의 플래티넘과 925 스털링 실버를 사용합니다.</p>
+</div>
+<div class="space-y-4">
+<span class="material-symbols-outlined text-primary text-3xl">workspace_premium</span>
+<h4 class="font-headline text-xs font-bold tracking-widest uppercase">18K Gold</h4>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">독자적인 합금 비율로 완성한 룬 폼만의 샴페인 골드와 화이트 골드.</p>
+</div>
+<div class="space-y-4">
+<span class="material-symbols-outlined text-primary text-3xl">shield_with_heart</span>
+<h4 class="font-headline text-xs font-bold tracking-widest uppercase">Lifetime Warranty</h4>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">시간이 흘러도 변함없는 아름다움을 위해 평생 케어 서비스를 약속합니다.</p>
+</div>
+</div>
+</section>
+<!-- The Showroom -->
+<section class="relative h-[600px] flex flex-col justify-center items-center text-center px-6">
+<div class="absolute inset-0 z-0">
+<img alt="Modern minimalist jewelry showroom interior with floating glass cases and soft architectural lighting" class="w-full h-full object-cover grayscale opacity-40" data-alt="Modern minimalist jewelry showroom interior with floating glass cases and soft architectural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTqzMOn8gN9OP--Ktq5AxI-eeNx8Ykiwf3D7dJw5kvO8EWuCxdrQsqesfItpwDI5RFDQoNF85r8YzeiIe0DJBW3sR915Qo6-Ld4l9WwDw60OI33dl8nYknRaJt9kxhtp9woRhavBmGBFelvFHDZx3d03MehNDOreT8oAbLrgeOi-PRF43Hvhs3Bh-49blFWCnDVCHB1cIPqdWXI06IiwHa1RNFNSFuHGdSrp2hBf0l_MTQwaPmADWZr2r7HzT71yIazJYGKHaaqRAH"/>
+<div class="absolute inset-0 bg-background/60 backdrop-blur-[2px]"></div>
+</div>
+<div class="relative z-10 space-y-8">
+<h2 class="font-headline text-4xl font-extrabold tracking-tight">THE SHOWROOM</h2>
+<p class="font-body text-on-surface-variant max-w-xs mx-auto">프라이빗한 공간에서 룬 폼의 컬렉션을 직접 경험해보세요. 오직 당신만을 위한 큐레이션이 준비되어 있습니다.</p>
+<button class="bg-primary text-on-primary px-10 py-5 text-xs font-bold tracking-[0.2em] uppercase transition-all hover:bg-primary-dim active:scale-95 shadow-lg shadow-primary/10">
+                    BOOK A PRIVATE VIEWING
+                </button>
+</div>
+</section>
+<!-- Collection View Cards (Mobile rule) -->
+<section class="py-24 px-6 space-y-12">
+<h2 class="font-headline text-2xl font-bold border-b border-outline-variant/20 pb-4">COLLECTIONS</h2>
+<div class="space-y-4">
+<!-- Bespoke Entry -->
+<div class="bg-surface-container-lowest p-8 flex flex-col justify-between aspect-square relative group">
+<div class="space-y-2">
+<span class="font-label text-[10px] tracking-[0.3em] text-primary uppercase font-bold">Service 01</span>
+<h3 class="font-headline text-2xl font-bold tracking-tight">BESPOKE ATELIER</h3>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">세상에 단 하나뿐인 당신만의 형태를 디자인합니다. 전문가와의 1:1 커스텀 프로세스.</p>
+<span class="material-symbols-outlined text-4xl absolute bottom-8 right-8 text-outline-variant group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+<!-- Consult Entry -->
+<div class="bg-surface-container-low p-8 flex flex-col justify-between aspect-square relative group">
+<div class="space-y-2">
+<span class="font-label text-[10px] tracking-[0.3em] text-primary uppercase font-bold">Service 02</span>
+<h3 class="font-headline text-2xl font-bold tracking-tight">VIRTUAL CONSULT</h3>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">언제 어디서나 실시간으로 제품에 대한 심도 있는 상담을 받으실 수 있습니다.</p>
+<span class="material-symbols-outlined text-4xl absolute bottom-8 right-8 text-outline-variant group-hover:text-primary transition-colors">video_call</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 bg-[#f7fafe]/80 dark:bg-[#1c2430]/80 backdrop-blur-2xl border-t border-[#d7e4ef]/20 dark:border-[#575f6d]/20 shadow-[0_-4px_40px_rgba(39,52,60,0.04)] flex justify-around items-center px-8 pb-safe z-50">
+<!-- Inactive: Home (represented by auto_awesome_motion) -->
+<button class="flex flex-col items-center justify-center text-[#575f6d]/60 dark:text-[#d7e4ef]/60 hover:text-[#1c2430] dark:hover:text-[#ffffff] transition-all active:translate-y-[-2px] duration-300">
+<span class="material-symbols-outlined">auto_awesome_motion</span>
+</button>
+<!-- Inactive: Search -->
+<button class="flex flex-col items-center justify-center text-[#575f6d]/60 dark:text-[#d7e4ef]/60 hover:text-[#1c2430] dark:hover:text-[#ffffff] transition-all active:translate-y-[-2px] duration-300">
+<span class="material-symbols-outlined">search</span>
+</button>
+<!-- Inactive: Favorite -->
+<button class="flex flex-col items-center justify-center text-[#575f6d]/60 dark:text-[#d7e4ef]/60 hover:text-[#1c2430] dark:hover:text-[#ffffff] transition-all active:translate-y-[-2px] duration-300">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<!-- Active: Brand/Profile (Assuming current route is Brand identity) -->
+<button class="flex flex-col items-center justify-center text-[#1c2430] dark:text-[#ffffff] scale-110 active:translate-y-[-2px] duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+</button>
+</nav>
+</body></html>

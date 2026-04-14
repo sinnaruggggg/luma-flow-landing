@@ -1,0 +1,89 @@
+{
+  "siteId": "perfume-house",
+  "brand": "MOSS & AMBER",
+  "projectId": "10938467391668569328",
+  "projectTitle": "MOSS & AMBER Stitch",
+  "updatedAt": "2026-04-14T04:21:27.224Z",
+  "screens": {
+    "home:desktop": {
+      "screenId": "baf79c15d3564327a133a5f8668f8f13",
+      "pageSlug": "home",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/perfume-house/screens/home-desktop.html",
+      "imagePath": "design/stitch/perfume-house/screens/home-desktop.png",
+      "updatedAt": "2026-04-13T23:42:54.271Z"
+    },
+    "home:mobile": {
+      "screenId": "459b60e881f84f98851eb9bd6c4bafd5",
+      "pageSlug": "home",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/perfume-house/screens/home-mobile.html",
+      "imagePath": "design/stitch/perfume-house/screens/home-mobile.png",
+      "updatedAt": "2026-04-13T23:44:22.041Z"
+    },
+    "sets:desktop": {
+      "screenId": "1947b58d738b41c0954a522770bceebd",
+      "pageSlug": "sets",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/perfume-house/screens/sets-desktop.html",
+      "imagePath": "design/stitch/perfume-house/screens/sets-desktop.png",
+      "updatedAt": "2026-04-14T04:10:34.225Z"
+    },
+    "sets:mobile": {
+      "screenId": "f6b9ec586a7447a88c0cb679f9d97606",
+      "pageSlug": "sets",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/perfume-house/screens/sets-mobile.html",
+      "imagePath": "design/stitch/perfume-house/screens/sets-mobile.png",
+      "updatedAt": "2026-04-14T04:11:55.577Z"
+    },
+    "notes:desktop": {
+      "screenId": "afed3f4276b5476f81b94fd7b46f5da2",
+      "pageSlug": "notes",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/perfume-house/screens/notes-desktop.html",
+      "imagePath": "design/stitch/perfume-house/screens/notes-desktop.png",
+      "updatedAt": "2026-04-14T04:13:34.337Z"
+    },
+    "notes:mobile": {
+      "screenId": "ec47f74961394d5589e23a1fb90cea27",
+      "pageSlug": "notes",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/perfume-house/screens/notes-mobile.html",
+      "imagePath": "design/stitch/perfume-house/screens/notes-mobile.png",
+      "updatedAt": "2026-04-14T04:15:40.343Z"
+    },
+    "gift:desktop": {
+      "screenId": "509d94da5f1543969c1ac55f0113d4bf",
+      "pageSlug": "gift",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/perfume-house/screens/gift-desktop.html",
+      "imagePath": "design/stitch/perfume-house/screens/gift-desktop.png",
+      "updatedAt": "2026-04-14T04:16:56.633Z"
+    },
+    "gift:mobile": {
+      "screenId": "d775de41a30e4a73bb0c8ca4c77f72b0",
+      "pageSlug": "gift",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/perfume-house/screens/gift-mobile.html",
+      "imagePath": "design/stitch/perfume-house/screens/gift-mobile.png",
+      "updatedAt": "2026-04-14T04:18:17.733Z"
+    },
+    "brand:desktop": {
+      "screenId": "56597c762c8049bc9ce5dee0ccf2c7a9",
+      "pageSlug": "brand",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/perfume-house/screens/brand-desktop.html",
+      "imagePath": "design/stitch/perfume-house/screens/brand-desktop.png",
+      "updatedAt": "2026-04-14T04:19:46.737Z"
+    },
+    "brand:mobile": {
+      "screenId": "8f80ad796ba744929a6d6958ab0e8914",
+      "pageSlug": "brand",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/perfume-house/screens/brand-mobile.html",
+      "imagePath": "design/stitch/perfume-house/screens/brand-mobile.png",
+      "updatedAt": "2026-04-14T04:21:27.225Z"
+    }
+  }
+}

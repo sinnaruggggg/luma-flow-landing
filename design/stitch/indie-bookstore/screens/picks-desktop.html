@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Be+Vietnam+Pro:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#c1e8ff",
+                    "inverse-primary": "#f2bf4c",
+                    "surface-tint": "#795900",
+                    "primary-fixed-dim": "#f2bf4c",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#d7c7b7",
+                    "outline": "#807663",
+                    "tertiary": "#685c50",
+                    "inverse-surface": "#333029",
+                    "on-surface-variant": "#4e4635",
+                    "surface": "#fff9ee",
+                    "on-background": "#1d1c15",
+                    "on-secondary-fixed-variant": "#024d67",
+                    "outline-variant": "#d2c5af",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#a7dffe",
+                    "on-secondary-container": "#27647e",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#5c4300",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e8e2d7",
+                    "primary-container": "#f5c24f",
+                    "on-secondary-fixed": "#001e2b",
+                    "surface-container-high": "#ede8dd",
+                    "secondary": "#296580",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#f6f0e5",
+                    "background": "#fff9ee",
+                    "surface-dim": "#dfd9cf",
+                    "on-tertiary-fixed-variant": "#504539",
+                    "tertiary-fixed-dim": "#d4c4b4",
+                    "secondary-fixed-dim": "#96ceed",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e8e2d7",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#6d5000",
+                    "surface-container": "#f3ede2",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#f0e0cf",
+                    "on-primary-fixed": "#261a00",
+                    "on-surface": "#1d1c15",
+                    "on-tertiary-fixed": "#221a10"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Be Vietnam Pro", "sans-serif"],
+                    "label": ["Be Vietnam Pro", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+body {
+    background-color: #fff9ee;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuA0Fauq-7e3C-DUBx-ebMFAzpGB80eERcoM1nxZYTTEHHbcT5ocVpJYiRT6_VDwmTjGmTW26zojszCMBU-kKaU8vL-DNwZvK1LSbErPrv9RFhyxkaw--T9draNEeYb1oqlWVikcuWAclj1nisDLqWQL5OFqnk4AzVkufGgH0SRxwN5BokMHbb5aGmVzxtJbPFBvsR5BBwhFISH7cx6tu0nGk3sNe2OBQrKVjgZ-iMscdwsWqvQHpwWUBn5HQI-nkxF2hgPMbeV2gOg);
+    font-family: "Be Vietnam Pro", sans-serif
+    }
+.paper-shadow {
+    box-shadow: 0 12px 32px -4px rgba(35, 29, 23, 0.06)
+    }
+.newsreader {
+    font-family: "Newsreader", serif
+    }</style>
+</head>
+<body class="text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<nav class="bg-[#fff9ee] dark:bg-[#1d1c15] shadow-none fixed top-0 left-0 right-0 z-50">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif font-black text-[#1d1c15] dark:text-[#fff9ee] uppercase tracking-widest">
+                PAPER NOOK
+            </div>
+<div class="hidden md:flex gap-12 items-center font-serif font-bold uppercase tracking-widest text-sm">
+<a class="text-[#1d1c15] dark:text-[#fff9ee] opacity-70 hover:opacity-100 hover:translate-y-[-2px] transition-all duration-300" href="#">Catalog</a>
+<a class="text-[#795900] dark:text-[#f5c24f] border-b-2 border-[#795900] pb-1 hover:translate-y-[-2px] transition-all duration-300" href="#">Picks</a>
+<a class="text-[#1d1c15] dark:text-[#fff9ee] opacity-70 hover:opacity-100 hover:translate-y-[-2px] transition-all duration-300" href="#">Archives</a>
+<a class="text-[#1d1c15] dark:text-[#fff9ee] opacity-70 hover:opacity-100 hover:translate-y-[-2px] transition-all duration-300" href="#">About</a>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<span class="material-symbols-outlined text-[#795900] dark:text-[#f5c24f] cursor-pointer">search</span>
+</div>
+<div class="relative group">
+<span class="material-symbols-outlined text-[#795900] dark:text-[#f5c24f] cursor-pointer" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto overflow-hidden">
+<!-- Featured Section: Pick of the Month -->
+<section class="relative mb-40">
+<div class="flex flex-col lg:flex-row gap-16 items-start">
+<!-- Collage Image Side -->
+<div class="w-full lg:w-1/2 relative min-h-[600px] flex items-center justify-center">
+<!-- Background Layer (The Desk) -->
+<div class="absolute inset-0 bg-surface-container-low -rotate-1 transform scale-110 z-0"></div>
+<!-- Main Book Cover -->
+<div class="relative z-20 w-[320px] md:w-[420px] aspect-[3/4] paper-shadow border-[12px] border-white overflow-hidden transform hover:-rotate-1 transition-transform duration-500">
+<img alt="Modern minimalist book cover with elegant typography on cream paper background" class="w-full h-full object-cover" data-alt="Close-up of a high-end minimalist book cover with serif typography on a thick, textured cream paper background in soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlkPz6N0MPrASl1Zpfa6tteVYK8ki64MJM795Uyje7VSQoUGZNgGcvXRh-aVzcZBA1S0CMol-AkdTk3eSgMm9dY2X91AFHZ7mBJVQyh7orVcb53nGJr6NLTwIiqPNN7HRcJPSh5cQlYVuhqb9mrbG6zXJjOaoaJmapiCTXb7-wWD46RfMnS4CdeGECTiEhbfNph5fSRzOOnLAv1DyMTOFs80vztjVMcaWeRIz72gq4aqUWb_B_drWqqRU2ErrQnbPyi4afZE5-WvE"/>
+</div>
+<!-- Overlapping Elements -->
+<div class="absolute top-10 -right-4 md:right-0 z-30 w-48 h-64 bg-secondary-container p-6 -rotate-3 paper-shadow">
+<p class="text-on-secondary-container font-body text-xs italic leading-relaxed">
+                            "이 책의 질감은 마치 1960년대 서울의 아침 안개를 닮았습니다. 종이의 무게감과 잉크의 향기가 독보적입니다."
+                        </p>
+<p class="text-on-secondary-container font-headline italic mt-4 text-right">— Curator K.</p>
+</div>
+<div class="absolute -bottom-12 -left-4 md:left-12 z-30 w-56 h-40 bg-surface-container-lowest p-6 rotate-2 paper-shadow">
+<div class="flex flex-col h-full justify-between">
+<span class="text-[10px] font-label uppercase tracking-widest opacity-50">Librarian's Note</span>
+<p class="text-on-surface font-body text-sm font-medium">
+                                한정 수량: 150부 남음<br/>재생 섬유 100% 사용
+                            </p>
+<div class="h-1 w-full bg-primary-container/30"></div>
+</div>
+</div>
+<div class="absolute bottom-10 right-10 z-10 opacity-10">
+<span class="material-symbols-outlined text-[160px]" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+</div>
+</div>
+<!-- Text Content Side -->
+<div class="w-full lg:w-1/2 pt-12">
+<span class="newsreader italic text-primary text-xl mb-4 block">Pick of the Month</span>
+<h1 class="newsreader text-5xl md:text-7xl font-bold leading-tight mb-8">침묵의 기록:<br/>섬유의 목소리</h1>
+<div class="space-y-6 mb-12 max-w-lg">
+<p class="text-body text-lg leading-relaxed text-on-surface-variant">
+                            디지털 시대에 종이가 전하는 가장 깊은 울림. 이 책은 단순한 읽을거리를 넘어, 손끝으로 느끼는 예술의 조각입니다. 0.2mm의 종이 두께 사이로 흐르는 서사적인 기록들을 만나보세요.
+                        </p>
+<p class="text-body text-md leading-relaxed text-on-surface-variant/80">
+                            우리가 잊고 살았던 '물성'에 대한 집요한 탐구. PAPER NOOK가 이번 달 가장 공들여 고른 기록물입니다.
+                        </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-6">
+<button class="w-full sm:w-auto px-12 py-5 bg-primary-container text-on-primary-container text-sm font-bold tracking-widest uppercase hover:translate-y-[-4px] transition-all duration-300 cubic-bezier(0.2, 0, 0, 1)">
+                            Add to Shelf — 22,000원
+                        </button>
+<button class="w-full sm:w-auto px-12 py-5 bg-transparent border-b-2 border-primary text-primary text-sm font-bold tracking-widest uppercase hover:opacity-70 transition-all">
+                            Read the Story
+                        </button>
+</div>
+<div class="mt-16 flex gap-12 items-center">
+<div>
+<p class="text-[10px] font-label uppercase opacity-50 mb-1">Stock</p>
+<p class="newsreader font-bold text-xl">Limited Ed.</p>
+</div>
+<div>
+<p class="text-[10px] font-label uppercase opacity-50 mb-1">Format</p>
+<p class="newsreader font-bold text-xl">Hardcover</p>
+</div>
+<div>
+<p class="text-[10px] font-label uppercase opacity-50 mb-1">Origin</p>
+<p class="newsreader font-bold text-xl">Seoul, KR</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Weekly Archive Section -->
+<section class="mt-24">
+<div class="flex justify-between items-end mb-16 border-b border-outline-variant/20 pb-6">
+<div>
+<h2 class="newsreader text-4xl font-bold">The Weekly Archive</h2>
+<p class="font-body text-sm opacity-60 mt-2">이번 주 사서들이 발견한 기록의 조각들</p>
+</div>
+<div class="hidden md:block">
+<span class="newsreader italic opacity-40">Issue No. 42 — Autumn 2024</span>
+</div>
+</div>
+<!-- Asymmetric Magazine Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-stretch">
+<!-- Pick 01 -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="relative mb-6 overflow-hidden bg-surface-container-high aspect-[3/4] p-8 flex items-center justify-center">
+<img alt="Vintage leather bound book on wooden surface" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Overhead shot of an aged, vintage leather-bound book on a worn wooden table with soft side lighting and visible paper texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX7sfmiGr7_aZnZzo0BNYTCLCJ0U90shTtewo6RmnJCUASLb6zKYfEK0nTEs6aBON5jN1YioGMCptSNwTkjhLN3lUB-msQnb4PZqFqebjq3VPkMsdaLI4CNDXbVBB5lkKBrAwmdL2CeQ1efg2XKHAdqiSdmZhheKouHiCN6wdIyIIOeCdx7j7h5vsNhPfkEnDvJXrYgUYmAt5vzTE_TJq_t6iuLJw-idTBVU7a0iAbh8Ga2E9LvvHq-3rz7tOikE_B90YEOj37BRs"/>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all"></div>
+</div>
+<span class="text-[10px] font-label uppercase tracking-widest text-primary mb-2 block">Archive #01</span>
+<h3 class="newsreader text-2xl font-bold mb-3">오래된 종이의 온도</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed mb-4">
+                        시간이 멈춘 듯한 바스락거림. 50년 전 인쇄기로 찍어낸 아날로그의 정수를 소개합니다.
+                    </p>
+<p class="font-headline font-bold text-lg">18,500원</p>
+</div>
+<!-- Pick 02 -->
+<div class="md:col-span-5 md:mt-24 group cursor-pointer">
+<div class="relative mb-6 overflow-hidden bg-surface-container-low aspect-video flex items-center justify-center">
+<img alt="Minimalist art book spread showing blank pages" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="An open art book showing minimalist spreads with wide margins and subtle ivory-toned paper grain in a bright studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDigEhQYof1TVUEKyXOeRQSsXgqmuDVFW8H19o_tFEkFAqa-B5yirAb9vtUdQGRD0xQOHE_ocke7n5caLaD2rGiHLHrc3B48L6DfmtAoGB_As_ZD-1oG35vkn26hvmUPLMI7rlWRkyqFrIroq6OYAHyopeBUW-tGalf2px3KlBvLm0KslSpgGRuWm7L9HdurRsqkkdkPrb-3rN4_cpjVGxtu1N66RmbLitsyBkpUOi4GGTgMoZwTw2sI2AmAjI57qrWhWx__GXvEzk"/>
+<div class="absolute top-4 right-4 bg-white px-3 py-1 text-[10px] font-label font-bold tracking-tighter paper-shadow">BEST SELLER</div>
+</div>
+<div class="pl-8 border-l border-primary/20">
+<span class="text-[10px] font-label uppercase tracking-widest text-primary mb-2 block">Archive #02</span>
+<h3 class="newsreader text-3xl font-bold mb-3">여백의 미학: 서울 에디션</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed mb-4">
+                            아무것도 쓰이지 않은 공간이 주는 위로. 여백을 통해 비로소 완성되는 당신만의 기록을 위한 책입니다.
+                        </p>
+<p class="font-headline font-bold text-lg">24,000원</p>
+</div>
+</div>
+<!-- Pick 03 -->
+<div class="md:col-span-3 group cursor-pointer">
+<div class="relative h-full bg-surface-container-highest p-10 flex flex-col justify-between border-t-8 border-primary">
+<div>
+<span class="text-[10px] font-label uppercase tracking-widest text-primary mb-4 block">Archive #03</span>
+<h3 class="newsreader text-2xl font-bold mb-6">잉크가 마르는 시간</h3>
+<div class="w-full aspect-square bg-white mb-6 paper-shadow flex items-center justify-center p-4">
+<img alt="Old fountain pen with dried ink" class="w-full h-full object-cover" data-alt="Macro photography of an elegant fountain pen nib resting on textured paper with a small ink splatter and warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNKgJv8S1jTiz6nrr7IIOsYRJ4y3RN8uhc8OiJn8Try97J2jptNayh1xX2GMBFX3c1-hn3mMHNGclCbeXkECF8TCKQQRBsn6Kkc5duBmoqQblNChNrDVYQiFyHjIv9lRPTBwWBtAoWWS7Y4ZpPsMsYINhqAQ5yu_zSw9KveuS-eXFjF017LlLI9zFbl0FdvIO2F5iGStYU3Z-dXlgigWXn3qknqtxyurSNsUwl6ut-RblQaAqBOEX8sKww9EMj6D8tGS0NpvWie48"/>
+</div>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                                펜과 종이가 만나는 그 찰나의 순간을 기록한 에세이집. 수집가들을 위한 특별 한정판.
+                            </p>
+</div>
+<div class="mt-8">
+<p class="font-headline font-bold text-xl">32,000원</p>
+<span class="text-[10px] font-label uppercase opacity-50">Only 10 left</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Sign-up (Tactile Style) -->
+<section class="mt-40 bg-on-background text-surface p-12 md:p-24 relative overflow-hidden">
+<div class="relative z-10 max-w-2xl">
+<h2 class="newsreader text-4xl md:text-5xl font-bold mb-6 leading-tight">매주 월요일 아침,<br/>서재로 찾아가는 기록물</h2>
+<p class="font-body text-lg opacity-70 mb-12">PAPER NOOK의 사서들이 직접 고른 이주의 문장과 종이의 소식을 이메일로 받아보세요.</p>
+<form class="flex flex-col sm:flex-row gap-4">
+<input class="bg-transparent border-b border-surface/30 px-4 py-4 text-surface focus:outline-none focus:border-primary-container transition-colors flex-grow font-body" placeholder="E-mail address" type="email"/>
+<button class="bg-primary-container text-on-primary-container px-10 py-4 font-bold uppercase tracking-widest text-sm transition-all hover:bg-surface hover:text-on-background">Subscribe</button>
+</form>
+</div>
+<div class="absolute -right-20 -bottom-20 opacity-5">
+<span class="material-symbols-outlined text-[400px]">edit_note</span>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1d1c15] dark:bg-[#000000] text-[#fff9ee] w-full py-12 px-8 flex flex-col items-center gap-4">
+<div class="font-serif italic text-white text-3xl mb-4">PAPER NOOK</div>
+<div class="flex flex-wrap justify-center gap-8 font-sans text-[10px] uppercase tracking-[0.2em]">
+<a class="text-[#fff9ee] opacity-50 hover:opacity-100 transition-all" href="#">Terms of Service</a>
+<a class="text-[#fff9ee] opacity-50 hover:opacity-100 transition-all" href="#">Privacy Policy</a>
+<a class="text-[#fff9ee] opacity-50 hover:opacity-100 transition-all" href="#">Shipping &amp; Returns</a>
+</div>
+<div class="font-sans text-[10px] uppercase tracking-[0.2em] opacity-30 mt-8">
+            © 2024 PAPER NOOK. PRINTED ON DIGITAL FIBER.
+        </div>
+</footer>
+</body></html>

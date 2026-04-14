@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;family=Work+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#f1e7d6",
+                    "inverse-on-surface": "#faf0de",
+                    "secondary": "#6a5c4f",
+                    "on-primary-fixed": "#2f1503",
+                    "surface-container-low": "#fdf2e1",
+                    "surface-container": "#f7eddc",
+                    "outline-variant": "#d4c3ba",
+                    "on-tertiary-fixed-variant": "#5b4220",
+                    "on-primary-fixed-variant": "#613f27",
+                    "surface-container-highest": "#ebe1d1",
+                    "surface": "#fff8f1",
+                    "tertiary": "#3d2808",
+                    "tertiary-container": "#563e1d",
+                    "surface-variant": "#ebe1d1",
+                    "surface-tint": "#7c563d",
+                    "primary-container": "#5d3b24",
+                    "secondary-fixed": "#f3dfce",
+                    "inverse-primary": "#eebc9d",
+                    "on-secondary-fixed": "#231a10",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "primary": "#432510",
+                    "tertiary-fixed": "#ffddb5",
+                    "on-surface-variant": "#50443e",
+                    "on-secondary-fixed-variant": "#514438",
+                    "background": "#fff8f1",
+                    "on-primary-container": "#d6a688",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#ccaa7f",
+                    "surface-bright": "#fff8f1",
+                    "primary-fixed": "#ffdbc7",
+                    "inverse-surface": "#353025",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#eebc9d",
+                    "secondary-container": "#f3dfce",
+                    "on-background": "#1f1b11",
+                    "tertiary-fixed-dim": "#e4c195",
+                    "on-surface": "#1f1b11",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#706255",
+                    "surface-dim": "#e2d9c8",
+                    "secondary-fixed-dim": "#d6c3b3",
+                    "outline": "#82746c",
+                    "on-tertiary-fixed": "#2a1800"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Be Vietnam Pro"],
+                    "label": ["Work Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #fff8f1; font-family: 'Be Vietnam Pro', sans-serif; color: #1f1b11; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .hero-gradient { background: linear-gradient(to bottom, rgba(67, 37, 16, 0.2), rgba(67, 37, 16, 0.4)); }
+        .torn-edge { mask-image: radial-gradient(circle at 10px 10px, transparent 10px, black 11px); mask-size: 20px 100%; }
+        .panel-glass { background: rgba(255, 248, 239, 0.86); backdrop-filter: blur(12px); }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-md border-b border-stone-200/40 h-20 shadow-sm transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-full">
+<div class="text-2xl font-serif font-bold tracking-tight text-orange-900">TABLE WARM</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-serif text-stone-500 hover:text-stone-800 transition-colors" href="#">Roasting Room</a>
+<a class="font-serif text-stone-500 hover:text-stone-800 transition-colors" href="#">Terrace</a>
+<a class="font-serif text-stone-500 hover:text-stone-800 transition-colors" href="#">Main Hall</a>
+<a class="font-serif text-orange-900 border-b-2 border-orange-900 pb-1" href="#">Reservations</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-stone-500 hover:bg-stone-100/50 p-2 rounded-lg" data-icon="person">person</button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label text-sm font-medium hover:opacity-90 transition-all">Book a Table</button>
+</div>
+</div>
+</header>
+<!-- SideNavBar (Desktop Visit Context) -->
+<aside class="hidden lg:flex fixed left-0 top-20 h-[calc(100vh-5rem)] w-64 flex-col py-8 gap-4 bg-stone-100 font-serif text-stone-800 z-40">
+<div class="px-6 mb-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="coffee">coffee</span>
+</div>
+<div>
+<h3 class="font-bold text-sm">The Visit</h3>
+<p class="text-xs text-stone-500">Spatial Exploration</p>
+</div>
+</div>
+</div>
+<nav class="flex flex-col">
+<a class="flex items-center gap-3 px-6 py-3 bg-stone-50 text-orange-900 font-bold rounded-r-full shadow-sm" href="#spatial">
+<span class="material-symbols-outlined" data-icon="temp_preserve">temp_preferences_custom</span> Atmosphere
+            </a>
+<a class="flex items-center gap-3 px-6 py-3 text-stone-500 hover:pl-8 transition-all hover:bg-stone-200" href="#spatial">
+<span class="material-symbols-outlined" data-icon="groups">groups</span> Capacity
+            </a>
+<a class="flex items-center gap-3 px-6 py-3 text-stone-500 hover:pl-8 transition-all hover:bg-stone-200" href="#guidelines">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span> Guidelines
+            </a>
+<a class="flex items-center gap-3 px-6 py-3 text-stone-500 hover:pl-8 transition-all hover:bg-stone-200" href="#footer">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span> Location
+            </a>
+</nav>
+<div class="mt-auto px-6">
+<button class="w-full py-3 border border-outline-variant rounded-xl text-xs uppercase tracking-widest font-label hover:bg-stone-200 transition-colors">Download Map</button>
+</div>
+</aside>
+<main class="lg:ml-64 pt-20">
+<!-- Hero Section -->
+<section class="relative h-[870px] overflow-hidden flex items-center justify-center px-6">
+<div class="absolute inset-0 z-0">
+<img alt="TABLE WARM Storefront" class="w-full h-full object-cover" data-alt="cinematic wide shot of a boutique cafe storefront with large glass windows and warm interior lighting during dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTBNJqjftSGaaaMI40xO8vXL5niwezas_Mnqj5iko51ZtTqfyk8n3LqH9j7ik72OQJQWRSVj4tYEMkCl4Brw8hv2llutcwkHzxkpqCszYIZBE_OhErahwoiiLBDzo9rOpO_7zpdz5RIjhL8CEdV_RnUlPybAUfGw0GOlOBmPyzLV3zo_8IslpoAB29b3v8Geb5jSFmnZi0L53I6S8GQrhQDxneSkHO6GV9IDvyVIrYWJ04okP1DF3KuZeKpUgxrwFP7Tx-fzGMsPk"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 max-w-4xl w-full flex flex-col md:flex-row items-end justify-between gap-12">
+<div class="text-white mb-12 md:mb-0">
+<h1 class="font-headline text-6xl md:text-8xl font-bold tracking-tight mb-4">온기로운 기록</h1>
+<p class="font-body text-xl opacity-90 max-w-md leading-relaxed">
+                        시간의 흐름이 잠시 멈추는 곳, 테이블 웜에서 당신만의 아늑한 순간을 예약하세요.
+                    </p>
+<div class="mt-8">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-label text-lg font-medium shadow-2xl hover:scale-105 transition-transform flex items-center gap-2">
+                            지금 예약하기 <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Daily Special Float -->
+<div class="panel-glass p-8 rounded-2xl w-full md:w-80 shadow-xl border border-white/20">
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary mb-4 block font-bold">Today's Special</span>
+<h2 class="font-headline text-2xl text-primary mb-2">시나몬 오트 라떼</h2>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">볶은 귀리의 고소함과 직접 블렌딩한 시나몬 시럽의 따뜻한 조화.</p>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant/30">
+<span class="font-body font-bold text-primary">6,500원</span>
+<span class="text-xs text-secondary italic">Limited Seasonal</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Spatial Exploration -->
+<section class="py-32 px-6 max-w-7xl mx-auto" id="spatial">
+<div class="mb-20 text-center">
+<span class="font-label text-xs uppercase tracking-widest text-primary-container">Space &amp; Vibe</span>
+<h2 class="font-headline text-5xl font-bold text-primary mt-4">공간의 탐색</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+<!-- Main Hall -->
+<div class="md:col-span-7 group">
+<div class="relative aspect-[16/10] overflow-hidden rounded-2xl mb-8">
+<img alt="Main Hall" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="airy cafe interior with warm wooden furniture, hanging plants, and large windows with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArSuXAJvt86O46ZZxAimvXIBwAL5stEEay8bbsKBuWxLtdENkZN86rn8KN2PQOW93aMh4F-7M9mZ8p_9Z2zKOBfH2AOl55-OfJf1prSdTvTp0LASv5UX13Xj3H9edj2uD55-pvdQ_XQC3J1LJO_O2b97CaPahiuYzGdzjRJbsES0nSYGJncbEGl5tf8sFTs2E1OG1QMtiAdnVl5BZtDoCT64V_9O0JKSiTkOj2g6xm6hY7P2ilYtwlQAh-zb7gmrz_cz8fP3grk08"/>
+</div>
+<div class="flex items-start justify-between">
+<div>
+<h3 class="font-headline text-3xl mb-3 text-primary">Main Hall : Sunlit morning</h3>
+<p class="text-on-surface-variant max-w-md leading-relaxed">따스한 햇살이 깊게 스며드는 메인 홀입니다. 가벼운 대화와 독서에 최적화된 개방적인 공간입니다.</p>
+</div>
+<div class="text-right">
+<span class="font-label text-xs font-bold block mb-1">CAPACITY</span>
+<span class="text-secondary">Up to 24 Guests</span>
+</div>
+</div>
+</div>
+<!-- Terrace -->
+<div class="md:col-span-5 md:mt-24">
+<div class="bg-surface-container-low p-10 rounded-2xl h-full flex flex-col">
+<div class="relative aspect-square overflow-hidden rounded-xl mb-8">
+<img alt="Terrace" class="w-full h-full object-cover" data-alt="outdoor cafe terrace with minimalist metal furniture and green potted plants under a clear sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKA-V-9ji68bH0z-R5flUz30KbqNJ8qxstu7KEVJiTy-tMEKZf6V7P51f6cvUAW_865b-XFRjYymBpW0KKw4WpjhAUHDAQ0-8hLfq3xQqi2--vAZ6QPDPBLphJ8-FooPCewROJfND3u9MXFEsV7M7ox4YwNR12qAd-yHZ0p5tI8o7JUbmWz19c8HzMaIgDBoVTyQO0afsQ_mWujCPeiu_FjM42TfJ521giEJInDiMQLr3FskGCQXY_lBmWnsg1RRC30hn_I-cC-O0"/>
+</div>
+<h3 class="font-headline text-2xl mb-4 text-primary">Terrace : Open Breeze</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">계절의 공기를 가장 가까이서 느낄 수 있는 야외 테라스. 반려동물 동반이 가능합니다.</p>
+<div class="mt-auto pt-6 border-t border-outline-variant/40 flex justify-between items-center text-xs font-label">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">pets</span> Pet Friendly</span>
+<span>12 Seats</span>
+</div>
+</div>
+</div>
+<!-- Roasting Room -->
+<div class="md:col-span-12 mt-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-0 overflow-hidden rounded-2xl bg-primary text-on-primary">
+<div class="p-16 flex flex-col justify-center">
+<span class="font-label text-xs tracking-widest text-on-primary-container mb-4">THE CORE</span>
+<h3 class="font-headline text-4xl mb-6">Roasting Room : Rich aroma</h3>
+<p class="opacity-80 leading-relaxed mb-8">테이블 웜의 모든 원두가 태어나는 곳입니다. 묵직한 기계음과 진한 커피 향이 어우러지는 몰입의 공간입니다.</p>
+<div class="flex gap-12">
+<div>
+<span class="font-label text-[10px] uppercase opacity-60 block mb-1">Vibe</span>
+<span class="font-body text-sm">Quiet concentration</span>
+</div>
+<div>
+<span class="font-label text-[10px] uppercase opacity-60 block mb-1">Capacity</span>
+<span class="font-body text-sm">Focused Solo (6 seats)</span>
+</div>
+</div>
+</div>
+<div class="h-[500px]">
+<img alt="Roasting Machine" class="w-full h-full object-cover grayscale brightness-75" data-alt="professional coffee roasting machine in a dark industrial-chic room with warm spotlights highlighting wood textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbHF1FYAT_PFltqBKBqm7w1rs5P7i8y6lrQywvKsI7gfe8vyhkO3_1TGZnEa_o0TVDofkUOhpqjBHF3RPpQNOZKEj4vAM3z-7Z_kEMQ5cgWz8ASNGmjGueKRuvm0J8vXAMk_spulLxwDZ3IyG1h2MDo_9XtQtZ9UFTEQaX72mDvbsIW9jMj-yZQrIRPAg19sla-ca1e8ex8SezDd5L2hR_GT0i46h976ZWk48f3Y9Ki71CfyG7QTT2KNq-J7GlrJCBqR3vAkeqo0s"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Blocks -->
+<section class="bg-surface-container py-32 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<span class="font-label text-xs uppercase tracking-widest text-primary-container">Experiences</span>
+<h2 class="font-headline text-5xl font-bold text-primary mt-4">특별한 프로그램</h2>
+</div>
+<p class="text-on-surface-variant max-w-sm">단순한 방문을 넘어, 커피의 깊이를 경험하는 시간을 마련했습니다.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Session 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl flex gap-8 items-center shadow-sm hover:shadow-md transition-shadow">
+<div class="w-32 h-32 flex-shrink-0 rounded-full overflow-hidden border-4 border-surface-container">
+<img alt="Roasting Class" class="w-full h-full object-cover" data-alt="top view of coffee beans being poured into a ceramic bowl on a wooden surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwLg89jbi_drYFH3l4JXcTWjRZyJT2piaTufL3GEZb033o6CN1hozCsUm4SwzFGPc111z_r_-BGE6Hjt6GV9DzFH66v5yIyX1K4omRKL4aRD3V1kObVf8essqzlruyQNLKrWIgIIk0ufivS9A9s-aWzkyxkMhd6keQQT-CA6LQmItwG4L-e4w6Rr5stIOrfzBI_SOCyWSwNDWUcH8C7oh4PgQAM0f4fbeI6Agp0I_UiI1jcTyLmspJ98Q2DtvSdXUBv7F3omxVcDc"/>
+</div>
+<div>
+<h4 class="font-headline text-xl text-primary mb-2">Weekly Roasting Session</h4>
+<p class="text-sm text-on-surface-variant mb-4">매주 토요일, 마스터 로스터와 함께 원두의 변화를 직접 관찰합니다.</p>
+<div class="flex items-center justify-between">
+<span class="font-body font-bold text-primary">29,900원</span>
+<button class="text-primary text-xs font-label uppercase tracking-widest flex items-center gap-1 hover:gap-2 transition-all">Join <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button>
+</div>
+</div>
+</div>
+<!-- Session 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl flex gap-8 items-center shadow-sm hover:shadow-md transition-shadow">
+<div class="w-32 h-32 flex-shrink-0 rounded-full overflow-hidden border-4 border-surface-container">
+<img alt="Cupping Class" class="w-full h-full object-cover" data-alt="close-up of a person holding a small spoon during a coffee cupping session" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkdlTjMsJ17ws6DajkKWLErWS39YlCHL2pj_01Tb3GRg6EAqp_BORgO8MK4e8oTlAPtCTYa7uXVaeP9ceRJ6FEjHnOgG3ZWC7F3e7NfYfc5sQEz_GcrgGiahg-7zg6rt7tf-CWX8ZHHshAZfjIJlr57NwpnuttvMP0ezd4R_gunTmpFbFLk99lQvFXS9jwp0sQL5zrnY7djyvYJaMQCjvvIrMpfE3JhDbXrYE78hqqtSf_TnP7f_fP6jK9HSc6IUnEtZaAB3K496w"/>
+</div>
+<div>
+<h4 class="font-headline text-xl text-primary mb-2">Private Cupping Class</h4>
+<p class="text-sm text-on-surface-variant mb-4">당신만의 취향을 찾는 여정. 6가지 스페셜티 원두를 커핑합니다.</p>
+<div class="flex items-center justify-between">
+<span class="font-body font-bold text-primary">45,000원</span>
+<button class="text-primary text-xs font-label uppercase tracking-widest flex items-center gap-1 hover:gap-2 transition-all">Book <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Visitor Guidelines -->
+<section class="py-32 px-6 max-w-5xl mx-auto" id="guidelines">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<div class="md:col-span-1">
+<h2 class="font-headline text-3xl font-bold text-primary">이용 안내</h2>
+<p class="mt-4 text-on-surface-variant leading-relaxed">모두에게 온전한 휴식을 선물하기 위해 아래의 규칙을 준수해 주세요.</p>
+</div>
+<div class="md:col-span-2 space-y-12">
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="groups">groups</span>
+<div>
+<h4 class="font-headline text-xl text-primary mb-2">단체 예약 및 대관</h4>
+<p class="text-on-surface-variant leading-relaxed">6인 이상의 단체 방문 시 최소 2일 전 사전 예약이 필요합니다. 상업적 목적의 대관은 별도 문의 부탁드립니다.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="photo_camera">photo_camera</span>
+<div>
+<h4 class="font-headline text-xl text-primary mb-2">촬영 가이드라인</h4>
+<p class="text-on-surface-variant leading-relaxed">타인의 휴식을 방해하지 않는 선에서 무음 카메라 촬영이 가능합니다. 과도한 이동이나 플래시 사용은 지양해 주세요.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="no_food">no_food</span>
+<div>
+<h4 class="font-headline text-xl text-primary mb-2">외부 음식 반입 제한</h4>
+<p class="text-on-surface-variant leading-relaxed">테이블 웜에서 직접 굽는 디저트와 음료의 온전한 풍미를 위해 외부 음식 반입은 정중히 거절합니다.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-stone-300 bg-stone-200" id="footer">
+<div class="flex flex-col items-center justify-center gap-6 w-full max-w-7xl mx-auto px-6">
+<div class="flex gap-8">
+<a class="font-serif text-xs uppercase tracking-widest text-stone-600 opacity-70 hover:opacity-100 hover:text-orange-800 transition-opacity" href="#">Privacy</a>
+<a class="font-serif text-xs uppercase tracking-widest text-stone-600 opacity-70 hover:opacity-100 hover:text-orange-800 transition-opacity" href="#">Terms</a>
+<a class="font-serif text-xs uppercase tracking-widest text-stone-600 opacity-70 hover:opacity-100 hover:text-orange-800 transition-opacity" href="#">Accessibility</a>
+<a class="font-serif text-xs uppercase tracking-widest text-stone-600 opacity-70 hover:opacity-100 hover:text-orange-800 transition-opacity" href="#">Contact</a>
+</div>
+<div class="flex flex-col items-center gap-2">
+<p class="font-serif text-xs uppercase tracking-widest text-stone-600">© 2024 TABLE WARM. Crafted with intentionality.</p>
+<p class="text-[10px] text-stone-500 uppercase tracking-[0.3em]">Seoul, Seongsu-dong 2-ga 314-2</p>
+</div>
+<div class="flex gap-4 mt-4">
+<span class="material-symbols-outlined text-stone-400" data-icon="coffee">coffee</span>
+<span class="material-symbols-outlined text-stone-400" data-icon="eco">eco</span>
+<span class="material-symbols-outlined text-stone-400" data-icon="local_cafe">local_cafe</span>
+</div>
+</div>
+</footer>
+</main>
+</body></html>

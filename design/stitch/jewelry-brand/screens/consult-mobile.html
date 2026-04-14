@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#eff4fa",
+                        "surface-container-highest": "#d7e4ef",
+                        "on-surface": "#27343c",
+                        "outline-variant": "#a6b4be",
+                        "primary-container": "#dbe3f3",
+                        "surface-tint": "#575f6d",
+                        "on-background": "#27343c",
+                        "background": "#f7fafe",
+                        "tertiary-dim": "#4d545c",
+                        "on-primary": "#f6f7ff",
+                        "error-container": "#fe8983",
+                        "surface-variant": "#d7e4ef",
+                        "secondary-dim": "#475466",
+                        "secondary-container": "#d6e3fa",
+                        "surface-dim": "#ccdce9",
+                        "on-secondary": "#f7f9ff",
+                        "on-tertiary": "#f7f9ff",
+                        "tertiary": "#596068",
+                        "on-error": "#fff7f6",
+                        "primary-fixed-dim": "#cdd5e5",
+                        "primary": "#575f6d",
+                        "on-primary-fixed": "#38404d",
+                        "on-secondary-fixed": "#334052",
+                        "on-primary-fixed-variant": "#545c6a",
+                        "secondary-fixed": "#d6e3fa",
+                        "error-dim": "#4e0309",
+                        "surface-container-high": "#dfeaf3",
+                        "tertiary-fixed": "#d7dde7",
+                        "surface-container": "#e7eff6",
+                        "error": "#9f403d",
+                        "surface-bright": "#f7fafe",
+                        "on-tertiary-fixed": "#363c44",
+                        "on-primary-container": "#4a5260",
+                        "on-surface-variant": "#54616a",
+                        "on-error-container": "#752121",
+                        "on-tertiary-fixed-variant": "#525861",
+                        "inverse-surface": "#0b0f12",
+                        "inverse-on-surface": "#9a9da1",
+                        "primary-dim": "#4b5360",
+                        "on-secondary-container": "#465365",
+                        "secondary": "#536073",
+                        "outline": "#6f7c86",
+                        "on-secondary-fixed-variant": "#4f5c6f",
+                        "tertiary-container": "#d7dde7",
+                        "inverse-primary": "#e6eeff",
+                        "surface": "#f7fafe",
+                        "primary-fixed": "#dbe3f3",
+                        "tertiary-fixed-dim": "#c9cfd9",
+                        "secondary-fixed-dim": "#c8d5eb",
+                        "on-tertiary-container": "#484f57"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl shadow-[0_4px_40px_rgba(39,52,60,0.04)] h-16 flex items-center justify-between px-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300 transition-transform active:scale-95" data-icon="menu">menu</span>
+</div>
+<div class="text-xl font-bold tracking-[-0.02em] text-slate-800 dark:text-slate-100 font-manrope">LUNE FORM</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300 transition-transform active:scale-95" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</header>
+<main class="pt-16 pb-32">
+<!-- Hero Section -->
+<section class="relative w-full h-[530px] overflow-hidden">
+<img alt="Luxury Jewelry Workshop" class="w-full h-full object-cover" data-alt="Macro close-up of a master jeweler examining a brilliant diamond ring with a loupe under cold, professional studio lighting in a minimalist workshop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfviHNCku3riZC9HmoUf3x7o5Oir5TR8ozVgzGnxJ36KNwa5xQtUht9iMGb6i3ajRFjAdVcQaGyRC_0dKJ4ccYCuWwg1rIDkGXiiZ8xK_1y6qsHex2-kkp-SAXnw87bXP9Ve8ampOumhyU4KsU56HWe84I8x4HtPrQ9K9GJ0apAu_wVVZhdax9H9mBxNdWTV57dgKsPEgorLykigNxyjRGyqjceojrZsHY-LkbThgwE1u1CMjPCy6_pjDvGSFzGQD721WeamK5d2B9"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+<div class="absolute bottom-12 left-6 right-6">
+<h1 class="font-headline font-extrabold text-4xl tracking-tight text-on-surface mb-2">컨설팅 예약</h1>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed max-w-[280px]">
+                    당신의 가장 빛나는 순간을 위한<br/>프라이빗 주얼리 큐레이션 서비스
+                </p>
+</div>
+</section>
+<!-- Service Selection -->
+<section class="px-6 -mt-8 relative z-10 space-y-4">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface-variant font-bold">Step 01. Select Service</span>
+</div>
+<!-- Service Cards -->
+<div class="space-y-3">
+<!-- Card Active -->
+<div class="group relative bg-surface-container-lowest p-4 border-l-2 border-primary shadow-sm flex items-center gap-4">
+<img alt="Styling" class="w-20 h-24 object-cover" data-alt="Minimalist macro shot of a delicate silver necklace draped over a white marble pedestal with soft morning shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw4LzBnmCTdks53xNzO2QSln126Z8bOwz2Q4qrhUrTDvUvsRRNlvQW774VLYCD1ic5qntJPhvtgJm5yfsmbX3DmvuL7zyoYSxOaR3qUWlSPZLR17Ql7VzjsFtQKSUJSa7yq4oHYRlj4-4IDykWZPeRR6pySf1VC8SaQfo2Qi0Lp9aegOI4XsOd7YRdyjmvqoRSsfevn0fuyJCuj1pImzAn4l65De5sjzxr1CBoVDUVX1ZByiiB1KuwVRnWTvFOo0fblOHgoDEshXFw"/>
+<div class="flex-1">
+<h3 class="font-headline font-bold text-lg text-on-surface mb-1">퍼스널 스타일링</h3>
+<p class="text-xs text-on-surface-variant mb-2">당신의 무드에 맞춘 완벽한 주얼리 매칭</p>
+<div class="font-label text-[11px] font-bold text-primary tracking-wide">상담비 무료</div>
+</div>
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Card Inactive -->
+<div class="group relative bg-surface-container-low p-4 flex items-center gap-4 opacity-80 hover:opacity-100 transition-opacity">
+<img alt="Bespoke" class="w-20 h-24 object-cover" data-alt="Sketches of a custom diamond ring design on high-quality vellum paper next to a silver caliper and raw gemstones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4lgfYn9oW_hT6kHSIBOCIIUZgdt_IDL1EieWNvPOIGqEgT7SQotbAFrjqTbphVZSbdvbxeba8o4QU_Lmf64eM_ln_f-zh0fZywhYFEhNj-9OHVsp_HEudSbRXLLFMMSgJ-llqS-cCLQh9umGeaHZGNo9dhYc0fNR6csLPjirzNukckn0bk-2b6ywhsaOuG_isi7ZwpbVFoDRA0ENvuoINi5Fz8WJ8BBJ_Ddn589HGXx3rDodVmuXF5LcHNwPrQTEGA9CS6LgwEBfZ"/>
+<div class="flex-1">
+<h3 class="font-headline font-bold text-lg text-on-surface mb-1">비스포크 디자인</h3>
+<p class="text-xs text-on-surface-variant mb-2">세상에 단 하나뿐인 당신만의 디자인</p>
+<div class="font-label text-[11px] font-bold text-on-surface-variant tracking-wide">29,900원 ~</div>
+</div>
+</div>
+<!-- Card Inactive -->
+<div class="group relative bg-surface-container-low p-4 flex items-center gap-4 opacity-80 hover:opacity-100 transition-opacity">
+<img alt="Wedding" class="w-20 h-24 object-cover" data-alt="Close up of two platinum wedding bands resting on a luxurious velvet cushion in a soft focus romantic setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFBMAQCT5FFfBSqHKyi-S36v4K8j5CJJ3PXpnZznZZaq4gHjqJdxpkovU0U6K44d4fp7wA-LeXG0VoUsHb9N8rRGHOhtMweoo82_x77fsRKagc4OX8a4v1HwjM_reqS5pv8tIfHXJQYQ67C1SJOxFK0IALuA8TGkzBVEY0uhuhoxzQxVfyb3M_bbF0nqKQQDQhxcaMwYAiOOmwL5TMTrXWF5LAp7DUBfwtjoZkO8R-aO8QEMLshhHSWmTtBm60DX5ADXH1X_tvMsPo"/>
+<div class="flex-1">
+<h3 class="font-headline font-bold text-lg text-on-surface mb-1">웨딩 주얼리 컨설팅</h3>
+<p class="text-xs text-on-surface-variant mb-2">영원한 약속을 위한 프리미엄 클래스</p>
+<div class="font-label text-[11px] font-bold text-on-surface-variant tracking-wide">상담비 무료</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Schedule Selection -->
+<section class="px-6 mt-12">
+<span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface-variant font-bold mb-4 block">Step 02. Date &amp; Time</span>
+<div class="bg-surface-container-lowest p-6">
+<!-- Date Picker Scroll -->
+<div class="flex gap-3 overflow-x-auto hide-scrollbar pb-6">
+<div class="flex-shrink-0 w-14 h-20 bg-primary text-on-primary flex flex-col items-center justify-center gap-1">
+<span class="font-label text-[10px] font-medium opacity-70">OCT</span>
+<span class="font-headline font-bold text-xl leading-none">24</span>
+<span class="font-label text-[10px] font-bold">THU</span>
+</div>
+<div class="flex-shrink-0 w-14 h-20 bg-surface-container-low text-on-surface flex flex-col items-center justify-center gap-1">
+<span class="font-label text-[10px] font-medium opacity-50">OCT</span>
+<span class="font-headline font-bold text-xl leading-none">25</span>
+<span class="font-label text-[10px] font-bold">FRI</span>
+</div>
+<div class="flex-shrink-0 w-14 h-20 bg-surface-container-low text-on-surface flex flex-col items-center justify-center gap-1">
+<span class="font-label text-[10px] font-medium opacity-50">OCT</span>
+<span class="font-headline font-bold text-xl leading-none">26</span>
+<span class="font-label text-[10px] font-bold">SAT</span>
+</div>
+<div class="flex-shrink-0 w-14 h-20 bg-surface-container-low text-on-surface flex flex-col items-center justify-center gap-1">
+<span class="font-label text-[10px] font-medium opacity-50">OCT</span>
+<span class="font-headline font-bold text-xl leading-none">27</span>
+<span class="font-label text-[10px] font-bold">SUN</span>
+</div>
+<div class="flex-shrink-0 w-14 h-20 bg-surface-container-low text-on-surface flex flex-col items-center justify-center gap-1">
+<span class="font-label text-[10px] font-medium opacity-50">OCT</span>
+<span class="font-headline font-bold text-xl leading-none">28</span>
+<span class="font-label text-[10px] font-bold">MON</span>
+</div>
+</div>
+<!-- Time Grid -->
+<div class="grid grid-cols-3 gap-2">
+<button class="py-3 text-xs font-medium border border-outline-variant/20 bg-white">11:00 AM</button>
+<button class="py-3 text-xs font-medium bg-primary text-on-primary">01:00 PM</button>
+<button class="py-3 text-xs font-medium border border-outline-variant/20 bg-white">02:30 PM</button>
+<button class="py-3 text-xs font-medium border border-outline-variant/20 bg-white">04:00 PM</button>
+<button class="py-3 text-xs font-medium border border-outline-variant/20 bg-white opacity-40" disabled="">05:30 PM</button>
+<button class="py-3 text-xs font-medium border border-outline-variant/20 bg-white">07:00 PM</button>
+</div>
+</div>
+</section>
+<!-- Confidence Elements -->
+<section class="px-6 mt-12 pb-12 grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-4 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="verified">verified</span>
+<span class="text-[10px] font-bold font-label uppercase tracking-widest leading-tight">전문 보석 감정사 상주</span>
+</div>
+<div class="bg-surface-container-low p-4 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="diversity_1">diversity_1</span>
+<span class="text-[10px] font-bold font-label uppercase tracking-widest leading-tight">1:1 맞춤형 서비스</span>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar (Floating Summary) -->
+<div class="fixed bottom-20 left-0 w-full z-40 px-6 pointer-events-none">
+<div class="bg-white/80 backdrop-blur-2xl p-5 shadow-[0_-4px_40px_rgba(39,52,60,0.06)] border border-white/20 pointer-events-auto flex items-center justify-between">
+<div>
+<span class="block text-[10px] font-label text-on-surface-variant uppercase tracking-tighter">Selected Service</span>
+<span class="font-headline font-bold text-sm text-on-surface">퍼스널 스타일링</span>
+</div>
+<div class="text-right">
+<span class="block text-[10px] font-label text-on-surface-variant uppercase tracking-tighter">Booking Fee</span>
+<span class="font-headline font-bold text-lg text-primary">₩ 0</span>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-5 font-headline font-bold text-base tracking-widest mt-2 shadow-xl active:scale-95 transition-transform pointer-events-auto">
+            예약하기
+        </button>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl flex justify-around items-center h-20 pb-safe px-4 border-t border-slate-100/10 shadow-[0_-4px_40px_rgba(39,52,60,0.04)]">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-slate-600 transition-opacity">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="diamond">diamond</span>
+<span class="text-[10px] uppercase tracking-[0.1em] font-medium font-inter">Collections</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-slate-600 transition-opacity">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="search">search</span>
+<span class="text-[10px] uppercase tracking-[0.1em] font-medium font-inter">Search</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-slate-600 transition-opacity">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="favorite">favorite</span>
+<span class="text-[10px] uppercase tracking-[0.1em] font-medium font-inter">Wishlist</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-900 dark:text-white font-bold scale-110">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-[10px] uppercase tracking-[0.1em] font-medium font-inter">Profile</span>
+</div>
+</nav>
+</body></html>

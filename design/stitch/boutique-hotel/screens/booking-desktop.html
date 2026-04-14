@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HOTEL STILL | Reservation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#50453a",
+                        "on-surface-variant": "#4e453f",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#f0e0d0",
+                        "on-surface": "#201b13",
+                        "surface-container-highest": "#ece1d4",
+                        "surface-container": "#f8ecdf",
+                        "surface-variant": "#ece1d4",
+                        "inverse-surface": "#353027",
+                        "on-primary-container": "#aa9282",
+                        "on-tertiary-fixed-variant": "#4f453e",
+                        "on-background": "#201b13",
+                        "on-secondary-fixed": "#221a11",
+                        "on-tertiary-fixed": "#221a14",
+                        "on-primary-fixed": "#26190e",
+                        "tertiary-fixed": "#f0dfd6",
+                        "surface": "#fff8f3",
+                        "tertiary": "#211913",
+                        "outline-variant": "#d2c4bc",
+                        "surface-bright": "#fff8f3",
+                        "inverse-primary": "#dcc2b0",
+                        "primary-fixed-dim": "#dcc2b0",
+                        "inverse-on-surface": "#faefe2",
+                        "tertiary-fixed-dim": "#d3c3ba",
+                        "tertiary-container": "#372d27",
+                        "primary-fixed": "#f9ddcb",
+                        "primary": "#25180d",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#6e6256",
+                        "secondary-fixed": "#f0e0d0",
+                        "secondary-fixed-dim": "#d4c4b5",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#f2e6d9",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#fdf2e4",
+                        "on-tertiary-container": "#a2948b",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#554336",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "background": "#fff8f3",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#6e5a4c",
+                        "surface-dim": "#e3d8cb",
+                        "secondary": "#685c50",
+                        "primary-container": "#3c2c20",
+                        "outline": "#80756e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "serif": ["Noto Serif", "serif"],
+                        "sans": ["Manrope", "sans-serif"],
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .grainy-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-sans selection:bg-primary-container selection:text-on-primary-container">
+<div class="grainy-overlay"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fff8f3]/80 dark:bg-stone-950/80 backdrop-blur-xl flex justify-between items-center px-12 py-6 w-full">
+<div class="text-2xl font-serif tracking-[0.2em] uppercase text-[#25180d] dark:text-[#fdf2e4]">HOTEL STILL</div>
+<div class="hidden md:flex gap-12">
+<a class="text-[#685c50] dark:text-stone-400 font-light font-serif text-lg tracking-tight hover:text-[#25180d] transition-colors duration-300" href="#">STAYS</a>
+<a class="text-[#685c50] dark:text-stone-400 font-light font-serif text-lg tracking-tight hover:text-[#25180d] transition-colors duration-300" href="#">AMENITIES</a>
+<a class="text-[#685c50] dark:text-stone-400 font-light font-serif text-lg tracking-tight hover:text-[#25180d] transition-colors duration-300" href="#">OFFERS</a>
+<a class="text-[#685c50] dark:text-stone-400 font-light font-serif text-lg tracking-tight hover:text-[#25180d] transition-colors duration-300" href="#">JOURNAL</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-md font-sans text-sm tracking-widest hover:bg-primary-container transition-colors duration-300 uppercase">예약하기</button>
+</nav>
+<main class="relative pt-0">
+<!-- Hero Section / First Viewport -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Hotel Room Interior" class="w-full h-full object-cover grayscale-[20%] brightness-[0.8]" data-alt="Cinematic wide shot of a serene minimal hotel room with textured plaster walls, linen bedding, and soft morning sunlight filtering through sheer curtains" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOygY6NGq62q83PDiet7StxpI37Zq6nD5C0fAoiDQjQRdY1c1nxEw5Ic_lleRgRlpnv30hh8Fns719oHuqtNy0pgkdRepGOnHBqGXGNXxRYIzK61l1m2MC5DwmrtXMd9OpMfi_B9ChY_JmK80CQmZhQOqwQqSBFR5rgimHg8fkO7bqeeNaC8wcnAOQWmvSjeKEe09Ao3cn56MuKKMOOMyMx7Er4bHdm1LNadY6q5pRgtqTXiIZwzbwNvHrZ8CAsL0lm3eGKNud4e_B"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#fff8f3]"></div>
+</div>
+<!-- Stay Finder Panel -->
+<div class="relative z-10 w-full max-w-5xl px-6">
+<div class="bg-surface-container-low/90 backdrop-blur-2xl p-10 md:p-14 rounded-xl shadow-2xl border border-outline-variant/10 flex flex-col md:flex-row gap-8 items-end">
+<div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+<div class="flex flex-col gap-3">
+<label class="font-sans text-[10px] uppercase tracking-widest text-secondary">Check-in / Check-out</label>
+<div class="border-b border-outline pb-2 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="calendar_today">calendar_today</span>
+<input class="bg-transparent border-none focus:ring-0 p-0 text-primary font-serif text-lg w-full" readonly="" type="text" value="2024.11.20 - 2024.11.22"/>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<label class="font-sans text-[10px] uppercase tracking-widest text-secondary">Guests</label>
+<div class="border-b border-outline pb-2 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+<select class="bg-transparent border-none focus:ring-0 p-0 text-primary font-serif text-lg w-full appearance-none">
+<option>성인 2, 아동 0</option>
+<option>성인 1</option>
+<option>성인 2, 아동 1</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<label class="font-sans text-[10px] uppercase tracking-widest text-secondary">Promo Code</label>
+<div class="border-b border-outline pb-2 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="sell">sell</span>
+<input class="bg-transparent border-none focus:ring-0 p-0 text-primary font-serif text-lg w-full placeholder:text-outline-variant" placeholder="Optional" type="text"/>
+</div>
+</div>
+</div>
+<button class="w-full md:w-auto bg-primary text-on-primary px-12 py-5 rounded-md font-sans text-sm tracking-[0.2em] hover:bg-primary-container transition-all duration-500 whitespace-nowrap">
+                        AVAILABILITY
+                    </button>
+</div>
+</div>
+</section>
+<!-- Content Area with Sticky Summary -->
+<div class="max-w-screen-2xl mx-auto px-6 md:px-12 py-24 flex flex-col lg:flex-row gap-16">
+<!-- Left: Main Booking Flow -->
+<div class="flex-1 space-y-32">
+<!-- Section: Select Your Stay -->
+<section>
+<header class="mb-12">
+<span class="font-sans text-[10px] uppercase tracking-[0.3em] text-secondary block mb-4">RESERVATION</span>
+<h2 class="font-serif text-5xl text-primary tracking-tight">Select Your Stay</h2>
+<p class="font-serif italic text-secondary mt-4 text-lg">침묵의 조각, 당신을 위한 온전한 휴식의 공간을 선택하십시오.</p>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Room Card: Standard -->
+<div class="group flex flex-col gap-6">
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container p-4">
+<img alt="Standard Room" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Minimalist luxury hotel room with soft neutral tones, high-quality linen textures, and warm ambient lighting on a small wooden side table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOAhw_glZv1SVbnyP-zMy1-LGUZIFAAn7ivahCs0Dw71ASvaM6Uz5OjT3mszHC_5omHsonD_Mw2xMspzz7yCA53AgPiEEnZbA6xRPIanqbIjJz6-B53Ch7ISnJOW9fQZzNzjEzTqmaC9tv6RcBqw8fpzEGrbcOwXFpKtABzEVaJ-X7-jTeqnB6O33S6G-fukITky_uWLPu2rBUIgxJhGOEu07ndK6DMwmPrTXKvy8_IfFwg2cyyax1OvSFEulqqqlmEX-mquN-Vy2a"/>
+<div class="absolute top-8 left-8 bg-surface/90 backdrop-blur px-4 py-1 text-[10px] tracking-widest uppercase text-primary">Standard</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-serif text-2xl text-primary">스탠다드 룸</h3>
+<p class="font-sans text-sm text-secondary mt-1">28m² · City View · King Bed</p>
+</div>
+<div class="text-right">
+<span class="font-serif text-xl text-primary block">299,000원~</span>
+<button class="mt-4 text-primary border-b border-primary/20 hover:border-primary pb-1 font-sans text-xs tracking-widest transition-all">SELECT ROOM</button>
+</div>
+</div>
+</div>
+<!-- Room Card: Deluxe -->
+<div class="group flex flex-col gap-6">
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container p-4">
+<img alt="Deluxe Room" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Spacious deluxe hotel suite with a large window overlooking a garden, featuring a velvet armchair and a designer floor lamp" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfDLimq3c6SpMeqRNCrY_SYBjTDhwQn6myz153MgzIcvGSZ2fLpZjuDeidpdzGqY7l04ObUXOgLvedbuDhyp-mmvJ7KCqMz810DGCxGLnTsRP1LWOUw6C8XY7qrWXoVE5UiiWLmJDuxgYghXoAkm9r6NP6VrtTj2EcBe8CIcj3ehQEFSP0JMRGAf4_G-GUjpbKTL-GqLFNph81qz_d1I29H4Yb5C2AvzyzgM9e62YWIR5eV9hwUubeDSx7RkBEwbKtWWGaXFTjmcCl"/>
+<div class="absolute top-8 left-8 bg-surface/90 backdrop-blur px-4 py-1 text-[10px] tracking-widest uppercase text-primary">Deluxe</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-serif text-2xl text-primary">디럭스 룸</h3>
+<p class="font-sans text-sm text-secondary mt-1">42m² · Garden View · King Bed</p>
+</div>
+<div class="text-right">
+<span class="font-serif text-xl text-primary block">450,000원~</span>
+<button class="mt-4 text-primary border-b border-primary/20 hover:border-primary pb-1 font-sans text-xs tracking-widest transition-all">SELECT ROOM</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Enhance Your Stay -->
+<section>
+<header class="mb-12">
+<span class="font-sans text-[10px] uppercase tracking-[0.3em] text-secondary block mb-4">SERVICES</span>
+<h2 class="font-serif text-5xl text-primary tracking-tight">Enhance Your Stay</h2>
+</header>
+<div class="space-y-6">
+<!-- Service Card 1 -->
+<div class="bg-surface-container-low p-8 flex items-center gap-8 relative overflow-hidden group">
+<div class="w-32 h-32 overflow-hidden flex-shrink-0">
+<img alt="Breakfast Service" class="w-full h-full object-cover" data-alt="Artisanal breakfast spread with freshly baked bread, seasonal fruits, and organic tea served on a ceramic tray" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpS7UvmGIhZ1IU6R_hj1P9ASBS9qm_h_8fqgZCBP91A-Ih49uLF9S50baiRWRXFQ7_FCx-tsfoVsZx-AUVfzJ5Tg-qbUQv_3uV8jENOc019d5LuI0Adcpv4OsaT7r9RIdRVKWcvLYJ-qfAO5nDmeWo-FX06dcTyZgtehDK3E5nTGCWct6RJxZJcKd3c_J8kz2c3TSGuK9weh-JQzM-lbdRqsdszPN_cc4-yXTR6OomUeR9U7RkpVm8TYYQ1DVYt8Ca--m6dxcN_Ssg"/>
+</div>
+<div class="flex-1">
+<h4 class="font-serif text-xl text-primary mb-1">Still Morning Breakfast</h4>
+<p class="font-sans text-sm text-secondary max-w-md">엄선된 로컬 식재료로 준비한 HOTEL STILL만의 오가닉 조식 뷔페 서비스입니다.</p>
+</div>
+<div class="text-right">
+<span class="font-serif text-lg text-primary block mb-2">55,000원 / 1인</span>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-md text-xs tracking-widest hover:bg-primary-container transition-all">ADD</button>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-surface-container p-8 flex items-center gap-8 relative overflow-hidden group">
+<div class="w-32 h-32 overflow-hidden flex-shrink-0">
+<img alt="Spa Service" class="w-full h-full object-cover" data-alt="Minimalist spa room with smooth stone textures, soft warm lighting, and a neat stack of white linen towels" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf6jFw9n9KWLotmsTm5AjzOST_gPeT4jI3Slyf13aGWx2BCFIxi3RN1bNPGbbnxWbGdA3Hfxnl0jZKY39RxcKp7I1OT2otzdx-D7j7wouwJHnrxZGfgTHxayFCZ7sfWwlFRHNG-Sa1E8YGGLjTdvDwENgkgE6O-W7AnVQ3NICg-l7BJblsjF9DBBZdKWHRdseObWyaUTMFmSQKDk61DQ0EktUWqjeLzPBpIkPrs7UTXP4cgL20Gwd0cQapKhDZIKiTP7U8bJ6L-7XT"/>
+</div>
+<div class="flex-1">
+<h4 class="font-serif text-xl text-primary mb-1">Quietude Spa Ritual</h4>
+<p class="font-sans text-sm text-secondary max-w-md">몸과 마음의 긴장을 완화하는 60분 간의 전문 테라피스트 트리트먼트입니다.</p>
+</div>
+<div class="text-right">
+<span class="font-serif text-lg text-primary block mb-2">180,000원 / 1인</span>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-md text-xs tracking-widest hover:bg-primary-container transition-all">ADD</button>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-surface-container-high p-8 flex items-center gap-8 relative overflow-hidden group">
+<div class="w-32 h-32 overflow-hidden flex-shrink-0">
+<img alt="Late Check-out" class="w-full h-full object-cover" data-alt="Comfortable hotel chair by a large window with soft afternoon light, ideal for a quiet moment before checking out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlx7RW4l29yziqCxPkHSdUWJYYyGUEwdMofEJWZWyt4or8zHad_abi8D-fQDMYgSqn6a67xIPfaZPNuc8bxMEdovPwDaTgejHRJ77rf6o7TF0NZZv1Y1dcxIB2goMa_v6Ta4NJnDCos_j26WfixtLXGwJ4vouL_lpKQUMNG9YkIgt-D4kNWoWFxBNzzV5tTDI1U3zxd5cf6kY702loPfFKabD8Xovos2A-mRf1XpzO9Qsq_oaz8P05PPVGS_Y7ZMOXfAEWBmhaY_Wu"/>
+</div>
+<div class="flex-1">
+<h4 class="font-serif text-xl text-primary mb-1">Late Check-out (14:00)</h4>
+<p class="font-sans text-sm text-secondary max-w-md">여유로운 마무리를 위해 체크아웃 시간을 2시간 연장해 드립니다.</p>
+</div>
+<div class="text-right">
+<span class="font-serif text-lg text-primary block mb-2">80,000원</span>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-md text-xs tracking-widest hover:bg-primary-container transition-all">ADD</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right: Sticky Reservation Summary -->
+<aside class="lg:w-96">
+<div class="sticky top-32 bg-surface-container-low p-10 space-y-8 shadow-sm border border-outline-variant/5">
+<h3 class="font-serif text-2xl text-primary pb-6 border-b border-outline-variant">Reservation Summary</h3>
+<div class="space-y-4">
+<div class="flex justify-between font-sans text-xs uppercase tracking-widest text-secondary">
+<span>Dates</span>
+<span class="text-primary">Nov 20 - Nov 22, 2024</span>
+</div>
+<div class="flex justify-between font-sans text-xs uppercase tracking-widest text-secondary">
+<span>Guests</span>
+<span class="text-primary">Adults 2</span>
+</div>
+</div>
+<div class="pt-6 space-y-4">
+<div class="flex justify-between items-start">
+<span class="font-serif text-lg text-primary">Standard Room</span>
+<span class="font-serif text-lg text-primary">598,000원</span>
+</div>
+<p class="font-sans text-[10px] text-secondary leading-relaxed italic">
+                            2 nights × 299,000원<br/>세금 및 봉사료 포함
+                        </p>
+</div>
+<div class="pt-10 border-t border-outline-variant space-y-6">
+<div class="flex justify-between items-baseline">
+<span class="font-sans text-xs uppercase tracking-widest text-secondary">Total Amount</span>
+<span class="font-serif text-3xl text-primary">598,000원</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-5 rounded-md font-sans text-sm tracking-[0.2em] hover:bg-primary-container transition-all">
+                            CONFIRM BOOKING
+                        </button>
+<p class="text-center font-sans text-[10px] text-secondary tracking-tight">취소 정책 및 규정에 동의하시게 됩니다.</p>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#fdf2e4] dark:bg-stone-900 w-full py-16 px-12">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-screen-2xl mx-auto w-full">
+<div class="font-sans text-[10px] uppercase tracking-widest text-[#685c50] dark:text-stone-400">
+                © 2024 HOTEL STILL. 침묵의 큐레이터.
+            </div>
+<div class="flex gap-10 mt-8 md:mt-0">
+<a class="text-[#685c50] dark:text-stone-400 font-sans text-[10px] uppercase tracking-widest hover:text-[#25180d] underline decoration-from-font underline-offset-4 transition duration-300" href="#">개인정보 처리방침</a>
+<a class="text-[#685c50] dark:text-stone-400 font-sans text-[10px] uppercase tracking-widest hover:text-[#25180d] underline decoration-from-font underline-offset-4 transition duration-300" href="#">이용약관</a>
+<a class="text-[#685c50] dark:text-stone-400 font-sans text-[10px] uppercase tracking-widest hover:text-[#25180d] underline decoration-from-font underline-offset-4 transition duration-300" href="#">문의하기</a>
+</div>
+</div>
+</footer>
+</body></html>

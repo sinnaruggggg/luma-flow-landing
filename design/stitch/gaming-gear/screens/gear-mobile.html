@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#0b1421",
+                    "on-tertiary": "#432c00",
+                    "surface-container-highest": "#2c3544",
+                    "inverse-primary": "#00677e",
+                    "surface-container-lowest": "#060e1b",
+                    "on-secondary-container": "#fface8",
+                    "surface-container-high": "#222a38",
+                    "on-error": "#690005",
+                    "surface-container-low": "#131c29",
+                    "surface-container": "#17202e",
+                    "on-surface": "#dae3f6",
+                    "on-secondary": "#5e0053",
+                    "inverse-surface": "#dae3f6",
+                    "surface-variant": "#2c3544",
+                    "error": "#ffb4ab",
+                    "secondary": "#fface8",
+                    "primary-fixed-dim": "#45d6ff",
+                    "secondary-fixed": "#ffd7f0",
+                    "surface-tint": "#45d6ff",
+                    "on-primary-container": "#00596e",
+                    "tertiary-fixed-dim": "#ffba3f",
+                    "error-container": "#93000a",
+                    "primary": "#b1eaff",
+                    "on-tertiary-container": "#6e4b00",
+                    "on-background": "#dae3f6",
+                    "secondary-container": "#980388",
+                    "tertiary": "#ffdcaa",
+                    "on-primary": "#003543",
+                    "secondary-fixed-dim": "#fface8",
+                    "primary-container": "#39d5ff",
+                    "on-tertiary-fixed": "#281800",
+                    "primary-fixed": "#b5ebff",
+                    "tertiary-fixed": "#ffdeae",
+                    "inverse-on-surface": "#28313f",
+                    "surface-bright": "#313a48",
+                    "on-secondary-fixed": "#3a0033",
+                    "surface-dim": "#0b1421",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#840076",
+                    "tertiary-container": "#ffb837",
+                    "outline-variant": "#3c494e",
+                    "outline": "#869398",
+                    "on-primary-fixed-variant": "#004e60",
+                    "on-tertiary-fixed-variant": "#604100",
+                    "on-surface-variant": "#bbc9ce",
+                    "background": "#0b1421",
+                    "on-primary-fixed": "#001f28"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Manrope"],
+                    "label": ["Inter"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        body { background-color: #0b1421; font-family: 'Manrope', sans-serif; }
+        .technical-grid {
+            background-image: radial-gradient(circle at 2px 2px, rgba(57, 213, 255, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .glow-border {
+            box-shadow: inset 0 0 10px rgba(57, 213, 255, 0.1), 0 0 5px rgba(57, 213, 255, 0.1);
+        }
+        .asymmetric-cut {
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 z-50 w-full flex justify-between items-center px-6 h-16 bg-[#0b1421]/90 backdrop-blur-md border-b border-white/10 shadow-2xl shadow-cyan-900/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#39d5ff]" data-icon="terminal">terminal</span>
+<h1 class="font-['Space_Grotesk'] uppercase tracking-widest text-lg font-bold text-[#39d5ff] drop-shadow-[0_0_8px_rgba(57,213,255,0.6)]">VOID ARC</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="transition-all duration-300 ease-in-out active:scale-95 text-slate-400 hover:text-[#39d5ff]">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="transition-all duration-300 ease-in-out active:scale-95 text-[#39d5ff]">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</header>
+<main class="pt-16 pb-32 min-h-screen technical-grid">
+<!-- Tactical Database Hero -->
+<section class="px-6 py-8">
+<div class="flex flex-col gap-1 mb-8">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-primary-container animate-pulse"></span>
+<span class="font-label text-[10px] uppercase tracking-widest text-primary-container">System Status: Online</span>
+</div>
+<h2 class="font-headline text-4xl font-extrabold uppercase leading-none tracking-tight">Gear<br/><span class="text-primary-container">Catalog</span></h2>
+<p class="font-body text-sm text-on-surface-variant mt-2 max-w-[280px]">하이엔드 게이밍 기어의 정점. 전술적 우위를 점하기 위한 최상위 데이터베이스.</p>
+</div>
+<!-- Category Anchors -->
+<div class="grid grid-cols-2 gap-3 mb-6">
+<button class="flex flex-col items-start p-4 bg-surface-container-low border border-white/5 rounded-lg transition-all active:scale-95 hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="keyboard">keyboard</span>
+<span class="font-headline text-xs font-bold uppercase tracking-wider text-on-surface">Keyboards</span>
+<span class="font-label text-[9px] text-on-surface-variant mt-1">12 UNITS</span>
+</button>
+<button class="flex flex-col items-start p-4 bg-surface-container-low border border-white/5 rounded-lg transition-all active:scale-95 hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-secondary mb-2" data-icon="mouse">mouse</span>
+<span class="font-headline text-xs font-bold uppercase tracking-wider text-on-surface">Mice</span>
+<span class="font-label text-[9px] text-on-surface-variant mt-1">8 UNITS</span>
+</button>
+<button class="flex flex-col items-start p-4 bg-surface-container-low border border-white/5 rounded-lg transition-all active:scale-95 hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-tertiary mb-2" data-icon="headset">headset</span>
+<span class="font-headline text-xs font-bold uppercase tracking-wider text-on-surface">Audio</span>
+<span class="font-label text-[9px] text-on-surface-variant mt-1">5 UNITS</span>
+</button>
+<button class="flex flex-col items-start p-4 bg-surface-container-low border border-white/5 rounded-lg transition-all active:scale-95 hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-on-surface-variant mb-2" data-icon="layers">layers</span>
+<span class="font-headline text-xs font-bold uppercase tracking-wider text-on-surface">Mats</span>
+<span class="font-label text-[9px] text-on-surface-variant mt-1">4 UNITS</span>
+</button>
+</div>
+<!-- Filter Toggle -->
+<div class="flex justify-between items-center bg-surface-container-highest/30 p-3 rounded-xl border border-outline-variant/20 backdrop-blur-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-xs text-primary-container" data-icon="tune">tune</span>
+<span class="font-label text-xs uppercase tracking-widest font-semibold">Tactical Filter</span>
+</div>
+<div class="flex gap-2">
+<span class="px-2 py-1 rounded bg-primary-container/10 text-primary-container font-label text-[10px] uppercase">All Active</span>
+</div>
+</div>
+</section>
+<!-- Product Feed -->
+<section class="px-6 space-y-8">
+<!-- Product Card 1 -->
+<div class="group relative flex flex-col bg-surface-container-lowest overflow-hidden border border-white/5 rounded-xl">
+<div class="absolute top-4 right-4 z-10 flex flex-col gap-2">
+<button class="w-8 h-8 rounded-full bg-surface-dim/80 backdrop-blur-md flex items-center justify-center text-on-surface hover:text-secondary">
+<span class="material-symbols-outlined text-sm" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="aspect-[3/4] relative overflow-hidden">
+<img alt="high-spec mechanical keyboard" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="close-up of a futuristic mechanical keyboard with cyan glowing backlight and industrial keycap design in a dark studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuZ2j-5BhDmc8DPSweAFb9MhE6BX6y8Xqs0x7LTqwKCSPc0bpchpw0aZv3fP4KcT-CD80heTHA9kQhbj9ZClJc0Wf7zaMCOe2VYDEiI4y3nBZm4Gu1LvylWBvqtpfsSIgnaxJnfDxMOzD3XWmHBpCaik0_jrKherbUfVNrdK1CLpy4tW4TYnxFvrSb3Z0HCMTM5xYZXTZX21WcMaIXW6ZKGeYsARNnYKvKPFUz40xqodKYa-sK5xIIbVeGPHj86ZakvibdqcEExgPB"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-primary-container/20 text-primary-container px-2 py-0.5 font-label text-[10px] uppercase tracking-tighter border border-primary-container/30">New Arrival</span>
+</div>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<span class="font-headline text-[10px] text-primary tracking-widest uppercase opacity-70">UNIT_01 // KEYBOARD</span>
+<h3 class="font-headline text-xl font-bold tracking-tight text-on-surface">ARC-K7_STRIKE</h3>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="font-label text-[9px] px-2 py-0.5 bg-surface-container text-on-surface-variant rounded border border-outline-variant/10">8,000Hz Polling</span>
+<span class="font-label text-[9px] px-2 py-0.5 bg-surface-container text-on-surface-variant rounded border border-outline-variant/10">0.1ms Latency</span>
+<span class="font-label text-[9px] px-2 py-0.5 bg-surface-container text-on-surface-variant rounded border border-outline-variant/10">Gateron Magnetic</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="font-label text-[9px] text-on-surface-variant uppercase">Price (KRW)</span>
+<span class="font-headline text-lg font-extrabold text-on-surface">189,000원</span>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 asymmetric-cut font-headline text-xs font-bold uppercase tracking-widest transition-all active:scale-90 hover:shadow-[0_0_15px_rgba(57,213,255,0.4)]">
+                            DEPLOY
+                        </button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group relative flex flex-col bg-surface-container-lowest overflow-hidden border border-white/5 rounded-xl">
+<div class="aspect-[3/4] relative overflow-hidden">
+<img alt="high-spec gaming mouse" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="modern wireless gaming mouse with carbon fiber texture and neon pink accents floating against a dark navy digital grid background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYotLJSQXVzeKoSxCM-ATpK_BRcywGZtPt1V_0_QFAUD7m3RMdK-natavIyCF_VLsaN7P1HJ-OWvYgU6yx8bnrAW3I0j4xZSNALvYMA698q-OU2H-oKUYHjtBeiLcjNWHxamXFf_ckgDHZb5bQREitm-M8II3ml6piSWB5kjvYM6Xe9_0qAp8BNIivGXKfaiM3_xhd3UZvIT2ks-tFZQseJhVWeSlXHUpbLbccS9qnl1u6V63Z7gMZ5ppV1-0f8D1cNFEJCcuWiST2"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-secondary-container/20 text-secondary px-2 py-0.5 font-label text-[10px] uppercase tracking-tighter border border-secondary-container/30">Limited Edition</span>
+</div>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<span class="font-headline text-[10px] text-secondary tracking-widest uppercase opacity-70">UNIT_02 // MOUSE</span>
+<h3 class="font-headline text-xl font-bold tracking-tight text-on-surface">ARC-M1_VEGA</h3>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="font-label text-[9px] px-2 py-0.5 bg-surface-container text-on-surface-variant rounded border border-outline-variant/10">42g Ultralight</span>
+<span class="font-label text-[9px] px-2 py-0.5 bg-surface-container text-on-surface-variant rounded border border-outline-variant/10">PAW 3395</span>
+<span class="font-label text-[9px] px-2 py-0.5 bg-surface-container text-on-surface-variant rounded border border-outline-variant/10">4K Wireless</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="font-label text-[9px] text-on-surface-variant uppercase">Price (KRW)</span>
+<span class="font-headline text-lg font-extrabold text-on-surface">159,000원</span>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 asymmetric-cut font-headline text-xs font-bold uppercase tracking-widest transition-all active:scale-90 hover:shadow-[0_0_15px_rgba(57,213,255,0.4)]">
+                            DEPLOY
+                        </button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group relative flex flex-col bg-surface-container-lowest overflow-hidden border border-white/5 rounded-xl">
+<div class="aspect-[3/4] relative overflow-hidden">
+<img alt="high-spec gaming headset" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="over-ear studio grade gaming headset with futuristic silhouette and blue ambient lighting in a dark cybernetic hangar environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb9Zyu7iRLvWFD7gwPSKZt4mUts_OedzWrgfSHbJCNoHDAbzLpUOp_ZDfOJrWrIBJ8xvcu7zyI1YxqYgnuq7Mnb6sVe81vAQSj0Ga_2_O4-xNNv8qAkCgc6XR1H0uGhkzqeFfmm9suQPN_GOEtnQRH2h-oqmNf8YbeWy4aePTEXUi2dYbLbmhDP32k481U8yA_OXr69LteLJXrNG2YhWcgIHJ-YMF-vkLci1Xsfnh02N9Y3vrQKEIc0p_7VkuxBgyZrioDWHRojKAm"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<span class="font-headline text-[10px] text-tertiary tracking-widest uppercase opacity-70">UNIT_03 // AUDIO</span>
+<h3 class="font-headline text-xl font-bold tracking-tight text-on-surface">ARC-A4_PHANTOM</h3>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="font-label text-[9px] px-2 py-0.5 bg-surface-container text-on-surface-variant rounded border border-outline-variant/10">50mm Driver</span>
+<span class="font-label text-[9px] px-2 py-0.5 bg-surface-container text-on-surface-variant rounded border border-outline-variant/10">7.1 Surround</span>
+<span class="font-label text-[9px] px-2 py-0.5 bg-surface-container text-on-surface-variant rounded border border-outline-variant/10">Noise Cancel</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="font-label text-[9px] text-on-surface-variant uppercase">Price (KRW)</span>
+<span class="font-headline text-lg font-extrabold text-on-surface">229,000원</span>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 asymmetric-cut font-headline text-xs font-bold uppercase tracking-widest transition-all active:scale-90 hover:shadow-[0_0_15px_rgba(57,213,255,0.4)]">
+                            DEPLOY
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Fast Cart Floating Chip -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 z-40">
+<div class="bg-[#0b1421]/80 backdrop-blur-xl border border-primary-container/30 rounded-full px-5 py-3 shadow-[0_0_20px_rgba(57,213,255,0.2)] flex items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="shopping_basket">shopping_basket</span>
+<span class="font-label text-[10px] font-bold text-on-surface">ITEM: 01</span>
+</div>
+<div class="h-4 w-px bg-white/10"></div>
+<div class="flex items-center gap-2">
+<span class="font-label text-[10px] text-on-surface-variant uppercase">Est. Total</span>
+<span class="font-headline text-sm font-bold text-primary">189,000원</span>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full h-20 flex justify-around items-center px-4 pb-4 bg-[#0b1421]/95 backdrop-blur-lg border-t border-[#39d5ff]/20 shadow-[0_-10px_30px_rgba(11,20,33,0.8)] z-50 rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-slate-500 opacity-60 transition-transform duration-200 active:scale-90 hover:text-[#39d5ff] hover:opacity-100" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-medium tracking-tighter">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#39d5ff] bg-[#39d5ff]/5 py-1 px-3 rounded-md ring-1 ring-[#39d5ff]/30 shadow-[0_0_15px_rgba(57,213,255,0.2)] transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="sports_esports">sports_esports</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-medium tracking-tighter">Gear</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 opacity-60 transition-transform duration-200 active:scale-90 hover:text-[#39d5ff] hover:opacity-100" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="biotech">biotech</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-medium tracking-tighter">Lab</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 opacity-60 transition-transform duration-200 active:scale-90 hover:text-[#39d5ff] hover:opacity-100" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings_input_component">settings_input_component</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-medium tracking-tighter">Sys</span>
+</a>
+</nav>
+</body></html>

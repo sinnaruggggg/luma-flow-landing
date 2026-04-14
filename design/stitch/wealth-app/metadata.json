@@ -1,0 +1,89 @@
+{
+  "siteId": "wealth-app",
+  "brand": "CLARO",
+  "projectId": "6852217947484466232",
+  "projectTitle": "CLARO Stitch",
+  "updatedAt": "2026-04-14T00:36:07.257Z",
+  "screens": {
+    "home:mobile": {
+      "screenId": "3ccbafec053b427594a2e32449e2c0ad",
+      "pageSlug": "home",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/wealth-app/screens/home-mobile.html",
+      "imagePath": "design/stitch/wealth-app/screens/home-mobile.png",
+      "updatedAt": "2026-04-13T16:27:58.366Z"
+    },
+    "home:desktop": {
+      "screenId": "0ca64c4e6ebb4d94b2d137f026191848",
+      "pageSlug": "home",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/wealth-app/screens/home-desktop.html",
+      "imagePath": "design/stitch/wealth-app/screens/home-desktop.png",
+      "updatedAt": "2026-04-13T16:36:00.104Z"
+    },
+    "features:desktop": {
+      "screenId": "8789c24c82f44e08b1f16b0e047ad6b8",
+      "pageSlug": "features",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/wealth-app/screens/features-desktop.html",
+      "imagePath": "design/stitch/wealth-app/screens/features-desktop.png",
+      "updatedAt": "2026-04-14T00:27:14.070Z"
+    },
+    "features:mobile": {
+      "screenId": "1282c5c5ed734f25b4c5305b47f1f25e",
+      "pageSlug": "features",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/wealth-app/screens/features-mobile.html",
+      "imagePath": "design/stitch/wealth-app/screens/features-mobile.png",
+      "updatedAt": "2026-04-14T00:28:23.815Z"
+    },
+    "cases:desktop": {
+      "screenId": "d82bd78f39d9400fb28fd179620cd0f0",
+      "pageSlug": "cases",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/wealth-app/screens/cases-desktop.html",
+      "imagePath": "design/stitch/wealth-app/screens/cases-desktop.png",
+      "updatedAt": "2026-04-14T00:29:43.464Z"
+    },
+    "cases:mobile": {
+      "screenId": "cec46c86e06b4ccfbf3d81c1615e075e",
+      "pageSlug": "cases",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/wealth-app/screens/cases-mobile.html",
+      "imagePath": "design/stitch/wealth-app/screens/cases-mobile.png",
+      "updatedAt": "2026-04-14T00:31:23.760Z"
+    },
+    "pricing:desktop": {
+      "screenId": "3fcc5590e04846008fef7af8454e2153",
+      "pageSlug": "pricing",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/wealth-app/screens/pricing-desktop.html",
+      "imagePath": "design/stitch/wealth-app/screens/pricing-desktop.png",
+      "updatedAt": "2026-04-14T00:32:32.587Z"
+    },
+    "pricing:mobile": {
+      "screenId": "ed894a1a353e4bdabeb79ae36eab05ee",
+      "pageSlug": "pricing",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/wealth-app/screens/pricing-mobile.html",
+      "imagePath": "design/stitch/wealth-app/screens/pricing-mobile.png",
+      "updatedAt": "2026-04-14T00:33:41.719Z"
+    },
+    "contact:desktop": {
+      "screenId": "3de7dc538f4f4b5ba6d355487f33ac3c",
+      "pageSlug": "contact",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/wealth-app/screens/contact-desktop.html",
+      "imagePath": "design/stitch/wealth-app/screens/contact-desktop.png",
+      "updatedAt": "2026-04-14T00:34:56.897Z"
+    },
+    "contact:mobile": {
+      "screenId": "02f790cac49245cf871474412d31f051",
+      "pageSlug": "contact",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/wealth-app/screens/contact-mobile.html",
+      "imagePath": "design/stitch/wealth-app/screens/contact-mobile.png",
+      "updatedAt": "2026-04-14T00:36:07.258Z"
+    }
+  }
+}

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#bbbaa9",
+                        "inverse-surface": "#0e0e0a",
+                        "secondary-fixed-dim": "#cad4ec",
+                        "secondary-dim": "#4f586d",
+                        "secondary-fixed": "#d9e3fb",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#545b6d",
+                        "on-tertiary-container": "#575c61",
+                        "surface-bright": "#fdffd8",
+                        "inverse-primary": "#d9dff5",
+                        "error-container": "#fe8983",
+                        "primary-dim": "#4b5264",
+                        "surface-tint": "#575e70",
+                        "tertiary": "#606569",
+                        "on-tertiary-fixed": "#454a4e",
+                        "on-secondary-container": "#485266",
+                        "tertiary-container": "#f0f4f9",
+                        "on-background": "#38392c",
+                        "tertiary-fixed": "#f0f4f9",
+                        "primary-fixed-dim": "#ced4e9",
+                        "on-error-container": "#752121",
+                        "on-primary-fixed": "#383f50",
+                        "on-primary-container": "#4b5263",
+                        "tertiary-fixed-dim": "#e2e6eb",
+                        "background": "#fdffd8",
+                        "on-secondary-fixed": "#364053",
+                        "on-primary": "#f7f7ff",
+                        "tertiary-dim": "#54595d",
+                        "secondary": "#5b6579",
+                        "primary-container": "#dce2f7",
+                        "on-tertiary-fixed-variant": "#62676b",
+                        "surface-container-highest": "#eae9d7",
+                        "outline": "#818172",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#38392c",
+                        "surface-container-low": "#fcf9ef",
+                        "inverse-on-surface": "#9f9d96",
+                        "primary-fixed": "#dce2f7",
+                        "secondary-container": "#d9e3fb",
+                        "primary": "#575e70",
+                        "error": "#a64542",
+                        "on-secondary": "#ffffff",
+                        "surface": "#fdffd8",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#f6f4e7",
+                        "surface-container-high": "#f0eedf",
+                        "on-surface-variant": "#656557",
+                        "error-dim": "#4e0309",
+                        "surface-dim": "#e4e4cf",
+                        "surface-variant": "#eae9d7",
+                        "on-secondary-fixed-variant": "#525c70"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .mesh-gradient {
+            background-color: #fdffd8;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(61, 100%, 93%, 1) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(220, 15%, 90%, 1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, hsla(61, 30%, 95%, 1) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, hsla(210, 20%, 98%, 1) 0px, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fdffd8]/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-[0_4px_20px_rgba(56,57,44,0.04)]">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-[#111827] dark:text-white font-headline">CLARO</div>
+<nav class="hidden md:flex items-center gap-8 font-headline font-semibold tracking-tight text-sm">
+<a class="text-[#575e70] dark:text-slate-400 hover:text-[#111827] dark:hover:text-white transition-colors hover:opacity-80 transition-all duration-300" href="#">Portfolio</a>
+<a class="text-[#575e70] dark:text-slate-400 hover:text-[#111827] dark:hover:text-white transition-colors hover:opacity-80 transition-all duration-300" href="#">Features</a>
+<a class="text-[#111827] dark:text-white border-b-2 border-[#111827] dark:border-white pb-1 hover:opacity-80 transition-all duration-300" href="#">Cases</a>
+<a class="text-[#575e70] dark:text-slate-400 hover:text-[#111827] dark:hover:text-white transition-colors hover:opacity-80 transition-all duration-300" href="#">Pricing</a>
+<a class="text-[#575e70] dark:text-slate-400 hover:text-[#111827] dark:hover:text-white transition-colors hover:opacity-80 transition-all duration-300" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-[#575e70] dark:text-[#dce2f7] font-headline font-semibold text-sm active:scale-95 duration-200">로그인</button>
+<button class="bg-[#111827] text-[#f7f7ff] px-5 py-2 rounded-lg font-headline font-semibold text-sm active:scale-95 duration-200 shadow-sm">시작하기</button>
+</div>
+</div>
+</header>
+<main class="pt-24 mesh-gradient min-h-screen">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 py-20">
+<div class="flex flex-col items-center text-center mb-16">
+<span class="inline-block px-3 py-1 rounded-full bg-primary-container/40 text-primary font-label text-xs font-semibold tracking-wider mb-6">PROVEN EXCELLENCE</span>
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter text-on-surface mb-6 leading-tight">
+                    데이터로 증명하는 <br/> 고요한 성과
+                </h1>
+<p class="max-w-2xl text-on-surface-variant text-lg md:text-xl font-light leading-relaxed">
+                    CLARO는 복잡한 금융 데이터를 정제된 통찰로 전환하여, <br/> 귀하의 자산이 조용하고 강력하게 성장하도록 돕습니다.
+                </p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 mt-16 w-full max-w-4xl">
+<div class="flex flex-col">
+<span class="text-4xl font-headline font-bold text-primary tracking-tighter">12.4%</span>
+<span class="text-on-surface-variant font-label text-sm mt-2">Avg. ROI Increase</span>
+</div>
+<div class="flex flex-col">
+<span class="text-4xl font-headline font-bold text-primary tracking-tighter">3,400+</span>
+<span class="text-on-surface-variant font-label text-sm mt-2">Hours Saved Annually</span>
+</div>
+<div class="flex flex-col">
+<span class="text-4xl font-headline font-bold text-primary tracking-tighter">22%</span>
+<span class="text-on-surface-variant font-label text-sm mt-2">Tax Efficiency Gain</span>
+</div>
+<div class="flex flex-col">
+<span class="text-4xl font-headline font-bold text-primary tracking-tighter">$2.4B+</span>
+<span class="text-on-surface-variant font-label text-sm mt-2">AUM Optimized</span>
+</div>
+</div>
+</div>
+<!-- Dashboard Visualization -->
+<div class="relative w-full max-w-6xl mx-auto mt-20">
+<div class="bg-surface-container-lowest rounded-xl shadow-2xl overflow-hidden p-1">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant/10">
+<!-- Before Interface -->
+<div class="bg-surface-container-high p-8 flex flex-col gap-6">
+<div class="flex justify-between items-center">
+<span class="font-headline font-bold text-sm text-on-surface-variant uppercase tracking-widest">Legacy System (Before)</span>
+<span class="text-xs px-2 py-1 bg-error/10 text-error font-medium rounded">Inefficient</span>
+</div>
+<div class="h-64 rounded bg-surface-container-low border border-outline-variant/15 p-4 flex flex-col gap-4 overflow-hidden opacity-60 grayscale">
+<div class="flex gap-2">
+<div class="w-1/3 h-4 bg-outline-variant/20 rounded"></div>
+<div class="w-2/3 h-4 bg-outline-variant/10 rounded"></div>
+</div>
+<div class="w-full h-32 bg-outline-variant/5 rounded border border-dashed border-outline-variant/20 flex items-center justify-center">
+<span class="text-[10px] text-outline">Unstructured Data Clusters</span>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<div class="h-12 bg-outline-variant/10 rounded"></div>
+<div class="h-12 bg-outline-variant/10 rounded"></div>
+<div class="h-12 bg-outline-variant/10 rounded"></div>
+<div class="h-12 bg-outline-variant/10 rounded"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="text-xs text-on-surface-variant font-medium">Monthly Audit Time</div>
+<div class="text-2xl font-headline font-bold text-on-surface">42.5 Hours</div>
+</div>
+</div>
+<!-- After Interface -->
+<div class="bg-surface-container-lowest p-8 flex flex-col gap-6">
+<div class="flex justify-between items-center">
+<span class="font-headline font-bold text-sm text-primary uppercase tracking-widest">CLARO Intelligence (After)</span>
+<span class="text-xs px-2 py-1 bg-primary/10 text-primary font-medium rounded">Optimized</span>
+</div>
+<div class="h-64 rounded-lg bg-surface-container-low border border-primary/5 p-6 flex flex-col gap-6 relative">
+<div class="flex justify-between items-end h-32 gap-3">
+<div class="w-full bg-primary/10 h-1/4 rounded-sm"></div>
+<div class="w-full bg-primary/20 h-1/2 rounded-sm"></div>
+<div class="w-full bg-primary/40 h-3/4 rounded-sm"></div>
+<div class="w-full bg-primary h-full rounded-sm relative">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-primary">+22.4%</div>
+</div>
+<div class="w-full bg-primary-container h-4/5 rounded-sm"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-3 bg-surface rounded shadow-sm border border-outline-variant/5">
+<div class="text-[10px] uppercase text-on-surface-variant">Real-time Yield</div>
+<div class="text-lg font-headline font-bold text-primary">6.82%</div>
+</div>
+<div class="p-3 bg-surface rounded shadow-sm border border-outline-variant/5">
+<div class="text-[10px] uppercase text-on-surface-variant">Tax Liability</div>
+<div class="text-lg font-headline font-bold text-primary">-18%</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="text-xs text-on-surface-variant font-medium">Monthly Audit Time</div>
+<div class="text-2xl font-headline font-bold text-primary">2.4 Hours</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Float Label -->
+<div class="absolute -bottom-6 -right-6 md:right-12 bg-accent text-on-primary bg-[#111827] px-6 py-4 rounded shadow-xl max-w-xs">
+<p class="text-sm font-medium leading-snug">"Heritage Trust는 CLARO 도입 후 단 3개월 만에 세금 효율을 22% 개선했습니다."</p>
+</div>
+</div>
+</section>
+<!-- Case Study Bento Grid -->
+<section class="max-w-7xl mx-auto px-8 py-32">
+<div class="mb-16">
+<h2 class="text-3xl font-headline font-bold text-on-surface">분야별 성공 사례</h2>
+<p class="text-on-surface-variant mt-2">각 세그먼트에 최적화된 CLARO의 맞춤형 솔루션입니다.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1: Family Office -->
+<div class="md:col-span-2 group bg-surface-container-low rounded-xl p-10 flex flex-col md:flex-row gap-10 hover:shadow-xl transition-all duration-500 border border-transparent hover:border-outline-variant/10">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-xl">family_restroom</span>
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Family Office</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">멀티-제너레이션 <br/> 자산 승계 최적화</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">3대 가족의 복잡한 지분 구조를 단일 대시보드로 통합하여 가시성을 확보하고, 자동화된 리밸런싱으로 수익률을 방어했습니다.</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex flex-col">
+<span class="text-xl font-bold text-primary">94%</span>
+<span class="text-[10px] text-on-surface-variant uppercase">Data Consolidation</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-bold text-primary">Low-Risk</span>
+<span class="text-[10px] text-on-surface-variant uppercase">Profile Maintained</span>
+</div>
+</div>
+</div>
+<div class="flex-1 rounded-lg bg-surface-container-lowest shadow-sm p-4 relative overflow-hidden h-48 md:h-auto">
+<img class="absolute inset-0 w-full h-full object-cover opacity-10" data-alt="Abstract financial data visualization with soft lines and nodes in a minimalist clean environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdtCFpSEFt4g_hXSM6mlREpoh1mVCeQMgIVARc4xgKXwN-g3WEDYo2yVjatMqTjUEGyk6B_Fcxyc96OhVt_qG6vauYVM3ktiK9fvlesjHDIGBcQJbf8fYuYxMksX5S-TPQCOEida97eI1VeyU_0uFjZCUBj_lH2NB0edHilIBZBThYKJ3VxsXATe2a8ojA_ZEEZvi--yUaBNYUpQQ9pANn8qLRFzBJT-ayn12Z2WBOk2HEH2mZ7C3DR8Muf6Qw_ecUZHUvP3m35lw"/>
+<div class="relative z-10 h-full flex flex-col justify-center">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="h-1 flex-1 bg-primary/10 rounded-full"><div class="h-full w-4/5 bg-primary rounded-full"></div></div>
+</div>
+<div class="flex items-center gap-3 mb-2">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<div class="h-1 flex-1 bg-secondary/10 rounded-full"><div class="h-full w-2/5 bg-secondary rounded-full"></div></div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-outline"></div>
+<div class="h-1 flex-1 bg-outline/10 rounded-full"><div class="h-full w-3/5 bg-outline rounded-full"></div></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Institutional -->
+<div class="group bg-surface-container-high rounded-xl p-8 flex flex-col justify-between hover:shadow-xl transition-all duration-500 border border-transparent hover:border-outline-variant/10">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-xl">account_balance</span>
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Institutional</span>
+</div>
+<h3 class="text-xl font-headline font-bold mb-4">기관 투자자를 위한 <br/> 실시간 리스크 헤징</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">변동성 장세에서도 알고리즘 기반의 실시간 대응으로 손실 폭을 15% 이상 제한했습니다.</p>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant/10">
+<div class="flex justify-between items-center">
+<span class="text-sm font-semibold text-primary">View Full Case Study</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 3: High Net Worth -->
+<div class="group bg-primary text-on-primary rounded-xl p-8 flex flex-col justify-between shadow-lg">
+<div>
+<div class="flex items-center gap-2 mb-4 opacity-80">
+<span class="material-symbols-outlined text-xl">workspace_premium</span>
+<span class="text-xs font-bold uppercase tracking-widest">High Net Worth</span>
+</div>
+<h3 class="text-xl font-headline font-bold mb-4">개인 맞춤형 글로벌 포트폴리오 관리</h3>
+<p class="opacity-80 text-sm leading-relaxed">전 세계 12개국에 분산된 자산을 하나의 인터페이스로 관리하며 환차익을 극대화한 사례입니다.</p>
+</div>
+<div class="mt-8 flex items-baseline gap-1">
+<span class="text-3xl font-bold tracking-tighter">+18.5%</span>
+<span class="text-xs opacity-70">Annual Net Profit</span>
+</div>
+</div>
+<!-- Card 4: Global Capital Story -->
+<div class="md:col-span-2 bg-surface-container-lowest rounded-xl p-10 shadow-sm border border-outline-variant/10">
+<div class="flex flex-col md:flex-row gap-12">
+<div class="md:w-1/3">
+<h3 class="text-2xl font-headline font-bold mb-4 text-on-surface">Global Capital Case</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">대형 자산 운용사인 Global Capital이 CLARO의 AI 코어를 통해 자산 운용 프로세스를 혁신한 과정입니다.</p>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">1</div>
+<span class="text-xs font-medium">Goal Setting</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">2</div>
+<span class="text-xs font-medium">Algorithm Calculation</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">3</div>
+<span class="text-xs font-medium">Execution</span>
+</div>
+</div>
+</div>
+<div class="md:w-2/3 flex flex-col justify-center gap-8">
+<div class="flex items-center justify-between px-6 py-4 bg-surface-container-low rounded-lg border border-outline-variant/10">
+<span class="font-label text-xs font-bold text-on-surface-variant">PROCESS ARCHITECTURE</span>
+<span class="text-[10px] text-primary bg-primary/10 px-2 py-0.5 rounded">Active System</span>
+</div>
+<div class="relative py-4">
+<div class="absolute top-1/2 left-0 w-full h-0.5 bg-outline-variant/15 -translate-y-1/2"></div>
+<div class="flex justify-between items-center relative z-10">
+<div class="bg-surface-container-lowest border-2 border-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-primary">target</span>
+</div>
+<div class="bg-surface-container-lowest border-2 border-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-primary">auto_mode</span>
+</div>
+<div class="bg-surface-container-lowest border-2 border-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-primary">bolt</span>
+</div>
+</div>
+</div>
+<div class="bg-primary/5 rounded-lg p-6 border border-primary/10">
+<div class="text-xs text-primary font-bold uppercase mb-2">Outcome</div>
+<p class="text-sm font-medium text-on-surface">"운용 효율성이 40% 향상되었으며, 휴먼 에러로 인한 비용 지출이 0으로 수렴했습니다."</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Proof Points / Trust Section -->
+<section class="max-w-7xl mx-auto px-8 py-20 border-t border-outline-variant/10">
+<div class="text-center mb-12">
+<h3 class="text-on-surface-variant font-label text-sm uppercase tracking-widest font-bold">Trusted by 5,000+ High Net Worth Individuals</h3>
+</div>
+<div class="flex flex-wrap justify-center items-center gap-16 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+<div class="text-2xl font-headline font-black tracking-tighter">HERITAGE</div>
+<div class="text-2xl font-headline font-black tracking-tighter">GLOBAL CAP.</div>
+<div class="text-2xl font-headline font-black tracking-tighter">VERTEX TRUST</div>
+<div class="text-2xl font-headline font-black tracking-tighter">PACIFIC ASSET</div>
+<div class="text-2xl font-headline font-black tracking-tighter">LUMINA WF</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="max-w-7xl mx-auto px-8 py-32">
+<div class="bg-[#111827] rounded-2xl p-16 text-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent"></div>
+<div class="relative z-10">
+<h2 class="text-4xl md:text-5xl font-headline font-bold text-[#f7f7ff] mb-6">당신의 성공 사례를 시작하세요</h2>
+<p class="text-slate-400 max-w-xl mx-auto mb-10 text-lg">지금 바로 CLARO의 프리미엄 자산 관리 서비스를 경험하고 상위 1%의 수익률을 경험하세요.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-[#f7f7ff] text-[#111827] px-8 py-4 rounded-lg font-headline font-bold hover:bg-white transition-all active:scale-95 duration-200">Free Trial 시작하기</button>
+<button class="bg-transparent border border-slate-700 text-[#f7f7ff] px-8 py-4 rounded-lg font-headline font-bold hover:bg-slate-800 transition-all active:scale-95 duration-200">상담 예약하기</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 mt-auto border-t border-[#bbbaa9]/15 bg-[#fcf9ef] dark:bg-slate-900 font-['Inter'] text-xs tracking-wide">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-7xl mx-auto w-full gap-6">
+<div class="flex flex-col gap-2">
+<div class="text-lg font-bold text-[#111827] dark:text-white font-headline">CLARO</div>
+<p class="text-[#575e70] dark:text-slate-400">© 2024 CLARO. 모든 권리 보유.</p>
+</div>
+<div class="flex gap-8 text-[#656557] dark:text-slate-500">
+<a class="hover:text-[#111827] dark:hover:text-white underline-offset-4 hover:underline transition-all duration-300 ease-in-out" href="#">개인정보처리방침</a>
+<a class="hover:text-[#111827] dark:hover:text-white underline-offset-4 hover:underline transition-all duration-300 ease-in-out" href="#">이용약관</a>
+<a class="hover:text-[#111827] dark:hover:text-white underline-offset-4 hover:underline transition-all duration-300 ease-in-out" href="#">쿠키 정책</a>
+<a class="hover:text-[#111827] dark:hover:text-white underline-offset-4 hover:underline transition-all duration-300 ease-in-out" href="#">고객 지원</a>
+</div>
+</div>
+</footer>
+</body></html>

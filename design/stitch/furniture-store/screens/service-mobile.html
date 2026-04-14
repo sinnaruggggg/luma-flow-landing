@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MOSS HOME - Service</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Noto+Serif+KR:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#586c4b",
+                        "on-surface-variant": "#51644c",
+                        "on-background": "#253721",
+                        "on-error": "#fff7f6",
+                        "surface-container": "#e4f2dc",
+                        "surface-variant": "#d3e9ca",
+                        "surface-tint": "#54624d",
+                        "on-primary-container": "#485641",
+                        "background": "#f5fcee",
+                        "on-secondary-fixed": "#37432e",
+                        "outline-variant": "#a2b89b",
+                        "inverse-on-surface": "#989f93",
+                        "on-primary": "#edfde1",
+                        "on-primary-fixed-variant": "#51604b",
+                        "tertiary-fixed-dim": "#d5edc3",
+                        "on-tertiary": "#ecffdc",
+                        "secondary-fixed": "#dae7ca",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#0a1008",
+                        "primary-dim": "#485642",
+                        "error": "#9e422c",
+                        "surface-bright": "#f5fcee",
+                        "tertiary-dim": "#455939",
+                        "surface-container-low": "#ecf7e5",
+                        "on-error-container": "#742410",
+                        "on-tertiary-container": "#4d6141",
+                        "on-secondary-container": "#4a553f",
+                        "primary-fixed": "#d7e7cd",
+                        "primary": "#54624d",
+                        "on-primary-fixed": "#364330",
+                        "surface-dim": "#c7e2be",
+                        "tertiary-container": "#e3fbd1",
+                        "surface": "#f5fcee",
+                        "primary-container": "#d7e7cd",
+                        "secondary-container": "#dae7ca",
+                        "secondary": "#57634c",
+                        "surface-container-highest": "#d3e9ca",
+                        "error-container": "#fe8b70",
+                        "on-tertiary-fixed": "#3c4f30",
+                        "on-secondary-fixed-variant": "#535f48",
+                        "primary-fixed-dim": "#c9d9bf",
+                        "outline": "#6c8066",
+                        "tertiary-fixed": "#e3fbd1",
+                        "error-dim": "#5c1202",
+                        "tertiary": "#516544",
+                        "secondary-dim": "#4b5740",
+                        "on-secondary": "#f0fedf",
+                        "surface-container-high": "#dbeed3",
+                        "secondary-fixed-dim": "#ccd9bc",
+                        "on-surface": "#253721",
+                        "inverse-primary": "#ebfce0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Noto Serif KR"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Noto Serif KR', serif; }
+        .manrope { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-[#f5fcee] dark:bg-[#1a1c18] flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50">
+<div class="flex items-center text-[#54624d] dark:text-[#d7e7cd] hover:bg-[#d3e9ca]/50 dark:hover:bg-[#516544]/30 p-2 rounded-full transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined">menu</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-[#24311f] dark:text-[#e4f2dc] manrope">MOSS HOME</h1>
+<div class="flex items-center text-[#54624d] dark:text-[#d7e7cd] hover:bg-[#d3e9ca]/50 dark:hover:bg-[#516544]/30 p-2 rounded-full transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined">shopping_bag</span>
+</div>
+</header>
+<main class="pt-16">
+<!-- Editorial Hero -->
+<section class="relative h-[751px] w-full overflow-hidden">
+<img alt="Editorial Hero" class="w-full h-full object-cover" data-alt="Stunning architectural interior with minimalist furniture, large windows casting soft natural light, and organic textures in a serene living space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEfzKa2W_DSVurtQ5aXxTiNY3sutryG5G49nDvGAbEm-GaiLTkhBGpxL9FtwxAPerbFjQSJYlanfgSrlScY3cCT7YuIYqz8epQdTcTpHDIQ8gsItUNbzny6ucHx04mRZgTT47pgdmnG-piFDbIfuypBBR2s5AxhOkb9cT2hJ8YIfuZD8MDhJA2DvisXtfNqcvzpJf4eadkSCRLKUS8oy9Sk8LvWcXnbO_f5SDVVLkAhfBd_8z64PW8OBcV_sEb18opQyhCNcEDwtFF"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent"></div>
+<div class="absolute bottom-12 left-6 right-6 p-8 rounded-2xl bg-[#f9fcf4]/84 backdrop-blur-xl shadow-lg transform translate-y-4">
+<span class="manrope text-xs font-bold tracking-[0.2em] text-primary uppercase block mb-3">Our Core Philosophy</span>
+<h2 class="text-4xl font-bold text-on-surface leading-tight mb-4">공간의 철학</h2>
+<p class="text-on-surface-variant font-body leading-relaxed text-sm">
+                    머무는 이의 삶이 깃든 공간은 단순한 장소 이상의 가치를 가집니다. MOSS HOME은 자연의 고요함과 현대적 감각이 조화를 이루는 아틀리에를 제안합니다.
+                </p>
+</div>
+</section>
+<!-- The Journey Section -->
+<section class="px-6 py-20 space-y-12">
+<div class="space-y-2">
+<h3 class="text-2xl font-bold text-on-surface">공간 계획의 여정</h3>
+<p class="text-on-surface-variant text-sm font-body">완벽한 공간을 완성하는 3단계의 섬세한 과정</p>
+</div>
+<div class="space-y-6">
+<!-- Step 01 -->
+<div class="group relative bg-surface-container-low rounded-2xl p-8 overflow-hidden transition-all duration-500 hover:bg-surface-container">
+<div class="absolute -right-4 -top-4 manrope text-[120px] font-extrabold text-primary/5 select-none">01</div>
+<span class="manrope text-sm font-bold text-primary mb-2 block tracking-widest">STEP 01</span>
+<h4 class="text-xl font-bold mb-3 text-on-surface">디지털 큐레이션</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                        사용자의 취향과 라이프스타일을 데이터화하여, 최적의 공간 무드를 인공지능과 전문가의 시선으로 큐레이팅합니다.
+                    </p>
+<div class="mt-6 w-12 h-1 bg-primary rounded-full transition-all duration-300 group-hover:w-24"></div>
+</div>
+<!-- Step 02 -->
+<div class="group relative bg-surface-container-high rounded-2xl p-8 overflow-hidden transition-all duration-500">
+<div class="absolute -right-4 -top-4 manrope text-[120px] font-extrabold text-primary/5 select-none">02</div>
+<span class="manrope text-sm font-bold text-primary mb-2 block tracking-widest">STEP 02</span>
+<h4 class="text-xl font-bold mb-3 text-on-surface">맞춤형 컨설팅</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                        전문 디자이너와의 1:1 세션을 통해 소재의 질감부터 빛의 방향까지 고려한 심도 깊은 상담이 진행됩니다.
+                    </p>
+<div class="mt-6 w-12 h-1 bg-primary rounded-full transition-all duration-300 group-hover:w-24"></div>
+</div>
+<!-- Step 03 -->
+<div class="group relative bg-primary-container rounded-2xl p-8 overflow-hidden transition-all duration-500">
+<div class="absolute -right-4 -top-4 manrope text-[120px] font-extrabold text-white/10 select-none">03</div>
+<span class="manrope text-sm font-bold text-primary mb-2 block tracking-widest">STEP 03</span>
+<h4 class="text-xl font-bold mb-3 text-on-surface">공간의 완성</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                        모든 요소가 제자리를 찾을 때 비로소 완성되는 감각의 안식처. 엄격한 품질 검수를 거친 가구가 당신의 공간에 안착합니다.
+                    </p>
+<div class="mt-6 w-12 h-1 bg-primary rounded-full transition-all duration-300 group-hover:w-24"></div>
+</div>
+</div>
+</section>
+<!-- Material Atelier -->
+<section class="bg-surface-container-lowest py-20 px-6">
+<div class="flex flex-col gap-8">
+<div class="max-w-[80%]">
+<h3 class="text-3xl font-bold text-on-surface leading-tight mb-2">Material Atelier</h3>
+<p class="text-on-surface-variant text-sm italic">"본질적인 소재의 힘이 만드는 공간의 깊이"</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-2 relative h-48 rounded-2xl overflow-hidden shadow-sm">
+<img alt="Natural Wood" class="w-full h-full object-cover" data-alt="Extreme close-up of premium light oak wood grain texture, highlighting organic patterns and smooth matte finish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl0cZfQcFdnNppoY0h8negfYMeGjgsmluw-TDNsKgKhlqcrmViof8fKtybwm6KIh1utHVakFqke4j4A08rsaW-t3JqLOASRrzhEvlnFfQCs8Ydkmj1FHtRtkbpszdpISSp6i6XLqHdixkEu8mrva_AvjDAcSZh-YHksrRTWCp_XeTPHm6-QGtZPS9oBQcBCKZLhBQrhcPalJhFk-JoVyyws_ArGZzdEshMOTOKcfZtPIptAyFKCc9Ah4kBbsUrfk45llINemqRkDhS"/>
+<div class="absolute bottom-4 left-4 bg-white/60 backdrop-blur px-3 py-1 rounded-full text-[10px] manrope font-bold tracking-widest uppercase">Solid Oak</div>
+</div>
+<div class="relative h-64 rounded-2xl overflow-hidden shadow-sm">
+<img alt="Dark Walnut" class="w-full h-full object-cover" data-alt="Rich dark walnut wood texture with elegant deep brown tones and subtle sheen under soft studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhKt5wuLyB-tsairDmmbOu1cSNZTHpo_xTHmekd5u06O4Yg_sYMBi3mG46NCffvIt77WyOkNqZYshLnDGJeSkreBUBWukkoiRBzMremRmyap1Qc4wN059kyMkLh-8KWpyKuVXNcGrU-nWkXGciUJEg8CqDR6mrAdbCMz964P3Na6V_J-dnY2oi9oX5kCWQLjE44JBCooFWtiq9LNjLrxcPiBjo6ILeOFvRcq1tX4n6CYpq9bEst1Hn_qsZK7wmuS9SQKAPYjHZkICv"/>
+<div class="absolute bottom-4 left-4 bg-white/60 backdrop-blur px-3 py-1 rounded-full text-[10px] manrope font-bold tracking-widest uppercase">Walnut</div>
+</div>
+<div class="relative h-64 rounded-2xl overflow-hidden flex flex-col justify-end p-6 bg-surface-container-high">
+<p class="text-xs manrope font-bold text-primary mb-2 uppercase">Linen &amp; Fabric</p>
+<h5 class="font-bold text-lg leading-tight mb-2">섬세한 직조의 촉감</h5>
+<p class="text-[11px] text-on-surface-variant leading-normal">
+                            천연 리넨의 불규칙한 질감은 피부에 닿는 순간의 평온함을 전달합니다.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust & Delivery -->
+<section class="py-24 px-6 bg-background overflow-hidden relative">
+<div class="relative z-10 space-y-16">
+<div class="space-y-4">
+<h3 class="text-2xl font-bold text-on-surface">정교한 배송과 설치</h3>
+<div class="grid grid-cols-1 gap-12 mt-8">
+<div class="flex gap-5 items-start">
+<div class="bg-surface-container-highest p-4 rounded-full">
+<span class="material-symbols-outlined text-primary text-3xl">inventory_2</span>
+</div>
+<div>
+<h6 class="font-bold mb-1">Safe Handling</h6>
+<p class="text-xs text-on-surface-variant leading-relaxed">특수 완충 포장재를 사용하여 제품 손상을 원천적으로 차단하는 프리미엄 물류 시스템.</p>
+</div>
+</div>
+<div class="flex gap-5 items-start">
+<div class="bg-surface-container-highest p-4 rounded-full">
+<span class="material-symbols-outlined text-primary text-3xl">build</span>
+</div>
+<div>
+<h6 class="font-bold mb-1">Expert Installation</h6>
+<p class="text-xs text-on-surface-variant leading-relaxed">숙련된 인스톨러가 공간의 균형과 수평을 완벽하게 맞추어 정밀하게 설치합니다.</p>
+</div>
+</div>
+<div class="flex gap-5 items-start">
+<div class="bg-surface-container-highest p-4 rounded-full">
+<span class="material-symbols-outlined text-primary text-3xl">verified</span>
+</div>
+<div>
+<h6 class="font-bold mb-1">Quality Check</h6>
+<p class="text-xs text-on-surface-variant leading-relaxed">최종 배치 후 고객과 함께 하는 12개 항목의 마감 품질 점검 프로세스.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Testimonial Floating Block -->
+<div class="relative mt-20">
+<div class="absolute -top-10 left-4 text-primary opacity-20">
+<span class="material-symbols-outlined text-7xl" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+</div>
+<div class="bg-primary text-on-primary rounded-2xl p-8 shadow-xl transform -rotate-1">
+<p class="text-lg leading-relaxed font-medium mb-6">
+                            "MOSS HOME의 공간 컨설팅은 단순한 가구 배치를 넘어 제 삶의 리듬을 찾아주었습니다. 매일 아침 눈을 뜨는 것이 설레는 공간이 되었어요."
+                        </p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white/20 overflow-hidden">
+<img alt="Client" class="w-full h-full object-cover" data-alt="Portrait of a sophisticated person with a calm expression, professional headshot style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcQ1xG626Ym3LFVqOnnQIPssNolP5bDicU7gBCO4BO_SiE6Bu5T4Z8fwUNj03Y5Fugr1PA22P8_8vSiSiP92ERxliPtRBByoTSvqYxedvY4KBJv4_JuN4RckWqy-ncK0EMSaN25vpLVc2hJNU119T0GZQwHfmNupabeUB0mYG7ZWEZv6nULlQCddgAqTs4iPugyA-qyMf7gFLpgsxyr9gX2WNaNCbC847a84mkIN6u_sKpcZn8AnIK24ZY7ZKLMXEmIYC3n_s6cBsc"/>
+</div>
+<div>
+<span class="block font-bold text-sm">김지수 님</span>
+<span class="block text-[10px] manrope opacity-70 tracking-widest">Art Director</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Abstract background shape -->
+<div class="absolute -right-24 top-1/4 w-64 h-64 bg-surface-container-high rounded-full blur-3xl opacity-50 -z-0"></div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#f9fcf4]/84 dark:bg-[#1a1c18]/84 backdrop-blur-xl shadow-[0_-4px_40px_rgba(37,55,33,0.04)] rounded-t-[1.5rem]">
+<div class="flex flex-col items-center justify-center text-[#54624d] opacity-60 px-5 py-1.5 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">polyline</span>
+<span class="text-[11px] font-semibold tracking-wide manrope">Planner</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#54624d] opacity-60 px-5 py-1.5 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-[11px] font-semibold tracking-wide manrope">Bundles</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#54624d] opacity-60 px-5 py-1.5 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-[11px] font-semibold tracking-wide manrope">Saved</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#54624d] text-[#ffffff] rounded-full px-5 py-1.5 transition-transform duration-200 active:scale-95">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-[11px] font-semibold tracking-wide manrope">Inquiry</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CLARO - Quiet Finance OS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#38392c",
+                    "on-secondary-fixed": "#364053",
+                    "inverse-surface": "#0e0e0a",
+                    "on-surface-variant": "#656557",
+                    "inverse-primary": "#d9dff5",
+                    "on-tertiary-fixed": "#454a4e",
+                    "surface-bright": "#fdffd8",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#575c61",
+                    "primary": "#575e70",
+                    "on-primary-fixed-variant": "#545b6d",
+                    "secondary": "#5b6579",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#62676b",
+                    "primary-fixed-dim": "#ced4e9",
+                    "background": "#fdffd8",
+                    "surface-container-low": "#fcf9ef",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#f7f7ff",
+                    "on-secondary-fixed-variant": "#525c70",
+                    "on-secondary-container": "#485266",
+                    "surface-dim": "#e4e4cf",
+                    "secondary-dim": "#4f586d",
+                    "surface-container": "#f6f4e7",
+                    "tertiary-container": "#f0f4f9",
+                    "surface": "#fdffd8",
+                    "primary-container": "#dce2f7",
+                    "error-container": "#fe8983",
+                    "secondary-container": "#d9e3fb",
+                    "secondary-fixed-dim": "#cad4ec",
+                    "error": "#a64542",
+                    "primary-fixed": "#dce2f7",
+                    "tertiary": "#606569",
+                    "surface-container-high": "#f0eedf",
+                    "surface-container-highest": "#eae9d7",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#e2e6eb",
+                    "surface-variant": "#eae9d7",
+                    "tertiary-fixed": "#f0f4f9",
+                    "surface-tint": "#575e70",
+                    "outline": "#818172",
+                    "on-error-container": "#752121",
+                    "primary-dim": "#4b5264",
+                    "inverse-on-surface": "#9f9d96",
+                    "outline-variant": "#bbbaa9",
+                    "error-dim": "#4e0309",
+                    "on-primary-container": "#4b5263",
+                    "tertiary-dim": "#54595d",
+                    "on-primary-fixed": "#383f50",
+                    "on-surface": "#38392c",
+                    "secondary-fixed": "#d9e3fb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .mesh-bg {
+            background-color: #fdffd8;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(225,15%,85%,0.3) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(55,20%,90%,0.3) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, hsla(225,25%,95%,0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, hsla(55,20%,95%,0.3) 0px, transparent 50%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body mesh-bg min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-[#fdffd8] dark:bg-slate-950 text-[#111827] dark:text-slate-100 docked full-width top-0 sticky z-40 transition-colors duration-300">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-2xl">account_balance</span>
+<h1 class="text-2xl font-bold tracking-tighter text-[#111827] dark:text-slate-50 font-headline">CLARO</h1>
+</div>
+<button class="bg-[#111827] text-[#f7f7ff] px-5 py-2 rounded-lg text-sm font-medium Inter hover:opacity-90 active:scale-95 transition-all">
+                시작하기
+            </button>
+</div>
+</header>
+<main class="px-6 pt-6 pb-32 space-y-8 max-w-md mx-auto">
+<!-- First Viewport: Product-First Dashboard -->
+<section class="space-y-6">
+<!-- Main KPI: Total Assets -->
+<div class="bg-surface-container-lowest p-8 rounded-3xl shadow-[0px_4px_20px_rgba(56,57,44,0.04)] space-y-4">
+<div class="flex justify-between items-start">
+<span class="text-on-surface-variant text-sm font-medium tracking-tight">총 자산</span>
+<span class="text-[#111827] bg-[#e7ebf0] px-2 py-1 rounded text-xs font-bold">+1.2%</span>
+</div>
+<div class="text-4xl font-extrabold font-headline tracking-tighter text-on-surface">
+                    342,500,000원
+                </div>
+<!-- Sparkline Placeholder -->
+<div class="w-full h-16 pt-4">
+<div class="w-full h-full relative overflow-hidden">
+<svg class="w-full h-full stroke-primary fill-none" preserveaspectratio="none" viewbox="0 0 100 20">
+<path d="M0 18 Q 10 15, 20 16 T 40 10 T 60 14 T 80 5 T 100 8" stroke-linecap="round" stroke-width="2"></path>
+<path class="opacity-10" d="M0 18 Q 10 15, 20 16 T 40 10 T 60 14 T 80 5 T 100 8 V 20 H 0 Z" fill="url(#grad)"></path>
+<defs>
+<lineargradient id="grad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:var(--primary);stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:var(--primary);stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+</div>
+<!-- Bento Modules -->
+<div class="grid grid-cols-1 gap-4">
+<!-- Target Progress -->
+<div class="bg-surface-container-low p-6 rounded-2xl space-y-4">
+<div class="flex justify-between items-center">
+<h3 class="text-sm font-bold text-on-surface font-headline">목표 달성도</h3>
+<span class="text-xs font-semibold text-primary">78%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-[#111827] h-full w-[78%] transition-all duration-1000"></div>
+</div>
+<p class="text-[11px] text-on-surface-variant font-medium">연간 은퇴 자금 목표까지 12,400,000원 남음</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Feature Module 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl shadow-[0px_4px_12px_rgba(56,57,44,0.02)] space-y-3">
+<span class="material-symbols-outlined text-primary text-xl">analytics</span>
+<h4 class="text-xs font-bold font-headline text-on-surface">포트폴리오 투명성</h4>
+<div class="flex flex-wrap gap-1">
+<div class="w-2 h-2 rounded-full bg-primary/20"></div>
+<div class="w-2 h-2 rounded-full bg-primary/40"></div>
+<div class="w-2 h-2 rounded-full bg-primary/60"></div>
+</div>
+</div>
+<!-- Feature Module 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl shadow-[0px_4px_12px_rgba(56,57,44,0.02)] space-y-3">
+<span class="material-symbols-outlined text-primary text-xl">track_changes</span>
+<h4 class="text-xs font-bold font-headline text-on-surface">지능형 목표 관리</h4>
+<div class="h-1 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full w-2/3 bg-primary"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof Strip -->
+<section class="py-2">
+<div class="flex items-center justify-center gap-3 opacity-60 grayscale">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest border border-surface flex items-center justify-center">
+<span class="text-[8px] font-bold">5K+</span>
+</div>
+</div>
+<p class="text-[10px] font-medium tracking-tight text-on-surface-variant">Trusted by 5,000+ High Net Worth Individuals</p>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="pt-4">
+<div class="bg-surface-container-low p-8 rounded-[32px] text-center space-y-6">
+<div class="space-y-2">
+<h2 class="text-xl font-bold font-headline tracking-tight">당신의 자산을 위한 고요한 정돈.</h2>
+<p class="text-sm text-on-surface-variant leading-relaxed">복잡한 데이터 뒤의 본질을 봅니다.</p>
+</div>
+<button class="w-full bg-[#111827] text-white py-4 rounded-xl text-sm font-bold font-headline shadow-lg hover:opacity-90 active:scale-95 transition-all">
+                    무료 체험 시작하기
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-t-[32px] shadow-[0px_-4px_20px_rgba(56,57,44,0.04)]">
+<!-- Dashboard Active -->
+<a class="flex flex-col items-center justify-center bg-[#111827] text-white rounded-full px-5 py-2 scale-90 duration-400 ease-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="text-[11px] font-semibold Manrope tracking-tight mt-0.5">대시보드</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#575e70] dark:text-slate-400 px-5 py-2 hover:text-[#111827] dark:hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-[11px] font-semibold Manrope tracking-tight mt-0.5">자산</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#575e70] dark:text-slate-400 px-5 py-2 hover:text-[#111827] dark:hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">track_changes</span>
+<span class="text-[11px] font-semibold Manrope tracking-tight mt-0.5">목표</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#575e70] dark:text-slate-400 px-5 py-2 hover:text-[#111827] dark:hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[11px] font-semibold Manrope tracking-tight mt-0.5">설정</span>
+</a>
+</nav>
+</body></html>

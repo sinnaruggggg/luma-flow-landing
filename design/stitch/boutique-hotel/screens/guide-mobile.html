@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ATELIER STILL | Guide</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#d4c4b5",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#372d27",
+                    "primary-fixed": "#f9ddcb",
+                    "on-surface": "#201b13",
+                    "secondary-fixed": "#f0e0d0",
+                    "tertiary-fixed-dim": "#d3c3ba",
+                    "inverse-primary": "#dcc2b0",
+                    "surface-container-low": "#fdf2e4",
+                    "outline-variant": "#d2c4bc",
+                    "on-tertiary-fixed": "#221a14",
+                    "on-primary-container": "#aa9282",
+                    "tertiary-fixed": "#f0dfd6",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#50453a",
+                    "background": "#fff8f3",
+                    "surface": "#fff8f3",
+                    "on-secondary": "#ffffff",
+                    "primary": "#25180d",
+                    "surface-container": "#f8ecdf",
+                    "surface-container-highest": "#ece1d4",
+                    "on-background": "#201b13",
+                    "tertiary": "#211913",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#faefe2",
+                    "on-secondary-fixed": "#221a11",
+                    "surface-variant": "#ece1d4",
+                    "surface-tint": "#6e5a4c",
+                    "inverse-surface": "#353027",
+                    "surface-dim": "#e3d8cb",
+                    "on-primary": "#ffffff",
+                    "outline": "#80756e",
+                    "on-tertiary-container": "#a2948b",
+                    "on-primary-fixed": "#26190e",
+                    "primary-fixed-dim": "#dcc2b0",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#fff8f3",
+                    "on-tertiary-fixed-variant": "#4f453e",
+                    "on-primary-fixed-variant": "#554336",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#6e6256",
+                    "secondary": "#685c50",
+                    "primary-container": "#3c2c20",
+                    "on-surface-variant": "#4e453f",
+                    "surface-container-high": "#f2e6d9",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#f0e0d0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>body {
+    font-family: "Manrope", sans-serif;
+    background-color: #fff8f3
+    }
+.serif {
+    font-family: "Noto Serif", serif
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAn6iUB54UeJGb-wrS3Gy6RKm6UK_P0-Qf-n_AYmvDcGnErGFkYDZvzNKLkmF0sFvWVTRiYcGL2aIlqyl9mtmi_sygYU2X-x5qR4PCsI0r91vW54mBacApoio3OGBC_jgSJP9ifdbyXfSZJMCZvR4HvEgWLbi2KbKy2B3pILXQKbE7UD5Wgnh3EyBTdO99CwNWYovt_1u2IWDHzw9X2inkea3tE2pBA6eQac6-_fASIJKooGCzZ362BFnV4K9tiSVu-26nrhZx7FaTV);
+    opacity: 0.03;
+    pointer-events: none
+    }
+.tinted-shadow {
+    box-shadow: 0 8px 32px 0 rgba(32, 27, 19, 0.06)
+    }
+.glass-nav {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface selection:bg-primary-fixed">
+<div class="fixed inset-0 grain-overlay z-[9999]"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-xl flex justify-between items-center px-6 py-4 w-full">
+<button class="w-10 h-10 flex items-center justify-center hover:bg-stone-200/50 transition-colors duration-300 ease-in-out">
+<span class="material-symbols-outlined text-stone-900" data-icon="menu">menu</span>
+</button>
+<h1 class="text-xl font-medium tracking-[0.2em] text-stone-900 serif">ATELIER STILL</h1>
+<button class="w-10 h-10 flex items-center justify-center hover:bg-stone-200/50 transition-colors duration-300 ease-in-out">
+<span class="material-symbols-outlined text-stone-900" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</header>
+<main class="pb-24">
+<!-- Hero Section -->
+<section class="relative h-[795px] w-full overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Minimalist luxury hotel suite with warm wooden accents, soft linen bedding, and large windows with morning sunlight casting soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASdGFbEpL6lvNLFJs59fZ4ADjLZ1vlhgwMdjuMzxQ1fhdiJvEXfbZSdjFLO7QCulmqiGgJJiG73GakvJrVL-D42Oe_xoce1Yb8qkoPufrlls_Ld620oWEfItJg3Y6nYqjnCgefjHMBf1xiEKVVOH4u4fKao74VTdKCPQ3YEuSCEUV1hssOBcrLhJsKpmckgo42fyfGG1n35LzfGgzPVMp2pApeGx1D9GDsnt5iHDQwVAus5d3MzBMzcv_0-8JSEmDkyAe-19aHYnql"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-stone-900/40"></div>
+<!-- Floating Stay Finder -->
+<div class="absolute bottom-8 left-6 right-6">
+<div class="bg-surface-container-lowest/90 backdrop-blur-md p-6 rounded-xl tinted-shadow flex flex-col gap-4">
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col">
+<span class="text-[10px] font-semibold tracking-wider text-secondary uppercase mb-1">Check-in</span>
+<span class="text-primary font-medium">Oct 24, 2023</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] font-semibold tracking-wider text-secondary uppercase mb-1">Check-out</span>
+<span class="text-primary font-medium">Oct 26, 2023</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] font-semibold tracking-wider text-secondary uppercase mb-1">Guests</span>
+<span class="text-primary font-medium">2 Adults</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-medium hover:bg-primary-container transition-all duration-300">
+                        Check Availability
+                    </button>
+</div>
+</div>
+</section>
+<!-- Encountering the Space -->
+<section class="px-6 py-20 bg-surface">
+<span class="text-[11px] font-semibold tracking-[0.3em] text-secondary uppercase mb-4 block">Preparation</span>
+<h2 class="serif text-4xl mb-12 text-primary leading-tight">공간의 조우</h2>
+<div class="space-y-16">
+<div class="flex gap-6 group">
+<span class="serif text-3xl text-outline-variant/60 font-light italic">01</span>
+<div class="flex-1">
+<h3 class="text-lg font-medium text-primary mb-2">비대면 입장</h3>
+<p class="text-on-surface-variant leading-relaxed text-sm">체크인 당일 발송되는 모바일 키를 통해 별도의 절차 없이 조용히 머무름을 시작하세요.</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<span class="serif text-3xl text-outline-variant/60 font-light italic">02</span>
+<div class="flex-1">
+<h3 class="text-lg font-medium text-primary mb-2">웰컴 리추얼</h3>
+<p class="text-on-surface-variant leading-relaxed text-sm">준비된 핸드드립 커피와 아틀리에만의 고유한 향이 당신의 감각을 깨우는 순간을 맞이합니다.</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<span class="serif text-3xl text-outline-variant/60 font-light italic">03</span>
+<div class="flex-1">
+<h3 class="text-lg font-medium text-primary mb-2">스테이 가이드</h3>
+<p class="text-on-surface-variant leading-relaxed text-sm">객실 내 비치된 태블릿을 통해 조명, 사운드, 주변 큐레이션 정보를 손쉽게 확인하실 수 있습니다.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Promises for Stillness -->
+<section class="bg-surface-container-low px-6 py-20">
+<span class="text-[11px] font-semibold tracking-[0.3em] text-secondary uppercase mb-4 block">Rules</span>
+<h2 class="serif text-4xl mb-12 text-primary leading-tight">고요를 위한 약속</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-6 rounded-xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="smoke_free">smoke_free</span>
+<span class="text-xs font-semibold tracking-wider text-secondary uppercase mb-1">Smoke-Free</span>
+<p class="text-xs text-on-surface-variant">전 객실 금연</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="notifications_off">notifications_off</span>
+<span class="text-xs font-semibold tracking-wider text-secondary uppercase mb-1">Quiet Hours</span>
+<p class="text-xs text-on-surface-variant">22:00 - 08:00</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="pets">pets</span>
+<span class="text-xs font-semibold tracking-wider text-secondary uppercase mb-1">Pet Policy</span>
+<p class="text-xs text-on-surface-variant">반려동물 동반 불가</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="groups">groups</span>
+<span class="text-xs font-semibold tracking-wider text-secondary uppercase mb-1">Capacity</span>
+<p class="text-xs text-on-surface-variant">최대 인원 엄수</p>
+</div>
+</div>
+</section>
+<!-- Location & Directions -->
+<section class="px-6 py-20">
+<span class="text-[11px] font-semibold tracking-[0.3em] text-secondary uppercase mb-4 block">Location</span>
+<h2 class="serif text-4xl mb-12 text-primary leading-tight">위치 및 찾아오시는 길</h2>
+<div class="rounded-2xl overflow-hidden aspect-[4/3] bg-surface-container relative mb-8">
+<img class="w-full h-full object-cover opacity-60" data-alt="Minimalist architectural map of Bukchon Hanok Village area in Seoul with clean lines and soft earthy tones" data-location="Seoul, Korea" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgZiChkSzuT19urc5LeBEnz9_xx8Do1j22YZdfB3e5WKSDx_FOtjg1JruRGsk7Ht9n2tZurVvfQH1D4POt8phO5cMDZ28q3e21AP62aDS5HuifTh4VdzAnkyOU7b5Frb-uOMTmUHs7-R0BO6Fo6D_K50FDxIsFifMN5szFftVas3SD1c96tkZ07IewJT15WLRVlfp33R6aJz5yuPR7X2tCiwLaa9mTHQkj_b9SWOHveKhTIRavNuSZ2Nl_9DtIhDiGvtH57t_nyPCJ"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-primary text-on-primary p-3 rounded-full tinted-shadow">
+<span class="material-symbols-outlined text-2xl" data-icon="location_on" data-weight="fill" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-6">
+<div>
+<h4 class="text-xs font-bold text-secondary uppercase tracking-widest mb-2">Address</h4>
+<p class="text-lg text-primary font-medium">서울 종로구 가회동 1-1</p>
+</div>
+<button class="w-full flex items-center justify-center gap-2 py-4 border border-outline/20 rounded-lg hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="map">map</span>
+<span class="text-sm font-medium">Google Maps</span>
+</button>
+</div>
+</section>
+<!-- FAQ -->
+<section class="px-6 py-20 bg-surface-container-low">
+<span class="text-[11px] font-semibold tracking-[0.3em] text-secondary uppercase mb-4 block">Support</span>
+<h2 class="serif text-4xl mb-12 text-primary leading-tight">자주 묻는 질문</h2>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest p-6 rounded-xl">
+<div class="flex justify-between items-center">
+<h4 class="text-sm font-semibold text-primary">주차가 가능한가요?</h4>
+<span class="material-symbols-outlined text-secondary" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl">
+<div class="flex justify-between items-center">
+<h4 class="text-sm font-semibold text-primary">체크아웃 연장이 가능한가요?</h4>
+<span class="material-symbols-outlined text-secondary" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl">
+<div class="flex justify-between items-center">
+<h4 class="text-sm font-semibold text-primary">조식이 제공되나요?</h4>
+<span class="material-symbols-outlined text-secondary" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-xl rounded-t-3xl tinted-shadow">
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-3 py-1.5 hover:text-stone-900 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="bed">bed</span>
+<span class="text-[0.75rem] tracking-wider uppercase font-medium">Sanctuary</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-stone-200/60 dark:bg-stone-800/60 text-stone-900 dark:text-stone-50 rounded-xl px-3 py-1.5" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="auto_awesome">auto_awesome</span>
+<span class="text-[0.75rem] tracking-wider uppercase font-medium">Curations</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-3 py-1.5 hover:text-stone-900 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="menu_book">menu_book</span>
+<span class="text-[0.75rem] tracking-wider uppercase font-medium">Journal</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-3 py-1.5 hover:text-stone-900 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="room_service">room_service</span>
+<span class="text-[0.75rem] tracking-wider uppercase font-medium">Concierge</span>
+</a>
+</nav>
+</body></html>

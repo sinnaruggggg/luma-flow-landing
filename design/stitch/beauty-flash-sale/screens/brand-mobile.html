@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,800;0,900;1,800;1,900&amp;family=Plus+Jakarta+Sans:wght@400;500;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#fed74c",
+                    "outline": "#7e6e96",
+                    "secondary": "#fd7acd",
+                    "primary-container": "#bf9d09",
+                    "on-primary-fixed-variant": "#685400",
+                    "on-tertiary-container": "#4c3966",
+                    "primary-dim": "#efc93f",
+                    "on-secondary": "#550040",
+                    "surface-container-lowest": "#000000",
+                    "surface-container-low": "#1a0b31",
+                    "primary": "#fed74c",
+                    "surface-bright": "#352156",
+                    "tertiary-fixed-dim": "#c9b2e7",
+                    "primary-fixed-dim": "#efc93f",
+                    "tertiary-fixed": "#d7bff5",
+                    "surface-container": "#21103a",
+                    "on-surface-variant": "#b5a4ce",
+                    "on-tertiary-fixed-variant": "#554270",
+                    "surface-dim": "#140629",
+                    "on-tertiary": "#55426f",
+                    "on-error": "#450900",
+                    "error-container": "#b92902",
+                    "background": "#140629",
+                    "secondary-fixed-dim": "#ffaada",
+                    "secondary-fixed": "#ffbfe2",
+                    "error-dim": "#d53d18",
+                    "surface-container-high": "#271643",
+                    "error": "#ff7351",
+                    "tertiary-container": "#d7bff5",
+                    "primary-fixed": "#fed74c",
+                    "on-secondary-container": "#ffbde1",
+                    "on-primary": "#5d4b00",
+                    "inverse-primary": "#725d00",
+                    "outline-variant": "#4f4166",
+                    "inverse-on-surface": "#5d4e74",
+                    "surface": "#140629",
+                    "tertiary-dim": "#c9b2e7",
+                    "tertiary": "#e4ceff",
+                    "on-tertiary-fixed": "#372551",
+                    "on-secondary-fixed": "#67004e",
+                    "on-background": "#eee0ff",
+                    "on-primary-fixed": "#473800",
+                    "surface-container-highest": "#2e1b4c",
+                    "secondary-container": "#841065",
+                    "on-surface": "#eee0ff",
+                    "on-error-container": "#ffd2c8",
+                    "on-secondary-fixed-variant": "#911e70",
+                    "secondary-dim": "#f070c2",
+                    "on-primary-container": "#2b2200",
+                    "surface-variant": "#2e1b4c",
+                    "inverse-surface": "#fef7ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Epilogue"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-glow-primary { text-shadow: 0 0 10px rgba(254, 215, 76, 0.4); }
+        .text-glow-secondary { text-shadow: 0 0 10px rgba(253, 122, 205, 0.4); }
+        .slant-header { transform: skewY(-3deg); }
+        .sticker-shadow { filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.3)); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#140629]/60 backdrop-blur-xl flex justify-between items-center px-6 h-20 w-full shadow-[0_4px_4px_0_rgba(0,0,0,0.3)]">
+<button class="text-[#fed74c] hover:scale-95 transition-transform active:scale-90 transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-['Epilogue'] font-black tracking-tighter text-3xl italic text-[#fed74c] uppercase">MELT POP</h1>
+<button class="text-white hover:scale-95 transition-transform active:scale-90 transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</header>
+<main class="pt-20 pb-24">
+<!-- Hero Section -->
+<section class="relative min-h-[795px] flex flex-col justify-center px-6 overflow-hidden">
+<div class="absolute inset-0 -z-10 bg-gradient-to-b from-surface-bright/20 to-background"></div>
+<div class="absolute top-20 -right-12 w-64 h-64 bg-secondary/10 blur-[100px] rounded-full"></div>
+<div class="relative z-10 space-y-2 slant-header">
+<div class="inline-block bg-primary text-on-primary font-label text-[10px] px-3 py-1 mb-4 font-bold tracking-widest sticker-shadow">
+                    FOUNDED IN 2024
+                </div>
+<h2 class="font-headline font-black italic text-6xl leading-[0.85] tracking-tighter uppercase text-white">
+                    THE MELT<br/>
+<span class="text-primary text-glow-primary">MANIFESTO</span>
+</h2>
+<p class="font-label text-secondary font-bold tracking-tighter pt-4 text-xl">
+                    빠른 뷰티, 강렬한 표현
+                </p>
+</div>
+<!-- LTD EDITION KIT TEASER -->
+<div class="mt-12 relative group">
+<div class="bg-surface-container p-4 border-l-4 border-primary flex items-end justify-between gap-4 overflow-hidden">
+<div class="space-y-1">
+<span class="font-label text-[10px] text-secondary font-black tracking-[0.2em] uppercase">Limited Edition</span>
+<h3 class="font-headline font-black text-2xl text-white uppercase italic">NEON SLUDGE KIT</h3>
+<div class="flex items-center gap-2">
+<span class="font-headline font-black text-primary text-4xl leading-none">₩49,000</span>
+<span class="font-label text-slate-500 line-through text-xs italic">₩89,000</span>
+</div>
+</div>
+<button class="bg-primary text-on-primary font-label font-bold px-4 py-6 text-sm h-full uppercase tracking-tighter hover:scale-95 transition-transform active:scale-90">
+                        GET IT NOW
+                    </button>
+</div>
+<div class="absolute -top-3 -right-3 bg-error text-white font-label font-bold text-[10px] px-2 py-1 sticker-shadow z-20">
+                    LAST 5 LEFT
+                </div>
+</div>
+<div class="absolute bottom-10 left-6 right-6">
+<p class="text-on-surface-variant font-medium leading-relaxed max-w-[280px]">
+                    당신의 무드를 녹여내다. 가장 빠르고 대담하게 진화하는 뷰티 에디토리얼, 멜트 팝.
+                </p>
+</div>
+</section>
+<!-- URGENT BEAUTY Section -->
+<section class="bg-surface-container-high py-16 px-6">
+<h2 class="font-headline font-black italic text-5xl tracking-tighter text-secondary mb-12 uppercase">
+                URGENT<br/>BEAUTY
+            </h2>
+<div class="space-y-16">
+<!-- KIT CURATION -->
+<div class="relative">
+<div class="absolute -left-4 -top-8 text-[120px] font-headline font-black text-white/5 pointer-events-none uppercase">01</div>
+<div class="relative flex flex-col gap-4">
+<img alt="KIT CURATION" class="w-full h-64 object-cover" data-alt="Close-up high-gloss macro shot of melting neon pink lipstick texture on a dark purple background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACjegPRppzOsPleuL9gSY5BIHKh6UvhSgM4_QvbX53Z3-OfUOlYe1fMz57uRieWYpUaMpvLCNl271jKlmceNrM_139gCTD5wkRXHqKrHU8WXhNn9Z463MEvpXSSMIhWTMb7veVDF1YgdMf425pHDCTTu0VB1lR_BMuX6QECcxQ2BDWFNP1Z-JSizmdz79lBo6xeihLNT88FiWxgykyUyHcwLu9Y9e_dInakxFrpt5VSyhB8jhKG1tPubjKDr0p-pVwCDzvAWCi3Fxc"/>
+<div class="bg-primary text-on-primary inline-block self-start px-4 py-1 font-label font-black text-sm -mt-8 ml-4 sticker-shadow uppercase">
+                            KIT CURATION
+                        </div>
+<h4 class="font-headline font-black text-2xl text-white mt-2 uppercase">WEEKLY ANALYSIS</h4>
+<p class="text-on-surface-variant text-sm leading-loose">매주 트렌드를 분석하여 가장 감각적인 키트를 제안합니다. 우리는 멈춰있지 않습니다.</p>
+</div>
+</div>
+<!-- FLASH DROPS -->
+<div class="relative">
+<div class="absolute -right-4 -top-8 text-[120px] font-headline font-black text-white/5 pointer-events-none uppercase text-right">02</div>
+<div class="relative flex flex-col gap-4">
+<img alt="FLASH DROPS" class="w-full h-64 object-cover" data-alt="Dripping golden liquid cosmetic texture mixed with black oil, metallic sheen, high contrast cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKLeI18hX8SdQU3_xvXPcuRXwgH4iVnxlD9-uy9lgbtEagGVJ2dc0m073V6JVxLCMhxnGxwn6VWU40HLtuI_2vv469bilDGmhaqlWZq9yEL0EbsXjkTUgrU7LxQ9gs6flCxV169lWxQfbQ_zjRoh5AVLCA6ARbLQxAHIq2JTx4wlIp819xR_W_5qw5G0L5FHgkrdcD6RXKdOA5n8nggOOoztU21y2jgDn8Un3cTgYus0-9odqEwLGwie44IexXVXswnarl3MhT52as"/>
+<div class="bg-secondary text-on-secondary inline-block self-end px-4 py-1 font-label font-black text-sm -mt-8 mr-4 sticker-shadow uppercase">
+                            FLASH DROPS
+                        </div>
+<h4 class="font-headline font-black text-2xl text-white mt-2 uppercase text-right">UNPREDICTABLE RELEASES</h4>
+<p class="text-on-surface-variant text-sm leading-loose text-right">예고 없는 드랍, 한정된 수량. 기회는 망설이는 자를 기다리지 않습니다.</p>
+</div>
+</div>
+<!-- LOUD DELIVERY -->
+<div class="relative">
+<div class="absolute -left-4 -top-8 text-[120px] font-headline font-black text-white/5 pointer-events-none uppercase">03</div>
+<div class="relative flex flex-col gap-4">
+<img alt="LOUD DELIVERY" class="w-full h-64 object-cover" data-alt="Futuristic neon-lit courier box with chrome accents and bright yellow 'URGENT' sticker labels" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4i9XmUypgDZeADKcUoI1IwOGdUFSWtR4ZE9EsneTr_kuSWjDDGayEFqp1SHbusI12Z7K8N6xrvbCFvldRti71V42GGDk80gYinzJtvX7pOfU08vyZ5DA9ykE6Lyn40M1HkCYFGQd9jGjRX-B_KgYXx4eE1hvQoyZey9iPTOWuihBuPnaIG_fqUc2715p594zfuPa73d0tj9iG8pr64RxMxtiins_xiJRT6lRRVwL9jToQS6ONyNjxGMFUJpi8oQ_vLLvCz3GWaG-D"/>
+<div class="bg-primary text-on-primary inline-block self-start px-4 py-1 font-label font-black text-sm -mt-8 ml-4 sticker-shadow uppercase">
+                            LOUD DELIVERY
+                        </div>
+<h4 class="font-headline font-black text-2xl text-white mt-2 uppercase">FAST LOGISTICS</h4>
+<p class="text-on-surface-variant text-sm leading-loose">누구보다 빠르게 당신의 손에. 압도적인 속도의 배송 시스템을 경험하세요.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- MELTED REVIEWS -->
+<section class="py-16 px-6 bg-background">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline font-black italic text-4xl tracking-tighter text-primary uppercase">MELTED<br/>REVIEWS</h2>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-6">
+<!-- Review Card 1 -->
+<div class="bg-surface-container-highest p-6 relative">
+<div class="absolute -top-3 -left-2 bg-secondary text-on-secondary font-label font-bold text-[8px] px-2 py-0.5 uppercase tracking-widest">Verified</div>
+<p class="text-on-surface font-medium leading-relaxed italic mb-4">"색감이 미쳤어요. 바르자마자 입술에 광택이 도는데 이건 진짜 혁명임..."</p>
+<div class="flex items-center justify-between">
+<span class="font-label text-primary font-bold text-xs uppercase">@kim_melt_pop</span>
+<span class="font-label text-slate-500 text-[10px]">2h ago</span>
+</div>
+</div>
+<!-- Review Card 2 -->
+<div class="bg-surface-container-highest p-6 relative">
+<div class="absolute -top-3 -left-2 bg-secondary text-on-secondary font-label font-bold text-[8px] px-2 py-0.5 uppercase tracking-widest">Verified</div>
+<p class="text-on-surface font-medium leading-relaxed italic mb-4">"배송 속도 실화인가요? 어제 주문했는데 오늘 아침에 도착함. 대박."</p>
+<div class="flex items-center justify-between">
+<span class="font-label text-primary font-bold text-xs uppercase">@neo_glow_24</span>
+<span class="font-label text-slate-500 text-[10px]">5h ago</span>
+</div>
+</div>
+</div>
+</section>
+<!-- JOIN THE CHAOS -->
+<section class="py-20 px-6 bg-surface-container-low text-center">
+<h2 class="font-headline font-black italic text-5xl tracking-tighter text-white mb-4 uppercase">JOIN THE<br/>CHAOS</h2>
+<p class="text-on-surface-variant font-medium mb-10">드랍 소식을 가장 먼저 받아보세요.</p>
+<form class="space-y-4">
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 font-label text-white uppercase tracking-widest px-0 py-4 placeholder:text-slate-600 transition-colors" placeholder="ENTER YOUR EMAIL" type="email"/>
+<button class="w-full bg-primary text-on-primary font-label font-black py-5 tracking-[0.2em] uppercase hover:bg-primary-dim transition-colors">
+                    SUBSCRIBE NOW
+                </button>
+</form>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 bg-[#140629] border-t-4 border-[#fd7acd] flex flex-col items-start gap-6 mb-20">
+<h2 class="text-2xl font-black text-[#fed74c] mb-4 uppercase font-headline">MELT POP</h2>
+<div class="flex flex-wrap gap-4">
+<a class="text-slate-400 font-['Plus_Jakarta_Sans'] text-xs hover:text-white transition-colors" href="#">이용약관</a>
+<a class="text-[#fed74c] font-bold font-['Plus_Jakarta_Sans'] text-xs hover:text-white transition-colors" href="#">개인정보처리방침</a>
+<a class="text-slate-400 font-['Plus_Jakarta_Sans'] text-xs hover:text-white transition-colors" href="#">고객센터</a>
+</div>
+<p class="text-[#fd7acd] font-['Plus_Jakarta_Sans'] text-xs leading-loose">© 2024 MELT POP KOREA. ALL RIGHTS RESERVED.</p>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe bg-[#140629]/80 backdrop-blur-2xl z-50 shadow-[0_-4px_10px_0_rgba(0,0,0,0.5)]">
+<div class="flex flex-col items-center justify-center text-[#fd7acd]/60 font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-widest hover:text-[#fd7acd]">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span>홈</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#fed74c] scale-110 font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-widest">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+<span>브랜드</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#fd7acd]/60 font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-widest hover:text-[#fd7acd]">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span>제품</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#fd7acd]/60 font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-widest hover:text-[#fd7acd]">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span>마이</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#fd7acd]/60 font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-widest hover:text-[#fd7acd]">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span>카트</span>
+</div>
+</nav>
+</body></html>

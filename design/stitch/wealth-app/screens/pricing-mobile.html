@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#38392c",
+                    "surface-dim": "#e4e4cf",
+                    "secondary-container": "#d9e3fb",
+                    "inverse-surface": "#0e0e0a",
+                    "primary-fixed": "#dce2f7",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#f0f4f9",
+                    "surface-tint": "#575e70",
+                    "on-surface-variant": "#656557",
+                    "surface-container-highest": "#eae9d7",
+                    "secondary-fixed-dim": "#cad4ec",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#ced4e9",
+                    "primary": "#575e70",
+                    "surface-container-high": "#f0eedf",
+                    "outline": "#818172",
+                    "on-error-container": "#752121",
+                    "tertiary-fixed-dim": "#e2e6eb",
+                    "on-secondary-container": "#485266",
+                    "surface-variant": "#eae9d7",
+                    "error-container": "#fe8983",
+                    "background": "#fdffd8",
+                    "primary-dim": "#4b5264",
+                    "on-secondary": "#ffffff",
+                    "secondary-dim": "#4f586d",
+                    "tertiary-dim": "#54595d",
+                    "secondary": "#5b6579",
+                    "inverse-on-surface": "#9f9d96",
+                    "on-primary-fixed": "#383f50",
+                    "on-secondary-fixed-variant": "#525c70",
+                    "on-secondary-fixed": "#364053",
+                    "on-background": "#38392c",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#606569",
+                    "on-primary": "#f7f7ff",
+                    "secondary-fixed": "#d9e3fb",
+                    "surface": "#fdffd8",
+                    "on-primary-fixed-variant": "#545b6d",
+                    "outline-variant": "#bbbaa9",
+                    "on-primary-container": "#4b5263",
+                    "inverse-primary": "#d9dff5",
+                    "surface-bright": "#fdffd8",
+                    "on-tertiary-fixed": "#454a4e",
+                    "tertiary-container": "#f0f4f9",
+                    "on-tertiary-container": "#575c61",
+                    "error-dim": "#4e0309",
+                    "error": "#a64542",
+                    "surface-container-low": "#fcf9ef",
+                    "primary-container": "#dce2f7",
+                    "surface-container": "#f6f4e7",
+                    "on-tertiary-fixed-variant": "#62676b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .mesh-gradient {
+            background-color: #f3f0e8;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(220, 226, 247, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(253, 255, 216, 0.2) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(217, 227, 251, 0.1) 0px, transparent 50%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface selection:bg-primary-container mesh-gradient min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-[#fcf9ef] dark:bg-slate-900 transition-colors ease-out duration-400">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#111827] dark:text-slate-100" data-icon="menu">menu</span>
+<span class="text-xl font-bold tracking-tighter text-[#111827] dark:text-white font-['Manrope']">CLARO</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="Minimalistic profile avatar with clean lines and soft professional colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUODv-_rXmPTOfh_kwNzP3xRHp7CpWMJhG2_v2-aLl5pKEXmn8G4YLl7GDlvcpJJxjkbJQzPa5jmU4gZP962Ha46lwno0E-VTGBZ4ToWOJGVWitDeCXuHuVKoyD-b3qPVD6X_6Mj1BQbCKar2A-EWqyMe2P6OgCAQVJU9ytRCGXxgJT_AIgqa95zBKFk35aOs47NuIB4VdIWyrSjFz_5RCCH_z9M6BNlSIikGQOJbUXmTlomLBpW7CLNTTA0pLty0RWluJ_dcJo_g"/>
+</div>
+</div>
+</header>
+<main class="px-6 pt-8 max-w-md mx-auto">
+<!-- Hero Branding -->
+<section class="mb-12">
+<h1 class="text-[32px] leading-tight font-extrabold tracking-tight text-on-surface mb-2">
+                선명한 자산의 미래,<br/>적합한 시작.
+            </h1>
+<p class="text-on-surface-variant text-sm font-medium opacity-80 leading-relaxed">
+                복잡한 금융 데이터에서 해방되세요. 조용한 성장을 위한 CLARO의 세 가지 플랜.
+            </p>
+</section>
+<!-- KPI / Highlight Grid (Dashboard Feel) -->
+<div class="grid grid-cols-2 gap-3 mb-10">
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0px_4px_20px_rgba(56,57,44,0.04)] border border-outline-variant/10">
+<p class="text-[10px] font-bold text-on-surface-variant/60 tracking-wider mb-1 uppercase">MANAGEMENT</p>
+<div class="text-2xl font-bold text-on-surface tracking-tight">Unlimited</div>
+<p class="text-[10px] text-primary mt-1 font-medium italic">Available for Enterprise</p>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/15">
+<p class="text-[10px] font-bold text-on-surface-variant/60 tracking-wider mb-1 uppercase">SECURITY</p>
+<div class="text-2xl font-bold text-on-surface tracking-tight">Grade A+</div>
+<p class="text-[10px] text-on-surface-variant mt-1 font-medium">Bank-level encryption</p>
+</div>
+</div>
+<!-- Quick Comparison Module -->
+<div class="space-y-4 mb-12">
+<!-- Pro Plan (Most Popular / Main Path) -->
+<div class="bg-on-surface rounded-xl p-8 relative overflow-hidden shadow-[0px_12px_40px_rgba(56,57,44,0.08)]">
+<div class="absolute top-0 right-0 p-3">
+<span class="bg-primary text-[10px] text-on-primary px-2 py-0.5 rounded font-bold tracking-wide uppercase">Popular</span>
+</div>
+<div class="flex flex-col gap-1 mb-6">
+<h3 class="text-[#f7f7ff] text-lg font-bold">Pro</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-[#f7f7ff] text-3xl font-extrabold tracking-tighter">59,000</span>
+<span class="text-[#f7f7ff]/60 text-sm">원 / 월</span>
+</div>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-3 text-[#f7f7ff]/80 text-sm">
+<span class="material-symbols-outlined text-xs" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        모든 분석 대시보드
+                    </li>
+<li class="flex items-center gap-3 text-[#f7f7ff]/80 text-sm">
+<span class="material-symbols-outlined text-xs" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        다중 자산 연동 (최대 10개)
+                    </li>
+<li class="flex items-center gap-3 text-[#f7f7ff]/80 text-sm">
+<span class="material-symbols-outlined text-xs" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        실시간 AI 리포팅
+                    </li>
+</ul>
+<button class="w-full bg-surface text-on-surface py-4 rounded-lg font-bold text-sm tracking-tight transition-transform active:scale-95">
+                    Pro 시작하기
+                </button>
+</div>
+<!-- Starter Plan -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/15">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-on-surface text-base font-bold">Starter</h3>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="text-on-surface text-2xl font-bold tracking-tight">29,900</span>
+<span class="text-on-surface-variant text-xs">원</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary-dim opacity-40" data-icon="bolt">bolt</span>
+</div>
+<p class="text-on-surface-variant text-xs mb-4 leading-relaxed">자산 관리의 기초를 닦기 위한 개인 투자자용 엔트리 플랜.</p>
+<button class="w-full bg-accent-soft text-on-surface py-3 rounded-lg font-semibold text-xs transition-colors hover:bg-surface-container-high bg-[#e7ebf0]">
+                    플랜 선택
+                </button>
+</div>
+<!-- Enterprise Plan -->
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/10">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-on-surface text-base font-bold">Enterprise</h3>
+<div class="mt-1">
+<span class="text-on-surface text-2xl font-bold tracking-tight">별도 문의</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary-dim opacity-40" data-icon="corporate_fare">corporate_fare</span>
+</div>
+<p class="text-on-surface-variant text-xs mb-4 leading-relaxed">기관 및 고액 자산가를 위한 맞춤형 보안 및 관리 서비스.</p>
+<button class="w-full border border-outline-variant/30 text-on-surface py-3 rounded-lg font-semibold text-xs">
+                    상담 신청하기
+                </button>
+</div>
+</div>
+<!-- Productized Differences / Feature Grid -->
+<section class="mb-20">
+<h4 class="text-[10px] font-extrabold text-on-surface-variant tracking-[0.2em] uppercase mb-6 flex items-center gap-2">
+<span class="w-8 h-px bg-outline-variant/30"></span>
+                Key Differences
+            </h4>
+<div class="space-y-3">
+<div class="bg-surface-container-lowest/40 backdrop-blur-sm p-4 rounded-xl flex items-center gap-4">
+<div class="w-10 h-10 bg-primary-container/30 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="hub">hub</span>
+</div>
+<div class="flex-1">
+<p class="text-xs font-bold text-on-surface">자산 연동</p>
+<p class="text-[11px] text-on-surface-variant">Starter (3개) / Pro (10개) / Ent (무제한)</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest/40 backdrop-blur-sm p-4 rounded-xl flex items-center gap-4">
+<div class="w-10 h-10 bg-secondary-container/30 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="history_edu">history_edu</span>
+</div>
+<div class="flex-1">
+<p class="text-xs font-bold text-on-surface">데이터 이력</p>
+<p class="text-[11px] text-on-surface-variant">Starter (1년) / Pro (전체 기간)</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest/40 backdrop-blur-sm p-4 rounded-xl flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-variant rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="security_update_good">security_update_good</span>
+</div>
+<div class="flex-1">
+<p class="text-xs font-bold text-on-surface">보안 설정</p>
+<p class="text-[11px] text-on-surface-variant">전 플랜 2단계 인증 및 암호화 제공</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer / Contact -->
+<footer class="pb-12 text-center">
+<p class="text-on-surface-variant text-[11px] opacity-60">
+                결제는 매월 정기적으로 청구됩니다.<br/>
+                언제든 해지 가능하며, 환불 규정은 약관을 따릅니다.
+            </p>
+</footer>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#fdffd8]/80 dark:bg-slate-950/80 backdrop-blur-xl z-50 rounded-t-xl shadow-[0px_-4px_20px_rgba(56,57,44,0.04)] border-t border-[#bbbaa9]/15">
+<a class="flex flex-col items-center justify-center text-[#656557] dark:text-slate-500 hover:text-[#111827] dark:hover:text-white transition-transform duration-200 scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Manrope'] text-[10px] font-medium">홈</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#656557] dark:text-slate-500 hover:text-[#111827] dark:hover:text-white transition-transform duration-200 scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-['Manrope'] text-[10px] font-medium">자산</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#656557] dark:text-slate-500 hover:text-[#111827] dark:hover:text-white transition-transform duration-200 scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-['Manrope'] text-[10px] font-medium">알림</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#111827] dark:text-white bg-[#fcf9ef] dark:bg-slate-800 rounded-xl px-3 py-1 transition-transform duration-200 scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Manrope'] text-[10px] font-medium">설정</span>
+</a>
+</nav>
+</body></html>

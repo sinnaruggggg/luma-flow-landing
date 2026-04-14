@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services | PLAIN GRID Architecture Studio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&amp;family=Manrope:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#5f5e5e",
+                        "on-primary-fixed-variant": "#474746",
+                        "inverse-primary": "#c8c6c5",
+                        "inverse-surface": "#33302a",
+                        "tertiary-fixed": "#e6e2de",
+                        "surface-dim": "#dfd9d0",
+                        "surface-container-low": "#f9f3e9",
+                        "surface-variant": "#e8e2d8",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#5f5e5e",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#f3ede3",
+                        "on-primary-container": "#929191",
+                        "tertiary": "#161614",
+                        "secondary-container": "#e5e2e1",
+                        "on-surface": "#1d1b16",
+                        "secondary-fixed": "#e5e2e1",
+                        "inverse-on-surface": "#f6f0e6",
+                        "surface-container-highest": "#e8e2d8",
+                        "primary-fixed": "#e4e2e1",
+                        "on-tertiary-fixed-variant": "#484644",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fff9ee",
+                        "on-primary-fixed": "#1b1c1c",
+                        "surface": "#fff9ee",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#656464",
+                        "primary": "#151616",
+                        "on-tertiary-fixed": "#1c1b1a",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-surface-variant": "#444748",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "outline": "#747878",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#2b2a28",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1d1b16",
+                        "primary-container": "#2a2a2a",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-tertiary-container": "#94918e",
+                        "surface-container-high": "#ede7dd",
+                        "outline-variant": "#c4c7c7",
+                        "tertiary-fixed-dim": "#c9c6c3",
+                        "on-error-container": "#93000a",
+                        "background": "#fff9ee",
+                        "secondary-fixed-dim": "#c9c6c3",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif KR", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #fff9ee; color: #1d1b16; }
+        .serif { font-family: 'Noto Serif KR', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { background: rgba(255, 249, 238, 0.8); backdrop-filter: blur(20px); }
+        .paper-shadow { box-shadow: 0 12px 40px rgba(29, 27, 22, 0.05); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav flex justify-between items-center px-12 py-8 w-full">
+<div class="font-['Noto_Serif'] text-2xl font-bold tracking-tighter text-[#151616] dark:text-[#fff9ee]">PLAIN GRID</div>
+<div class="hidden md:flex space-x-12 items-center">
+<a class="font-['Noto_Serif'] font-medium uppercase tracking-widest text-sm text-[#151616]/60 hover:text-[#151616] transition-colors duration-300" href="#">Works</a>
+<a class="font-['Noto_Serif'] font-medium uppercase tracking-widest text-sm text-[#151616] border-b-2 border-[#151616] pb-1" href="#">Services</a>
+<a class="font-['Noto_Serif'] font-medium uppercase tracking-widest text-sm text-[#151616]/60 hover:text-[#151616] transition-colors duration-300" href="#">Brief</a>
+<a class="font-['Noto_Serif'] font-medium uppercase tracking-widest text-sm text-[#151616]/60 hover:text-[#151616] transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 font-label text-xs uppercase tracking-widest scale-100 hover:scale-105 transition-transform">
+            Request Portfolio
+        </button>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="min-h-screen grid grid-cols-1 md:grid-cols-12 items-stretch">
+<div class="md:col-span-7 relative h-[614px] md:h-auto">
+<img alt="Architectural photograph" class="w-full h-full object-cover" data-alt="Cinematic wide shot of a minimalist concrete building with sharp shadows and soft morning light hitting a textured wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhq2AyYTAlbCvBSVC9XEhkM7vkUgccRTj6uznh5wO_M34wNdr0SY7SAs8hy3flzrjlDj_VOa6L7BRc24MdsLTAPRsrwQu0waQrqCJpup4mgQzWL6qugFK_zTYx79AMPiYqNyWVa2BwootEOLkF6wxpM9hNYkEjxcDjD9GloEWNbMepl4TXtlgXzC87q65igc6CqnSWCMU2VnJ9_3pHvSc_gP8lXD2I5PuCvc5NvdKBQMxpY2P1-X9boJFkhJu4SGjqmAPYNXb-Ibw"/>
+</div>
+<div class="md:col-span-5 bg-surface flex flex-col justify-center px-8 md:px-20 py-16 md:py-0 relative">
+<div class="md:absolute md:-left-16 bg-surface-container-lowest p-12 md:p-20 paper-shadow">
+<span class="font-label text-sm tracking-[0.3em] uppercase text-secondary mb-6 block">Our Expertise</span>
+<h1 class="serif text-6xl md:text-8xl font-black mb-8 leading-tight">SERVICES</h1>
+<p class="serif text-xl md:text-2xl leading-relaxed text-on-surface/80 max-w-md">
+                        우리는 단순한 건물을 짓는 것을 넘어, 삶의 태도를 담는 그릇을 만듭니다. 본질에 집중하는 건축적 언어를 통해 공간의 새로운 가치를 발견합니다.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="py-32 px-12 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="mb-24 flex flex-col md:flex-row md:items-end justify-between border-b border-outline-variant/20 pb-8">
+<h2 class="serif text-5xl font-bold">건축 여정 <span class="block text-sm font-label uppercase tracking-widest mt-2 text-secondary">Process</span></h2>
+<p class="max-w-sm text-on-surface-variant leading-relaxed mt-4 md:mt-0">첫 만남부터 준공까지, 우리는 투명하고 논리적인 단계별 과정을 통해 고객의 상상을 현실로 구축합니다.</p>
+</div>
+<div class="space-y-40">
+<!-- Phase 1 -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-5 order-2 md:order-1">
+<span class="text-6xl font-black text-outline-variant/30 font-body mb-4 block">01</span>
+<h3 class="serif text-3xl font-bold mb-6">Research &amp; Context (기획 및 조사)</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8">대지가 품고 있는 시간과 맥락을 읽어냅니다. 법규 검토와 물리적 환경 분석을 통해 프로젝트의 가장 단단한 뿌리를 내리는 단계입니다.</p>
+<ul class="space-y-3 font-label text-sm uppercase tracking-wider text-secondary">
+<li>• Site Analysis</li>
+<li>• Program Optimization</li>
+<li>• Concept Development</li>
+</ul>
+</div>
+<div class="md:col-span-7 order-1 md:order-2">
+<div class="bg-surface-container h-[400px] relative overflow-hidden">
+<img alt="Research phase" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Architectural sketches and site maps spread out on a wooden table with dramatic natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRQIGQ3vQRe1xD2Il87iFJbFcyM43vwMQihoE1lIuAwu-0InRiPUrfmbYrS71bH-1A4FSo-E6r510QuTr2kO1lpHTsxFJC4IwVgMI0dhHW1pxA6M7Jr2Sc5c6jmT6zU410xtFeS8Hd1bJfcMyCjyMXv8a04Zev7icoUx1bT8YmMSKL2g65bl2DS5vh8_WVQ7777ZFCdfqsqFJbOzg-PqPmUXLQ46XMBL76wkxkOfxfuJ_sZk5EhkhgaepnvpBg2wudFimhrfenpKQ"/>
+</div>
+</div>
+</div>
+<!-- Phase 2 -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-7">
+<div class="bg-surface-container h-[400px] relative overflow-hidden">
+<img alt="Design phase" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Detail shot of a physical architectural model made of white cardstock and wood on a clean gray surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ2yn9oL6ZIUB5k_CM7UuoKURbBCIPL7EG-2XyjhI8RQWLYvZFtQdpJDSH4gjJLiIJbVKOGrRZcgPSu-XygkaBlM7vLjG8Z0jqNDsQ1XK9hXj2HlGF0DKqdHcEdItzb9n2mCO3yaciMo9mvWiTovE_GTWAC880lTOLkYfhu0IofzWHQ9U-4x3On-J_-KwPgv5ZQCvtXD7fn_dkWZZddal-EgKHfHjla4qCbYxwmq9g4o-kzW6UVCgjM9VOp4vfYMXREtBl1FRZBec"/>
+</div>
+</div>
+<div class="md:col-span-5">
+<span class="text-6xl font-black text-outline-variant/30 font-body mb-4 block">02</span>
+<h3 class="serif text-3xl font-bold mb-6">Design Evolution (계획 및 실시설계)</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8">철학을 공간의 언어로 번역합니다. 평면과 단면, 재료의 질감을 조율하며 미학적 완성도와 기술적 실현 가능성을 동시에 확보합니다.</p>
+<ul class="space-y-3 font-label text-sm uppercase tracking-wider text-secondary">
+<li>• Schematic Design</li>
+<li>• Material Curation</li>
+<li>• Detailed Engineering</li>
+</ul>
+</div>
+</div>
+<!-- Phase 3 -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-5 order-2 md:order-1">
+<span class="text-6xl font-black text-outline-variant/30 font-body mb-4 block">03</span>
+<h3 class="serif text-3xl font-bold mb-6">Construction Supervision (감리 및 시공 협력)</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8">도면 위의 선들이 단단한 구조물로 세워지는 과정을 지킵니다. 정밀한 디테일 구현을 위해 현장과 긴밀하게 소통하며 완성도를 높입니다.</p>
+<ul class="space-y-3 font-label text-sm uppercase tracking-wider text-secondary">
+<li>• Site Supervision</li>
+<li>• Quality Control</li>
+<li>• Final Documentation</li>
+</ul>
+</div>
+<div class="md:col-span-7 order-1 md:order-2">
+<div class="bg-surface-container h-[400px] relative overflow-hidden">
+<img alt="Construction phase" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Abstract view of modern steel and glass architectural structure against a clear sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTQukd38mQvvN1-Wx5LyTRDPSvfjsNxHo_PVNGp8zmi75H8boSRNMKtPqXWgRXXhAZSgZMDnUaa5kpoCAAwmiLqkZJrgpLqr5YVAI0REAgHMOiHlY4DAZRHXX2RNHr1sKInyWZOKz_Rkuz4rZjNuRpI-Kp8vyK05fX7Ww-LiGga4ySWXUR4UrrapczJijxgtVfuQXjM3fjRQiBVNHnsIFluoJYc38A57ZetwSYj6hIH89usSFfHJuBIIIM1WyjYENUalTIza-p6bk"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Deliverables Section -->
+<section class="py-32 px-12 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20 text-center">
+<h2 class="serif text-4xl font-bold mb-4">산출물</h2>
+<p class="font-label text-xs uppercase tracking-[0.4em] text-secondary">Deliverables</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-l border-outline-variant/20">
+<div class="p-12 border-r border-b border-outline-variant/20 aspect-square flex flex-col justify-between hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-4xl text-primary">architecture</span>
+<div>
+<h4 class="serif text-xl font-bold mb-2">Architectural Drawings</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">평면도, 입면도, 단면도를 포함한 상세 실시설계 도서 일체</p>
+</div>
+</div>
+<div class="p-12 border-r border-b border-outline-variant/20 aspect-square flex flex-col justify-between hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-4xl text-primary">view_in_ar</span>
+<div>
+<h4 class="serif text-xl font-bold mb-2">Physical Models</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">공간감과 비례를 확인할 수 있는 수작업 스케일 모델</p>
+</div>
+</div>
+<div class="p-12 border-r border-b border-outline-variant/20 aspect-square flex flex-col justify-between hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-4xl text-primary">texture</span>
+<div>
+<h4 class="serif text-xl font-bold mb-2">Material Board</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">내외부 마감재 샘플 및 텍스처 조합 큐레이션</p>
+</div>
+</div>
+<div class="p-12 border-r border-b border-outline-variant/20 aspect-square flex flex-col justify-between hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-4xl text-primary">video_stable</span>
+<div>
+<h4 class="serif text-xl font-bold mb-2">Visualization</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">고해상도 3D 렌더링 및 공간 시뮬레이션 영상</p>
+</div>
+</div>
+<div class="p-12 border-r border-b border-outline-variant/20 aspect-square flex flex-col justify-between hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-4xl text-primary">assignment</span>
+<div>
+<h4 class="serif text-xl font-bold mb-2">Spec Sheets</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">조명, 가구, 설비 하드웨어 리스트 및 시방서</p>
+</div>
+</div>
+<div class="p-12 border-r border-b border-outline-variant/20 aspect-square flex flex-col justify-between hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-4xl text-primary">verified</span>
+<div>
+<h4 class="serif text-xl font-bold mb-2">Permit Management</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">건축 인허가 및 각종 행정 절차 대행 지원</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Philosophy Section -->
+<section class="py-40 px-12 bg-surface-container-highest">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="serif text-5xl md:text-7xl font-bold mb-16 leading-tight">공간 철학</h2>
+<div class="space-y-12">
+<p class="serif text-2xl md:text-3xl leading-relaxed text-on-surface/90">
+                        "장식은 죄악이 아니라, 본질을 흐리는 방해물입니다."
+                    </p>
+<div class="w-12 h-[1px] bg-primary mx-auto"></div>
+<p class="text-lg md:text-xl leading-loose text-on-surface-variant font-light italic">
+                        플레인 그리드는 재료의 정직한 물성을 드러내고, 빛과 그림자가 만드는 시간의 변화를 존중합니다. 우리는 유행하는 스타일을 쫓기보다 대지가 가진 고유한 목소리에 귀를 기울이며, 수 세기가 지나도 변치 않는 건축적 가치를 지향합니다. 불필요한 선을 걷어내고 남은 '비어있는 충만함'이 우리 디자인의 핵심입니다.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-32 px-12 bg-surface text-center">
+<div class="max-w-2xl mx-auto">
+<h3 class="serif text-4xl font-bold mb-8">새로운 여정을 시작할 준비가 되셨나요?</h3>
+<p class="text-secondary mb-12 leading-relaxed uppercase tracking-widest text-sm">Let's create something timeless together.</p>
+<a class="inline-block bg-primary text-on-primary px-16 py-5 font-label text-sm uppercase tracking-widest hover:bg-primary-container transition-colors" href="/brief">
+                    Start Your Project Brief
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-12 bg-[#1d1b16] dark:bg-[#0a0a0a] flex flex-col md:flex-row justify-between items-end w-full space-y-8">
+<div class="space-y-6">
+<div class="text-[#fff9ee] font-['Noto_Serif'] font-bold text-3xl">PLAIN GRID</div>
+<p class="font-['Manrope'] text-xs tracking-widest uppercase text-[#fff9ee]/40 max-w-xs">
+                Archiving the future through structural honesty and material poeticism.
+            </p>
+</div>
+<div class="flex flex-col items-end space-y-6">
+<div class="flex space-x-8">
+<a class="font-['Manrope'] text-xs tracking-widest uppercase text-[#fff9ee]/40 hover:text-[#fff9ee] underline underline-offset-4 transition-all" href="#">Instagram</a>
+<a class="font-['Manrope'] text-xs tracking-widest uppercase text-[#fff9ee]/40 hover:text-[#fff9ee] underline underline-offset-4 transition-all" href="#">LinkedIn</a>
+<a class="font-['Manrope'] text-xs tracking-widest uppercase text-[#fff9ee]/40 hover:text-[#fff9ee] underline underline-offset-4 transition-all" href="#">Journal</a>
+<a class="font-['Manrope'] text-xs tracking-widest uppercase text-[#fff9ee]/40 hover:text-[#fff9ee] underline underline-offset-4 transition-all" href="#">Privacy</a>
+</div>
+<div class="text-[#fff9ee]/40 font-['Manrope'] text-[10px] tracking-widest uppercase">
+                © 2024 PLAIN GRID Architecture Studio. All Rights Reserved.
+            </div>
+</div>
+</footer>
+</body></html>

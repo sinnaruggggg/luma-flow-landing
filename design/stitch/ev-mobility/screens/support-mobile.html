@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ORBIT E | SUPPORT.SYS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b1421;
+        }
+        .headline-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(10, 22, 42, 0.82);
+            backdrop-filter: blur(20px);
+        }
+        .mesh-depth {
+            background-image: radial-gradient(circle at 2px 2px, rgba(57, 213, 255, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .glow-accent {
+            box-shadow: 0 0 20px rgba(57, 213, 255, 0.15);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#ffd7f0",
+                      "on-tertiary-container": "#970187",
+                      "background": "#0b1421",
+                      "on-surface": "#dae3f6",
+                      "outline-variant": "#3c494e",
+                      "on-tertiary": "#5e0053",
+                      "on-primary-fixed-variant": "#004e60",
+                      "on-primary-container": "#00596e",
+                      "surface-container": "#17202e",
+                      "tertiary-fixed-dim": "#fface8",
+                      "surface-dim": "#0b1421",
+                      "on-primary-fixed": "#001f28",
+                      "secondary-fixed-dim": "#bac6e6",
+                      "surface-variant": "#2c3544",
+                      "primary-fixed-dim": "#45d6ff",
+                      "primary-container": "#39d5ff",
+                      "on-secondary-container": "#acb8d7",
+                      "surface-container-lowest": "#060e1b",
+                      "on-secondary": "#243049",
+                      "on-error": "#690005",
+                      "on-surface-variant": "#bbc9ce",
+                      "secondary-container": "#3d4963",
+                      "on-tertiary-fixed": "#3a0033",
+                      "inverse-surface": "#dae3f6",
+                      "on-tertiary-fixed-variant": "#840076",
+                      "secondary-fixed": "#d8e2ff",
+                      "outline": "#869398",
+                      "inverse-primary": "#00677e",
+                      "error": "#ffb4ab",
+                      "tertiary": "#ffd5f0",
+                      "surface-container-low": "#131c29",
+                      "secondary": "#bac6e6",
+                      "primary-fixed": "#b5ebff",
+                      "on-secondary-fixed": "#0e1b33",
+                      "on-primary": "#003543",
+                      "surface-tint": "#45d6ff",
+                      "inverse-on-surface": "#28313f",
+                      "primary": "#b1eaff",
+                      "on-secondary-fixed-variant": "#3b4761",
+                      "on-background": "#dae3f6",
+                      "tertiary-container": "#ffaae8",
+                      "surface-bright": "#313a48",
+                      "surface-container-high": "#222a38",
+                      "on-error-container": "#ffdad6",
+                      "surface-container-highest": "#2c3544",
+                      "surface": "#0b1421",
+                      "error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Space Grotesk"],
+                      "body": ["Plus Jakarta Sans"],
+                      "label": ["Space Grotesk"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-gradient-to-b from-[#0b1421] to-transparent shadow-[0_0_40px_rgba(57,213,255,0.08)] h-16 flex items-center">
+<div class="flex justify-between items-center px-6 w-full max-w-screen-xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container text-2xl active:scale-95 duration-200">menu</span>
+<h1 class="font-['Space_Grotesk'] tracking-tight text-white text-xl font-bold tracking-tighter text-[#39d5ff] uppercase">ORBIT E</h1>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden border border-white/10">
+<img class="w-full h-full object-cover" data-alt="professional male user profile avatar with neutral background and cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAZX8UOs9edU1HdQibCCpNH-IH6ETPLgLzjVdycJmtbVV80WaiTsBIAKoGeGWzPX2UpNx5Ip2phE1Pyuek3AfHnmAqSFEOzKJFa3mgjKAZEhLBpqAmwKFCQmHGbiWw0udPcUVtsdOZhWFqcdrACq73xRyOVympMYHFSR1DtOot1Mj4P_kIV5HCeWY88W_BSu1nil7EEwWkE3_uRoeLiiips92eV4F9y6K7XJ6uCRZhvU58DfYpVx6TgZSA73Xtiw5DzOLvrBk-q-0"/>
+</div>
+</div>
+</header>
+<main class="pt-20 pb-24 px-4 space-y-8 max-w-md mx-auto mesh-depth min-h-screen">
+<!-- Viewport 1: Technical Support Headline -->
+<section class="relative pt-4 overflow-hidden">
+<div class="flex items-center gap-2 mb-2">
+<span class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary-container"></span>
+</span>
+<span class="font-label text-[10px] tracking-[0.2em] text-primary uppercase">System Online</span>
+</div>
+<h2 class="headline-font text-4xl font-extrabold tracking-tighter text-white leading-tight">TECHNICAL<br/><span class="text-primary-container">SUPPORT</span></h2>
+<p class="text-on-surface-variant mt-3 text-sm leading-relaxed max-w-[280px]">
+                실시간 차량 진단 및 인프라 서비스 최적화 시스템. 기술 지원이 필요한 섹션을 선택하십시오.
+            </p>
+<div class="absolute -right-20 -top-10 w-48 h-48 bg-primary/10 rounded-full blur-[80px]"></div>
+</section>
+<!-- Global Hub Locator -->
+<section class="space-y-4">
+<div class="flex justify-between items-end">
+<h3 class="font-label text-xs tracking-[0.2em] text-slate-400 uppercase">Global Hub Locator</h3>
+<span class="text-[10px] text-primary-container opacity-60">LOC: 37.5665° N, 126.9780° E</span>
+</div>
+<div class="relative h-64 rounded-sm overflow-hidden bg-surface-container-lowest border border-white/5 glow-accent">
+<div class="absolute inset-0 opacity-40">
+<img class="w-full h-full object-cover grayscale brightness-50 contrast-125" data-alt="futuristic digital map interface of Seoul with glowing blue nodes and technical data overlays" data-location="Seoul" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwvo-UD8iH8aXTaztRwLHHh-vzGc1t0yoV57Ls-GcVW9JotT2sBEYMztqgSxwjJbTX_ogE1ukiCym0fALJdWAROudOLBBf1JAc4R0cYsjtLuIRaMmvSbxcSIr_Nqu83lYiGbKz0Pan6WhAArUGJxsvuIHM8rT-ZV1O31EUen7r_40c1hUUK_Vp9Js4fJCby99rCFwLUIz88kiEp0wOUS_GaXFB0YiJItxCwHY1vmOt937iXnALgVQ4hKrmzxgybNRHY-T2XFpqIS8"/>
+</div>
+<!-- Technical Overlays -->
+<div class="absolute inset-0 bg-gradient-to-t from-[#0b1421] via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-center glass-panel p-3 rounded-sm border-l-2 border-primary-container">
+<div>
+<p class="font-label text-[10px] text-primary-container">NEARBY HUB</p>
+<p class="text-white text-sm font-bold">ORBIT SEOUL CENTER</p>
+</div>
+<button class="bg-primary-container text-on-primary-container px-3 py-1 text-[10px] font-bold rounded-sm uppercase tracking-wider active:scale-95 transition-transform">
+                        Route
+                    </button>
+</div>
+</div>
+</section>
+<!-- Operational Framework -->
+<section class="space-y-6">
+<h3 class="font-label text-xs tracking-[0.2em] text-slate-400 uppercase">Operational Framework</h3>
+<div class="grid grid-cols-1 gap-3">
+<!-- Step 1 -->
+<div class="flex items-start gap-4 p-4 bg-surface-container-low border-l border-white/10 relative overflow-hidden">
+<div class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-surface-container-high rounded-sm text-primary-container">
+<span class="material-symbols-outlined" data-icon="settings_suggest">settings_suggest</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label text-[10px] text-primary opacity-50">01</span>
+<h4 class="text-white font-bold text-sm">PREP [사전 준비]</h4>
+</div>
+<p class="text-xs text-on-surface-variant mt-1">차량 데이터 원격 진단 및 방문 예약 확정 단계입니다.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start gap-4 p-4 bg-surface-container-low border-l-2 border-primary-container relative overflow-hidden">
+<div class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-primary-container text-on-primary-container rounded-sm shadow-[0_0_15px_rgba(57,213,255,0.3)]">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label text-[10px] text-primary opacity-50">02</span>
+<h4 class="text-white font-bold text-sm">VISIT [허브 방문]</h4>
+</div>
+<p class="text-xs text-on-surface-variant mt-1">지정된 허브에서 엔지니어의 정밀 기술 지원을 받습니다.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-start gap-4 p-4 bg-surface-container-low border-l border-white/10 relative overflow-hidden">
+<div class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-surface-container-high rounded-sm text-primary-container">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label text-[10px] text-primary opacity-50">03</span>
+<h4 class="text-white font-bold text-sm">POST-CARE [사후 관리]</h4>
+</div>
+<p class="text-xs text-on-surface-variant mt-1">작업 리포트 발행 및 성능 최적화 보증을 확인합니다.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pre-Visit Checklist -->
+<section class="bg-surface-container-lowest p-5 rounded-sm border border-white/5 relative group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<h3 class="font-label text-[10px] tracking-[0.2em] text-primary mb-4 uppercase">Pre-Visit Checklist</h3>
+<div class="grid grid-cols-3 gap-2">
+<div class="flex flex-col items-center justify-center p-3 bg-surface-container-low rounded-sm text-center">
+<span class="material-symbols-outlined text-primary-container text-xl mb-2" data-icon="badge">badge</span>
+<span class="text-[9px] font-bold text-white uppercase tracking-tighter">ID CARD</span>
+<span class="text-[8px] text-on-surface-variant">본인 확인</span>
+</div>
+<div class="flex flex-col items-center justify-center p-3 bg-surface-container-low rounded-sm text-center">
+<span class="material-symbols-outlined text-primary-container text-xl mb-2" data-icon="car_rental">car_rental</span>
+<span class="text-[9px] font-bold text-white uppercase tracking-tighter">LICENSE</span>
+<span class="text-[8px] text-on-surface-variant">면허증</span>
+</div>
+<div class="flex flex-col items-center justify-center p-3 bg-surface-container-low rounded-sm text-center border-b-2 border-primary-container">
+<span class="material-symbols-outlined text-primary-container text-xl mb-2" data-icon="key">key</span>
+<span class="text-[9px] font-bold text-white uppercase tracking-tighter">KEY SYNC</span>
+<span class="text-[8px] text-on-surface-variant">디지털 키</span>
+</div>
+</div>
+</section>
+<!-- FAQ.SYS -->
+<section class="space-y-4">
+<h3 class="font-label text-xs tracking-[0.2em] text-slate-400 uppercase">FAQ.SYS</h3>
+<div class="space-y-2">
+<!-- FAQ Item 1 -->
+<div class="bg-surface-container-low p-4 rounded-sm border border-white/5">
+<div class="flex justify-between items-center">
+<span class="text-sm font-bold text-white">원격 펌웨어 업데이트(OTA) 중 중단되면 어떻게 하나요?</span>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+</div>
+<!-- FAQ Item 2 (Active/Expanded feel) -->
+<div class="bg-surface-container-high p-4 rounded-sm border border-primary-container/30">
+<div class="flex justify-between items-center mb-3">
+<span class="text-sm font-bold text-primary-container">배터리 최적화 주기는 어떻게 되나요?</span>
+<span class="material-symbols-outlined text-primary text-sm transform rotate-180" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                        ORBIT E의 지능형 관리 시스템이 실시간으로 상태를 모니터링하며, 주행 습관에 따라 평균 6개월 단위의 정밀 점검을 권장합니다.
+                    </p>
+</div>
+<!-- FAQ Item 3 -->
+<div class="bg-surface-container-low p-4 rounded-sm border border-white/5">
+<div class="flex justify-between items-center">
+<span class="text-sm font-bold text-white">부품 보증 기간 연장 프로토콜은?</span>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Protocols -->
+<footer class="pt-8 space-y-4">
+<h3 class="font-label text-xs tracking-[0.2em] text-slate-400 uppercase">Contact Protocols</h3>
+<div class="grid grid-cols-1 gap-2">
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-sm border-l border-primary-container/40">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" data-icon="call">call</span>
+<span class="text-sm font-medium text-on-surface">1588-0000 [TECHNICAL LINE]</span>
+</div>
+<span class="text-[10px] bg-primary/10 text-primary-container px-2 py-0.5 rounded-full font-bold">READY</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-sm border-l border-white/10">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" data-icon="alternate_email">alternate_email</span>
+<span class="text-sm font-medium text-on-surface">support@orbit-e.tech</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-sm border-l border-white/10">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" data-icon="forum">forum</span>
+<span class="text-sm font-medium text-on-surface">LIVE SYSTEM CHAT</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
+<span class="text-[10px] text-error font-bold">BUSY</span>
+</div>
+</div>
+</div>
+<div class="pt-4 text-center">
+<p class="font-label text-[10px] text-slate-600 uppercase tracking-[0.3em]">Precision Mobility Ecosystem © 2024</p>
+</div>
+</footer>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-[#0a162a]/82 backdrop-blur-xl border-t border-white/10 flex justify-around items-center px-4 h-16 shadow-[0_-8px_30px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-slate-500 pt-2 pb-3 px-4 hover:text-[#b1eaff] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="electric_car">electric_car</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest font-bold mt-1">Models</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 pt-2 pb-3 px-4 hover:text-[#b1eaff] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="ev_station">ev_station</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest font-bold mt-1">Charge</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 pt-2 pb-3 px-4 hover:text-[#b1eaff] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="sports_motorsports">sports_motorsports</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest font-bold mt-1">Drive</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#39d5ff] border-t-2 border-[#39d5ff] pt-2 pb-3 px-4 hover:text-[#b1eaff] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="support_agent" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest font-bold mt-1">Support</span>
+</a>
+</nav>
+</body></html>

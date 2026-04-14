@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Noto+Serif+KR:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-dim": "#455939",
+                    "on-primary": "#edfde1",
+                    "on-error-container": "#742410",
+                    "primary-dim": "#485642",
+                    "secondary-container": "#dae7ca",
+                    "on-secondary-fixed": "#37432e",
+                    "surface-container": "#e4f2dc",
+                    "surface-bright": "#f5fcee",
+                    "inverse-primary": "#ebfce0",
+                    "on-secondary-fixed-variant": "#535f48",
+                    "primary": "#54624d",
+                    "error-container": "#fe8b70",
+                    "on-surface-variant": "#51644c",
+                    "primary-container": "#d7e7cd",
+                    "inverse-surface": "#0a1008",
+                    "outline": "#6c8066",
+                    "on-tertiary": "#ecffdc",
+                    "surface": "#f5fcee",
+                    "secondary-fixed-dim": "#ccd9bc",
+                    "on-background": "#253721",
+                    "on-secondary": "#f0fedf",
+                    "tertiary-fixed-dim": "#d5edc3",
+                    "secondary-fixed": "#dae7ca",
+                    "secondary": "#57634c",
+                    "on-primary-fixed-variant": "#51604b",
+                    "primary-fixed": "#d7e7cd",
+                    "surface-container-low": "#ecf7e5",
+                    "error": "#9e422c",
+                    "tertiary-container": "#e3fbd1",
+                    "background": "#f5fcee",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#c9d9bf",
+                    "tertiary": "#516544",
+                    "surface-dim": "#c7e2be",
+                    "outline-variant": "#a2b89b",
+                    "surface-container-highest": "#d3e9ca",
+                    "error-dim": "#5c1202",
+                    "on-primary-fixed": "#364330",
+                    "inverse-on-surface": "#989f93",
+                    "secondary-dim": "#4b5740",
+                    "on-error": "#fff7f6",
+                    "tertiary-fixed": "#e3fbd1",
+                    "on-surface": "#253721",
+                    "on-tertiary-fixed-variant": "#586c4b",
+                    "surface-container-high": "#dbeed3",
+                    "on-primary-container": "#485641",
+                    "on-secondary-container": "#4a553f",
+                    "surface-tint": "#54624d",
+                    "on-tertiary-container": "#4d6141",
+                    "on-tertiary-fixed": "#3c4f30",
+                    "surface-variant": "#d3e9ca"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Noto Serif KR"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Noto Serif KR', serif; }
+        .font-manrope { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-40">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 bg-[#f5fcee] dark:bg-stone-950 flex justify-between items-center w-full px-6 py-4">
+<button class="text-[#54624d] dark:text-[#d7e7cd] hover:bg-[#e4f2dc] dark:hover:bg-stone-800 transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-manrope font-bold tracking-[0.2em] text-[#24311f] dark:text-[#f5fcee] text-xl">MOSS HOME</h1>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high flex items-center justify-center">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="close-up portrait of a woman with a serene expression in soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB86wMW-fxtTBBWVbjWjyv0COsWSPVEnz9KxQkVFVdQ4nhqVpLGsp1LaXXPcjBuXOoBZ8KXblhmLHA6c-qVO8apD8ZsX4QjaljT3cpi2LQ1YjxQHTyeKVBNMBGs3ZRQ3GVqU1dv1UGHziW1CZ4kN-veg3Z81TyxjjBLsMZtWUeREOMVGrI7N0iY9wX0gHaM2jNaOoeQT4-275qweKHpadhZ10fDAF-Y_zJ5ncNTAXJVgB9bJmzI5_3jecOF7nkK9iBBW4349mQPQRUb"/>
+</div>
+</header>
+<!-- Page Title Section -->
+<section class="px-6 pt-8 pb-4">
+<h2 class="text-3xl font-manrope font-extrabold tracking-tight text-on-background mb-2">Shopping Bag</h2>
+<p class="text-on-surface-variant text-sm font-body leading-relaxed">당신만을 위해 큐레이션된 공간의 조각들</p>
+</section>
+<!-- Cart Items Container -->
+<main class="px-6 space-y-6 mt-4">
+<!-- Cart Item 1: Bundle -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-[0_4px_40px_rgba(37,55,33,0.04)] relative">
+<button class="absolute top-4 right-4 text-on-surface-variant/40">
+<span class="material-symbols-outlined text-lg" data-icon="close">close</span>
+</button>
+<div class="flex gap-4">
+<div class="w-24 h-32 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Minimalist living room bundle featuring a dark green lounge chair and a small oak side table on a textured cream rug" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdFLCKG8yZ-c2ONbxVCLOB61jCRA3d1EVGjD6x4gTqYXQ9dCLqEmR3LmEH3khvFD_OdNbpx8GkBFSuTvB0T1NRXWIoNWAHD3zixVG92HpUMRqcucv_aYn6dUZ7XxWSdyktH-0d7HB2k9liJTqrQJRluW7j6G8czoWrfQnzAERBO9KIpHYXd3ZGcTylLCFTEpXvLiWm4UVa1Tsyws9GzPC3PkF3NgvYljgB8vg53TwnZL9q3YDGac4re0YfwWvf3GRlze8pc-ffn1fy"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="text-lg font-bold text-on-surface mb-1">거실 스타터 번들</h3>
+<p class="text-xs text-on-surface-variant font-body mb-2 leading-tight">Forest Lounge Chair, Streamline Table, Wool Texture Rug</p>
+<p class="font-manrope font-bold text-primary">2,130,000원</p>
+</div>
+<div class="flex items-center justify-between mt-4">
+<div class="flex items-center bg-surface-container-low rounded-full px-2 py-1 border border-outline-variant/10">
+<button class="w-8 h-8 flex items-center justify-center text-primary"><span class="material-symbols-outlined" data-icon="remove">remove</span></button>
+<span class="px-3 font-manrope font-semibold text-sm">1</span>
+<button class="w-8 h-8 flex items-center justify-center text-primary"><span class="material-symbols-outlined" data-icon="add">add</span></button>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Cart Item 2: Lamp -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-[0_4px_40px_rgba(37,55,33,0.04)] relative">
+<button class="absolute top-4 right-4 text-on-surface-variant/40">
+<span class="material-symbols-outlined text-lg" data-icon="close">close</span>
+</button>
+<div class="flex gap-4">
+<div class="w-24 h-32 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Elegant tall brass floor lamp with a slim profile standing next to a velvet armchair in warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhJQ95htVdWXCQxni3pc0Ox3rTfyfArf69keqats592k_ANDpyoGqmMQIPj6Oveb-iaDy9NZtRYs9ZFDZI40emplTfuAWM9ObUmss9zmFp550nij3OWRIW_at-f33K_yYvVmWKYoi0A2sJ-xGLf-KRcRBYT_ViV2zr0ESJDvRjgpLhdj7NN3pME-LVrfbjDl6H_2gJUPRQ4GlkoGE6QndRFpMwKkRyMUipF8SJpkbq1j_bugv7Uyfk3lOInilnTq5-wJyitwZWQQx3"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="text-lg font-bold text-on-surface mb-1">루체 플로어 램프</h3>
+<p class="text-xs text-on-surface-variant font-body mb-2">Finish: Brass</p>
+<p class="font-manrope font-bold text-primary">540,000원</p>
+</div>
+<div class="flex items-center justify-between mt-4">
+<div class="flex items-center bg-surface-container-low rounded-full px-2 py-1 border border-outline-variant/10">
+<button class="w-8 h-8 flex items-center justify-center text-primary"><span class="material-symbols-outlined" data-icon="remove">remove</span></button>
+<span class="px-3 font-manrope font-semibold text-sm">1</span>
+<button class="w-8 h-8 flex items-center justify-center text-primary"><span class="material-symbols-outlined" data-icon="add">add</span></button>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Sustainability Message -->
+<section class="bg-surface-container rounded-xl p-5 border-l-4 border-primary">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="eco">eco</span>
+<div>
+<h4 class="font-manrope font-bold text-on-primary-container text-sm uppercase tracking-wider mb-1">MOSS Sustainability Guarantee</h4>
+<p class="text-xs text-on-tertiary-fixed-variant font-body leading-relaxed">
+                        우리는 지속 가능한 숲에서 온 목재와 재활용 가능한 패브릭만을 사용합니다. 자연과 공존하는 아름다움을 약속합니다.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Trust Badges -->
+<section class="flex justify-between items-center px-2 py-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="local_shipping">local_shipping</span>
+<span class="text-[11px] font-manrope font-semibold text-on-surface-variant uppercase tracking-tight">Premium Delivery</span>
+</div>
+<div class="w-px h-4 bg-outline-variant/30"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="verified_user">verified_user</span>
+<span class="text-[11px] font-manrope font-semibold text-on-surface-variant uppercase tracking-tight">5-Year Warranty</span>
+</div>
+</section>
+<!-- Order Summary -->
+<section class="bg-surface-container-low rounded-xl p-6 mt-8">
+<div class="space-y-4">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Subtotal</span>
+<span class="font-manrope font-medium">2,670,000원</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Shipping</span>
+<span class="text-primary font-manrope font-medium">Free</span>
+</div>
+<div class="pt-4 border-t border-outline-variant/20 flex justify-between items-end">
+<span class="text-lg font-bold">Total</span>
+<span class="text-2xl font-manrope font-extrabold text-primary">2,670,000원</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Sticky Navigation & CTA Container -->
+<div class="fixed bottom-0 left-0 w-full z-50">
+<!-- Sticky CTA Button -->
+<div class="px-6 py-4 bg-gradient-to-t from-surface to-transparent">
+<button class="w-full bg-primary text-on-primary py-5 rounded-full font-bold text-lg shadow-xl shadow-primary/20 active:scale-95 transition-transform">
+                주문하기
+            </button>
+</div>
+<!-- Bottom Navigation Bar -->
+<nav class="bg-[#f5fcee]/84 backdrop-blur-xl flex justify-around items-center px-4 pb-6 pt-3 rounded-t-[1.5rem] shadow-[0_-4px_40px_rgba(37,55,33,0.04)]">
+<a class="flex flex-col items-center justify-center text-[#253721] opacity-70 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="storefront">storefront</span>
+<span class="font-manrope text-[10px] uppercase tracking-widest font-medium">Atelier</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#253721] opacity-70 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="architecture">architecture</span>
+<span class="font-manrope text-[10px] uppercase tracking-widest font-medium">Planner</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#54624d] text-[#ffffff] rounded-full px-5 py-2 scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-manrope text-[10px] uppercase tracking-widest font-medium">Curated</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#253721] opacity-70 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-manrope text-[10px] uppercase tracking-widest font-medium">Profile</span>
+</a>
+</nav>
+</div>
+</body></html>

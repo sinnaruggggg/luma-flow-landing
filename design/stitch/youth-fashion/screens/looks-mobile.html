@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#fff4b8",
+                    "secondary-fixed-dim": "#ffacc9",
+                    "tertiary-fixed-dim": "#f0e49c",
+                    "surface-tint": "#2448e3",
+                    "secondary-fixed": "#ffc1d5",
+                    "on-surface": "#352f00",
+                    "secondary": "#a22e64",
+                    "on-tertiary-fixed-variant": "#6e652b",
+                    "surface-dim": "#e5d674",
+                    "surface-bright": "#fff7d5",
+                    "on-secondary-fixed-variant": "#932259",
+                    "on-primary": "#f2f1ff",
+                    "background": "#fff7d5",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#edde81",
+                    "on-secondary-container": "#87174f",
+                    "on-primary-fixed": "#000000",
+                    "error-container": "#f74b6d",
+                    "primary-fixed-dim": "#748aff",
+                    "primary-container": "#879aff",
+                    "tertiary": "#655c23",
+                    "surface-container-high": "#f3e48b",
+                    "outline-variant": "#b9ae6c",
+                    "tertiary-fixed": "#fff2a9",
+                    "inverse-surface": "#110e00",
+                    "error-dim": "#a70138",
+                    "tertiary-container": "#fff2a9",
+                    "on-tertiary-fixed": "#504810",
+                    "surface": "#fff7d5",
+                    "on-tertiary-container": "#635b21",
+                    "on-secondary": "#ffeff2",
+                    "on-secondary-fixed": "#6b003b",
+                    "on-error-container": "#510017",
+                    "on-background": "#352f00",
+                    "tertiary-dim": "#585018",
+                    "inverse-primary": "#7187ff",
+                    "surface-variant": "#edde81",
+                    "outline": "#81783b",
+                    "on-primary-container": "#00166c",
+                    "surface-container-low": "#fff2a9",
+                    "inverse-on-surface": "#a99e5d",
+                    "surface-container": "#f8ea96",
+                    "error": "#b41340",
+                    "primary-fixed": "#879aff",
+                    "on-primary-fixed-variant": "#001d83",
+                    "primary-dim": "#0a39d7",
+                    "primary": "#2448e3",
+                    "secondary-container": "#ffc1d5",
+                    "on-error": "#ffefef",
+                    "on-surface-variant": "#655c23",
+                    "secondary-dim": "#922158"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Be Vietnam Pro"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .perspective-sm { perspective: 1000px; }
+        .editorial-rotate-pos { transform: rotate(3deg); }
+        .editorial-rotate-neg { transform: rotate(-2deg); }
+        .glass-panel { background: rgba(255, 248, 211, 0.84); backdrop-filter: blur(12px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fff2a9]/80 dark:bg-slate-900/80 backdrop-blur-md flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300 active:scale-95 duration-200">menu</span>
+<h1 class="font-['Space_Grotesk'] uppercase tracking-tighter text-2xl font-bold text-[#0f3bd9] dark:text-blue-400 italic">BOP BOP</h1>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300 active:scale-95 duration-200">shopping_bag</span>
+</div>
+</header>
+<main class="pt-20 pb-24 overflow-hidden">
+<!-- Editorial Filtering Bar -->
+<nav class="px-6 mb-6 overflow-x-auto no-scrollbar whitespace-nowrap flex gap-4 items-center">
+<button class="bg-primary text-on-primary font-headline text-sm font-bold tracking-widest px-6 py-2 rounded-full scale-105 transition-transform active:scale-95">NEWEST</button>
+<button class="text-on-surface-variant font-headline text-sm font-bold tracking-widest px-4 py-2 hover:text-primary transition-colors">STREET</button>
+<button class="text-on-surface-variant font-headline text-sm font-bold tracking-widest px-4 py-2 hover:text-primary transition-colors">RETRO</button>
+<button class="text-on-surface-variant font-headline text-sm font-bold tracking-widest px-4 py-2 hover:text-primary transition-colors">EXPERIMENTAL</button>
+</nav>
+<!-- Looks Vertical Rail -->
+<div class="flex flex-col gap-12 px-4 pb-12">
+<!-- Look #01 -->
+<section class="relative group">
+<div class="relative rounded-lg overflow-hidden aspect-[3/4] bg-surface-container shadow-[0_20px_40px_rgba(53,47,0,0.08)]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="high fashion model wearing futuristic oversized cargo pants and crop top against a vibrant yellow minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQhsrW3o6h0EHsI0ODEAqGdi4ixqVPLqXM9d10wE4rrnU5vXHa5dv9Qv_iss4Rr00IiFsDaMHXb_mQxShuxkfAHBRT6UUj-F4fwYugCWQRWf9Fc7e_xrb1E-MSpONpW2_LcY0L26-emFnZjz5lcw7maP_IShttQsVPh5g7-vn4GQ53VwpmEbm5ELJ5L-EoOSpr9cvOlks_2MeRZNCFMfmtgRsoVVcnoMCSHU0kD5lFajEpwO_wtLCG96yFMVq4l8o8R1Flt4MfSavL"/>
+<!-- Editorial Stickers -->
+<div class="absolute top-6 left-6 flex flex-col gap-2">
+<div class="bg-primary text-white font-headline text-[10px] tracking-widest px-3 py-1 rounded-full editorial-rotate-neg inline-block shadow-lg">
+                            LOOK #01
+                        </div>
+<div class="bg-secondary-container text-on-secondary-container font-headline text-[10px] tracking-widest px-3 py-1 rounded-full editorial-rotate-pos inline-block shadow-lg">
+                            CYBERPUNK
+                        </div>
+</div>
+<!-- Price Sticker -->
+<div class="absolute top-1/2 -right-2 transform -translate-y-1/2 editorial-rotate-neg bg-surface-container-lowest px-4 py-2 shadow-xl rounded-l-xl border-r-4 border-primary">
+<p class="font-headline text-[10px] text-on-surface-variant leading-none uppercase mb-1">CYBER CARGO PANTS</p>
+<p class="font-headline font-bold text-primary text-lg leading-none">59,000원</p>
+</div>
+<!-- Shop CTA Overlay -->
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/60 to-transparent">
+<button class="w-full bg-primary text-on-primary font-headline font-bold py-4 rounded-full shadow-2xl transition-all hover:scale-[1.03] active:scale-95 tracking-widest uppercase">
+                            SHOP THIS LOOK
+                        </button>
+</div>
+</div>
+<!-- Caption -->
+<div class="mt-4 px-2">
+<h3 class="font-headline text-3xl font-extrabold text-primary leading-tight -translate-y-6 bg-background/90 inline-block px-2">NEO-STREET RIOT</h3>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed max-w-[80%]">도시의 리듬을 담은 사이버 펑크 스타일. 거친 질감과 대비되는 실루엣으로 완성하는 새로운 무드.</p>
+</div>
+</section>
+<!-- Look #02 -->
+<section class="relative group">
+<div class="relative rounded-lg overflow-hidden aspect-[3/4] bg-surface-container shadow-[0_20px_40px_rgba(53,47,0,0.08)]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="streetwear portrait of a model in a bold pink oversized hoodie with abstract electric blue graphics in an urban setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoJVxhrXkfIjo5BuQVUrsfBVzCw2hIjrQAzYV-KGl1p-MsM5UVRz0fQWPGkjboibAlM3vbY1b4QUH1bDYJBDRMSZQRj29sn-y_H8NlRo0IqXT-b2zGemgNVze9QIwsvp6Epb3fK3YuGueGXZOmnt6HutUfwzdGX63nkOMpgzGMoCtxDmzbpH7K-6r3Itpmy6OnsMNYUlqIj9vMWWR1fTuoMPs6-pD3174D20VelOtp2BYfDb_6riOlP3cRL1t4eJVncj_Datp4w-Ao"/>
+<!-- Editorial Stickers -->
+<div class="absolute top-6 right-6 flex flex-col items-end gap-2">
+<div class="bg-primary text-white font-headline text-[10px] tracking-widest px-3 py-1 rounded-full editorial-rotate-pos inline-block shadow-lg">
+                            LOOK #02
+                        </div>
+<div class="bg-secondary-container text-on-secondary-container font-headline text-[10px] tracking-widest px-3 py-1 rounded-full editorial-rotate-neg inline-block shadow-lg">
+                            STREETWEAR
+                        </div>
+</div>
+<!-- Price Sticker -->
+<div class="absolute bottom-32 left-6 bg-surface-container-lowest px-4 py-2 shadow-xl rounded-xl border-l-4 border-secondary editorial-rotate-pos">
+<p class="font-headline text-[10px] text-on-surface-variant leading-none uppercase mb-1">GRAPHIC OVER-HOODIE</p>
+<p class="font-headline font-bold text-secondary text-lg leading-none">82,000원</p>
+</div>
+<!-- Shop CTA Overlay -->
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/60 to-transparent">
+<button class="w-full bg-surface-container-lowest text-primary font-headline font-bold py-4 rounded-full shadow-2xl transition-all hover:scale-[1.03] active:scale-95 tracking-widest uppercase">
+                            GET THE LOOK
+                        </button>
+</div>
+</div>
+<!-- Caption -->
+<div class="mt-4 px-2 text-right">
+<h3 class="font-headline text-3xl font-extrabold text-secondary leading-tight -translate-y-6 bg-background/90 inline-block px-2">VIVID PULSE</h3>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed ml-auto max-w-[80%]">선명한 핑크와 블루의 충돌. 그래픽 요소가 강조된 오버사이즈 실루엣의 강렬한 존재감.</p>
+</div>
+</section>
+<!-- Look #03 -->
+<section class="relative group mb-12">
+<div class="relative rounded-lg overflow-hidden aspect-[3/4] bg-surface-container shadow-[0_20px_40px_rgba(53,47,0,0.08)]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="editorial fashion shot of a woman in high-waisted denim and a vintage yellow windbreaker standing against a raw concrete wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvb2OA2IzT2SnueUhSSUOla5-b01R3h5jPkCTgha108ik4BW269XZCYCIenml5demtIxaMXz-hy7EyyXznEMgg_72XHUAvl1Fj1JMPse5A8ria_Q0xz96htb-B51jneE7GscekX-D8hLpmNjd8Lcx-Eu6Cjir_yc9AFLQ7Sf1Fh07a4OaPLP1wDWU77i5uiYBlOjN7pFfnU6J45kgyeFquZaSOwLOi5PJtzY09NM8f1a6cPST-chmCG3cFrN-aDbYbkJ0vZtegcU7-"/>
+<!-- Editorial Stickers -->
+<div class="absolute bottom-24 left-6 flex flex-col gap-2">
+<div class="bg-primary text-white font-headline text-[10px] tracking-widest px-3 py-1 rounded-full editorial-rotate-neg inline-block shadow-lg">
+                            LOOK #03
+                        </div>
+<div class="bg-secondary-container text-on-secondary-container font-headline text-[10px] tracking-widest px-3 py-1 rounded-full editorial-rotate-pos inline-block shadow-lg">
+                            RETROCORE
+                        </div>
+</div>
+<!-- Shop CTA Overlay -->
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/60 to-transparent">
+<button class="w-full bg-primary text-on-primary font-headline font-bold py-4 rounded-full shadow-2xl transition-all hover:scale-[1.03] active:scale-95 tracking-widest uppercase">
+                            SHOP THIS LOOK
+                        </button>
+</div>
+</div>
+<!-- Caption -->
+<div class="mt-4 px-2">
+<h3 class="font-headline text-3xl font-extrabold text-primary leading-tight -translate-y-6 bg-background/90 inline-block px-2">PAST FORWARD</h3>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed max-w-[80%]">클래식 데님과 빈티지 무드의 재해석. 90년대의 향수를 현대적인 터치로 풀어낸 컬렉션.</p>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 flex justify-around items-center px-4 pb-2 bg-[#fff2a9]/84 dark:bg-slate-900/84 backdrop-blur-xl z-50 rounded-t-[40px] shadow-[0_-20px_40px_rgba(15,59,217,0.08)]">
+<a class="flex flex-col items-center justify-center bg-[#0f3bd9] text-white rounded-full px-5 py-2 scale-110 -translate-y-2 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">style</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-widest mt-0.5">LOOKS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#0f3bd9]/60 dark:text-slate-400 hover:text-[#0f3bd9] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-widest mt-0.5">SHOP</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#0f3bd9]/60 dark:text-slate-400 hover:text-[#0f3bd9] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-widest mt-0.5">DROPS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#0f3bd9]/60 dark:text-slate-400 hover:text-[#0f3bd9] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-widest mt-0.5">MY</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,89 @@
+{
+  "siteId": "boutique-hotel",
+  "brand": "HOTEL STILL",
+  "projectId": "18224916439702723517",
+  "projectTitle": "HOTEL STILL Stitch",
+  "updatedAt": "2026-04-14T01:24:59.825Z",
+  "screens": {
+    "home:desktop": {
+      "screenId": "0c0fe9c785d74b79ae5c84b68c2e0033",
+      "pageSlug": "home",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/boutique-hotel/screens/home-desktop.html",
+      "imagePath": "design/stitch/boutique-hotel/screens/home-desktop.png",
+      "updatedAt": "2026-04-13T23:14:25.775Z"
+    },
+    "home:mobile": {
+      "screenId": "6f556b474fb24460a3017f9b8ee82490",
+      "pageSlug": "home",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/boutique-hotel/screens/home-mobile.html",
+      "imagePath": "design/stitch/boutique-hotel/screens/home-mobile.png",
+      "updatedAt": "2026-04-13T23:16:28.676Z"
+    },
+    "rooms:desktop": {
+      "screenId": "7701cd8fbfda4dfcbb09e9cdb737c7ce",
+      "pageSlug": "rooms",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/boutique-hotel/screens/rooms-desktop.html",
+      "imagePath": "design/stitch/boutique-hotel/screens/rooms-desktop.png",
+      "updatedAt": "2026-04-14T01:14:58.803Z"
+    },
+    "rooms:mobile": {
+      "screenId": "75c9ad5cbc054b5a8ef7813969b5cb55",
+      "pageSlug": "rooms",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/boutique-hotel/screens/rooms-mobile.html",
+      "imagePath": "design/stitch/boutique-hotel/screens/rooms-mobile.png",
+      "updatedAt": "2026-04-14T01:16:25.832Z"
+    },
+    "offers:desktop": {
+      "screenId": "b0ab51e0ae5a462ba5a735a584615323",
+      "pageSlug": "offers",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/boutique-hotel/screens/offers-desktop.html",
+      "imagePath": "design/stitch/boutique-hotel/screens/offers-desktop.png",
+      "updatedAt": "2026-04-14T01:17:35.976Z"
+    },
+    "offers:mobile": {
+      "screenId": "a2a0719fb5ac4bd3af053761063fd1e7",
+      "pageSlug": "offers",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/boutique-hotel/screens/offers-mobile.html",
+      "imagePath": "design/stitch/boutique-hotel/screens/offers-mobile.png",
+      "updatedAt": "2026-04-14T01:18:51.516Z"
+    },
+    "booking:desktop": {
+      "screenId": "741ae585742a46519b5e713cc6dc86fd",
+      "pageSlug": "booking",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/boutique-hotel/screens/booking-desktop.html",
+      "imagePath": "design/stitch/boutique-hotel/screens/booking-desktop.png",
+      "updatedAt": "2026-04-14T01:20:21.503Z"
+    },
+    "booking:mobile": {
+      "screenId": "7e6cb20446f04041949c5535a6f42822",
+      "pageSlug": "booking",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/boutique-hotel/screens/booking-mobile.html",
+      "imagePath": "design/stitch/boutique-hotel/screens/booking-mobile.png",
+      "updatedAt": "2026-04-14T01:21:58.490Z"
+    },
+    "guide:desktop": {
+      "screenId": "a87567e25d1048e29073166f29b73594",
+      "pageSlug": "guide",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/boutique-hotel/screens/guide-desktop.html",
+      "imagePath": "design/stitch/boutique-hotel/screens/guide-desktop.png",
+      "updatedAt": "2026-04-14T01:23:34.153Z"
+    },
+    "guide:mobile": {
+      "screenId": "1d85cfa0c1b646f08558adba3e031d13",
+      "pageSlug": "guide",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/boutique-hotel/screens/guide-mobile.html",
+      "imagePath": "design/stitch/boutique-hotel/screens/guide-mobile.png",
+      "updatedAt": "2026-04-14T01:24:59.827Z"
+    }
+  }
+}

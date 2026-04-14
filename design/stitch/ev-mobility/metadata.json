@@ -1,0 +1,89 @@
+{
+  "siteId": "ev-mobility",
+  "brand": "ORBIT E",
+  "projectId": "1477499815390934474",
+  "projectTitle": "ORBIT E Stitch",
+  "updatedAt": "2026-04-14T03:19:05.108Z",
+  "screens": {
+    "home:desktop": {
+      "screenId": "3a177eaba49a4d5499d00271e6b6caaa",
+      "pageSlug": "home",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/ev-mobility/screens/home-desktop.html",
+      "imagePath": "design/stitch/ev-mobility/screens/home-desktop.png",
+      "updatedAt": "2026-04-13T23:20:45.271Z"
+    },
+    "home:mobile": {
+      "screenId": "8aa63edef5fa40c4ab979cc208491d70",
+      "pageSlug": "home",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/ev-mobility/screens/home-mobile.html",
+      "imagePath": "design/stitch/ev-mobility/screens/home-mobile.png",
+      "updatedAt": "2026-04-13T23:27:02.195Z"
+    },
+    "models:desktop": {
+      "screenId": "bfbd71e279eb42469e6d776fda47a5b6",
+      "pageSlug": "models",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/ev-mobility/screens/models-desktop.html",
+      "imagePath": "design/stitch/ev-mobility/screens/models-desktop.png",
+      "updatedAt": "2026-04-14T03:04:30.703Z"
+    },
+    "models:mobile": {
+      "screenId": "191b4490fb0648d3969a2ba9b480d488",
+      "pageSlug": "models",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/ev-mobility/screens/models-mobile.html",
+      "imagePath": "design/stitch/ev-mobility/screens/models-mobile.png",
+      "updatedAt": "2026-04-14T03:06:05.873Z"
+    },
+    "charge:desktop": {
+      "screenId": "f6ca2d4eb4444bedb229669eb351b8a1",
+      "pageSlug": "charge",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/ev-mobility/screens/charge-desktop.html",
+      "imagePath": "design/stitch/ev-mobility/screens/charge-desktop.png",
+      "updatedAt": "2026-04-14T03:11:54.552Z"
+    },
+    "charge:mobile": {
+      "screenId": "a5dc93fb313c4c5998ab23a71d4d2485",
+      "pageSlug": "charge",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/ev-mobility/screens/charge-mobile.html",
+      "imagePath": "design/stitch/ev-mobility/screens/charge-mobile.png",
+      "updatedAt": "2026-04-14T03:13:26.700Z"
+    },
+    "drive:desktop": {
+      "screenId": "6092a76d3a7e407aa24415930e9b26a8",
+      "pageSlug": "drive",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/ev-mobility/screens/drive-desktop.html",
+      "imagePath": "design/stitch/ev-mobility/screens/drive-desktop.png",
+      "updatedAt": "2026-04-14T03:14:45.841Z"
+    },
+    "drive:mobile": {
+      "screenId": "c8ee8b7399df4148883139ace36a23da",
+      "pageSlug": "drive",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/ev-mobility/screens/drive-mobile.html",
+      "imagePath": "design/stitch/ev-mobility/screens/drive-mobile.png",
+      "updatedAt": "2026-04-14T03:16:15.027Z"
+    },
+    "support:desktop": {
+      "screenId": "4751319b152e40b3ba1118673a3efc9b",
+      "pageSlug": "support",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/ev-mobility/screens/support-desktop.html",
+      "imagePath": "design/stitch/ev-mobility/screens/support-desktop.png",
+      "updatedAt": "2026-04-14T03:17:52.864Z"
+    },
+    "support:mobile": {
+      "screenId": "ab3a6a1df5c241bbbef06aab8c3bbff9",
+      "pageSlug": "support",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/ev-mobility/screens/support-mobile.html",
+      "imagePath": "design/stitch/ev-mobility/screens/support-mobile.png",
+      "updatedAt": "2026-04-14T03:19:05.109Z"
+    }
+  }
+}

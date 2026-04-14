@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GUIDE | NOISE WAVE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Be+Vietnam+Pro:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ffdeae",
+                    "secondary-container": "#980388",
+                    "inverse-surface": "#dae3f6",
+                    "on-error": "#690005",
+                    "tertiary-container": "#ffb837",
+                    "on-tertiary-fixed": "#281800",
+                    "on-surface-variant": "#bbc9ce",
+                    "surface-container-lowest": "#060e1b",
+                    "surface-container-highest": "#2c3544",
+                    "on-secondary-container": "#fface8",
+                    "on-primary-fixed": "#001f28",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#b5ebff",
+                    "error-container": "#93000a",
+                    "on-primary-fixed-variant": "#004e60",
+                    "primary-fixed-dim": "#45d6ff",
+                    "primary-container": "#39d5ff",
+                    "tertiary": "#ffdcaa",
+                    "surface-container-high": "#222a38",
+                    "primary": "#b1eaff",
+                    "outline-variant": "#3c494e",
+                    "on-surface": "#dae3f6",
+                    "inverse-primary": "#00677e",
+                    "secondary": "#fface8",
+                    "on-tertiary-fixed-variant": "#604100",
+                    "surface-variant": "#2c3544",
+                    "surface-dim": "#0b1421",
+                    "outline": "#869398",
+                    "on-primary-container": "#00596e",
+                    "surface-container-low": "#131c29",
+                    "surface-bright": "#313a48",
+                    "inverse-on-surface": "#28313f",
+                    "on-secondary-fixed-variant": "#840076",
+                    "surface-container": "#17202e",
+                    "on-primary": "#003543",
+                    "background": "#0b1421",
+                    "surface": "#0b1421",
+                    "on-tertiary-container": "#6e4b00",
+                    "on-tertiary": "#432c00",
+                    "secondary-fixed-dim": "#fface8",
+                    "on-secondary": "#5e0053",
+                    "tertiary-fixed-dim": "#ffba3f",
+                    "on-secondary-fixed": "#3a0033",
+                    "surface-tint": "#45d6ff",
+                    "secondary-fixed": "#ffd7f0",
+                    "on-error-container": "#ffdad6",
+                    "on-background": "#dae3f6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Be Vietnam Pro"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0b1421;
+            color: #dae3f6;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(44, 53, 68, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .mesh-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(57, 213, 255, 0.05) 0%, rgba(11, 20, 33, 1) 100%);
+        }
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: rgba(57, 213, 255, 0.1);
+            position: absolute;
+            top: 0;
+            z-index: 10;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0b1421] shadow-[0_0_40px_rgba(57,213,255,0.08)]">
+<div class="flex justify-between items-center px-6 py-4 max-w-full">
+<div class="text-2xl font-black text-[#39d5ff] tracking-tighter font-['Space_Grotesk'] uppercase">
+                NOISE WAVE
+            </div>
+<nav class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] tracking-tighter uppercase text-sm">
+<a class="text-[#ecfbff] opacity-70 hover:opacity-100 hover:text-[#fface8] transition-all duration-150" href="#">HOME</a>
+<a class="text-[#ecfbff] opacity-70 hover:opacity-100 hover:text-[#fface8] transition-all duration-150" href="#">LINEUP</a>
+<a class="text-[#ecfbff] opacity-70 hover:opacity-100 hover:text-[#fface8] transition-all duration-150" href="#">TIMETABLE</a>
+<a class="text-[#ecfbff] opacity-70 hover:opacity-100 hover:text-[#fface8] transition-all duration-150" href="#">TICKETS</a>
+<a class="text-[#39d5ff] border-b-2 border-[#39d5ff] pb-1 hover:opacity-100 hover:text-[#fface8] transition-all duration-150" href="#">GUIDE</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#39d5ff]" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+<div class="bg-[#2c3544] h-[2px] w-full"></div>
+</header>
+<main class="pt-20">
+<!-- Hero: GUIDE_PROTOCOL_2024 -->
+<section class="relative h-[716px] flex items-center px-6 md:px-12 overflow-hidden mesh-gradient">
+<div class="absolute inset-0 opacity-20 mix-blend-overlay">
+<img alt="abstract" class="w-full h-full object-cover" data-alt="abstract cyber-punk aesthetic background with glowing blue and pink digital noise and circuit patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3V-ejbo3SE6SEXq9_NIo-2qL4yd0hARjUQbPKpd3LZjRb7vDmNqqpYHdA1_xcO56PGOCOklKmtnZsm7fh9Xt3R4NQhv6_jWmAU6buMHXfeEkPG07lB60gGQwCfeXuDysrZjWmxvguEitTrfAeY9WUz5rDO20tq0yQzMGw4hAcPCIqG6X-JsRFDIZbL-BA3R_C88ieM7Qo2CGkfBI64tFvQ5lKqhkQ5LNfoCoAMp93JNcFGD3J_mR9WzR9wGLA9KFAsGX-aSD6CCE"/>
+</div>
+<div class="z-10 w-full max-w-7xl">
+<div class="flex flex-col gap-2 mb-6">
+<span class="font-label text-primary tracking-[0.3em] text-xs uppercase">STATUS: OPTIMAL // SYSTEM_LOG_LOADED</span>
+<h1 class="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-none uppercase">
+                        GUIDE<br/><span class="text-secondary">PROTOCOL</span>_2024
+                    </h1>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-outline-variant/30 pt-6">
+<div class="flex flex-col">
+<span class="font-label text-[10px] text-primary/50 uppercase">LOCATION_ID</span>
+<span class="font-headline font-bold text-lg">SEOUL_YOUTH_C</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-[10px] text-primary/50 uppercase">COORDINATES</span>
+<span class="font-headline font-bold text-lg">37.5665° N / 126.9780° E</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-[10px] text-primary/50 uppercase">ARCHIVE_TYPE</span>
+<span class="font-headline font-bold text-lg">PUBLIC_ACCESS</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-[10px] text-primary/50 uppercase">ENCRYPTION</span>
+<span class="font-headline font-bold text-lg">AES_256_ACTIVE</span>
+</div>
+</div>
+</div>
+<!-- Decorative console element -->
+<div class="absolute right-0 bottom-0 p-8 hidden md:block opacity-40">
+<div class="border border-primary/20 p-4 font-label text-[10px] space-y-1">
+<p>&gt; INITIALIZING VIRTUAL_ENVIRONMENT...</p>
+<p>&gt; MAPPING SECTOR_01 TO SECTOR_04...</p>
+<p>&gt; DEPLOYING NAVIGATION_MESH...</p>
+<p class="text-primary">&gt; [DONE]</p>
+</div>
+</div>
+</section>
+<!-- Section 1: SECTOR_MAP -->
+<section class="py-24 px-6 md:px-12 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto">
+<div class="flex items-baseline gap-4 mb-12">
+<h2 class="font-headline text-4xl font-black tracking-tighter uppercase italic">SECTOR_MAP</h2>
+<div class="h-[2px] flex-grow bg-primary/20"></div>
+<span class="font-label text-xs text-secondary">[VERSION 1.04]</span>
+</div>
+<div class="relative group">
+<!-- The Map Container -->
+<div class="aspect-video w-full bg-surface-container-highest overflow-hidden relative border border-primary/10">
+<img alt="map" class="w-full h-full object-cover grayscale opacity-40" data-alt="futuristic architectural site plan of a park complex viewed from above with blue digital wireframe overlays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABZmvD4B2GlvSqD3cP6LPJTk3yRA1oP2j3BxATMPNiEtgSpWyPRv2CXTRlpGyjXESISKyunx7Fp-eRK0AR6cJ-cmEx7TurF4xgpG8VAxoh7H1S3cVBOvUh4F7zuTv65nr97nM0NAwPjogyUS4-Z6sJyIlgt91gdVIMCgVJPaTMpAucFzAAzqF6x_Fzw2A0BYjGUMlE_FKDu2jGukVSGfC5f2XoPxOOYQ8eLfnhiwC3lQmVRFCRz-uFW54kj8vPUZOUTmSD3k3nHlU"/>
+<!-- Map Markers (Floating Technical Blocks) -->
+<div class="absolute top-1/4 left-1/3 p-3 glass-panel border border-primary/40 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="waves">waves</span>
+<div>
+<p class="font-headline font-bold text-xs uppercase leading-none">CORE_STAGE</p>
+<p class="text-[9px] text-primary/70 uppercase font-label">Main Arena / EDM &amp; Rock</p>
+</div>
+</div>
+<div class="absolute bottom-1/3 right-1/4 p-3 glass-panel border border-secondary/40 flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="blur_on">blur_on</span>
+<div>
+<p class="font-headline font-bold text-xs uppercase leading-none">PULSE_ZONE</p>
+<p class="text-[9px] text-secondary/70 uppercase font-label">Sub Stage / Experimental</p>
+</div>
+</div>
+<div class="absolute top-2/3 left-1/2 p-3 glass-panel border border-white/40 flex items-center gap-3">
+<span class="material-symbols-outlined text-white text-xl" data-icon="fastfood">fastfood</span>
+<div>
+<p class="font-headline font-bold text-xs uppercase leading-none">RECHARGE_HUB</p>
+<p class="text-[9px] text-white/70 uppercase font-label">Food &amp; Beverage Court</p>
+</div>
+</div>
+<!-- Data HUD Overlays -->
+<div class="absolute inset-0 pointer-events-none border-[20px] border-surface-container-lowest/50"></div>
+<div class="absolute top-4 right-4 text-right space-y-1">
+<p class="font-label text-[10px] text-primary">MAP_MODE: INFRARED</p>
+<p class="font-label text-[10px] text-primary">ZOOM: 1.2X</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-1 mt-1">
+<div class="bg-surface-container-high p-4 flex justify-between items-center">
+<span class="font-label text-xs uppercase text-on-surface-variant">Entrance Alpha</span>
+<span class="font-headline font-black text-primary">01</span>
+</div>
+<div class="bg-surface-container-high p-4 flex justify-between items-center">
+<span class="font-label text-xs uppercase text-on-surface-variant">Medical Node</span>
+<span class="font-headline font-black text-primary">02</span>
+</div>
+<div class="bg-surface-container-high p-4 flex justify-between items-center">
+<span class="font-label text-xs uppercase text-on-surface-variant">Storage Unit</span>
+<span class="font-headline font-black text-primary">03</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: VISIT_PROTOCOL -->
+<section class="py-24 px-6 md:px-12 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<h2 class="font-headline text-4xl font-black tracking-tighter uppercase italic">VISIT_PROTOCOL</h2>
+<p class="text-sm font-label text-primary/60 mt-2 uppercase tracking-widest">Mandatory entry procedures and regulations</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Rule Card 1 -->
+<div class="bg-surface-container-low p-6 flex flex-col gap-8 group hover:bg-primary-container/10 transition-colors border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="badge">badge</span>
+<div>
+<h3 class="font-headline font-bold text-xl uppercase mb-3">Identification</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">입장 시 본인 확인을 위한 신분증 지참은 필수입니다. (주민등록증, 운전면허증, 여권 등)</p>
+</div>
+<span class="font-label text-[10px] mt-auto text-primary/40 uppercase">RULE_NODE_001</span>
+</div>
+<!-- Rule Card 2 -->
+<div class="bg-surface-container-low p-6 flex flex-col gap-8 group hover:bg-primary-container/10 transition-colors border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="confirmation_number">confirmation_number</span>
+<div>
+<h3 class="font-headline font-bold text-xl uppercase mb-3">Mobile Ticket</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">디지털 모바일 티켓만 인정됩니다. 캡처본은 입장이 불가하오니 앱을 통해 제시해 주세요.</p>
+</div>
+<span class="font-label text-[10px] mt-auto text-primary/40 uppercase">RULE_NODE_002</span>
+</div>
+<!-- Rule Card 3 -->
+<div class="bg-surface-container-low p-6 flex flex-col gap-8 group hover:bg-primary-container/10 transition-colors border-l-4 border-secondary">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="block">block</span>
+<div>
+<h3 class="font-headline font-bold text-xl uppercase mb-3">Prohibited</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">외부 음식물, 위험 물질, 전문 촬영 장비는 반입이 제한됩니다. 소지품 검사가 진행됩니다.</p>
+</div>
+<span class="font-label text-[10px] mt-auto text-secondary/40 uppercase">RULE_NODE_003</span>
+</div>
+<!-- Rule Card 4 -->
+<div class="bg-surface-container-low p-6 flex flex-col gap-8 group hover:bg-primary-container/10 transition-colors border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="door_front">door_front</span>
+<div>
+<h3 class="font-headline font-bold text-xl uppercase mb-3">Re-entry</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">재입장은 손목 밴드 착용자에 한해 가능합니다. 훼손 시 재발급이 불가하니 주의 바랍니다.</p>
+</div>
+<span class="font-label text-[10px] mt-auto text-primary/40 uppercase">RULE_NODE_004</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: FAQ_NODES -->
+<section class="py-24 px-6 md:px-12 bg-surface-container-lowest relative overflow-hidden">
+<div class="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent"></div>
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="flex items-center gap-6 mb-16">
+<span class="font-headline text-8xl font-black text-primary/10 select-none">FAQ</span>
+<div>
+<h2 class="font-headline text-4xl font-black tracking-tighter uppercase italic">FAQ_NODES</h2>
+<p class="text-sm font-label text-primary/60 uppercase tracking-widest">Querying central knowledge base...</p>
+</div>
+</div>
+<div class="space-y-4">
+<details class="group bg-surface-container-high/50 border-b border-outline-variant/30">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<h4 class="font-headline font-bold text-lg uppercase flex items-center gap-4">
+<span class="text-primary font-label text-xs">Q.01</span>
+                                공연 중 사진 및 영상 촬영이 가능한가요?
+                            </h4>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant text-sm leading-relaxed max-w-3xl">
+                            휴대폰을 이용한 일상적인 촬영은 가능하나, 고배율 렌즈를 장착한 전문 카메라, 삼각대, 셀카봉 등을 이용한 촬영은 다른 관객의 관람을 방해하므로 엄격히 금지됩니다.
+                        </div>
+</details>
+<details class="group bg-surface-container-high/50 border-b border-outline-variant/30">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<h4 class="font-headline font-bold text-lg uppercase flex items-center gap-4">
+<span class="text-primary font-label text-xs">Q.02</span>
+                                물품 보관소 운영 시간은 어떻게 되나요?
+                            </h4>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant text-sm leading-relaxed max-w-3xl">
+                            보관소는 페스티벌 시작 1시간 전부터 종료 후 1시간까지 운영됩니다. 분실 위험이 있는 귀중품은 직접 휴대하시길 권장드립니다.
+                        </div>
+</details>
+<details class="group bg-surface-container-high/50 border-b border-outline-variant/30">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<h4 class="font-headline font-bold text-lg uppercase flex items-center gap-4">
+<span class="text-primary font-label text-xs">Q.03</span>
+                                우천 시에도 공연이 진행되나요?
+                            </h4>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant text-sm leading-relaxed max-w-3xl">
+                            일반적인 비에는 공연이 정상 진행되며, 현장에서 우의를 배부해 드립니다. 단, 폭우나 강풍 등 안전이 우려되는 기상 상황의 경우 공연 일정이 조정될 수 있으며 공지사항을 통해 안내드립니다.
+                        </div>
+</details>
+<details class="group bg-surface-container-high/50 border-b border-outline-variant/30">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<h4 class="font-headline font-bold text-lg uppercase flex items-center gap-4">
+<span class="text-primary font-label text-xs">Q.04</span>
+                                현장에서 티켓 구매가 가능한가요?
+                            </h4>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant text-sm leading-relaxed max-w-3xl">
+                            온라인 예매 매진 시 현장 판매는 진행되지 않습니다. 잔여 수량이 있을 경우에만 현장 티켓 부스에서 구매가 가능하며, 공지사항을 확인해 주세요.
+                        </div>
+</details>
+</div>
+</div>
+</section>
+<!-- Section 4: ACCESS_ROUTE -->
+<section class="py-24 px-6 md:px-12 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16 text-right">
+<h2 class="font-headline text-4xl font-black tracking-tighter uppercase italic">ACCESS_ROUTE</h2>
+<p class="text-sm font-label text-primary/60 mt-2 uppercase tracking-widest">Transport logistics &amp; coordinates</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+<div class="bg-surface-container-high p-8 group border-t-2 border-primary">
+<div class="flex justify-between items-start mb-8">
+<span class="material-symbols-outlined text-primary text-5xl" data-icon="subway">subway</span>
+<span class="font-headline font-black text-2xl opacity-20 group-hover:opacity-100 transition-opacity">01</span>
+</div>
+<h3 class="font-headline font-bold text-2xl uppercase mb-4">SUBWAY_LINK</h3>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">
+                            지하철 5호선 광나루역 또는 2호선 강변역 하차 후 도보 또는 셔틀버스 이용이 가능합니다.
+                        </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-lowest font-label text-[10px] text-primary">LINE_5</span>
+<span class="px-2 py-1 bg-surface-container-lowest font-label text-[10px] text-primary">LINE_2</span>
+</div>
+</div>
+<div class="bg-surface-container-high p-8 group border-t-2 border-secondary">
+<div class="flex justify-between items-start mb-8">
+<span class="material-symbols-outlined text-secondary text-5xl" data-icon="shuttle_bus">airport_shuttle</span>
+<span class="font-headline font-black text-2xl opacity-20 group-hover:opacity-100 transition-opacity">02</span>
+</div>
+<h3 class="font-headline font-bold text-2xl uppercase mb-4">SHUTTLE_MESH</h3>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">
+                            주요 거점에서 페스티벌 현장까지 20분 간격으로 무료 순환 셔틀버스를 운행합니다.
+                        </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-lowest font-label text-[10px] text-secondary">FREE_TRANSIT</span>
+<span class="px-2 py-1 bg-surface-container-lowest font-label text-[10px] text-secondary">20M_INTERVAL</span>
+</div>
+</div>
+<div class="bg-surface-container-high p-8 group border-t-2 border-white">
+<div class="flex justify-between items-start mb-8">
+<span class="material-symbols-outlined text-white text-5xl" data-icon="local_parking">local_parking</span>
+<span class="font-headline font-black text-2xl opacity-20 group-hover:opacity-100 transition-opacity">03</span>
+</div>
+<h3 class="font-headline font-bold text-2xl uppercase mb-4">PARKING_GRID</h3>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">
+                            현장 주차 공간이 협소하므로 가급적 대중교통 이용을 권장합니다. 유료 공영 주차장을 확인해 주세요.
+                        </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-lowest font-label text-[10px] text-white">LIMITED_SPACE</span>
+<span class="px-2 py-1 bg-surface-container-lowest font-label text-[10px] text-white">PUBLIC_LOTS</span>
+</div>
+</div>
+</div>
+<!-- Live Map Embed Placeholder -->
+<div class="mt-1 w-full h-[400px] bg-surface-container-highest flex items-center justify-center relative border border-primary/5">
+<img alt="seoul map" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale" data-alt="monochrome satellite view map of urban Seoul with high contrast roads and blocks" data-location="Seoul" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYQABTXe3L7eo0k-VnRcn29OORnGvw461iHw_K7MxY9-Zv7LUplrqpZf4WHeqV9XrRNJ6ScrRcgCJSJwqWZRdA41UMaZaJAqJm8JX2-XPkh-Gc78-nTGptAtFzSD24rFpsxNxcHem54EXEIYlEKDP8LBh3UCiKKteBhKDSm9f9x6sX2M8TOfb6pCaISktN7o7tMxpVKHWFHNMXn12B0-v2hTXORlzt0REGfABZiJ1bASX8PVWBZf_JFiLKYoKXKBtioh_EEGAF1hI"/>
+<div class="z-10 text-center flex flex-col items-center gap-4">
+<span class="material-symbols-outlined text-primary text-5xl" data-icon="location_on">location_on</span>
+<p class="font-headline font-black text-3xl tracking-tight uppercase">VIEW_LIVE_MAP</p>
+<button class="bg-primary-container text-on-primary-container px-8 py-3 font-headline font-bold text-sm tracking-tighter uppercase transition-transform active:scale-95">
+                            LAUNCH_NAVIGATOR
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-8 px-6 mt-auto bg-[#060e1b]">
+<div class="bg-[#2c3544] h-[1px] opacity-20 mb-6"></div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 font-['Space_Grotesk'] text-[10px] tracking-widest uppercase">
+<div class="text-[#ecfbff] opacity-50">©2024 NOISE WAVE ARCHIVE</div>
+<div class="flex gap-8">
+<a class="text-[#39d5ff] hover:text-[#fface8]" href="#">SYSTEM STATUS: ONLINE</a>
+<a class="text-[#ecfbff] opacity-50 hover:text-[#fface8]" href="#">LEGAL</a>
+<a class="text-[#ecfbff] opacity-50 hover:text-[#fface8]" href="#">PRIVACY</a>
+<a class="text-[#ecfbff] opacity-50 hover:text-[#fface8]" href="#">COORDINATES</a>
+</div>
+</div>
+</footer>
+</body></html>

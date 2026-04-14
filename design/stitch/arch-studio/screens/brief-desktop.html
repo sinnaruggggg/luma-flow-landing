@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&amp;family=Manrope:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#1c1b1a",
+                    "background": "#fff9ee",
+                    "secondary-container": "#e5e2e1",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#ede7dd",
+                    "primary-container": "#2a2a2a",
+                    "outline": "#747878",
+                    "on-surface-variant": "#444748",
+                    "surface-container-low": "#f9f3e9",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "secondary": "#5f5e5e",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "on-secondary-container": "#656464",
+                    "inverse-primary": "#c8c6c5",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-secondary-fixed-variant": "#474646",
+                    "on-tertiary-fixed-variant": "#484644",
+                    "surface-dim": "#dfd9d0",
+                    "on-tertiary-container": "#94918e",
+                    "surface-bright": "#fff9ee",
+                    "on-primary-fixed-variant": "#474746",
+                    "surface": "#fff9ee",
+                    "on-background": "#1d1b16",
+                    "tertiary-fixed-dim": "#c9c6c3",
+                    "tertiary-fixed": "#e6e2de",
+                    "outline-variant": "#c4c7c7",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#f6f0e6",
+                    "on-surface": "#1d1b16",
+                    "tertiary": "#161614",
+                    "surface-tint": "#5f5e5e",
+                    "primary": "#151616",
+                    "on-primary-container": "#929191",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#1b1c1c",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#33302a",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#2b2a28",
+                    "surface-container-highest": "#e8e2d8",
+                    "surface-container": "#f3ede3",
+                    "secondary-fixed-dim": "#c9c6c5",
+                    "surface-variant": "#e8e2d8",
+                    "secondary-fixed": "#e5e2e1",
+                    "primary-fixed": "#e4e2e1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0rem",
+                    "lg": "0rem",
+                    "xl": "0rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif KR", "serif"],
+                    "body": ["Manrope", "sans-serif"],
+                    "label": ["Manrope", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fff9ee;
+            font-family: 'Manrope', sans-serif;
+            color: #151616;
+        }
+        .paper-layer {
+            box-shadow: 0 12px 40px rgba(29, 27, 22, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fff9ee]/80 dark:bg-[#151616]/80 backdrop-blur-md flex justify-between items-center px-6 md:px-12 py-8 w-full no-border tonal-shift flat no shadows">
+<div class="font-['Noto_Serif'] font-bold text-2xl tracking-tighter text-[#151616] dark:text-[#fff9ee]">PLAIN GRID</div>
+<div class="hidden md:flex gap-12 items-center">
+<a class="font-['Noto_Serif'] uppercase tracking-widest text-sm text-[#151616]/60 dark:text-[#fff9ee]/60 hover:text-[#151616] dark:hover:text-[#fff9ee] transition-colors duration-300" href="#">Works</a>
+<a class="font-['Noto_Serif'] uppercase tracking-widest text-sm text-[#151616]/60 dark:text-[#fff9ee]/60 hover:text-[#151616] dark:hover:text-[#fff9ee] transition-colors duration-300" href="#">Services</a>
+<a class="font-['Noto_Serif'] uppercase tracking-widest text-sm text-[#151616] dark:text-[#fff9ee] border-b border-[#151616] dark:border-[#fff9ee] pb-1" href="#">Brief</a>
+<a class="font-['Noto_Serif'] uppercase tracking-widest text-sm text-[#151616]/60 dark:text-[#fff9ee]/60 hover:text-[#151616] dark:hover:text-[#fff9ee] transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 font-['Noto_Serif'] uppercase tracking-widest text-xs hover:bg-primary-container transition-colors">Request Portfolio</button>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Hero Editorial Spread -->
+<section class="px-6 md:px-12 mb-32 grid grid-cols-12 relative">
+<div class="col-span-12 md:col-span-7 h-[716px] relative overflow-hidden">
+<img alt="Minimalist architecture detail" class="w-full h-full object-cover grayscale brightness-90" data-alt="Close-up of a brutalist concrete building facade with clean lines and rhythmic shadows in a high-contrast architectural photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD64oS4KQz2fIbHotAK_hB-z0cGwf84cqjzstdJ35EYtUGh2QCR-rLHmxjN_KPLYYYLouNbNsE0t7FUAOhulZHOl0dIILkTcpjrb5KxQrHvY0TApdPXcBnTqXinZfPhdnmv2DxGxduWZDBu78_EkRvcqEXjELAucxdG82pW8jeJXRBfu3G-Iuf2tWNh_pSBawJcvxFkBXP3sov8kmMdYYGh0rzjssQKLVyF5WFp-FPwW3FIvhM7DqVz-asawZ8k-cnvsz-7cPOIFYU"/>
+</div>
+<div class="col-span-12 md:col-span-6 md:absolute md:right-12 md:bottom-[-40px] bg-surface-container-lowest p-8 md:p-16 paper-layer z-10 mt-[-100px] md:mt-0">
+<span class="font-label text-xs uppercase tracking-[0.4em] text-on-surface-variant mb-6 block">Inquiry Phase . 01</span>
+<h1 class="font-headline text-5xl md:text-7xl mb-8 leading-tight text-primary">건축 의뢰<br/><span class="text-2xl md:text-3xl font-light opacity-60">PROJECT BRIEF</span></h1>
+<p class="font-body text-lg leading-relaxed text-on-surface-variant max-w-md">
+                    공간은 삶의 궤적을 담는 그릇입니다. 우리는 당신의 가치관과 대지가 가진 잠재력이 만나는 지점을 탐구합니다. 아래의 문항들은 정교한 건축적 해법을 찾기 위한 첫걸음입니다.
+                </p>
+</div>
+</section>
+<!-- Intake Form Flow -->
+<section class="px-6 md:px-12 grid grid-cols-12 gap-y-24">
+<!-- 01 The Site -->
+<div class="col-span-12 md:col-span-4">
+<div class="sticky top-40">
+<h2 class="font-headline text-3xl mb-4">The Site<br/>대지 정보</h2>
+<p class="font-body text-sm text-on-surface-variant leading-loose opacity-70">프로젝트가 위치할 장소의 성격과 물리적 환경에 대해 알려주세요.</p>
+</div>
+</div>
+<div class="col-span-12 md:col-span-7 md:col-start-6 space-y-16">
+<div class="group">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant block mb-4">Location / 프로젝트 위치</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant focus:ring-0 focus:border-primary transition-all py-4 placeholder:text-outline-variant/50 font-body" placeholder="도로명 주소 또는 대략적인 위치" type="text"/>
+</div>
+<div class="group">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant block mb-4">Land Area / 대지 면적</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant focus:ring-0 focus:border-primary transition-all py-4 placeholder:text-outline-variant/50 font-body" placeholder="단위: ㎡ 또는 평" type="text"/>
+</div>
+<div class="group">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant block mb-4">Site Conditions / 현장 특이사항</label>
+<textarea class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant focus:ring-0 focus:border-primary transition-all py-4 placeholder:text-outline-variant/50 font-body resize-none" placeholder="경사도, 주변 인접 건물, 소음 등 대지의 특징을 자유롭게 기술해주세요." rows="4"></textarea>
+</div>
+</div>
+<!-- 02 The Vision -->
+<div class="col-span-12 md:col-span-4">
+<div class="sticky top-40">
+<h2 class="font-headline text-3xl mb-4">The Vision<br/>공간의 비전</h2>
+<p class="font-body text-sm text-on-surface-variant leading-loose opacity-70">어떤 삶의 모습이나 상업적 가치를 공간에 담고 싶으신가요?</p>
+</div>
+</div>
+<div class="col-span-12 md:col-span-7 md:col-start-6 space-y-16">
+<div class="group">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant block mb-4">Program / 공간의 용도</label>
+<select class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant focus:ring-0 focus:border-primary transition-all py-4 font-body appearance-none">
+<option>단독주택 (Residential)</option>
+<option>상업시설 (Commercial)</option>
+<option>숙박시설 (Stay/Hotel)</option>
+<option>기타 (Etc)</option>
+</select>
+</div>
+<div class="group">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant block mb-4">Core Value / 핵심 가치</label>
+<textarea class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant focus:ring-0 focus:border-primary transition-all py-4 placeholder:text-outline-variant/50 font-body resize-none" placeholder="당신에게 가장 중요한 공간적 경험은 무엇인가요? (예: 고요함, 연결성, 빛의 질감)" rows="4"></textarea>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="group">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant block mb-4">Floor Area / 희망 연면적</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant focus:ring-0 focus:border-primary transition-all py-4 placeholder:text-outline-variant/50 font-body" placeholder="예: 약 40평" type="text"/>
+</div>
+<div class="group">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant block mb-4">Budget / 희망 예산 범위</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant focus:ring-0 focus:border-primary transition-all py-4 placeholder:text-outline-variant/50 font-body" placeholder="예: 00억원 내외" type="text"/>
+</div>
+</div>
+</div>
+<!-- 03 The Timeline -->
+<div class="col-span-12 md:col-span-4">
+<div class="sticky top-40">
+<h2 class="font-headline text-3xl mb-4">The Timeline<br/>일정 및 계획</h2>
+<p class="font-body text-sm text-on-surface-variant leading-loose opacity-70">설계부터 착공까지 예상하시는 시기를 알려주세요.</p>
+</div>
+</div>
+<div class="col-span-12 md:col-span-7 md:col-start-6 space-y-16">
+<div class="group">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant block mb-4">Completion Date / 희망 완공 시기</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant focus:ring-0 focus:border-primary transition-all py-4 placeholder:text-outline-variant/50 font-body" placeholder="20XX년 X월경" type="text"/>
+</div>
+<div class="group">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant block mb-4">Additional Note / 추가 전달 사항</label>
+<textarea class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant focus:ring-0 focus:border-primary transition-all py-4 placeholder:text-outline-variant/50 font-body resize-none" placeholder="전하고 싶은 메시지가 있다면 남겨주세요." rows="2"></textarea>
+</div>
+<div class="pt-8">
+<button class="w-full bg-primary text-on-primary py-8 font-headline text-xl uppercase tracking-widest hover:bg-primary-container transition-all flex items-center justify-center gap-4">
+                        Submit Brief 
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<p class="mt-4 font-label text-[9px] uppercase tracking-widest text-on-surface-variant/40 text-center">Plain Grid protects your data and architectural vision with discretion.</p>
+</div>
+</div>
+</section>
+<!-- Next Steps -->
+<section class="mt-48 px-6 md:px-12 bg-surface-container-low py-32">
+<div class="max-w-4xl mx-auto">
+<h3 class="font-headline text-2xl text-center mb-16 uppercase tracking-[0.2em]">Next Steps / 향후 절차</h3>
+<div class="grid md:grid-cols-3 gap-16">
+<div class="text-center">
+<div class="font-label text-4xl font-light text-outline-variant/30 mb-6">01</div>
+<h4 class="font-headline text-lg mb-4">Review</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">제출해주신 브리프를 검토하여 프로젝트의 가능성을 타진합니다. (2~3일 소요)</p>
+</div>
+<div class="text-center">
+<div class="font-label text-4xl font-light text-outline-variant/30 mb-6">02</div>
+<h4 class="font-headline text-lg mb-4">Consultation</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">스튜디오에서의 대면 미팅 혹은 현장 방문을 통해 심도 있는 이야기를 나눕니다.</p>
+</div>
+<div class="text-center">
+<div class="font-label text-4xl font-light text-outline-variant/30 mb-6">03</div>
+<h4 class="font-headline text-lg mb-4">Proposal</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">공간적 제안과 함께 설계 계약 및 향후 마일스톤을 확정합니다.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-24 bg-[#e5dfd3] dark:bg-[#2a2a2a] text-[#151616] dark:text-[#fff9ee] flex flex-col md:flex-row justify-between items-center px-6 md:px-12 py-16 w-full tonal-shift via surface-dim flat no shadows">
+<div class="flex flex-col gap-2 mb-8 md:mb-0">
+<div class="font-['Noto_Serif'] font-bold text-lg text-[#151616] dark:text-[#fff9ee]">PLAIN GRID</div>
+<div class="font-['Manrope'] text-[10px] tracking-widest uppercase opacity-60">© 2024 PLAIN GRID. Built for the Living Archive.</div>
+</div>
+<div class="flex gap-8">
+<a class="font-['Manrope'] text-[10px] tracking-widest uppercase hover:underline transition-all opacity-50 hover:opacity-100" href="#">Instagram</a>
+<a class="font-['Manrope'] text-[10px] tracking-widest uppercase hover:underline transition-all opacity-50 hover:opacity-100" href="#">LinkedIn</a>
+<a class="font-['Manrope'] text-[10px] tracking-widest uppercase hover:underline transition-all opacity-50 hover:opacity-100" href="#">Journal</a>
+<a class="font-['Manrope'] text-[10px] tracking-widest uppercase hover:underline transition-all opacity-50 hover:opacity-100" href="#">Privacy</a>
+</div>
+</footer>
+</body></html>

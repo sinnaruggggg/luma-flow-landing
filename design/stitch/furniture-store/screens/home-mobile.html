@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MOSS HOME - 당신의 공간을 조각하세요</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800;900&amp;family=Noto+Serif+KR:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#37432e",
+                        "on-tertiary": "#ecffdc",
+                        "inverse-primary": "#ebfce0",
+                        "surface-tint": "#54624d",
+                        "tertiary-container": "#e3fbd1",
+                        "surface-variant": "#d3e9ca",
+                        "on-primary-fixed-variant": "#51604b",
+                        "surface-container-highest": "#d3e9ca",
+                        "surface": "#f5fcee",
+                        "surface-container-low": "#ecf7e5",
+                        "surface-container": "#e4f2dc",
+                        "outline-variant": "#a2b89b",
+                        "on-tertiary-fixed-variant": "#586c4b",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#dbeed3",
+                        "secondary-dim": "#4b5740",
+                        "on-secondary-container": "#4a553f",
+                        "outline": "#6c8066",
+                        "error": "#9e422c",
+                        "tertiary-fixed-dim": "#d5edc3",
+                        "error-container": "#fe8b70",
+                        "on-error": "#fff7f6",
+                        "inverse-surface": "#0a1008",
+                        "on-secondary-fixed-variant": "#535f48",
+                        "background": "#f5fcee",
+                        "on-primary-container": "#485641",
+                        "on-error-container": "#742410",
+                        "tertiary-fixed": "#e3fbd1",
+                        "on-primary": "#edfde1",
+                        "on-secondary": "#f0fedf",
+                        "secondary-fixed": "#dae7ca",
+                        "primary-container": "#d7e7cd",
+                        "tertiary-dim": "#455939",
+                        "tertiary": "#516544",
+                        "primary-dim": "#485642",
+                        "secondary": "#57634c",
+                        "on-primary-fixed": "#364330",
+                        "inverse-on-surface": "#989f93",
+                        "error-dim": "#5c1202",
+                        "on-tertiary-fixed": "#3c4f30",
+                        "surface-dim": "#c7e2be",
+                        "secondary-fixed-dim": "#ccd9bc",
+                        "on-surface": "#253721",
+                        "secondary-container": "#dae7ca",
+                        "on-background": "#253721",
+                        "primary-fixed-dim": "#c9d9bf",
+                        "surface-bright": "#f5fcee",
+                        "primary-fixed": "#d7e7cd",
+                        "on-tertiary-container": "#4d6141",
+                        "primary": "#54624d",
+                        "on-surface-variant": "#51644c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Noto Serif KR"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .organic-shape {
+            border-radius: 64% 36% 27% 73% / 55% 58% 42% 45%;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-[#f5fcee] dark:bg-[#1a1c18] flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50 transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#54624d] dark:text-[#d7e7cd] cursor-pointer" data-icon="menu">menu</span>
+<h1 class="font-['Manrope'] font-black text-2xl tracking-widest text-[#24311f] dark:text-[#e4f2dc]">MOSS HOME</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#54624d] dark:text-[#d7e7cd] cursor-pointer" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</header>
+<main class="relative">
+<!-- First Viewport: Hero & Planner -->
+<section class="relative h-[795px] w-full overflow-hidden flex flex-col items-center justify-end pb-24 px-6">
+<div class="absolute inset-0 z-0">
+<img alt="Modern Living Room" class="w-full h-full object-cover" data-alt="luxury modern living room with large windows, soft afternoon sunlight, olive green velvet sofa, and minimalist wooden furniture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByDBZk7AfuC8E7aWELn-ONA1CZKOi4-T8Bfo5bHXBAd38XzcHFtUBtHa3aMV8iHRPTPfUhWrzFtoc2maOnsYp65C4y0L8KMST8pu1d4boA8kVScoQSv7mYyHL8OL3pBKbsfLKY2vFr4zHNtnVi5z26lbk0d4fHEBvsGWPHVVgnGJYNq1_Fm1OOusMz531bQ6dcHat-P5enxE9nVJG0e-HhhtDyJVCHl87Gx6bdK1O4ZPQwq6IJmftqwXtkbj8fvA2xZL-qbaVh5yZ0"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-surface/80"></div>
+</div>
+<!-- Floating Translucent Planner Panel -->
+<div class="relative z-10 w-full max-w-md bg-surface-container-low/84 backdrop-blur-xl rounded-[2rem] p-8 shadow-2xl border border-white/20">
+<h2 class="font-body font-black text-3xl text-on-surface mb-6 leading-tight">당신의 공간을 <br/>조각하세요.</h2>
+<!-- Room Selectors Grid -->
+<div class="grid grid-cols-4 gap-3 mb-8">
+<button class="flex flex-col items-center gap-2 group">
+<div class="organic-shape w-14 h-14 bg-primary flex items-center justify-center text-white shadow-lg group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="chair">chair</span>
+</div>
+<span class="font-label text-[10px] font-bold text-on-surface">Living Room</span>
+</button>
+<button class="flex flex-col items-center gap-2 group opacity-60">
+<div class="organic-shape w-14 h-14 bg-surface-container-high flex items-center justify-center text-on-surface-variant group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="bed">bed</span>
+</div>
+<span class="font-label text-[10px] font-bold text-on-surface">Bedroom</span>
+</button>
+<button class="flex flex-col items-center gap-2 group opacity-60">
+<div class="organic-shape w-14 h-14 bg-surface-container-high flex items-center justify-center text-on-surface-variant group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="restaurant">restaurant</span>
+</div>
+<span class="font-label text-[10px] font-bold text-on-surface">Dining</span>
+</button>
+<button class="flex flex-col items-center gap-2 group opacity-60">
+<div class="organic-shape w-14 h-14 bg-surface-container-high flex items-center justify-center text-on-surface-variant group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="laptop_mac">laptop_mac</span>
+</div>
+<span class="font-label text-[10px] font-bold text-on-surface">Office</span>
+</button>
+</div>
+<div class="space-y-4">
+<button class="w-full bg-primary text-on-primary py-5 rounded-full font-bold text-lg shadow-lg active:scale-[0.98] transition-transform flex items-center justify-center gap-2">
+                        나만의 공간 계획하기
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<p class="text-center font-label text-[11px] text-tertiary font-bold tracking-tight">
+                        패키지 구성 시 최대 15% 할인 혜택
+                    </p>
+</div>
+</div>
+</section>
+<!-- Featured Bundle Card Overlap -->
+<section class="px-6 -mt-12 relative z-20">
+<div class="bg-surface-container-lowest p-6 rounded-[2rem] shadow-xl flex items-center gap-4">
+<div class="w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0">
+<img alt="Sofa Starter Bundle" class="w-full h-full object-cover" data-alt="minimalist olive green modular sofa with a small oak side table on a cream colored textured rug" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZlGgEAEBDAga7e7SBKbpGXs8TV-fIUx2idAWOlGf3WqZ1duO-bRGU8ZbQEZT7t53lirY6SbQFI3YnrEIZi1_jmL_hmCPP1NUGrJgqjpeSyDUTdUN8GA_gKgyTJhgNOhdtWjaeSiKq73Jcw9NNBIAxUBJ2WCv2f33Fqq-FPfkVSodVoV-fDWEsNTMltkM4-uwSZX19zQ0jEXnv6eVoMnYln0EK1mPoTWeo6G-5U1EUUY8Az2Wi86X-XYtX7-gTThcmm-txqunNBrbp"/>
+</div>
+<div class="flex-grow">
+<span class="font-label text-[10px] text-primary font-bold uppercase tracking-widest block mb-1">Weekly Pick</span>
+<h3 class="font-body font-bold text-lg text-on-surface">거실 스타터 번들</h3>
+<p class="text-xs text-on-surface-variant mb-2">Sofa + Table + Rug</p>
+<p class="font-label font-black text-primary text-xl">2,490,000원</p>
+</div>
+<button class="bg-surface-container rounded-full p-2">
+<span class="material-symbols-outlined text-primary" data-icon="add">add</span>
+</button>
+</div>
+</section>
+<!-- Section 2: Room Exploration -->
+<section class="py-16">
+<div class="px-6 mb-8 flex justify-between items-end">
+<div>
+<h2 class="font-body font-black text-2xl text-on-surface">Room Exploration</h2>
+<p class="text-sm text-on-surface-variant">공간별 영감을 만나보세요</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="trending_flat">trending_flat</span>
+</div>
+<div class="flex gap-4 overflow-x-auto px-6 pb-4 no-scrollbar snap-x">
+<div class="snap-start flex-shrink-0 w-72 h-96 relative rounded-[2rem] overflow-hidden group">
+<img alt="Living Room" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="elegant living room with tall plants, linen curtains, and natural light, architectural style photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf8zsSqRsDaIz99I9wQqELA5I2in8r9Plu1qntlSdIeZ5FmEtkJ4fMpced3-TzrbtK4QmZcZ4CHkqEJp70YMaZqOawmAunJEPuhjX0PUdYFbkGIb7T56pGF0lSAU2CsXytVVHETP9DLAAxw-XI8sToGglhsXtoRr_xVmfx0At-fgFouzvg2b9yDZnLEwI_aucRAGPo1oj1TYrl0ijQIi7seBZyygfSXU8dYFTs8FDmTZKNS5O6HlqzVNEgDbJ258mdFY6iH5Akav4w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<p class="font-label font-bold text-xs opacity-80 uppercase tracking-widest mb-1">01</p>
+<h4 class="font-body font-bold text-xl">Living Room</h4>
+</div>
+</div>
+<div class="snap-start flex-shrink-0 w-72 h-96 relative rounded-[2rem] overflow-hidden group">
+<img alt="Bedroom" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="serene bedroom with soft beige linens, wooden bed frame, and warm morning light, minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-j6n4Ag7U213xmDtM4LM2-9WMgQTacrC6RTI6_FCDOBv0-NZkM8nAIXYfvhnFZbUCeot2MeJwxccZaXozs_0BhkDuJ4kdlAsbyEju4SbnPTAOHgAbHKAgsHNoiFuOnXA-pmX9vWaY8gDMDO_fstPAzpWOrllWjuK9ZCynudA8VTq_bHkw2MWA6zPMVDD6MxZSh9lbYhajSI94JxncGZDnYCHvm810FaPXXFuCGPml2DmAisrjpCMDWS1zCCD1u5gqsoWlZ0jnY4hs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<p class="font-label font-bold text-xs opacity-80 uppercase tracking-widest mb-1">02</p>
+<h4 class="font-body font-bold text-xl">Bedroom</h4>
+</div>
+</div>
+<div class="snap-start flex-shrink-0 w-72 h-96 relative rounded-[2rem] overflow-hidden group">
+<img alt="Home Office" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="modern home office setup with sleek oak desk, ergonomic chair, and organized workspace with a window view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOSxRdZr464rfFxxbvCaIBzpT4In0xoLYsVfTouSo7nYOSPNV_hbKaVvpoTf8j67XCzOAJGf-ZTy9ht5Kdgel89oo113LWWrXDwcwO6MCV1usisinPFsnQhUwwRH5JwJc-hrnKvvF3r4gtrELggUfCs51GDOdgMXEZkvVVEr3fN1B14iWLZP7lVd4NvKLDfxrtkn-zBrd4Horzc0jIxlVZiT7rU5MvZHumlK1XyLo1e_AYiycdkQZKIeYLZOAHnS1X9aBu4C9L7lBd"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<p class="font-label font-bold text-xs opacity-80 uppercase tracking-widest mb-1">03</p>
+<h4 class="font-body font-bold text-xl">Home Office</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Bundle Shopping -->
+<section class="bg-surface-container py-16 rounded-t-[3rem]">
+<div class="px-6 mb-8 text-center">
+<h2 class="font-body font-black text-2xl text-on-surface">Bundle Shopping</h2>
+<p class="text-sm text-on-surface-variant">큐레이션된 패키지로 시작하세요</p>
+</div>
+<div class="space-y-6 px-6">
+<!-- Bundle Item 1 -->
+<div class="bg-surface-container-lowest rounded-[2rem] p-4 flex flex-col gap-4 shadow-sm">
+<div class="aspect-[16/10] rounded-2xl overflow-hidden">
+<img alt="Dining Bundle" class="w-full h-full object-cover" data-alt="modern dining room with round wooden table and four designer chairs, soft focused background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEylpySs8RSxuQp4Cz7i3nktr_8j3d1YcHACAcvo9WOhORMfA1R8BSrcZ_Upy2w6OF_Is_1we0kILK91Sb0ds8X1qi2e-nOeBfudGW2Ug_dMyWkr5hXciuV2BgQX19QJQFVUTOgiCoeusIGW8CfPIjUTuizl2xnF5I3LgFzU-nLTS8z85OPeL5auEzgpv2SrH7sUsqL4d_P8XQPz6GTG9DoKq-puoCaIQGZJ63tHIqGRCowhrGaU8ZzJVMPdf0aQHNGPRL6t83DSAD"/>
+</div>
+<div class="flex justify-between items-center px-2">
+<div>
+<h4 class="font-body font-bold text-lg text-on-surface">심플 다이닝 패키지</h4>
+<p class="font-label text-sm text-primary font-bold">월 89,000원 <span class="text-[10px] text-on-surface-variant font-normal">/ 36개월</span></p>
+</div>
+<button class="bg-surface p-3 rounded-full active:scale-90 transition-transform shadow-inner">
+<span class="material-symbols-outlined text-primary" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Bundle Item 2 -->
+<div class="bg-surface-container-lowest rounded-[2rem] p-4 flex flex-col gap-4 shadow-sm">
+<div class="aspect-[16/10] rounded-2xl overflow-hidden">
+<img alt="Bedroom Bundle" class="w-full h-full object-cover" data-alt="cozy bedroom with layers of blankets, side table with a glass lamp, and soft indirect lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF3bHr7m6PlCAvYxF1Z4w5wgb-JZxliSCaPC-czJGyVDIN383XkVXx2hEsNKHAfDmDto4LTRQ4FC-PCn85YAOHi8NHslKA_8dJsTv2tRGffp-7bioSNBXyqqLuSX3kQ5__Dd7VUBnWH7g5Kodk7gEN0dIPgMQ1YI5Sc1ayIG1_K2ZPEpbgjwWQX6i08BW1HYdKC1tQycm8SIkjIo_mdCJC-syAfwfrw9ARr2LwZK66XK8vWFifr5NzACvWm2q5Ph6WHHSeH3UhEQ3y"/>
+</div>
+<div class="flex justify-between items-center px-2">
+<div>
+<h4 class="font-body font-bold text-lg text-on-surface">아늑한 침실 패키지</h4>
+<p class="font-label text-sm text-primary font-bold">월 119,000원 <span class="text-[10px] text-on-surface-variant font-normal">/ 36개월</span></p>
+</div>
+<button class="bg-surface p-3 rounded-full active:scale-90 transition-transform shadow-inner">
+<span class="material-symbols-outlined text-primary" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: MOSS Philosophy -->
+<section class="py-24 px-10 text-center bg-surface">
+<span class="material-symbols-outlined text-primary text-4xl mb-6 opacity-30" data-icon="eco">eco</span>
+<h2 class="font-body font-black text-2xl text-on-surface mb-6 leading-relaxed">
+                공간은 단순히 가구를 <br/>채우는 것이 아닌, <br/>삶을 조각하는 과정입니다.
+            </h2>
+<p class="font-body text-on-surface-variant text-sm leading-loose opacity-80 max-w-xs mx-auto">
+                MOSS HOME은 당신의 취향과 일상을 깊이 들여다봅니다. 
+                불필요한 장식을 덜어내고, 소재 본연의 가치와 
+                공간의 조화에 집중하는 큐레이션을 제안합니다.
+            </p>
+<div class="mt-10 h-px w-12 bg-outline-variant/30 mx-auto"></div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low px-8 pt-16 pb-32">
+<div class="mb-12">
+<h2 class="font-['Manrope'] font-black text-xl tracking-widest text-primary mb-6">MOSS HOME</h2>
+<div class="space-y-4 font-body text-xs text-on-surface-variant leading-relaxed">
+<p>(주)모스홈 | 대표이사: 김디자인</p>
+<p>서울특별시 강남구 테헤란로 123 공간빌딩 4층</p>
+<p>사업자등록번호: 123-45-67890</p>
+<p>통신판매업신고: 제2024-서울강남-0123호</p>
+<p>고객센터: 1588-0000 (평일 10:00 - 18:00)</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8 mb-12">
+<div class="space-y-3">
+<h4 class="font-label font-bold text-xs uppercase text-on-surface tracking-widest">Navigation</h4>
+<ul class="space-y-2 text-sm text-on-surface-variant font-body">
+<li>공간 플래너</li>
+<li>번들 쇼핑</li>
+<li>시그니처 컬렉션</li>
+<li>브랜드 스토리</li>
+</ul>
+</div>
+<div class="space-y-3">
+<h4 class="font-label font-bold text-xs uppercase text-on-surface tracking-widest">Support</h4>
+<ul class="space-y-2 text-sm text-on-surface-variant font-body">
+<li>자주 묻는 질문</li>
+<li>배송 안내</li>
+<li>1:1 문의</li>
+<li>이용약관</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/20">
+<p class="font-label text-[10px] text-on-surface-variant opacity-60">© 2024 MOSS HOME. All Rights Reserved.</p>
+</div>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#f5fcee]/80 dark:bg-[#1a1c18]/84 backdrop-blur-xl shadow-[0_-4px_40px_rgba(37,55,33,0.04)] rounded-t-[1.5rem]">
+<div class="flex flex-col items-center justify-center bg-[#54624d] text-white rounded-full px-5 py-2 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+<span class="font-['Noto_Serif_KR'] text-[10px] font-medium">플래너</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#253721] dark:text-[#e4f2dc] opacity-60 hover:opacity-100 transition-opacity active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-['Noto_Serif_KR'] text-[10px] font-medium">번들</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#253721] dark:text-[#e4f2dc] opacity-60 hover:opacity-100 transition-opacity active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-['Noto_Serif_KR'] text-[10px] font-medium">저장됨</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#253721] dark:text-[#e4f2dc] opacity-60 hover:opacity-100 transition-opacity active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-['Noto_Serif_KR'] text-[10px] font-medium">문의</span>
+</div>
+</nav>
+</body></html>

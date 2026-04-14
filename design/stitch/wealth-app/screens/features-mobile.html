@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CLARO - Features</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "secondary-container": "#d9e3fb",
+                "primary": "#575e70",
+                "inverse-primary": "#d9dff5",
+                "surface": "#fdffd8",
+                "on-secondary-container": "#485266",
+                "on-surface": "#38392c",
+                "on-secondary": "#ffffff",
+                "error-dim": "#4e0309",
+                "inverse-surface": "#0e0e0a",
+                "secondary-fixed-dim": "#cad4ec",
+                "tertiary-dim": "#54595d",
+                "surface-container-lowest": "#ffffff",
+                "surface-variant": "#eae9d7",
+                "on-error": "#ffffff",
+                "error-container": "#fe8983",
+                "background": "#fdffd8",
+                "surface-container-high": "#f0eedf",
+                "on-primary-fixed": "#383f50",
+                "on-background": "#38392c",
+                "primary-fixed-dim": "#ced4e9",
+                "tertiary-fixed": "#f0f4f9",
+                "primary-dim": "#4b5264",
+                "inverse-on-surface": "#9f9d96",
+                "primary-container": "#dce2f7",
+                "surface-dim": "#e4e4cf",
+                "tertiary-fixed-dim": "#e2e6eb",
+                "outline-variant": "#bbbaa9",
+                "on-error-container": "#752121",
+                "surface-container-highest": "#eae9d7",
+                "on-tertiary-fixed-variant": "#62676b",
+                "on-tertiary-fixed": "#454a4e",
+                "on-secondary-fixed-variant": "#525c70",
+                "on-tertiary": "#ffffff",
+                "secondary": "#5b6579",
+                "on-primary-container": "#4b5263",
+                "surface-container": "#f6f4e7",
+                "secondary-fixed": "#d9e3fb",
+                "outline": "#818172",
+                "primary-fixed": "#dce2f7",
+                "error": "#a64542",
+                "on-tertiary-container": "#575c61",
+                "tertiary": "#606569",
+                "surface-tint": "#575e70",
+                "secondary-dim": "#4f586d",
+                "surface-bright": "#fdffd8",
+                "on-surface-variant": "#656557",
+                "on-primary-fixed-variant": "#545b6d",
+                "on-primary": "#f7f7ff",
+                "tertiary-container": "#f0f4f9",
+                "surface-container-low": "#fcf9ef",
+                "on-secondary-fixed": "#364053"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "fontFamily": {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .mesh-gradient {
+            background: radial-gradient(at 0% 0%, rgba(220, 226, 247, 0.15) 0px, transparent 50%),
+                        radial-gradient(at 100% 0%, rgba(253, 255, 216, 0.3) 0px, transparent 50%),
+                        radial-gradient(at 100% 100%, rgba(187, 186, 169, 0.1) 0px, transparent 50%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fdffd8]/80 dark:bg-[#111827]/80 backdrop-blur-xl shadow-[0px_4px_20px_rgba(56,57,44,0.04)]">
+<div class="flex items-center justify-between px-6 h-16 w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#111827] dark:text-[#f7f7ff]">account_balance_wallet</span>
+<span class="text-xl font-extrabold tracking-tighter text-[#111827] dark:text-[#f7f7ff] font-headline">CLARO</span>
+</div>
+<button class="bg-[#111827] text-[#f7f7ff] px-5 py-2 rounded-lg text-sm font-semibold hover:opacity-80 transition-opacity ease-out duration-400">
+                Get Started
+            </button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 mesh-gradient min-h-screen">
+<!-- Section 1: Portfolio Orchestrator -->
+<section class="mb-16">
+<div class="flex flex-col gap-2 mb-8">
+<span class="text-primary font-headline font-bold tracking-widest text-[10px] uppercase">Active State</span>
+<h1 class="text-3xl font-headline font-extrabold tracking-tight text-on-surface leading-tight">Portfolio Orchestrator</h1>
+</div>
+<div class="bg-surface-container-lowest rounded-[2rem] p-8 shadow-[0px_12px_40px_rgba(56,57,44,0.08)] relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/20 rounded-full -mr-16 -mt-16 blur-3xl"></div>
+<div class="flex flex-col gap-6 relative z-10">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-on-surface-variant text-xs font-label mb-1">Total Assets</p>
+<h2 class="text-4xl font-headline font-bold text-accent tracking-tighter">₩2,480,000,000</h2>
+</div>
+<div class="bg-surface-container text-on-surface-variant px-3 py-1 rounded-full text-[11px] font-semibold">
+                            Live updates
+                        </div>
+</div>
+<div class="space-y-4 pt-4">
+<div class="flex items-center justify-between text-sm">
+<span class="flex items-center gap-2 text-on-surface font-medium">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Stocks
+                            </span>
+<span class="font-bold text-on-surface">42.5%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 42.5%"></div>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="flex items-center gap-2 text-on-surface font-medium">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span> Bonds
+                            </span>
+<span class="font-bold text-on-surface">28.0%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-outline-variant h-full rounded-full" style="width: 28.0%"></div>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="flex items-center gap-2 text-on-surface font-medium">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span> Alternatives
+                            </span>
+<span class="font-bold text-on-surface">29.5%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 29.5%"></div>
+</div>
+</div>
+<button class="w-full bg-[#111827] text-[#f7f7ff] py-4 rounded-xl font-bold tracking-tight mt-4 shadow-lg active:scale-95 transition-all">
+                        운용 시작하기
+                    </button>
+</div>
+</div>
+</section>
+<!-- Section 2: Analytics Module -->
+<section class="mb-16">
+<h3 class="text-sm font-headline font-bold text-primary mb-6 uppercase tracking-widest">Institutional Grade Analytics</h3>
+<div class="grid grid-cols-1 gap-4">
+<!-- Volatility Card -->
+<div class="bg-surface-container-low rounded-[2rem] p-6 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<span class="text-on-surface font-headline font-bold">Volatility Index</span>
+<span class="material-symbols-outlined text-primary text-lg">trending_down</span>
+</div>
+<div class="h-24 flex items-end gap-1">
+<div class="flex-1 bg-primary-fixed-dim/30 h-[40%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary-fixed-dim/40 h-[60%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary-fixed-dim/20 h-[30%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary-fixed-dim/50 h-[70%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary-fixed-dim/30 h-[45%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[25%] rounded-t-sm"></div>
+</div>
+<div class="flex justify-between items-center text-[11px] text-on-surface-variant font-medium">
+<span>Low risk</span>
+<span>0.12% Change</span>
+</div>
+</div>
+<!-- Tax Efficiency Card -->
+<div class="bg-surface-container-lowest rounded-[2rem] p-6 shadow-sm border border-outline-variant/10 flex items-center justify-between">
+<div>
+<p class="text-on-surface-variant text-xs mb-1">Tax Efficiency Score</p>
+<h4 class="text-3xl font-headline font-extrabold text-on-surface">94.2<span class="text-lg text-primary">/100</span></h4>
+</div>
+<div class="w-16 h-16 rounded-full border-4 border-primary-container border-t-primary flex items-center justify-center">
+<span class="text-[10px] font-bold text-primary">OPTIMAL</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Goal-Based Architecture -->
+<section class="mb-16">
+<h3 class="text-sm font-headline font-bold text-primary mb-8 uppercase tracking-widest text-center">Process Architecture</h3>
+<div class="flex flex-col items-center gap-0">
+<!-- Step 1 -->
+<div class="w-full flex flex-col items-center">
+<div class="bg-surface-container-lowest px-6 py-4 rounded-2xl shadow-sm border border-outline-variant/5 w-full">
+<div class="flex items-center gap-4">
+<span class="bg-primary-container text-primary w-10 h-10 rounded-full flex items-center justify-center font-bold">01</span>
+<div>
+<h5 class="text-on-surface font-bold text-sm">Goal Setting</h5>
+<p class="text-[11px] text-on-surface-variant">자산 목표 및 기간 설정</p>
+</div>
+</div>
+</div>
+<div class="h-8 w-px bg-outline-variant/30"></div>
+</div>
+<!-- Step 2 -->
+<div class="w-full flex flex-col items-center">
+<div class="bg-surface-container-lowest px-6 py-4 rounded-2xl shadow-sm border border-outline-variant/5 w-full relative z-10">
+<div class="flex items-center gap-4">
+<span class="bg-[#111827] text-[#f7f7ff] w-10 h-10 rounded-full flex items-center justify-center font-bold">02</span>
+<div>
+<h5 class="text-on-surface font-bold text-sm">Algorithm Calculation</h5>
+<p class="text-[11px] text-on-surface-variant">맞춤형 자산 배분 알고리즘 가동</p>
+</div>
+</div>
+</div>
+<div class="h-8 w-px bg-outline-variant/30"></div>
+</div>
+<!-- Step 3 -->
+<div class="w-full flex flex-col items-center">
+<div class="bg-surface-container-lowest px-6 py-4 rounded-2xl shadow-sm border border-outline-variant/5 w-full">
+<div class="flex items-center gap-4">
+<span class="bg-primary-container text-primary w-10 h-10 rounded-full flex items-center justify-center font-bold">03</span>
+<div>
+<h5 class="text-on-surface font-bold text-sm">Execution</h5>
+<p class="text-[11px] text-on-surface-variant">실시간 포트폴리오 리밸런싱 및 체결</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Security Section -->
+<section class="mb-16 bg-[#111827] rounded-[2.5rem] p-8 text-[#f7f7ff] overflow-hidden relative">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full -mr-32 -mt-32 blur-[80px]"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary-fixed-dim">shield_with_heart</span>
+<span class="text-xs font-headline font-bold uppercase tracking-[0.2em] text-primary-fixed-dim">Privacy First</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-8">안전한 자산 관리를 위한<br/>최상위 보안 아키텍처</h3>
+<div class="space-y-4">
+<div class="bg-white/5 backdrop-blur-md rounded-2xl p-4 flex items-center justify-between border border-white/10">
+<span class="text-sm font-medium">End-to-End Encryption</span>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-emerald-400"></div>
+<span class="text-[10px] text-emerald-400 font-bold">ACTIVE</span>
+</div>
+</div>
+<div class="bg-white/5 backdrop-blur-md rounded-2xl p-4 flex items-center justify-between border border-white/10">
+<span class="text-sm font-medium">Multi-Sig Authorization</span>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-emerald-400"></div>
+<span class="text-[10px] text-emerald-400 font-bold">ACTIVE</span>
+</div>
+</div>
+<div class="bg-white/5 backdrop-blur-md rounded-2xl p-4 flex items-center justify-between border border-white/10">
+<span class="text-sm font-medium">Biometric Gatekeeping</span>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-emerald-400"></div>
+<span class="text-[10px] text-emerald-400 font-bold">ACTIVE</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Final CTA -->
+<section class="py-12 flex flex-col items-center text-center">
+<h2 class="text-2xl font-headline font-extrabold text-on-surface leading-tight mb-8">
+                지금 바로 자산의<br/>본질을 마주하세요
+            </h2>
+<div class="flex flex-col w-full gap-4 px-4">
+<button class="bg-[#111827] text-[#f7f7ff] py-5 rounded-2xl font-bold text-base shadow-xl">
+                    무료 체험 시작하기
+                </button>
+<a class="text-on-surface-variant font-semibold text-sm py-2 hover:opacity-60 transition-opacity" href="#">
+                    문의하기
+                </a>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-8 bg-[#ffffff]/90 dark:bg-[#111827]/90 backdrop-blur-2xl rounded-t-[2rem] z-50 shadow-[0px_-12px_40px_rgba(56,57,44,0.08)] border-t border-[#bbbaa9]/15">
+<a class="flex flex-col items-center justify-center text-[#575e70] dark:text-gray-500 opacity-60" href="#">
+<span class="material-symbols-outlined mb-1">dashboard</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#111827] dark:text-white scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1">account_balance</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold">Assets</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#575e70] dark:text-gray-500 opacity-60" href="#">
+<span class="material-symbols-outlined mb-1">track_changes</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold">Goals</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#575e70] dark:text-gray-500 opacity-60" href="#">
+<span class="material-symbols-outlined mb-1">settings</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold">Settings</span>
+</a>
+</nav>
+</body></html>

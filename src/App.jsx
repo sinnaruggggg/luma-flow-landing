@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion as Motion } from "framer-motion";
 import { parseSitePath, siteRegistryById } from "./content/siteRegistry";
 import { useIsMobileClient } from "./lib/showcaseUtils";
-import { GalleryHome, NotFound, SiteView } from "./components/showcaseChrome";
+import { GalleryHome, NotFound, SiteStaging, SiteView } from "./components/showcaseChrome";
 import "./site-app.css";
 
 export default function App() {
@@ -41,7 +41,7 @@ export default function App() {
   };
 
   const routeState = parseSitePath(pathname);
-  const site = routeState.kind === "site" ? sitesById[routeState.siteId] : null;
+  const site = routeState.kind === "site" || routeState.kind === "staging" ? sitesById[routeState.siteId] : null;
 
   return (
     <AnimatePresence mode="wait">
@@ -74,6 +74,18 @@ export default function App() {
             onNavigate={navigate}
             onBack={() => navigate("/")}
           />
+        </Motion.div>
+      ) : null}
+
+      {routeState.kind === "staging" && site ? (
+        <Motion.div
+          key={`staging-${site.id}-${routeState.route.slug}`}
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.26 }}
+        >
+          <SiteStaging site={site} route={routeState.route} onHome={() => navigate("/")} onOpenHome={() => navigate(`/${site.id}`)} />
         </Motion.div>
       ) : null}
 

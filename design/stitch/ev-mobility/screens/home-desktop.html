@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ORBIT E | FUTURE MOBILITY INTERFACE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#970187",
+                    "on-primary-fixed-variant": "#004e60",
+                    "surface-container": "#17202e",
+                    "tertiary-fixed-dim": "#fface8",
+                    "tertiary-container": "#ffaae8",
+                    "secondary": "#bac6e6",
+                    "tertiary": "#ffd5f0",
+                    "inverse-surface": "#dae3f6",
+                    "surface-dim": "#0b1421",
+                    "on-surface-variant": "#bbc9ce",
+                    "surface-container-high": "#222a38",
+                    "on-secondary-fixed": "#0e1b33",
+                    "on-surface": "#dae3f6",
+                    "inverse-primary": "#00677e",
+                    "outline": "#869398",
+                    "on-tertiary-fixed": "#3a0033",
+                    "on-secondary": "#243049",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary": "#5e0053",
+                    "primary": "#b1eaff",
+                    "surface-container-highest": "#2c3544",
+                    "background": "#0b1421",
+                    "error": "#ffb4ab",
+                    "on-primary-container": "#00596e",
+                    "surface": "#0b1421",
+                    "secondary-fixed": "#d8e2ff",
+                    "inverse-on-surface": "#28313f",
+                    "on-secondary-fixed-variant": "#3b4761",
+                    "on-primary": "#003543",
+                    "on-background": "#dae3f6",
+                    "surface-variant": "#2c3544",
+                    "surface-tint": "#45d6ff",
+                    "primary-fixed": "#b5ebff",
+                    "error-container": "#93000a",
+                    "primary-fixed-dim": "#45d6ff",
+                    "on-error": "#690005",
+                    "on-primary-fixed": "#001f28",
+                    "primary-container": "#39d5ff",
+                    "secondary-fixed-dim": "#bac6e6",
+                    "on-secondary-container": "#acb8d7",
+                    "surface-bright": "#313a48",
+                    "surface-container-lowest": "#060e1b",
+                    "on-tertiary-fixed-variant": "#840076",
+                    "tertiary-fixed": "#ffd7f0",
+                    "outline-variant": "#3c494e",
+                    "secondary-container": "#3d4963",
+                    "surface-container-low": "#131c29"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .mesh-depth {
+            background-image: radial-gradient(circle at 2px 2px, rgba(57, 213, 255, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .glass-panel {
+            background: rgba(10, 22, 42, 0.82);
+            backdrop-filter: blur(20px);
+        }
+        body {
+            background-color: #0b1421;
+            color: #dae3f6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#07101d]/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(57,213,255,0.1)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-full">
+<div class="text-2xl font-black tracking-tighter text-[#39d5ff] italic font-space-grotesk uppercase">ORBIT E</div>
+<div class="hidden md:flex items-center gap-10 font-space-grotesk tracking-tighter uppercase text-sm">
+<a class="text-[#39d5ff] border-b-2 border-[#39d5ff] pb-1" href="#">Models</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#">Mission</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#">Telemetry</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#">Network</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-sm font-label text-xs font-bold uppercase tracking-widest hover:scale-95 active:scale-90 transition-transform shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]">
+                    Drive Booking
+                </button>
+</div>
+</div>
+<div class="bg-gradient-to-b from-[#39d5ff]/10 to-transparent h-[1px]"></div>
+</nav>
+<main class="pt-20">
+<!-- Section 1: Hero Dashboard (Compare + Booking) -->
+<section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-8 py-12 mesh-depth">
+<!-- Background Glows -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10">
+<!-- Instrument Compare Panel -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<span class="font-label text-primary tracking-[0.3em] text-[10px] uppercase">Telemetry Comparison v2.4</span>
+<h1 class="font-headline text-5xl md:text-7xl font-bold text-on-surface tracking-tighter uppercase">NEXT-GEN <span class="text-primary-container italic">KINETICS.</span></h1>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-1 mt-8 bg-outline-variant/20 p-[1px] rounded-sm">
+<!-- Orbit One -->
+<div class="bg-surface-container-low p-6 flex flex-col gap-8 transition-all hover:bg-surface-container-high group">
+<div class="flex flex-col">
+<h3 class="font-headline text-xl font-bold text-white uppercase group-hover:text-primary-container transition-colors">ORBIT ONE</h3>
+<span class="font-label text-[10px] text-slate-500 tracking-widest uppercase">Performance Series</span>
+</div>
+<img class="w-full h-32 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="sleek modern electric performance car side profile in a dark neon lit studio with metallic blue reflections and sharp shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTxonp-9X15BWQGvbM1k8MA_sacp8qEN60UindChca8TFJ5dxZa6zsnEek0LZ3V95rXsXg_wJhl5UmO6DOToSoQfelIw4IFuZo4ZvpxN6vfJ57lTCs8eNKAJP0ZLOZPl_rKlHXwD_5u3Kn1udKjt-XQVn7BX6sB_QgToUyB7-0kds-I-8bjH7cbu3FCZf18DMIdfDoNggHGvlEe--4jn_79UZW87v7SmdG3rRs19cTxusDz-OPvVQEBqC5ZFFEPEaTDZyR8k0kw8M"/>
+<div class="space-y-4">
+<div class="flex justify-between items-end border-b border-outline-variant/30 pb-2">
+<span class="font-label text-[10px] text-slate-500 uppercase">Range (km)</span>
+<span class="font-headline text-lg font-medium text-on-surface">542 <small class="text-[10px] text-slate-500">KM</small></span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/30 pb-2">
+<span class="font-label text-[10px] text-slate-500 uppercase">0-100 km/h</span>
+<span class="font-headline text-lg font-medium text-on-surface">3.2 <small class="text-[10px] text-slate-500">SEC</small></span>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-label text-[10px] text-slate-500 uppercase">Starting at</span>
+<span class="font-headline text-lg font-bold text-primary-container">59,900,000<small class="text-[10px] ml-1">원</small></span>
+</div>
+</div>
+</div>
+<!-- Orbit X -->
+<div class="bg-surface-container-low p-6 flex flex-col gap-8 transition-all hover:bg-surface-container-high group relative">
+<div class="absolute top-4 right-4 bg-primary-container text-on-primary-container px-2 py-0.5 text-[8px] font-bold tracking-tighter uppercase rounded-sm">Top Choice</div>
+<div class="flex flex-col">
+<h3 class="font-headline text-xl font-bold text-white uppercase group-hover:text-primary-container transition-colors">ORBIT X</h3>
+<span class="font-label text-[10px] text-slate-500 tracking-widest uppercase">Extended Range</span>
+</div>
+<img class="w-full h-32 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="minimalist aerodynamic futuristic SUV in dark cosmic blue environment with subtle light reflections on smooth curves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEDShp3qWtyoCD2ERXb3fFOBrR67jhV1zV1l43qXE_1DwaaDzETivj-NSXskwXlNsCFDrCmkACL-_BizHRmtcgkNu06bGQKVWrnwGzqy65w4AD0gJbWDVhzaEGxqa9ebzDOtvRtkG-UEOTXG-YCIwJEMlxuVcqrqtPdlHfYPPctw2UtJdk3eCsBymFP2MurYeN1HkW-yiDH_FO80E-UulxUAOnfGG6EjHGc4TyCRPM0zCs_6m1qN6Xf1WRFlFEVNsx99uETuYQmWo"/>
+<div class="space-y-4">
+<div class="flex justify-between items-end border-b border-outline-variant/30 pb-2">
+<span class="font-label text-[10px] text-slate-500 uppercase">Range (km)</span>
+<span class="font-headline text-lg font-medium text-on-surface">618 <small class="text-[10px] text-slate-500">KM</small></span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/30 pb-2">
+<span class="font-label text-[10px] text-slate-500 uppercase">0-100 km/h</span>
+<span class="font-headline text-lg font-medium text-on-surface">4.8 <small class="text-[10px] text-slate-500">SEC</small></span>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-label text-[10px] text-slate-500 uppercase">Starting at</span>
+<span class="font-headline text-lg font-bold text-primary-container">64,500,000<small class="text-[10px] ml-1">원</small></span>
+</div>
+</div>
+</div>
+<!-- Orbit S -->
+<div class="bg-surface-container-low p-6 flex flex-col gap-8 transition-all hover:bg-surface-container-high group">
+<div class="flex flex-col">
+<h3 class="font-headline text-xl font-bold text-white uppercase group-hover:text-primary-container transition-colors">ORBIT S</h3>
+<span class="font-label text-[10px] text-slate-500 tracking-widest uppercase">Luxury GT</span>
+</div>
+<img class="w-full h-32 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="premium electric luxury sedan with elegant lines and high-gloss black finish under soft white studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkAlJJ_FV8A5gm0lY0wd6Dwt9d5-MIVRQmbmGsb5uIobDzejpjWqWzKNherN_tW4ry0zJ_MScLP1LAJT-cabgYlkBMWVviz2iGAsCYamrox15YGPj3EYw-DeBYXuStBgcOzIaojG-1fUaMgY5yD-6bjAvoiL1rRTMmRI8os2ZjxA3_xNU3aQ02t6beM66HLPuxFcZFjWGgigoCQ4s3EBsPTACu_6DjiJuoy8ORbIvJPHVNCp1n3mXahqTBXT_lz79hGJGWJAgzIzQ"/>
+<div class="space-y-4">
+<div class="flex justify-between items-end border-b border-outline-variant/30 pb-2">
+<span class="font-label text-[10px] text-slate-500 uppercase">Range (km)</span>
+<span class="font-headline text-lg font-medium text-on-surface">510 <small class="text-[10px] text-slate-500">KM</small></span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/30 pb-2">
+<span class="font-label text-[10px] text-slate-500 uppercase">0-100 km/h</span>
+<span class="font-headline text-lg font-medium text-on-surface">2.9 <small class="text-[10px] text-slate-500">SEC</small></span>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-label text-[10px] text-slate-500 uppercase">Starting at</span>
+<span class="font-headline text-lg font-bold text-primary-container">82,000,000<small class="text-[10px] ml-1">원</small></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Booking Card -->
+<div class="lg:col-span-4 sticky top-28">
+<div class="glass-panel p-8 rounded-sm shadow-[0_20px_50px_rgba(0,0,0,0.5)] ring-1 ring-white/10">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<h2 class="font-headline text-xl font-bold tracking-tight text-white uppercase">시승 예약</h2>
+</div>
+<div class="space-y-6">
+<div class="space-y-2">
+<label class="font-label text-[10px] text-slate-400 uppercase tracking-widest">Model Select</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="bg-surface-container-highest border border-primary-container text-primary-container py-3 text-[10px] font-bold rounded-sm">ONE</button>
+<button class="bg-surface-container-low text-slate-400 py-3 text-[10px] font-bold rounded-sm hover:bg-surface-container-highest transition-colors">X</button>
+<button class="bg-surface-container-low text-slate-400 py-3 text-[10px] font-bold rounded-sm hover:bg-surface-container-highest transition-colors">S</button>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] text-slate-400 uppercase tracking-widest">Preferred Date</label>
+<input class="w-full bg-surface-container-lowest border-none text-white p-4 rounded-sm focus:ring-2 focus:ring-primary-container/20 text-sm" type="date"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] text-slate-400 uppercase tracking-widest">Time Slot</label>
+<select class="w-full bg-surface-container-lowest border-none text-white p-4 rounded-sm focus:ring-2 focus:ring-primary-container/20 text-sm appearance-none">
+<option>오전 10:00 - 12:00</option>
+<option>오후 13:00 - 15:00</option>
+<option>오후 15:30 - 17:30</option>
+</select>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-4 font-bold tracking-widest uppercase text-xs rounded-sm shadow-[0_10px_30px_rgba(57,213,255,0.2)] hover:brightness-110 transition-all">
+                                SCHEDULE DRIVE
+                            </button>
+<p class="text-[10px] text-slate-500 leading-relaxed text-center">
+                                * 예약 확정 후 카카오 알림톡으로 상세 안내가 전송됩니다.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Performance Specs Grid -->
+<section class="py-24 bg-surface-container-low/30 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+<div class="max-w-xl">
+<span class="font-label text-primary-container text-[10px] tracking-[0.4em] uppercase">Core Technology</span>
+<h2 class="font-headline text-4xl font-bold mt-2 uppercase">HYPER-EFFICIENCY ENGINE</h2>
+<p class="text-slate-400 mt-4 leading-relaxed font-body">최첨단 800V 시스템을 기반으로 한 ORBIT E의 파워트레인은 단순한 이동 수단을 넘어선, 정교하게 설계된 정밀 계측 장비와 같습니다.</p>
+</div>
+<div class="hidden md:block h-[1px] flex-grow mx-12 bg-outline-variant/30"></div>
+<div class="flex gap-2">
+<span class="bg-primary-container/10 text-primary-container px-3 py-1 rounded-sm text-[10px] font-bold uppercase">v3.0 Hardware</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="bg-surface-container-high p-8 flex flex-col justify-between aspect-square md:aspect-auto md:h-80 relative overflow-hidden group">
+<span class="material-symbols-outlined text-primary text-4xl mb-4 opacity-50 group-hover:opacity-100 transition-opacity">speed</span>
+<div>
+<div class="font-headline text-5xl font-bold text-white mb-2">320<span class="text-lg text-slate-500 ml-1">kW</span></div>
+<h4 class="font-label text-[10px] text-slate-400 uppercase tracking-widest">Max Power Output</h4>
+</div>
+<div class="absolute -right-4 -bottom-4 text-slate-800 font-bold text-8xl pointer-events-none select-none">01</div>
+</div>
+<div class="bg-surface-container-highest p-8 flex flex-col justify-between aspect-square md:aspect-auto md:h-80 relative overflow-hidden group">
+<span class="material-symbols-outlined text-primary text-4xl mb-4 opacity-50 group-hover:opacity-100 transition-opacity">battery_charging_full</span>
+<div>
+<div class="font-headline text-5xl font-bold text-white mb-2">18<span class="text-lg text-slate-500 ml-1">MIN</span></div>
+<h4 class="font-label text-[10px] text-slate-400 uppercase tracking-widest">10-80% Ultra-Charge</h4>
+</div>
+<div class="absolute -right-4 -bottom-4 text-slate-800 font-bold text-8xl pointer-events-none select-none">02</div>
+</div>
+<div class="bg-surface-container-high p-8 flex flex-col justify-between aspect-square md:aspect-auto md:h-80 relative overflow-hidden group">
+<span class="material-symbols-outlined text-primary text-4xl mb-4 opacity-50 group-hover:opacity-100 transition-opacity">bolt</span>
+<div>
+<div class="font-headline text-5xl font-bold text-white mb-2">0.21<span class="text-lg text-slate-500 ml-1">CD</span></div>
+<h4 class="font-label text-[10px] text-slate-400 uppercase tracking-widest">Drag Coefficient</h4>
+</div>
+<div class="absolute -right-4 -bottom-4 text-slate-800 font-bold text-8xl pointer-events-none select-none">03</div>
+</div>
+<div class="bg-surface-container-highest p-8 flex flex-col justify-between aspect-square md:aspect-auto md:h-80 relative overflow-hidden group">
+<span class="material-symbols-outlined text-primary text-4xl mb-4 opacity-50 group-hover:opacity-100 transition-opacity">memory</span>
+<div>
+<div class="font-headline text-5xl font-bold text-white mb-2">1.2<span class="text-lg text-slate-500 ml-1">PB</span></div>
+<h4 class="font-label text-[10px] text-slate-400 uppercase tracking-widest">Neural Compute Capacity</h4>
+</div>
+<div class="absolute -right-4 -bottom-4 text-slate-800 font-bold text-8xl pointer-events-none select-none">04</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Charging Infrastructure Depth -->
+<section class="relative py-32 overflow-hidden bg-background">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-20 filter grayscale" data-alt="night time highway view with long exposure light trails of electric vehicles moving through a high-tech city infrastructure" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTqnO8g2qoIYeALKwyUIXJJ-2DzSirgo3EiILN9_XWtwVGbXtShX5Aze5cV0vjG8FypUFWaOWpgjhmaNRwU3CRvUwiMBLBDocg1zlGXZt47LCH-MtpAmlvESf7o_Tm019tN2zeC3UlTT_0aSK5HHdCwBzye0zBzzBC177ZrY9ld4m-GlPu3xAt3L3gSkukSknEdMleqKTMHg2aFoV-nsogAfE7XZKTmulGRaCONQ3_YIqGZQTJbPMX1_sIrx8bypM6A-WXxXt9qWA"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent"></div>
+</div>
+<div class="max-w-7xl mx-auto px-8 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div>
+<span class="font-label text-primary-container text-[10px] tracking-[0.4em] uppercase">Network Ecosystem</span>
+<h2 class="font-headline text-4xl md:text-5xl font-bold mt-4 uppercase leading-tight">주행의 자유를 위한<br/><span class="text-primary">무한한 충전 네트워크.</span></h2>
+<p class="text-slate-400 mt-6 leading-relaxed font-body max-w-lg">
+                        전국 30,000개 이상의 초급속 충전 포인트와 실시간 telemetry 연동으로 다음 충전 지점까지의 주행을 완벽하게 설계합니다.
+                    </p>
+<div class="mt-12 space-y-8">
+<div class="flex items-start gap-4">
+<div class="bg-primary/10 p-3 rounded-sm">
+<span class="material-symbols-outlined text-primary">location_on</span>
+</div>
+<div>
+<h4 class="font-headline text-white font-bold uppercase text-sm">Real-time Station Monitoring</h4>
+<p class="text-[10px] text-slate-500 mt-1 uppercase tracking-wider">주변 충전기 가동 현황 0.1초 단위 업데이트</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-primary/10 p-3 rounded-sm">
+<span class="material-symbols-outlined text-primary">build</span>
+</div>
+<div>
+<h4 class="font-headline text-white font-bold uppercase text-sm">24/7 Predictive Maintenance</h4>
+<p class="text-[10px] text-slate-500 mt-1 uppercase tracking-wider">차량 상태 원격 진단 및 소모품 교체 가이드</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container/50 backdrop-blur-md p-10 rounded-sm border border-outline-variant/20 relative">
+<div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-primary-container -translate-x-1 -translate-y-1"></div>
+<div class="flex flex-col gap-8">
+<div class="flex justify-between items-center">
+<h3 class="font-headline text-lg font-bold uppercase tracking-tight">System Status</h3>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+<span class="font-label text-[10px] text-emerald-500 uppercase">Operational</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-1">
+<span class="font-label text-[10px] text-slate-500 uppercase tracking-[0.2em]">Active Points</span>
+<div class="font-headline text-3xl font-bold text-white">30,428+</div>
+</div>
+<div class="space-y-1">
+<span class="font-label text-[10px] text-slate-500 uppercase tracking-[0.2em]">Up-time</span>
+<div class="font-headline text-3xl font-bold text-white">99.98%</div>
+</div>
+<div class="space-y-1">
+<span class="font-label text-[10px] text-slate-500 uppercase tracking-[0.2em]">Avg Speed</span>
+<div class="font-headline text-3xl font-bold text-white">240<small class="text-xs ml-1">kW</small></div>
+</div>
+<div class="space-y-1">
+<span class="font-label text-[10px] text-slate-500 uppercase tracking-[0.2em]">Users active</span>
+<div class="font-headline text-3xl font-bold text-white">12,183</div>
+</div>
+</div>
+<div class="mt-4 pt-8 border-t border-outline-variant/30">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label text-[10px] text-slate-500 uppercase">Fleet Load</span>
+<span class="font-label text-[10px] text-primary-container">64%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[64%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Drive Booking CTA section -->
+<section class="py-32 px-8 bg-surface-container-lowest relative overflow-hidden">
+<div class="absolute right-0 bottom-0 w-1/2 h-full opacity-10 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="extreme close up of electric car steering wheel and digital dashboard console in the dark with soft glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2waDA-a3AXueZZTzCaVKlySQVtA4wppLI5zqQxrkvRNaCIGXj4n5ZAzkTntme7WgMVVtmRUk8IJHvYzRqJlt9HhyIEbmpTMrpNvF_Iy15KocKItySqIS2fmnkjul_wQCGn58MJuarKHyVya8UjS7u5c_zU6l5iseh2UY6ZBWj3uYguyvSaNT3syKS57JDzeZZJxy0QoIcX68Ex5rqmq0qEbS7Co9WqclpSTL31SpkWauogDH2NzXZiktxS-l_maEvNwPb4rjMogk"/>
+</div>
+<div class="max-w-7xl mx-auto flex flex-col items-center text-center relative z-10">
+<span class="font-label text-primary-container text-[10px] tracking-[0.5em] uppercase">Ready for Departure</span>
+<h2 class="font-headline text-5xl md:text-6xl font-bold mt-6 uppercase leading-tight">EXPERIENCE THE <br/><span class="italic text-primary-container">FUTURE</span> TODAY.</h2>
+<p class="text-slate-400 mt-8 max-w-2xl font-body leading-relaxed text-lg">
+                    ORBIT E의 정밀한 주행 감각과 독보적인 기술력을 직접 경험해보세요.<br/>가장 가까운 퍼포먼스 센터에서 당신을 기다립니다.
+                </p>
+<div class="mt-12 flex flex-col md:flex-row gap-4">
+<button class="bg-primary-container text-on-primary-container px-12 py-5 font-bold tracking-[0.2em] uppercase text-sm rounded-sm hover:scale-105 active:scale-95 transition-all shadow-[0_15px_40px_rgba(57,213,255,0.3)]">
+                        시승 신청하기
+                    </button>
+<button class="bg-transparent border border-outline-variant text-white px-12 py-5 font-bold tracking-[0.2em] uppercase text-sm rounded-sm hover:bg-white/5 transition-all">
+                        카탈로그 다운로드
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full border-t border-slate-800/50 bg-[#0b1421]">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-8 gap-4">
+<div class="text-lg font-bold text-slate-500 font-headline uppercase tracking-tighter">ORBIT E KINETICS</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-space-grotesk text-[10px] tracking-[0.1em] uppercase text-slate-500 hover:text-[#39d5ff] transition-colors" href="#">Privacy Protocol</a>
+<a class="font-space-grotesk text-[10px] tracking-[0.1em] uppercase text-slate-500 hover:text-[#39d5ff] transition-colors" href="#">Terms of Use</a>
+<a class="font-space-grotesk text-[10px] tracking-[0.1em] uppercase text-slate-500 hover:text-[#39d5ff] transition-colors" href="#">Support</a>
+<a class="font-space-grotesk text-[10px] tracking-[0.1em] uppercase text-slate-500 hover:text-[#39d5ff] transition-colors" href="#">Hardware Specs</a>
+</div>
+<div class="font-space-grotesk text-[10px] tracking-[0.1em] uppercase text-slate-500">
+                © 2024 ORBIT E KINETICS. ALL SYSTEMS OPERATIONAL.
+            </div>
+</div>
+</footer>
+</body></html>

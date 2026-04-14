@@ -1,0 +1,89 @@
+{
+  "siteId": "arch-studio",
+  "brand": "PLAIN GRID",
+  "projectId": "9963796661917333552",
+  "projectTitle": "PLAIN GRID Stitch",
+  "updatedAt": "2026-04-14T00:58:47.559Z",
+  "screens": {
+    "home:desktop": {
+      "screenId": "dbc8ba9d84824d5e8fd6e2bd711bfa50",
+      "pageSlug": "home",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/arch-studio/screens/home-desktop.html",
+      "imagePath": "design/stitch/arch-studio/screens/home-desktop.png",
+      "updatedAt": "2026-04-13T16:30:19.493Z"
+    },
+    "home:mobile": {
+      "screenId": "6a433b39dad44d29bc85af24c800fcd7",
+      "pageSlug": "home",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/arch-studio/screens/home-mobile.html",
+      "imagePath": "design/stitch/arch-studio/screens/home-mobile.png",
+      "updatedAt": "2026-04-13T16:31:35.049Z"
+    },
+    "works:desktop": {
+      "screenId": "1d55d876aba64e9c9eea38b9261f1e1e",
+      "pageSlug": "works",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/arch-studio/screens/works-desktop.html",
+      "imagePath": "design/stitch/arch-studio/screens/works-desktop.png",
+      "updatedAt": "2026-04-14T00:50:36.626Z"
+    },
+    "works:mobile": {
+      "screenId": "7c835eda15a84ff5884d064f7ee08f5a",
+      "pageSlug": "works",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/arch-studio/screens/works-mobile.html",
+      "imagePath": "design/stitch/arch-studio/screens/works-mobile.png",
+      "updatedAt": "2026-04-14T00:51:40.792Z"
+    },
+    "services:desktop": {
+      "screenId": "9fa4312fc1d24236b580f91d289e998d",
+      "pageSlug": "services",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/arch-studio/screens/services-desktop.html",
+      "imagePath": "design/stitch/arch-studio/screens/services-desktop.png",
+      "updatedAt": "2026-04-14T00:52:52.296Z"
+    },
+    "services:mobile": {
+      "screenId": "2bda056d52784f139393ce43e38deb96",
+      "pageSlug": "services",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/arch-studio/screens/services-mobile.html",
+      "imagePath": "design/stitch/arch-studio/screens/services-mobile.png",
+      "updatedAt": "2026-04-14T00:54:08.260Z"
+    },
+    "brief:desktop": {
+      "screenId": "f907d7f69a824a168016cdac48bd4e13",
+      "pageSlug": "brief",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/arch-studio/screens/brief-desktop.html",
+      "imagePath": "design/stitch/arch-studio/screens/brief-desktop.png",
+      "updatedAt": "2026-04-14T00:55:15.610Z"
+    },
+    "brief:mobile": {
+      "screenId": "8900d44a434b4e8ea5abd76939b7a944",
+      "pageSlug": "brief",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/arch-studio/screens/brief-mobile.html",
+      "imagePath": "design/stitch/arch-studio/screens/brief-mobile.png",
+      "updatedAt": "2026-04-14T00:56:34.902Z"
+    },
+    "contact:desktop": {
+      "screenId": "5f8ee0b6d1b54e25867d6bf66fc5d2ab",
+      "pageSlug": "contact",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/arch-studio/screens/contact-desktop.html",
+      "imagePath": "design/stitch/arch-studio/screens/contact-desktop.png",
+      "updatedAt": "2026-04-14T00:57:40.153Z"
+    },
+    "contact:mobile": {
+      "screenId": "ee44299a18bb47b4b99e31e95b615138",
+      "pageSlug": "contact",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/arch-studio/screens/contact-mobile.html",
+      "imagePath": "design/stitch/arch-studio/screens/contact-mobile.png",
+      "updatedAt": "2026-04-14T00:58:47.561Z"
+    }
+  }
+}

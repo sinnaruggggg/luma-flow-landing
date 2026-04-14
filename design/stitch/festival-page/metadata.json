@@ -1,0 +1,89 @@
+{
+  "siteId": "festival-page",
+  "brand": "NOISE WAVE",
+  "projectId": "9111630670424922086",
+  "projectTitle": "NOISE WAVE Stitch",
+  "updatedAt": "2026-04-14T00:57:35.312Z",
+  "screens": {
+    "home:desktop": {
+      "screenId": "e01b8ee4529846b0870f2b51e5f2dded",
+      "pageSlug": "home",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/festival-page/screens/home-desktop.html",
+      "imagePath": "design/stitch/festival-page/screens/home-desktop.png",
+      "updatedAt": "2026-04-13T16:33:13.805Z"
+    },
+    "home:mobile": {
+      "screenId": "5368fd7e0cb745c89a04e329072d2991",
+      "pageSlug": "home",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/festival-page/screens/home-mobile.html",
+      "imagePath": "design/stitch/festival-page/screens/home-mobile.png",
+      "updatedAt": "2026-04-13T16:34:48.356Z"
+    },
+    "lineup:desktop": {
+      "screenId": "8285ace7578344e4aaa8b3c41d3dc268",
+      "pageSlug": "lineup",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/festival-page/screens/lineup-desktop.html",
+      "imagePath": "design/stitch/festival-page/screens/lineup-desktop.png",
+      "updatedAt": "2026-04-14T00:37:18.355Z"
+    },
+    "lineup:mobile": {
+      "screenId": "9ece5a3345054cd981d0b87ec538a404",
+      "pageSlug": "lineup",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/festival-page/screens/lineup-mobile.html",
+      "imagePath": "design/stitch/festival-page/screens/lineup-mobile.png",
+      "updatedAt": "2026-04-14T00:38:32.977Z"
+    },
+    "schedule:desktop": {
+      "screenId": "6fadc9589aef48a999196872859b20a6",
+      "pageSlug": "schedule",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/festival-page/screens/schedule-desktop.html",
+      "imagePath": "design/stitch/festival-page/screens/schedule-desktop.png",
+      "updatedAt": "2026-04-14T00:47:00.680Z"
+    },
+    "schedule:mobile": {
+      "screenId": "670c334ac53744cfb7c92a99baf5cbad",
+      "pageSlug": "schedule",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/festival-page/screens/schedule-mobile.html",
+      "imagePath": "design/stitch/festival-page/screens/schedule-mobile.png",
+      "updatedAt": "2026-04-14T00:48:11.712Z"
+    },
+    "tickets:desktop": {
+      "screenId": "f7317d508f1f4154842eccddaa07b21c",
+      "pageSlug": "tickets",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/festival-page/screens/tickets-desktop.html",
+      "imagePath": "design/stitch/festival-page/screens/tickets-desktop.png",
+      "updatedAt": "2026-04-14T00:49:23.097Z"
+    },
+    "tickets:mobile": {
+      "screenId": "07e2e644b4b1494b83a32e583f879c38",
+      "pageSlug": "tickets",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/festival-page/screens/tickets-mobile.html",
+      "imagePath": "design/stitch/festival-page/screens/tickets-mobile.png",
+      "updatedAt": "2026-04-14T00:50:36.166Z"
+    },
+    "guide:desktop": {
+      "screenId": "a1b51e38f2d74a8d9bbbf44aaf1594e5",
+      "pageSlug": "guide",
+      "deviceType": "DESKTOP",
+      "htmlPath": "design/stitch/festival-page/screens/guide-desktop.html",
+      "imagePath": "design/stitch/festival-page/screens/guide-desktop.png",
+      "updatedAt": "2026-04-14T00:52:02.149Z"
+    },
+    "guide:mobile": {
+      "screenId": "2206ee999026434b8592e08c1a7a3e77",
+      "pageSlug": "guide",
+      "deviceType": "MOBILE",
+      "htmlPath": "design/stitch/festival-page/screens/guide-mobile.html",
+      "imagePath": "design/stitch/festival-page/screens/guide-mobile.png",
+      "updatedAt": "2026-04-14T00:57:35.313Z"
+    }
+  }
+}

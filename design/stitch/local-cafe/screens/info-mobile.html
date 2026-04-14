@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#2f1503",
+                    "on-tertiary-fixed-variant": "#5b4220",
+                    "tertiary-fixed-dim": "#e4c195",
+                    "on-secondary-container": "#706255",
+                    "outline": "#82746c",
+                    "primary": "#432510",
+                    "surface-variant": "#ebe1d1",
+                    "secondary": "#6a5c4f",
+                    "background": "#fff8f1",
+                    "primary-container": "#5d3b24",
+                    "on-tertiary-container": "#ccaa7f",
+                    "on-surface": "#1f1b11",
+                    "surface-container": "#f7eddc",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#353025",
+                    "surface-container-low": "#fdf2e1",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#d4c3ba",
+                    "tertiary-container": "#563e1d",
+                    "secondary-fixed": "#f3dfce",
+                    "inverse-primary": "#eebc9d",
+                    "on-primary-container": "#d6a688",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#ffddb5",
+                    "secondary-fixed-dim": "#d6c3b3",
+                    "tertiary": "#3d2808",
+                    "inverse-on-surface": "#faf0de",
+                    "surface-tint": "#7c563d",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#f1e7d6",
+                    "secondary-container": "#f3dfce",
+                    "surface-bright": "#fff8f1",
+                    "on-secondary-fixed-variant": "#514438",
+                    "surface": "#fff8f1",
+                    "on-primary-fixed-variant": "#613f27",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed-dim": "#eebc9d",
+                    "surface-dim": "#e2d9c8",
+                    "on-error-container": "#93000a",
+                    "on-background": "#1f1b11",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#50443e",
+                    "on-tertiary-fixed": "#2a1800",
+                    "surface-container-highest": "#ebe1d1",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#231a10",
+                    "primary-fixed": "#ffdbc7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif KR", "serif"],
+                    "body": ["Be Vietnam Pro", "sans-serif"],
+                    "label": ["Work Sans", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .paper-texture {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+        .notch-edge {
+            mask-image: radial-gradient(circle at 0px 50%, transparent 12px, black 13px);
+            -webkit-mask-image: radial-gradient(circle at 0px 50%, transparent 12px, black 13px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fff8f1] dark:bg-stone-950/80 backdrop-blur-md">
+<div class="flex justify-between items-center px-6 h-16 w-full max-w-screen-xl mx-auto">
+<button class="text-[#432510] dark:text-[#e8c498] active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-2xl font-headline font-bold tracking-tight text-[#432510] dark:text-[#f7eddc]">TABLE WARM</h1>
+<button class="text-[#432510] dark:text-[#e8c498] active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+<div class="h-px w-full bg-gradient-to-b from-[#f7eddc]/50 to-transparent"></div>
+</header>
+<main class="pt-20 pb-32 px-6 max-w-md mx-auto">
+<!-- Hero Title -->
+<section class="mb-10 text-center">
+<h2 class="font-headline text-4xl text-primary font-bold mb-2">카페 정보</h2>
+<p class="font-label text-xs tracking-widest text-secondary uppercase">The Artisanal Concierge</p>
+</section>
+<!-- Operational Hours (Paper Note Aesthetic) -->
+<section class="mb-12 relative">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_40px_rgba(43,34,26,0.06)] paper-texture notch-edge border-l-4 border-primary/20">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="schedule">schedule</span>
+<h3 class="font-headline text-xl text-primary font-bold">운영 시간</h3>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-baseline border-b border-outline-variant/30 pb-2">
+<span class="font-label text-xs font-medium text-secondary tracking-widest">OPENING HOURS</span>
+<span class="font-body font-semibold text-primary">11:00 - 21:00</span>
+</div>
+<div class="flex justify-between items-baseline border-b border-outline-variant/30 pb-2">
+<span class="font-label text-xs font-medium text-secondary tracking-widest">BREAK TIME</span>
+<span class="font-body font-semibold text-primary">15:30 - 17:00</span>
+</div>
+<div class="flex justify-between items-baseline border-b border-outline-variant/30 pb-2">
+<span class="font-label text-xs font-medium text-secondary tracking-widest">LAST ORDER</span>
+<span class="font-body font-semibold text-primary">20:00</span>
+</div>
+<p class="text-[10px] text-secondary/60 mt-4 italic font-body">* 매주 월요일은 정기 휴무입니다.</p>
+</div>
+</div>
+</section>
+<!-- Map & Location -->
+<section class="mb-12">
+<div class="bg-surface-container-low rounded-2xl overflow-hidden mb-6">
+<div class="aspect-video w-full relative">
+<img alt="Map of Seongsu-dong" class="w-full h-full object-cover grayscale opacity-80" data-alt="Minimalistic map graphic showing Seongsu-dong area with soft earth tones and a elegant pin marker" data-location="Seongsu-dong, Seoul" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj7Pyiiq4Q0hF8L94jycx_vmXX1MuWE5qd0xn21Xj5bC8qxlQPOXT6Wm1vwvmHpp-HfIrPMT1Rox-FX56zGkrxymMZQUOxuvd6_uscwIReXzHoVt5fxjW_zQRlIElW8DX4sKLdZKcP6HuMpRdL64fmwc-oFjX5Ta8EhyHuxZI3Ppt7doi_VQxEMOufAsTTTJd0Vd8eN7PvgbgqPtFXL0C8wMDwi6RJyBduN_WxMqKJCSPUAHDfLpyK9-OQpwCrQU6TUTCeObRrqpc"/>
+<div class="absolute inset-0 bg-primary/5"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<div class="bg-white px-3 py-1 rounded-full shadow-sm mt-1">
+<span class="text-[10px] font-bold text-primary">TABLE WARM</span>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline text-lg text-primary font-bold mb-4">서울 성동구 성수동 2가</h3>
+<div class="space-y-4">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="train">train</span>
+<p class="text-sm text-on-surface-variant leading-relaxed">2호선 성수역 3번 출구에서 도보 8분 거리</p>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="local_parking">local_parking</span>
+<p class="text-sm text-on-surface-variant leading-relaxed">매장 앞 주차 공간 협소 (공영 주차장 이용 권장)</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- House Rules -->
+<section class="mb-12">
+<h3 class="font-headline text-2xl text-primary font-bold mb-6 text-center">공간 이용 수칙</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container p-5 rounded-2xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary-container text-3xl mb-3" data-icon="volume_down">volume_down</span>
+<span class="text-xs font-bold text-primary mb-1">차분한 대화</span>
+<p class="text-[10px] text-secondary">낮은 목소리로<br/>머물러 주세요</p>
+</div>
+<div class="bg-surface-container p-5 rounded-2xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary-container text-3xl mb-3" data-icon="groups">groups</span>
+<span class="text-xs font-bold text-primary mb-1">인원 제한</span>
+<p class="text-[10px] text-secondary">최대 6인까지<br/>입장 가능합니다</p>
+</div>
+<div class="bg-surface-container p-5 rounded-2xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary-container text-3xl mb-3" data-icon="pets">pets</span>
+<span class="text-xs font-bold text-primary mb-1">반려동물</span>
+<p class="text-[10px] text-secondary">테라스 좌석만<br/>동반 가능합니다</p>
+</div>
+<div class="bg-surface-container p-5 rounded-2xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary-container text-3xl mb-3" data-icon="no_photography">no_photography</span>
+<span class="text-xs font-bold text-primary mb-1">상업 촬영</span>
+<p class="text-[10px] text-secondary">사전 협의 없는<br/>상업 촬영 제한</p>
+</div>
+</div>
+</section>
+<!-- Visit Flow / Tips (Asymmetric Layout) -->
+<section class="mb-12">
+<div class="flex flex-col gap-6">
+<div class="bg-primary-container text-on-primary-container p-6 rounded-[2rem] ml-4 flex gap-4 items-center">
+<div class="bg-white/10 p-3 rounded-full">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="light_mode">light_mode</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-lg mb-1">Golden Hours</h4>
+<p class="text-xs opacity-80 leading-relaxed">오후 2시, 남서쪽 창으로 들어오는 따뜻한 윤슬을 배경으로 가장 예쁜 사진을 남기실 수 있습니다.</p>
+</div>
+</div>
+<div class="bg-surface-variant p-6 rounded-[2rem] mr-4 flex gap-4 items-center">
+<div>
+<h4 class="font-headline font-bold text-primary text-lg mb-1">Seasonal Updates</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">겨울 시즌을 맞아 따뜻한 뱅쇼와 호박 파이가 준비되었습니다. 포근한 계절을 만끽해 보세요.</p>
+</div>
+<div class="bg-primary/5 p-3 rounded-full">
+<span class="material-symbols-outlined text-primary" data-icon="ac_unit">ac_unit</span>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section class="mb-8">
+<h3 class="font-headline text-2xl text-primary font-bold mb-6">자주 묻는 질문</h3>
+<div class="space-y-3">
+<details class="group bg-surface-container-low rounded-xl">
+<summary class="flex justify-between items-center p-4 cursor-pointer list-none">
+<span class="text-sm font-semibold text-primary">예약이 가능한가요?</span>
+<span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-4 pb-4 text-xs text-on-surface-variant leading-relaxed">
+                        평일은 앱을 통한 사전 예약이 가능하며, 주말은 워크인 방문객을 우선으로 운영하고 있습니다.
+                    </div>
+</details>
+<details class="group bg-surface-container-low rounded-xl">
+<summary class="flex justify-between items-center p-4 cursor-pointer list-none">
+<span class="text-sm font-semibold text-primary">비건 메뉴가 준비되어 있나요?</span>
+<span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-4 pb-4 text-xs text-on-surface-variant leading-relaxed">
+                        네, 모든 라떼류는 오트 밀크로 변경 가능하며, 두 가지 종류의 비건 디저트가 상시 준비되어 있습니다.
+                    </div>
+</details>
+<details class="group bg-surface-container-low rounded-xl">
+<summary class="flex justify-between items-center p-4 cursor-pointer list-none">
+<span class="text-sm font-semibold text-primary">노키즈존인가요?</span>
+<span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-4 pb-4 text-xs text-on-surface-variant leading-relaxed">
+                        TABLE WARM은 케어키즈존으로 운영됩니다. 아이와 함께 방문 시 적극적인 케어를 부탁드립니다.
+                    </div>
+</details>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f7eddc] dark:bg-stone-950 w-full py-12 px-6 flex flex-col items-center gap-4 text-center mb-24">
+<h2 class="font-headline text-lg text-[#432510]">TABLE WARM</h2>
+<div class="flex gap-6">
+<a class="font-label text-xs font-medium tracking-widest text-[#5d3b24] opacity-80 hover:text-[#432510]" href="#">이용약관</a>
+<a class="font-label text-xs font-medium tracking-widest text-[#5d3b24] opacity-80 hover:text-[#432510]" href="#">개인정보처리방침</a>
+</div>
+<p class="font-label text-xs font-medium tracking-widest text-[#5d3b24]">© 2024 TABLE WARM. All rights reserved.</p>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-[#f7eddc]/90 dark:bg-stone-900/90 backdrop-blur-xl rounded-t-[2rem] border-t border-[#5d3b24]/5 shadow-[0_-8px_30px_rgba(43,34,26,0.04)]">
+<div class="flex justify-around items-center px-4 pt-3 pb-6">
+<div class="flex flex-col items-center justify-center text-[#5d3b24]/70 dark:text-stone-400 hover:text-[#432510] transition-colors active:translate-y-[-2px]">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-wider">홈</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5d3b24]/70 dark:text-stone-400 hover:text-[#432510] transition-colors active:translate-y-[-2px]">
+<span class="material-symbols-outlined mb-1" data-icon="restaurant_menu">restaurant_menu</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-wider">메뉴</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5d3b24]/70 dark:text-stone-400 hover:text-[#432510] transition-colors active:translate-y-[-2px]">
+<span class="material-symbols-outlined mb-1" data-icon="location_on">location_on</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-wider">방문</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5d3b24]/70 dark:text-stone-400 hover:text-[#432510] transition-colors active:translate-y-[-2px]">
+<span class="material-symbols-outlined mb-1" data-icon="calendar_today">calendar_today</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-wider">예약</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#432510] dark:text-[#ffffff] bg-[#ffffff]/60 dark:bg-[#432510]/40 rounded-full px-4 py-1 active:translate-y-[-2px]">
+<span class="material-symbols-outlined mb-1" data-icon="info" style="font-variation-settings: 'FILL' 1;">info</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-wider">정보</span>
+</div>
+</div>
+</nav>
+</body></html>

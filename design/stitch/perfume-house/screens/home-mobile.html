@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&amp;family=Manrope:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#26190e",
+                    "surface-container": "#f8ecdf",
+                    "surface": "#fff8f3",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#ece1d4",
+                    "primary-fixed-dim": "#dcc2b0",
+                    "surface-tint": "#6e5a4c",
+                    "surface-dim": "#e3d8cb",
+                    "inverse-surface": "#353027",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#dcc2b0",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#685c50",
+                    "on-primary-container": "#aa9282",
+                    "primary-container": "#3c2c20",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#392d21",
+                    "on-surface": "#201b13",
+                    "surface-container-high": "#f2e6d9",
+                    "secondary-fixed": "#f0e0d0",
+                    "on-surface-variant": "#4e453f",
+                    "on-primary-fixed-variant": "#554336",
+                    "secondary-container": "#f0e0d0",
+                    "primary": "#25180d",
+                    "tertiary-fixed-dim": "#d6c3b2",
+                    "outline-variant": "#d2c4bc",
+                    "on-tertiary-container": "#a59484",
+                    "on-secondary-container": "#6e6256",
+                    "on-tertiary-fixed-variant": "#514438",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#d4c4b5",
+                    "surface-bright": "#fff8f3",
+                    "on-secondary-fixed": "#221a11",
+                    "background": "#fff8f3",
+                    "inverse-on-surface": "#faefe2",
+                    "surface-container-low": "#fdf2e4",
+                    "on-secondary-fixed-variant": "#50453a",
+                    "surface-variant": "#ece1d4",
+                    "primary-fixed": "#f9ddcb",
+                    "tertiary": "#23190e",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#f3dfcd",
+                    "on-primary": "#ffffff",
+                    "on-background": "#201b13",
+                    "on-tertiary-fixed": "#241a0f",
+                    "outline": "#80756e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif KR", "serif"],
+                    "body": ["Manrope", "sans-serif"],
+                    "label": ["Manrope", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24
+    }
+.soft-grain {
+    position: relative
+    }
+.soft-grain::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBGVaTdhbTqcq3hoeU2_RFay620UgrPLaf2G074fTqmFN8Cf12d2sU7EQRZDgGcMAr2ymdK6jGpRAt4vDgqVk2V897D4uQldalLg031EEmlCT5yN2Z_T4m5RguplFJjDg0sriX1G4WJORpAY_4TUgSX601mQtzIh7nKfoYAt25MHz8B9dWQaBXncNy8_meuqxPCPoj4U75IP0JPDFC-b3kOusNo4FCKi1wLqX2cLu7Chs0uxEHLg_8bw4_hJSQDcx6i5xaaviEUojv_);
+    opacity: 0.03;
+    pointer-events: none
+    }
+.glass-panel {
+    background: rgba(248, 242, 234, 0.84);
+    backdrop-filter: blur(12px)
+    }
+.hide-scrollbar::-webkit-scrollbar {
+    display: none
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-primary font-body selection:bg-primary-fixed-dim overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fff8f3] dark:bg-[#25180d] flex justify-between items-center px-6 h-16">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#25180d] dark:text-[#f8ecdf]">menu</span>
+</div>
+<h1 class="text-xl font-bold tracking-[0.2em] text-[#25180d] dark:text-[#f8ecdf] font-['Noto_Serif_KR']">MOSS &amp; AMBER</h1>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#25180d] dark:text-[#f8ecdf]">shopping_bag</span>
+</div>
+</header>
+<div class="fixed top-16 w-full z-50 bg-[#f8ecdf] dark:bg-[#3c2c20] h-[1px]"></div>
+<main class="pt-16 pb-24">
+<!-- Hero Viewport (The Editorial Mood Canvas) -->
+<section class="relative h-[795px] w-full overflow-hidden flex flex-col soft-grain">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="Cinematic luxury perfume bottle nestled in deep green wet moss with soft morning mist in a dark temperate forest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvcdDy7tdesCVEUZr9zTqFfgZlAFdwtXBSokEoXOUUkGJy8L99x0u1g9w9n4-bNtQzQCyE0v9cKfjndKiE8tRgXY-TSpJImfgUB5ZXaH6wGvhtGuGycnmZiecMkCYxVG9dur9vnK4lxDLQ4j05UyhlDVBgaZyOGgCAXvofUvxtADO_iXUs4elosdTM5aIb7_AA4saCF3cRJiZw6csJjRLrlzSYkyB8OQnQUJBOshzx_TErILkmA3zH7lUMj5m2R7RZ0x1iLtm-O0hW"/>
+<div class="absolute inset-0 bg-gradient-to-b from-primary/20 via-transparent to-primary/40"></div>
+</div>
+<!-- Overlaid Title Shell -->
+<div class="relative z-10 mt-12 px-8">
+<span class="font-label text-[10px] tracking-[0.3em] uppercase opacity-70 mb-2 block">The New Seasonal</span>
+<h2 class="font-headline text-5xl font-black leading-tight text-surface-container-lowest">Discovery<br/>Set</h2>
+</div>
+<!-- Floating Note Cards (Asymmetric Drift) -->
+<div class="relative z-10 flex flex-col gap-3 px-8 mt-12 max-w-[200px]">
+<div class="glass-panel p-4 flex items-center gap-3 transform translate-x-4">
+<span class="text-[10px] font-label font-bold uppercase opacity-50">Top</span>
+<span class="font-headline text-sm">Bergamot</span>
+</div>
+<div class="glass-panel p-4 flex items-center gap-3">
+<span class="text-[10px] font-label font-bold uppercase opacity-50">Heart</span>
+<span class="font-headline text-sm">Wild Moss</span>
+</div>
+<div class="glass-panel p-4 flex items-center gap-3 transform translate-x-8">
+<span class="text-[10px] font-label font-bold uppercase opacity-50">Base</span>
+<span class="font-headline text-sm">Warm Amber</span>
+</div>
+</div>
+<!-- Discovery Set Entry Card -->
+<div class="absolute bottom-12 right-0 z-20 w-3/4">
+<div class="bg-surface-container-lowest p-8 flex flex-col gap-6 shadow-2xl">
+<div class="flex flex-col">
+<p class="font-headline text-2xl font-bold mb-1">디스커버리 세트</p>
+<p class="font-label text-sm text-muted opacity-60">모스앤엠버의 모든 향기를 한 번에 경험하세요.</p>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-body text-lg font-bold">39,000</span>
+<span class="font-label text-xs opacity-60">KRW</span>
+</div>
+<button class="bg-primary text-on-primary py-4 px-8 font-label text-sm tracking-widest hover:bg-primary-container transition-colors">
+                        구매하기
+                    </button>
+</div>
+</div>
+</section>
+<!-- Scent Archive Section -->
+<section class="py-24 bg-surface-container-low px-8">
+<div class="mb-12">
+<h3 class="font-headline text-3xl font-bold mb-4">The Scent Archive</h3>
+<p class="font-label text-xs tracking-widest opacity-60 uppercase">Explore our categories</p>
+</div>
+<div class="flex overflow-x-auto gap-6 hide-scrollbar snap-x snap-mandatory">
+<!-- Woody -->
+<div class="flex-shrink-0 w-64 snap-start group">
+<div class="relative aspect-[3/4] overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Moody macro shot of dark cedar bark and weathered wood textures in soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8JXJcvL83WaVqVpBFW2kYtH_Ug1z7LP_iC9AhKOgD6ePjNhvbJXZI8ogcOjys9zxelNQP--hu4MrPqV_hOhiBKOwxXpesgnb9PZ301IZK_cDF3DDnvVQ-U_NuqFE9bChugPn7AJACqAtSplcmn-T6Pw-4sIC-FCXYm4GuSrjYh481PV9IOzotNcufOUHdAqyRP13UTpqk1F4WMUDntBHY4WDfotstFZPCe_MQKKKqodzpoXlkt6HhPOzJziKAfaParCbaXnjeowzU"/>
+</div>
+<h4 class="font-headline text-xl mb-1">Woody</h4>
+<p class="font-label text-[10px] uppercase tracking-widest opacity-50">깊은 숲의 고요함</p>
+</div>
+<!-- Floral -->
+<div class="flex-shrink-0 w-64 snap-start group">
+<div class="relative aspect-[3/4] overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Artistic blurred close-up of a single wilted wildflower in muted earthen tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNOemOK2Ydm_KJhV5_ip5bV4-onzaJWuMWw62R_lNXhptnoQo3UPYLjI4Izjc-CxdX891_08V12rZfKN32KhYA2dpL5-R_LTduhOjq0ShfZ8LsHT5KYQaQT4dVIbqXktyg_tt0P52QF_CoR0KRxeb8k4wPTT2j4DToPbATXiqCDEKxpqJv_oHfRh0GdsMREV0ly-3PRkpDfLCIZJWFIR70zV27c5w3UwJHt3dmn0sPb47ektzENmN7Ff1zdaEhKNDvXEYDT0Vdd0qL"/>
+</div>
+<h4 class="font-headline text-xl mb-1">Floral</h4>
+<p class="font-label text-[10px] uppercase tracking-widest opacity-50">말라가는 꽃잎의 우아함</p>
+</div>
+<!-- Earthy -->
+<div class="flex-shrink-0 w-64 snap-start group">
+<div class="relative aspect-[3/4] overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Damp soil and lush ferns after rain with dramatic top lighting in a botanical garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwL4nvRhQnlvDVAwd8fo9psDjUH4pC_BkR6muOPaKtquHuu8pdHDdoG_RRXEC9Vx0oBNz0QGJA63a4Qff2b2KzVmEv3jvLFnYWwJYWoUFdGdkfWbzAE-27s3Lk5te7wcC2lFZUaSN0QxfdmyB550J8E77-jjMaD6oCrZ8FMWKYkhI2_QDDeafmgNGAbmbGLeQxsjDzHBOQd1JMuGdbjPatFxm2e95rarXgHTvsDGLO7lQ03YzdxaBLD8UcfOfgx-FFaqNvQuSt17Fn"/>
+</div>
+<h4 class="font-headline text-xl mb-1">Earthy</h4>
+<p class="font-label text-[10px] uppercase tracking-widest opacity-50">대지가 머금은 비의 향</p>
+</div>
+</div>
+</section>
+<!-- The Curation Section -->
+<section class="py-24 bg-surface">
+<div class="px-8 mb-12 text-center">
+<span class="font-label text-[10px] tracking-[0.4em] uppercase block mb-4">Signature Pieces</span>
+<h3 class="font-headline text-4xl font-bold">The Curation</h3>
+</div>
+<div class="space-y-32">
+<!-- Product 1 -->
+<div class="relative px-8">
+<div class="aspect-[4/5] bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Elegant tall glass perfume bottle reflecting amber light against a minimal warm beige background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLMxYJQoe7e4qVJFAqAp7jH-28P53uWD6G9McgwqkUJyhM-xS3n1Oyjs5P8q0WgnZdZ52OwhPafQWDzTq0793hU2FfW-eVSNr3MNtZreFQ3ZvwY8aB-DhI__ogdYM8b7s_inN4q8z_N1b33U1HuyZYZZ0ZJ4xLjkcLyNNDMjuGaWkW-WFWgu32Ea89739sVP7pS6rZRsrifysa6PuaFwnuo3NnDn90vifHz7Jeobq_Op6k_o18ETgUV3gGnBOsrgVOKWWbA5BcGh-f"/>
+</div>
+<div class="absolute -bottom-16 left-16 right-0 bg-surface-container-lowest p-8 glass-panel">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-headline text-2xl font-bold leading-tight">Amber Woods Duo</h4>
+<p class="font-label text-[10px] uppercase tracking-widest opacity-50 mt-1">Scent Pairing Set</p>
+</div>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-body text-lg font-bold">89,000 KRW</span>
+<button class="bg-primary text-on-primary px-4 py-2 text-xs font-label uppercase tracking-widest">Detail</button>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="relative px-8">
+<div class="aspect-[4/5] bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Luxury black perfume packaging set on a stone surface with architectural shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKLkiFO_3zzLIzi7nVU3M43ixnunqriQejxLAhvakLy2ZWxVztwgHifcnUXpvFPlb3BzU29cTyFe5UOfvFfmaiU1AeiNKPz8q8rO_0pGEYA9jqozIC2Wp0ncWzW45kaLdJ8JAh1uGdIvZgh5sqj7o1Hr4wChPtw_FilTt7CpG45RTDyV3BT-mp_ZVp1IUSbfzqKWh8nqIBT5rqI6obAbQBvuv6Aeo8C4ftZWcWfC8yAAlAU0dwy5w8yBvWs6RZpMlKoIrFve5XeRno"/>
+</div>
+<div class="absolute -bottom-16 left-0 right-16 bg-surface-container-lowest p-8 glass-panel">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-headline text-2xl font-bold leading-tight">Signature Set</h4>
+<p class="font-label text-[10px] uppercase tracking-widest opacity-50 mt-1">The Essential Collection</p>
+</div>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-body text-lg font-bold">124,000 KRW</span>
+<button class="bg-primary text-on-primary px-4 py-2 text-xs font-label uppercase tracking-widest">Detail</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Philosophy -->
+<section class="mt-40 bg-primary text-on-primary py-32 px-8 overflow-hidden soft-grain">
+<div class="flex flex-col items-center text-center max-w-xs mx-auto">
+<div class="mb-12 w-full aspect-square overflow-hidden mix-blend-luminosity opacity-40">
+<img class="w-full h-full object-cover scale-150 rotate-12" data-alt="Abstract monochrome waves of sand and light with deep contrast and fine grain texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg4TfCirMD6DQOcrJpBuxiEtbu8ZZETpLCjbTfwnffgCBOGqDFjV39vUXGJwndspXvbXjFRBoJrLTnxMmZrMCEUS6YQ5E0ZM27SQ8mbwaF6GnUZRO74UIUN2xQXM0OkhAXPYMyGGS4FGm1ba067DNUcKRKtdl1G789bP75f_uHjCjQ9-1xtHEBuxpqzXnLCG3t2D-Gizr8C6VydgY25mJn8x9HSVae1QQmJb41_Qz3hzBfHEFYWagmBfwHYTw04g5RTJNRtliX6ZWe"/>
+</div>
+<h3 class="font-headline text-3xl font-bold mb-8 leading-relaxed">향기는 단순한 냄새가 아닌,<br/>우리가 세상을 읽는<br/>또 하나의 언어입니다.</h3>
+<p class="font-label text-xs tracking-widest leading-loose opacity-70">
+                    MOSS &amp; AMBER는 찰나의 순간을 영원한 기억으로 치환하는 향의 서사를 탐구합니다. 우리는 대지의 침묵과 숲의 속삭임을 병 속에 담아 당신만의 고유한 캔버스를 제안합니다.
+                </p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 bg-[#ece1d4] dark:bg-[#1a1109] flex flex-col items-center text-center space-y-6">
+<span class="font-['Noto_Serif_KR'] text-lg mb-4 block text-[#25180d] dark:text-[#f8ecdf]">MOSS &amp; AMBER</span>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-['Manrope'] text-[11px] uppercase tracking-[0.1em] text-[#25180d] dark:text-[#f8ecdf] underline underline-offset-4" href="#">이용약관</a>
+<a class="font-['Manrope'] text-[11px] uppercase tracking-[0.1em] text-[#25180d] dark:text-[#f8ecdf] opacity-60 hover:opacity-100" href="#">개인정보처리방침</a>
+<a class="font-['Manrope'] text-[11px] uppercase tracking-[0.1em] text-[#25180d] dark:text-[#f8ecdf] opacity-60 hover:opacity-100" href="#">문의하기</a>
+</div>
+<p class="font-['Manrope'] text-[11px] uppercase tracking-[0.1em] text-[#25180d] dark:text-[#f8ecdf] opacity-60">© MOSS &amp; AMBER. THE OLFACTORY CANVAS.</p>
+</footer>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-[#fff8f3]/90 dark:bg-[#25180d]/90 backdrop-blur-xl border-t border-[#25180d]/10 dark:border-[#f8ecdf]/10 shadow-[0_-4px_20px_rgba(37,24,13,0.04)] flex justify-around items-center h-20 pb-safe px-4">
+<a class="flex flex-col items-center justify-center text-[#6b5f53] dark:text-[#ece1d4] opacity-60" href="#">
+<span class="material-symbols-outlined mb-1">auto_awesome</span>
+<span class="font-['Noto_Serif_KR'] text-[10px] tracking-widest">컬렉션</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#6b5f53] dark:text-[#ece1d4] opacity-60" href="#">
+<span class="material-symbols-outlined mb-1">opacity</span>
+<span class="font-['Noto_Serif_KR'] text-[10px] tracking-widest">향조</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#6b5f53] dark:text-[#ece1d4] opacity-60" href="#">
+<span class="material-symbols-outlined mb-1">redeem</span>
+<span class="font-['Noto_Serif_KR'] text-[10px] tracking-widest">선물</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#25180d] dark:text-[#ffffff] font-bold translate-y-[-2px] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-['Noto_Serif_KR'] text-[10px] tracking-widest">브랜드</span>
+</a>
+</nav>
+</body></html>

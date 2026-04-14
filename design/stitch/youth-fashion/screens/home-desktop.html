@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Be+Vietnam+Pro:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#fff2a9",
+                    "on-tertiary-fixed": "#504810",
+                    "outline": "#81783b",
+                    "error-container": "#f74b6d",
+                    "outline-variant": "#b9ae6c",
+                    "primary-fixed-dim": "#748aff",
+                    "inverse-surface": "#110e00",
+                    "background": "#fff7d5",
+                    "secondary-container": "#ffc1d5",
+                    "on-secondary-fixed-variant": "#932259",
+                    "secondary-fixed": "#ffc1d5",
+                    "on-secondary-fixed": "#6b003b",
+                    "inverse-primary": "#7187ff",
+                    "tertiary-dim": "#585018",
+                    "on-primary-container": "#00166c",
+                    "secondary": "#a22e64",
+                    "on-primary-fixed-variant": "#001d83",
+                    "on-secondary-container": "#87174f",
+                    "surface-bright": "#fff7d5",
+                    "surface-dim": "#e5d674",
+                    "on-tertiary": "#fff4b8",
+                    "on-secondary": "#ffeff2",
+                    "surface-container-low": "#fff2a9",
+                    "surface-container": "#f8ea96",
+                    "on-error": "#ffefef",
+                    "primary-fixed": "#879aff",
+                    "secondary-fixed-dim": "#ffacc9",
+                    "tertiary-fixed-dim": "#f0e49c",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-dim": "#922158",
+                    "on-surface": "#352f00",
+                    "on-tertiary-fixed-variant": "#6e652b",
+                    "tertiary": "#655c23",
+                    "surface-container-high": "#f3e48b",
+                    "surface-tint": "#2448e3",
+                    "surface-variant": "#edde81",
+                    "inverse-on-surface": "#a99e5d",
+                    "error-dim": "#a70138",
+                    "error": "#b41340",
+                    "on-background": "#352f00",
+                    "on-surface-variant": "#655c23",
+                    "on-primary": "#f2f1ff",
+                    "primary": "#2448e3",
+                    "surface": "#fff7d5",
+                    "on-primary-fixed": "#000000",
+                    "primary-dim": "#0a39d7",
+                    "primary-container": "#879aff",
+                    "surface-container-highest": "#edde81",
+                    "on-error-container": "#510017",
+                    "tertiary-container": "#fff2a9",
+                    "on-tertiary-container": "#635b21"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Be Vietnam Pro"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar from Shared Components -->
+<nav class="bg-[#fff2a9]/84 backdrop-blur-xl dark:bg-[#fff2a9]/20 docked full-width top-0 sticky z-50 flex justify-between items-center px-8 py-6 w-full max-w-none shadow-[0_20px_40px_rgba(53,47,0,0.08)] tonal-transition">
+<div class="text-3xl font-black italic text-[#0f3bd9] tracking-tighter hover:scale-105 transition-transform duration-200 cursor-pointer">BOP BOP</div>
+<div class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] uppercase tracking-tight text-sm">
+<a class="text-[#0f3bd9] font-bold border-b-2 border-[#0f3bd9] pb-1 hover:scale-105 transition-transform duration-200" href="#">Home</a>
+<a class="text-[#0f3bd9]/60 font-medium hover:text-[#0f3bd9] hover:scale-105 transition-transform duration-200" href="#">Looks</a>
+<a class="text-[#0f3bd9]/60 font-medium hover:text-[#0f3bd9] hover:scale-105 transition-transform duration-200" href="#">Shop</a>
+<a class="text-[#0f3bd9]/60 font-medium hover:text-[#0f3bd9] hover:scale-105 transition-transform duration-200" href="#">Brand</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#0f3bd9] scale-95 active:scale-90 transition-all hover:scale-105">
+<span class="material-symbols-outlined text-2xl">shopping_bag</span>
+</button>
+<button class="md:hidden text-[#0f3bd9]">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+</nav>
+<main class="overflow-hidden">
+<!-- Hero: Image Rail Section -->
+<section class="relative w-full py-10 md:py-20 bg-surface-container-low">
+<div class="flex overflow-x-auto no-scrollbar gap-6 px-8 md:px-20 snap-x snap-mandatory">
+<!-- Rail Item 1 -->
+<div class="flex-none w-[85vw] md:w-[60vw] h-[716px] relative rounded-xl overflow-hidden snap-center group">
+<img alt="Fashion Look 1" class="w-full h-full object-cover" data-alt="Vibrant youth fashion model in oversized bright blue jacket posing against a sunny yellow architectural background, dynamic high-angle shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrW31zPA7ayo0yRdcl4F9F611Zv_KYUr9lf0hJZuJM0GvLG9dfVUBiQSUGRry-Lt9CwvtoXbPNjn_uYLTBhBxn26sm8f87KX7GVFF0FoKpmkdO2PMgDuEvH-jdWrT-0QoUvriLVcWlhd2rmJ0S7YovUh1ptS8TvCFWhXqJGaLHsDW1Ak9cbmKyOGUUiVdqqkMIaopAx8oVUHFIONs6ij9afPJn4bogsaWXhewnnPsHC2nVm74UtdvYf0XY-d-A7hJVWsOYbUXToeMI"/>
+<!-- Overlay Typography -->
+<div class="absolute top-10 left-10 z-10">
+<h2 class="font-headline text-6xl md:text-8xl font-black text-on-primary-fixed uppercase leading-none tracking-tighter mix-blend-difference">NEW<br/>ENERGY</h2>
+</div>
+<!-- Sticker -->
+<div class="absolute top-1/2 right-10 rotate-12 bg-secondary-fixed text-on-secondary-fixed px-6 py-3 rounded-full font-headline font-bold text-xl shadow-lg transform hover:rotate-0 transition-transform cursor-pointer">
+                        NEW DROP
+                    </div>
+<!-- Buy Prompt -->
+<div class="absolute bottom-10 right-10 bg-[#fff8d3]/84 backdrop-blur-md p-6 rounded-lg flex items-center gap-6 shadow-xl border border-white/20">
+<div class="flex flex-col">
+<span class="font-headline font-bold text-primary">29,900원</span>
+<span class="text-xs font-bold opacity-60">ADD TO BAG</span>
+</div>
+<button class="bg-primary text-on-primary w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<!-- Rail Item 2 -->
+<div class="flex-none w-[80vw] md:w-[45vw] h-[716px] relative rounded-xl overflow-hidden snap-center group mt-12 md:mt-0">
+<img alt="Fashion Look 2" class="w-full h-full object-cover" data-alt="Editorial fashion photography of a young male model with edgy styling, soft natural lighting, textured cream background, wearing colorful knits" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxaJolPqCy9TrgP4UaOv0ZsRcB6BwyJbgWhR7sXogSTnrrLHRTGNzQ0FMowg_sCw-JwPsxAixVu6XR5KWkF2qXj3CAqPpHxCQSD_c8bEbImkEnz-E8e-sUPdQzxqNQmRVIWQxEZSFAyxOGvAEpkTqsMbzUvjcOEzFcgwvIpg4Wl_Hd4JlU76DbYZ17yRH0t0FLBq2W8LwdMXZqh8fWIh4Vv3CNnFM2r201FWwwzgyE-Qd6bj9pQEDrWyiBV4kK1uTkVPjmfXcQZnL1"/>
+<!-- Overlaid Title -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="font-headline text-[15vw] font-black text-white/20 uppercase">STREET</span>
+</div>
+<div class="absolute bottom-10 left-10">
+<span class="bg-primary text-on-primary px-4 py-2 rounded-full font-headline text-sm font-bold -rotate-3 inline-block mb-4">BEST SELLER</span>
+<h3 class="font-headline text-4xl text-white font-bold leading-none drop-shadow-md">시티 보이 세트</h3>
+</div>
+</div>
+<!-- Rail Item 3 -->
+<div class="flex-none w-[85vw] md:w-[55vw] h-[716px] relative rounded-xl overflow-hidden snap-center group">
+<img alt="Fashion Look 3" class="w-full h-full object-cover" data-alt="Close up portrait of a girl with vibrant pink hair and avant-garde makeup, neon lighting accents, high fashion aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgAUog5lp9Q4oiXNM4veNRLIRWgYFgJduEi4ay92jGh6WVDlwyiN3_Wfibd2g28dbJzCSF2pytiOMfKBJGP4t-cWwvtBTkbPYsq3JiHJSaJyiG6NhN3OUAxMmYdsh3-tqdfgsMQmlKJs13Ef70uK3Zd78e68zV6oJAmTouUf3E0OraQpF8WxaxhDpx27hkTcpkCzpJrSGUqF0e7Q3QUodRekoPgmp_5_lwR1G_YJacBhkz7KNYwLx6_0wBI2j1UAuMiENfOUl7kwfB"/>
+<div class="absolute bottom-12 right-12 text-right">
+<h2 class="font-headline text-5xl md:text-7xl font-black text-secondary leading-none mb-4">지금 구매하기</h2>
+<p class="font-body text-lg font-bold text-white max-w-xs ml-auto">BOP BOP의 새로운 컬렉션을 만나보세요.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Mood Section (Text-led) -->
+<section class="py-20 px-8 bg-surface-container-high relative overflow-hidden">
+<div class="max-w-6xl mx-auto flex flex-col items-start gap-8">
+<div class="w-full">
+<h2 class="font-headline text-[10vw] font-black text-primary leading-[0.8] tracking-tighter uppercase">
+                        BOP BOP IS<br/>
+<span class="text-on-surface-variant opacity-20">NOT FOR YOU</span><br/>
+                        IF YOU ARE BORING
+                    </h2>
+</div>
+<div class="flex flex-col md:flex-row gap-12 items-end w-full">
+<p class="font-body text-xl md:text-3xl font-bold text-on-surface max-w-2xl leading-tight">
+                        우리는 정형화된 틀을 거부합니다. 오늘의 룩북은 당신의 개성을 정의하는 가장 강력한 무기가 될 것입니다.
+                    </p>
+<div class="bg-secondary-container p-6 rounded-lg -rotate-2 hover:rotate-0 transition-transform cursor-pointer shadow-lg">
+<span class="font-headline font-bold text-on-secondary-container">#NEO_ZINE</span>
+</div>
+</div>
+</div>
+<!-- Background floating element -->
+<div class="absolute -right-20 top-20 opacity-10 font-headline font-black text-[30vw] select-none">BOP</div>
+</section>
+<!-- Now Looking Grid (Magazine Cutout Style) -->
+<section class="py-20 bg-background px-8">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline text-5xl font-black text-primary uppercase">오늘의 룩북</h2>
+<p class="font-body font-bold text-on-surface-variant">NOW LOOKING / WEEK 42</p>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-headline font-bold hover:scale-105 transition-transform active:scale-95">VIEW ALL</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 h-auto md:h-[1200px]">
+<!-- Large Feature Card -->
+<div class="md:col-span-7 h-[600px] md:h-full bg-surface-container-low rounded-xl overflow-hidden relative group p-6">
+<img alt="Stack 1" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Full body shot of a fashion forward person standing against a minimalist concrete wall, sharp shadows, high contrast editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxK3os6lwBAaI14q5-8Dam_QcxBEAOurFVgYA15zhd1-5jOm0zz_akhTwVIxYJUhjXwSkYflkuC0trct4IGOGVI0VIPmq9HPrOVz1uMkQK6ZDjGJG45meMsxP9SZMj_jxriBMw7HpSs3f3BclkFswhgAZoItVqfeIXN66ca28XeGcnaWPAB9kkAMUPg2pnIS2P2B0DD06RjOC7XmszzdrV-1HhIp3SVUk_gYWyTyzdsMRNKjd7oSIHxEWDlAHjps5XTB_3I1QkoZQo"/>
+<div class="relative z-10 bg-white/90 backdrop-blur p-4 rounded-lg w-fit shadow-md -rotate-3 mt-4">
+<span class="font-headline font-bold text-primary text-2xl">LOOK #01</span>
+</div>
+<div class="absolute bottom-10 left-10 right-10">
+<div class="bg-surface p-8 rounded-lg shadow-2xl translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+<h4 class="font-headline text-3xl font-black mb-2">NEO RETRO VIBE</h4>
+<p class="text-sm font-bold opacity-70 mb-4">클래식한 실루엣에 현대적인 컬러감을 더한 오늘의 추천 룩입니다.</p>
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-headline font-black">GET THE LOOK</button>
+</div>
+</div>
+</div>
+<!-- Right Column Stacks -->
+<div class="md:col-span-5 flex flex-col gap-8 h-full">
+<div class="h-1/2 bg-surface-container-highest rounded-xl overflow-hidden relative group p-6">
+<img alt="Stack 2" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Creative flatlay of stylish streetwear items including t-shirts and caps on a pale yellow paper background, magazine layout style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAeswkJJikSbNa-v0LhCCOQ8jORNbuLFHNx7cx2eth-Vzdl0W_SO2brGmF1_DJEnmHz_pGZ7cq7UC1gWDhA9o_tRLX5_4TWRVap7tUPn0w_y8o1g0nHqUpd7dFDMp0kmWbnT4SgWj1cG5W5trkwAlbp_m237Kx8SFKR2PrzppMIYndg5q-A_nH_AStoeZQUfMvhMnRQm4zs4NK3PNW3fcPSesB43YmDXsmvR30GmuONkSpV9WK3djqQ4NaQYv4C56014-96Zu69lZ7"/>
+<div class="relative z-10">
+<span class="bg-secondary text-on-secondary px-3 py-1 rounded-full text-xs font-black uppercase">Cut-out #02</span>
+</div>
+</div>
+<div class="h-1/2 bg-secondary-container rounded-xl overflow-hidden relative group flex items-center justify-center p-12">
+<img alt="Stack 3" class="absolute inset-0 w-full h-full object-cover group-hover:rotate-6 transition-transform duration-500" data-alt="Dynamic shot of designer sneakers in motion, colorful background, bright and energetic mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtPja-cXuGYp3d9mpkIeuBaeM4j-QIJhIBuzO4sTs4UbTbqKuc-e06EYW-E7QnXbEE-W0XtAbMNT0Z6ot2hSzKeiOdy7k6cByb7sYlPdfizL6uUxjMhDqJbl4e_i2iXnmLCb8sjY1Mn3ZH_RL638v5aBqV1y1CSdcKmm9nP1K1NM29MtW2dA5kW99W0KWGT5yqxCS3-ZMK-P7ziA3j9x9JjEYegr-phndAiDokqBEwLBtsYnFdR12b4RzeYCfxpHl4bXLBP0vLFrHJ"/>
+<div class="relative z-10 text-center">
+<h4 class="font-headline text-5xl font-black text-on-secondary-container mix-blend-overlay">NEW<br/>STEP</h4>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Fast Entry: Best Sellers -->
+<section class="py-20 bg-surface-container-low px-8">
+<h2 class="font-headline text-4xl font-black text-[#0f3bd9] mb-12 uppercase">새로운 드롭</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-10">
+<!-- Product 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface rounded-xl overflow-hidden relative mb-4">
+<img alt="Product 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Minimalist studio shot of a high-quality white sweatshirt on a hanger, soft lighting, clean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3ouWFZqeHbpxVFbbAqcpLmieFgexMuT0j9rumEG3v1JlJlJ48LQ6VvBm6rf82keNbWIlV51K1-QSvoP72ZUm_y2I2njEuQEp1ecA_-rxFRll6uIlaEnh8daryg5lNFZZ4ts48Ka7LRr-Ix0sxn_LSnqmRwc0lUkP6ZPmfc0zBMvENcMz-GVFz80vgFyP5_cnQyd4WF94yzZsM_1nVUvrdI0VEV_8Y383wBZ8zO4peW20gmoXPOdO-Z9QnwjCxriwZ3hCDjgn6kq7l"/>
+<div class="absolute bottom-4 left-4 bg-primary text-on-primary px-3 py-1 rounded-full text-xs font-bold shadow-lg">HOT</div>
+</div>
+<h3 class="font-body font-bold text-lg leading-tight mb-1">BOP 로고 오버핏 스웨트셔츠</h3>
+<div class="flex justify-between items-center">
+<span class="font-headline font-black text-primary">45,000원</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">favorite</span>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group cursor-pointer translate-y-8">
+<div class="aspect-[3/4] bg-surface rounded-xl overflow-hidden relative mb-4">
+<img alt="Product 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Blue denim jacket displayed against a contrasting warm yellow background, vibrant and youthful aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGvwAa9EWtsXx-NJPK9EFoY0gBepN047Kkae8bDxDEJiXxjJ1uuxtJpAz9UNfqajTXT-scM9rohzBnO1xKN8fp6XrCQaDo56Qrv-Pnes6uagBc9do6vqr6hyKs4exOOIhc610FLpd-tqQprf4Z26t8m39aqzw-bZV9Ri0EWVdavgVLk2B0dVB1r-si09G7Q1ynA3tNLYabjtzxTggxm6Rw59Gt5Qr4wXvuzJ9ni6r0O0JuhbQlaIrk_QXYadQV5_MUnLECSPM-HVqy"/>
+</div>
+<h3 class="font-body font-bold text-lg leading-tight mb-1">워싱 데님 자켓</h3>
+<div class="flex justify-between items-center">
+<span class="font-headline font-black text-primary">89,000원</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">favorite</span>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface rounded-xl overflow-hidden relative mb-4">
+<img alt="Product 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Stylish black graphic t-shirt with bold typography, contemporary street fashion look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRbEdbZkYaP33WOfbXQI4Jx0qSFUzjuC2PwjUju_JSQWlkaCiGhxwg7ONeqerS-rq4xnHMPlQgUouWMJ1ymZutAj4jnGviFCqLhfgBzDrDfLTduBLWcjLgvgKJUrinqEgJO1j50DK4wfHKIzWeLxwWaTc0e5Y88ETMKXv4I6Dre-9cdpXc3jZfQq8eERr6EfOwGxmLwbUpiBv0AOgBllSD_GfGUK1BsSv-aCCifsHXyAm7YM6zzCWqImL50QTQDzP7dVRv_IMMnq55"/>
+<div class="absolute top-4 right-4 bg-secondary text-on-secondary px-3 py-1 rounded-full text-xs font-bold shadow-lg rotate-12">LAST 1</div>
+</div>
+<h3 class="font-body font-bold text-lg leading-tight mb-1">그래픽 아트워크 티셔츠</h3>
+<div class="flex justify-between items-center">
+<span class="font-headline font-black text-primary">32,000원</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">favorite</span>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="group cursor-pointer translate-y-8">
+<div class="aspect-[3/4] bg-surface rounded-xl overflow-hidden relative mb-4">
+<img alt="Product 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Pair of baggy cargo pants in olive green, urban outdoor style photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaW3iUWC5Ws4cu_dF-cbfA7Va__NOKdWAET2UkJSekRJfE5aBKh9HtYvA-9YJb0-gOV-4-puzrIsnZUYyHpovJNG0o0mFE0GVMxs_t1y50bSUfYAvLSb-0-PSuPgCCK8IIkOgbsDCibcIi2yttk9tpw3Amxbhs5CYldrgrxgXi_D4eJqGNFRgeh4cxC1KLzmYD1UmkGU55HdAuNc1dwebu4t7sZAFC9NDohzNVVx8YJJ0FrSDicpP7C7ZQG9jYBLKLrdCGc_PGskE-"/>
+</div>
+<h3 class="font-body font-bold text-lg leading-tight mb-1">와이드 카고 팬츠</h3>
+<div class="flex justify-between items-center">
+<span class="font-headline font-black text-primary">58,000원</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">favorite</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer from Shared Components -->
+<footer class="bg-[#fff2a9] dark:bg-stone-900 w-full rounded-t-[40px] pt-20 pb-10 flex flex-col items-center justify-center text-center px-10 tonal-shift from surface-container-low flat no shadows">
+<div class="text-5xl font-black text-[#0f3bd9] mb-4">BOP BOP</div>
+<div class="flex gap-6 mb-12 font-['Space_Grotesk'] text-lg font-bold leading-none">
+<a class="text-[#0f3bd9] opacity-80 hover:rotate-[-2deg] transition-transform cursor-pointer" href="#">Instagram</a>
+<a class="text-[#0f3bd9] opacity-80 hover:rotate-[-2deg] transition-transform cursor-pointer" href="#">TikTok</a>
+<a class="text-[#0f3bd9] opacity-80 hover:rotate-[-2deg] transition-transform cursor-pointer" href="#">Contact</a>
+<a class="text-[#0f3bd9] opacity-80 hover:rotate-[-2deg] transition-transform cursor-pointer" href="#">Terms</a>
+</div>
+<div class="font-['Space_Grotesk'] text-[#0f3bd9] opacity-60 text-sm font-bold">
+            © 2024 BOP BOP. NEO-ZINE GALLERY.
+        </div>
+</footer>
+</body></html>

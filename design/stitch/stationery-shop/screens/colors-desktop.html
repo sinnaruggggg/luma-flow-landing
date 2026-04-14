@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400&amp;family=Manrope:wght@400;500;700&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#f2bf4c",
+                        "surface-bright": "#fff8f4",
+                        "on-tertiary-fixed": "#221a10",
+                        "secondary-fixed-dim": "#96ceed",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#f2bf4c",
+                        "tertiary-container": "#d7c7b7",
+                        "primary": "#795900",
+                        "on-tertiary-container": "#5e5346",
+                        "surface-container-high": "#f3e6dc",
+                        "outline": "#807663",
+                        "primary-container": "#f5c24f",
+                        "tertiary-fixed-dim": "#d4c4b4",
+                        "surface-container": "#f8ece2",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#fef1e7",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#ede0d6",
+                        "error-container": "#ffdad6",
+                        "background": "#fff8f4",
+                        "on-tertiary-fixed-variant": "#504539",
+                        "on-secondary-container": "#27647e",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#201b15",
+                        "surface-dim": "#e4d8ce",
+                        "inverse-on-surface": "#fbeee4",
+                        "secondary": "#296580",
+                        "secondary-container": "#a7dffe",
+                        "on-primary-fixed": "#261a00",
+                        "on-secondary-fixed-variant": "#024d67",
+                        "on-secondary-fixed": "#001e2b",
+                        "inverse-surface": "#362f29",
+                        "primary-fixed": "#ffdfa0",
+                        "on-background": "#201b15",
+                        "tertiary": "#685c50",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#c1e8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#f0e0cf",
+                        "surface-tint": "#795900",
+                        "surface-container-highest": "#ede0d6",
+                        "on-surface-variant": "#4e4635",
+                        "outline-variant": "#d2c5af",
+                        "surface": "#fff8f4",
+                        "on-primary-fixed-variant": "#5c4300",
+                        "on-primary-container": "#6d5000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader"],
+                        "body": ["Manrope"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            }
+        }
+    </script>
+<style>body {
+    font-family: "Manrope", sans-serif;
+    background-color: #fff8f4;
+    color: #201b15;
+    margin: 0
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.editorial-shadow {
+    box-shadow: 0 40px 40px -5px rgba(32, 27, 21, 0.06)
+    }
+.paper-texture {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuC55GGjfrOZSj36QkO4GAcpNOGo4ptyNKWfBupbBO29T7VqQsyybMF0GfvlM8APjkzw9EIr8b5IAvECC9JcC4Wl6kZdnQPFc00vQf6A5GJTLONNysp4WcXSOTDzX8-yr4cx24gK6nAelN3azB9DkUcJ6EVVl7CDGBWhT7SxFBccMRBKwyBMVI09A81cRUzdMDirf0igfiXYv8pHEIWRWPzQqWioiXp0ATCE7B_RWcLc5_bS8dtbIYGjlVBLbif8zV068kz7pjrkzz9z)
+    }
+.tape-effect {
+    position: relative
+    }
+.tape-effect::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    width: 60px;
+    height: 20px;
+    background-color: rgba(167, 223, 254, 0.4);
+    transform: rotate(15deg);
+    z-index: 10
+    }</style>
+</head>
+<body class="bg-background">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fff8f4]/80 dark:bg-stone-900/80 backdrop-blur-xl flex justify-between items-center px-8 h-20 w-full max-w-full">
+<div class="text-2xl font-bold tracking-tighter text-[#201b15] dark:text-[#ede0d6] font-['Newsreader']">CUT &amp; NOTE</div>
+<div class="hidden md:flex items-center gap-10 font-['Newsreader'] tracking-wider">
+<a class="text-[#201b15]/60 dark:text-[#ede0d6]/60 hover:text-[#795900] transition-colors duration-300" href="#">Shop</a>
+<a class="text-[#201b15]/60 dark:text-[#ede0d6]/60 hover:text-[#795900] transition-colors duration-300" href="#">Journal</a>
+<a class="text-[#795900] dark:text-[#f5c24f] font-semibold transition-colors duration-300" href="#">Palettes</a>
+<a class="text-[#201b15]/60 dark:text-[#ede0d6]/60 hover:text-[#795900] transition-colors duration-300" href="#">Archive</a>
+</div>
+<div class="flex items-center gap-6 text-[#795900] dark:text-[#f5c24f]">
+<span class="material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">shopping_bag</span>
+<span class="material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">person</span>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero: Autumn Archive Color Board -->
+<section class="relative min-h-[921px] flex items-center justify-center overflow-hidden px-8 py-20">
+<div class="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+<!-- Collage Side -->
+<div class="md:col-span-7 relative h-[600px]">
+<!-- Layered Paper Sheets -->
+<div class="absolute inset-0 bg-surface-container-low translate-x-4 translate-y-4 paper-texture"></div>
+<div class="absolute inset-0 bg-surface-container-high editorial-shadow overflow-hidden">
+<img class="w-full h-full object-cover opacity-90 grayscale-[20%]" data-alt="Top down collage of vintage stationery, wooden pens, amber glass ink bottles and open notebooks on textured cream paper background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy4kGXoImMFGsw2x3fO8EfObrDVwJHuFm3ycpEmWrXqGXbRGI7ZY2jVV5yvumuuUOSZVB6BnJW4g33wJEw7hyCB-jz7oV5_eCMKFzMsncb7L7x0WQZN2zNjY52IsTfzy4wgZD43Ve7s1UlaVPn3kEUxSU0PmFPLL674r8n6QPCCe_hkggG5wroIyopZiXLvYL4NGr3YxpCasZC-SGVtZhPKdI_QmEMUZhEj2FY66xSJT34FNUcbkmlsHxKr76vW1Ezt3DkxwZwA_YX"/>
+</div>
+<!-- Overlapping Swatches (Asymmetric) -->
+<div class="absolute -bottom-10 -left-10 w-48 h-64 bg-[#795900] tape-effect editorial-shadow flex flex-col justify-end p-6 z-20">
+<span class="text-white font-label text-xs tracking-widest uppercase">Deep Ochre</span>
+<span class="text-white font-headline italic">오커의 깊이</span>
+</div>
+<div class="absolute top-10 -right-8 w-40 h-56 bg-[#2d3a2b] editorial-shadow flex flex-col justify-end p-6 z-20">
+<span class="text-white font-label text-xs tracking-widest uppercase">Forest Green</span>
+<span class="text-white font-headline italic">숲의 기록</span>
+</div>
+</div>
+<!-- Text Side -->
+<div class="md:col-span-5 flex flex-col gap-6 z-10 md:pl-12">
+<span class="font-label text-primary tracking-[0.3em] uppercase text-sm">Seasonal Selection</span>
+<h1 class="font-headline text-6xl md:text-8xl leading-tight">Autumn Archive<br/><span class="italic text-4xl md:text-5xl">가을의 기록</span></h1>
+<p class="font-body text-on-surface-variant leading-relaxed max-w-sm">
+                        낙엽의 바스락거림과 차분해진 공기를 담았습니다. 계절의 변화를 종이 위에 기록하는 시간. 짙은 오커와 숲의 색채로 당신의 데스크를 채워보세요.
+                    </p>
+<div class="mt-4">
+<button class="bg-primary text-white px-10 py-4 font-label tracking-widest uppercase hover:translate-y-[-2px] transition-transform">Explore Palette</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Today's Palette Section -->
+<section class="py-32 bg-surface-container-low">
+<div class="px-8 mb-20 text-center">
+<h2 class="font-headline text-5xl mb-4">Today's Palette</h2>
+<div class="h-[1px] w-24 bg-outline-variant mx-auto mb-6 opacity-40"></div>
+<p class="font-label text-xs tracking-widest uppercase text-on-surface-variant">색채의 서사, 세 가지 이야기</p>
+</div>
+<div class="px-8 grid grid-cols-1 md:grid-cols-3 gap-16">
+<!-- Story 1: Morning Fog -->
+<div class="flex flex-col group">
+<div class="aspect-[3/4] bg-surface-container-highest mb-8 relative overflow-hidden editorial-shadow">
+<img class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" data-alt="Moody atmospheric morning mist over a silent lake with soft grey tones and minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC1eRG6mHsxHVqZQbtKfBoErSk0ppU17zJj-nelFGgFkKXdWvN5CCsJahTHf1INC2LWb6ucZulXr_MjFWs_YGV0OguPnxiyQ_1atWPzHPgZIqQSsQgKYtkyjsbTwobtuzqV11aup5cJsXuewgT-Fw5Iu4Ose0rBVnAJ5jXrIrMpaHdsUQBdWC-S628-NXjploAzTDDhQGHcRSwXPwFWjsU67Is7tORtRJVrWW1jlgH1PuosAiOW8japsSYCL2ko0AljXLoyTlzstVc"/>
+<div class="absolute bottom-0 left-0 w-full p-8 flex gap-2">
+<div class="w-8 h-8 bg-[#d1d5db]"></div>
+<div class="w-8 h-8 bg-[#9ca3af]"></div>
+<div class="w-8 h-8 bg-[#4b5563]"></div>
+</div>
+</div>
+<div class="space-y-4">
+<h3 class="font-headline text-3xl">Morning Fog <span class="italic text-xl block">새벽의 안개</span></h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">흐릿한 경계 속에서 시작되는 생각들. 차가운 공기와 고요함을 닮은 그레이 톤의 셀렉션.</p>
+<div class="pt-4 space-y-2">
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/20">
+<span class="font-body text-sm">Foggy Linen Notebook</span>
+<span class="font-label text-sm">24,000원</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/20">
+<span class="font-body text-sm">Graphite Ink No.02</span>
+<span class="font-label text-sm">18,500원</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Story 2: Dried Petal -->
+<div class="flex flex-col group md:mt-12">
+<div class="aspect-[3/4] bg-surface-container-highest mb-8 relative overflow-hidden editorial-shadow">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close up of dried dusty rose flower petals with intricate textures and soft warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHXlUD_ohrDIJ3FiEeOUD1AUbXD1ZIFYWffSv1gTfUyNkm-EZbPZxw0gaH7pZWpyxT1tewHGN4M4df7cOGWKB5JHfDMi0F6_f1FT0M37djkny2zju8fRaduBDYR2NaX2qHrdBVj9FPpMWo3nSfCe_h6JArknEyvtzRt4oAqz9nss71BkgbTnCkS5eB2jHekFu-WORg0WsQCn_CeC-jcS7KwFyKQOlaeQGqqMg6IGZ4zwTzP6qIUYys8Qhaj3vv_AD2R4jCFESl1_ft"/>
+<div class="absolute bottom-0 left-0 w-full p-8 flex gap-2">
+<div class="w-8 h-8 bg-[#e5d3d0]"></div>
+<div class="w-8 h-8 bg-[#c2a39f]"></div>
+<div class="w-8 h-8 bg-[#8e6b66]"></div>
+</div>
+</div>
+<div class="space-y-4">
+<h3 class="font-headline text-3xl">Dried Petal <span class="italic text-xl block">마른 꽃잎의 결</span></h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">시간이 멈춘 듯 바스라지는 감촉. 따뜻함과 쓸쓸함이 공존하는 더스티 로즈 팔레트.</p>
+<div class="pt-4 space-y-2">
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/20">
+<span class="font-body text-sm">Rosewood Ballpoint</span>
+<span class="font-label text-sm">32,000원</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/20">
+<span class="font-body text-sm">Petal Pressed Paper</span>
+<span class="font-label text-sm">12,000원</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Story 3: Midnight Study -->
+<div class="flex flex-col group md:mt-24">
+<div class="aspect-[3/4] bg-surface-container-highest mb-8 relative overflow-hidden editorial-shadow">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Dark aesthetic study with old leather books, a brass lamp casting a warm glow on dark blue surfaces" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvvx66i_BSKPsCO-A9_PvB4p6qHVMNc5GyC9v9y3HbWablWPckLulqNtE29lzxYhkmCdGWHxW1LOBKG0ZWh9T9k00H6vQ0G-6LjYxZzffxY7kTdLKR5ZNowZIP27yE7cAGU5rdGBHABXwOWeXZB3DsYvefE0liFDV6DmKPb_mPP5oZbpgnyqfZUP9oKK6dQm9xMxuJKcB-Jef1rMToVNJDYk4beLeY8j4mqqiFsw9nSjmdPSw2xTbEhdSh2lnIOgntfGfAcTt0e2fU"/>
+<div class="absolute bottom-0 left-0 w-full p-8 flex gap-2">
+<div class="w-8 h-8 bg-[#296580]"></div>
+<div class="w-8 h-8 bg-[#1e3a47]"></div>
+<div class="w-8 h-8 bg-[#001e2b]"></div>
+</div>
+</div>
+<div class="space-y-4">
+<h3 class="font-headline text-3xl">Midnight Study <span class="italic text-xl block">심야의 서재</span></h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">집중이 깊어지는 밤의 무게. 지적인 몰입을 돕는 깊은 네이비와 미드나잇 블루.</p>
+<div class="pt-4 space-y-2">
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/20">
+<span class="font-body text-sm">Ink: Deep Sea</span>
+<span class="font-label text-sm">21,000원</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/20">
+<span class="font-body text-sm">Hardcover Archive No.5</span>
+<span class="font-label text-sm">45,000원</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Color Theory: Tactile Feeling Section -->
+<section class="py-32 px-8 overflow-hidden">
+<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<div class="aspect-square bg-surface-container-high paper-texture editorial-shadow relative z-10 flex items-center justify-center p-12">
+<div class="grid grid-cols-2 gap-4 w-full h-full">
+<div class="bg-[#fffdfa] flex flex-col justify-center items-center gap-2 p-4">
+<span class="font-label text-[10px] tracking-widest uppercase">Bone White</span>
+<div class="w-full h-[1px] bg-outline-variant/30"></div>
+<span class="font-headline italic text-sm">섬세한 질감</span>
+</div>
+<div class="bg-[#e9e0d2] flex flex-col justify-center items-center gap-2 p-4">
+<span class="font-label text-[10px] tracking-widest uppercase">Kraft Brown</span>
+<div class="w-full h-[1px] bg-outline-variant/30"></div>
+<span class="font-headline italic text-sm">거친 매력</span>
+</div>
+<div class="bg-[#f0ece2] flex flex-col justify-center items-center gap-2 p-4">
+<span class="font-label text-[10px] tracking-widest uppercase">Ivory Vellum</span>
+<div class="w-full h-[1px] bg-outline-variant/30"></div>
+<span class="font-headline italic text-sm">부드러운 흐름</span>
+</div>
+<div class="bg-[#d2c5af] flex flex-col justify-center items-center gap-2 p-4">
+<span class="font-label text-[10px] tracking-widest uppercase">Clay Grey</span>
+<div class="w-full h-[1px] bg-outline-variant/30"></div>
+<span class="font-headline italic text-sm">차분한 무게</span>
+</div>
+</div>
+</div>
+<!-- Decorative Element -->
+<div class="absolute -top-12 -left-12 w-40 h-40 border border-primary/20 -z-10 rotate-12"></div>
+</div>
+<div class="space-y-8">
+<span class="font-label text-xs tracking-widest uppercase text-primary">Tactile Theory</span>
+<h2 class="font-headline text-5xl leading-tight">Paper &amp; Shade:<br/>질감으로 느끼는 색</h2>
+<div class="space-y-6 font-body text-on-surface-variant leading-loose">
+<p>
+                            단순히 보는 것을 넘어, 종이의 색은 손끝으로 전해지는 촉감을 결정합니다. 
+                            <strong class="text-on-surface">Bone White</strong>는 표백되지 않은 뼈의 색을 닮아 눈의 피로를 덜어주며, 펜촉이 부드럽게 미끄러지는 미세한 결을 가지고 있습니다.
+                        </p>
+<p>
+                            반면 <strong class="text-on-surface">Kraft Brown</strong>은 가공되지 않은 나무의 거친 숨결을 담고 있습니다. 연필의 흑연이 종이 사이에 머물 때 발생하는 마찰음은 아날로그 기록의 정점을 선사합니다.
+                        </p>
+</div>
+<div class="pt-4">
+<a class="inline-flex items-center gap-4 group" href="#">
+<span class="font-label text-sm tracking-widest uppercase border-b border-on-surface pb-1">Read the full guide</span>
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#ede0d6] dark:bg-stone-950 w-full pt-24 pb-12">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 gap-8 w-full">
+<div class="font-['Newsreader'] italic text-lg text-[#201b15] dark:text-[#ede0d6]">CUT &amp; NOTE</div>
+<div class="flex flex-wrap justify-center gap-10 font-['Space_Grotesk'] uppercase tracking-widest text-xs text-[#201b15] dark:text-[#ede0d6]">
+<a class="opacity-70 hover:opacity-100 transition-opacity" href="#">Shipping</a>
+<a class="opacity-70 hover:opacity-100 transition-opacity" href="#">Returns</a>
+<a class="opacity-70 hover:opacity-100 transition-opacity" href="#">Stockists</a>
+<a class="underline decoration-1 hover:opacity-100 transition-opacity" href="#">Privacy</a>
+</div>
+<div class="font-['Space_Grotesk'] uppercase tracking-widest text-[10px] text-[#201b15] dark:text-[#ede0d6] opacity-60">
+                © 2024 CUT &amp; NOTE. Curated with intention.
+            </div>
+</div>
+</footer>
+</body></html>

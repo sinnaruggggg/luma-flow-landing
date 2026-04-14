@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Be_Vietnam_Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#3c494e",
+                        "on-tertiary": "#432c00",
+                        "primary-fixed": "#b5ebff",
+                        "on-primary-container": "#00596e",
+                        "on-surface": "#dae3f6",
+                        "on-tertiary-fixed-variant": "#604100",
+                        "surface": "#0b1421",
+                        "inverse-on-surface": "#28313f",
+                        "surface-tint": "#45d6ff",
+                        "on-tertiary-container": "#6e4b00",
+                        "on-secondary-fixed": "#3a0033",
+                        "tertiary-fixed-dim": "#ffba3f",
+                        "on-error": "#690005",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#2c3544",
+                        "outline": "#869398",
+                        "surface-container-high": "#222a38",
+                        "on-tertiary-fixed": "#281800",
+                        "surface-bright": "#313a48",
+                        "on-secondary-container": "#fface8",
+                        "tertiary-fixed": "#ffdeae",
+                        "surface-container": "#17202e",
+                        "primary-fixed-dim": "#45d6ff",
+                        "secondary-container": "#980388",
+                        "inverse-primary": "#00677e",
+                        "on-primary-fixed": "#001f28",
+                        "surface-container-lowest": "#060e1b",
+                        "secondary-fixed": "#ffd7f0",
+                        "background": "#0b1421",
+                        "secondary": "#fface8",
+                        "primary-container": "#39d5ff",
+                        "tertiary-container": "#ffb837",
+                        "surface-variant": "#2c3544",
+                        "surface-container-low": "#131c29",
+                        "on-secondary": "#5e0053",
+                        "on-background": "#dae3f6",
+                        "primary": "#b1eaff",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#fface8",
+                        "surface-dim": "#0b1421",
+                        "inverse-surface": "#dae3f6",
+                        "on-primary-fixed-variant": "#004e60",
+                        "on-primary": "#003543",
+                        "tertiary": "#ffdcaa",
+                        "on-secondary-fixed-variant": "#840076",
+                        "on-surface-variant": "#bbc9ce"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0b1421;
+            color: #ecfbff;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-image: 
+                linear-gradient(rgba(57, 213, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(57, 213, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .technical-glow {
+            text-shadow: 0 0 10px rgba(57, 213, 255, 0.5);
+        }
+        .noise-texture {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            opacity: 0.02;
+            z-index: 9999;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3FfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3F/filter%3E%3Frect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3F/svg%3E");
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<div class="noise-texture"></div>
+<!-- Top Navigation Shell -->
+<header class="bg-[#0b1421] dark:bg-[#0b1421] shadow-[0_0_20px_rgba(57,213,255,0.08)] sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 h-16">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#39d5ff]" data-icon="sensors">sensors</span>
+<span class="text-xl font-bold text-[#39d5ff] tracking-widest font-['Space_Grotesk'] tracking-tighter uppercase">NOISE WAVE</span>
+</div>
+<button class="bg-[#39d5ff] text-[#003543] px-4 py-1 font-bold text-xs font-['Space_Grotesk'] tracking-tighter uppercase active:scale-95 duration-75">
+                BUY TICKETS
+            </button>
+</div>
+<div class="bg-surface-container-lowest px-6 py-1 flex justify-between items-center border-y border-outline-variant/20">
+<span class="text-[10px] font-mono text-primary/60 tracking-widest">STATUS: OPERATIONAL</span>
+<span class="text-[10px] font-mono text-primary/60">LAT: 37.5665° N / LONG: 126.9780° E</span>
+</div>
+</header>
+<main class="px-4 py-8 space-y-8">
+<!-- Hero Title -->
+<section class="space-y-2">
+<div class="flex items-baseline gap-2">
+<span class="text-secondary text-xs font-mono">01/ARCHIVE</span>
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+</div>
+<h1 class="text-5xl font-headline font-bold leading-none tracking-tighter uppercase text-on-surface">
+                TICKET<br/>ARCHIVE
+            </h1>
+<p class="text-sm font-body text-on-surface-variant max-w-[280px]">
+                디지털 노이즈와 사운드 웨이브의 결합. 2024 NOISE WAVE 페스티벌의 입장을 위한 프로토콜을 선택하십시오.
+            </p>
+</section>
+<!-- Ticket Modules Grid -->
+<section class="grid gap-6">
+<!-- 1-DAY PASS -->
+<div class="bg-surface-container-high relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-2xl font-headline font-bold text-primary tracking-tight">1-DAY PASS</h2>
+<p class="text-[10px] font-mono text-primary/60 tracking-widest uppercase">SINGLE PROTOCOL ACCESS</p>
+</div>
+<span class="text-xs font-mono text-outline-variant">#39D5FF</span>
+</div>
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+<span class="text-sm">선택한 날짜 1일 입장권</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+<span class="text-sm">모든 스테이지 접근 권한</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+<span class="text-sm">F&amp;B 구역 자유 이용</span>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/20 flex items-end justify-between">
+<div class="font-headline">
+<span class="text-xs text-on-surface-variant block uppercase">Price</span>
+<span class="text-2xl font-bold text-on-surface">149,000원</span>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 font-headline font-bold text-sm tracking-tighter uppercase active:bg-primary-container transition-all">
+                            SECURE ACCESS
+                        </button>
+</div>
+</div>
+<!-- Technical Aesthetic Decor -->
+<div class="absolute bottom-[-10px] right-[-10px] text-[60px] font-bold text-white/5 font-headline pointer-events-none">01</div>
+</div>
+<!-- 3-DAY PASS -->
+<div class="bg-surface-container-highest relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-secondary"></div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-2xl font-headline font-bold text-secondary tracking-tight">3-DAY PASS</h2>
+<p class="text-[10px] font-mono text-secondary/60 tracking-widest uppercase">FULL SPECTRUM ACCESS</p>
+</div>
+<span class="text-xs font-mono text-outline-variant">#FFACE8</span>
+</div>
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-sm" data-icon="verified">verified</span>
+<span class="text-sm">페스티벌 전 기간(3일) 입장권</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-sm" data-icon="verified">verified</span>
+<span class="text-sm">한정판 디지털 아카이브 팩</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-sm" data-icon="verified">verified</span>
+<span class="text-sm">공식 굿즈 10% 할인 프로토콜</span>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/20 flex items-end justify-between">
+<div class="font-headline">
+<span class="text-xs text-on-surface-variant block uppercase">Price</span>
+<span class="text-2xl font-bold text-on-surface">349,000원</span>
+</div>
+<button class="bg-secondary text-on-secondary px-6 py-3 font-headline font-bold text-sm tracking-tighter uppercase active:opacity-80 transition-all">
+                            SECURE ACCESS
+                        </button>
+</div>
+</div>
+<div class="absolute bottom-[-10px] right-[-10px] text-[60px] font-bold text-white/5 font-headline pointer-events-none">03</div>
+</div>
+<!-- VIP ARCHIVE -->
+<div class="bg-surface-container-lowest border border-primary/20 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 bg-primary text-on-primary font-mono text-[8px] tracking-widest uppercase font-bold">
+                    PREMIUM UPGRADE
+                </div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-2xl font-headline font-bold text-on-surface tracking-tight">VIP ARCHIVE</h2>
+<p class="text-[10px] font-mono text-primary tracking-widest uppercase">GOD MODE ACTIVATED</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div class="bg-surface-container-high p-3 flex flex-col gap-1">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="diamond">diamond</span>
+<span class="text-[10px] font-bold uppercase">VIP Lounge</span>
+</div>
+<div class="bg-surface-container-high p-3 flex flex-col gap-1">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="bolt">bolt</span>
+<span class="text-[10px] font-bold uppercase">Fast Track</span>
+</div>
+</div>
+<div class="space-y-1 text-xs text-on-surface-variant font-body">
+<p>• 전용 뷰잉 데크 및 VIP 라운지 이용</p>
+<p>• 전용 바 및 케이터링 서비스</p>
+<p>• 아티스트 Meet &amp; Greet 추첨권</p>
+</div>
+<div class="pt-4 border-t border-outline-variant/20 flex flex-col gap-4">
+<div class="flex justify-between items-end">
+<div class="font-headline">
+<span class="text-xs text-on-surface-variant block uppercase text-primary">Priority Access</span>
+<span class="text-3xl font-bold text-on-surface tracking-tighter">599,000원</span>
+</div>
+</div>
+<button class="w-full bg-transparent border-2 border-primary text-primary px-6 py-4 font-headline font-bold text-base tracking-widest uppercase hover:bg-primary/10 transition-all active:scale-95 flex items-center justify-center gap-2">
+                            UPGRADE PROTOCOL
+                            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Metadata Section -->
+<section class="bg-surface-container-low p-6 space-y-4 border-l-4 border-outline-variant">
+<h3 class="font-headline font-bold text-sm tracking-widest uppercase text-on-surface">PROTOCOL DOCUMENT</h3>
+<div class="space-y-4 text-[11px] font-body text-on-surface-variant leading-relaxed">
+<div class="flex justify-between items-start gap-4">
+<span class="font-mono text-primary">01.</span>
+<p>본 티켓은 디지털 QR 코드로 발급되며, NOISE WAVE 공식 앱을 통해서만 관리 가능합니다.</p>
+</div>
+<div class="flex justify-between items-start gap-4">
+<span class="font-mono text-primary">02.</span>
+<p>입장 시 유효한 신분증 확인이 필요하며, 만 19세 미만은 보호자 동반 시에도 입장이 제한될 수 있습니다.</p>
+</div>
+<div class="flex justify-between items-start gap-4">
+<span class="font-mono text-primary">03.</span>
+<p>취소 및 환불 규정은 예매처의 표준 약관을 따르며, 행사 7일 전부터는 환불이 불가합니다.</p>
+</div>
+</div>
+<div class="pt-4 flex justify-center">
+<button class="text-[10px] font-headline font-bold tracking-widest text-primary/60 uppercase border-b border-primary/20">
+                    VIEW FULL TERMS &amp; CONDITIONS
+                </button>
+</div>
+</section>
+<!-- Image Decoration / Aesthetic Interstitial -->
+<div class="w-full h-40 bg-surface-container-highest relative overflow-hidden">
+<img alt="Digital art" class="w-full h-full object-cover opacity-40 grayscale" data-alt="Abstract digital glitch art with cyan and pink neon streaks and dark industrial textures for music festival aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBKZpqB4LW9VhBXXnUbrHOcXHsqa50anwpgqSCjjl1cWdnQkxADFYtne_f1d8sAu4M33hLYXZeJd5zvPSBcduiaQnbjLU-FvmduuXHpGgWpnnnP7O-0ndgrMbz-o8FqcmPF2dDta_nc9gFj93xJF_8MVx9vewzSsOE10q__m1OuOmjRaKNhZ2Vh_kUd0lb6BuDjYq2npXYJvZzwqz92aHd3fGhpWtDIWKULmA4hCzwhZFqdajkhHWsYGWqBdQLqcfIoyXFC9-AnCY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-6">
+<span class="text-[10px] font-mono text-primary tracking-widest bg-background/80 px-2 py-1">ENCODING_WAVE_DATA... 88%</span>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="bg-[#060e1b] dark:bg-[#060e1b] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4">
+<a class="flex flex-col items-center justify-center text-[#ecfbff]/60 pt-2 hover:text-[#fface8] active:bg-[#2c3544] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-[0.1em] font-bold">HOME</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#ecfbff]/60 pt-2 hover:text-[#fface8] active:bg-[#2c3544] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-[0.1em] font-bold">LINEUP</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#39d5ff] border-t-2 border-[#39d5ff] pt-2 active:bg-[#2c3544] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-[0.1em] font-bold">TIMETABLE</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#ecfbff]/60 pt-2 hover:text-[#fface8] active:bg-[#2c3544] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-[0.1em] font-bold">MY INFO</span>
+</a>
+</nav>
+</body></html>
