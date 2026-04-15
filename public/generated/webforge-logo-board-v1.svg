@@ -1,0 +1,276 @@
+<svg width="1800" height="2380" viewBox="0 0 1800 2380" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="boardBg" x1="120" y1="80" x2="1680" y2="2300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBF7F1"/>
+      <stop offset="1" stop-color="#F1E8DC"/>
+    </linearGradient>
+    <linearGradient id="cellBg" x1="0" y1="0" x2="360" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="rgba(255,255,255,0.95)"/>
+      <stop offset="1" stop-color="rgba(248,240,230,0.96)"/>
+    </linearGradient>
+    <style>
+      .title { font: 800 64px 'Inter', 'Pretendard', sans-serif; fill: #191816; letter-spacing: -0.05em; }
+      .subtitle { font: 600 24px 'Inter', 'Pretendard', sans-serif; fill: #6E655D; letter-spacing: -0.02em; }
+      .label { font: 800 20px 'Inter', 'Pretendard', sans-serif; fill: #7A6C60; letter-spacing: 0.08em; }
+      .wordmark { font: 800 34px 'Inter', 'Pretendard', sans-serif; fill: #151515; letter-spacing: -0.05em; }
+      .caption { font: 600 17px 'Inter', 'Pretendard', sans-serif; fill: #8A7A6C; letter-spacing: 0.02em; }
+      .tile { fill: rgba(255,255,255,0.78); stroke: rgba(24,24,24,0.08); stroke-width: 2; }
+      .mark { stroke: #171716; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .mark-fill { fill: #171716; }
+      .mark-soft { stroke: #5C493A; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .mark-accent { fill: #9D7A61; }
+      .mark-fade { fill: #EADBCB; stroke: #171716; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+
+  <rect width="1800" height="2380" fill="url(#boardBg)"/>
+  <rect x="48" y="48" width="1704" height="2284" rx="44" fill="rgba(255,255,255,0.38)" stroke="rgba(24,24,24,0.05)" stroke-width="2"/>
+
+  <text x="100" y="132" class="title">WebForge Logo Explorations</text>
+  <text x="100" y="176" class="subtitle">20개 시안입니다. 마음에 드는 번호만 고르면 그 방향으로 바로 홈페이지 로고로 정리할 수 있습니다.</text>
+
+  <!-- Row 1 -->
+  <g transform="translate(90 240)">
+    <rect width="360" height="360" rx="34" class="tile"/>
+    <text x="30" y="46" class="label">01</text>
+    <g transform="translate(114 86)">
+      <rect x="0" y="0" width="132" height="132" rx="34" class="mark"/>
+      <path d="M28 36V96L54 60L80 96V36" class="mark"/>
+      <path d="M92 38H112M92 64H108M92 90H104" class="mark"/>
+    </g>
+    <text x="66" y="286" class="wordmark">WebForge</text>
+    <text x="66" y="320" class="caption">현재 톤에 가장 가까운 모노그램</text>
+  </g>
+
+  <g transform="translate(490 240)">
+    <rect width="360" height="360" rx="34" class="tile"/>
+    <text x="30" y="46" class="label">02</text>
+    <g transform="translate(104 82)">
+      <polygon points="76,0 142,38 142,114 76,152 10,114 10,38" class="mark"/>
+      <path d="M36 98L56 50L76 92L96 50L116 98" class="mark"/>
+      <path d="M124 18L132 18M128 10L128 26" class="mark-soft"/>
+    </g>
+    <text x="72" y="286" class="wordmark">WebForge</text>
+    <text x="72" y="320" class="caption">육각 실드 + 스파크 포인트</text>
+  </g>
+
+  <g transform="translate(890 240)">
+    <rect width="360" height="360" rx="34" class="tile"/>
+    <text x="30" y="46" class="label">03</text>
+    <g transform="translate(118 76)">
+      <path d="M62 8C92 18 112 42 112 72C112 114 84 140 64 154C46 140 18 114 18 74C18 46 34 24 62 8Z" class="mark"/>
+      <path d="M42 84L56 50L70 82L84 50L98 84" class="mark-soft"/>
+    </g>
+    <text x="84" y="286" class="wordmark">WebForge</text>
+    <text x="84" y="320" class="caption">불꽃·forge 느낌이 강한 심볼</text>
+  </g>
+
+  <g transform="translate(1290 240)">
+    <rect width="360" height="360" rx="34" class="tile"/>
+    <text x="30" y="46" class="label">04</text>
+    <g transform="translate(102 82)">
+      <rect x="6" y="6" width="144" height="144" rx="26" class="mark"/>
+      <path d="M78 18V138M18 52H138" class="mark-soft"/>
+      <path d="M28 122L48 74L68 114L88 74L108 122" class="mark"/>
+    </g>
+    <text x="68" y="286" class="wordmark">WebForge</text>
+    <text x="68" y="320" class="caption">웹 프레임과 창 구조를 강조</text>
+  </g>
+
+  <!-- Row 2 -->
+  <g transform="translate(90 650)">
+    <rect width="360" height="360" rx="34" class="tile"/>
+    <text x="30" y="46" class="label">05</text>
+    <g transform="translate(96 92)">
+      <path d="M18 46H150M36 76H132L118 118H50L36 76Z" class="mark"/>
+      <path d="M42 136L62 96L82 128L102 96L122 136" class="mark-soft"/>
+    </g>
+    <text x="74" y="286" class="wordmark">WebForge</text>
+    <text x="74" y="320" class="caption">대장간 받침대 느낌의 구조</text>
+  </g>
+
+  <g transform="translate(490 650)">
+    <rect width="360" height="360" rx="34" class="tile"/>
+    <text x="30" y="46" class="label">06</text>
+    <g transform="translate(104 88)">
+      <circle cx="76" cy="76" r="68" class="mark"/>
+      <text x="28" y="98" font-family="Inter, Pretendard, sans-serif" font-weight="900" font-size="70" fill="#171716" letter-spacing="-0.12em">WF</text>
+      <path d="M32 126L62 36" class="mark-soft"/>
+    </g>
+    <text x="78" y="286" class="wordmark">WebForge</text>
+    <text x="78" y="320" class="caption">원형 스탬프형 인터락 로고</text>
+  </g>
+
+  <g transform="translate(890 650)">
+    <rect width="360" height="360" rx="34" class="tile"/>
+    <text x="30" y="46" class="label">07</text>
+    <g transform="translate(102 84)">
+      <rect x="18" y="22" width="102" height="118" rx="18" class="mark-soft"/>
+      <rect x="46" y="0" width="102" height="118" rx="18" class="mark"/>
+      <path d="M62 102L78 58L94 94L110 58L126 102" class="mark"/>
+    </g>
+    <text x="78" y="286" class="wordmark">WebForge</text>
+    <text x="78" y="320" class="caption">페이지가 겹치는 웹 스택 컨셉</text>
+  </g>
+
+  <g transform="translate(1290 650)">
+    <rect width="360" height="360" rx="34" class="tile"/>
+    <text x="30" y="46" class="label">08</text>
+    <g transform="translate(108 84)">
+      <path d="M76 0L88 48L136 60L88 72L76 120L64 72L16 60L64 48L76 0Z" class="mark-soft"/>
+      <path d="M28 136L48 88L68 128L88 88L108 136" class="mark"/>
+    </g>
+    <text x="86" y="286" class="wordmark">WebForge</text>
+    <text x="86" y="320" class="caption">길잡이 별 + 제작 도구 이미지</text>
+  </g>
+
+  <!-- Row 3 -->
+  <g transform="translate(90 1060)">
+    <rect width="360" height="360" rx="34" class="tile"/>
+    <text x="30" y="46" class="label">09</text>
+    <g transform="translate(114 84)">
+      <path d="M20 24L66 0L112 24V84C112 110 94 134 66 152C38 134 20 110 20 84V24Z" class="mark"/>
+      <path d="M42 96L58 56L74 88L90 56" class="mark-soft"/>
+    </g>
+    <text x="82" y="286" class="wordmark">WebForge</text>
+    <text x="82" y="320" class="caption">신뢰감 있는 보호막형 로고</text>
+  </g>
+
+  <g transform="translate(490 1060)">
+    <rect width="360" height="360" rx="34" class="tile"/>
+    <text x="30" y="46" class="label">10</text>
+    <g transform="translate(92 82)">
+      <circle cx="88" cy="76" r="70" class="mark"/>
+      <circle cx="88" cy="76" r="42" class="mark-soft"/>
+      <text x="44" y="90" font-family="Inter, Pretendard, sans-serif" font-weight="900" font-size="48" fill="#171716" letter-spacing="-0.08em">WF</text>
+    </g>
+    <text x="80" y="286" class="wordmark">WebForge</text>
+    <text x="80" y="320" class="caption">브랜드 스탬프처럼 단단한 인상</text>
+  </g>
+
+  <g transform="translate(890 1060)">
+    <rect width="360" height="360" rx="34" class="tile"/>
+    <text x="30" y="46" class="label">11</text>
+    <g transform="translate(82 92)">
+      <path d="M24 20L0 74L24 128" class="mark-soft"/>
+      <path d="M128 20L152 74L128 128" class="mark-soft"/>
+      <path d="M38 112L58 40L76 90L94 40L114 112" class="mark"/>
+      <path d="M104 34H132M104 72H126M104 110H120" class="mark"/>
+    </g>
+    <text x="80" y="286" class="wordmark">WebForge</text>
+    <text x="80" y="320" class="caption">코드 브래킷이 들어간 웹 제작형</text>
+  </g>
+
+  <g transform="translate(1290 1060)">
+    <rect width="360" height="360" rx="34" class="tile"/>
+    <text x="30" y="46" class="label">12</text>
+    <g transform="translate(106 82)">
+      <polygon points="74,0 148,74 74,148 0,74" class="mark"/>
+      <path d="M42 108L58 60L74 96L90 60L106 108" class="mark-soft"/>
+      <path d="M74 28V118" class="mark-soft"/>
+    </g>
+    <text x="72" y="286" class="wordmark">WebForge</text>
+    <text x="72" y="320" class="caption">다이아 프레임으로 프리미엄화</text>
+  </g>
+
+  <!-- Row 4 -->
+  <g transform="translate(90 1470)">
+    <rect width="360" height="360" rx="34" class="tile"/>
+    <text x="30" y="46" class="label">13</text>
+    <g transform="translate(102 90)">
+      <rect x="10" y="28" width="26" height="96" rx="8" class="mark-fill"/>
+      <rect x="44" y="62" width="26" height="62" rx="8" class="mark-fill"/>
+      <rect x="78" y="28" width="26" height="96" rx="8" class="mark-fill"/>
+      <rect x="112" y="62" width="26" height="62" rx="8" class="mark-fill"/>
+      <rect x="10" y="12" width="128" height="12" rx="6" class="mark-accent"/>
+    </g>
+    <text x="74" y="286" class="wordmark">WebForge</text>
+    <text x="74" y="320" class="caption">모듈 블록 기반의 디지털 이미지</text>
+  </g>
+
+  <g transform="translate(490 1470)">
+    <rect width="360" height="360" rx="34" class="tile"/>
+    <text x="30" y="46" class="label">14</text>
+    <g transform="translate(100 88)">
+      <path d="M18 116C38 74 44 42 62 42C78 42 86 104 102 104C120 104 124 28 148 18" class="mark-soft"/>
+      <path d="M16 116C32 88 44 50 58 50C72 50 80 116 98 116C114 116 122 60 148 24" class="mark"/>
+    </g>
+    <text x="84" y="286" class="wordmark">WebForge</text>
+    <text x="84" y="320" class="caption">유연한 리본형 W 시그니처</text>
+  </g>
+
+  <g transform="translate(890 1470)">
+    <rect width="360" height="360" rx="34" class="tile"/>
+    <text x="30" y="46" class="label">15</text>
+    <g transform="translate(98 84)">
+      <path d="M26 120L46 60L66 104L86 60L106 120" class="mark"/>
+      <path d="M114 26L122 26M118 18L118 34" class="mark-soft"/>
+      <path d="M122 18L130 34M130 18L122 34" class="mark-soft"/>
+      <text x="0" y="172" font-family="Inter, Pretendard, sans-serif" font-weight="800" font-size="24" fill="#171716" letter-spacing="0.12em">WEBFORGE</text>
+    </g>
+    <text x="78" y="320" class="caption">워드마크 중심의 심플 시그니처</text>
+  </g>
+
+  <g transform="translate(1290 1470)">
+    <rect width="360" height="360" rx="34" class="tile"/>
+    <text x="30" y="46" class="label">16</text>
+    <g transform="translate(94 84)">
+      <path d="M26 118L50 48L76 104L102 48L126 118" class="mark"/>
+      <circle cx="26" cy="118" r="10" class="mark-fill"/>
+      <circle cx="50" cy="48" r="10" class="mark-fill"/>
+      <circle cx="76" cy="104" r="10" class="mark-fill"/>
+      <circle cx="102" cy="48" r="10" class="mark-fill"/>
+      <circle cx="126" cy="118" r="10" class="mark-accent"/>
+    </g>
+    <text x="78" y="286" class="wordmark">WebForge</text>
+    <text x="78" y="320" class="caption">노드·회로 느낌의 테크형 심볼</text>
+  </g>
+
+  <!-- Row 5 -->
+  <g transform="translate(90 1880)">
+    <rect width="360" height="360" rx="34" class="tile"/>
+    <text x="30" y="46" class="label">17</text>
+    <g transform="translate(106 82)">
+      <path d="M22 146V62C22 28 48 0 82 0C116 0 142 28 142 62V146" class="mark"/>
+      <path d="M40 120L58 70L82 112L106 70L124 120" class="mark-soft"/>
+      <path d="M44 146H120" class="mark-soft"/>
+    </g>
+    <text x="76" y="286" class="wordmark">WebForge</text>
+    <text x="76" y="320" class="caption">아치형 포털과 창 구조를 결합</text>
+  </g>
+
+  <g transform="translate(490 1880)">
+    <rect width="360" height="360" rx="34" class="tile"/>
+    <text x="30" y="46" class="label">18</text>
+    <g transform="translate(102 84)">
+      <rect x="6" y="6" width="144" height="144" rx="24" class="mark-fill"/>
+      <text x="28" y="96" font-family="Inter, Pretendard, sans-serif" font-weight="900" font-size="68" fill="#FBF7F1" letter-spacing="-0.12em">WF</text>
+      <path d="M26 122H130" class="mark-soft"/>
+    </g>
+    <text x="82" y="286" class="wordmark">WebForge</text>
+    <text x="82" y="320" class="caption">굵고 강한 앱 아이콘형 방향</text>
+  </g>
+
+  <g transform="translate(890 1880)">
+    <rect width="360" height="360" rx="34" class="tile"/>
+    <text x="30" y="46" class="label">19</text>
+    <g transform="translate(108 82)">
+      <path d="M28 28H116M56 28V62M88 28V62M42 116L62 74L82 106L102 74" class="mark"/>
+      <path d="M56 62L28 116H116L88 62" class="mark-soft"/>
+    </g>
+    <text x="84" y="286" class="wordmark">WebForge</text>
+    <text x="84" y="320" class="caption">망치·지붕처럼 보이는 forge 아이콘</text>
+  </g>
+
+  <g transform="translate(1290 1880)">
+    <rect width="360" height="360" rx="34" class="tile"/>
+    <text x="30" y="46" class="label">20</text>
+    <g transform="translate(102 82)">
+      <circle cx="76" cy="76" r="68" class="mark-soft"/>
+      <path d="M28 108L48 52L76 96L104 52L124 108" class="mark"/>
+      <path d="M106 22L112 22M109 16L109 28" class="mark-soft"/>
+    </g>
+    <text x="78" y="286" class="wordmark">WebForge</text>
+    <text x="78" y="320" class="caption">가장 미니멀한 원형 시그니처</text>
+  </g>
+</svg>
