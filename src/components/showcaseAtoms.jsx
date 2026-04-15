@@ -67,7 +67,13 @@ export function ShowcasePhone({ src, html, alt = "", title = "" }) {
         <span className="phone-shot__lens phone-shot__lens--b" />
       </span>
       <div className="phone-shot__screen">
-        {html ? <iframe title={title || alt || "mobile preview"} src={html} loading="lazy" /> : <img src={src} alt={alt} />}
+        {html ? (
+          <div className="phone-shot__live">
+            <iframe title={title || alt || "mobile preview"} src={html} loading="lazy" tabIndex={-1} />
+          </div>
+        ) : (
+          <img src={src} alt={alt} />
+        )}
       </div>
       <span className="phone-shot__homebar" />
     </div>

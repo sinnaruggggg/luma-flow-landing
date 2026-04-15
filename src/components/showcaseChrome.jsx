@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ChevronRight, Clock3, Copy, ExternalLink, Monitor, Paperclip, Smartphone } from "lucide-react";
 import { buildSitePath, siteRegistry } from "../content/siteRegistry";
 import { themeStyle, useBackdropPointer } from "../lib/showcaseUtils";
@@ -27,7 +27,7 @@ const FEATURE_ITEMS = [
 ];
 
 const PRICING_PLANS = [
-  { name: "시작형", price: "149,000원", description: "가볍게 시작하는 기본형입니다. 소개 화면을 빠르게 만들고 싶은 경우에 맞습니다.", items: ["랜딩 1페이지 기준", "문구·이미지 교체", "모바일 최적화"] },
+  { name: "시작형", price: "149,000원", description: "가볍게 시작하는 기본형입니다. 소개 화면을 빠르게 만들고 싶은 경우에 맞습니다.", items: ["랜딩 1페이지 + 1~3페이지", "문구·이미지 교체", "모바일 최적화"] },
   { name: "기본형", price: "299,000원", description: "가장 많이 선택하는 구성입니다. 문의 유도와 화면 구성을 함께 다듬습니다.", items: ["핵심 섹션 확장", "CTA·문의 흐름 구성", "기본 수정 2회"], featured: true },
   { name: "확장형", price: "499,000원", description: "페이지 추가나 커스터마이징 범위가 더 큰 경우에 맞는 확장형입니다.", items: ["서브 페이지 추가", "예약·상담 흐름 설계", "배포 반영 지원"] },
 ];
@@ -97,17 +97,70 @@ function coverageLabel(site) {
   return "준비 중";
 }
 
-function PreviewSurface({ stage, title, className = "", loading = "lazy", preferImage = false }) {
+function normalizeRouteLabel(label = "") {
+  return label.replace(/\s+/g, "").trim();
+}
+
+function patchStageRouteLinks(frame, site, onNavigate) {
+  try {
+    const doc = frame.contentDocument;
+    if (!doc) return;
+
+    const routeMap = new Map();
+    site.routes.forEach((item) => {
+      if (!item.ready) return;
+
+      [item.label, item.legacyLabel].forEach((candidate) => {
+        const normalized = normalizeRouteLabel(candidate);
+        if (normalized) {
+          routeMap.set(normalized, item);
+        }
+      });
+    });
+
+    doc.querySelectorAll("a, button, [role='button']").forEach((element) => {
+      const label = normalizeRouteLabel(element.getAttribute("aria-label") || element.textContent || "");
+      const matchedRoute = routeMap.get(label);
+      if (!matchedRoute) return;
+      if (element.dataset.webforgeRoute === matchedRoute.slug) return;
+
+      element.dataset.webforgeRoute = matchedRoute.slug;
+
+      if (element.tagName === "A") {
+        element.setAttribute("href", buildSitePath(site.id, matchedRoute.slug));
+      }
+
+      element.style.cursor = "pointer";
+      element.onclick = (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        onNavigate(buildSitePath(site.id, matchedRoute.slug));
+      };
+    });
+  } catch {
+    // Static previews are same-origin HTML; if a page falls back to an image, we simply skip patching.
+  }
+}
+
+function PreviewSurface({ stage, title, className = "", loading = "lazy", mode = "desktop" }) {
+  const hasLivePreview = Boolean(stage.html);
+
   return (
-    <div className={`preview-surface ${className}`.trim()}>
-      {stage.html && !preferImage ? <iframe title={title} src={stage.html} loading={loading} tabIndex={-1} /> : <img src={stage.image} alt={stage.alt} loading={loading} />}
+    <div className={`preview-surface ${className}`.trim()} data-mode={mode} data-live={hasLivePreview ? "true" : "false"}>
+      {hasLivePreview ? (
+        <div className="preview-surface__live">
+          <iframe title={title} src={stage.html} loading={loading} tabIndex={-1} />
+        </div>
+      ) : (
+        <img src={stage.image} alt={stage.alt} loading={loading} />
+      )}
     </div>
   );
 }
 
-function ContactBrief({ sampleOptions }) {
+function ContactBrief({ sampleOptions, initialSampleId = "" }) {
   const [form, setForm] = useState(() => ({
-    sampleId: sampleOptions[0]?.id ?? "",
+    sampleId: (initialSampleId || sampleOptions[0]?.id) ?? "",
     plan: PRICING_PLANS[1]?.name ?? "",
     customization: CUSTOMIZATION_LEVELS[1],
     budget: BUDGET_OPTIONS[0],
@@ -254,25 +307,18 @@ function ContactBrief({ sampleOptions }) {
   );
 }
 
-function GalleryCard({ site, onOpen }) {
+function GalleryCard({ site, onOpen, onContact, isSelectedForInquiry }) {
   const canOpen = site.gallery.homeReady;
   const desktopStage = site.routeAssets.home.desktop;
   const mobileStage = site.routeAssets.home.mobile;
 
   return (
     <article className={`hub-card ${canOpen ? "" : "hub-card--disabled"}`.trim()}>
-      <button
-        type="button"
-        className="hub-card__hit"
-        onClick={() => onOpen(buildSitePath(site.id))}
-        disabled={!canOpen}
-        aria-label={`${site.brand} 사이트 보기`}
-      />
       <div className="hub-card__visual">
         <div className="hub-card__desktop-frame">
-          <PreviewSurface stage={desktopStage} title={`${site.brand} PC 미리보기`} className="hub-card__desktop-shot" preferImage />
+          <PreviewSurface stage={desktopStage} title={`${site.brand} PC 미리보기`} className="hub-card__desktop-shot" mode="desktop" />
         </div>
-        <ShowcasePhone src={mobileStage.image} alt={`${site.brand} 모바일 미리보기`} title={`${site.brand} 모바일 홈`} />
+        <ShowcasePhone src={mobileStage.image} html={mobileStage.html} alt={`${site.brand} 모바일 미리보기`} title={`${site.brand} 모바일 홈`} />
       </div>
       <div className="hub-card__body">
         <div className="hub-card__meta">
@@ -283,19 +329,43 @@ function GalleryCard({ site, onOpen }) {
         <p>{site.summary}</p>
         <div className="hub-card__footer">
           <span>{site.industry}</span>
-          <span className="hub-card__action">
-            {canOpen ? "사이트 보기" : "준비 중"}
-            {canOpen ? <ChevronRight size={16} /> : <Clock3 size={16} />}
-          </span>
+          <div className="hub-card__actions">
+            <button
+              type="button"
+              className={`hub-card__button hub-card__button--secondary ${isSelectedForInquiry ? "is-selected" : ""}`.trim()}
+              onClick={() => onContact(site.id)}
+            >
+              문의하기
+            </button>
+            <button type="button" className="hub-card__button hub-card__button--primary" onClick={() => onOpen(buildSitePath(site.id))} disabled={!canOpen}>
+              {canOpen ? "사이트 보기" : "준비 중"}
+              {canOpen ? <ChevronRight size={16} /> : <Clock3 size={16} />}
+            </button>
+          </div>
         </div>
       </div>
     </article>
   );
 }
 
-export function GalleryHome({ onOpen }) {
+export function GalleryHome({ onOpen, onContactSample, selectedContactSiteId = "" }) {
   const orderedSites = orderSites(siteRegistry);
   const [pointerStyle, onPointerMove] = useBackdropPointer();
+
+  useEffect(() => {
+    if (!selectedContactSiteId) return undefined;
+
+    const frame = window.requestAnimationFrame(() => scrollToSection("contact"));
+    return () => window.cancelAnimationFrame(frame);
+  }, [selectedContactSiteId]);
+
+  function handleContactSample(siteId) {
+    onContactSample(siteId);
+
+    if (selectedContactSiteId === siteId) {
+      scrollToSection("contact");
+    }
+  }
 
   return (
     <div className="hub-page" style={pointerStyle} onPointerMove={onPointerMove}>
@@ -332,7 +402,7 @@ export function GalleryHome({ onOpen }) {
           </div>
           <div className="hub-grid">
             {orderedSites.map((site) => (
-              <GalleryCard key={site.id} site={site} onOpen={onOpen} />
+              <GalleryCard key={site.id} site={site} onOpen={onOpen} onContact={handleContactSample} isSelectedForInquiry={selectedContactSiteId === site.id} />
             ))}
           </div>
         </section>
@@ -403,7 +473,7 @@ export function GalleryHome({ onOpen }) {
               ))}
             </div>
             <div className="hub-contact-layout">
-              <ContactBrief sampleOptions={orderedSites} />
+              <ContactBrief key={selectedContactSiteId || "default-contact-brief"} sampleOptions={orderedSites} initialSampleId={selectedContactSiteId} />
 
               <div className="hub-contact-side">
                 <article className="hub-contact-panel">
@@ -462,7 +532,7 @@ function DeviceSwitch({ viewMode, onViewChange }) {
   );
 }
 
-function SiteTopbar({ site, viewMode, isMobileClient, onViewChange, onBack }) {
+function SiteTopbar({ site, viewMode, isMobileClient, onViewChange, onBack, onContact }) {
   return (
     <header className="site-topbar">
       <div className="site-topbar__start">
@@ -475,60 +545,58 @@ function SiteTopbar({ site, viewMode, isMobileClient, onViewChange, onBack }) {
           <span>{site.industry}</span>
         </div>
       </div>
-      <div className="site-topbar__end">{!isMobileClient ? <DeviceSwitch viewMode={viewMode} onViewChange={onViewChange} /> : null}</div>
+      <div className="site-topbar__end">
+        {!isMobileClient ? <DeviceSwitch viewMode={viewMode} onViewChange={onViewChange} /> : null}
+        <button type="button" className="site-topbar__contact" onClick={onContact}>
+          문의하기
+        </button>
+      </div>
     </header>
   );
 }
 
-function RouteDock({ site, route, onNavigate }) {
-  return (
-    <nav className="route-dock" aria-label={`${site.brand} 페이지 이동`}>
-      {site.routes.map((item) => (
-        <button
-          key={item.slug}
-          type="button"
-          className={item.slug === route.slug ? "is-active" : ""}
-          onClick={() => onNavigate(buildSitePath(site.id, item.slug))}
-          disabled={!item.ready}
-          aria-current={item.slug === route.slug ? "page" : undefined}
-        >
-          {item.label}
-        </button>
-      ))}
-    </nav>
-  );
-}
-
-function ScreenStage({ site, route, actualView, isMobileClient }) {
+function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
   const stage = site.routeAssets[route.slug][actualView];
   const frameClass = actualView === "mobile" && !isMobileClient ? "screen-stage__frame screen-stage__frame--phone" : "screen-stage__frame";
   const title = `${site.brand} ${route.label}`;
+  const frameRef = useRef(null);
+
+  useEffect(() => {
+    if (!stage.html || !frameRef.current) {
+      return undefined;
+    }
+
+    const frame = frameRef.current;
+    const syncRoutes = () => patchStageRouteLinks(frame, site, onNavigate);
+
+    frame.addEventListener("load", syncRoutes);
+    syncRoutes();
+
+    return () => frame.removeEventListener("load", syncRoutes);
+  }, [onNavigate, site, stage.html]);
 
   return (
     <section className={`screen-stage screen-stage--${actualView}`} aria-label={title}>
       <div className={frameClass} style={{ "--stage-height": `${stage.stageHeight}px` }}>
         {actualView === "mobile" && !isMobileClient ? <span className="screen-stage__notch" aria-hidden="true" /> : null}
-        {stage.html ? <iframe title={title} src={stage.html} loading="lazy" /> : <img src={stage.image} alt={stage.alt} loading="lazy" />}
+        {stage.html ? <iframe ref={frameRef} title={title} src={stage.html} loading="lazy" /> : <img src={stage.image} alt={stage.alt} loading="lazy" />}
       </div>
     </section>
   );
 }
 
-export function SiteView({ site, route, viewMode, isMobileClient, onViewChange, onNavigate, onBack }) {
+export function SiteView({ site, route, viewMode, isMobileClient, onViewChange, onNavigate, onBack, onContact }) {
   const actualView = isMobileClient ? "mobile" : viewMode;
   const [pointerStyle, onPointerMove] = useBackdropPointer();
 
   return (
     <div className="site-shell" data-tone={site.backdrop} data-view={actualView} style={{ ...themeStyle(site.theme), ...pointerStyle }} onPointerMove={onPointerMove}>
       <SceneBackdrop tone={site.backdrop} />
-      <div className="site-shell__content">
-        <div className="site-shell__frame">
-          <SiteTopbar site={site} viewMode={actualView} isMobileClient={isMobileClient} onViewChange={onViewChange} onBack={onBack} />
-          <main className="site-main site-main--immersive">
-            <ScreenStage site={site} route={route} actualView={actualView} isMobileClient={isMobileClient} />
-            <RouteDock site={site} route={route} onNavigate={onNavigate} />
-          </main>
-        </div>
+      <div className="site-shell__content site-shell__content--immersive">
+        <SiteTopbar site={site} viewMode={actualView} isMobileClient={isMobileClient} onViewChange={onViewChange} onBack={onBack} onContact={onContact} />
+        <main className="site-main site-main--immersive">
+          <ScreenStage site={site} route={route} actualView={actualView} isMobileClient={isMobileClient} onNavigate={onNavigate} />
+        </main>
       </div>
     </div>
   );

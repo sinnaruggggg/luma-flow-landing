@@ -5,19 +5,26 @@ import { useIsMobileClient } from "./lib/showcaseUtils";
 import { GalleryHome, NotFound, SiteStaging, SiteView } from "./components/showcaseChrome";
 import "./site-app.css";
 
+function readLocationState() {
+  return {
+    pathname: window.location.pathname || "/",
+    search: window.location.search || "",
+  };
+}
+
 export default function App() {
-  const [pathname, setPathname] = useState(() => window.location.pathname || "/");
+  const [locationState, setLocationState] = useState(readLocationState);
   const [viewMode, setViewMode] = useState("desktop");
   const isMobileClient = useIsMobileClient();
   const sitesById = useMemo(() => siteRegistryById, []);
 
   useEffect(() => {
     const onPopState = () => {
-      const nextPath = window.location.pathname || "/";
-      if (nextPath === "/") {
+      const nextLocation = readLocationState();
+      if (nextLocation.pathname === "/") {
         setViewMode("desktop");
       }
-      setPathname(nextPath);
+      setLocationState(nextLocation);
       window.scrollTo(0, 0);
     };
 
@@ -26,22 +33,29 @@ export default function App() {
   }, []);
 
   const navigate = (nextPath) => {
-    const normalized = nextPath || "/";
-    if (normalized === pathname) {
+    const nextUrl = new URL(nextPath || "/", window.location.origin);
+    const nextLocation = {
+      pathname: nextUrl.pathname || "/",
+      search: nextUrl.search || "",
+    };
+
+    if (nextLocation.pathname === locationState.pathname && nextLocation.search === locationState.search) {
       return;
     }
 
-    if (normalized === "/") {
+    if (nextLocation.pathname === "/") {
       setViewMode("desktop");
     }
 
-    window.history.pushState({}, "", normalized);
+    window.history.pushState({}, "", `${nextLocation.pathname}${nextLocation.search}`);
     window.scrollTo(0, 0);
-    setPathname(normalized);
+    setLocationState(nextLocation);
   };
 
-  const routeState = parseSitePath(pathname);
+  const routeState = parseSitePath(locationState.pathname);
   const site = routeState.kind === "site" || routeState.kind === "staging" ? sitesById[routeState.siteId] : null;
+  const selectedContactSiteId = routeState.kind === "gallery" ? new URLSearchParams(locationState.search).get("contact") ?? "" : "";
+  const contactPathForSite = (siteId) => `/?contact=${siteId}`;
 
   return (
     <AnimatePresence mode="wait">
@@ -53,7 +67,7 @@ export default function App() {
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.26 }}
         >
-          <GalleryHome onOpen={navigate} />
+          <GalleryHome onOpen={navigate} onContactSample={(siteId) => navigate(contactPathForSite(siteId))} selectedContactSiteId={selectedContactSiteId} />
         </Motion.div>
       ) : null}
 
@@ -73,6 +87,7 @@ export default function App() {
             onViewChange={setViewMode}
             onNavigate={navigate}
             onBack={() => navigate("/")}
+            onContact={() => navigate(contactPathForSite(site.id))}
           />
         </Motion.div>
       ) : null}
