@@ -537,9 +537,10 @@ function SiteTopbar({ site, viewMode, isMobileClient, onViewChange, onBack, onCo
 
 function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
   const stage = site.routeAssets[route.slug][actualView];
-  const frameClass = actualView === "mobile" && !isMobileClient ? "screen-stage__frame screen-stage__frame--phone" : "screen-stage__frame";
+  const frameClass = actualView === "mobile" && !isMobileClient ? "screen-stage__frame screen-stage__frame--narrow" : "screen-stage__frame";
   const title = `${site.brand} ${route.label}`;
   const frameRef = useRef(null);
+  const [frameHeight, setFrameHeight] = useState(stage.stageHeight);
 
   useEffect(() => {
     if (!stage.html || !frameRef.current) {
@@ -547,19 +548,80 @@ function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
     }
 
     const frame = frameRef.current;
-    const syncRoutes = () => patchStageRouteLinks(frame, site, onNavigate);
+    let resizeObserver;
+    let rafId = 0;
 
-    frame.addEventListener("load", syncRoutes);
-    syncRoutes();
+    const syncFrame = () => {
+      const doc = frame.contentDocument;
+      if (!doc) return;
 
-    return () => frame.removeEventListener("load", syncRoutes);
+      patchStageRouteLinks(frame, site, onNavigate);
+
+      const nextHeight = Math.max(
+        doc.body?.scrollHeight ?? 0,
+        doc.body?.offsetHeight ?? 0,
+        doc.documentElement?.scrollHeight ?? 0,
+        doc.documentElement?.offsetHeight ?? 0,
+        doc.documentElement?.clientHeight ?? 0,
+      );
+
+      if (nextHeight > 0) {
+        setFrameHeight(nextHeight);
+      }
+    };
+
+    const scheduleSync = () => {
+      if (rafId) {
+        window.cancelAnimationFrame(rafId);
+      }
+
+      rafId = window.requestAnimationFrame(syncFrame);
+    };
+
+    const observeFrame = () => {
+      const doc = frame.contentDocument;
+      if (!doc || typeof ResizeObserver === "undefined") return;
+
+      resizeObserver?.disconnect();
+      resizeObserver = new ResizeObserver(scheduleSync);
+      resizeObserver.observe(doc.documentElement);
+
+      if (doc.body) {
+        resizeObserver.observe(doc.body);
+      }
+    };
+
+    const handleLoad = () => {
+      scheduleSync();
+      observeFrame();
+    };
+
+    frame.addEventListener("load", handleLoad);
+    window.addEventListener("resize", scheduleSync);
+
+    if (frame.contentDocument?.readyState === "complete") {
+      handleLoad();
+    }
+
+    return () => {
+      frame.removeEventListener("load", handleLoad);
+      window.removeEventListener("resize", scheduleSync);
+      resizeObserver?.disconnect();
+
+      if (rafId) {
+        window.cancelAnimationFrame(rafId);
+      }
+    };
   }, [onNavigate, site, stage.html]);
 
   return (
     <section className={`screen-stage screen-stage--${actualView}`} aria-label={title}>
-      <div className={frameClass} style={{ "--stage-height": `${stage.stageHeight}px` }}>
-        {actualView === "mobile" && !isMobileClient ? <span className="screen-stage__notch" aria-hidden="true" /> : null}
-        {stage.html ? <iframe ref={frameRef} title={title} src={stage.html} loading="lazy" /> : <img src={stage.image} alt={stage.alt} loading="lazy" />}
+      <div className={frameClass}>
+        {stage.html ? (
+          <iframe ref={frameRef} title={title} src={stage.html} loading="lazy" style={{ height: `${frameHeight}px` }} />
+        ) : (
+          <img src={stage.image} alt={stage.alt} loading="lazy" />
+        )}
       </div>
     </section>
   );
