@@ -26,9 +26,9 @@ const FEATURE_ITEMS = [
 ];
 
 const PRICING_PLANS = [
-  { name: "Starter", price: "KRW 690K", description: "한 페이지 중심의 간결한 소개형 사이트", items: ["브랜드형 메인 페이지", "모바일 최적화", "기본 수정 1회"] },
-  { name: "Growth", price: "KRW 1.49M", description: "문의나 전환 흐름까지 포함한 기본 패키지", items: ["핵심 섹션 확장", "전환 중심 구조", "기본 수정 2회"], featured: true },
-  { name: "Custom", price: "별도 문의", description: "업종 맞춤 기능과 다중 페이지가 필요한 프로젝트", items: ["예약/문의/쇼핑 흐름", "추가 페이지 설계", "배포 반영 지원"] },
+  { name: "Lite", price: "KRW 290K", description: "가볍게 시작하는 원페이지 소개형 사이트", items: ["메인 페이지 1종", "모바일 최적화", "기본 수정 1회"] },
+  { name: "Standard", price: "KRW 490K", description: "문의와 전환 흐름까지 담은 기본 패키지", items: ["핵심 섹션 확장", "CTA·문의 흐름 구성", "기본 수정 2회"], featured: true },
+  { name: "Pro", price: "KRW 790K", description: "다중 페이지와 맞춤 흐름이 필요한 확장형 구성", items: ["서브 페이지 추가", "예약·문의 구조 설계", "배포 반영 지원"] },
 ];
 
 const CONTACT_POINTS = [
@@ -194,7 +194,7 @@ export function GalleryHome({ onOpen }) {
         <section id="pricing" className="hub-section" aria-labelledby="pricing-heading">
           <div className="hub-section__header">
             <span className="hub-section__eyebrow">Pricing</span>
-            <h2 id="pricing-heading">작업 범위에 따라 단순하게 선택할 수 있습니다.</h2>
+            <h2 id="pricing-heading">부담을 낮춘 3단계 요금으로 단순하게 선택할 수 있습니다.</h2>
           </div>
           <div className="hub-pricing-grid">
             {PRICING_PLANS.map((plan) => (
