@@ -32,8 +32,8 @@ function orderSites(sites) {
 
 function coverageLabel(site) {
   if (site.gallery.publicReady) return "5페이지 완성";
-  if (site.gallery.homeReady) return `홈 공개 · ${site.gallery.readyRoutes}/${site.gallery.totalRoutes}`;
-  if (site.gallery.stitchedRoutes > 0) return `제작 중 · ${site.gallery.stitchedRoutes}/${site.gallery.totalRoutes}`;
+  if (site.gallery.homeReady) return `라우트 공개 ${site.gallery.readyRoutes}/${site.gallery.totalRoutes}`;
+  if (site.gallery.stitchedRoutes > 0) return `제작 중 ${site.gallery.stitchedRoutes}/${site.gallery.totalRoutes}`;
   return "준비 중";
 }
 
@@ -45,28 +45,16 @@ function PreviewSurface({ stage, title, className = "", loading = "lazy" }) {
   );
 }
 
-function HeroMontage({ sites }) {
+function HeroBackdrop({ sites }) {
   return (
     <div className="hub-hero__media" aria-hidden="true">
       {sites.map((site, index) => (
-        <div key={site.id} className={`hub-hero__panel hub-hero__panel--${index + 1}`}>
+        <div key={site.id} className={`hub-hero__tile hub-hero__tile--${index + 1}`}>
           <PreviewSurface stage={site.routeAssets.home.desktop} title={`${site.brand} 홈 미리보기`} className="hub-hero__preview" loading="eager" />
         </div>
       ))}
-      <div className="hub-hero__phones">
-        {sites.slice(0, 2).map((site, index) => (
-          <div key={`${site.id}-phone`} className={`hub-hero__phone hub-hero__phone--${index + 1}`}>
-            <ShowcasePhone
-              src={site.routeAssets.home.mobile.image}
-              html={site.routeAssets.home.mobile.html}
-              alt={`${site.brand} 모바일 미리보기`}
-              title={`${site.brand} 모바일 홈`}
-            />
-          </div>
-        ))}
-      </div>
       <ConstellationField className="hub-hero__constellation" />
-      <div className="hub-hero__wash" />
+      <div className="hub-hero__scrim" />
     </div>
   );
 }
@@ -111,7 +99,8 @@ function GalleryCard({ site, onOpen }) {
 export function GalleryHome({ onOpen }) {
   const summary = totals();
   const orderedSites = orderSites(siteRegistry);
-  const featuredSites = orderedSites.slice(0, 4);
+  const featuredSites = orderedSites.filter((site) => site.gallery.homeReady).slice(0, 4);
+  const heroSites = featuredSites.length === 4 ? featuredSites : orderedSites.slice(0, 4);
   const [pointerStyle, onPointerMove] = useBackdropPointer();
 
   return (
@@ -122,8 +111,8 @@ export function GalleryHome({ onOpen }) {
           <div className="hub-topbar__brand">
             <HubMark />
             <div>
-              <strong>샘플 사이트 쇼룸</strong>
-              <span>운영하실 사이트와 가까운 샘플을 고르고, 원하는 무드가 보이면 그 이름으로 문의해 주세요.</span>
+              <strong>샘플 사이트 갤러리</strong>
+              <span>운영하실 홈페이지와 가장 가까운 샘플을 찾고, 마음에 드는 사이트명으로 문의를 남겨주세요.</span>
             </div>
           </div>
           <div className="hub-topbar__meta">
@@ -135,13 +124,13 @@ export function GalleryHome({ onOpen }) {
         </header>
 
         <section className="hub-hero">
-          <HeroMontage sites={featuredSites} />
+          <HeroBackdrop sites={heroSites} />
           <div className="hub-hero__content">
-            <span className="hub-hero__eyebrow">브랜드 샘플 갤러리</span>
-            <h1>운영하실 사이트와 가장 가까운 샘플을 선택해 둘러보시고, 원하는 스타일이 있으면 그 이름으로 문의해 주세요.</h1>
-            <p>병원, 카페, 호텔, 포트폴리오, 이벤트, 커머스, SaaS까지 실제 운영형 화면으로 준비했습니다. 카드에서 바로 들어가 PC와 모바일 화면을 직관적으로 확인하실 수 있습니다.</p>
+            <span className="hub-hero__eyebrow">홈페이지 샘플 쇼룸</span>
+            <h1>운영하실 사이트와 가까운 샘플을 골라 바로 둘러보세요.</h1>
+            <p>업종과 무드를 떠올리며 샘플을 둘러보신 뒤, 마음에 드는 사이트명으로 문의를 남겨주세요. 카드에서 바로 들어가 PC와 모바일 화면을 함께 확인할 수 있습니다.</p>
             <div className="hub-hero__chips">
-              {featuredSites.map((site) => (
+              {heroSites.map((site) => (
                 <span key={site.id}>{site.brand}</span>
               ))}
             </div>
@@ -173,22 +162,7 @@ function DeviceSwitch({ viewMode, onViewChange }) {
   );
 }
 
-function RoutePicker({ site, route, onNavigate }) {
-  return (
-    <label className="route-picker">
-      <span className="route-picker__label">페이지</span>
-      <select value={route.slug} aria-label={`${site.brand} 페이지 선택`} onChange={(event) => onNavigate(buildSitePath(site.id, event.target.value))}>
-        {site.routes.map((item) => (
-          <option key={item.slug} value={item.slug} disabled={!item.ready}>
-            {item.label}
-          </option>
-        ))}
-      </select>
-    </label>
-  );
-}
-
-function SiteTopbar({ site, route, viewMode, isMobileClient, onViewChange, onNavigate, onBack }) {
+function SiteTopbar({ site, viewMode, isMobileClient, onViewChange, onBack }) {
   return (
     <header className="site-topbar">
       <div className="site-topbar__start">
@@ -201,11 +175,27 @@ function SiteTopbar({ site, route, viewMode, isMobileClient, onViewChange, onNav
           <span>{site.industry}</span>
         </div>
       </div>
-      <div className="site-topbar__middle">
-        <RoutePicker site={site} route={route} onNavigate={onNavigate} />
-      </div>
       <div className="site-topbar__end">{!isMobileClient ? <DeviceSwitch viewMode={viewMode} onViewChange={onViewChange} /> : null}</div>
     </header>
+  );
+}
+
+function RouteDock({ site, route, onNavigate }) {
+  return (
+    <nav className="route-dock" aria-label={`${site.brand} 페이지 이동`}>
+      {site.routes.map((item) => (
+        <button
+          key={item.slug}
+          type="button"
+          className={item.slug === route.slug ? "is-active" : ""}
+          onClick={() => onNavigate(buildSitePath(site.id, item.slug))}
+          disabled={!item.ready}
+          aria-current={item.slug === route.slug ? "page" : undefined}
+        >
+          {item.label}
+        </button>
+      ))}
+    </nav>
   );
 }
 
@@ -233,9 +223,10 @@ export function SiteView({ site, route, viewMode, isMobileClient, onViewChange, 
       <SceneBackdrop tone={site.backdrop} />
       <div className="site-shell__content">
         <div className="site-shell__frame">
-          <SiteTopbar site={site} route={route} viewMode={actualView} isMobileClient={isMobileClient} onViewChange={onViewChange} onNavigate={onNavigate} onBack={onBack} />
+          <SiteTopbar site={site} viewMode={actualView} isMobileClient={isMobileClient} onViewChange={onViewChange} onBack={onBack} />
           <main className="site-main site-main--immersive">
             <ScreenStage site={site} route={route} actualView={actualView} isMobileClient={isMobileClient} />
+            <RouteDock site={site} route={route} onNavigate={onNavigate} />
           </main>
         </div>
       </div>
@@ -251,7 +242,7 @@ export function SiteStaging({ site, route, onHome, onOpenHome }) {
         <section className="missing-card">
           <span>준비 중</span>
           <h1>{site.brand} {route.label} 페이지를 정리하고 있습니다.</h1>
-          <p>이 사이트의 홈은 바로 볼 수 있고, 나머지 페이지는 순차적으로 연결됩니다.</p>
+          <p>현재는 홈 화면까지 공개되어 있고, 나머지 페이지는 순차적으로 연결 중입니다.</p>
           <div className="tag-rail">
             <span>{site.homeMode}</span>
             <span>{site.industry}</span>
