@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowLeft, ChevronRight, Clock3, Copy, ExternalLink, Monitor, Paperclip, Smartphone } from "lucide-react";
+import { ArrowLeft, ChevronRight, Clock3, Copy, ExternalLink, Monitor, Smartphone } from "lucide-react";
 import { buildSitePath, siteRegistry } from "../content/siteRegistry";
 import { themeStyle, useBackdropPointer } from "../lib/showcaseUtils";
 import { SceneBackdrop, ShowcasePhone, WebForgeMark } from "./showcaseAtoms";
@@ -168,7 +168,6 @@ function ContactBrief({ sampleOptions, initialSampleId = "" }) {
     references: "",
     details: "",
   }));
-  const [selectedFiles, setSelectedFiles] = useState([]);
   const [copyLabel, setCopyLabel] = useState("문의 내용 복사");
 
   const selectedSample = sampleOptions.find((item) => item.id === form.sampleId);
@@ -180,7 +179,6 @@ function ContactBrief({ sampleOptions, initialSampleId = "" }) {
     `예산 범위: ${form.budget}`,
     `희망 일정: ${form.timeline}`,
     `참조 사이트 / 이미지: ${form.references || "없음"}`,
-    `첨부 예정 파일: ${selectedFiles.length ? selectedFiles.join(", ") : "없음"}`,
     `문의 내용: ${form.details || "없음"}`,
   ].join("\n");
 
@@ -257,16 +255,6 @@ function ContactBrief({ sampleOptions, initialSampleId = "" }) {
           </select>
         </label>
 
-        <label className="hub-brief-field hub-brief-field--file">
-          <span>참조 이미지 첨부</span>
-          <input
-            type="file"
-            multiple
-            accept="image/*"
-            onChange={(event) => setSelectedFiles(Array.from(event.target.files ?? []).map((file) => file.name))}
-          />
-          <small>여기서는 업로드하지 않고, 실제 문의 채널에 첨부할 파일 목록만 확인합니다.</small>
-        </label>
       </div>
 
       <label className="hub-brief-field">
@@ -288,13 +276,6 @@ function ContactBrief({ sampleOptions, initialSampleId = "" }) {
           placeholder="원하는 분위기, 꼭 필요한 기능, 바꾸고 싶은 부분을 편하게 적어주세요."
         />
       </label>
-
-      {selectedFiles.length ? (
-        <div className="hub-file-list" aria-live="polite">
-          <Paperclip size={15} />
-          <span>{selectedFiles.join(", ")}</span>
-        </div>
-      ) : null}
 
       <div className="hub-brief-actions">
         <button type="button" className="hub-topbar__cta" onClick={handleCopy}>
@@ -505,7 +486,7 @@ export function GalleryHome({ onOpen, onContactSample, selectedContactSiteId = "
 
                 <article className="hub-contact-panel">
                   <strong>기타 문의 방법 안내</strong>
-                  <p>크몽이나 숨고가 아니어도 괜찮습니다. 메일, 오픈채팅, DM, 카카오톡 상담 링크가 있다면 같은 내용과 첨부 파일을 같이 보내면 됩니다.</p>
+                  <p>크몽이나 숨고가 아니어도 괜찮습니다. 메일, 오픈채팅, DM, 카카오톡 상담 링크가 있다면 같은 내용으로 먼저 문의하면 됩니다.</p>
                 </article>
               </div>
             </div>
