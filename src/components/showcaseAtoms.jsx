@@ -4,6 +4,9 @@ export function SceneBackdrop({ tone = "gallery" }) {
       <span className="showcase-backdrop__orb showcase-backdrop__orb--a" />
       <span className="showcase-backdrop__orb showcase-backdrop__orb--b" />
       <span className="showcase-backdrop__orb showcase-backdrop__orb--c" />
+      <span className="showcase-backdrop__aura" />
+      <span className="showcase-backdrop__glow" />
+      <span className="showcase-backdrop__beam" />
       <span className="showcase-backdrop__mesh" />
       <span className="showcase-backdrop__cursor" />
       <span className="showcase-backdrop__grain" />
@@ -54,8 +57,19 @@ export function ConstellationField({ className = "" }) {
 export function ShowcasePhone({ src, html, alt = "", title = "" }) {
   return (
     <div className="phone-shot" aria-hidden={alt ? undefined : true}>
-      <span className="phone-shot__notch" />
-      {html ? <iframe title={title || alt || "mobile preview"} src={html} loading="lazy" /> : <img src={src} alt={alt} />}
+      <span className="phone-shot__button phone-shot__button--volume-up" />
+      <span className="phone-shot__button phone-shot__button--volume-down" />
+      <span className="phone-shot__button phone-shot__button--power" />
+      <span className="phone-shot__frame-highlight" />
+      <span className="phone-shot__camera-island">
+        <span className="phone-shot__speaker" />
+        <span className="phone-shot__lens phone-shot__lens--a" />
+        <span className="phone-shot__lens phone-shot__lens--b" />
+      </span>
+      <div className="phone-shot__screen">
+        {html ? <iframe title={title || alt || "mobile preview"} src={html} loading="lazy" /> : <img src={src} alt={alt} />}
+      </div>
+      <span className="phone-shot__homebar" />
     </div>
   );
 }
