@@ -371,7 +371,7 @@ export function GalleryHome({ onOpen, onContactSample, selectedContactSiteId = "
 
         <section className="hub-hero hub-hero--minimal" aria-label="WebForge 소개">
           <div className="hub-hero__content hub-hero__content--minimal">
-            <h1>누구나 쉽게 만드는 나만의 web</h1>
+            <h1>원하는 분위기의 샘플로 내 사이트를 빠르게 시작하세요</h1>
           </div>
         </section>
 
