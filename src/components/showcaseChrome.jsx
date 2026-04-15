@@ -375,10 +375,9 @@ export function GalleryHome({ onOpen, onContactSample, selectedContactSiteId = "
           </div>
         </section>
 
-        <section id="samples" className="hub-section" aria-labelledby="samples-heading">
+        <section id="samples" className="hub-section" aria-label="샘플 갤러리">
           <div className="hub-section__header">
             <span className="hub-section__eyebrow">Showcase</span>
-            <h2 id="samples-heading">업종과 무드가 맞는 샘플을 바로 비교하세요.</h2>
             <p>실제 홈페이지처럼 구성된 샘플을 보고, 가장 가까운 스타일과 구조를 빠르게 고를 수 있습니다.</p>
           </div>
           <div className="hub-grid">
