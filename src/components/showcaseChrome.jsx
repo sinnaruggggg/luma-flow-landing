@@ -1,17 +1,9 @@
 import { ArrowLeft, ChevronRight, Clock3, Monitor, Smartphone } from "lucide-react";
 import { buildSitePath, siteRegistry } from "../content/siteRegistry";
 import { themeStyle, useBackdropPointer } from "../lib/showcaseUtils";
-import { ConstellationField, HubMark, SceneBackdrop, ShowcasePhone } from "./showcaseAtoms";
+import { SceneBackdrop, ShowcasePhone, WebForgeMark } from "./showcaseAtoms";
 
 const PRIORITY_SITE_IDS = ["indie-bookstore", "stationery-shop", "local-cafe", "boutique-hotel"];
-
-function totals() {
-  const totalRoutes = siteRegistry.reduce((sum, site) => sum + site.gallery.totalRoutes, 0);
-  const readyRoutes = siteRegistry.reduce((sum, site) => sum + site.gallery.readyRoutes, 0);
-  const readySites = siteRegistry.filter((site) => site.gallery.publicReady).length;
-  const liveHomes = siteRegistry.filter((site) => site.gallery.homeReady).length;
-  return { sites: siteRegistry.length, totalRoutes, readyRoutes, readySites, liveHomes };
-}
 
 function orderSites(sites) {
   const rank = new Map(PRIORITY_SITE_IDS.map((siteId, index) => [siteId, index]));
@@ -41,20 +33,6 @@ function PreviewSurface({ stage, title, className = "", loading = "lazy" }) {
   return (
     <div className={`preview-surface ${className}`.trim()}>
       {stage.html ? <iframe title={title} src={stage.html} loading={loading} tabIndex={-1} /> : <img src={stage.image} alt={stage.alt} loading={loading} />}
-    </div>
-  );
-}
-
-function HeroBackdrop({ sites }) {
-  return (
-    <div className="hub-hero__media" aria-hidden="true">
-      {sites.map((site, index) => (
-        <div key={site.id} className={`hub-hero__tile hub-hero__tile--${index + 1}`}>
-          <PreviewSurface stage={site.routeAssets.home.desktop} title={`${site.brand} 홈 미리보기`} className="hub-hero__preview" loading="eager" />
-        </div>
-      ))}
-      <ConstellationField className="hub-hero__constellation" />
-      <div className="hub-hero__scrim" />
     </div>
   );
 }
@@ -97,10 +75,7 @@ function GalleryCard({ site, onOpen }) {
 }
 
 export function GalleryHome({ onOpen }) {
-  const summary = totals();
   const orderedSites = orderSites(siteRegistry);
-  const featuredSites = orderedSites.filter((site) => site.gallery.homeReady).slice(0, 4);
-  const heroSites = featuredSites.length === 4 ? featuredSites : orderedSites.slice(0, 4);
   const [pointerStyle, onPointerMove] = useBackdropPointer();
 
   return (
@@ -109,31 +84,17 @@ export function GalleryHome({ onOpen }) {
       <div className="hub-page__content">
         <header className="hub-topbar">
           <div className="hub-topbar__brand">
-            <HubMark />
+            <WebForgeMark />
             <div>
-              <strong>샘플 사이트 갤러리</strong>
-              <span>운영하실 홈페이지와 가장 가까운 샘플을 찾고, 마음에 드는 사이트명으로 문의를 남겨주세요.</span>
+              <strong>WebForge</strong>
             </div>
           </div>
-          <div className="hub-topbar__meta">
-            <span>사이트 {summary.sites}개</span>
-            <span>홈 공개 {summary.liveHomes}개</span>
-            <span>라우트 공개 {summary.readyRoutes}/{summary.totalRoutes}</span>
-            <span>전체 완성 {summary.readySites}개</span>
-          </div>
+          <nav className="hub-topbar__menu-slot" aria-label="메인 메뉴" />
         </header>
 
-        <section className="hub-hero">
-          <HeroBackdrop sites={heroSites} />
-          <div className="hub-hero__content">
-            <span className="hub-hero__eyebrow">홈페이지 샘플 쇼룸</span>
-            <h1>운영하실 사이트와 가까운 샘플을 골라 바로 둘러보세요.</h1>
-            <p>업종과 무드를 떠올리며 샘플을 둘러보신 뒤, 마음에 드는 사이트명으로 문의를 남겨주세요. 카드에서 바로 들어가 PC와 모바일 화면을 함께 확인할 수 있습니다.</p>
-            <div className="hub-hero__chips">
-              {heroSites.map((site) => (
-                <span key={site.id}>{site.brand}</span>
-              ))}
-            </div>
+        <section className="hub-hero hub-hero--minimal" aria-label="WebForge 소개">
+          <div className="hub-hero__content hub-hero__content--minimal">
+            <h1>누구나 쉽게 만드는 나만의 web</h1>
           </div>
         </section>
 
