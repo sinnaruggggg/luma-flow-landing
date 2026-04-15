@@ -19,6 +19,7 @@
 - 가격 경쟁력을 고려해 요금표를 더 낮은 3단계 구조로 조정
 - 요금표를 `149,000원부터` 원화 기준으로 다시 정리하고 문의 작성/플랫폼 안내 영역 추가
 - `WebForge` 로고 시안 20개를 번호가 붙은 한 장의 벡터 보드로 생성
+- Gemini 이미지 생성으로 `WebForge` 로고 그림 시안 20개가 담긴 한 장의 보드 생성
 
 ### 수정 파일
 - `src/components/showcaseAtoms.jsx`
@@ -41,6 +42,7 @@
 - 요금표를 `시작형 / 기본형 / 확장형`과 `149,000원 / 299,000원 / 499,000원`으로 다시 조정
 - 문의 섹션에 샘플 선택, 커스터마이징 범위, 참조 링크, 파일 첨부 목록, 문의 내용 작성, 크몽/숨고 안내 버튼 추가
 - `public/generated/webforge-logo-board-v1.svg`에 20개 로고 탐색안을 정리하고 선택 가능한 번호 보드 구성
+- `scripts/generate-webforge-logo-board.mjs`로 Gemini 이미지 보드를 생성하고 `public/generated/webforge-logo-board-v3.png`에 최종 그림 시안 20개 보드 저장
 
 ### 확인 항목
 - `npm run lint`

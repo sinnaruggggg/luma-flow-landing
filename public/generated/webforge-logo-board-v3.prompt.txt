@@ -1,0 +1,13 @@
+Use case: logo-brand
+Asset type: brand exploration board for a homepage logo
+Primary request: Create one single concept board showing exactly 20 different logo ideas for a website brand named WebForge. Every idea must feel relevant to web building, digital craft, layout systems, code, interface, spark, forge, badge, frame, grid, monogram, or creator tools.
+Scene/backdrop: Clean premium presentation board on a soft cream background, arranged as a 4-column by 5-row grid of evenly spaced logo cards.
+Subject: 20 distinct WebForge logo concepts. Each card contains a readable number label from 01 to 20 in the top-left, one centered logo symbol, and a small clean wordmark reading WebForge below the symbol. Concept families should include different mixes of WF monogram, browser frame, spark, shield, forge mark, layout grid, bracket/code mark, compass/star, badge, and minimal app-icon styles.
+Style/medium: polished logo concept sheet, vector-like brand presentation, flat graphic design, clean black and warm brown linework, not photorealistic.
+Composition/framing: full board in view, balanced margins, each card clearly separated, consistent layout, easy to compare all 20 at once.
+Lighting/mood: bright, editorial, premium, minimal, curated.
+Color palette: ivory, soft cream, charcoal black, warm brown accent.
+Materials/textures: subtle paper grain only, no heavy texture.
+Text (verbatim): "01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 WebForge"
+Constraints: show exactly 20 numbered concepts, keep the board clean, each logo must feel different, suitable for selecting a final homepage logo direction, and keep all concepts brand-relevant.
+Avoid: photoreal objects, devices, mockups, people, heavy gradients, purple palette, watermark, extra random text, messy collage, duplicated concepts, generic nature icons, rockets, lighthouses, clouds, plants, hands, finance arrows, unrelated pictograms.
