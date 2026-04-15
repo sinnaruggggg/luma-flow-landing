@@ -33,6 +33,12 @@ dist-ssr
 .stitch/designs/
 design/stitch/*/screens/
 design/stitch/*/metadata.json
+design/stitch/*/prompts/
+tmp/
+
+# Local assistant docs
+AGENTS.md
+코덱스하네스.md
 
 .vercel
 .env*.local
