@@ -258,11 +258,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: clamp(260px, 34vw, 380px);
-  margin: 20px 0 34px;
-  border-radius: 32px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(248, 246, 242, 0.96));
-  box-shadow: 0 20px 48px rgba(18, 18, 18, 0.07);
+  min-height: clamp(220px, 24vw, 320px);
+  margin: 30px 0 30px;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .hub-hero__content {
@@ -276,7 +277,7 @@
 
 .hub-hero__content--minimal {
   max-width: 880px;
-  padding: 32px 24px;
+  padding: 12px 24px;
   justify-items: center;
   text-align: center;
 }
@@ -406,6 +407,11 @@
   font-size: clamp(2.6rem, 6vw, 4.9rem);
   line-height: 1.04;
   letter-spacing: -0.065em;
+  color: #18181b;
+  background: linear-gradient(135deg, #161618 0%, #4a3d34 52%, #a68268 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hub-hero p,
@@ -468,8 +474,30 @@
 
 .hub-card__visual {
   position: relative;
-  min-height: 320px;
+  aspect-ratio: 16 / 9;
+  padding: 16px;
   overflow: hidden;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(246, 242, 235, 0.92));
+}
+
+.hub-card__desktop-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(18, 18, 18, 0.08);
+  background: #ffffff;
+  box-shadow: 0 16px 34px rgba(18, 18, 18, 0.08);
+}
+
+.hub-card__desktop-shot::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 12px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent);
+  pointer-events: none;
 }
 
 .hub-card__desktop-shot,
@@ -489,14 +517,16 @@
 
 .phone-shot {
   position: absolute;
-  right: 18px;
+  right: 28px;
   bottom: 18px;
-  width: 94px;
-  height: 188px;
-  padding: 10px 8px 8px;
-  border-radius: 26px;
-  background: rgba(9, 11, 18, 0.94);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.32);
+  width: clamp(74px, 22%, 110px);
+  height: auto;
+  aspect-ratio: 9 / 19.5;
+  padding: 9px 7px 7px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(12, 14, 21, 0.96);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
 }
 
 .phone-shot__notch,
@@ -764,10 +794,10 @@
     gap: 14px;
   }
   .hub-hero--minimal {
-    min-height: 240px;
+    min-height: 180px;
   }
   .hub-hero__content--minimal {
-    padding: 22px 18px;
+    padding: 8px 18px;
   }
   .hub-hero__media {
     grid-template-columns: 1fr;
@@ -783,8 +813,8 @@
   .hub-hero h1 { max-width: none; font-size: clamp(2.8rem, 11vw, 4.2rem); }
   .hub-hero__content--minimal h1 { font-size: clamp(2.4rem, 10vw, 3.6rem); }
   .hub-grid { grid-template-columns: 1fr; }
-  .hub-card__visual { min-height: 280px; }
-  .phone-shot { width: 88px; height: 174px; right: 14px; bottom: 14px; }
+  .hub-card__visual { padding: 12px; }
+  .phone-shot { right: 16px; bottom: 14px; width: clamp(70px, 24%, 90px); }
 
   .site-shell__frame,
   .site-topbar,

@@ -29,10 +29,10 @@ function coverageLabel(site) {
   return "준비 중";
 }
 
-function PreviewSurface({ stage, title, className = "", loading = "lazy" }) {
+function PreviewSurface({ stage, title, className = "", loading = "lazy", preferImage = false }) {
   return (
     <div className={`preview-surface ${className}`.trim()}>
-      {stage.html ? <iframe title={title} src={stage.html} loading={loading} tabIndex={-1} /> : <img src={stage.image} alt={stage.alt} loading={loading} />}
+      {stage.html && !preferImage ? <iframe title={title} src={stage.html} loading={loading} tabIndex={-1} /> : <img src={stage.image} alt={stage.alt} loading={loading} />}
     </div>
   );
 }
@@ -52,8 +52,10 @@ function GalleryCard({ site, onOpen }) {
         aria-label={`${site.brand} 사이트 보기`}
       />
       <div className="hub-card__visual">
-        <PreviewSurface stage={desktopStage} title={`${site.brand} PC 미리보기`} className="hub-card__desktop-shot" />
-        <ShowcasePhone src={mobileStage.image} html={mobileStage.html} alt={`${site.brand} 모바일 미리보기`} title={`${site.brand} 모바일 홈`} />
+        <div className="hub-card__desktop-frame">
+          <PreviewSurface stage={desktopStage} title={`${site.brand} PC 미리보기`} className="hub-card__desktop-shot" preferImage />
+        </div>
+        <ShowcasePhone src={mobileStage.image} alt={`${site.brand} 모바일 미리보기`} title={`${site.brand} 모바일 홈`} />
       </div>
       <div className="hub-card__body">
         <div className="hub-card__meta">
