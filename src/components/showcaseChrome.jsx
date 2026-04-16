@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowLeft, ChevronRight, Clock3, Copy, ExternalLink, Monitor, Smartphone } from "lucide-react";
+import { ArrowLeft, ChevronRight, Clock3, Copy, ExternalLink, Monitor, SendHorizontal, Smartphone } from "lucide-react";
 import { GALLERY_COPY_DEFAULTS, INQUIRY_DEFAULTS } from "../content/siteAdminDefaults";
 import { buildSitePath, siteRegistry } from "../content/siteRegistry";
+import { submitInquiry } from "../lib/inquiryApi";
 import { themeStyle, useBackdropPointer } from "../lib/showcaseUtils";
 import { SceneBackdrop, ShowcasePhone, WebForgeMark } from "./showcaseAtoms";
 
@@ -116,10 +117,14 @@ function ContactBrief({ sampleOptions, initialSampleId = "", inquirySettings = I
     customization: customizationLevels[defaultOptionIndex] ?? customizationLevels[0] ?? "",
     budget: budgetOptions[0] ?? "",
     timeline: timelineOptions[defaultOptionIndex] ?? timelineOptions[0] ?? "",
+    contactName: "",
+    email: "",
+    phone: "",
     references: "",
     details: "",
   }));
   const [copyLabel, setCopyLabel] = useState("문의 내용 복사");
+  const [submitState, setSubmitState] = useState({ status: "idle", message: "" });
 
   const selectedSample = sampleOptions.find((item) => item.id === form.sampleId);
   const inquiryText = [
@@ -129,6 +134,9 @@ function ContactBrief({ sampleOptions, initialSampleId = "", inquirySettings = I
     `커스터마이징 범위: ${form.customization}`,
     `예산 범위: ${form.budget}`,
     `희망 일정: ${form.timeline}`,
+    `이름: ${form.contactName || "없음"}`,
+    `이메일: ${form.email || "없음"}`,
+    `연락처: ${form.phone || "없음"}`,
     `참조 사이트 / 이미지: ${form.references || "없음"}`,
     `문의 내용: ${form.details || "없음"}`,
   ].join("\n");
@@ -146,6 +154,47 @@ function ContactBrief({ sampleOptions, initialSampleId = "", inquirySettings = I
 
   function updateField(key, value) {
     setForm((current) => ({ ...current, [key]: value }));
+  }
+
+  async function handleSubmit() {
+    if (!form.contactName.trim()) {
+      setSubmitState({ status: "error", message: "이름을 입력해 주세요." });
+      return;
+    }
+
+    if (!form.email.trim() && !form.phone.trim()) {
+      setSubmitState({ status: "error", message: "이메일 또는 연락처를 하나 이상 입력해 주세요." });
+      return;
+    }
+
+    if (!form.details.trim()) {
+      setSubmitState({ status: "error", message: "문의 내용을 입력해 주세요." });
+      return;
+    }
+
+    setSubmitState({ status: "submitting", message: "문의 내용을 서버에 저장하고 있습니다." });
+
+    try {
+      const result = await submitInquiry({
+        sampleId: form.sampleId,
+        sampleBrand: selectedSample?.brand ?? "",
+        plan: form.plan,
+        customization: form.customization,
+        budget: form.budget,
+        timeline: form.timeline,
+        contactName: form.contactName,
+        email: form.email,
+        phone: form.phone,
+        references: form.references,
+        details: form.details,
+        sourcePath: window.location.pathname,
+      });
+
+      const storageNote = result?.storage?.note ? ` ${result.storage.note}` : "";
+      setSubmitState({ status: "success", message: `문의가 저장되었습니다.${storageNote}` });
+    } catch (error) {
+      setSubmitState({ status: "error", message: error.message || "문의 저장에 실패했습니다." });
+    }
   }
 
   return (
@@ -182,6 +231,36 @@ function ContactBrief({ sampleOptions, initialSampleId = "", inquirySettings = I
               </option>
             ))}
           </select>
+        </label>
+
+        <label className="hub-brief-field">
+          <span>이름</span>
+          <input
+            type="text"
+            value={form.contactName}
+            onChange={(event) => updateField("contactName", event.target.value)}
+            placeholder="성함 또는 업체명을 적어주세요."
+          />
+        </label>
+
+        <label className="hub-brief-field">
+          <span>이메일</span>
+          <input
+            type="email"
+            value={form.email}
+            onChange={(event) => updateField("email", event.target.value)}
+            placeholder="답변 받을 이메일"
+          />
+        </label>
+
+        <label className="hub-brief-field">
+          <span>연락처</span>
+          <input
+            type="tel"
+            value={form.phone}
+            onChange={(event) => updateField("phone", event.target.value)}
+            placeholder="010-0000-0000"
+          />
         </label>
 
         <label className="hub-brief-field">
@@ -229,11 +308,22 @@ function ContactBrief({ sampleOptions, initialSampleId = "", inquirySettings = I
       </label>
 
       <div className="hub-brief-actions">
-        <button type="button" className="hub-topbar__cta" onClick={handleCopy}>
-          <Copy size={15} />
-          {copyLabel}
-        </button>
+        <div className="hub-brief-actions__row">
+          <button type="button" className="hub-topbar__cta hub-topbar__cta--soft" onClick={handleCopy}>
+            <Copy size={15} />
+            {copyLabel}
+          </button>
+          <button type="button" className="hub-topbar__cta" onClick={handleSubmit} disabled={submitState.status === "submitting"}>
+            <SendHorizontal size={15} />
+            {submitState.status === "submitting" ? "저장 중..." : "문의하기"}
+          </button>
+        </div>
         <p className="hub-contact-note">복사한 내용을 크몽, 숨고, 메일, 오픈채팅, DM 등에 그대로 붙여넣어 문의할 수 있습니다.</p>
+        {submitState.message ? (
+          <p className={`hub-feedback-note hub-feedback-note--${submitState.status === "error" ? "error" : "success"}`.trim()}>
+            {submitState.message}
+          </p>
+        ) : null}
       </div>
     </div>
   );

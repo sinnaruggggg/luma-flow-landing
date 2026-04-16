@@ -35,6 +35,7 @@ design/stitch/*/screens/
 design/stitch/*/metadata.json
 design/stitch/*/prompts/
 tmp/
+data/*.json
 
 # Local assistant docs
 AGENTS.md
