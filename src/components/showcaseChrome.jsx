@@ -27,6 +27,11 @@ const FEATURE_ITEMS = [
   { title: "빠른 수정 대응", text: "시안 확정 후 텍스트, 섹션, CTA 흐름을 빠르게 정리할 수 있습니다." },
 ];
 
+const INQUIRY_RECOVERY_NOTICE = {
+  title: "재접수 안내",
+  text: "2026년 4월 16일 오후 9시 21분 이전에 문의하신 경우 저장 누락 가능성이 있어, 아래 폼으로 다시 접수해 주세요.",
+};
+
 function scrollToSection(sectionId) {
   const target = document.getElementById(sectionId);
   if (!target) return;
@@ -512,6 +517,10 @@ export function GalleryHome({
                 ))}
               </div>
             ) : null}
+            <article className="hub-contact-alert" aria-label="문의 재접수 안내">
+              <strong>{INQUIRY_RECOVERY_NOTICE.title}</strong>
+              <p>{INQUIRY_RECOVERY_NOTICE.text}</p>
+            </article>
             <div className="hub-contact-layout">
               <ContactBrief key={selectedContactSiteId || "default-contact-brief"} sampleOptions={sampleOptions} initialSampleId={selectedContactSiteId} inquirySettings={inquirySettings} />
 
