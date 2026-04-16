@@ -325,14 +325,15 @@ Asset type: ${entry.assetType}
 Primary request: Create a customer-facing commercial website image for ${industry.company}, a ${industry.label}. This asset will be used on a real service landing page and must feel production-ready.
 Scene/backdrop: ${entry.promptFocus}. Keep the setting specific to ${industry.label} and consistent with the brand story.
 Subject: A premium visual for ${industry.company} that supports the landing page narrative, using the core offer "${industry.offers[0][0]}" or the brand promise "${industry.title}" as guidance.
-Style/medium: Photorealistic commercial photography or polished editorial product visualization; incorporate ${style.promptStyle}.
+People/casting: If any human subject, face, body, hand, or reflection appears, use only Korean adult models with contemporary Korean styling and believable real-world proportions.
+Style/medium: Photorealistic commercial photography or polished editorial product visualization; incorporate ${style.promptStyle}. Prefer a real-photo editorial campaign look over illustration, cartoon styling, or synthetic character art.
 Composition/framing: 16:9 website-friendly composition with strong focal point, clean edges, and room for interface cropping if needed.
 Lighting/mood: High-end commercial lighting, intentional, trend-aware, customer-facing, believable, not generic stock.
 Color palette: ${style.palette}.
 Materials/textures: Realistic surfaces, premium textures, subtle depth, no fake CGI plastic look unless the style clearly supports it.
 Text (verbatim): ""
 Constraints: No watermark, no readable logos, no visible third-party branding, no text overlay, suitable for a real homepage, visually coherent with the ${sample.name} design direction.
-Avoid: Cheap stock-photo look, clutter, collage of unrelated objects, meme style, unreadable signage, generic template composition.`;
+Avoid: Cheap stock-photo look, clutter, collage of unrelated objects, meme style, unreadable signage, generic template composition, western fashion-campaign casting, illustrated faces, cartoon people, mannequin-like skin, or synthetic influencer aesthetics.`;
 }
 
 export function buildIndustryImageManifest(styleSamples) {

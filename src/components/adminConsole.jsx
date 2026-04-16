@@ -53,9 +53,18 @@ function MetricCard({ label, value, note }) {
   );
 }
 
+const ADMIN_TABS = [
+  { id: "overview", label: "상태", tone: "overview" },
+  { id: "submissions", label: "문의", tone: "submissions" },
+  { id: "copy", label: "문구", tone: "copy" },
+  { id: "inquiry", label: "견적", tone: "inquiry" },
+  { id: "samples", label: "샘플", tone: "samples" },
+];
+
 export function AdminConsole({ adminState, onSave, onReset, onBack }) {
   const [draft, setDraft] = useState(() => cloneState(adminState));
   const [flashMessage, setFlashMessage] = useState("");
+  const [activeTab, setActiveTab] = useState("overview");
   const [adminToken, setAdminTokenState] = useState(() => getAdminToken());
   const [authStatus, setAuthStatus] = useState(() => (getAdminToken() ? "checking" : "logged_out"));
   const [authForm, setAuthForm] = useState({ username: "", password: "" });
@@ -122,6 +131,33 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
   const emptyChannelState = draft.inquiry.externalChannels.length === 0;
   const isLoggedIn = authStatus === "logged_in";
   const inquiryCount = inquiryState.items.length;
+  const adminTabs = useMemo(() => ([
+    {
+      ...ADMIN_TABS[0],
+      value: `${visibleSites.length}/${previewSites.length}`,
+      hint: hiddenCount > 0 ? `숨김 ${hiddenCount}` : "노출 중",
+    },
+    {
+      ...ADMIN_TABS[1],
+      value: `${inquiryCount}건`,
+      hint: inquiryState.loading ? "동기화 중" : "접수 내역",
+    },
+    {
+      ...ADMIN_TABS[2],
+      value: hasChanges ? "수정중" : "안정",
+      hint: "메인 카피",
+    },
+    {
+      ...ADMIN_TABS[3],
+      value: `${draft.inquiry.pricingPlans.length}플랜`,
+      hint: `채널 ${draft.inquiry.externalChannels.length}`,
+    },
+    {
+      ...ADMIN_TABS[4],
+      value: `${previewSites.length}개`,
+      hint: `${fullyReadyCount}개 공개`,
+    },
+  ]), [draft.inquiry.externalChannels.length, draft.inquiry.pricingPlans.length, fullyReadyCount, hasChanges, hiddenCount, inquiryCount, inquiryState.loading, previewSites.length, visibleSites.length]);
 
   function updateContentField(key, value) {
     setDraft((current) => ({
@@ -288,24 +324,24 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
           <div className="admin-topbar__actions">
             <button type="button" className="admin-button admin-button--secondary" onClick={onBack}>
               <ArrowLeft size={16} />
-              갤러리로
+              갤러리
             </button>
             {isLoggedIn ? (
               <>
                 <button type="button" className="admin-button admin-button--ghost" onClick={handleRefreshInquiries} disabled={inquiryState.loading}>
                   <RefreshCw size={16} />
-                  문의 새로고침
+                  새로고침
                 </button>
                 <button type="button" className="admin-button admin-button--ghost" onClick={handleResetDraft} disabled={!hasChanges}>
-                  저장 취소
+                  되돌리기
                 </button>
                 <button type="button" className="admin-button admin-button--ghost" onClick={handleResetAll}>
                   <RotateCcw size={16} />
-                  초기값 복원
+                  초기화
                 </button>
                 <button type="button" className="hub-topbar__cta admin-button admin-button--primary" onClick={handleSave} disabled={!hasChanges}>
                   <Save size={16} />
-                  변경 저장
+                  저장
                 </button>
                 <button type="button" className="admin-button admin-button--ghost" onClick={handleLogout}>
                   <LogOut size={16} />
@@ -321,8 +357,8 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
             <span className="hub-section__eyebrow">Admin</span>
             <h1>sinnaruggggg_admin</h1>
             <p>
-              문의 폼으로 접수된 내용을 확인하고, 메인 문구와 샘플 노출 상태를 함께 운영할 수 있게 정리했습니다.
-              갤러리 운영 설정은 브라우저 로컬에 저장되고, 문의 접수는 서버 API를 통해 따로 저장됩니다.
+              문의 확인, 핵심 문구 수정, 샘플 노출 제어만 빠르게 다루도록 관리자 화면을 묶었습니다.
+              갤러리 설정은 로컬에 저장되고 문의 접수는 서버 API로 따로 저장됩니다.
             </p>
           </div>
           <div className="admin-hero__status">
@@ -374,37 +410,56 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
           </section>
         ) : (
           <>
-        <section className="hub-section admin-section" aria-labelledby="admin-dashboard-heading">
+            <nav className="admin-tabs" aria-label="관리자 메뉴">
+              {adminTabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  className={`admin-tab ${activeTab === tab.id ? "is-active" : ""}`.trim()}
+                  data-tone={tab.tone}
+                  aria-pressed={activeTab === tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                >
+                  <span className="admin-tab__label">{tab.label}</span>
+                  <strong className="admin-tab__value">{tab.value}</strong>
+                  <span className="admin-tab__hint">{tab.hint}</span>
+                </button>
+              ))}
+            </nav>
+        {activeTab === "overview" ? (
+        <section className="hub-section admin-section" data-tone="overview" aria-labelledby="admin-dashboard-heading">
           <div className="hub-section__header">
-            <span className="hub-section__eyebrow">Dashboard</span>
-            <h2 id="admin-dashboard-heading">현재 운영 상태</h2>
-            <p>노출 샘플 수와 제작 완료 상태를 한 번에 확인할 수 있습니다.</p>
+            <span className="hub-section__eyebrow">Status</span>
+            <h2 id="admin-dashboard-heading">상태 보드</h2>
+            <p>공개 수, 제작 진행, 문의 흐름만 빠르게 확인합니다.</p>
           </div>
           <div className="admin-metric-grid">
-            <MetricCard label="노출 샘플" value={`${visibleSites.length}/${previewSites.length}`} note={`${hiddenCount}개는 숨김 처리됨`} />
-            <MetricCard label="전체 공개" value={`${fullyReadyCount}개`} note="모든 라우트가 준비된 샘플" />
-            <MetricCard label="제작 중" value={`${partialReadyCount}개`} note="일부 라우트만 공개된 샘플" />
-            <MetricCard label="문의 채널" value={`${draft.inquiry.externalChannels.length}개`} note="관리자에서 직접 수정 가능" />
-            <MetricCard label="문의 접수" value={`${inquiryCount}건`} note="서버에 저장된 문의 내역" />
+            <MetricCard label="노출 샘플" value={`${visibleSites.length}/${previewSites.length}`} note={hiddenCount > 0 ? `숨김 ${hiddenCount}개` : "전체 노출"} />
+            <MetricCard label="전체 공개" value={`${fullyReadyCount}개`} note="모든 라우트 준비 완료" />
+            <MetricCard label="제작 중" value={`${partialReadyCount}개`} note="일부 라우트만 공개" />
+            <MetricCard label="문의 채널" value={`${draft.inquiry.externalChannels.length}개`} note="외부 채널 연결 상태" />
+            <MetricCard label="문의 접수" value={`${inquiryCount}건`} note="서버 저장 기준" />
           </div>
         </section>
+        ) : null}
 
-        <section className="hub-section admin-section" aria-labelledby="admin-submissions-heading">
+        {activeTab === "submissions" ? (
+        <section className="hub-section admin-section" data-tone="submissions" aria-labelledby="admin-submissions-heading">
           <div className="hub-section__header">
             <span className="hub-section__eyebrow">Submissions</span>
-            <h2 id="admin-submissions-heading">문의 접수 내역</h2>
-            <p>문의하기 버튼으로 저장된 내용을 여기서 확인할 수 있습니다.</p>
+            <h2 id="admin-submissions-heading">문의</h2>
+            <p>문의 버튼으로 저장된 접수 내용을 여기서 확인합니다.</p>
           </div>
 
           <div className="admin-panel">
             <div className="admin-panel__header admin-panel__header--spread">
               <div>
-                <strong>서버 저장 상태</strong>
+                <strong>저장 상태</strong>
                 <p>{inquiryState.storage?.note || "문의 저장 방식을 확인하는 중입니다."}</p>
               </div>
               <button type="button" className="admin-button admin-button--secondary" onClick={handleRefreshInquiries} disabled={inquiryState.loading}>
                 <RefreshCw size={16} />
-                {inquiryState.loading ? "불러오는 중..." : "새로고침"}
+                {inquiryState.loading ? "동기화 중..." : "새로고침"}
               </button>
             </div>
 
@@ -445,12 +500,14 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
             )}
           </div>
         </section>
+        ) : null}
 
-        <section className="hub-section admin-section" aria-labelledby="admin-copy-heading">
+        {activeTab === "copy" ? (
+        <section className="hub-section admin-section" data-tone="copy" aria-labelledby="admin-copy-heading">
           <div className="hub-section__header">
             <span className="hub-section__eyebrow">Copy</span>
-            <h2 id="admin-copy-heading">메인 문구 관리</h2>
-            <p>홈 화면에서 자주 바뀌는 주요 카피만 먼저 관리자에서 바꿀 수 있게 뽑았습니다.</p>
+            <h2 id="admin-copy-heading">문구</h2>
+            <p>홈 핵심 카피만 빠르게 수정합니다.</p>
           </div>
           <div className="admin-form-grid">
             <label className="admin-field admin-field--wide">
@@ -458,11 +515,11 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
               <textarea rows={2} value={draft.content.heroTitle} onChange={(event) => updateContentField("heroTitle", event.target.value)} />
             </label>
             <label className="admin-field admin-field--wide">
-              <span>샘플 소개 문구</span>
+              <span>샘플 소개</span>
               <textarea rows={3} value={draft.content.showcaseDescription} onChange={(event) => updateContentField("showcaseDescription", event.target.value)} />
             </label>
             <label className="admin-field">
-              <span>제작 방식 제목</span>
+              <span>제작 방식</span>
               <input type="text" value={draft.content.processHeading} onChange={(event) => updateContentField("processHeading", event.target.value)} />
             </label>
             <label className="admin-field">
@@ -487,18 +544,20 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
             </label>
           </div>
         </section>
+        ) : null}
 
-        <section className="hub-section admin-section" aria-labelledby="admin-inquiry-heading">
+        {activeTab === "inquiry" ? (
+        <section className="hub-section admin-section" data-tone="inquiry" aria-labelledby="admin-inquiry-heading">
           <div className="hub-section__header">
             <span className="hub-section__eyebrow">Inquiry</span>
-            <h2 id="admin-inquiry-heading">문의/견적 설정</h2>
-            <p>문의 폼, 가격 카드, 외부 채널 안내에 쓰는 데이터를 여기서 관리합니다.</p>
+            <h2 id="admin-inquiry-heading">견적·채널</h2>
+            <p>플랜, 폼 옵션, 외부 채널을 묶어서 관리합니다.</p>
           </div>
 
           <div className="admin-panel">
             <div className="admin-panel__header">
-              <strong>가격 플랜</strong>
-              <p>가격 카드와 문의 폼의 플랜 선택 옵션을 함께 바꿉니다.</p>
+              <strong>플랜</strong>
+              <p>가격 카드와 문의 폼 선택 옵션을 함께 바꿉니다.</p>
             </div>
             <div className="admin-plan-grid">
               {draft.inquiry.pricingPlans.map((plan, index) => (
@@ -518,12 +577,12 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
                     <textarea rows={3} value={plan.description} onChange={(event) => updatePlanField(index, "description", event.target.value)} />
                   </label>
                   <label className="admin-field">
-                    <span>구성 항목</span>
+                    <span>구성</span>
                     <textarea rows={4} value={toLineText(plan.items)} onChange={(event) => updatePlanItems(index, event.target.value)} />
                   </label>
                   <label className="admin-toggle">
                     <input type="checkbox" checked={plan.featured} onChange={(event) => updatePlanField(index, "featured", event.target.checked)} />
-                    대표 플랜으로 강조
+                    대표 플랜
                   </label>
                 </article>
               ))}
@@ -534,12 +593,12 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
             <label className="admin-field">
               <span>문의 포인트</span>
               <textarea rows={5} value={toLineText(draft.inquiry.contactPoints)} onChange={(event) => updateInquiryList("contactPoints", event.target.value)} />
-              <small>줄바꿈으로 항목을 구분합니다.</small>
+              <small>줄바꿈으로 구분합니다.</small>
             </label>
             <label className="admin-field">
-              <span>커스터마이징 옵션</span>
+              <span>커스텀 옵션</span>
               <textarea rows={5} value={toLineText(draft.inquiry.customizationLevels)} onChange={(event) => updateInquiryList("customizationLevels", event.target.value)} />
-              <small>문의 폼 셀렉트 옵션으로 사용됩니다.</small>
+              <small>문의 폼 셀렉트에 사용됩니다.</small>
             </label>
             <label className="admin-field">
               <span>예산 옵션</span>
@@ -554,8 +613,8 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
           <div className="admin-panel">
             <div className="admin-panel__header admin-panel__header--spread">
               <div>
-                <strong>외부 문의 채널</strong>
-                <p>크몽, 숨고, 메일 같은 외부 문의 채널을 관리자에서 수정할 수 있습니다.</p>
+                <strong>외부 채널</strong>
+                <p>크몽, 숨고, 메일 같은 문의 채널을 관리합니다.</p>
               </div>
               <button type="button" className="admin-button admin-button--secondary" onClick={addChannel}>
                 채널 추가
@@ -590,12 +649,14 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
             </div>
           </div>
         </section>
+        ) : null}
 
-        <section className="hub-section admin-section" aria-labelledby="admin-samples-heading">
+        {activeTab === "samples" ? (
+        <section className="hub-section admin-section" data-tone="samples" aria-labelledby="admin-samples-heading">
           <div className="hub-section__header">
             <span className="hub-section__eyebrow">Samples</span>
-            <h2 id="admin-samples-heading">샘플 관리와 노출 제어</h2>
-            <p>갤러리 카드 순서, 노출 여부, 상단 표기용 브랜드 정보와 요약을 바로 수정할 수 있습니다.</p>
+            <h2 id="admin-samples-heading">샘플</h2>
+            <p>노출, 순서, 브랜드 표기만 빠르게 제어합니다.</p>
           </div>
           <div className="admin-sample-grid">
             {previewSites.map((site) => (
@@ -615,7 +676,7 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
 
                 <div className="admin-form-row">
                   <label className="admin-field admin-field--compact">
-                    <span>정렬 순서</span>
+                    <span>정렬</span>
                     <input
                       type="number"
                       min="0"
@@ -638,11 +699,11 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
                   <input type="text" value={site.industry} onChange={(event) => updateSample(site.id, "industry", event.target.value)} />
                 </label>
                 <label className="admin-field">
-                  <span>홈 무드 한 줄</span>
+                  <span>홈 무드</span>
                   <input type="text" value={site.homeMode} onChange={(event) => updateSample(site.id, "homeMode", event.target.value)} />
                 </label>
                 <label className="admin-field">
-                  <span>갤러리 요약</span>
+                  <span>요약</span>
                   <textarea rows={4} value={site.summary} onChange={(event) => updateSample(site.id, "summary", event.target.value)} />
                 </label>
 
@@ -650,11 +711,12 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
                   <span>완성 라우트 {site.gallery.readyRoutes}/{site.gallery.totalRoutes}</span>
                   <span>{site.gallery.homeReady ? "홈 공개 가능" : "홈 미완성"}</span>
                 </div>
-                <p className="admin-help">이 수정은 갤러리 카드와 상세 상단 정보에 반영됩니다. 샘플 안쪽 HTML 화면은 별도로 수정해야 합니다.</p>
+                <p className="admin-help">갤러리 카드와 상세 상단 정보에만 반영됩니다. 샘플 내부 HTML은 별도 수정이 필요합니다.</p>
               </article>
             ))}
           </div>
         </section>
+        ) : null}
           </>
         )}
       </div>

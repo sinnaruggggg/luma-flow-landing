@@ -175,7 +175,7 @@ function ContactBrief({ sampleOptions, initialSampleId = "", inquirySettings = I
     setSubmitState({ status: "submitting", message: "문의 내용을 서버에 저장하고 있습니다." });
 
     try {
-      const result = await submitInquiry({
+      await submitInquiry({
         sampleId: form.sampleId,
         sampleBrand: selectedSample?.brand ?? "",
         plan: form.plan,
@@ -190,8 +190,7 @@ function ContactBrief({ sampleOptions, initialSampleId = "", inquirySettings = I
         sourcePath: window.location.pathname,
       });
 
-      const storageNote = result?.storage?.note ? ` ${result.storage.note}` : "";
-      setSubmitState({ status: "success", message: `문의가 저장되었습니다.${storageNote}` });
+      setSubmitState({ status: "success", message: "문의사항이 접수되었습니다." });
     } catch (error) {
       setSubmitState({ status: "error", message: error.message || "문의 저장에 실패했습니다." });
     }
