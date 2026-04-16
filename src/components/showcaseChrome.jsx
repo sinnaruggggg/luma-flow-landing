@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ChevronRight, Clock3, Copy, ExternalLink, Monitor, Smartphone } from "lucide-react";
+import { GALLERY_COPY_DEFAULTS, INQUIRY_DEFAULTS } from "../content/siteAdminDefaults";
 import { buildSitePath, siteRegistry } from "../content/siteRegistry";
 import { themeStyle, useBackdropPointer } from "../lib/showcaseUtils";
 import { SceneBackdrop, ShowcasePhone, WebForgeMark } from "./showcaseAtoms";
 
-const PRIORITY_SITE_IDS = ["indie-bookstore", "stationery-shop", "local-cafe", "boutique-hotel"];
 const TOP_NAV_ITEMS = [
   { label: "샘플 둘러보기", sectionId: "samples" },
   { label: "제작 방식", sectionId: "process" },
@@ -26,68 +26,12 @@ const FEATURE_ITEMS = [
   { title: "빠른 수정 대응", text: "시안 확정 후 텍스트, 섹션, CTA 흐름을 빠르게 정리할 수 있습니다." },
 ];
 
-const PRICING_PLANS = [
-  { name: "시작형", price: "149,000원", description: "가볍게 시작하는 기본형입니다. 소개 화면을 빠르게 만들고 싶은 경우에 맞습니다.", items: ["랜딩 1페이지 + 1~3페이지", "문구·이미지 교체", "모바일 최적화"] },
-  { name: "기본형", price: "299,000원", description: "가장 많이 선택하는 구성입니다. 문의 유도와 화면 구성을 함께 다듬습니다.", items: ["핵심 섹션 확장", "CTA·문의 흐름 구성", "기본 수정 2회"], featured: true },
-  { name: "확장형", price: "499,000원", description: "페이지 추가나 커스터마이징 범위가 더 큰 경우에 맞는 확장형입니다.", items: ["서브 페이지 추가", "예약·상담 흐름 설계", "배포 반영 지원"] },
-];
-
-const CONTACT_POINTS = [
-  "원하는 샘플 1개 고르기",
-  "어디까지 바꿀지 정하기",
-  "참조 링크와 이미지를 함께 보내기",
-];
-
-const CUSTOMIZATION_LEVELS = [
-  "문구와 이미지 정도만 바꾸기",
-  "섹션 순서와 구성을 조금 바꾸기",
-  "페이지 추가와 기능까지 같이 바꾸기",
-];
-
-const BUDGET_OPTIONS = [
-  "149,000원 ~ 299,000원",
-  "300,000원 ~ 499,000원",
-  "500,000원 이상",
-];
-
-const TIMELINE_OPTIONS = ["1주 이내", "2주 이내", "3주 이상"];
-
-const EXTERNAL_REQUEST_CHANNELS = [
-  {
-    name: "크몽",
-    href: "https://kmong.com",
-    description: "공식 사이트에서 홈페이지 제작 또는 랜딩페이지 제작으로 검색한 뒤, 아래 문의 내용을 붙여넣어 요청하세요.",
-  },
-  {
-    name: "숨고",
-    href: "https://soomgo.com",
-    description: "요청서에 샘플명, 예산, 일정, 참조 링크를 함께 적으면 비교와 상담이 더 빨라집니다.",
-  },
-];
-
 function scrollToSection(sectionId) {
   const target = document.getElementById(sectionId);
   if (!target) return;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const top = target.getBoundingClientRect().top + window.scrollY - 104;
   window.scrollTo({ top, behavior: reduceMotion ? "auto" : "smooth" });
-}
-
-function orderSites(sites) {
-  const rank = new Map(PRIORITY_SITE_IDS.map((siteId, index) => [siteId, index]));
-
-  return [...sites].sort((left, right) => {
-    const leftRank = rank.get(left.id);
-    const rightRank = rank.get(right.id);
-
-    if (leftRank !== undefined || rightRank !== undefined) {
-      if (leftRank === undefined) return 1;
-      if (rightRank === undefined) return -1;
-      return leftRank - rightRank;
-    }
-
-    return left.brand.localeCompare(right.brand);
-  });
 }
 
 function coverageLabel(site) {
@@ -158,13 +102,20 @@ function PreviewSurface({ stage, title, className = "", loading = "lazy", mode =
   );
 }
 
-function ContactBrief({ sampleOptions, initialSampleId = "" }) {
+function ContactBrief({ sampleOptions, initialSampleId = "", inquirySettings = INQUIRY_DEFAULTS }) {
+  const pricingPlans = inquirySettings.pricingPlans?.length ? inquirySettings.pricingPlans : INQUIRY_DEFAULTS.pricingPlans;
+  const customizationLevels = inquirySettings.customizationLevels?.length ? inquirySettings.customizationLevels : INQUIRY_DEFAULTS.customizationLevels;
+  const budgetOptions = inquirySettings.budgetOptions?.length ? inquirySettings.budgetOptions : INQUIRY_DEFAULTS.budgetOptions;
+  const timelineOptions = inquirySettings.timelineOptions?.length ? inquirySettings.timelineOptions : INQUIRY_DEFAULTS.timelineOptions;
+  const defaultPlanIndex = Math.min(1, Math.max(pricingPlans.length - 1, 0));
+  const defaultOptionIndex = Math.min(1, Math.max(customizationLevels.length - 1, 0));
+
   const [form, setForm] = useState(() => ({
     sampleId: (initialSampleId || sampleOptions[0]?.id) ?? "",
-    plan: PRICING_PLANS[1]?.name ?? "",
-    customization: CUSTOMIZATION_LEVELS[1],
-    budget: BUDGET_OPTIONS[0],
-    timeline: TIMELINE_OPTIONS[1],
+    plan: pricingPlans[defaultPlanIndex]?.name ?? "",
+    customization: customizationLevels[defaultOptionIndex] ?? customizationLevels[0] ?? "",
+    budget: budgetOptions[0] ?? "",
+    timeline: timelineOptions[defaultOptionIndex] ?? timelineOptions[0] ?? "",
     references: "",
     details: "",
   }));
@@ -214,7 +165,7 @@ function ContactBrief({ sampleOptions, initialSampleId = "" }) {
         <label className="hub-brief-field">
           <span>예상 플랜</span>
           <select value={form.plan} onChange={(event) => updateField("plan", event.target.value)}>
-            {PRICING_PLANS.map((plan) => (
+            {pricingPlans.map((plan) => (
               <option key={plan.name} value={plan.name}>
                 {plan.name} · {plan.price}
               </option>
@@ -225,7 +176,7 @@ function ContactBrief({ sampleOptions, initialSampleId = "" }) {
         <label className="hub-brief-field">
           <span>커스터마이징 정도</span>
           <select value={form.customization} onChange={(event) => updateField("customization", event.target.value)}>
-            {CUSTOMIZATION_LEVELS.map((item) => (
+            {customizationLevels.map((item) => (
               <option key={item} value={item}>
                 {item}
               </option>
@@ -236,7 +187,7 @@ function ContactBrief({ sampleOptions, initialSampleId = "" }) {
         <label className="hub-brief-field">
           <span>예산 범위</span>
           <select value={form.budget} onChange={(event) => updateField("budget", event.target.value)}>
-            {BUDGET_OPTIONS.map((item) => (
+            {budgetOptions.map((item) => (
               <option key={item} value={item}>
                 {item}
               </option>
@@ -247,7 +198,7 @@ function ContactBrief({ sampleOptions, initialSampleId = "" }) {
         <label className="hub-brief-field">
           <span>희망 일정</span>
           <select value={form.timeline} onChange={(event) => updateField("timeline", event.target.value)}>
-            {TIMELINE_OPTIONS.map((item) => (
+            {timelineOptions.map((item) => (
               <option key={item} value={item}>
                 {item}
               </option>
@@ -329,8 +280,19 @@ function GalleryCard({ site, onOpen, onContact, isSelectedForInquiry }) {
   );
 }
 
-export function GalleryHome({ onOpen, onContactSample, selectedContactSiteId = "" }) {
-  const orderedSites = orderSites(siteRegistry);
+export function GalleryHome({
+  sites = siteRegistry,
+  content = GALLERY_COPY_DEFAULTS,
+  inquirySettings = INQUIRY_DEFAULTS,
+  onOpen,
+  onContactSample,
+  selectedContactSiteId = "",
+}) {
+  const visibleSites = sites.filter((site) => site.admin?.visible !== false);
+  const sampleOptions = visibleSites.length > 0 ? visibleSites : sites;
+  const pricingPlans = inquirySettings.pricingPlans?.length ? inquirySettings.pricingPlans : INQUIRY_DEFAULTS.pricingPlans;
+  const contactPoints = inquirySettings.contactPoints ?? [];
+  const externalChannels = inquirySettings.externalChannels ?? [];
   const [pointerStyle, onPointerMove] = useBackdropPointer();
 
   useEffect(() => {
@@ -371,26 +333,33 @@ export function GalleryHome({ onOpen, onContactSample, selectedContactSiteId = "
 
         <section className="hub-hero hub-hero--minimal" aria-label="WebForge 소개">
           <div className="hub-hero__content hub-hero__content--minimal">
-            <h1>원하는 분위기의 샘플로 내 사이트를 빠르게 시작하세요</h1>
+            <h1>{content.heroTitle}</h1>
           </div>
         </section>
 
         <section id="samples" className="hub-section" aria-label="샘플 갤러리">
           <div className="hub-section__header">
             <span className="hub-section__eyebrow">Showcase</span>
-            <p>실제 홈페이지처럼 구성된 샘플을 보고, 가장 가까운 스타일과 구조를 빠르게 고를 수 있습니다.</p>
+            <p>{content.showcaseDescription}</p>
           </div>
-          <div className="hub-grid">
-            {orderedSites.map((site) => (
-              <GalleryCard key={site.id} site={site} onOpen={onOpen} onContact={handleContactSample} isSelectedForInquiry={selectedContactSiteId === site.id} />
-            ))}
-          </div>
+          {visibleSites.length > 0 ? (
+            <div className="hub-grid">
+              {visibleSites.map((site) => (
+                <GalleryCard key={site.id} site={site} onOpen={onOpen} onContact={handleContactSample} isSelectedForInquiry={selectedContactSiteId === site.id} />
+              ))}
+            </div>
+          ) : (
+            <div className="hub-empty-state">
+              <strong>현재 공개된 샘플이 없습니다.</strong>
+              <p>sinnaruggggg_admin 페이지에서 샘플 노출 설정을 다시 켜주세요.</p>
+            </div>
+          )}
         </section>
 
         <section id="process" className="hub-section" aria-labelledby="process-heading">
           <div className="hub-section__header">
             <span className="hub-section__eyebrow">How It Works</span>
-            <h2 id="process-heading">복잡하게 설명하지 않고, 빠르게 방향을 잡습니다.</h2>
+            <h2 id="process-heading">{content.processHeading}</h2>
           </div>
           <div className="hub-process-grid">
             {PROCESS_STEPS.map((item) => (
@@ -406,7 +375,7 @@ export function GalleryHome({ onOpen, onContactSample, selectedContactSiteId = "
         <section id="features" className="hub-section" aria-labelledby="features-heading">
           <div className="hub-section__header">
             <span className="hub-section__eyebrow">Features</span>
-            <h2 id="features-heading">실제로 필요한 기능만 정리해서 붙입니다.</h2>
+            <h2 id="features-heading">{content.featuresHeading}</h2>
           </div>
           <div className="hub-feature-grid">
             {FEATURE_ITEMS.map((item) => (
@@ -421,11 +390,11 @@ export function GalleryHome({ onOpen, onContactSample, selectedContactSiteId = "
         <section id="pricing" className="hub-section" aria-labelledby="pricing-heading">
           <div className="hub-section__header">
             <span className="hub-section__eyebrow">Pricing</span>
-            <h2 id="pricing-heading">149,000원부터 시작하는 3단계 요금으로 쉽게 고를 수 있습니다.</h2>
-            <p>복잡한 견적 대신 시작형, 기본형, 확장형으로 나눴습니다. 먼저 고르고, 필요한 만큼만 커스터마이징하면 됩니다.</p>
+            <h2 id="pricing-heading">{content.pricingHeading}</h2>
+            <p>{content.pricingDescription}</p>
           </div>
           <div className="hub-pricing-grid">
-            {PRICING_PLANS.map((plan) => (
+            {pricingPlans.map((plan) => (
               <article key={plan.name} className={`hub-price-card ${plan.featured ? "hub-price-card--featured" : ""}`.trim()}>
                 <span>{plan.name}</span>
                 <strong>{plan.price}</strong>
@@ -444,16 +413,18 @@ export function GalleryHome({ onOpen, onContactSample, selectedContactSiteId = "
           <div className="hub-contact-card">
             <div className="hub-section__header">
               <span className="hub-section__eyebrow">Contact</span>
-              <h2 id="contact-heading">샘플 선택부터 문의 정리까지 이 화면에서 바로 준비할 수 있습니다.</h2>
-              <p>어느 정도 커스터마이징할지 고르고, 참조 사이트나 이미지를 적고, 문의 내용을 작성한 뒤 복사해서 원하는 채널로 보내면 됩니다.</p>
+              <h2 id="contact-heading">{content.contactHeading}</h2>
+              <p>{content.contactDescription}</p>
             </div>
-            <div className="hub-contact-card__points">
-              {CONTACT_POINTS.map((item) => (
-                <span key={item}>{item}</span>
-              ))}
-            </div>
+            {contactPoints.length > 0 ? (
+              <div className="hub-contact-card__points">
+                {contactPoints.map((item) => (
+                  <span key={item}>{item}</span>
+                ))}
+              </div>
+            ) : null}
             <div className="hub-contact-layout">
-              <ContactBrief key={selectedContactSiteId || "default-contact-brief"} sampleOptions={orderedSites} initialSampleId={selectedContactSiteId} />
+              <ContactBrief key={selectedContactSiteId || "default-contact-brief"} sampleOptions={sampleOptions} initialSampleId={selectedContactSiteId} inquirySettings={inquirySettings} />
 
               <div className="hub-contact-side">
                 <article className="hub-contact-panel">
@@ -467,20 +438,26 @@ export function GalleryHome({ onOpen, onContactSample, selectedContactSiteId = "
 
                 <article className="hub-contact-panel">
                   <strong>외부 플랫폼으로도 요청할 수 있습니다.</strong>
-                  <p>아래 버튼은 공식 사이트로 연결됩니다. 복사한 문의 내용을 붙여넣어 요청서를 작성하면 됩니다.</p>
-                  <div className="hub-platform-grid">
-                    {EXTERNAL_REQUEST_CHANNELS.map((channel) => (
-                      <a key={channel.name} className="hub-link-button" href={channel.href} target="_blank" rel="noreferrer">
-                        <span>{channel.name}</span>
-                        <ExternalLink size={15} />
-                      </a>
-                    ))}
-                  </div>
-                  <div className="hub-platform-list">
-                    {EXTERNAL_REQUEST_CHANNELS.map((channel) => (
-                      <p key={channel.name}>{channel.description}</p>
-                    ))}
-                  </div>
+                  {externalChannels.length > 0 ? (
+                    <>
+                      <p>아래 버튼은 공식 사이트로 연결됩니다. 복사한 문의 내용을 붙여넣어 요청서를 작성하면 됩니다.</p>
+                      <div className="hub-platform-grid">
+                        {externalChannels.map((channel) => (
+                          <a key={`${channel.name}-${channel.href}`} className="hub-link-button" href={channel.href} target="_blank" rel="noreferrer">
+                            <span>{channel.name}</span>
+                            <ExternalLink size={15} />
+                          </a>
+                        ))}
+                      </div>
+                      <div className="hub-platform-list">
+                        {externalChannels.map((channel) => (
+                          <p key={`${channel.name}-${channel.description}`}>{channel.description}</p>
+                        ))}
+                      </div>
+                    </>
+                  ) : (
+                    <p>현재 연결된 외부 문의 채널이 없습니다. 관리자 페이지에서 메일, 숨고, 크몽 같은 채널을 추가할 수 있습니다.</p>
+                  )}
                 </article>
 
                 <article className="hub-contact-panel">

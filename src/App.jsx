@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion as Motion } from "framer-motion";
-import { parseSitePath, siteRegistryById } from "./content/siteRegistry";
+import { parseSitePath } from "./content/siteRegistry";
+import { AdminConsole } from "./components/adminConsole";
 import { useIsMobileClient } from "./lib/showcaseUtils";
+import { ADMIN_PATH, buildManagedSites, useAdminState } from "./lib/adminStore";
 import { GalleryHome, NotFound, SiteStaging, SiteView } from "./components/showcaseChrome";
 import "./site-app.css";
 
@@ -12,11 +14,17 @@ function readLocationState() {
   };
 }
 
+function normalizePathname(pathname) {
+  return pathname === "/index.html" ? "/" : pathname.replace(/\/+/g, "/").replace(/\/$/, "") || "/";
+}
+
 export default function App() {
   const [locationState, setLocationState] = useState(readLocationState);
   const [viewMode, setViewMode] = useState("desktop");
   const isMobileClient = useIsMobileClient();
-  const sitesById = useMemo(() => siteRegistryById, []);
+  const { adminState, saveAdminState, resetAdminState } = useAdminState();
+  const managedSites = useMemo(() => buildManagedSites(adminState), [adminState]);
+  const sitesById = useMemo(() => Object.fromEntries(managedSites.map((site) => [site.id, site])), [managedSites]);
 
   useEffect(() => {
     const onPopState = () => {
@@ -52,13 +60,26 @@ export default function App() {
     setLocationState(nextLocation);
   };
 
-  const routeState = parseSitePath(locationState.pathname);
+  const normalizedPath = normalizePathname(locationState.pathname);
+  const routeState = normalizedPath === ADMIN_PATH ? { kind: "admin" } : parseSitePath(locationState.pathname);
   const site = routeState.kind === "site" || routeState.kind === "staging" ? sitesById[routeState.siteId] : null;
   const selectedContactSiteId = routeState.kind === "gallery" ? new URLSearchParams(locationState.search).get("contact") ?? "" : "";
   const contactPathForSite = (siteId) => `/?contact=${siteId}`;
 
   return (
     <AnimatePresence mode="wait">
+      {routeState.kind === "admin" ? (
+        <Motion.div
+          key="admin"
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.26 }}
+        >
+          <AdminConsole adminState={adminState} onSave={saveAdminState} onReset={resetAdminState} onBack={() => navigate("/")} />
+        </Motion.div>
+      ) : null}
+
       {routeState.kind === "gallery" ? (
         <Motion.div
           key="gallery"
@@ -67,7 +88,14 @@ export default function App() {
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.26 }}
         >
-          <GalleryHome onOpen={navigate} onContactSample={(siteId) => navigate(contactPathForSite(siteId))} selectedContactSiteId={selectedContactSiteId} />
+          <GalleryHome
+            sites={managedSites}
+            content={adminState.content}
+            inquirySettings={adminState.inquiry}
+            onOpen={navigate}
+            onContactSample={(siteId) => navigate(contactPathForSite(siteId))}
+            selectedContactSiteId={selectedContactSiteId}
+          />
         </Motion.div>
       ) : null}
 
