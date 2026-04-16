@@ -3,7 +3,7 @@ import { ArrowLeft, LogOut, RefreshCw, RotateCcw, Save } from "lucide-react";
 import { createDefaultAdminState, buildManagedSites, getVisibleGallerySites, sanitizeAdminState } from "../lib/adminStore";
 import { clearAdminToken, fetchAdminInquiries, getAdminToken, loginAdmin, setAdminToken } from "../lib/inquiryApi";
 import { useBackdropPointer } from "../lib/showcaseUtils";
-import { SceneBackdrop, WebForgeMark } from "./showcaseAtoms";
+import { BrandMark, SceneBackdrop } from "./showcaseAtoms";
 
 function cloneState(value) {
   return JSON.parse(JSON.stringify(value));
@@ -314,7 +314,7 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
       <div className="hub-page__content admin-page__content">
         <header className="hub-topbar admin-topbar">
           <div className="hub-topbar__brand">
-            <WebForgeMark />
+            <BrandMark />
             <div>
               <strong>sinnaruggggg_admin</strong>
               <span>문의 접수 확인 + 갤러리 운영 설정 관리자</span>

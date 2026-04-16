@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ChevronRight, Clock3, Copy, ExternalLink, Monitor, SendHorizontal, Smartphone } from "lucide-react";
+import { BRAND_INQUIRY_HEADER, BRAND_INTRO_LABEL, BRAND_NAME } from "../content/brand";
 import { GALLERY_COPY_DEFAULTS, INQUIRY_DEFAULTS } from "../content/siteAdminDefaults";
 import { buildSitePath, siteRegistry } from "../content/siteRegistry";
 import { submitInquiry } from "../lib/inquiryApi";
 import { themeStyle, useBackdropPointer } from "../lib/showcaseUtils";
-import { SceneBackdrop, ShowcasePhone, WebForgeMark } from "./showcaseAtoms";
+import { BrandMark, SceneBackdrop, ShowcasePhone } from "./showcaseAtoms";
 
 const TOP_NAV_ITEMS = [
   { label: "샘플 둘러보기", sectionId: "samples" },
@@ -92,6 +93,69 @@ function patchStageRouteLinks(frame, site, onNavigate) {
   }
 }
 
+const VIEWPORT_CLASS_PATTERN = /\b(?:h|min-h|max-h)-screen\b|\b(?:h|min-h|max-h)-\[[^\]]*(?:dvh|svh|lvh|vh)[^\]]*\]/i;
+const VIEWPORT_STYLE_PATTERN = /\b\d+(?:\.\d+)?(?:dvh|svh|lvh|vh)\b/i;
+
+function hasViewportDrivenLayout(doc) {
+  const roots = [doc.documentElement, doc.body].filter(Boolean);
+
+  for (const root of roots) {
+    if (VIEWPORT_CLASS_PATTERN.test(root.getAttribute("class") || "")) {
+      return true;
+    }
+
+    if (VIEWPORT_STYLE_PATTERN.test(root.getAttribute("style") || "")) {
+      return true;
+    }
+  }
+
+  for (const styleTag of doc.querySelectorAll("style")) {
+    if (VIEWPORT_STYLE_PATTERN.test(styleTag.textContent || "")) {
+      return true;
+    }
+  }
+
+  for (const element of doc.querySelectorAll("[class],[style]")) {
+    if (VIEWPORT_CLASS_PATTERN.test(element.getAttribute("class") || "")) {
+      return true;
+    }
+
+    if (VIEWPORT_STYLE_PATTERN.test(element.getAttribute("style") || "")) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function measureStageDocumentHeight(frame, viewportHeight) {
+  const doc = frame.contentDocument;
+  if (!doc) return 0;
+
+  const previousHeight = frame.style.height;
+  const measurementHeight = `${Math.max(1, Math.round(viewportHeight))}px`;
+  const shouldRestoreHeight = previousHeight !== measurementHeight;
+
+  // Measure long pages against a stable viewport height so vh/dvh sections do not keep inflating.
+  if (shouldRestoreHeight) {
+    frame.style.height = measurementHeight;
+  }
+
+  const nextHeight = Math.max(
+    doc.body?.scrollHeight ?? 0,
+    doc.body?.offsetHeight ?? 0,
+    doc.documentElement?.scrollHeight ?? 0,
+    doc.documentElement?.offsetHeight ?? 0,
+    doc.documentElement?.clientHeight ?? 0,
+  );
+
+  if (shouldRestoreHeight) {
+    frame.style.height = previousHeight;
+  }
+
+  return nextHeight;
+}
+
 function PreviewSurface({ stage, title, className = "", loading = "lazy", mode = "desktop" }) {
   const hasLivePreview = Boolean(stage.html);
 
@@ -133,7 +197,7 @@ function ContactBrief({ sampleOptions, initialSampleId = "", inquirySettings = I
 
   const selectedSample = sampleOptions.find((item) => item.id === form.sampleId);
   const inquiryText = [
-    "[WebForge 문의 정리]",
+    BRAND_INQUIRY_HEADER,
     `선택한 샘플: ${selectedSample ? selectedSample.brand : "미정"}`,
     `예상 플랜: ${form.plan}`,
     `커스터마이징 범위: ${form.customization}`,
@@ -410,9 +474,9 @@ export function GalleryHome({
       <div className="hub-page__content">
         <header className="hub-topbar">
           <div className="hub-topbar__brand">
-            <WebForgeMark />
+            <BrandMark />
             <div>
-              <strong>WebForge</strong>
+              <strong>{BRAND_NAME}</strong>
             </div>
           </div>
           <nav className="hub-topbar__nav" aria-label="메인 메뉴">
@@ -425,7 +489,7 @@ export function GalleryHome({
           <button type="button" className="hub-topbar__cta" onClick={() => scrollToSection("contact")}>사이트 만들기</button>
         </header>
 
-        <section className="hub-hero hub-hero--minimal" aria-label="WebForge 소개">
+        <section className="hub-hero hub-hero--minimal" aria-label={BRAND_INTRO_LABEL}>
           <div className="hub-hero__content hub-hero__content--minimal">
             <h1>{content.heroTitle}</h1>
           </div>
@@ -625,6 +689,8 @@ function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
     const frame = frameRef.current;
     let resizeObserver;
     let rafId = 0;
+    let viewportDrivenLayout = false;
+    let layoutModeResolved = false;
 
     const syncFrame = () => {
       const doc = frame.contentDocument;
@@ -632,16 +698,18 @@ function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
 
       patchStageRouteLinks(frame, site, onNavigate);
 
-      const nextHeight = Math.max(
-        doc.body?.scrollHeight ?? 0,
-        doc.body?.offsetHeight ?? 0,
-        doc.documentElement?.scrollHeight ?? 0,
-        doc.documentElement?.offsetHeight ?? 0,
-        doc.documentElement?.clientHeight ?? 0,
-      );
+      if (!layoutModeResolved) {
+        viewportDrivenLayout = hasViewportDrivenLayout(doc);
+        layoutModeResolved = true;
+      }
+
+      const measurementViewportHeight = viewportDrivenLayout
+        ? stage.stageHeight
+        : Math.max(frame.clientHeight || 0, stage.stageHeight);
+      const nextHeight = measureStageDocumentHeight(frame, measurementViewportHeight);
 
       if (nextHeight > 0) {
-        setFrameHeight(nextHeight);
+        setFrameHeight((current) => (current === nextHeight ? current : nextHeight));
       }
     };
 
@@ -667,6 +735,7 @@ function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
     };
 
     const handleLoad = () => {
+      layoutModeResolved = false;
       scheduleSync();
       observeFrame();
     };
@@ -687,7 +756,7 @@ function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
         window.cancelAnimationFrame(rafId);
       }
     };
-  }, [onNavigate, site, stage.html]);
+  }, [onNavigate, site, stage.html, stage.stageHeight]);
 
   return (
     <section className={`screen-stage screen-stage--${actualView}`} aria-label={title}>

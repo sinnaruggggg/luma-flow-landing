@@ -80,15 +80,15 @@ export function ShowcasePhone({ src, html, alt = "", title = "" }) {
   );
 }
 
-export function WebForgeMark() {
+export function BrandMark() {
   return (
     <span className="hub-topbar__mark" aria-hidden="true">
       <svg viewBox="0 0 24 24" role="presentation">
         <rect x="2.75" y="2.75" width="18.5" height="18.5" rx="5.5" />
-        <path d="M6.75 7.5V16.5L10.1 11.9L13.45 16.5V7.5" />
-        <path d="M15.6 7.5H18.2" />
-        <path d="M15.6 11.85H17.8" />
-        <path d="M15.6 16.2H17.2" />
+        <path d="M7 6.8V17.2H12.1" />
+        <path d="M11.9 6.9H17" />
+        <path d="M11.9 11.5H15.8" />
+        <path d="M8.2 16.4C11.1 16.1 13.9 14.3 16 11.4C17.1 9.9 17.8 8.5 18.1 7" />
       </svg>
     </span>
   );
