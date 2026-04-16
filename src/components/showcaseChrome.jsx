@@ -93,67 +93,22 @@ function patchStageRouteLinks(frame, site, onNavigate) {
   }
 }
 
-const VIEWPORT_CLASS_PATTERN = /\b(?:h|min-h|max-h)-screen\b|\b(?:h|min-h|max-h)-\[[^\]]*(?:dvh|svh|lvh|vh)[^\]]*\]/i;
-const VIEWPORT_STYLE_PATTERN = /\b\d+(?:\.\d+)?(?:dvh|svh|lvh|vh)\b/i;
-
-function hasViewportDrivenLayout(doc) {
-  const roots = [doc.documentElement, doc.body].filter(Boolean);
-
-  for (const root of roots) {
-    if (VIEWPORT_CLASS_PATTERN.test(root.getAttribute("class") || "")) {
-      return true;
-    }
-
-    if (VIEWPORT_STYLE_PATTERN.test(root.getAttribute("style") || "")) {
-      return true;
-    }
+function resolveStageViewportHeight(frame, actualView) {
+  if (typeof window === "undefined") {
+    return actualView === "mobile" ? 780 : 860;
   }
 
-  for (const styleTag of doc.querySelectorAll("style")) {
-    if (VIEWPORT_STYLE_PATTERN.test(styleTag.textContent || "")) {
-      return true;
-    }
+  const frameTop = frame.getBoundingClientRect().top;
+  const bottomGap = actualView === "mobile" ? 20 : 28;
+  const fallbackHeight = actualView === "mobile" ? 780 : 860;
+  const maxHeight = actualView === "mobile" ? 920 : 1180;
+  const availableHeight = Math.round(window.innerHeight - frameTop - bottomGap);
+
+  if (availableHeight <= 0) {
+    return fallbackHeight;
   }
 
-  for (const element of doc.querySelectorAll("[class],[style]")) {
-    if (VIEWPORT_CLASS_PATTERN.test(element.getAttribute("class") || "")) {
-      return true;
-    }
-
-    if (VIEWPORT_STYLE_PATTERN.test(element.getAttribute("style") || "")) {
-      return true;
-    }
-  }
-
-  return false;
-}
-
-function measureStageDocumentHeight(frame, viewportHeight) {
-  const doc = frame.contentDocument;
-  if (!doc) return 0;
-
-  const previousHeight = frame.style.height;
-  const measurementHeight = `${Math.max(1, Math.round(viewportHeight))}px`;
-  const shouldRestoreHeight = previousHeight !== measurementHeight;
-
-  // Measure long pages against a stable viewport height so vh/dvh sections do not keep inflating.
-  if (shouldRestoreHeight) {
-    frame.style.height = measurementHeight;
-  }
-
-  const nextHeight = Math.max(
-    doc.body?.scrollHeight ?? 0,
-    doc.body?.offsetHeight ?? 0,
-    doc.documentElement?.scrollHeight ?? 0,
-    doc.documentElement?.offsetHeight ?? 0,
-    doc.documentElement?.clientHeight ?? 0,
-  );
-
-  if (shouldRestoreHeight) {
-    frame.style.height = previousHeight;
-  }
-
-  return nextHeight;
+  return Math.max(360, Math.min(maxHeight, availableHeight));
 }
 
 function PreviewSurface({ stage, title, className = "", loading = "lazy", mode = "desktop" }) {
@@ -679,7 +634,7 @@ function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
   const frameClass = actualView === "mobile" && !isMobileClient ? "screen-stage__frame screen-stage__frame--narrow" : "screen-stage__frame";
   const title = `${site.brand} ${route.label}`;
   const frameRef = useRef(null);
-  const [frameHeight, setFrameHeight] = useState(stage.stageHeight);
+  const [frameHeight, setFrameHeight] = useState(() => (actualView === "mobile" ? 780 : 860));
 
   useEffect(() => {
     if (!stage.html || !frameRef.current) {
@@ -687,30 +642,11 @@ function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
     }
 
     const frame = frameRef.current;
-    let resizeObserver;
     let rafId = 0;
-    let viewportDrivenLayout = false;
-    let layoutModeResolved = false;
 
     const syncFrame = () => {
-      const doc = frame.contentDocument;
-      if (!doc) return;
-
-      patchStageRouteLinks(frame, site, onNavigate);
-
-      if (!layoutModeResolved) {
-        viewportDrivenLayout = hasViewportDrivenLayout(doc);
-        layoutModeResolved = true;
-      }
-
-      const measurementViewportHeight = viewportDrivenLayout
-        ? stage.stageHeight
-        : Math.max(frame.clientHeight || 0, stage.stageHeight);
-      const nextHeight = measureStageDocumentHeight(frame, measurementViewportHeight);
-
-      if (nextHeight > 0) {
-        setFrameHeight((current) => (current === nextHeight ? current : nextHeight));
-      }
+      const nextHeight = resolveStageViewportHeight(frame, actualView);
+      setFrameHeight((current) => (current === nextHeight ? current : nextHeight));
     };
 
     const scheduleSync = () => {
@@ -721,42 +657,31 @@ function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
       rafId = window.requestAnimationFrame(syncFrame);
     };
 
-    const observeFrame = () => {
-      const doc = frame.contentDocument;
-      if (!doc || typeof ResizeObserver === "undefined") return;
-
-      resizeObserver?.disconnect();
-      resizeObserver = new ResizeObserver(scheduleSync);
-      resizeObserver.observe(doc.documentElement);
-
-      if (doc.body) {
-        resizeObserver.observe(doc.body);
-      }
-    };
-
     const handleLoad = () => {
-      layoutModeResolved = false;
+      patchStageRouteLinks(frame, site, onNavigate);
       scheduleSync();
-      observeFrame();
     };
 
     frame.addEventListener("load", handleLoad);
     window.addEventListener("resize", scheduleSync);
+    window.addEventListener("orientationchange", scheduleSync);
 
     if (frame.contentDocument?.readyState === "complete") {
       handleLoad();
+    } else {
+      scheduleSync();
     }
 
     return () => {
       frame.removeEventListener("load", handleLoad);
       window.removeEventListener("resize", scheduleSync);
-      resizeObserver?.disconnect();
+      window.removeEventListener("orientationchange", scheduleSync);
 
       if (rafId) {
         window.cancelAnimationFrame(rafId);
       }
     };
-  }, [onNavigate, site, stage.html, stage.stageHeight]);
+  }, [actualView, onNavigate, site, stage.html]);
 
   return (
     <section className={`screen-stage screen-stage--${actualView}`} aria-label={title}>

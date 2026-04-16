@@ -1327,6 +1327,10 @@
   padding-top: 8px;
 }
 
+.site-main--immersive {
+  min-height: calc(100dvh - 112px);
+}
+
 .screen-stage {
   padding: 0;
   border: 0;
@@ -1349,7 +1353,7 @@
 
 .screen-stage__frame {
   position: relative;
-  overflow: visible;
+  overflow: hidden;
   min-height: 0;
   border: 0;
   background: transparent;
@@ -1360,7 +1364,7 @@
   display: block;
   border: 0;
   background: #ffffff;
-  box-shadow: 0 18px 44px rgba(10, 12, 22, 0.12);
+  box-shadow: none;
 }
 
 .screen-stage__frame > img {
@@ -1598,7 +1602,8 @@
   }
   .route-dock button { flex: 0 0 auto; }
   .screen-stage { padding: 0; }
-  .screen-stage__frame > iframe { min-height: 72vh; }
+  .site-main--immersive { min-height: auto; }
+  .screen-stage__frame > iframe { min-height: 60vh; }
   .screen-stage__frame--narrow { width: min(100%, 420px); }
 }
 
