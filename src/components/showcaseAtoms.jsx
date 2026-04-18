@@ -54,7 +54,18 @@ export function ConstellationField({ className = "" }) {
   );
 }
 
-export function ShowcasePhone({ src, html, alt = "", title = "" }) {
+function applyFallbackImage(event, fallbackSrc) {
+  const target = event.currentTarget;
+
+  if (!fallbackSrc || target.dataset.fallbackApplied === "true" || target.currentSrc === fallbackSrc) {
+    return;
+  }
+
+  target.dataset.fallbackApplied = "true";
+  target.src = fallbackSrc;
+}
+
+export function ShowcasePhone({ src, html, fallbackSrc = "", alt = "", title = "", loading = "lazy", decoding = "async" }) {
   return (
     <div className="phone-shot" aria-hidden={alt ? undefined : true}>
       <span className="phone-shot__button phone-shot__button--volume-up" />
@@ -72,7 +83,13 @@ export function ShowcasePhone({ src, html, alt = "", title = "" }) {
             <iframe title={title || alt || "mobile preview"} src={html} loading="lazy" tabIndex={-1} />
           </div>
         ) : (
-          <img src={src} alt={alt} />
+          <img
+            src={src}
+            alt={alt}
+            loading={loading}
+            decoding={decoding}
+            onError={fallbackSrc ? (event) => applyFallbackImage(event, fallbackSrc) : undefined}
+          />
         )}
       </div>
       <span className="phone-shot__homebar" />

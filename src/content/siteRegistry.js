@@ -75,6 +75,16 @@ function buildRouteAssets(site, routes) {
   );
 }
 
+function buildGalleryThumb(site, device) {
+  const stitchedImage = findAsset(stitchImages, site.id, "home", device);
+
+  return {
+    src: `/generated/thumbs/${site.id}-home-${device}.webp`,
+    fallbackSrc: stitchedImage ?? getFallbackImage(site, "home", device),
+    alt: `${site.brand} home ${device} card preview`,
+  };
+}
+
 function isRouteReady(entry) {
   return entry.desktop.stitched && entry.mobile.stitched;
 }
@@ -111,12 +121,17 @@ export const siteRegistry = siteCatalog.map((site) => {
   const routes = site.routes.map((route) => ({ ...route, description: getRouteDescription(route.kind) }));
   const routeAssets = buildRouteAssets(site, routes);
   const coverage = getCoverage(routeAssets);
+  const galleryThumbs = {
+    desktop: buildGalleryThumb(site, "desktop"),
+    mobile: buildGalleryThumb(site, "mobile"),
+  };
 
   return {
     ...site,
     blueprint,
     routes: routes.map((route) => ({ ...route, ready: isRouteReady(routeAssets[route.slug]) })),
     routeAssets,
+    galleryThumbs,
     gallery: {
       desktop: routeAssets.home.desktop.image,
       mobile: routeAssets.home.mobile.image,

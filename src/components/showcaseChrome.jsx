@@ -111,18 +111,27 @@ function resolveStageViewportHeight(frame, actualView) {
   return Math.max(360, Math.min(maxHeight, availableHeight));
 }
 
-function PreviewSurface({ stage, title, className = "", loading = "lazy", mode = "desktop" }) {
-  const hasLivePreview = Boolean(stage.html);
+function applyFallbackImage(event, fallbackSrc) {
+  const target = event.currentTarget;
 
+  if (!fallbackSrc || target.dataset.fallbackApplied === "true" || target.currentSrc === fallbackSrc) {
+    return;
+  }
+
+  target.dataset.fallbackApplied = "true";
+  target.src = fallbackSrc;
+}
+
+function PreviewSurface({ preview, className = "", mode = "desktop" }) {
   return (
-    <div className={`preview-surface ${className}`.trim()} data-mode={mode} data-live={hasLivePreview ? "true" : "false"}>
-      {hasLivePreview ? (
-        <div className="preview-surface__live">
-          <iframe title={title} src={stage.html} loading={loading} tabIndex={-1} />
-        </div>
-      ) : (
-        <img src={stage.image} alt={stage.alt} loading={loading} />
-      )}
+    <div className={`preview-surface ${className}`.trim()} data-mode={mode}>
+      <img
+        src={preview.src}
+        alt={preview.alt}
+        loading="lazy"
+        decoding="async"
+        onError={preview.fallbackSrc ? (event) => applyFallbackImage(event, preview.fallbackSrc) : undefined}
+      />
     </div>
   );
 }
@@ -354,16 +363,23 @@ function ContactBrief({ sampleOptions, initialSampleId = "", inquirySettings = I
 
 function GalleryCard({ site, onOpen, onContact, isSelectedForInquiry }) {
   const canOpen = site.gallery.homeReady;
-  const desktopStage = site.routeAssets.home.desktop;
-  const mobileStage = site.routeAssets.home.mobile;
+  const desktopPreview = site.galleryThumbs.desktop;
+  const mobilePreview = site.galleryThumbs.mobile;
 
   return (
     <article className={`hub-card ${canOpen ? "" : "hub-card--disabled"}`.trim()}>
       <div className="hub-card__visual">
         <div className="hub-card__desktop-frame">
-          <PreviewSurface stage={desktopStage} title={`${site.brand} PC 미리보기`} className="hub-card__desktop-shot" mode="desktop" />
+          <PreviewSurface preview={desktopPreview} className="hub-card__desktop-shot" mode="desktop" />
         </div>
-        <ShowcasePhone src={mobileStage.image} html={mobileStage.html} alt={`${site.brand} 모바일 미리보기`} title={`${site.brand} 모바일 홈`} />
+        <ShowcasePhone
+          src={mobilePreview.src}
+          fallbackSrc={mobilePreview.fallbackSrc}
+          alt={mobilePreview.alt}
+          title={`${site.brand} mobile home`}
+          loading="lazy"
+          decoding="async"
+        />
       </div>
       <div className="hub-card__body">
         <div className="hub-card__meta">
