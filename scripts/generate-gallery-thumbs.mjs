@@ -10,8 +10,8 @@ const filterArg = process.argv.find((arg) => arg.startsWith("--filter="));
 const filter = filterArg ? filterArg.split("=")[1].toLowerCase() : "";
 
 const deviceConfigs = {
-  desktop: { width: 720, height: 405, quality: 60 },
-  mobile: { width: 320, height: 694, quality: 55 },
+  desktop: { width: 1280, height: 720, quality: 76 },
+  mobile: { width: 480, height: 1040, quality: 72 },
 };
 
 async function fileExists(filePath) {
@@ -82,6 +82,7 @@ async function generateThumb(site, device) {
       fit: "cover",
       position: "top",
     })
+    .sharpen()
     .webp({
       quality: config.quality,
       effort: 4,
