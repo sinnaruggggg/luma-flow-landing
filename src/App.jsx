@@ -1,7 +1,8 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion as Motion } from "framer-motion";
 import { parseSitePath } from "./content/siteRegistry";
 import { AdminConsole } from "./components/adminConsole";
+import { trackSiteVisit } from "./lib/inquiryApi";
 import { useIsMobileClient } from "./lib/showcaseUtils";
 import { ADMIN_PATH, buildManagedSites, useAdminState } from "./lib/adminStore";
 import { GalleryHome, NotFound, SiteStaging, SiteView } from "./components/showcaseChrome";
@@ -21,6 +22,7 @@ function normalizePathname(pathname) {
 export default function App() {
   const [locationState, setLocationState] = useState(readLocationState);
   const [viewMode, setViewMode] = useState("desktop");
+  const lastVisitKeyRef = useRef("");
   const isMobileClient = useIsMobileClient();
   const { adminState, saveAdminState, resetAdminState } = useAdminState();
   const managedSites = useMemo(() => buildManagedSites(adminState), [adminState]);
@@ -60,11 +62,41 @@ export default function App() {
     setLocationState(nextLocation);
   };
 
-  const normalizedPath = normalizePathname(locationState.pathname);
-  const routeState = normalizedPath === ADMIN_PATH ? { kind: "admin" } : parseSitePath(locationState.pathname);
-  const site = routeState.kind === "site" || routeState.kind === "staging" ? sitesById[routeState.siteId] : null;
+  const normalizedPath = useMemo(() => normalizePathname(locationState.pathname), [locationState.pathname]);
+  const routeState = useMemo(
+    () => (normalizedPath === ADMIN_PATH ? { kind: "admin" } : parseSitePath(locationState.pathname)),
+    [locationState.pathname, normalizedPath],
+  );
+  const site = useMemo(
+    () => (routeState.kind === "site" || routeState.kind === "staging" ? sitesById[routeState.siteId] : null),
+    [routeState, sitesById],
+  );
   const selectedContactSiteId = routeState.kind === "gallery" ? new URLSearchParams(locationState.search).get("contact") ?? "" : "";
   const contactPathForSite = (siteId) => `/?contact=${siteId}`;
+
+  useEffect(() => {
+    if (routeState.kind !== "site" || !site) {
+      lastVisitKeyRef.current = "";
+      return;
+    }
+
+    const sessionKey = `webforge-site-visit:${site.id}`;
+    const visitKey = `${normalizedPath}${locationState.search}`;
+
+    if (window.sessionStorage.getItem(sessionKey) || lastVisitKeyRef.current === visitKey) {
+      return;
+    }
+
+    lastVisitKeyRef.current = visitKey;
+    window.sessionStorage.setItem(sessionKey, new Date().toISOString());
+
+    trackSiteVisit({
+      siteId: site.id,
+      routeSlug: routeState.route.slug,
+      routeLabel: routeState.route.label,
+      sourcePath: `${normalizedPath}${locationState.search}`,
+    });
+  }, [locationState.search, normalizedPath, routeState, site]);
 
   return (
     <AnimatePresence mode="wait">

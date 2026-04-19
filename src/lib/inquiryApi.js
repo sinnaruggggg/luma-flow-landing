@@ -67,3 +67,31 @@ export async function fetchAdminInquiries(token) {
     },
   });
 }
+
+export async function fetchAdminVisits(token) {
+  return requestJson("/api/admin/visits", {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+}
+
+export async function trackSiteVisit(payload) {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  try {
+    await fetch("/api/visits", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+      keepalive: true,
+    });
+  } catch {
+    // Visit logging should never block the browsing flow.
+  }
+}
