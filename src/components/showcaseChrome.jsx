@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowLeft, ChevronRight, Clock3, Copy, ExternalLink, Monitor, SendHorizontal, Smartphone } from "lucide-react";
+import { ChevronRight, Clock3, Copy, ExternalLink, SendHorizontal } from "lucide-react";
 import { BRAND_INQUIRY_HEADER, BRAND_INTRO_LABEL, BRAND_NAME } from "../content/brand";
 import { GALLERY_COPY_DEFAULTS, INQUIRY_DEFAULTS } from "../content/siteAdminDefaults";
 import { buildSitePath, siteRegistry } from "../content/siteRegistry";
 import { submitInquiry } from "../lib/inquiryApi";
-import { themeStyle, useBackdropPointer } from "../lib/showcaseUtils";
+import { useBackdropPointer } from "../lib/showcaseUtils";
 import { BrandMark, SceneBackdrop, ShowcasePhone } from "./showcaseAtoms";
 
 const TOP_NAV_ITEMS = [
@@ -91,24 +91,6 @@ function patchStageRouteLinks(frame, site, onNavigate) {
   } catch {
     // Static previews are same-origin HTML; if a page falls back to an image, we simply skip patching.
   }
-}
-
-function resolveStageViewportHeight(frame, actualView) {
-  if (typeof window === "undefined") {
-    return actualView === "mobile" ? 780 : 860;
-  }
-
-  const frameTop = frame.getBoundingClientRect().top;
-  const bottomGap = actualView === "mobile" ? 20 : 28;
-  const fallbackHeight = actualView === "mobile" ? 780 : 860;
-  const maxHeight = actualView === "mobile" ? 920 : 1180;
-  const availableHeight = Math.round(window.innerHeight - frameTop - bottomGap);
-
-  if (availableHeight <= 0) {
-    return fallbackHeight;
-  }
-
-  return Math.max(360, Math.min(maxHeight, availableHeight));
 }
 
 function applyFallbackImage(event, fallbackSrc) {
@@ -607,50 +589,11 @@ export function GalleryHome({
   );
 }
 
-function DeviceSwitch({ viewMode, onViewChange }) {
-  return (
-    <div className="device-switch">
-      <button type="button" className={viewMode === "desktop" ? "is-active" : ""} onClick={() => onViewChange("desktop")}>
-        <Monitor size={15} />
-        PC
-      </button>
-      <button type="button" className={viewMode === "mobile" ? "is-active" : ""} onClick={() => onViewChange("mobile")}>
-        <Smartphone size={15} />
-        Mobile
-      </button>
-    </div>
-  );
-}
-
-function SiteTopbar({ site, viewMode, isMobileClient, onViewChange, onBack, onContact }) {
-  return (
-    <header className="site-topbar">
-      <div className="site-topbar__start">
-        <button type="button" className="site-topbar__back" onClick={onBack}>
-          <ArrowLeft size={18} />
-          갤러리
-        </button>
-        <div className="site-topbar__brand">
-          <strong>{site.brand}</strong>
-          <span>{site.industry}</span>
-        </div>
-      </div>
-      <div className="site-topbar__end">
-        {!isMobileClient ? <DeviceSwitch viewMode={viewMode} onViewChange={onViewChange} /> : null}
-        <button type="button" className="site-topbar__contact" onClick={onContact}>
-          문의하기
-        </button>
-      </div>
-    </header>
-  );
-}
-
 function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
   const stage = site.routeAssets[route.slug][actualView];
   const frameClass = actualView === "mobile" && !isMobileClient ? "screen-stage__frame screen-stage__frame--narrow" : "screen-stage__frame";
   const title = `${site.brand} ${route.label}`;
   const frameRef = useRef(null);
-  const [frameHeight, setFrameHeight] = useState(() => (actualView === "mobile" ? 780 : 860));
 
   useEffect(() => {
     if (!stage.html || !frameRef.current) {
@@ -658,52 +601,26 @@ function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
     }
 
     const frame = frameRef.current;
-    let rafId = 0;
-
-    const syncFrame = () => {
-      const nextHeight = resolveStageViewportHeight(frame, actualView);
-      setFrameHeight((current) => (current === nextHeight ? current : nextHeight));
-    };
-
-    const scheduleSync = () => {
-      if (rafId) {
-        window.cancelAnimationFrame(rafId);
-      }
-
-      rafId = window.requestAnimationFrame(syncFrame);
-    };
-
     const handleLoad = () => {
       patchStageRouteLinks(frame, site, onNavigate);
-      scheduleSync();
     };
 
     frame.addEventListener("load", handleLoad);
-    window.addEventListener("resize", scheduleSync);
-    window.addEventListener("orientationchange", scheduleSync);
 
     if (frame.contentDocument?.readyState === "complete") {
       handleLoad();
-    } else {
-      scheduleSync();
     }
 
     return () => {
       frame.removeEventListener("load", handleLoad);
-      window.removeEventListener("resize", scheduleSync);
-      window.removeEventListener("orientationchange", scheduleSync);
-
-      if (rafId) {
-        window.cancelAnimationFrame(rafId);
-      }
     };
-  }, [actualView, onNavigate, site, stage.html]);
+  }, [onNavigate, site, stage.html]);
 
   return (
     <section className={`screen-stage screen-stage--${actualView}`} aria-label={title}>
       <div className={frameClass}>
         {stage.html ? (
-          <iframe ref={frameRef} title={title} src={stage.html} loading="lazy" style={{ height: `${frameHeight}px` }} />
+          <iframe ref={frameRef} title={title} src={stage.html} loading="lazy" style={{ height: "100dvh" }} />
         ) : (
           <img src={stage.image} alt={stage.alt} loading="lazy" />
         )}
@@ -712,20 +629,13 @@ function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
   );
 }
 
-export function SiteView({ site, route, viewMode, isMobileClient, onViewChange, onNavigate, onBack, onContact }) {
+export function SiteView({ site, route, viewMode, isMobileClient, onNavigate }) {
   const actualView = isMobileClient ? "mobile" : viewMode;
-  const [pointerStyle, onPointerMove] = useBackdropPointer();
 
   return (
-    <div className="site-shell" data-tone={site.backdrop} data-view={actualView} style={{ ...themeStyle(site.theme), ...pointerStyle }} onPointerMove={onPointerMove}>
-      <SceneBackdrop tone={site.backdrop} />
-      <div className="site-shell__content site-shell__content--immersive">
-        <SiteTopbar site={site} viewMode={actualView} isMobileClient={isMobileClient} onViewChange={onViewChange} onBack={onBack} onContact={onContact} />
-        <main className="site-main site-main--immersive">
-          <ScreenStage site={site} route={route} actualView={actualView} isMobileClient={isMobileClient} onNavigate={onNavigate} />
-        </main>
-      </div>
-    </div>
+    <main className="site-main site-main--immersive" data-view={actualView}>
+      <ScreenStage site={site} route={route} actualView={actualView} isMobileClient={isMobileClient} onNavigate={onNavigate} />
+    </main>
   );
 }
 
