@@ -16,6 +16,7 @@
     "stitch:generate": "node scripts/stitch-generate.mjs",
     "stitch:pull": "node scripts/stitch-pull.mjs",
     "stitch:batch": "node scripts/stitch-batch.mjs",
+    "stitch:replace:korean-faces": "node scripts/replace-stitch-human-images.mjs",
     "stitch:localize:ko": "node scripts/stitch-localize-korean.mjs",
     "html:localize:ko": "node scripts/localize-html-korean.mjs"
   },

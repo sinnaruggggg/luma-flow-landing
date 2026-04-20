@@ -21,6 +21,7 @@ import {
   scaffoldSite,
   writeJson,
 } from "./stitch-utils.mjs";
+import { replaceHumanImagesInFile } from "./stitch-human-image-replacer.mjs";
 
 const args = parseArgs();
 const siteId = args.site;
@@ -74,6 +75,7 @@ const htmlPath = getScreenHtmlPath(siteId, pageSlug, deviceType);
 const imagePath = getScreenImagePath(siteId, pageSlug, deviceType);
 await downloadToFile(htmlUrl, htmlPath, "text");
 await downloadToFile(imageUrl, imagePath, "binary");
+await replaceHumanImagesInFile(htmlPath);
 
 await writeJson(metadataPath, {
   ...metadata,
