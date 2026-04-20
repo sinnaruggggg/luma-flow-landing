@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ChevronRight, Clock3, Copy, ExternalLink, SendHorizontal } from "lucide-react";
+import { ChevronRight, Clock3, Copy, ExternalLink, Monitor, SendHorizontal, Smartphone } from "lucide-react";
 import { BRAND_INQUIRY_HEADER, BRAND_INTRO_LABEL, BRAND_NAME } from "../content/brand";
 import { GALLERY_COPY_DEFAULTS, INQUIRY_DEFAULTS } from "../content/siteAdminDefaults";
 import { buildSitePath, siteRegistry } from "../content/siteRegistry";
@@ -629,11 +629,34 @@ function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
   );
 }
 
-export function SiteView({ site, route, viewMode, isMobileClient, onNavigate }) {
+function PreviewToolbar({ viewMode, isMobileClient, onViewChange, onContact }) {
+  return (
+    <div className="site-preview-toolbar" role="toolbar" aria-label="미리보기 전환">
+      {!isMobileClient ? (
+        <div className="site-preview-toolbar__group" role="tablist" aria-label="기기 보기">
+          <button type="button" className={viewMode === "desktop" ? "is-active" : ""} onClick={() => onViewChange("desktop")}>
+            <Monitor size={15} />
+            PC
+          </button>
+          <button type="button" className={viewMode === "mobile" ? "is-active" : ""} onClick={() => onViewChange("mobile")}>
+            <Smartphone size={15} />
+            Mobile
+          </button>
+        </div>
+      ) : null}
+      <button type="button" className="site-preview-toolbar__contact" onClick={onContact}>
+        문의하기
+      </button>
+    </div>
+  );
+}
+
+export function SiteView({ site, route, viewMode, isMobileClient, onViewChange, onNavigate, onContact }) {
   const actualView = isMobileClient ? "mobile" : viewMode;
 
   return (
     <main className="site-main site-main--immersive" data-view={actualView}>
+      <PreviewToolbar viewMode={actualView} isMobileClient={isMobileClient} onViewChange={onViewChange} onContact={onContact} />
       <ScreenStage site={site} route={route} actualView={actualView} isMobileClient={isMobileClient} onNavigate={onNavigate} />
     </main>
   );
