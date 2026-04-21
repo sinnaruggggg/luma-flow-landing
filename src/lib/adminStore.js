@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { DEFAULT_PORTFOLIO_ITEMS } from "../content/portfolioCatalog";
 import { GALLERY_COPY_DEFAULTS, INQUIRY_DEFAULTS } from "../content/siteAdminDefaults";
 import { siteRegistry } from "../content/siteRegistry";
 
@@ -102,12 +103,69 @@ function sanitizeSampleSettings(value, fallback) {
   };
 }
 
+function createFallbackPortfolioItem(index = 0) {
+  return {
+    id: `portfolio-${index + 1}`,
+    title: "",
+    category: "포트폴리오",
+    status: "임베드",
+    stack: "",
+    description: "",
+    embedSrc: "",
+    desktopImage: "",
+    mobileImage: "",
+    highlights: [],
+    visible: true,
+    order: index,
+  };
+}
+
+function sanitizePortfolioItems(value, fallback = DEFAULT_PORTFOLIO_ITEMS) {
+  const source = Array.isArray(value) ? value : fallback;
+  const normalized = source.map((item, index) => {
+    const fallbackItem = fallback[index] ?? createFallbackPortfolioItem(index);
+    const rawId = sanitizeText(item?.id, fallbackItem.id || `portfolio-${index + 1}`)
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9-]/g, "-")
+      .replace(/-+/g, "-")
+      .replace(/^-|-$/g, "");
+    const parsedOrder = Number.parseInt(item?.order, 10);
+
+    return {
+      id: rawId || fallbackItem.id || `portfolio-${index + 1}`,
+      title: sanitizeText(item?.title, fallbackItem.title),
+      category: sanitizeText(item?.category, fallbackItem.category),
+      status: sanitizeText(item?.status, fallbackItem.status),
+      stack: sanitizeText(item?.stack, fallbackItem.stack),
+      description: sanitizeText(item?.description, fallbackItem.description),
+      embedSrc: sanitizeText(item?.embedSrc, fallbackItem.embedSrc),
+      desktopImage: sanitizeText(item?.desktopImage, fallbackItem.desktopImage),
+      mobileImage: sanitizeText(item?.mobileImage, fallbackItem.mobileImage),
+      highlights: sanitizeOptionalArray(item?.highlights ?? fallbackItem.highlights),
+      visible: typeof item?.visible === "boolean" ? item.visible : fallbackItem.visible !== false,
+      order: Number.isFinite(parsedOrder) ? Math.max(0, parsedOrder) : fallbackItem.order ?? index,
+    };
+  });
+
+  const seen = new Set();
+  return normalized.map((item, index) => {
+    let nextId = item.id || `portfolio-${index + 1}`;
+    if (seen.has(nextId)) {
+      nextId = `${nextId}-${index + 1}`;
+    }
+    seen.add(nextId);
+    return { ...item, id: nextId };
+  });
+}
+
 export function createDefaultAdminState(baseSites = siteRegistry) {
   const orderedSites = sortBaseSites(baseSites);
 
   return cloneState({
     content: GALLERY_COPY_DEFAULTS,
     inquiry: INQUIRY_DEFAULTS,
+    portfolio: sanitizePortfolioItems(DEFAULT_PORTFOLIO_ITEMS),
     samples: Object.fromEntries(
       orderedSites.map((site, index) => [
         site.id,
@@ -128,6 +186,7 @@ export function sanitizeAdminState(value, baseSites = siteRegistry) {
   const defaults = createDefaultAdminState(baseSites);
   const content = value?.content ?? {};
   const inquiry = value?.inquiry ?? {};
+  const portfolio = value?.portfolio ?? defaults.portfolio;
   const sampleSettings = value?.samples ?? {};
 
   return {
@@ -149,6 +208,7 @@ export function sanitizeAdminState(value, baseSites = siteRegistry) {
       timelineOptions: sanitizeNonEmptyArray(inquiry.timelineOptions, defaults.inquiry.timelineOptions),
       externalChannels: sanitizeChannels(inquiry.externalChannels, defaults.inquiry.externalChannels),
     },
+    portfolio: sanitizePortfolioItems(portfolio, defaults.portfolio),
     samples: Object.fromEntries(
       baseSites.map((site) => [
         site.id,
@@ -163,6 +223,18 @@ export function sanitizeAdminState(value, baseSites = siteRegistry) {
       ]),
     ),
   };
+}
+
+export function buildManagedPortfolioItems(adminState) {
+  return sanitizePortfolioItems(adminState?.portfolio ?? DEFAULT_PORTFOLIO_ITEMS)
+    .filter((item) => item.visible !== false)
+    .sort((left, right) => {
+      if (left.order !== right.order) {
+        return left.order - right.order;
+      }
+
+      return left.title.localeCompare(right.title);
+    });
 }
 
 export function loadAdminState(baseSites = siteRegistry) {

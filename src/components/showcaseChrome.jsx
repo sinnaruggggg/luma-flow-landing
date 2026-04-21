@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ChevronRight, Clock3, Copy, ExternalLink, Monitor, SendHorizontal, Smartphone } from "lucide-react";
+import { ArrowLeft, ChevronRight, Clock3, Copy, ExternalLink, Monitor, SendHorizontal, Smartphone } from "lucide-react";
 import { BRAND_INQUIRY_HEADER, BRAND_INTRO_LABEL, BRAND_NAME } from "../content/brand";
 import { GALLERY_COPY_DEFAULTS, INQUIRY_DEFAULTS } from "../content/siteAdminDefaults";
 import { buildSitePath, siteRegistry } from "../content/siteRegistry";
@@ -8,6 +8,7 @@ import { useBackdropPointer } from "../lib/showcaseUtils";
 import { BrandMark, SceneBackdrop, ShowcasePhone } from "./showcaseAtoms";
 
 const TOP_NAV_ITEMS = [
+  { label: "포트폴리오", sectionId: "portfolio" },
   { label: "샘플 둘러보기", sectionId: "samples" },
   { label: "제작 방식", sectionId: "process" },
   { label: "기능", sectionId: "features" },
@@ -343,6 +344,51 @@ function ContactBrief({ sampleOptions, initialSampleId = "", inquirySettings = I
   );
 }
 
+const PORTFOLIO_FALLBACK_DESKTOP = "/portfolio/aim-furniture/home-desktop.png";
+const PORTFOLIO_FALLBACK_MOBILE = "/portfolio/aim-furniture/home-mobile.png";
+
+function PortfolioCard({ item, onOpen }) {
+  const canOpen = Boolean(item.embedSrc);
+  const desktopPreview = {
+    src: item.desktopImage || item.mobileImage || PORTFOLIO_FALLBACK_DESKTOP,
+    alt: `${item.title} desktop preview`,
+  };
+  const mobileImage = item.mobileImage || item.desktopImage || PORTFOLIO_FALLBACK_MOBILE;
+
+  return (
+    <article className="hub-card portfolio-card">
+      <div className="hub-card__visual portfolio-card__visual">
+        <div className="hub-card__desktop-frame">
+          <PreviewSurface preview={desktopPreview} className="hub-card__desktop-shot" mode="desktop" />
+        </div>
+        <ShowcasePhone src={mobileImage} alt={`${item.title} mobile preview`} title={`${item.title} mobile preview`} loading="lazy" decoding="async" />
+      </div>
+      <div className="hub-card__body">
+        <div className="hub-card__meta">
+          <span>{item.category}</span>
+          <span>{item.status}</span>
+        </div>
+        <strong>{item.title}</strong>
+        <p>{item.description}</p>
+        <div className="portfolio-card__highlights">
+          {(item.highlights ?? []).map((highlight) => (
+            <span key={highlight}>{highlight}</span>
+          ))}
+        </div>
+        <div className="hub-card__footer">
+          <span>{item.stack}</span>
+          <div className="hub-card__actions">
+            <button type="button" className="hub-card__button hub-card__button--primary" onClick={() => onOpen?.(item.id)} disabled={!canOpen}>
+              {canOpen ? "임베딩 보기" : "임베드 준비 중"}
+              {canOpen ? <ChevronRight size={16} /> : <Clock3 size={16} />}
+            </button>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 function GalleryCard({ site, onOpen, onContact, isSelectedForInquiry }) {
   const canOpen = site.gallery.homeReady;
   const desktopPreview = site.galleryThumbs.desktop;
@@ -391,11 +437,47 @@ function GalleryCard({ site, onOpen, onContact, isSelectedForInquiry }) {
   );
 }
 
+export function PortfolioEmbedView({ item, onBack }) {
+  if (!item) {
+    return (
+      <div className="hub-page">
+        <SceneBackdrop tone="gallery" />
+        <div className="hub-page__content">
+          <section className="missing-card">
+            <span>포트폴리오 없음</span>
+            <h1>요청한 포트폴리오를 찾을 수 없습니다.</h1>
+            <p>관리자 페이지에서 공개 상태와 포트폴리오 ID를 확인해 주세요.</p>
+            <button type="button" className="cta cta--primary" onClick={onBack}>메인으로 돌아가기</button>
+          </section>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <main className="portfolio-embed-view">
+      <div className="portfolio-embed-toolbar">
+        <button type="button" className="site-preview-toolbar__back" onClick={onBack}>
+          <ArrowLeft size={15} />
+          돌아가기
+        </button>
+        <div className="portfolio-embed-toolbar__title">
+          <strong>{item.title}</strong>
+          <span>{item.category} · {item.status}</span>
+        </div>
+      </div>
+      <iframe className="portfolio-embed-frame" title={`${item.title} 임베딩`} src={item.embedSrc} loading="eager" />
+    </main>
+  );
+}
+
 export function GalleryHome({
   sites = siteRegistry,
+  portfolioItems = [],
   content = GALLERY_COPY_DEFAULTS,
   inquirySettings = INQUIRY_DEFAULTS,
   onOpen,
+  onOpenPortfolio,
   onContactSample,
   selectedContactSiteId = "",
 }) {
@@ -446,6 +528,26 @@ export function GalleryHome({
           <div className="hub-hero__content hub-hero__content--minimal">
             <h1>{content.heroTitle}</h1>
           </div>
+        </section>
+
+        <section id="portfolio" className="hub-section hub-section--portfolio" aria-labelledby="portfolio-heading">
+          <div className="hub-section__header">
+            <span className="hub-section__eyebrow">Portfolio</span>
+            <h2 id="portfolio-heading">실제 제작 사이트 포트폴리오</h2>
+            <p>별도 프로젝트로 제작한 사이트를 한 곳에서 확인할 수 있도록 정리했습니다.</p>
+          </div>
+          {portfolioItems.length > 0 ? (
+            <div className="portfolio-grid">
+              {portfolioItems.map((item) => (
+                <PortfolioCard key={item.id} item={item} onOpen={onOpenPortfolio} />
+              ))}
+            </div>
+          ) : (
+            <div className="hub-empty-state">
+              <strong>등록된 포트폴리오가 없습니다.</strong>
+              <p>관리자 페이지에서 포트폴리오 사이트를 등록하면 이 영역에 임베딩 카드가 표시됩니다.</p>
+            </div>
+          )}
         </section>
 
         <section id="samples" className="hub-section" aria-label="샘플 갤러리">
@@ -629,9 +731,13 @@ function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
   );
 }
 
-function PreviewToolbar({ viewMode, isMobileClient, onViewChange, onContact }) {
+function PreviewToolbar({ viewMode, isMobileClient, onViewChange, onBack, onContact }) {
   return (
     <div className="site-preview-toolbar" role="toolbar" aria-label="미리보기 전환">
+      <button type="button" className="site-preview-toolbar__back" onClick={onBack}>
+        <ArrowLeft size={15} />
+        돌아가기
+      </button>
       {!isMobileClient ? (
         <div className="site-preview-toolbar__group" role="tablist" aria-label="기기 보기">
           <button type="button" className={viewMode === "desktop" ? "is-active" : ""} onClick={() => onViewChange("desktop")}>
@@ -651,12 +757,12 @@ function PreviewToolbar({ viewMode, isMobileClient, onViewChange, onContact }) {
   );
 }
 
-export function SiteView({ site, route, viewMode, isMobileClient, onViewChange, onNavigate, onContact }) {
+export function SiteView({ site, route, viewMode, isMobileClient, onViewChange, onNavigate, onBack, onContact }) {
   const actualView = isMobileClient ? "mobile" : viewMode;
 
   return (
     <main className="site-main site-main--immersive" data-view={actualView}>
-      <PreviewToolbar viewMode={actualView} isMobileClient={isMobileClient} onViewChange={onViewChange} onContact={onContact} />
+      <PreviewToolbar viewMode={actualView} isMobileClient={isMobileClient} onViewChange={onViewChange} onBack={onBack} onContact={onContact} />
       <ScreenStage site={site} route={route} actualView={actualView} isMobileClient={isMobileClient} onNavigate={onNavigate} />
     </main>
   );

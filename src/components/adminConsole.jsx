@@ -74,6 +74,7 @@ const ADMIN_TABS = [
   { id: "copy", label: "문구", tone: "copy" },
   { id: "inquiry", label: "견적", tone: "inquiry" },
   { id: "samples", label: "샘플", tone: "samples" },
+  { id: "portfolio", label: "포트폴리오", tone: "samples" },
 ];
 
 export function AdminConsole({ adminState, onSave, onReset, onBack }) {
@@ -228,6 +229,17 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
   }, [previewSites, visitState.items]);
 
   const recentVisits = useMemo(() => visitState.items.slice(0, 30), [visitState.items]);
+  const previewPortfolioItems = useMemo(
+    () => (draft.portfolio ?? []).map((item, originalIndex) => ({ ...item, originalIndex })).sort((left, right) => {
+      if ((left.order ?? 0) !== (right.order ?? 0)) {
+        return (left.order ?? 0) - (right.order ?? 0);
+      }
+
+      return (left.title ?? "").localeCompare(right.title ?? "");
+    }),
+    [draft.portfolio],
+  );
+  const visiblePortfolioCount = previewPortfolioItems.filter((item) => item.visible !== false).length;
 
   const adminTabs = useMemo(() => ([
     {
@@ -260,6 +272,11 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
       value: `${previewSites.length}개`,
       hint: `${fullyReadyCount}개 공개`,
     },
+    {
+      ...ADMIN_TABS[6],
+      value: `${visiblePortfolioCount}/${previewPortfolioItems.length}`,
+      hint: "임베드 관리",
+    },
   ]), [
     draft.inquiry.externalChannels.length,
     draft.inquiry.pricingPlans.length,
@@ -272,7 +289,9 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
     todayVisitCount,
     totalVisitCount,
     visitState.loading,
+    previewPortfolioItems.length,
     visibleSites.length,
+    visiblePortfolioCount,
   ]);
 
   function updateContentField(key, value) {
@@ -356,6 +375,53 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
           [key]: value,
         },
       },
+    }));
+  }
+
+  function updatePortfolio(index, key, value) {
+    setDraft((current) => ({
+      ...current,
+      portfolio: (current.portfolio ?? []).map((item, itemIndex) => (
+        itemIndex === index ? { ...item, [key]: value } : item
+      )),
+    }));
+  }
+
+  function updatePortfolioHighlights(index, value) {
+    updatePortfolio(index, "highlights", toLineArray(value));
+  }
+
+  function addPortfolio() {
+    setDraft((current) => {
+      const portfolio = current.portfolio ?? [];
+
+      return {
+        ...current,
+        portfolio: [
+          ...portfolio,
+          {
+            id: `portfolio-${Date.now()}`,
+            title: "",
+            category: "포트폴리오",
+            status: "임베드",
+            stack: "",
+            description: "",
+            embedSrc: "",
+            desktopImage: "",
+            mobileImage: "",
+            highlights: [],
+            visible: true,
+            order: portfolio.length,
+          },
+        ],
+      };
+    });
+  }
+
+  function removePortfolio(index) {
+    setDraft((current) => ({
+      ...current,
+      portfolio: (current.portfolio ?? []).filter((_, itemIndex) => itemIndex !== index),
     }));
   }
 
@@ -952,6 +1018,110 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
                       <p className="admin-help">갤러리 카드와 상세 상단 정보에만 반영됩니다. 샘플 HTML은 별도로 수정해야 합니다.</p>
                     </article>
                   ))}
+                </div>
+              </section>
+            ) : null}
+
+            {activeTab === "portfolio" ? (
+              <section className="hub-section admin-section" data-tone="samples" aria-labelledby="admin-portfolio-heading">
+                <div className="hub-section__header">
+                  <span className="hub-section__eyebrow">Portfolio</span>
+                  <h2 id="admin-portfolio-heading">포트폴리오 임베딩</h2>
+                  <p>메인 페이지 포트폴리오 탭에 노출할 사이트를 등록하고, 내부 라우트에서 주소 노출 없이 iframe으로 임베딩합니다.</p>
+                </div>
+
+                <div className="admin-panel">
+                  <div className="admin-panel__header admin-panel__header--spread">
+                    <div>
+                      <strong>포트폴리오 사이트</strong>
+                      <p>임베드 주소는 화면에 표시되지 않고, 사용자는 내부 포트폴리오 경로에서만 확인합니다.</p>
+                    </div>
+                    <button type="button" className="admin-button admin-button--secondary" onClick={addPortfolio}>
+                      포트폴리오 추가
+                    </button>
+                  </div>
+
+                  <div className="admin-sample-grid">
+                    {previewPortfolioItems.map((item) => (
+                      <article key={`${item.id}-${item.originalIndex}`} className={`admin-sample-card ${item.visible === false ? "is-hidden" : ""}`.trim()}>
+                        <div className="admin-sample-card__header">
+                          <div>
+                            <strong>{item.title || "새 포트폴리오"}</strong>
+                            <p>{item.id}</p>
+                          </div>
+                          <div className="admin-badge-rail">
+                            <span className={`admin-badge ${item.visible === false ? "admin-badge--muted" : "admin-badge--active"}`.trim()}>
+                              {item.visible === false ? "숨김" : "노출"}
+                            </span>
+                            <span className="admin-badge">{item.embedSrc ? "임베드 연결" : "주소 필요"}</span>
+                          </div>
+                        </div>
+
+                        <div className="admin-form-row">
+                          <label className="admin-field admin-field--compact">
+                            <span>정렬</span>
+                            <input type="number" min="0" value={item.order ?? 0} onChange={(event) => updatePortfolio(item.originalIndex, "order", Number.parseInt(event.target.value, 10) || 0)} />
+                          </label>
+                          <label className="admin-toggle admin-toggle--boxed">
+                            <input type="checkbox" checked={item.visible !== false} onChange={(event) => updatePortfolio(item.originalIndex, "visible", event.target.checked)} />
+                            포트폴리오 노출
+                          </label>
+                        </div>
+
+                        <label className="admin-field">
+                          <span>포트폴리오 ID</span>
+                          <input type="text" value={item.id} onChange={(event) => updatePortfolio(item.originalIndex, "id", event.target.value)} placeholder="aim-furniture" />
+                          <small>영문, 숫자, 하이픈을 권장합니다. 저장 시 URL에 맞게 정리됩니다.</small>
+                        </label>
+                        <label className="admin-field">
+                          <span>사이트 이름</span>
+                          <input type="text" value={item.title} onChange={(event) => updatePortfolio(item.originalIndex, "title", event.target.value)} />
+                        </label>
+                        <label className="admin-field">
+                          <span>분류</span>
+                          <input type="text" value={item.category} onChange={(event) => updatePortfolio(item.originalIndex, "category", event.target.value)} />
+                        </label>
+                        <label className="admin-field">
+                          <span>상태</span>
+                          <input type="text" value={item.status} onChange={(event) => updatePortfolio(item.originalIndex, "status", event.target.value)} />
+                        </label>
+                        <label className="admin-field">
+                          <span>기술/설명 태그</span>
+                          <input type="text" value={item.stack} onChange={(event) => updatePortfolio(item.originalIndex, "stack", event.target.value)} />
+                        </label>
+                        <label className="admin-field">
+                          <span>임베드 주소</span>
+                          <input type="text" value={item.embedSrc} onChange={(event) => updatePortfolio(item.originalIndex, "embedSrc", event.target.value)} placeholder="/portfolio/example/site/index.html 또는 https://example.com" />
+                          <small>외부 사이트는 해당 사이트가 iframe 임베딩을 허용해야 표시됩니다.</small>
+                        </label>
+                        <label className="admin-field">
+                          <span>PC 미리보기 이미지</span>
+                          <input type="text" value={item.desktopImage} onChange={(event) => updatePortfolio(item.originalIndex, "desktopImage", event.target.value)} />
+                        </label>
+                        <label className="admin-field">
+                          <span>모바일 미리보기 이미지</span>
+                          <input type="text" value={item.mobileImage} onChange={(event) => updatePortfolio(item.originalIndex, "mobileImage", event.target.value)} />
+                        </label>
+                        <label className="admin-field">
+                          <span>요약</span>
+                          <textarea rows={4} value={item.description} onChange={(event) => updatePortfolio(item.originalIndex, "description", event.target.value)} />
+                        </label>
+                        <label className="admin-field">
+                          <span>하이라이트</span>
+                          <textarea rows={4} value={toLineText(item.highlights ?? [])} onChange={(event) => updatePortfolioHighlights(item.originalIndex, event.target.value)} />
+                          <small>줄바꿈 기준으로 칩이 생성됩니다.</small>
+                        </label>
+
+                        <div className="admin-sample-card__meta">
+                          <span>내부 경로 /portfolio/{item.id}</span>
+                          <span>주소 노출 없이 임베딩</span>
+                        </div>
+                        <button type="button" className="admin-button admin-button--ghost" onClick={() => removePortfolio(item.originalIndex)}>
+                          삭제
+                        </button>
+                      </article>
+                    ))}
+                  </div>
                 </div>
               </section>
             ) : null}

@@ -970,6 +970,102 @@
   gap: 22px;
 }
 
+.portfolio-grid {
+  display: grid;
+  gap: 22px;
+}
+
+.hub-card.portfolio-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
+}
+
+.hub-card.portfolio-card .portfolio-card__visual {
+  min-height: 100%;
+  aspect-ratio: auto;
+}
+
+.portfolio-card .hub-card__body {
+  align-content: center;
+  padding: clamp(22px, 3vw, 34px);
+}
+
+.portfolio-card__highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.portfolio-card__highlights span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(18, 18, 18, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+  color: rgba(18, 18, 18, 0.68);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.portfolio-card__source {
+  overflow-wrap: anywhere;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: rgba(18, 18, 18, 0.52);
+}
+
+.portfolio-embed-view {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  min-height: 100dvh;
+  background: #f4eee6;
+}
+
+.portfolio-embed-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 70px;
+  padding: 12px clamp(14px, 3vw, 28px);
+  border-bottom: 1px solid rgba(18, 18, 18, 0.08);
+  background: rgba(250, 246, 240, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.portfolio-embed-toolbar__title {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.portfolio-embed-toolbar__title strong {
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.portfolio-embed-toolbar__title span {
+  overflow: hidden;
+  color: rgba(18, 18, 18, 0.58);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.portfolio-embed-frame {
+  display: block;
+  width: 100%;
+  min-height: calc(100dvh - 70px);
+  border: 0;
+  background: #ffffff;
+}
+
 .hub-card {
   position: relative;
   display: flex;
@@ -1370,6 +1466,7 @@
   color: var(--site-text);
   font-size: 0.92rem;
   font-weight: 800;
+  white-space: nowrap;
 }
 
 .site-preview-toolbar button.is-active,
@@ -1652,6 +1749,8 @@
     justify-content: center;
   }
   .hub-grid { grid-template-columns: 1fr; }
+  .hub-card.portfolio-card { grid-template-columns: 1fr; }
+  .hub-card.portfolio-card .portfolio-card__visual { aspect-ratio: 16 / 9; }
   .hub-card__visual { padding: 12px; }
   .phone-shot { right: 16px; bottom: 14px; width: clamp(70px, 24%, 90px); }
 

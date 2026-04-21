@@ -4,8 +4,8 @@ import { parseSitePath } from "./content/siteRegistry";
 import { AdminConsole } from "./components/adminConsole";
 import { trackSiteVisit } from "./lib/inquiryApi";
 import { useIsMobileClient } from "./lib/showcaseUtils";
-import { ADMIN_PATH, buildManagedSites, useAdminState } from "./lib/adminStore";
-import { GalleryHome, NotFound, SiteStaging, SiteView } from "./components/showcaseChrome";
+import { ADMIN_PATH, buildManagedPortfolioItems, buildManagedSites, useAdminState } from "./lib/adminStore";
+import { GalleryHome, NotFound, PortfolioEmbedView, SiteStaging, SiteView } from "./components/showcaseChrome";
 import "./site-app.css";
 
 function readLocationState() {
@@ -26,7 +26,9 @@ export default function App() {
   const isMobileClient = useIsMobileClient();
   const { adminState, saveAdminState, resetAdminState } = useAdminState();
   const managedSites = useMemo(() => buildManagedSites(adminState), [adminState]);
+  const managedPortfolioItems = useMemo(() => buildManagedPortfolioItems(adminState), [adminState]);
   const sitesById = useMemo(() => Object.fromEntries(managedSites.map((site) => [site.id, site])), [managedSites]);
+  const portfolioItemsById = useMemo(() => Object.fromEntries(managedPortfolioItems.map((item) => [item.id, item])), [managedPortfolioItems]);
 
   useEffect(() => {
     const onPopState = () => {
@@ -64,7 +66,18 @@ export default function App() {
 
   const normalizedPath = useMemo(() => normalizePathname(locationState.pathname), [locationState.pathname]);
   const routeState = useMemo(
-    () => (normalizedPath === ADMIN_PATH ? { kind: "admin" } : parseSitePath(locationState.pathname)),
+    () => {
+      if (normalizedPath === ADMIN_PATH) {
+        return { kind: "admin" };
+      }
+
+      if (normalizedPath.startsWith("/portfolio/")) {
+        const [, , portfolioId = ""] = normalizedPath.split("/");
+        return { kind: "portfolio", portfolioId: decodeURIComponent(portfolioId) };
+      }
+
+      return parseSitePath(locationState.pathname);
+    },
     [locationState.pathname, normalizedPath],
   );
   const site = useMemo(
@@ -122,12 +135,26 @@ export default function App() {
         >
           <GalleryHome
             sites={managedSites}
+            portfolioItems={managedPortfolioItems}
             content={adminState.content}
             inquirySettings={adminState.inquiry}
             onOpen={navigate}
+            onOpenPortfolio={(portfolioId) => navigate(`/portfolio/${portfolioId}`)}
             onContactSample={(siteId) => navigate(contactPathForSite(siteId))}
             selectedContactSiteId={selectedContactSiteId}
           />
+        </Motion.div>
+      ) : null}
+
+      {routeState.kind === "portfolio" ? (
+        <Motion.div
+          key={`portfolio-${routeState.portfolioId}`}
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.26 }}
+        >
+          <PortfolioEmbedView item={portfolioItemsById[routeState.portfolioId]} onBack={() => navigate("/")} />
         </Motion.div>
       ) : null}
 
