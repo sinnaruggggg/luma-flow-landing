@@ -5,8 +5,7 @@ import { GALLERY_COPY_DEFAULTS, INQUIRY_DEFAULTS } from "../content/siteAdminDef
 import { buildSitePath, siteRegistry } from "../content/siteRegistry";
 import { submitInquiry } from "../lib/inquiryApi";
 import { useBackdropPointer } from "../lib/showcaseUtils";
-import { EffectStage } from "./interactiveEffects";
-import { BrandMark, ConstellationField, SceneBackdrop, ShowcasePhone } from "./showcaseAtoms";
+import { BrandMark, SceneBackdrop, ShowcasePhone } from "./showcaseAtoms";
 
 const TOP_NAV_ITEMS = [
   { label: "포트폴리오", sectionId: "portfolio" },
@@ -694,13 +693,13 @@ export function GalleryHome({
 
 function MotionHomeStage({ site, actualView, onNavigate }) {
   const stageRef = useRef(null);
-  const [pointerStyle, onPointerMove] = useBackdropPointer();
   const theme = site.theme ?? {};
   const motion = site.motion ?? {};
   const readyRoutes = site.routes.filter((item) => item.slug !== "home" && item.ready);
   const primaryRoute = readyRoutes[0] ?? site.routes.find((item) => item.slug !== "home") ?? site.routes[0];
   const secondaryRoute = readyRoutes[1] ?? readyRoutes[0] ?? primaryRoute;
   const routeButtons = (readyRoutes.length ? readyRoutes : site.routes.filter((item) => item.slug !== "home")).slice(0, 4);
+  const finishRoutes = (readyRoutes.length ? readyRoutes : site.routes.filter((item) => item.slug !== "home")).slice(0, 3);
 
   useEffect(() => {
     const node = stageRef.current;
@@ -754,9 +753,7 @@ function MotionHomeStage({ site, actualView, onNavigate }) {
       data-profile={motion.profile ?? "cinematic-depth"}
       data-tempo={motion.tempo ?? "medium"}
       data-view={actualView}
-      onPointerMove={onPointerMove}
       style={{
-        ...pointerStyle,
         "--site-bg": theme.bg,
         "--site-surface": theme.surface,
         "--site-panel": theme.panel,
@@ -773,9 +770,6 @@ function MotionHomeStage({ site, actualView, onNavigate }) {
           <img className="motion-home-stage__layer motion-home-stage__layer--scene" src={site.images.scene} alt="" decoding="async" />
           <img className="motion-home-stage__layer motion-home-stage__layer--brand" src={site.images.brand} alt="" decoding="async" />
           <img className="motion-home-stage__layer motion-home-stage__layer--product" src={site.images.product} alt="" decoding="async" />
-          <EffectStage kind={motion.effect} density="hero" className="motion-home-stage__effect" />
-          <ConstellationField className="motion-home-stage__constellation" />
-          <span className="motion-home-stage__grain" />
         </div>
 
         <div className="motion-home-stage__copy">
@@ -822,6 +816,34 @@ function MotionHomeStage({ site, actualView, onNavigate }) {
           {site.chips.map((item) => (
             <span key={`${site.id}-${item}`}>{item}</span>
           ))}
+        </div>
+      </section>
+
+      <section className="motion-home-stage__finish" aria-label={`${site.brand} next content`}>
+        <div className="motion-home-stage__finish-media" aria-hidden="true">
+          <img src={site.images.brand} alt="" decoding="async" />
+          <img src={site.images.product} alt="" decoding="async" />
+        </div>
+        <div className="motion-home-stage__finish-panel">
+          <span>{site.industry}</span>
+          <h2>{site.homeMode}</h2>
+          <p>{site.mobileRule}</p>
+          <div className="motion-home-stage__finish-stats">
+            {site.stats.map((item) => (
+              <span key={`${site.id}-finish-${item.label}`}>
+                <strong>{item.value}</strong>
+                {item.label}
+              </span>
+            ))}
+          </div>
+          <div className="motion-home-stage__finish-actions">
+            {finishRoutes.map((item) => (
+              <button key={`${site.id}-finish-${item.slug}`} type="button" onClick={() => openRoute(item)}>
+                {item.label}
+                <ChevronRight size={16} />
+              </button>
+            ))}
+          </div>
         </div>
       </section>
     </div>
