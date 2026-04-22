@@ -691,15 +691,33 @@ export function GalleryHome({
   );
 }
 
+const DASHBOARD_HOME_LAYOUTS = new Set(["dashboard", "mobility", "command"]);
+const BOOKING_HOME_LAYOUTS = new Set(["booking", "clinic", "storefront", "stay"]);
+const EDITORIAL_HOME_LAYOUTS = new Set(["editorial", "paper", "scent", "gallery"]);
+const COMMERCE_HOME_LAYOUTS = new Set(["commerce", "sale", "room", "lookbook"]);
+
+function getHomeLayoutGroup(layout) {
+  if (DASHBOARD_HOME_LAYOUTS.has(layout)) return "dashboard";
+  if (BOOKING_HOME_LAYOUTS.has(layout)) return "booking";
+  if (EDITORIAL_HOME_LAYOUTS.has(layout)) return "editorial";
+  if (COMMERCE_HOME_LAYOUTS.has(layout)) return "commerce";
+  return "poster";
+}
+
 function MotionHomeStage({ site, actualView, onNavigate }) {
   const stageRef = useRef(null);
   const theme = site.theme ?? {};
   const motion = site.motion ?? {};
+  const layout = motion.layout ?? "poster";
+  const layoutGroup = getHomeLayoutGroup(layout);
   const readyRoutes = site.routes.filter((item) => item.slug !== "home" && item.ready);
   const primaryRoute = readyRoutes[0] ?? site.routes.find((item) => item.slug !== "home") ?? site.routes[0];
   const secondaryRoute = readyRoutes[1] ?? readyRoutes[0] ?? primaryRoute;
   const routeButtons = (readyRoutes.length ? readyRoutes : site.routes.filter((item) => item.slug !== "home")).slice(0, 4);
   const finishRoutes = (readyRoutes.length ? readyRoutes : site.routes.filter((item) => item.slug !== "home")).slice(0, 3);
+  const panelRoutes = (routeButtons.length ? routeButtons : [primaryRoute]).filter(Boolean).slice(0, 3);
+  const featuredStats = site.stats.slice(0, 3);
+  const featuredChips = site.chips.slice(0, 3);
 
   useEffect(() => {
     const node = stageRef.current;
@@ -746,11 +764,100 @@ function MotionHomeStage({ site, actualView, onNavigate }) {
     onNavigate(buildSitePath(site.id, targetRoute.slug));
   }
 
+  function renderHeroLayoutPanel() {
+    if (layoutGroup === "dashboard") {
+      return (
+        <div className="motion-home-stage__layout-panel motion-home-stage__layout-panel--dashboard">
+          <div className="motion-home-stage__console-head">
+            <span>{site.industry}</span>
+            <strong>{site.homeMode}</strong>
+          </div>
+          <div className="motion-home-stage__console-grid">
+            {featuredStats.map((item) => (
+              <span key={`${site.id}-console-${item.label}`}>
+                {item.label}
+                <strong>{item.value}</strong>
+              </span>
+            ))}
+            {panelRoutes.slice(0, 2).map((item) => (
+              <button key={`${site.id}-console-${item.slug}`} type="button" onClick={() => openRoute(item)}>
+                {item.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      );
+    }
+
+    if (layoutGroup === "booking") {
+      return (
+        <div className="motion-home-stage__layout-panel motion-home-stage__layout-panel--booking">
+          <span>{site.industry}</span>
+          <strong>{site.hero.secondary}</strong>
+          <p>{site.mobileRule}</p>
+          <div className="motion-home-stage__booking-slots">
+            {featuredStats.map((item) => (
+              <span key={`${site.id}-booking-${item.label}`}>
+                {item.label}
+                <strong>{item.value}</strong>
+              </span>
+            ))}
+          </div>
+          <button type="button" onClick={() => openRoute(primaryRoute)}>
+            {site.hero.primary}
+          </button>
+        </div>
+      );
+    }
+
+    if (layoutGroup === "editorial") {
+      return (
+        <div className="motion-home-stage__layout-panel motion-home-stage__layout-panel--editorial">
+          <span>{site.homeMode}</span>
+          <p>{site.design?.heroMode ?? site.summary}</p>
+          <div>
+            {featuredChips.map((item) => (
+              <em key={`${site.id}-editorial-${item}`}>{item}</em>
+            ))}
+          </div>
+        </div>
+      );
+    }
+
+    if (layoutGroup === "commerce") {
+      return (
+        <div className="motion-home-stage__layout-panel motion-home-stage__layout-panel--commerce">
+          <div className="motion-home-stage__product-shelf">
+            {featuredChips.map((item) => (
+              <span key={`${site.id}-shelf-${item}`}>{item}</span>
+            ))}
+          </div>
+          <button type="button" onClick={() => openRoute(primaryRoute)}>
+            {site.hero.primary}
+            <ChevronRight size={16} />
+          </button>
+        </div>
+      );
+    }
+
+    return (
+      <div className="motion-home-stage__layout-panel motion-home-stage__layout-panel--poster">
+        {panelRoutes.map((item) => (
+          <button key={`${site.id}-poster-${item.slug}`} type="button" onClick={() => openRoute(item)}>
+            {item.label}
+            <ChevronRight size={16} />
+          </button>
+        ))}
+      </div>
+    );
+  }
+
   return (
     <div
       ref={stageRef}
       className="motion-home-stage"
       data-profile={motion.profile ?? "cinematic-depth"}
+      data-layout={layout}
       data-tempo={motion.tempo ?? "medium"}
       data-view={actualView}
       style={{
@@ -794,6 +901,8 @@ function MotionHomeStage({ site, actualView, onNavigate }) {
             </div>
           ))}
         </div>
+
+        {renderHeroLayoutPanel()}
       </section>
 
       <section className="motion-home-stage__story" aria-label={`${site.brand} details`}>
