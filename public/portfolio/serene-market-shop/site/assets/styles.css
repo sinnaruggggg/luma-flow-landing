@@ -23,11 +23,27 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   background: var(--bg);
   color: var(--text);
   font-family: Inter, Pretendard, "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.55;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 72px;
+  right: 0;
+  left: 0;
+  height: calc(100vh - 72px);
+  min-height: 620px;
+  background:
+    linear-gradient(180deg, rgba(248, 247, 243, 0.1) 0%, rgba(248, 247, 243, 0.24) 52%, var(--bg) 100%),
+    linear-gradient(90deg, rgba(248, 247, 243, 0.9) 0%, rgba(248, 247, 243, 0.58) 42%, rgba(248, 247, 243, 0.18) 100%),
+    url("hero-lifestyle-bg.webp") center top / cover no-repeat;
+  pointer-events: none;
 }
 
 button,
@@ -113,6 +129,8 @@ a {
 }
 
 main {
+  position: relative;
+  z-index: 1;
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
 }
@@ -704,6 +722,16 @@ select:focus {
     grid-template-columns: 1fr;
     min-height: auto;
     padding: 54px 0 34px;
+  }
+
+  body::before {
+    top: 64px;
+    height: 520px;
+    min-height: 0;
+    background:
+      linear-gradient(180deg, rgba(248, 247, 243, 0.24) 0%, rgba(248, 247, 243, 0.58) 48%, var(--bg) 100%),
+      linear-gradient(90deg, rgba(248, 247, 243, 0.76) 0%, rgba(248, 247, 243, 0.32) 100%),
+      url("hero-lifestyle-bg.webp") center top / cover no-repeat;
   }
 
   .product-grid {
