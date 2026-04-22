@@ -1,10 +1,10 @@
-import { access, mkdir, readFile, writeFile } from "node:fs/promises";
-import http from "node:http";
+import { access, mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
 import sharp from "sharp";
+import { createServer as createViteServer } from "vite";
 import { siteCatalog } from "../src/content/siteCatalog.js";
 import { rootDir } from "./stitch-utils.mjs";
 
@@ -20,6 +20,9 @@ const CAPTURE_STYLE = `
   html, body {
     overflow: hidden !important;
     scrollbar-width: none !important;
+  }
+  .site-preview-toolbar {
+    display: none !important;
   }
   ::-webkit-scrollbar {
     display: none !important;
@@ -39,21 +42,6 @@ const deviceConfigs = {
     context: { isMobile: true, hasTouch: true, deviceScaleFactor: 2 },
     settleMs: 900,
   },
-};
-
-const contentTypes = {
-  ".css": "text/css; charset=utf-8",
-  ".html": "text/html; charset=utf-8",
-  ".ico": "image/x-icon",
-  ".jpeg": "image/jpeg",
-  ".jpg": "image/jpeg",
-  ".js": "text/javascript; charset=utf-8",
-  ".json": "application/json; charset=utf-8",
-  ".mjs": "text/javascript; charset=utf-8",
-  ".png": "image/png",
-  ".svg": "image/svg+xml",
-  ".txt": "text/plain; charset=utf-8",
-  ".webp": "image/webp",
 };
 
 async function fileExists(filePath) {
@@ -101,64 +89,34 @@ async function resolveFallbackSource(site, device) {
 }
 
 async function resolveSource(site, device) {
-  const htmlFile = new URL(`../design/stitch/${site.id}/screens/home-${device}.html`, import.meta.url);
   const fallback = await resolveFallbackSource(site, device);
 
-  if (site.motion && fallback) {
-    return fallback;
-  }
-
-  if (await fileExists(fileURLToPath(htmlFile))) {
-    return {
-      kind: "html-render",
-      file: htmlFile,
-      fallback,
-      routePath: `/design/stitch/${site.id}/screens/home-${device}.html`,
-    };
-  }
-
-  return fallback;
+  return {
+    kind: "app-route",
+    routePath: `/${site.id}`,
+    fallback,
+  };
 }
 
-function createStaticServer() {
-  const server = http.createServer(async (request, response) => {
-    try {
-      const requestUrl = new URL(request.url || "/", "http://127.0.0.1");
-      const pathname = decodeURIComponent(requestUrl.pathname);
-      const normalizedPath = path.resolve(rootDir, `.${pathname}`);
-
-      if (!normalizedPath.startsWith(rootDir)) {
-        response.writeHead(403, { "Content-Type": "text/plain; charset=utf-8" });
-        response.end("Forbidden");
-        return;
-      }
-
-      const body = await readFile(normalizedPath);
-      const extension = path.extname(normalizedPath).toLowerCase();
-      response.writeHead(200, {
-        "Cache-Control": "no-store",
-        "Content-Type": contentTypes[extension] ?? "application/octet-stream",
-      });
-      response.end(body);
-    } catch {
-      response.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
-      response.end("Not found");
-    }
+async function createAppServer() {
+  const vite = await createViteServer({
+    root: rootDir,
+    logLevel: "error",
+    server: {
+      host: "127.0.0.1",
+      port: 0,
+      strictPort: false,
+    },
   });
 
-  return new Promise((resolve, reject) => {
-    server.once("error", reject);
-    server.listen(0, "127.0.0.1", () => {
-      const address = server.address();
-      resolve({
-        baseUrl: `http://127.0.0.1:${address.port}`,
-        close: () =>
-          new Promise((done, doneReject) => {
-            server.close((error) => (error ? doneReject(error) : done()));
-          }),
-      });
-    });
-  });
+  await vite.listen();
+  const address = vite.httpServer.address();
+  const port = typeof address === "object" && address ? address.port : 5173;
+
+  return {
+    baseUrl: `http://127.0.0.1:${port}`,
+    close: () => vite.close(),
+  };
 }
 
 async function waitForPageReady(page, settleMs) {
@@ -184,7 +142,7 @@ async function waitForPageReady(page, settleMs) {
   await page.waitForTimeout(settleMs);
 }
 
-async function captureHtmlBuffer(browser, server, source, device) {
+async function captureAppBuffer(browser, server, source, device) {
   const config = deviceConfigs[device];
   const context = await browser.newContext({
     viewport: config.viewport,
@@ -193,8 +151,15 @@ async function captureHtmlBuffer(browser, server, source, device) {
 
   try {
     const page = await context.newPage();
+    await page.route("**/api/visits", (route) =>
+      route.fulfill({
+        status: 204,
+        body: "",
+      }),
+    );
     await page.goto(`${server.baseUrl}${source.routePath}`, { waitUntil: "domcontentloaded", timeout: 30000 });
     await waitForPageReady(page, config.settleMs);
+    await page.waitForSelector(".motion-home-stage__hero", { timeout: 30000 });
     return await page.screenshot({ type: "png" });
   } finally {
     await context.close();
@@ -237,8 +202,8 @@ async function generateThumb(site, device, browser, server) {
   try {
     let thumbBuffer;
 
-    if (source.kind === "html-render") {
-      const captureBuffer = await captureHtmlBuffer(browser, server, source, device);
+    if (source.kind === "app-route") {
+      const captureBuffer = await captureAppBuffer(browser, server, source, device);
       thumbBuffer = await toThumbBuffer(captureBuffer, device);
     } else {
       thumbBuffer = await toThumbBuffer(fileURLToPath(source.file), device);
@@ -254,7 +219,7 @@ async function generateThumb(site, device, browser, server) {
       output: outputPath,
     };
   } catch (error) {
-    if (source.kind === "html-render" && source.fallback) {
+    if (source.fallback) {
       const thumbBuffer = await toThumbBuffer(fileURLToPath(source.fallback.file), device);
       await writeFile(outputPath, thumbBuffer);
 
@@ -280,7 +245,7 @@ async function main() {
     : siteCatalog;
 
   const results = [];
-  const server = await createStaticServer();
+  const server = await createAppServer();
   let browser;
 
   try {

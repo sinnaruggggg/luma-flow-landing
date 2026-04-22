@@ -2381,6 +2381,768 @@
   height: min(58vh, 650px);
 }
 
+.motion-home-stage__variant-marker {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+  display: grid;
+  gap: 10px;
+  opacity: calc(0.9 - var(--motion-fade));
+  transform: translate3d(0, calc(var(--motion-lift) * 0.42), 0);
+}
+
+.motion-home-stage__variant-marker span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+}
+
+.motion-home-stage[data-variant="drop-poster-wall"] .motion-home-stage__hero {
+  grid-template-columns: minmax(0, 0.68fr) minmax(260px, 0.32fr);
+  align-content: end;
+}
+
+.motion-home-stage[data-variant="drop-poster-wall"] .motion-home-stage__copy {
+  max-width: 640px;
+  border-left: 0;
+  padding-left: 0;
+}
+
+.motion-home-stage[data-variant="drop-poster-wall"] .motion-home-stage__copy h1 {
+  max-width: 7ch;
+  font-size: 6.5rem;
+}
+
+.motion-home-stage[data-variant="drop-poster-wall"] .motion-home-stage__layer--brand {
+  left: 41vw;
+  bottom: 9vh;
+  width: min(25vw, 370px);
+  height: min(66vh, 700px);
+  transform: translate3d(calc(var(--motion-split-neg) * 0.38), var(--motion-drop), 0) rotate(-1deg);
+}
+
+.motion-home-stage[data-variant="drop-poster-wall"] .motion-home-stage__layer--product {
+  right: 4vw;
+  top: 11vh;
+  width: min(24vw, 360px);
+  height: min(60vh, 660px);
+  transform: translate3d(var(--motion-split), var(--motion-lift), 0) rotate(7deg);
+}
+
+.motion-home-stage[data-variant="drop-poster-wall"] .motion-home-stage__variant-marker {
+  right: 28px;
+  bottom: 42px;
+  grid-template-columns: repeat(3, 58px);
+  height: 16px;
+}
+
+.motion-home-stage[data-variant="routine-product-stack"] .motion-home-stage__hero {
+  grid-template-columns: minmax(310px, 0.38fr) minmax(0, 0.62fr);
+  align-items: center;
+}
+
+.motion-home-stage[data-variant="routine-product-stack"] .motion-home-stage__copy {
+  grid-column: 2;
+  align-self: start;
+  justify-self: end;
+  max-width: 560px;
+}
+
+.motion-home-stage[data-variant="routine-product-stack"] .motion-home-stage__layout-panel {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+}
+
+.motion-home-stage[data-variant="routine-product-stack"] .motion-home-stage__layer--brand {
+  left: 4vw;
+  bottom: 12vh;
+  width: min(28vw, 420px);
+  height: min(52vh, 610px);
+  transform: translate3d(var(--motion-split-neg), var(--motion-drop), 0) rotate(0deg);
+}
+
+.motion-home-stage[data-variant="routine-product-stack"] .motion-home-stage__layer--product {
+  right: 14vw;
+  top: 8vh;
+  width: min(22vw, 320px);
+  height: min(60vh, 640px);
+  transform: translate3d(calc(var(--motion-split) * 0.42), var(--motion-lift), 0) rotate(-4deg);
+}
+
+.motion-home-stage[data-variant="routine-product-stack"] .motion-home-stage__variant-marker {
+  left: 34px;
+  top: 17vh;
+  grid-template-columns: 16px;
+  grid-template-rows: repeat(3, 74px);
+}
+
+.motion-home-stage[data-variant="fight-schedule-split"] .motion-home-stage__hero {
+  grid-template-columns: minmax(0, 0.52fr) minmax(320px, 0.48fr);
+  align-items: end;
+}
+
+.motion-home-stage[data-variant="fight-schedule-split"] .motion-home-stage__copy {
+  max-width: 520px;
+}
+
+.motion-home-stage[data-variant="fight-schedule-split"] .motion-home-stage__layout-panel {
+  align-self: center;
+  width: min(440px, 100%);
+  border-radius: 0;
+}
+
+.motion-home-stage[data-variant="fight-schedule-split"] .motion-home-stage__layer--brand {
+  left: 31vw;
+  bottom: 0;
+  width: min(32vw, 520px);
+  height: min(76vh, 760px);
+  transform: translate3d(calc(var(--motion-split-neg) * 0.72), var(--motion-drop), 0) rotate(-9deg);
+}
+
+.motion-home-stage[data-variant="fight-schedule-split"] .motion-home-stage__layer--product {
+  right: 2vw;
+  top: 18vh;
+  width: min(23vw, 360px);
+  height: min(44vh, 520px);
+}
+
+.motion-home-stage[data-variant="fight-schedule-split"] .motion-home-stage__variant-marker {
+  left: 50%;
+  top: 0;
+  grid-template-columns: 2px 2px 2px;
+  height: 100%;
+}
+
+.motion-home-stage[data-variant="fight-schedule-split"] .motion-home-stage__variant-marker span {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.motion-home-stage[data-variant="wealth-command-grid"] .motion-home-stage__hero {
+  grid-template-columns: minmax(280px, 0.34fr) minmax(0, 0.66fr);
+}
+
+.motion-home-stage[data-variant="wealth-command-grid"] .motion-home-stage__copy {
+  max-width: 500px;
+  border-left-width: 1px;
+}
+
+.motion-home-stage[data-variant="wealth-command-grid"] .motion-home-stage__layout-panel {
+  width: min(720px, 100%);
+}
+
+.motion-home-stage[data-variant="wealth-command-grid"] .motion-home-stage__layer--brand {
+  right: 34vw;
+  bottom: 9vh;
+  width: min(34vw, 580px);
+  height: min(45vh, 520px);
+}
+
+.motion-home-stage[data-variant="wealth-command-grid"] .motion-home-stage__layer--product {
+  right: 4vw;
+  top: 9vh;
+  width: min(28vw, 440px);
+  height: min(44vh, 520px);
+}
+
+.motion-home-stage[data-variant="wealth-command-grid"] .motion-home-stage__variant-marker {
+  right: 5vw;
+  bottom: 8vh;
+  grid-template-columns: repeat(6, 32px);
+  grid-template-rows: repeat(2, 32px);
+}
+
+.motion-home-stage[data-variant="clinic-appointment-clean"] .motion-home-stage__hero {
+  grid-template-columns: minmax(340px, 0.42fr) minmax(0, 0.58fr);
+  align-items: start;
+  padding-top: 128px;
+}
+
+.motion-home-stage[data-variant="clinic-appointment-clean"] .motion-home-stage__copy {
+  grid-column: 1;
+  max-width: 540px;
+}
+
+.motion-home-stage[data-variant="clinic-appointment-clean"] .motion-home-stage__layout-panel {
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: start;
+  width: min(460px, 100%);
+}
+
+.motion-home-stage[data-variant="clinic-appointment-clean"] .motion-home-stage__layer--brand {
+  left: auto;
+  right: 28vw;
+  bottom: 8vh;
+  width: min(24vw, 390px);
+  height: min(46vh, 520px);
+}
+
+.motion-home-stage[data-variant="clinic-appointment-clean"] .motion-home-stage__layer--product {
+  right: 5vw;
+  top: 16vh;
+  width: min(30vw, 510px);
+  height: min(60vh, 660px);
+  transform: translate3d(calc(var(--motion-split) * 0.5), var(--motion-lift), 0) rotate(0deg);
+}
+
+.motion-home-stage[data-variant="clinic-appointment-clean"] .motion-home-stage__variant-marker {
+  right: 9vw;
+  top: 13vh;
+  grid-template-columns: repeat(3, 42px);
+  grid-template-rows: repeat(3, 42px);
+}
+
+.motion-home-stage[data-variant="architecture-editorial-spread"] .motion-home-stage__hero {
+  grid-template-columns: minmax(0, 0.55fr) minmax(320px, 0.45fr);
+  align-items: start;
+}
+
+.motion-home-stage[data-variant="architecture-editorial-spread"] .motion-home-stage__copy h1 {
+  max-width: 14ch;
+  font-size: 4.2rem;
+}
+
+.motion-home-stage[data-variant="architecture-editorial-spread"] .motion-home-stage__layout-panel {
+  align-self: end;
+  justify-self: start;
+  width: min(480px, 100%);
+}
+
+.motion-home-stage[data-variant="architecture-editorial-spread"] .motion-home-stage__layer--brand {
+  left: 43vw;
+  bottom: 16vh;
+  width: min(31vw, 510px);
+  height: min(47vh, 560px);
+  transform: translate3d(calc(var(--motion-split-neg) * 0.5), var(--motion-drop), 0) rotate(-8deg);
+}
+
+.motion-home-stage[data-variant="architecture-editorial-spread"] .motion-home-stage__layer--product {
+  right: 5vw;
+  top: 8vh;
+  width: min(25vw, 420px);
+  height: min(62vh, 700px);
+  transform: translate3d(calc(var(--motion-split) * 0.55), var(--motion-lift), 0) rotate(2deg);
+}
+
+.motion-home-stage[data-variant="architecture-editorial-spread"] .motion-home-stage__variant-marker {
+  left: 5vw;
+  bottom: 12vh;
+  grid-template-columns: 220px 120px;
+  grid-template-rows: 24px 24px;
+}
+
+.motion-home-stage[data-variant="beauty-flash-ticker"] .motion-home-stage__hero {
+  grid-template-columns: minmax(0, 1fr);
+  align-content: center;
+}
+
+.motion-home-stage[data-variant="beauty-flash-ticker"] .motion-home-stage__copy {
+  justify-self: center;
+  max-width: 780px;
+  text-align: center;
+  border-left: 0;
+  padding-left: 0;
+}
+
+.motion-home-stage[data-variant="beauty-flash-ticker"] .motion-home-stage__copy h1 {
+  max-width: none;
+  font-size: 7rem;
+}
+
+.motion-home-stage[data-variant="beauty-flash-ticker"] .motion-home-stage__layout-panel {
+  justify-self: center;
+  width: min(880px, 100%);
+}
+
+.motion-home-stage[data-variant="beauty-flash-ticker"] .motion-home-stage__layer--brand {
+  left: -2vw;
+  bottom: 8vh;
+  width: min(30vw, 460px);
+  height: min(60vh, 680px);
+}
+
+.motion-home-stage[data-variant="beauty-flash-ticker"] .motion-home-stage__layer--product {
+  right: -3vw;
+  top: 12vh;
+  width: min(31vw, 470px);
+  height: min(58vh, 660px);
+}
+
+.motion-home-stage[data-variant="beauty-flash-ticker"] .motion-home-stage__variant-marker {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  grid-template-columns: repeat(3, 1fr);
+  height: 18px;
+}
+
+.motion-home-stage[data-variant="festival-lineup-poster"] .motion-home-stage__copy {
+  max-width: 520px;
+  align-self: start;
+}
+
+.motion-home-stage[data-variant="festival-lineup-poster"] .motion-home-stage__layout-panel {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+  width: min(360px, 100%);
+}
+
+.motion-home-stage[data-variant="festival-lineup-poster"] .motion-home-stage__layer--brand {
+  left: 36vw;
+  bottom: 4vh;
+  width: min(27vw, 390px);
+  height: min(74vh, 760px);
+}
+
+.motion-home-stage[data-variant="festival-lineup-poster"] .motion-home-stage__layer--product {
+  right: 9vw;
+  top: 8vh;
+  width: min(24vw, 360px);
+  height: min(55vh, 620px);
+}
+
+.motion-home-stage[data-variant="festival-lineup-poster"] .motion-home-stage__variant-marker {
+  right: 4vw;
+  top: 18vh;
+  grid-template-columns: 96px;
+  grid-template-rows: repeat(3, 44px);
+}
+
+.motion-home-stage[data-variant="creator-live-feed"] .motion-home-stage__hero {
+  grid-template-columns: minmax(300px, 0.36fr) minmax(0, 0.64fr);
+  align-items: center;
+}
+
+.motion-home-stage[data-variant="creator-live-feed"] .motion-home-stage__copy {
+  max-width: 500px;
+}
+
+.motion-home-stage[data-variant="creator-live-feed"] .motion-home-stage__layout-panel {
+  width: min(640px, 100%);
+  justify-self: end;
+}
+
+.motion-home-stage[data-variant="creator-live-feed"] .motion-home-stage__product-shelf {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.motion-home-stage[data-variant="creator-live-feed"] .motion-home-stage__layer--brand {
+  left: 34vw;
+  bottom: 13vh;
+  width: min(28vw, 460px);
+  height: min(46vh, 560px);
+}
+
+.motion-home-stage[data-variant="creator-live-feed"] .motion-home-stage__layer--product {
+  right: 2vw;
+  top: 12vh;
+  width: min(30vw, 500px);
+  height: min(56vh, 650px);
+}
+
+.motion-home-stage[data-variant="creator-live-feed"] .motion-home-stage__variant-marker {
+  right: 8vw;
+  bottom: 14vh;
+  grid-template-columns: 180px;
+  grid-template-rows: 48px 86px 48px;
+}
+
+.motion-home-stage[data-variant="ev-route-console"] .motion-home-stage__copy {
+  max-width: 520px;
+  align-self: end;
+}
+
+.motion-home-stage[data-variant="ev-route-console"] .motion-home-stage__layout-panel {
+  width: min(680px, 100%);
+}
+
+.motion-home-stage[data-variant="ev-route-console"] .motion-home-stage__console-grid {
+  grid-template-columns: 1fr 1fr 1fr 1.4fr 1.4fr;
+}
+
+.motion-home-stage[data-variant="ev-route-console"] .motion-home-stage__layer--brand {
+  right: 30vw;
+  bottom: 5vh;
+  width: min(38vw, 620px);
+  height: min(42vh, 490px);
+}
+
+.motion-home-stage[data-variant="ev-route-console"] .motion-home-stage__layer--product {
+  right: 3vw;
+  top: 22vh;
+  width: min(26vw, 420px);
+  height: min(34vh, 420px);
+}
+
+.motion-home-stage[data-variant="ev-route-console"] .motion-home-stage__variant-marker {
+  left: 42vw;
+  top: 50%;
+  grid-template-columns: 110px 160px 90px;
+  height: 6px;
+}
+
+.motion-home-stage[data-variant="gaming-loadout-hud"] .motion-home-stage__hero {
+  grid-template-columns: minmax(0, 0.44fr) minmax(360px, 0.56fr);
+}
+
+.motion-home-stage[data-variant="gaming-loadout-hud"] .motion-home-stage__copy h1 {
+  max-width: 8ch;
+  font-size: 5.35rem;
+}
+
+.motion-home-stage[data-variant="gaming-loadout-hud"] .motion-home-stage__layout-panel {
+  width: min(690px, 100%);
+}
+
+.motion-home-stage[data-variant="gaming-loadout-hud"] .motion-home-stage__layer--brand {
+  right: 36vw;
+  bottom: 11vh;
+  width: min(30vw, 500px);
+  height: min(58vh, 640px);
+}
+
+.motion-home-stage[data-variant="gaming-loadout-hud"] .motion-home-stage__layer--product {
+  right: 3vw;
+  top: 8vh;
+  width: min(31vw, 520px);
+  height: min(62vh, 680px);
+}
+
+.motion-home-stage[data-variant="gaming-loadout-hud"] .motion-home-stage__variant-marker {
+  right: 4vw;
+  bottom: 7vh;
+  grid-template-columns: repeat(3, 94px);
+  grid-template-rows: 22px 22px;
+}
+
+.motion-home-stage[data-variant="ai-workflow-map"] .motion-home-stage__copy {
+  max-width: 540px;
+}
+
+.motion-home-stage[data-variant="ai-workflow-map"] .motion-home-stage__layout-panel {
+  width: min(760px, 100%);
+  border-radius: 28px;
+}
+
+.motion-home-stage[data-variant="ai-workflow-map"] .motion-home-stage__console-grid {
+  grid-template-columns: 1.1fr 0.9fr 1.1fr 1fr 1fr;
+}
+
+.motion-home-stage[data-variant="ai-workflow-map"] .motion-home-stage__layer--brand {
+  right: 28vw;
+  bottom: 18vh;
+  width: min(36vw, 600px);
+  height: min(37vh, 440px);
+}
+
+.motion-home-stage[data-variant="ai-workflow-map"] .motion-home-stage__layer--product {
+  right: 7vw;
+  top: 10vh;
+  width: min(24vw, 400px);
+  height: min(52vh, 600px);
+}
+
+.motion-home-stage[data-variant="ai-workflow-map"] .motion-home-stage__variant-marker {
+  right: 10vw;
+  top: 20vh;
+  grid-template-columns: 70px 120px 70px;
+  grid-template-rows: 70px 70px;
+}
+
+.motion-home-stage[data-variant="bookstore-shelf-curation"] .motion-home-stage__hero,
+.motion-home-stage[data-variant="stationery-kit-swatch"] .motion-home-stage__hero {
+  grid-template-columns: minmax(0, 0.58fr) minmax(320px, 0.42fr);
+  align-items: start;
+}
+
+.motion-home-stage[data-variant="bookstore-shelf-curation"] .motion-home-stage__copy,
+.motion-home-stage[data-variant="stationery-kit-swatch"] .motion-home-stage__copy {
+  max-width: 560px;
+  border-left: 0;
+  padding-left: 0;
+}
+
+.motion-home-stage[data-variant="bookstore-shelf-curation"] .motion-home-stage__layout-panel,
+.motion-home-stage[data-variant="stationery-kit-swatch"] .motion-home-stage__layout-panel {
+  align-self: end;
+}
+
+.motion-home-stage[data-variant="bookstore-shelf-curation"] .motion-home-stage__layer--brand {
+  left: 41vw;
+  bottom: 8vh;
+  width: min(25vw, 380px);
+  height: min(62vh, 660px);
+}
+
+.motion-home-stage[data-variant="bookstore-shelf-curation"] .motion-home-stage__layer--product {
+  right: 5vw;
+  top: 18vh;
+  width: min(26vw, 420px);
+  height: min(45vh, 530px);
+}
+
+.motion-home-stage[data-variant="bookstore-shelf-curation"] .motion-home-stage__variant-marker {
+  right: 5vw;
+  bottom: 7vh;
+  grid-template-columns: repeat(5, 38px);
+  height: 130px;
+}
+
+.motion-home-stage[data-variant="stationery-kit-swatch"] .motion-home-stage__layer--brand {
+  left: 37vw;
+  bottom: 17vh;
+  width: min(30vw, 480px);
+  height: min(38vh, 480px);
+  transform: translate3d(var(--motion-split-neg), var(--motion-drop), 0) rotate(-12deg);
+}
+
+.motion-home-stage[data-variant="stationery-kit-swatch"] .motion-home-stage__layer--product {
+  right: 5vw;
+  top: 12vh;
+  width: min(27vw, 440px);
+  height: min(48vh, 560px);
+}
+
+.motion-home-stage[data-variant="stationery-kit-swatch"] .motion-home-stage__variant-marker {
+  right: 8vw;
+  bottom: 12vh;
+  grid-template-columns: repeat(4, 46px);
+  grid-template-rows: repeat(2, 46px);
+}
+
+.motion-home-stage[data-variant="cafe-menu-window"] .motion-home-stage__hero {
+  grid-template-columns: minmax(320px, 0.38fr) minmax(0, 0.62fr);
+  align-items: center;
+}
+
+.motion-home-stage[data-variant="cafe-menu-window"] .motion-home-stage__copy {
+  align-self: start;
+  max-width: 540px;
+}
+
+.motion-home-stage[data-variant="cafe-menu-window"] .motion-home-stage__layout-panel {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  width: min(420px, 100%);
+}
+
+.motion-home-stage[data-variant="cafe-menu-window"] .motion-home-stage__layer--brand {
+  left: 45vw;
+  bottom: 8vh;
+  width: min(26vw, 430px);
+  height: min(54vh, 620px);
+}
+
+.motion-home-stage[data-variant="cafe-menu-window"] .motion-home-stage__layer--product {
+  right: 6vw;
+  top: 11vh;
+  width: min(24vw, 390px);
+  height: min(42vh, 500px);
+}
+
+.motion-home-stage[data-variant="cafe-menu-window"] .motion-home-stage__variant-marker {
+  right: 9vw;
+  top: 16vh;
+  grid-template-columns: 120px 120px;
+  grid-template-rows: 80px 80px;
+}
+
+.motion-home-stage[data-variant="hotel-stay-finder"] .motion-home-stage__hero {
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.38fr);
+  align-items: end;
+}
+
+.motion-home-stage[data-variant="hotel-stay-finder"] .motion-home-stage__copy {
+  max-width: 620px;
+}
+
+.motion-home-stage[data-variant="hotel-stay-finder"] .motion-home-stage__layout-panel {
+  align-self: end;
+  width: min(430px, 100%);
+}
+
+.motion-home-stage[data-variant="hotel-stay-finder"] .motion-home-stage__layer--brand {
+  left: 8vw;
+  bottom: 7vh;
+  width: min(40vw, 690px);
+  height: min(52vh, 610px);
+}
+
+.motion-home-stage[data-variant="hotel-stay-finder"] .motion-home-stage__layer--product {
+  right: 7vw;
+  top: 10vh;
+  width: min(24vw, 400px);
+  height: min(48vh, 560px);
+}
+
+.motion-home-stage[data-variant="hotel-stay-finder"] .motion-home-stage__variant-marker {
+  left: 8vw;
+  top: 14vh;
+  grid-template-columns: 180px 90px 90px;
+  height: 44px;
+}
+
+.motion-home-stage[data-variant="perfume-note-film"] .motion-home-stage__copy {
+  max-width: 600px;
+}
+
+.motion-home-stage[data-variant="perfume-note-film"] .motion-home-stage__layout-panel {
+  align-self: end;
+  padding-left: 0;
+  border-left: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.motion-home-stage[data-variant="perfume-note-film"] .motion-home-stage__layer--brand {
+  left: 39vw;
+  bottom: 10vh;
+  width: min(25vw, 390px);
+  height: min(58vh, 650px);
+}
+
+.motion-home-stage[data-variant="perfume-note-film"] .motion-home-stage__layer--product {
+  right: 5vw;
+  top: 17vh;
+  width: min(24vw, 380px);
+  height: min(44vh, 520px);
+  transform: translate3d(var(--motion-split), var(--motion-lift), 0) rotate(10deg);
+}
+
+.motion-home-stage[data-variant="perfume-note-film"] .motion-home-stage__variant-marker {
+  right: 7vw;
+  bottom: 10vh;
+  grid-template-columns: repeat(3, 72px);
+  height: 110px;
+}
+
+.motion-home-stage[data-variant="furniture-room-planner"] .motion-home-stage__hero {
+  grid-template-columns: minmax(330px, 0.34fr) minmax(0, 0.66fr);
+}
+
+.motion-home-stage[data-variant="furniture-room-planner"] .motion-home-stage__copy {
+  max-width: 500px;
+}
+
+.motion-home-stage[data-variant="furniture-room-planner"] .motion-home-stage__layout-panel {
+  width: min(880px, 100%);
+}
+
+.motion-home-stage[data-variant="furniture-room-planner"] .motion-home-stage__product-shelf {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.motion-home-stage[data-variant="furniture-room-planner"] .motion-home-stage__layer--brand {
+  left: 34vw;
+  bottom: 6vh;
+  width: min(34vw, 560px);
+  height: min(50vh, 580px);
+}
+
+.motion-home-stage[data-variant="furniture-room-planner"] .motion-home-stage__layer--product {
+  right: 3vw;
+  top: 9vh;
+  width: min(30vw, 500px);
+  height: min(58vh, 640px);
+}
+
+.motion-home-stage[data-variant="furniture-room-planner"] .motion-home-stage__variant-marker {
+  right: 9vw;
+  bottom: 9vh;
+  grid-template-columns: 150px 90px;
+  grid-template-rows: 90px 130px;
+}
+
+.motion-home-stage[data-variant="fashion-lookbook-rail"] .motion-home-stage__hero {
+  grid-template-columns: minmax(0, 1fr);
+  align-content: end;
+}
+
+.motion-home-stage[data-variant="fashion-lookbook-rail"] .motion-home-stage__copy {
+  max-width: 700px;
+}
+
+.motion-home-stage[data-variant="fashion-lookbook-rail"] .motion-home-stage__copy h1 {
+  max-width: 10ch;
+  font-size: 6rem;
+}
+
+.motion-home-stage[data-variant="fashion-lookbook-rail"] .motion-home-stage__layout-panel {
+  width: min(1120px, 100%);
+}
+
+.motion-home-stage[data-variant="fashion-lookbook-rail"] .motion-home-stage__product-shelf {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.motion-home-stage[data-variant="fashion-lookbook-rail"] .motion-home-stage__layer--brand {
+  left: auto;
+  right: 28vw;
+  bottom: 4vh;
+  width: min(25vw, 380px);
+  height: min(72vh, 780px);
+}
+
+.motion-home-stage[data-variant="fashion-lookbook-rail"] .motion-home-stage__layer--product {
+  right: 5vw;
+  top: 5vh;
+  width: min(23vw, 360px);
+  height: min(72vh, 780px);
+}
+
+.motion-home-stage[data-variant="fashion-lookbook-rail"] .motion-home-stage__variant-marker {
+  left: 0;
+  bottom: 0;
+  grid-template-columns: repeat(6, 1fr);
+  width: 100%;
+  height: 12px;
+}
+
+.motion-home-stage[data-variant="jewelry-gallery-focus"] .motion-home-stage__hero {
+  grid-template-columns: minmax(0, 0.46fr) minmax(360px, 0.54fr);
+  align-items: center;
+}
+
+.motion-home-stage[data-variant="jewelry-gallery-focus"] .motion-home-stage__copy {
+  max-width: 520px;
+}
+
+.motion-home-stage[data-variant="jewelry-gallery-focus"] .motion-home-stage__layout-panel {
+  align-self: end;
+  justify-self: center;
+  width: min(430px, 100%);
+}
+
+.motion-home-stage[data-variant="jewelry-gallery-focus"] .motion-home-stage__layer--brand {
+  left: 42vw;
+  bottom: 8vh;
+  width: min(28vw, 470px);
+  height: min(54vh, 620px);
+}
+
+.motion-home-stage[data-variant="jewelry-gallery-focus"] .motion-home-stage__layer--product {
+  right: 4vw;
+  top: 13vh;
+  width: min(25vw, 400px);
+  height: min(50vh, 580px);
+  transform: translate3d(calc(var(--motion-split) * 0.7), var(--motion-lift), 0) rotate(0deg);
+}
+
+.motion-home-stage[data-variant="jewelry-gallery-focus"] .motion-home-stage__variant-marker {
+  right: 9vw;
+  top: 15vh;
+  grid-template-columns: 86px 86px;
+  grid-template-rows: 86px 86px;
+}
+
 @keyframes motionFilmDrift {
   from { filter: saturate(1.02) contrast(1.02); }
   to { filter: saturate(1.12) contrast(1.08); }

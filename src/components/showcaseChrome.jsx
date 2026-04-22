@@ -709,6 +709,7 @@ function MotionHomeStage({ site, actualView, onNavigate }) {
   const theme = site.theme ?? {};
   const motion = site.motion ?? {};
   const layout = motion.layout ?? "poster";
+  const variant = motion.homeVariant ?? layout;
   const layoutGroup = getHomeLayoutGroup(layout);
   const readyRoutes = site.routes.filter((item) => item.slug !== "home" && item.ready);
   const primaryRoute = readyRoutes[0] ?? site.routes.find((item) => item.slug !== "home") ?? site.routes[0];
@@ -718,6 +719,7 @@ function MotionHomeStage({ site, actualView, onNavigate }) {
   const panelRoutes = (routeButtons.length ? routeButtons : [primaryRoute]).filter(Boolean).slice(0, 3);
   const featuredStats = site.stats.slice(0, 3);
   const featuredChips = site.chips.slice(0, 3);
+  const panelClass = `motion-home-stage__layout-panel motion-home-stage__layout-panel--${layoutGroup} motion-home-stage__layout-panel--${variant}`;
 
   useEffect(() => {
     const node = stageRef.current;
@@ -767,7 +769,7 @@ function MotionHomeStage({ site, actualView, onNavigate }) {
   function renderHeroLayoutPanel() {
     if (layoutGroup === "dashboard") {
       return (
-        <div className="motion-home-stage__layout-panel motion-home-stage__layout-panel--dashboard">
+        <div className={panelClass}>
           <div className="motion-home-stage__console-head">
             <span>{site.industry}</span>
             <strong>{site.homeMode}</strong>
@@ -791,7 +793,7 @@ function MotionHomeStage({ site, actualView, onNavigate }) {
 
     if (layoutGroup === "booking") {
       return (
-        <div className="motion-home-stage__layout-panel motion-home-stage__layout-panel--booking">
+        <div className={panelClass}>
           <span>{site.industry}</span>
           <strong>{site.hero.secondary}</strong>
           <p>{site.mobileRule}</p>
@@ -812,7 +814,7 @@ function MotionHomeStage({ site, actualView, onNavigate }) {
 
     if (layoutGroup === "editorial") {
       return (
-        <div className="motion-home-stage__layout-panel motion-home-stage__layout-panel--editorial">
+        <div className={panelClass}>
           <span>{site.homeMode}</span>
           <p>{site.design?.heroMode ?? site.summary}</p>
           <div>
@@ -826,7 +828,7 @@ function MotionHomeStage({ site, actualView, onNavigate }) {
 
     if (layoutGroup === "commerce") {
       return (
-        <div className="motion-home-stage__layout-panel motion-home-stage__layout-panel--commerce">
+        <div className={panelClass}>
           <div className="motion-home-stage__product-shelf">
             {featuredChips.map((item) => (
               <span key={`${site.id}-shelf-${item}`}>{item}</span>
@@ -841,7 +843,7 @@ function MotionHomeStage({ site, actualView, onNavigate }) {
     }
 
     return (
-      <div className="motion-home-stage__layout-panel motion-home-stage__layout-panel--poster">
+      <div className={panelClass}>
         {panelRoutes.map((item) => (
           <button key={`${site.id}-poster-${item.slug}`} type="button" onClick={() => openRoute(item)}>
             {item.label}
@@ -858,6 +860,7 @@ function MotionHomeStage({ site, actualView, onNavigate }) {
       className="motion-home-stage"
       data-profile={motion.profile ?? "cinematic-depth"}
       data-layout={layout}
+      data-variant={variant}
       data-tempo={motion.tempo ?? "medium"}
       data-view={actualView}
       style={{
@@ -877,6 +880,12 @@ function MotionHomeStage({ site, actualView, onNavigate }) {
           <img className="motion-home-stage__layer motion-home-stage__layer--scene" src={site.images.scene} alt="" decoding="async" />
           <img className="motion-home-stage__layer motion-home-stage__layer--brand" src={site.images.brand} alt="" decoding="async" />
           <img className="motion-home-stage__layer motion-home-stage__layer--product" src={site.images.product} alt="" decoding="async" />
+        </div>
+
+        <div className="motion-home-stage__variant-marker" aria-hidden="true">
+          {featuredStats.map((item) => (
+            <span key={`${site.id}-marker-${item.label}`} />
+          ))}
         </div>
 
         <div className="motion-home-stage__copy">
@@ -905,7 +914,7 @@ function MotionHomeStage({ site, actualView, onNavigate }) {
         {renderHeroLayoutPanel()}
       </section>
 
-      <section className="motion-home-stage__story" aria-label={`${site.brand} details`}>
+      <section className="motion-home-stage__story" aria-label={`${site.brand} details`} data-variant={variant}>
         <div className="motion-home-stage__story-panel motion-home-stage__story-panel--lead">
           <span>{site.homeMode}</span>
           <h2>{site.hero.subtitle}</h2>
@@ -928,7 +937,7 @@ function MotionHomeStage({ site, actualView, onNavigate }) {
         </div>
       </section>
 
-      <section className="motion-home-stage__finish" aria-label={`${site.brand} next content`}>
+      <section className="motion-home-stage__finish" aria-label={`${site.brand} next content`} data-variant={variant}>
         <div className="motion-home-stage__finish-media" aria-hidden="true">
           <img src={site.images.brand} alt="" decoding="async" />
           <img src={site.images.product} alt="" decoding="async" />
