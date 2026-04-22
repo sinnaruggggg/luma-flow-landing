@@ -5,7 +5,7 @@ import { AdminConsole } from "./components/adminConsole";
 import { trackSiteVisit } from "./lib/inquiryApi";
 import { useIsMobileClient } from "./lib/showcaseUtils";
 import { ADMIN_PATH, buildManagedPortfolioItems, buildManagedSites, useAdminState } from "./lib/adminStore";
-import { GalleryHome, NotFound, PortfolioEmbedView, SiteStaging, SiteView } from "./components/showcaseChrome";
+import { GalleryHome, NotFound, PortfolioEmbedView, PortfolioIndexView, SiteStaging, SiteView } from "./components/showcaseChrome";
 import "./site-app.css";
 
 function readLocationState() {
@@ -69,6 +69,10 @@ export default function App() {
     () => {
       if (normalizedPath === ADMIN_PATH) {
         return { kind: "admin" };
+      }
+
+      if (normalizedPath === "/portfolio") {
+        return { kind: "portfolio-index" };
       }
 
       if (normalizedPath.startsWith("/portfolio/")) {
@@ -135,13 +139,28 @@ export default function App() {
         >
           <GalleryHome
             sites={managedSites}
-            portfolioItems={managedPortfolioItems}
             content={adminState.content}
             inquirySettings={adminState.inquiry}
             onOpen={navigate}
-            onOpenPortfolio={(portfolioId) => navigate(`/portfolio/${portfolioId}`)}
+            onOpenPortfolioIndex={() => navigate("/portfolio")}
             onContactSample={(siteId) => navigate(contactPathForSite(siteId))}
             selectedContactSiteId={selectedContactSiteId}
+          />
+        </Motion.div>
+      ) : null}
+
+      {routeState.kind === "portfolio-index" ? (
+        <Motion.div
+          key="portfolio-index"
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.26 }}
+        >
+          <PortfolioIndexView
+            items={managedPortfolioItems}
+            onBack={() => navigate("/")}
+            onOpen={(portfolioId) => navigate(`/portfolio/${portfolioId}`)}
           />
         </Motion.div>
       ) : null}
@@ -154,7 +173,7 @@ export default function App() {
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.26 }}
         >
-          <PortfolioEmbedView item={portfolioItemsById[routeState.portfolioId]} onBack={() => navigate("/")} />
+          <PortfolioEmbedView item={portfolioItemsById[routeState.portfolioId]} onBack={() => navigate("/portfolio")} />
         </Motion.div>
       ) : null}
 

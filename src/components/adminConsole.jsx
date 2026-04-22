@@ -1027,14 +1027,14 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
                 <div className="hub-section__header">
                   <span className="hub-section__eyebrow">Portfolio</span>
                   <h2 id="admin-portfolio-heading">포트폴리오 임베딩</h2>
-                  <p>메인 페이지 포트폴리오 탭에 노출할 사이트를 등록하고, 내부 라우트에서 주소 노출 없이 iframe으로 임베딩합니다.</p>
+                  <p>상단 포트폴리오 탭으로 여는 별도 목록 페이지에 노출할 사이트를 등록하고, 내부 라우트에서 주소 노출 없이 iframe으로 임베딩합니다.</p>
                 </div>
 
                 <div className="admin-panel">
                   <div className="admin-panel__header admin-panel__header--spread">
                     <div>
                       <strong>포트폴리오 사이트</strong>
-                      <p>임베드 주소는 화면에 표시되지 않고, 사용자는 내부 포트폴리오 경로에서만 확인합니다.</p>
+                      <p>등록한 사이트는 /portfolio 목록에서 큰 썸네일 카드로 보이고, 사용자는 내부 포트폴리오 경로에서만 확인합니다.</p>
                     </div>
                     <button type="button" className="admin-button admin-button--secondary" onClick={addPortfolio}>
                       포트폴리오 추가

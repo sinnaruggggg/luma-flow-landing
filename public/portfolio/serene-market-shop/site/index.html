@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Serene Market | 심플 라이프스타일 쇼핑몰</title>
+    <meta
+      name="description"
+      content="가상의 라이프스타일 쇼핑몰 Serene Market 데모 사이트입니다. 카테고리, 장바구니, 결제 직전 주문 확인까지 동작합니다."
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Serene Market 홈">
+        <span class="brand-mark">S</span>
+        <span>Serene Market</span>
+      </a>
+      <nav class="main-nav" aria-label="주요 메뉴">
+        <a href="#products">상품</a>
+        <a href="#checkout">주문</a>
+        <a href="#footer">회사 정보</a>
+      </nav>
+      <button class="cart-toggle" type="button" data-open-cart>
+        <span>장바구니</span>
+        <strong data-cart-count>0</strong>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Curated Daily Goods</p>
+          <h1 id="hero-title">매일 쓰는 물건을 더 조용하고 선명하게.</h1>
+          <p>
+            30개의 가상 상품을 카테고리별로 둘러보고, 장바구니부터 결제 직전
+            주문 확인까지 직접 테스트할 수 있습니다.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#products">상품 보기</a>
+            <button class="button ghost" type="button" data-open-cart>장바구니 열기</button>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="쇼핑몰 요약">
+          <div>
+            <span class="metric">30</span>
+            <span>등록 상품</span>
+          </div>
+          <div>
+            <span class="metric">6</span>
+            <span>카테고리</span>
+          </div>
+          <div>
+            <span class="metric">0원</span>
+            <span>실제 결제 없음</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="toolbar" aria-label="상품 검색 및 필터">
+        <div class="search-field">
+          <label for="searchInput">상품 검색</label>
+          <input id="searchInput" type="search" placeholder="예: 머그, 가방, 조명" autocomplete="off" />
+        </div>
+        <div class="select-field">
+          <label for="sortSelect">정렬</label>
+          <select id="sortSelect">
+            <option value="featured">추천순</option>
+            <option value="priceAsc">낮은 가격순</option>
+            <option value="priceDesc">높은 가격순</option>
+            <option value="nameAsc">이름순</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="category-strip" aria-label="카테고리 필터" data-category-list></section>
+
+      <section class="products-section" id="products" aria-labelledby="products-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Shop</p>
+            <h2 id="products-title">전체 상품</h2>
+          </div>
+          <p data-result-summary>상품을 불러오는 중입니다.</p>
+        </div>
+        <div class="product-grid" data-product-grid></div>
+      </section>
+
+      <section class="checkout-anchor" id="checkout" aria-labelledby="checkout-title">
+        <div>
+          <p class="eyebrow">Checkout Flow</p>
+          <h2 id="checkout-title">결제 직전까지 확인하는 주문 흐름</h2>
+        </div>
+        <p>
+          상품을 장바구니에 담은 뒤 배송 정보와 결제수단을 입력하면 실제 결제창
+          호출 직전의 주문 확인 화면까지 진행됩니다.
+        </p>
+        <button class="button primary" type="button" data-open-cart>주문서 열기</button>
+      </section>
+    </main>
+
+    <aside class="cart-drawer" data-cart-drawer aria-hidden="true" aria-label="장바구니와 주문서">
+      <div class="drawer-backdrop" data-close-cart></div>
+      <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+        <div class="drawer-header">
+          <div>
+            <p class="eyebrow">Order</p>
+            <h2 id="cartTitle">장바구니</h2>
+          </div>
+          <button class="icon-button" type="button" data-close-cart aria-label="장바구니 닫기">×</button>
+        </div>
+
+        <div class="cart-items" data-cart-items></div>
+
+        <div class="cart-summary" data-cart-summary>
+          <div><span>상품 금액</span><strong data-subtotal>0원</strong></div>
+          <div><span>배송비</span><strong data-shipping>0원</strong></div>
+          <div class="total"><span>결제 예정 금액</span><strong data-total>0원</strong></div>
+        </div>
+
+        <form class="checkout-form" data-checkout-form novalidate>
+          <h3>주문 정보</h3>
+          <div class="form-grid">
+            <label>
+              주문자 이름
+              <input name="customerName" type="text" placeholder="홍길동" required />
+            </label>
+            <label>
+              연락처
+              <input name="phone" type="tel" placeholder="010-1234-5678" required />
+            </label>
+            <label>
+              우편번호
+              <input name="postalCode" type="text" placeholder="12345" required />
+            </label>
+            <label>
+              주소
+              <input name="address" type="text" placeholder="서울시 중구 예시로 1" required />
+            </label>
+          </div>
+          <label>
+            배송 메모
+            <input name="memo" type="text" placeholder="문 앞에 놓아주세요" />
+          </label>
+
+          <fieldset class="payment-methods">
+            <legend>결제수단 선택</legend>
+            <label><input type="radio" name="paymentMethod" value="card" checked /> 카드 결제</label>
+            <label><input type="radio" name="paymentMethod" value="bank" /> 가상계좌</label>
+            <label><input type="radio" name="paymentMethod" value="easy" /> 간편 결제</label>
+          </fieldset>
+
+          <label class="terms-row">
+            <input name="terms" type="checkbox" required />
+            주문 내용을 확인했으며 결제 직전 단계까지 진행합니다.
+          </label>
+
+          <p class="form-message" data-form-message aria-live="polite"></p>
+          <button class="button primary full" type="submit">결제 직전 주문 확인</button>
+        </form>
+
+        <section class="order-preview" data-order-preview hidden aria-live="polite"></section>
+      </div>
+    </aside>
+
+    <footer class="site-footer" id="footer">
+      <div>
+        <strong>Serene Market</strong>
+        <p>가상의 상호명: 주식회사 세린마켓</p>
+      </div>
+      <address>
+        대표: 김세린 · 사업자등록번호: 123-45-67890 · 통신판매업: 제2026-서울중구-0001호<br />
+        주소: 서울특별시 중구 샘플로 12, 4층 · 고객센터: 02-0000-1234 · 이메일: hello@serene-market.example
+      </address>
+    </footer>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>

@@ -120,33 +120,56 @@ function createFallbackPortfolioItem(index = 0) {
   };
 }
 
+function normalizePortfolioId(value, fallbackId) {
+  return sanitizeText(value, fallbackId)
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9-]/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+function sanitizePortfolioItem(item, index, fallbackItem) {
+  const resolvedFallback = fallbackItem ?? createFallbackPortfolioItem(index);
+  const rawId = normalizePortfolioId(item?.id, resolvedFallback.id || `portfolio-${index + 1}`);
+  const parsedOrder = Number.parseInt(item?.order, 10);
+
+  return {
+    id: rawId || resolvedFallback.id || `portfolio-${index + 1}`,
+    title: sanitizeText(item?.title, resolvedFallback.title),
+    category: sanitizeText(item?.category, resolvedFallback.category),
+    status: sanitizeText(item?.status, resolvedFallback.status),
+    stack: sanitizeText(item?.stack, resolvedFallback.stack),
+    description: sanitizeText(item?.description, resolvedFallback.description),
+    embedSrc: sanitizeText(item?.embedSrc, resolvedFallback.embedSrc),
+    desktopImage: sanitizeText(item?.desktopImage, resolvedFallback.desktopImage),
+    mobileImage: sanitizeText(item?.mobileImage, resolvedFallback.mobileImage),
+    highlights: sanitizeOptionalArray(item?.highlights ?? resolvedFallback.highlights),
+    visible: typeof item?.visible === "boolean" ? item.visible : resolvedFallback.visible !== false,
+    order: Number.isFinite(parsedOrder) ? Math.max(0, parsedOrder) : resolvedFallback.order ?? index,
+  };
+}
+
 function sanitizePortfolioItems(value, fallback = DEFAULT_PORTFOLIO_ITEMS) {
   const source = Array.isArray(value) ? value : fallback;
-  const normalized = source.map((item, index) => {
-    const fallbackItem = fallback[index] ?? createFallbackPortfolioItem(index);
-    const rawId = sanitizeText(item?.id, fallbackItem.id || `portfolio-${index + 1}`)
-      .trim()
-      .toLowerCase()
-      .replace(/[^a-z0-9-]/g, "-")
-      .replace(/-+/g, "-")
-      .replace(/^-|-$/g, "");
-    const parsedOrder = Number.parseInt(item?.order, 10);
+  const normalized = source.map((item, index) => (
+    sanitizePortfolioItem(item, index, fallback[index] ?? createFallbackPortfolioItem(index))
+  ));
 
-    return {
-      id: rawId || fallbackItem.id || `portfolio-${index + 1}`,
-      title: sanitizeText(item?.title, fallbackItem.title),
-      category: sanitizeText(item?.category, fallbackItem.category),
-      status: sanitizeText(item?.status, fallbackItem.status),
-      stack: sanitizeText(item?.stack, fallbackItem.stack),
-      description: sanitizeText(item?.description, fallbackItem.description),
-      embedSrc: sanitizeText(item?.embedSrc, fallbackItem.embedSrc),
-      desktopImage: sanitizeText(item?.desktopImage, fallbackItem.desktopImage),
-      mobileImage: sanitizeText(item?.mobileImage, fallbackItem.mobileImage),
-      highlights: sanitizeOptionalArray(item?.highlights ?? fallbackItem.highlights),
-      visible: typeof item?.visible === "boolean" ? item.visible : fallbackItem.visible !== false,
-      order: Number.isFinite(parsedOrder) ? Math.max(0, parsedOrder) : fallbackItem.order ?? index,
-    };
-  });
+  if (Array.isArray(value)) {
+    const existingIds = new Set(normalized.map((item) => item.id));
+
+    fallback.forEach((item, index) => {
+      const fallbackId = normalizePortfolioId(item?.id, `portfolio-${index + 1}`);
+
+      if (!fallbackId || existingIds.has(fallbackId)) {
+        return;
+      }
+
+      normalized.push(sanitizePortfolioItem(item, normalized.length, item));
+      existingIds.add(fallbackId);
+    });
+  }
 
   const seen = new Set();
   return normalized.map((item, index) => {

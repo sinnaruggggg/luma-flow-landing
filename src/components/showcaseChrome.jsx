@@ -8,7 +8,7 @@ import { useBackdropPointer } from "../lib/showcaseUtils";
 import { BrandMark, SceneBackdrop, ShowcasePhone } from "./showcaseAtoms";
 
 const TOP_NAV_ITEMS = [
-  { label: "포트폴리오", sectionId: "portfolio" },
+  { label: "포트폴리오", routePath: "/portfolio" },
   { label: "샘플 둘러보기", sectionId: "samples" },
   { label: "제작 방식", sectionId: "process" },
   { label: "기능", sectionId: "features" },
@@ -471,13 +471,53 @@ export function PortfolioEmbedView({ item, onBack }) {
   );
 }
 
+export function PortfolioIndexView({ items = [], onBack, onOpen }) {
+  return (
+    <div className="hub-page portfolio-index-page">
+      <SceneBackdrop tone="gallery" />
+      <div className="hub-page__content">
+        <header className="hub-topbar">
+          <div className="hub-topbar__brand">
+            <BrandMark />
+            <div>
+              <strong>{BRAND_NAME}</strong>
+            </div>
+          </div>
+          <button type="button" className="hub-topbar__cta hub-topbar__cta--soft" onClick={onBack}>
+            <ArrowLeft size={15} />
+            메인으로
+          </button>
+        </header>
+
+        <section className="portfolio-index-hero" aria-labelledby="portfolio-index-heading">
+          <span className="hub-section__eyebrow">Portfolio</span>
+          <h1 id="portfolio-index-heading">포트폴리오</h1>
+          <p>이 프로젝트에 귀속한 사이트들을 큰 썸네일로 모았습니다. 카드를 누르면 주소를 보이지 않고 내부 화면에서 바로 열립니다.</p>
+        </section>
+
+        {items.length > 0 ? (
+          <section className="portfolio-index-grid" aria-label="포트폴리오 목록">
+            {items.map((item) => (
+              <PortfolioCard key={item.id} item={item} onOpen={onOpen} />
+            ))}
+          </section>
+        ) : (
+          <div className="hub-empty-state">
+            <strong>등록된 포트폴리오가 없습니다.</strong>
+            <p>관리자 페이지에서 포트폴리오 사이트를 등록하면 이 페이지에 큰 썸네일 카드로 표시됩니다.</p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export function GalleryHome({
   sites = siteRegistry,
-  portfolioItems = [],
   content = GALLERY_COPY_DEFAULTS,
   inquirySettings = INQUIRY_DEFAULTS,
   onOpen,
-  onOpenPortfolio,
+  onOpenPortfolioIndex,
   onContactSample,
   selectedContactSiteId = "",
 }) {
@@ -516,7 +556,12 @@ export function GalleryHome({
           </div>
           <nav className="hub-topbar__nav" aria-label="메인 메뉴">
             {TOP_NAV_ITEMS.map((item) => (
-              <button key={item.sectionId} type="button" className="hub-topbar__nav-item" onClick={() => scrollToSection(item.sectionId)}>
+              <button
+                key={item.routePath ?? item.sectionId}
+                type="button"
+                className="hub-topbar__nav-item"
+                onClick={() => (item.routePath ? onOpenPortfolioIndex?.() : scrollToSection(item.sectionId))}
+              >
                 {item.label}
               </button>
             ))}
@@ -528,26 +573,6 @@ export function GalleryHome({
           <div className="hub-hero__content hub-hero__content--minimal">
             <h1>{content.heroTitle}</h1>
           </div>
-        </section>
-
-        <section id="portfolio" className="hub-section hub-section--portfolio" aria-labelledby="portfolio-heading">
-          <div className="hub-section__header">
-            <span className="hub-section__eyebrow">Portfolio</span>
-            <h2 id="portfolio-heading">실제 제작 사이트 포트폴리오</h2>
-            <p>별도 프로젝트로 제작한 사이트를 한 곳에서 확인할 수 있도록 정리했습니다.</p>
-          </div>
-          {portfolioItems.length > 0 ? (
-            <div className="portfolio-grid">
-              {portfolioItems.map((item) => (
-                <PortfolioCard key={item.id} item={item} onOpen={onOpenPortfolio} />
-              ))}
-            </div>
-          ) : (
-            <div className="hub-empty-state">
-              <strong>등록된 포트폴리오가 없습니다.</strong>
-              <p>관리자 페이지에서 포트폴리오 사이트를 등록하면 이 영역에 임베딩 카드가 표시됩니다.</p>
-            </div>
-          )}
         </section>
 
         <section id="samples" className="hub-section" aria-label="샘플 갤러리">

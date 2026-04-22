@@ -975,6 +975,54 @@
   gap: 22px;
 }
 
+.portfolio-index-page .hub-page__content {
+  gap: clamp(24px, 4vw, 42px);
+}
+
+.portfolio-index-hero {
+  display: grid;
+  gap: 16px;
+  padding: clamp(42px, 7vw, 86px) 0 clamp(8px, 2vw, 18px);
+}
+
+.portfolio-index-hero h1 {
+  max-width: 900px;
+  margin: 0;
+  color: #171717;
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.portfolio-index-hero p {
+  max-width: 760px;
+  margin: 0;
+  color: rgba(18, 18, 18, 0.62);
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.portfolio-index-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 2.4vw, 28px);
+}
+
+.portfolio-index-grid .hub-card.portfolio-card {
+  grid-template-columns: 1fr;
+  border-radius: 30px;
+}
+
+.portfolio-index-grid .hub-card.portfolio-card .portfolio-card__visual {
+  min-height: auto;
+  aspect-ratio: 16 / 10;
+}
+
+.portfolio-index-grid .portfolio-card .hub-card__body {
+  padding: clamp(20px, 2.4vw, 30px);
+}
+
 .hub-card.portfolio-card {
   display: grid;
   grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
@@ -3650,6 +3698,12 @@
   .hub-contact-card__points span {
     width: 100%;
     justify-content: center;
+  }
+  .portfolio-index-hero {
+    padding-top: 28px;
+  }
+  .portfolio-index-grid {
+    grid-template-columns: 1fr;
   }
   .hub-grid { grid-template-columns: 1fr; }
   .hub-card.portfolio-card { grid-template-columns: 1fr; }
