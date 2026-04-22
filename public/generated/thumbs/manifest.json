@@ -1,285 +1,285 @@
 {
-  "generatedAt": "2026-04-19T11:04:44.425Z",
+  "generatedAt": "2026-04-22T14:10:59.832Z",
   "totalSites": 20,
   "items": [
     {
       "siteId": "sneaker-drop",
       "device": "desktop",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\sneaker-drop-home-desktop.webp"
     },
     {
       "siteId": "sneaker-drop",
       "device": "mobile",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\sneaker-drop-home-mobile.webp"
     },
     {
       "siteId": "supplement-brand",
       "device": "desktop",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\supplement-brand-home-desktop.webp"
     },
     {
       "siteId": "supplement-brand",
       "device": "mobile",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\supplement-brand-home-mobile.webp"
     },
     {
       "siteId": "boxing-gym",
       "device": "desktop",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\boxing-gym-home-desktop.webp"
     },
     {
       "siteId": "boxing-gym",
       "device": "mobile",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\boxing-gym-home-mobile.webp"
     },
     {
       "siteId": "wealth-app",
       "device": "desktop",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\wealth-app-home-desktop.webp"
     },
     {
       "siteId": "wealth-app",
       "device": "mobile",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\wealth-app-home-mobile.webp"
     },
     {
       "siteId": "skin-clinic",
       "device": "desktop",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\skin-clinic-home-desktop.webp"
     },
     {
       "siteId": "skin-clinic",
       "device": "mobile",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\skin-clinic-home-mobile.webp"
     },
     {
       "siteId": "arch-studio",
       "device": "desktop",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\arch-studio-home-desktop.webp"
     },
     {
       "siteId": "arch-studio",
       "device": "mobile",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\arch-studio-home-mobile.webp"
     },
     {
       "siteId": "beauty-flash-sale",
       "device": "desktop",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\beauty-flash-sale-home-desktop.webp"
     },
     {
       "siteId": "beauty-flash-sale",
       "device": "mobile",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\beauty-flash-sale-home-mobile.webp"
     },
     {
       "siteId": "festival-page",
       "device": "desktop",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\festival-page-home-desktop.webp"
     },
     {
       "siteId": "festival-page",
       "device": "mobile",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\festival-page-home-mobile.webp"
     },
     {
       "siteId": "creator-club",
       "device": "desktop",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\creator-club-home-desktop.webp"
     },
     {
       "siteId": "creator-club",
       "device": "mobile",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\creator-club-home-mobile.webp"
     },
     {
       "siteId": "ev-mobility",
       "device": "desktop",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\ev-mobility-home-desktop.webp"
     },
     {
       "siteId": "ev-mobility",
       "device": "mobile",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\ev-mobility-home-mobile.webp"
     },
     {
       "siteId": "gaming-gear",
       "device": "desktop",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\gaming-gear-home-desktop.webp"
     },
     {
       "siteId": "gaming-gear",
       "device": "mobile",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\gaming-gear-home-mobile.webp"
     },
     {
       "siteId": "ai-saas",
       "device": "desktop",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\ai-saas-home-desktop.webp"
     },
     {
       "siteId": "ai-saas",
       "device": "mobile",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\ai-saas-home-mobile.webp"
     },
     {
       "siteId": "indie-bookstore",
       "device": "desktop",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\indie-bookstore-home-desktop.webp"
     },
     {
       "siteId": "indie-bookstore",
       "device": "mobile",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\indie-bookstore-home-mobile.webp"
     },
     {
       "siteId": "stationery-shop",
       "device": "desktop",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\stationery-shop-home-desktop.webp"
     },
     {
       "siteId": "stationery-shop",
       "device": "mobile",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\stationery-shop-home-mobile.webp"
     },
     {
       "siteId": "local-cafe",
       "device": "desktop",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\local-cafe-home-desktop.webp"
     },
     {
       "siteId": "local-cafe",
       "device": "mobile",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\local-cafe-home-mobile.webp"
     },
     {
       "siteId": "boutique-hotel",
       "device": "desktop",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\boutique-hotel-home-desktop.webp"
     },
     {
       "siteId": "boutique-hotel",
       "device": "mobile",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\boutique-hotel-home-mobile.webp"
     },
     {
       "siteId": "perfume-house",
       "device": "desktop",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\perfume-house-home-desktop.webp"
     },
     {
       "siteId": "perfume-house",
       "device": "mobile",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\perfume-house-home-mobile.webp"
     },
     {
       "siteId": "furniture-store",
       "device": "desktop",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\furniture-store-home-desktop.webp"
     },
     {
       "siteId": "furniture-store",
       "device": "mobile",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\furniture-store-home-mobile.webp"
     },
     {
       "siteId": "youth-fashion",
       "device": "desktop",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\youth-fashion-home-desktop.webp"
     },
     {
       "siteId": "youth-fashion",
       "device": "mobile",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\youth-fashion-home-mobile.webp"
     },
     {
       "siteId": "jewelry-brand",
       "device": "desktop",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\jewelry-brand-home-desktop.webp"
     },
     {
       "siteId": "jewelry-brand",
       "device": "mobile",
       "status": "generated",
-      "source": "html-render",
+      "source": "stitch-home",
       "output": "C:\\www\\mypages\\public\\generated\\thumbs\\jewelry-brand-home-mobile.webp"
     }
   ]

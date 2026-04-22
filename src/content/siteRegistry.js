@@ -85,8 +85,8 @@ function buildGalleryThumb(site, device) {
   };
 }
 
-function isRouteReady(entry) {
-  return entry.desktop.stitched && entry.mobile.stitched;
+function isRouteReady(entry, routeKind = "") {
+  return routeKind === "home" || (entry.desktop.stitched && entry.mobile.stitched);
 }
 
 function getCoverage(routeAssets) {
@@ -129,7 +129,7 @@ export const siteRegistry = siteCatalog.map((site) => {
   return {
     ...site,
     blueprint,
-    routes: routes.map((route) => ({ ...route, ready: isRouteReady(routeAssets[route.slug]) })),
+    routes: routes.map((route) => ({ ...route, ready: isRouteReady(routeAssets[route.slug], route.kind) })),
     routeAssets,
     galleryThumbs,
     gallery: {
@@ -137,7 +137,7 @@ export const siteRegistry = siteCatalog.map((site) => {
       mobile: routeAssets.home.mobile.image,
       homeMode: site.homeMode,
       hook: blueprint.heroMode,
-      homeReady: isRouteReady(routeAssets.home),
+      homeReady: isRouteReady(routeAssets.home, "home"),
       stitchedRoutes: coverage.stitchedRoutes,
       readyRoutes: coverage.readyRoutes,
       stitchedScreens: coverage.stitchedScreens,

@@ -1,4 +1,5 @@
 ﻿const buildImage = (style, siteId, kind) => `/generated/pages/${style}--${siteId}--${kind}.png`;
+const buildImageV2 = (siteId, kind) => `/generated/pages-v2/${siteId}-${kind}.png`;
 
 const themes = {
   neoSun: { bg: "#f7e45d", surface: "#fffdf4", panel: "rgba(255, 252, 241, 0.84)", text: "#121212", muted: "#5d5649", accent: "#ff6b6b", accentSoft: "#7dd3fc", line: "rgba(18, 18, 18, 0.16)", shadow: "10px 10px 0 rgba(18, 18, 18, 0.88)", buttonText: "#121212" },
@@ -286,6 +287,29 @@ const routeKindDescriptions = {
 
 const stageHeights = {
   home: { desktop: 1480, mobile: 980 }, browse: { desktop: 1420, mobile: 980 }, detail: { desktop: 1380, mobile: 980 }, checkout: { desktop: 1320, mobile: 940 }, brand: { desktop: 1260, mobile: 920 }, reserve: { desktop: 1320, mobile: 940 }, guide: { desktop: 1220, mobile: 900 }, features: { desktop: 1420, mobile: 980 }, cases: { desktop: 1340, mobile: 940 }, pricing: { desktop: 1260, mobile: 920 }, contact: { desktop: 1180, mobile: 900 }, works: { desktop: 1420, mobile: 980 }, services: { desktop: 1320, mobile: 920 }, brief: { desktop: 1220, mobile: 900 }, lineup: { desktop: 1440, mobile: 980 }, schedule: { desktop: 1300, mobile: 940 }, tickets: { desktop: 1260, mobile: 920 }, feed: { desktop: 1360, mobile: 960 }, perks: { desktop: 1280, mobile: 920 }, join: { desktop: 1240, mobile: 920 },
+};
+
+const motionPresets = {
+  "sneaker-drop": { profile: "poster-split", effect: "glitch", tempo: "fast" },
+  "supplement-brand": { profile: "routine-stack", effect: "jelly", tempo: "medium" },
+  "boxing-gym": { profile: "kinetic-ring", effect: "rails", tempo: "fast" },
+  "wealth-app": { profile: "data-constellation", effect: "links", tempo: "slow" },
+  "skin-clinic": { profile: "clinical-layers", effect: "lens", tempo: "slow" },
+  "arch-studio": { profile: "editorial-sheets", effect: "lines", tempo: "slow" },
+  "beauty-flash-sale": { profile: "sale-burst", effect: "fluid", tempo: "fast" },
+  "festival-page": { profile: "poster-stage", effect: "wave", tempo: "fast" },
+  "creator-club": { profile: "live-feed", effect: "mesh", tempo: "medium" },
+  "ev-mobility": { profile: "charge-console", effect: "wind", tempo: "medium" },
+  "gaming-gear": { profile: "command-center", effect: "rain", tempo: "fast" },
+  "ai-saas": { profile: "workflow-map", effect: "links", tempo: "slow" },
+  "indie-bookstore": { profile: "paper-shelf", effect: "ink", tempo: "slow" },
+  "stationery-shop": { profile: "paper-kit", effect: "sand", tempo: "slow" },
+  "local-cafe": { profile: "storefront-window", effect: "cloud", tempo: "slow" },
+  "boutique-hotel": { profile: "stay-film", effect: "parallax", tempo: "slow" },
+  "perfume-house": { profile: "scent-film", effect: "smoke", tempo: "slow" },
+  "furniture-store": { profile: "room-planner", effect: "slime", tempo: "slow" },
+  "youth-fashion": { profile: "lookbook-rail", effect: "boxes", tempo: "fast" },
+  "jewelry-brand": { profile: "gallery-reveal", effect: "hole", tempo: "slow" },
 };
 
 const rawSites = [
@@ -639,10 +663,16 @@ export const siteCatalog = rawSites.map((site) => {
     ...localized,
     stats: site.stats.map((item) => ({ ...item, label: statLabels[item.label] ?? item.label })),
     theme: themes[site.themeKey],
-    images: {
+    motion: motionPresets[site.id] ?? { profile: "cinematic-depth", effect: "magnetic", tempo: "medium" },
+    legacyImages: {
       brand: buildImage(site.imageStyle, site.id, "brand"),
       product: buildImage(site.imageStyle, site.id, "product"),
       scene: buildImage(site.imageStyle, site.id, "scene"),
+    },
+    images: {
+      brand: buildImageV2(site.id, "brand"),
+      product: buildImageV2(site.id, "product"),
+      scene: buildImageV2(site.id, "scene"),
     },
   };
 });

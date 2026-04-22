@@ -5,7 +5,8 @@ import { GALLERY_COPY_DEFAULTS, INQUIRY_DEFAULTS } from "../content/siteAdminDef
 import { buildSitePath, siteRegistry } from "../content/siteRegistry";
 import { submitInquiry } from "../lib/inquiryApi";
 import { useBackdropPointer } from "../lib/showcaseUtils";
-import { BrandMark, SceneBackdrop, ShowcasePhone } from "./showcaseAtoms";
+import { EffectStage } from "./interactiveEffects";
+import { BrandMark, ConstellationField, SceneBackdrop, ShowcasePhone } from "./showcaseAtoms";
 
 const TOP_NAV_ITEMS = [
   { label: "포트폴리오", sectionId: "portfolio" },
@@ -691,6 +692,142 @@ export function GalleryHome({
   );
 }
 
+function MotionHomeStage({ site, actualView, onNavigate }) {
+  const stageRef = useRef(null);
+  const [pointerStyle, onPointerMove] = useBackdropPointer();
+  const theme = site.theme ?? {};
+  const motion = site.motion ?? {};
+  const readyRoutes = site.routes.filter((item) => item.slug !== "home" && item.ready);
+  const primaryRoute = readyRoutes[0] ?? site.routes.find((item) => item.slug !== "home") ?? site.routes[0];
+  const secondaryRoute = readyRoutes[1] ?? readyRoutes[0] ?? primaryRoute;
+  const routeButtons = (readyRoutes.length ? readyRoutes : site.routes.filter((item) => item.slug !== "home")).slice(0, 4);
+
+  useEffect(() => {
+    const node = stageRef.current;
+    if (!node) return undefined;
+
+    let frame = 0;
+    const updateScrollProgress = () => {
+      frame = 0;
+      const rect = node.getBoundingClientRect();
+      const range = Math.max(node.offsetHeight - window.innerHeight, 1);
+      const progress = Math.min(1, Math.max(0, -rect.top / range));
+
+      node.style.setProperty("--scroll-progress", progress.toFixed(3));
+      node.style.setProperty("--motion-rise", `${Math.round(progress * -150)}px`);
+      node.style.setProperty("--motion-drop", `${Math.round(progress * 96)}px`);
+      node.style.setProperty("--motion-lift", `${Math.round(progress * -92)}px`);
+      node.style.setProperty("--motion-split", `${(progress * 24).toFixed(2)}vw`);
+      node.style.setProperty("--motion-split-neg", `${(-progress * 24).toFixed(2)}vw`);
+      node.style.setProperty("--motion-depth", `${(1 + progress * 0.12).toFixed(3)}`);
+      node.style.setProperty("--motion-fade", `${Math.min(0.82, progress * 1.08).toFixed(3)}`);
+      node.style.setProperty("--motion-copy-opacity", `${Math.max(0, 1 - progress * 3.2).toFixed(3)}`);
+      node.style.setProperty("--motion-story-opacity", `${Math.min(1, progress * 1.6).toFixed(3)}`);
+      node.style.setProperty("--motion-story-lift", `${Math.round((1 - progress) * 58)}px`);
+    };
+
+    const requestUpdate = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(updateScrollProgress);
+    };
+
+    updateScrollProgress();
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
+    };
+  }, []);
+
+  function openRoute(targetRoute) {
+    if (!targetRoute) return;
+    onNavigate(buildSitePath(site.id, targetRoute.slug));
+  }
+
+  return (
+    <div
+      ref={stageRef}
+      className="motion-home-stage"
+      data-profile={motion.profile ?? "cinematic-depth"}
+      data-tempo={motion.tempo ?? "medium"}
+      data-view={actualView}
+      onPointerMove={onPointerMove}
+      style={{
+        ...pointerStyle,
+        "--site-bg": theme.bg,
+        "--site-surface": theme.surface,
+        "--site-panel": theme.panel,
+        "--site-text": theme.text,
+        "--site-muted": theme.muted,
+        "--site-accent": theme.accent,
+        "--site-accent-soft": theme.accentSoft,
+        "--site-line": theme.line,
+        "--site-button-text": theme.buttonText,
+      }}
+    >
+      <section className="motion-home-stage__hero">
+        <div className="motion-home-stage__media" aria-hidden="true">
+          <img className="motion-home-stage__layer motion-home-stage__layer--scene" src={site.images.scene} alt="" decoding="async" />
+          <img className="motion-home-stage__layer motion-home-stage__layer--brand" src={site.images.brand} alt="" decoding="async" />
+          <img className="motion-home-stage__layer motion-home-stage__layer--product" src={site.images.product} alt="" decoding="async" />
+          <EffectStage kind={motion.effect} density="hero" className="motion-home-stage__effect" />
+          <ConstellationField className="motion-home-stage__constellation" />
+          <span className="motion-home-stage__grain" />
+        </div>
+
+        <div className="motion-home-stage__copy">
+          <span>{site.hero.eyebrow}</span>
+          <h1>{site.brand}</h1>
+          <p>{site.hero.title}</p>
+          <div className="motion-home-stage__actions">
+            <button type="button" onClick={() => openRoute(primaryRoute)}>
+              {site.hero.primary}
+            </button>
+            <button type="button" onClick={() => openRoute(secondaryRoute)}>
+              {site.hero.secondary}
+            </button>
+          </div>
+        </div>
+
+        <div className="motion-home-stage__dashboard" aria-label={`${site.brand} highlights`}>
+          {site.stats.map((item) => (
+            <div key={`${site.id}-${item.label}`} className="motion-home-stage__metric">
+              <span>{item.label}</span>
+              <strong>{item.value}</strong>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="motion-home-stage__story" aria-label={`${site.brand} details`}>
+        <div className="motion-home-stage__story-panel motion-home-stage__story-panel--lead">
+          <span>{site.homeMode}</span>
+          <h2>{site.hero.subtitle}</h2>
+          <p>{site.summary}</p>
+        </div>
+
+        <div className="motion-home-stage__route-rail">
+          {routeButtons.map((item) => (
+            <button key={`${site.id}-${item.slug}`} type="button" onClick={() => openRoute(item)}>
+              <span>{item.label}</span>
+              <ChevronRight size={16} />
+            </button>
+          ))}
+        </div>
+
+        <div className="motion-home-stage__chip-wall">
+          {site.chips.map((item) => (
+            <span key={`${site.id}-${item}`}>{item}</span>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}
+
 function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
   const stage = site.routeAssets[route.slug][actualView];
   const frameClass = actualView === "mobile" && !isMobileClient ? "screen-stage__frame screen-stage__frame--narrow" : "screen-stage__frame";
@@ -698,7 +835,7 @@ function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
   const frameRef = useRef(null);
 
   useEffect(() => {
-    if (!stage.html || !frameRef.current) {
+    if (route.kind === "home" || !stage.html || !frameRef.current) {
       return undefined;
     }
 
@@ -716,7 +853,15 @@ function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
     return () => {
       frame.removeEventListener("load", handleLoad);
     };
-  }, [onNavigate, site, stage.html]);
+  }, [onNavigate, route.kind, site, stage.html]);
+
+  if (route.kind === "home") {
+    return (
+      <section className={`screen-stage screen-stage--${actualView}`} aria-label={title}>
+        <MotionHomeStage site={site} actualView={actualView} onNavigate={onNavigate} />
+      </section>
+    );
+  }
 
   return (
     <section className={`screen-stage screen-stage--${actualView}`} aria-label={title}>

@@ -104,6 +104,10 @@ async function resolveSource(site, device) {
   const htmlFile = new URL(`../design/stitch/${site.id}/screens/home-${device}.html`, import.meta.url);
   const fallback = await resolveFallbackSource(site, device);
 
+  if (site.motion && fallback) {
+    return fallback;
+  }
+
   if (await fileExists(fileURLToPath(htmlFile))) {
     return {
       kind: "html-render",
