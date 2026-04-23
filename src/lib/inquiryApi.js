@@ -1,12 +1,6 @@
-import { isGitHubPagesHost } from "./appPaths";
-
 const ADMIN_TOKEN_KEY = "webforge_admin_token_v1";
 
 async function requestJson(url, options = {}) {
-  if (isGitHubPagesHost()) {
-    throw new Error("GitHub Pages 정적 배포에서는 API 요청을 처리할 수 없습니다.");
-  }
-
   const response = await fetch(url, options);
   const contentType = response.headers.get("content-type") || "";
   let payload = null;
@@ -84,7 +78,7 @@ export async function fetchAdminVisits(token) {
 }
 
 export async function trackSiteVisit(payload) {
-  if (typeof window === "undefined" || isGitHubPagesHost()) {
+  if (typeof window === "undefined") {
     return;
   }
 

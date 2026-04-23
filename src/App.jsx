@@ -3,16 +3,14 @@ import { AnimatePresence, motion as Motion } from "framer-motion";
 import { parseSitePath } from "./content/siteRegistry";
 import { AdminConsole } from "./components/adminConsole";
 import { trackSiteVisit } from "./lib/inquiryApi";
-import { stripBasePath, withBasePath } from "./lib/appPaths";
 import { useIsMobileClient } from "./lib/showcaseUtils";
 import { ADMIN_PATH, buildManagedPortfolioItems, buildManagedSites, useAdminState } from "./lib/adminStore";
-import { GalleryHome, NotFound, PortfolioEmbedView, PortfolioIndexView, SiteStaging } from "./components/showcaseChrome";
-import { SiteView } from "./components/siteExperience";
+import { GalleryHome, NotFound, PortfolioEmbedView, PortfolioIndexView, SiteStaging, SiteView } from "./components/showcaseChrome";
 import "./site-app.css";
 
 function readLocationState() {
   return {
-    pathname: stripBasePath(window.location.pathname || "/"),
+    pathname: window.location.pathname || "/",
     search: window.location.search || "",
   };
 }
@@ -47,10 +45,9 @@ export default function App() {
   }, []);
 
   const navigate = (nextPath) => {
-    const targetPath = withBasePath(nextPath || "/");
-    const nextUrl = new URL(targetPath, window.location.origin);
+    const nextUrl = new URL(nextPath || "/", window.location.origin);
     const nextLocation = {
-      pathname: stripBasePath(nextUrl.pathname || "/"),
+      pathname: nextUrl.pathname || "/",
       search: nextUrl.search || "",
     };
 
@@ -62,7 +59,7 @@ export default function App() {
       setViewMode("desktop");
     }
 
-    window.history.pushState({}, "", `${nextUrl.pathname}${nextUrl.search}`);
+    window.history.pushState({}, "", `${nextLocation.pathname}${nextLocation.search}`);
     window.scrollTo(0, 0);
     setLocationState(nextLocation);
   };
@@ -83,9 +80,9 @@ export default function App() {
         return { kind: "portfolio", portfolioId: decodeURIComponent(portfolioId) };
       }
 
-      return parseSitePath(normalizedPath);
+      return parseSitePath(locationState.pathname);
     },
-    [normalizedPath],
+    [locationState.pathname, normalizedPath],
   );
   const site = useMemo(
     () => (routeState.kind === "site" || routeState.kind === "staging" ? sitesById[routeState.siteId] : null),
@@ -196,6 +193,7 @@ export default function App() {
             onViewChange={setViewMode}
             onNavigate={navigate}
             onBack={() => navigate("/")}
+            onContact={() => navigate(contactPathForSite(site.id))}
           />
         </Motion.div>
       ) : null}

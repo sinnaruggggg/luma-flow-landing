@@ -1,7 +1,5 @@
 ﻿import { getBlueprintForSite, getRouteDescription, getStageHeight, siteCatalog } from "./siteCatalog";
 
-import { stripBasePath, withBasePath } from "../lib/appPaths";
-
 const stitchImages = import.meta.glob("../../design/stitch/*/screens/*.{png,jpg,jpeg,webp}", {
   eager: true,
   import: "default",
@@ -14,6 +12,7 @@ const stitchHtml = import.meta.glob("../../design/stitch/*/screens/*.html", {
 });
 
 const fallbackKinds = {
+  home: "brand",
   browse: "scene",
   detail: "product",
   checkout: "scene",
@@ -41,17 +40,10 @@ function findAsset(glob, siteId, pageSlug, device) {
 }
 
 function getFallbackImage(site, routeKind, device) {
-  if (routeKind === "home") {
-    if (device === "mobile") {
-      return site.images.product ?? site.images.scene ?? site.images.brand;
-    }
-
-    // Home fallbacks should stay customer-facing. Brand boards are too abstract
-    // for routes that are meant to represent a full landing experience.
-    return site.images.scene ?? site.images.product ?? site.images.brand;
-  }
-
   const kind = fallbackKinds[routeKind] ?? "scene";
+  if (device === "mobile" && routeKind === "home") {
+    return site.images.product ?? site.images.brand;
+  }
   return site.images[kind] ?? site.images.scene ?? site.images.brand;
 }
 
@@ -87,7 +79,7 @@ function buildGalleryThumb(site, device) {
   const stitchedImage = findAsset(stitchImages, site.id, "home", device);
 
   return {
-    src: withBasePath(`/generated/thumbs/${site.id}-home-${device}.webp`),
+    src: `/generated/thumbs/${site.id}-home-${device}.webp`,
     fallbackSrc: stitchedImage ?? getFallbackImage(site, "home", device),
     alt: `${site.brand} home ${device} card preview`,
   };
@@ -110,8 +102,7 @@ export function buildSitePath(siteId, slug = "home") {
 }
 
 export function parseSitePath(pathname) {
-  const scopedPath = stripBasePath(pathname);
-  const cleanPath = scopedPath === "/index.html" ? "/" : scopedPath.replace(/\/+/g, "/").replace(/\/$/, "") || "/";
+  const cleanPath = pathname === "/index.html" ? "/" : pathname.replace(/\/+/g, "/").replace(/\/$/, "") || "/";
   if (cleanPath === "/") return { kind: "gallery" };
 
   const [siteId, pageSlug = "home"] = cleanPath.split("/").filter(Boolean);

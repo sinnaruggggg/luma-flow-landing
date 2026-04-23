@@ -1,7 +1,5 @@
-import { withBasePath } from "../lib/appPaths";
-
-const buildImage = (style, siteId, kind) => withBasePath(`/generated/pages/${style}--${siteId}--${kind}.png`);
-const buildImageV2 = (siteId, kind) => withBasePath(`/generated/pages-v2/${siteId}-${kind}.png`);
+﻿const buildImage = (style, siteId, kind) => `/generated/pages/${style}--${siteId}--${kind}.png`;
+const buildImageV2 = (siteId, kind) => `/generated/pages-v2/${siteId}-${kind}.png`;
 
 const themes = {
   neoSun: { bg: "#f7e45d", surface: "#fffdf4", panel: "rgba(255, 252, 241, 0.84)", text: "#121212", muted: "#5d5649", accent: "#ff6b6b", accentSoft: "#7dd3fc", line: "rgba(18, 18, 18, 0.16)", shadow: "10px 10px 0 rgba(18, 18, 18, 0.88)", buttonText: "#121212" },

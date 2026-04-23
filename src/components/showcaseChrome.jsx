@@ -3,7 +3,6 @@ import { ArrowLeft, ChevronRight, Clock3, Copy, ExternalLink, Monitor, SendHoriz
 import { BRAND_INQUIRY_HEADER, BRAND_INTRO_LABEL, BRAND_NAME } from "../content/brand";
 import { GALLERY_COPY_DEFAULTS, INQUIRY_DEFAULTS } from "../content/siteAdminDefaults";
 import { buildSitePath, siteRegistry } from "../content/siteRegistry";
-import { withBasePath } from "../lib/appPaths";
 import { submitInquiry } from "../lib/inquiryApi";
 import { useBackdropPointer } from "../lib/showcaseUtils";
 import { BrandMark, SceneBackdrop, ShowcasePhone } from "./showcaseAtoms";
@@ -80,7 +79,7 @@ function patchStageRouteLinks(frame, site, onNavigate) {
       element.dataset.webforgeRoute = matchedRoute.slug;
 
       if (element.tagName === "A") {
-        element.setAttribute("href", withBasePath(buildSitePath(site.id, matchedRoute.slug)));
+        element.setAttribute("href", buildSitePath(site.id, matchedRoute.slug));
       }
 
       element.style.cursor = "pointer";
@@ -345,20 +344,16 @@ function ContactBrief({ sampleOptions, initialSampleId = "", inquirySettings = I
   );
 }
 
-const PORTFOLIO_FALLBACK_DESKTOP = withBasePath("/portfolio/aim-furniture/home-desktop.png");
-const PORTFOLIO_FALLBACK_MOBILE = withBasePath("/portfolio/aim-furniture/home-mobile.png");
-
-function resolveStaticPath(path = "") {
-  return path.startsWith("/") ? withBasePath(path) : path;
-}
+const PORTFOLIO_FALLBACK_DESKTOP = "/portfolio/aim-furniture/home-desktop.png";
+const PORTFOLIO_FALLBACK_MOBILE = "/portfolio/aim-furniture/home-mobile.png";
 
 function PortfolioCard({ item, onOpen }) {
   const canOpen = Boolean(item.embedSrc);
   const desktopPreview = {
-    src: resolveStaticPath(item.desktopImage || item.mobileImage || PORTFOLIO_FALLBACK_DESKTOP),
+    src: item.desktopImage || item.mobileImage || PORTFOLIO_FALLBACK_DESKTOP,
     alt: `${item.title} desktop preview`,
   };
-  const mobileImage = resolveStaticPath(item.mobileImage || item.desktopImage || PORTFOLIO_FALLBACK_MOBILE);
+  const mobileImage = item.mobileImage || item.desktopImage || PORTFOLIO_FALLBACK_MOBILE;
 
   return (
     <article className="hub-card portfolio-card">
@@ -471,7 +466,7 @@ export function PortfolioEmbedView({ item, onBack }) {
           <span>{item.category} · {item.status}</span>
         </div>
       </div>
-      <iframe className="portfolio-embed-frame" title={`${item.title} 임베딩`} src={resolveStaticPath(item.embedSrc)} loading="eager" />
+      <iframe className="portfolio-embed-frame" title={`${item.title} 임베딩`} src={item.embedSrc} loading="eager" />
     </main>
   );
 }
@@ -1620,15 +1615,14 @@ function CinematicScrollHome({ site, actualView, onNavigate }) {
   );
 }
 
-function ScreenStage({ site, route, actualView, isMobileClient, onNavigate, homePreviewMode = "live" }) {
+function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
   const stage = site.routeAssets[route.slug][actualView];
   const frameClass = actualView === "mobile" && !isMobileClient ? "screen-stage__frame screen-stage__frame--narrow" : "screen-stage__frame";
   const title = `${site.brand} ${route.label}`;
   const frameRef = useRef(null);
-  const showMotionHome = route.kind === "home" && (homePreviewMode === "motion" || !stage.html);
 
   useEffect(() => {
-    if (showMotionHome || !stage.html || !frameRef.current) {
+    if (route.kind === "home" || !stage.html || !frameRef.current) {
       return undefined;
     }
 
@@ -1646,12 +1640,12 @@ function ScreenStage({ site, route, actualView, isMobileClient, onNavigate, home
     return () => {
       frame.removeEventListener("load", handleLoad);
     };
-  }, [onNavigate, showMotionHome, site, stage.html]);
+  }, [onNavigate, route.kind, site, stage.html]);
 
-  if (showMotionHome) {
+  if (route.kind === "home") {
     return (
       <section className={`screen-stage screen-stage--${actualView}`} aria-label={title}>
-        <CinematicScrollHome site={site} actualView={actualView} onNavigate={onNavigate} />
+        <MotionHomeStage site={site} actualView={actualView} onNavigate={onNavigate} />
       </section>
     );
   }
@@ -1669,16 +1663,7 @@ function ScreenStage({ site, route, actualView, isMobileClient, onNavigate, home
   );
 }
 
-function PreviewToolbar({
-  viewMode,
-  isMobileClient,
-  onViewChange,
-  onBack,
-  onContact,
-  showHomePreviewToggle = false,
-  homePreviewMode = "live",
-  onHomePreviewModeChange,
-}) {
+function PreviewToolbar({ viewMode, isMobileClient, onViewChange, onBack, onContact }) {
   return (
     <div className="site-preview-toolbar" role="toolbar" aria-label="미리보기 전환">
       <button type="button" className="site-preview-toolbar__back" onClick={onBack}>
@@ -1697,16 +1682,6 @@ function PreviewToolbar({
           </button>
         </div>
       ) : null}
-      {showHomePreviewToggle ? (
-        <div className="site-preview-toolbar__group" role="tablist" aria-label="Home preview mode">
-          <button type="button" className={homePreviewMode === "live" ? "is-active" : ""} onClick={() => onHomePreviewModeChange?.("live")}>
-            Live
-          </button>
-          <button type="button" className={homePreviewMode === "motion" ? "is-active" : ""} onClick={() => onHomePreviewModeChange?.("motion")}>
-            Scroll
-          </button>
-        </div>
-      ) : null}
       <button type="button" className="site-preview-toolbar__contact" onClick={onContact}>
         문의하기
       </button>
@@ -1716,43 +1691,11 @@ function PreviewToolbar({
 
 export function SiteView({ site, route, viewMode, isMobileClient, onViewChange, onNavigate, onBack, onContact }) {
   const actualView = isMobileClient ? "mobile" : viewMode;
-  const homeStage = site.routeAssets.home?.[actualView];
-  const canShowLiveHome = route.kind === "home" && Boolean(homeStage?.html);
-  const homePreviewKey = `${site.id}:${route.slug}:${actualView}`;
-  const defaultHomePreviewMode = canShowLiveHome ? "live" : "motion";
-  const [homePreviewState, setHomePreviewState] = useState(() => ({
-    key: homePreviewKey,
-    mode: defaultHomePreviewMode,
-  }));
-  const homePreviewMode = homePreviewState.key === homePreviewKey ? homePreviewState.mode : defaultHomePreviewMode;
-
-  function handleHomePreviewModeChange(nextMode) {
-    setHomePreviewState({
-      key: homePreviewKey,
-      mode: nextMode,
-    });
-  }
 
   return (
     <main className="site-main site-main--immersive" data-view={actualView}>
-      <PreviewToolbar
-        viewMode={actualView}
-        isMobileClient={isMobileClient}
-        onViewChange={onViewChange}
-        onBack={onBack}
-        onContact={onContact}
-        showHomePreviewToggle={canShowLiveHome}
-        homePreviewMode={homePreviewMode}
-        onHomePreviewModeChange={handleHomePreviewModeChange}
-      />
-      <ScreenStage
-        site={site}
-        route={route}
-        actualView={actualView}
-        isMobileClient={isMobileClient}
-        onNavigate={onNavigate}
-        homePreviewMode={homePreviewMode}
-      />
+      <PreviewToolbar viewMode={actualView} isMobileClient={isMobileClient} onViewChange={onViewChange} onBack={onBack} onContact={onContact} />
+      <ScreenStage site={site} route={route} actualView={actualView} isMobileClient={isMobileClient} onNavigate={onNavigate} />
     </main>
   );
 }
