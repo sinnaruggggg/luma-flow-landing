@@ -5,7 +5,8 @@ import { AdminConsole } from "./components/adminConsole";
 import { trackSiteVisit } from "./lib/inquiryApi";
 import { useIsMobileClient } from "./lib/showcaseUtils";
 import { ADMIN_PATH, buildManagedPortfolioItems, buildManagedSites, useAdminState } from "./lib/adminStore";
-import { GalleryHome, NotFound, PortfolioEmbedView, PortfolioIndexView, SiteStaging, SiteView } from "./components/showcaseChrome";
+import { GalleryHome, NotFound, PortfolioEmbedView, PortfolioIndexView, SiteStaging } from "./components/showcaseChrome";
+import { SiteView } from "./components/siteExperience";
 import "./site-app.css";
 
 function readLocationState() {
@@ -193,7 +194,6 @@ export default function App() {
             onViewChange={setViewMode}
             onNavigate={navigate}
             onBack={() => navigate("/")}
-            onContact={() => navigate(contactPathForSite(site.id))}
           />
         </Motion.div>
       ) : null}
