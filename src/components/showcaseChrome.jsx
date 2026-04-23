@@ -729,7 +729,629 @@ function getHomeLayoutGroup(layout) {
   return "poster";
 }
 
+function getHomePreviewModel(site, onNavigate) {
+  const allRoutes = site.routes.filter((item) => item.slug !== "home");
+  const readyRoutes = allRoutes.filter((item) => item.ready);
+  const routes = readyRoutes.length ? readyRoutes : allRoutes;
+  const primaryRoute = routes[0] ?? allRoutes[0] ?? site.routes[0];
+  const secondaryRoute = routes[1] ?? primaryRoute;
+  const stats = site.stats.slice(0, 4);
+  const chips = site.chips.slice(0, 6);
+
+  return {
+    allRoutes,
+    chips,
+    primaryRoute,
+    readyRoutes,
+    routes,
+    secondaryRoute,
+    stats,
+    openRoute(targetRoute) {
+      if (!targetRoute) return;
+      onNavigate(buildSitePath(site.id, targetRoute.slug));
+    },
+  };
+}
+
+function getHomeStyleVars(site) {
+  const theme = site.theme ?? {};
+
+  return {
+    "--site-bg": theme.bg,
+    "--site-surface": theme.surface,
+    "--site-panel": theme.panel,
+    "--site-text": theme.text,
+    "--site-muted": theme.muted,
+    "--site-accent": theme.accent,
+    "--site-accent-soft": theme.accentSoft,
+    "--site-line": theme.line,
+    "--site-button-text": theme.buttonText,
+  };
+}
+
+function ExperienceShell({ site, actualView, children }) {
+  const motion = site.motion ?? {};
+
+  return (
+    <div
+      className="sample-home"
+      data-experience={motion.homeExperience ?? "cinematic-scroll"}
+      data-variant={motion.homeVariant ?? motion.layout ?? "default"}
+      data-view={actualView}
+      style={getHomeStyleVars(site)}
+    >
+      {children}
+    </div>
+  );
+}
+
+function HomeActions({ model, site, compact = false }) {
+  return (
+    <div className={compact ? "sample-home__actions sample-home__actions--compact" : "sample-home__actions"}>
+      <button type="button" onClick={() => model.openRoute(model.primaryRoute)}>
+        {site.hero.primary}
+        <ChevronRight size={16} />
+      </button>
+      <button type="button" onClick={() => model.openRoute(model.secondaryRoute)}>
+        {site.hero.secondary}
+      </button>
+    </div>
+  );
+}
+
+function StatList({ model, className = "sample-home__stats", limit = 3 }) {
+  return (
+    <div className={className}>
+      {model.stats.slice(0, limit).map((item) => (
+        <span key={`${className}-${item.label}`}>
+          <strong>{item.value}</strong>
+          {item.label}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+function RouteGrid({ model, className = "sample-home__route-grid", limit = 4 }) {
+  return (
+    <div className={className}>
+      {model.routes.slice(0, limit).map((item) => (
+        <button key={`${className}-${item.slug}`} type="button" onClick={() => model.openRoute(item)}>
+          <span>{item.label}</span>
+          <ChevronRight size={15} />
+        </button>
+      ))}
+    </div>
+  );
+}
+
+function ChipList({ model, className = "sample-home__chips", limit = 5 }) {
+  return (
+    <div className={className}>
+      {model.chips.slice(0, limit).map((item) => (
+        <span key={`${className}-${item}`}>{item}</span>
+      ))}
+    </div>
+  );
+}
+
+function DynamicLaunchHome({ site, actualView, onNavigate }) {
+  const model = getHomePreviewModel(site, onNavigate);
+
+  return (
+    <ExperienceShell site={site} actualView={actualView}>
+      <section className="sample-home__launch">
+        <div className="sample-home__launch-copy">
+          <span>{site.hero.eyebrow}</span>
+          <h1>{site.brand}</h1>
+          <p>{site.hero.title}</p>
+          <HomeActions model={model} site={site} />
+        </div>
+        <div className="sample-home__launch-wall" aria-hidden="true">
+          <img src={site.images.brand} alt="" decoding="async" />
+          <img src={site.images.product} alt="" decoding="async" />
+        </div>
+        <StatList model={model} className="sample-home__launch-stats" />
+      </section>
+      <div className="sample-home__ticker" aria-hidden="true">
+        {model.chips.slice(0, 5).map((item) => (
+          <span key={`${site.id}-ticker-${item}`}>{item}</span>
+        ))}
+      </div>
+    </ExperienceShell>
+  );
+}
+
+function RetailBrowseHome({ site, actualView, onNavigate }) {
+  const model = getHomePreviewModel(site, onNavigate);
+
+  return (
+    <ExperienceShell site={site} actualView={actualView}>
+      <section className="sample-home__retail">
+        <div className="sample-home__retail-head">
+          <span>{site.industry}</span>
+          <h1>{site.brand}</h1>
+          <p>{site.hero.title}</p>
+          <HomeActions model={model} site={site} compact />
+        </div>
+        <div className="sample-home__retail-grid">
+          {model.chips.slice(0, 4).map((item, index) => (
+            <button key={`${site.id}-retail-${item}`} type="button" onClick={() => model.openRoute(model.routes[index] ?? model.primaryRoute)}>
+              <img src={index % 2 === 0 ? site.images.product : site.images.brand} alt="" decoding="async" />
+              <span>{item}</span>
+            </button>
+          ))}
+        </div>
+        <aside className="sample-home__retail-feature">
+          <img src={site.images.scene} alt="" decoding="async" />
+          <strong>{site.homeMode}</strong>
+          <p>{site.summary}</p>
+        </aside>
+      </section>
+    </ExperienceShell>
+  );
+}
+
+function KineticSplitHome({ site, actualView, onNavigate }) {
+  const model = getHomePreviewModel(site, onNavigate);
+
+  return (
+    <ExperienceShell site={site} actualView={actualView}>
+      <section className="sample-home__kinetic">
+        <div className="sample-home__kinetic-copy">
+          <span>{site.homeMode}</span>
+          <h1>{site.hero.title}</h1>
+          <HomeActions model={model} site={site} />
+        </div>
+        <img className="sample-home__kinetic-figure" src={site.images.brand} alt="" decoding="async" />
+        <div className="sample-home__kinetic-board">
+          <StatList model={model} limit={3} />
+          <RouteGrid model={model} limit={3} />
+        </div>
+      </section>
+    </ExperienceShell>
+  );
+}
+
+function BusinessCleanHome({ site, actualView, onNavigate }) {
+  const model = getHomePreviewModel(site, onNavigate);
+
+  return (
+    <ExperienceShell site={site} actualView={actualView}>
+      <section className="sample-home__business">
+        <div className="sample-home__business-copy">
+          <span>{site.industry}</span>
+          <h1>{site.brand}</h1>
+          <p>{site.hero.title}</p>
+          <HomeActions model={model} site={site} compact />
+        </div>
+        <div className="sample-home__business-dashboard">
+          <div className="sample-home__business-chart" aria-hidden="true">
+            {model.stats.map((item) => (
+              <span key={`${site.id}-chart-${item.label}`} />
+            ))}
+          </div>
+          <StatList model={model} limit={4} />
+        </div>
+        <RouteGrid model={model} className="sample-home__business-routes" limit={4} />
+      </section>
+    </ExperienceShell>
+  );
+}
+
+function BeautyCounterHome({ site, actualView, onNavigate }) {
+  const model = getHomePreviewModel(site, onNavigate);
+
+  return (
+    <ExperienceShell site={site} actualView={actualView}>
+      <section className="sample-home__counter">
+        <div className="sample-home__counter-copy">
+          <span>{site.hero.eyebrow}</span>
+          <h1>{site.brand}</h1>
+          <p>{site.hero.title}</p>
+        </div>
+        <div className="sample-home__counter-shelf">
+          <img src={site.images.product} alt="" decoding="async" />
+          <img src={site.images.brand} alt="" decoding="async" />
+          <ChipList model={model} limit={4} />
+        </div>
+        <RouteGrid model={model} className="sample-home__counter-menu" limit={4} />
+      </section>
+    </ExperienceShell>
+  );
+}
+
+function EditorialMagazineHome({ site, actualView, onNavigate }) {
+  const model = getHomePreviewModel(site, onNavigate);
+
+  return (
+    <ExperienceShell site={site} actualView={actualView}>
+      <section className="sample-home__magazine">
+        <div className="sample-home__magazine-title">
+          <span>{site.industry}</span>
+          <h1>{site.brand}</h1>
+        </div>
+        <img className="sample-home__magazine-cover" src={site.images.brand} alt="" decoding="async" />
+        <div className="sample-home__magazine-copy">
+          <h2>{site.hero.title}</h2>
+          <p>{site.summary}</p>
+          <HomeActions model={model} site={site} compact />
+        </div>
+        <ChipList model={model} className="sample-home__magazine-index" limit={5} />
+      </section>
+    </ExperienceShell>
+  );
+}
+
+function FlashSaleHome({ site, actualView, onNavigate }) {
+  const model = getHomePreviewModel(site, onNavigate);
+
+  return (
+    <ExperienceShell site={site} actualView={actualView}>
+      <section className="sample-home__flash">
+        <img className="sample-home__flash-bg" src={site.images.scene} alt="" decoding="async" />
+        <div className="sample-home__flash-copy">
+          <span>{site.hero.eyebrow}</span>
+          <h1>{site.brand}</h1>
+          <p>{site.hero.title}</p>
+          <HomeActions model={model} site={site} />
+        </div>
+        <div className="sample-home__flash-products">
+          {[site.images.product, site.images.brand, site.images.product].map((src, index) => (
+            <button key={`${site.id}-flash-${index}`} type="button" onClick={() => model.openRoute(model.routes[index] ?? model.primaryRoute)}>
+              <img src={src} alt="" decoding="async" />
+              <span>{model.chips[index] ?? site.homeMode}</span>
+            </button>
+          ))}
+        </div>
+      </section>
+    </ExperienceShell>
+  );
+}
+
+function PosterWorldHome({ site, actualView, onNavigate }) {
+  const model = getHomePreviewModel(site, onNavigate);
+
+  return (
+    <ExperienceShell site={site} actualView={actualView}>
+      <section className="sample-home__poster-world">
+        <img src={site.images.scene} alt="" decoding="async" />
+        <div className="sample-home__poster-copy">
+          <span>{site.homeMode}</span>
+          <h1>{site.brand}</h1>
+          <p>{site.hero.title}</p>
+        </div>
+        <RouteGrid model={model} className="sample-home__poster-tickets" limit={4} />
+      </section>
+    </ExperienceShell>
+  );
+}
+
+function LiveFeedHome({ site, actualView, onNavigate }) {
+  const model = getHomePreviewModel(site, onNavigate);
+
+  return (
+    <ExperienceShell site={site} actualView={actualView}>
+      <section className="sample-home__live">
+        <div className="sample-home__live-copy">
+          <span>{site.industry}</span>
+          <h1>{site.brand}</h1>
+          <p>{site.hero.title}</p>
+          <HomeActions model={model} site={site} compact />
+        </div>
+        <div className="sample-home__live-feed">
+          {model.chips.slice(0, 5).map((item, index) => (
+            <article key={`${site.id}-live-${item}`}>
+              <span>0{index + 1}</span>
+              <strong>{item}</strong>
+              <p>{model.routes[index]?.label ?? site.homeMode}</p>
+            </article>
+          ))}
+        </div>
+        <img className="sample-home__live-media" src={site.images.product} alt="" decoding="async" />
+      </section>
+    </ExperienceShell>
+  );
+}
+
+function TechConsoleHome({ site, actualView, onNavigate }) {
+  const model = getHomePreviewModel(site, onNavigate);
+
+  return (
+    <ExperienceShell site={site} actualView={actualView}>
+      <section className="sample-home__console">
+        <div className="sample-home__console-map" aria-hidden="true">
+          <img src={site.images.scene} alt="" decoding="async" />
+          {model.stats.map((item) => (
+            <span key={`${site.id}-console-dot-${item.label}`} />
+          ))}
+        </div>
+        <div className="sample-home__console-copy">
+          <span>{site.industry}</span>
+          <h1>{site.brand}</h1>
+          <p>{site.hero.title}</p>
+        </div>
+        <div className="sample-home__console-panel">
+          <StatList model={model} limit={4} />
+          <RouteGrid model={model} limit={3} />
+        </div>
+      </section>
+    </ExperienceShell>
+  );
+}
+
+function GamingHudHome({ site, actualView, onNavigate }) {
+  const model = getHomePreviewModel(site, onNavigate);
+
+  return (
+    <ExperienceShell site={site} actualView={actualView}>
+      <section className="sample-home__hud">
+        <div className="sample-home__hud-frame">
+          <img src={site.images.product} alt="" decoding="async" />
+          <span>{site.homeMode}</span>
+        </div>
+        <div className="sample-home__hud-copy">
+          <span>{site.hero.eyebrow}</span>
+          <h1>{site.brand}</h1>
+          <p>{site.hero.title}</p>
+          <HomeActions model={model} site={site} />
+        </div>
+        <RouteGrid model={model} className="sample-home__hud-loadout" limit={4} />
+      </section>
+    </ExperienceShell>
+  );
+}
+
+function WorkflowMapHome({ site, actualView, onNavigate }) {
+  const model = getHomePreviewModel(site, onNavigate);
+
+  return (
+    <ExperienceShell site={site} actualView={actualView}>
+      <section className="sample-home__workflow">
+        <div className="sample-home__workflow-copy">
+          <span>{site.industry}</span>
+          <h1>{site.hero.title}</h1>
+          <p>{site.summary}</p>
+        </div>
+        <div className="sample-home__workflow-nodes">
+          {model.routes.slice(0, 5).map((item, index) => (
+            <button key={`${site.id}-flow-${item.slug}`} type="button" onClick={() => model.openRoute(item)}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              {item.label}
+            </button>
+          ))}
+        </div>
+        <StatList model={model} className="sample-home__workflow-stats" limit={3} />
+      </section>
+    </ExperienceShell>
+  );
+}
+
+function QuietCatalogHome({ site, actualView, onNavigate }) {
+  const model = getHomePreviewModel(site, onNavigate);
+
+  return (
+    <ExperienceShell site={site} actualView={actualView}>
+      <section className="sample-home__quiet">
+        <div className="sample-home__quiet-copy">
+          <span>{site.hero.eyebrow}</span>
+          <h1>{site.brand}</h1>
+          <p>{site.hero.title}</p>
+        </div>
+        <div className="sample-home__quiet-shelf">
+          <img src={site.images.brand} alt="" decoding="async" />
+          <div>
+            <ChipList model={model} limit={5} />
+            <RouteGrid model={model} limit={3} />
+          </div>
+        </div>
+      </section>
+    </ExperienceShell>
+  );
+}
+
+function KitTableHome({ site, actualView, onNavigate }) {
+  const model = getHomePreviewModel(site, onNavigate);
+
+  return (
+    <ExperienceShell site={site} actualView={actualView}>
+      <section className="sample-home__kit">
+        <div className="sample-home__kit-copy">
+          <span>{site.industry}</span>
+          <h1>{site.brand}</h1>
+          <p>{site.hero.title}</p>
+        </div>
+        <div className="sample-home__kit-table">
+          {[site.images.product, site.images.brand, site.images.scene].map((src, index) => (
+            <button key={`${site.id}-kit-${index}`} type="button" onClick={() => model.openRoute(model.routes[index] ?? model.primaryRoute)}>
+              <img src={src} alt="" decoding="async" />
+              <span>{model.chips[index] ?? site.homeMode}</span>
+            </button>
+          ))}
+        </div>
+      </section>
+    </ExperienceShell>
+  );
+}
+
+function StorefrontWindowHome({ site, actualView, onNavigate }) {
+  const model = getHomePreviewModel(site, onNavigate);
+
+  return (
+    <ExperienceShell site={site} actualView={actualView}>
+      <section className="sample-home__storefront">
+        <div className="sample-home__storefront-window">
+          <img src={site.images.scene} alt="" decoding="async" />
+        </div>
+        <div className="sample-home__storefront-board">
+          <span>{site.homeMode}</span>
+          <h1>{site.brand}</h1>
+          <p>{site.hero.title}</p>
+          <RouteGrid model={model} limit={4} />
+        </div>
+      </section>
+    </ExperienceShell>
+  );
+}
+
+function LuxuryLoungeHome({ site, actualView, onNavigate }) {
+  const model = getHomePreviewModel(site, onNavigate);
+
+  return (
+    <ExperienceShell site={site} actualView={actualView}>
+      <section className="sample-home__lounge">
+        <img className="sample-home__lounge-bg" src={site.images.scene} alt="" decoding="async" />
+        <div className="sample-home__lounge-copy">
+          <span>{site.industry}</span>
+          <h1>{site.brand}</h1>
+          <p>{site.hero.title}</p>
+        </div>
+        <div className="sample-home__lounge-card">
+          <StatList model={model} limit={3} />
+          <HomeActions model={model} site={site} compact />
+        </div>
+      </section>
+    </ExperienceShell>
+  );
+}
+
+function MinimalStatementHome({ site, actualView, onNavigate }) {
+  const model = getHomePreviewModel(site, onNavigate);
+
+  return (
+    <ExperienceShell site={site} actualView={actualView}>
+      <section className="sample-home__minimal">
+        <img src={site.images.scene} alt="" decoding="async" />
+        <div className="sample-home__minimal-copy">
+          <span>{site.hero.eyebrow}</span>
+          <h1>{site.brand}</h1>
+          <p>{site.hero.title}</p>
+          <HomeActions model={model} site={site} compact />
+        </div>
+      </section>
+    </ExperienceShell>
+  );
+}
+
+function ShowroomPlannerHome({ site, actualView, onNavigate }) {
+  const model = getHomePreviewModel(site, onNavigate);
+
+  return (
+    <ExperienceShell site={site} actualView={actualView}>
+      <section className="sample-home__showroom">
+        <div className="sample-home__showroom-plan" aria-hidden="true">
+          {model.chips.slice(0, 6).map((item) => (
+            <span key={`${site.id}-plan-${item}`} />
+          ))}
+        </div>
+        <div className="sample-home__showroom-copy">
+          <span>{site.industry}</span>
+          <h1>{site.brand}</h1>
+          <p>{site.hero.title}</p>
+          <HomeActions model={model} site={site} compact />
+        </div>
+        <img className="sample-home__showroom-room" src={site.images.scene} alt="" decoding="async" />
+      </section>
+    </ExperienceShell>
+  );
+}
+
+function LookbookRailHome({ site, actualView, onNavigate }) {
+  const model = getHomePreviewModel(site, onNavigate);
+
+  return (
+    <ExperienceShell site={site} actualView={actualView}>
+      <section className="sample-home__lookbook">
+        <div className="sample-home__lookbook-copy">
+          <span>{site.homeMode}</span>
+          <h1>{site.brand}</h1>
+          <p>{site.hero.title}</p>
+        </div>
+        <div className="sample-home__lookbook-rail">
+          {[site.images.brand, site.images.product, site.images.scene].map((src, index) => (
+            <button key={`${site.id}-look-${index}`} type="button" onClick={() => model.openRoute(model.routes[index] ?? model.primaryRoute)}>
+              <img src={src} alt="" decoding="async" />
+              <span>{model.chips[index] ?? site.hero.primary}</span>
+            </button>
+          ))}
+        </div>
+      </section>
+    </ExperienceShell>
+  );
+}
+
+function GalleryFocusHome({ site, actualView, onNavigate }) {
+  const model = getHomePreviewModel(site, onNavigate);
+
+  return (
+    <ExperienceShell site={site} actualView={actualView}>
+      <section className="sample-home__gallery">
+        <div className="sample-home__gallery-copy">
+          <span>{site.industry}</span>
+          <h1>{site.brand}</h1>
+          <p>{site.hero.title}</p>
+          <HomeActions model={model} site={site} compact />
+        </div>
+        <div className="sample-home__gallery-wall">
+          <img src={site.images.product} alt="" decoding="async" />
+          <img src={site.images.brand} alt="" decoding="async" />
+          <RouteGrid model={model} limit={3} />
+        </div>
+      </section>
+    </ExperienceShell>
+  );
+}
+
 function MotionHomeStage({ site, actualView, onNavigate }) {
+  const experience = site.motion?.homeExperience ?? "cinematic-scroll";
+
+  switch (experience) {
+    case "dynamic-launch":
+      return <DynamicLaunchHome site={site} actualView={actualView} onNavigate={onNavigate} />;
+    case "retail-browse":
+      return <RetailBrowseHome site={site} actualView={actualView} onNavigate={onNavigate} />;
+    case "kinetic-split":
+      return <KineticSplitHome site={site} actualView={actualView} onNavigate={onNavigate} />;
+    case "business-clean":
+      return <BusinessCleanHome site={site} actualView={actualView} onNavigate={onNavigate} />;
+    case "beauty-counter":
+      return <BeautyCounterHome site={site} actualView={actualView} onNavigate={onNavigate} />;
+    case "editorial-magazine":
+      return <EditorialMagazineHome site={site} actualView={actualView} onNavigate={onNavigate} />;
+    case "flash-sale":
+      return <FlashSaleHome site={site} actualView={actualView} onNavigate={onNavigate} />;
+    case "poster-world":
+      return <PosterWorldHome site={site} actualView={actualView} onNavigate={onNavigate} />;
+    case "live-feed":
+      return <LiveFeedHome site={site} actualView={actualView} onNavigate={onNavigate} />;
+    case "tech-console":
+      return <TechConsoleHome site={site} actualView={actualView} onNavigate={onNavigate} />;
+    case "gaming-hud":
+      return <GamingHudHome site={site} actualView={actualView} onNavigate={onNavigate} />;
+    case "workflow-map":
+      return <WorkflowMapHome site={site} actualView={actualView} onNavigate={onNavigate} />;
+    case "quiet-catalog":
+      return <QuietCatalogHome site={site} actualView={actualView} onNavigate={onNavigate} />;
+    case "kit-table":
+      return <KitTableHome site={site} actualView={actualView} onNavigate={onNavigate} />;
+    case "storefront-window":
+      return <StorefrontWindowHome site={site} actualView={actualView} onNavigate={onNavigate} />;
+    case "luxury-lounge":
+      return <LuxuryLoungeHome site={site} actualView={actualView} onNavigate={onNavigate} />;
+    case "minimal-statement":
+      return <MinimalStatementHome site={site} actualView={actualView} onNavigate={onNavigate} />;
+    case "showroom-planner":
+      return <ShowroomPlannerHome site={site} actualView={actualView} onNavigate={onNavigate} />;
+    case "lookbook-rail":
+      return <LookbookRailHome site={site} actualView={actualView} onNavigate={onNavigate} />;
+    case "gallery-focus":
+      return <GalleryFocusHome site={site} actualView={actualView} onNavigate={onNavigate} />;
+    default:
+      return <CinematicScrollHome site={site} actualView={actualView} onNavigate={onNavigate} />;
+  }
+}
+
+function CinematicScrollHome({ site, actualView, onNavigate }) {
   const stageRef = useRef(null);
   const theme = site.theme ?? {};
   const motion = site.motion ?? {};

@@ -159,7 +159,7 @@ async function captureAppBuffer(browser, server, source, device) {
     );
     await page.goto(`${server.baseUrl}${source.routePath}`, { waitUntil: "domcontentloaded", timeout: 30000 });
     await waitForPageReady(page, config.settleMs);
-    await page.waitForSelector(".motion-home-stage__hero", { timeout: 30000 });
+    await page.waitForSelector(".motion-home-stage__hero, .sample-home", { timeout: 30000 });
     return await page.screenshot({ type: "png" });
   } finally {
     await context.close();
