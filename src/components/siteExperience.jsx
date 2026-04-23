@@ -125,6 +125,34 @@ function buildShellStyle(theme = {}) {
   };
 }
 
+function measureFrameHeight(frame) {
+  try {
+    const doc = frame.contentDocument;
+    if (!doc) return 0;
+
+    const body = doc.body;
+    const root = doc.documentElement;
+
+    return Math.max(
+      body?.scrollHeight ?? 0,
+      root?.scrollHeight ?? 0,
+      body?.offsetHeight ?? 0,
+      root?.offsetHeight ?? 0,
+      body?.clientHeight ?? 0,
+      root?.clientHeight ?? 0,
+      window.innerHeight,
+    );
+  } catch {
+    return 0;
+  }
+}
+
+function syncFrameHeight(frame) {
+  const nextHeight = measureFrameHeight(frame);
+  if (!nextHeight) return;
+  frame.style.height = `${nextHeight}px`;
+}
+
 function SiteDock({ actualView, isMobileClient, onBack, onViewChange, route, site }) {
   return (
     <div className="site-experience__dock" role="toolbar" aria-label={`${site.brand} controls`}>
@@ -166,11 +194,73 @@ export function SiteView({ site, route, viewMode, isMobileClient, onViewChange, 
     }
 
     const frame = frameRef.current;
+    let teardownObservers = () => {};
+
     const handleLoad = () => {
       patchStageRouteLinks(frame, site, onNavigate);
+      syncFrameHeight(frame);
+
+      try {
+        const doc = frame.contentDocument;
+        const frameWindow = frame.contentWindow;
+        if (!doc || !frameWindow) return;
+
+        let rafId = 0;
+        const scheduleSync = () => {
+          if (rafId) {
+            frameWindow.cancelAnimationFrame(rafId);
+          }
+          rafId = frameWindow.requestAnimationFrame(() => {
+            rafId = 0;
+            syncFrameHeight(frame);
+          });
+        };
+
+        const resizeObserver = typeof ResizeObserver === "function" ? new ResizeObserver(scheduleSync) : null;
+        if (resizeObserver) {
+          if (doc.body) resizeObserver.observe(doc.body);
+          resizeObserver.observe(doc.documentElement);
+        }
+
+        const mutationObserver = typeof MutationObserver === "function"
+          ? new MutationObserver(scheduleSync)
+          : null;
+
+        mutationObserver?.observe(doc.documentElement, {
+          subtree: true,
+          childList: true,
+          characterData: true,
+          attributes: true,
+        });
+
+        doc.querySelectorAll("img").forEach((image) => {
+          if (!image.complete) {
+            image.addEventListener("load", scheduleSync, { once: true });
+            image.addEventListener("error", scheduleSync, { once: true });
+          }
+        });
+
+        doc.fonts?.ready?.then(scheduleSync).catch(() => {});
+        frameWindow.addEventListener("resize", scheduleSync);
+        window.addEventListener("resize", scheduleSync);
+        scheduleSync();
+
+        teardownObservers = () => {
+          if (rafId) {
+            frameWindow.cancelAnimationFrame(rafId);
+          }
+          resizeObserver?.disconnect();
+          mutationObserver?.disconnect();
+          frameWindow.removeEventListener("resize", scheduleSync);
+          window.removeEventListener("resize", scheduleSync);
+        };
+      } catch {
+        teardownObservers = () => {};
+      }
     };
 
     frame.addEventListener("load", handleLoad);
+    frame.setAttribute("scrolling", "no");
 
     if (frame.contentDocument?.readyState === "complete") {
       handleLoad();
@@ -178,6 +268,7 @@ export function SiteView({ site, route, viewMode, isMobileClient, onViewChange, 
 
     return () => {
       frame.removeEventListener("load", handleLoad);
+      teardownObservers();
     };
   }, [onNavigate, site, stage?.html]);
 
