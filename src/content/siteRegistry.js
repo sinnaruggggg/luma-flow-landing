@@ -14,7 +14,6 @@ const stitchHtml = import.meta.glob("../../design/stitch/*/screens/*.html", {
 });
 
 const fallbackKinds = {
-  home: "brand",
   browse: "scene",
   detail: "product",
   checkout: "scene",
@@ -42,10 +41,17 @@ function findAsset(glob, siteId, pageSlug, device) {
 }
 
 function getFallbackImage(site, routeKind, device) {
-  const kind = fallbackKinds[routeKind] ?? "scene";
-  if (device === "mobile" && routeKind === "home") {
-    return site.images.product ?? site.images.brand;
+  if (routeKind === "home") {
+    if (device === "mobile") {
+      return site.images.product ?? site.images.scene ?? site.images.brand;
+    }
+
+    // Home fallbacks should stay customer-facing. Brand boards are too abstract
+    // for routes that are meant to represent a full landing experience.
+    return site.images.scene ?? site.images.product ?? site.images.brand;
   }
+
+  const kind = fallbackKinds[routeKind] ?? "scene";
   return site.images[kind] ?? site.images.scene ?? site.images.brand;
 }
 
