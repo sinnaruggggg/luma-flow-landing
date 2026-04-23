@@ -3,6 +3,7 @@ import { ArrowLeft, ChevronRight, Clock3, Copy, ExternalLink, Monitor, SendHoriz
 import { BRAND_INQUIRY_HEADER, BRAND_INTRO_LABEL, BRAND_NAME } from "../content/brand";
 import { GALLERY_COPY_DEFAULTS, INQUIRY_DEFAULTS } from "../content/siteAdminDefaults";
 import { buildSitePath, siteRegistry } from "../content/siteRegistry";
+import { withBasePath } from "../lib/appPaths";
 import { submitInquiry } from "../lib/inquiryApi";
 import { useBackdropPointer } from "../lib/showcaseUtils";
 import { BrandMark, SceneBackdrop, ShowcasePhone } from "./showcaseAtoms";
@@ -79,7 +80,7 @@ function patchStageRouteLinks(frame, site, onNavigate) {
       element.dataset.webforgeRoute = matchedRoute.slug;
 
       if (element.tagName === "A") {
-        element.setAttribute("href", buildSitePath(site.id, matchedRoute.slug));
+        element.setAttribute("href", withBasePath(buildSitePath(site.id, matchedRoute.slug)));
       }
 
       element.style.cursor = "pointer";
@@ -344,16 +345,20 @@ function ContactBrief({ sampleOptions, initialSampleId = "", inquirySettings = I
   );
 }
 
-const PORTFOLIO_FALLBACK_DESKTOP = "/portfolio/aim-furniture/home-desktop.png";
-const PORTFOLIO_FALLBACK_MOBILE = "/portfolio/aim-furniture/home-mobile.png";
+const PORTFOLIO_FALLBACK_DESKTOP = withBasePath("/portfolio/aim-furniture/home-desktop.png");
+const PORTFOLIO_FALLBACK_MOBILE = withBasePath("/portfolio/aim-furniture/home-mobile.png");
+
+function resolveStaticPath(path = "") {
+  return path.startsWith("/") ? withBasePath(path) : path;
+}
 
 function PortfolioCard({ item, onOpen }) {
   const canOpen = Boolean(item.embedSrc);
   const desktopPreview = {
-    src: item.desktopImage || item.mobileImage || PORTFOLIO_FALLBACK_DESKTOP,
+    src: resolveStaticPath(item.desktopImage || item.mobileImage || PORTFOLIO_FALLBACK_DESKTOP),
     alt: `${item.title} desktop preview`,
   };
-  const mobileImage = item.mobileImage || item.desktopImage || PORTFOLIO_FALLBACK_MOBILE;
+  const mobileImage = resolveStaticPath(item.mobileImage || item.desktopImage || PORTFOLIO_FALLBACK_MOBILE);
 
   return (
     <article className="hub-card portfolio-card">
@@ -466,7 +471,7 @@ export function PortfolioEmbedView({ item, onBack }) {
           <span>{item.category} · {item.status}</span>
         </div>
       </div>
-      <iframe className="portfolio-embed-frame" title={`${item.title} 임베딩`} src={item.embedSrc} loading="eager" />
+      <iframe className="portfolio-embed-frame" title={`${item.title} 임베딩`} src={resolveStaticPath(item.embedSrc)} loading="eager" />
     </main>
   );
 }

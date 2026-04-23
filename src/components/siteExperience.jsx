@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef } from "react";
 import { ArrowLeft, Monitor, Smartphone } from "lucide-react";
 import { buildSitePath } from "../content/siteRegistry";
+import { withBasePath } from "../lib/appPaths";
 import "../site-experience.css";
 
 function normalizeRouteLabel(label = "") {
@@ -98,7 +99,7 @@ function patchStageRouteLinks(frame, site, onNavigate) {
       element.dataset.webforgeRoute = matchedRoute.slug;
 
       if (element.tagName === "A") {
-        element.setAttribute("href", buildSitePath(site.id, matchedRoute.slug));
+        element.setAttribute("href", withBasePath(buildSitePath(site.id, matchedRoute.slug)));
       }
 
       element.style.cursor = "pointer";

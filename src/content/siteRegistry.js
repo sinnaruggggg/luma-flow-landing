@@ -1,5 +1,7 @@
 ﻿import { getBlueprintForSite, getRouteDescription, getStageHeight, siteCatalog } from "./siteCatalog";
 
+import { stripBasePath, withBasePath } from "../lib/appPaths";
+
 const stitchImages = import.meta.glob("../../design/stitch/*/screens/*.{png,jpg,jpeg,webp}", {
   eager: true,
   import: "default",
@@ -79,7 +81,7 @@ function buildGalleryThumb(site, device) {
   const stitchedImage = findAsset(stitchImages, site.id, "home", device);
 
   return {
-    src: `/generated/thumbs/${site.id}-home-${device}.webp`,
+    src: withBasePath(`/generated/thumbs/${site.id}-home-${device}.webp`),
     fallbackSrc: stitchedImage ?? getFallbackImage(site, "home", device),
     alt: `${site.brand} home ${device} card preview`,
   };
@@ -102,7 +104,8 @@ export function buildSitePath(siteId, slug = "home") {
 }
 
 export function parseSitePath(pathname) {
-  const cleanPath = pathname === "/index.html" ? "/" : pathname.replace(/\/+/g, "/").replace(/\/$/, "") || "/";
+  const scopedPath = stripBasePath(pathname);
+  const cleanPath = scopedPath === "/index.html" ? "/" : scopedPath.replace(/\/+/g, "/").replace(/\/$/, "") || "/";
   if (cleanPath === "/") return { kind: "gallery" };
 
   const [siteId, pageSlug = "home"] = cleanPath.split("/").filter(Boolean);
