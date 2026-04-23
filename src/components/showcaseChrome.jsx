@@ -1615,14 +1615,15 @@ function CinematicScrollHome({ site, actualView, onNavigate }) {
   );
 }
 
-function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
+function ScreenStage({ site, route, actualView, isMobileClient, onNavigate, homePreviewMode = "live" }) {
   const stage = site.routeAssets[route.slug][actualView];
   const frameClass = actualView === "mobile" && !isMobileClient ? "screen-stage__frame screen-stage__frame--narrow" : "screen-stage__frame";
   const title = `${site.brand} ${route.label}`;
   const frameRef = useRef(null);
+  const showMotionHome = route.kind === "home" && (homePreviewMode === "motion" || !stage.html);
 
   useEffect(() => {
-    if (route.kind === "home" || !stage.html || !frameRef.current) {
+    if (showMotionHome || !stage.html || !frameRef.current) {
       return undefined;
     }
 
@@ -1640,12 +1641,12 @@ function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
     return () => {
       frame.removeEventListener("load", handleLoad);
     };
-  }, [onNavigate, route.kind, site, stage.html]);
+  }, [onNavigate, showMotionHome, site, stage.html]);
 
-  if (route.kind === "home") {
+  if (showMotionHome) {
     return (
       <section className={`screen-stage screen-stage--${actualView}`} aria-label={title}>
-        <MotionHomeStage site={site} actualView={actualView} onNavigate={onNavigate} />
+        <CinematicScrollHome site={site} actualView={actualView} onNavigate={onNavigate} />
       </section>
     );
   }
@@ -1663,7 +1664,16 @@ function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
   );
 }
 
-function PreviewToolbar({ viewMode, isMobileClient, onViewChange, onBack, onContact }) {
+function PreviewToolbar({
+  viewMode,
+  isMobileClient,
+  onViewChange,
+  onBack,
+  onContact,
+  showHomePreviewToggle = false,
+  homePreviewMode = "live",
+  onHomePreviewModeChange,
+}) {
   return (
     <div className="site-preview-toolbar" role="toolbar" aria-label="미리보기 전환">
       <button type="button" className="site-preview-toolbar__back" onClick={onBack}>
@@ -1682,6 +1692,16 @@ function PreviewToolbar({ viewMode, isMobileClient, onViewChange, onBack, onCont
           </button>
         </div>
       ) : null}
+      {showHomePreviewToggle ? (
+        <div className="site-preview-toolbar__group" role="tablist" aria-label="Home preview mode">
+          <button type="button" className={homePreviewMode === "live" ? "is-active" : ""} onClick={() => onHomePreviewModeChange?.("live")}>
+            Live
+          </button>
+          <button type="button" className={homePreviewMode === "motion" ? "is-active" : ""} onClick={() => onHomePreviewModeChange?.("motion")}>
+            Scroll
+          </button>
+        </div>
+      ) : null}
       <button type="button" className="site-preview-toolbar__contact" onClick={onContact}>
         문의하기
       </button>
@@ -1691,11 +1711,43 @@ function PreviewToolbar({ viewMode, isMobileClient, onViewChange, onBack, onCont
 
 export function SiteView({ site, route, viewMode, isMobileClient, onViewChange, onNavigate, onBack, onContact }) {
   const actualView = isMobileClient ? "mobile" : viewMode;
+  const homeStage = site.routeAssets.home?.[actualView];
+  const canShowLiveHome = route.kind === "home" && Boolean(homeStage?.html);
+  const homePreviewKey = `${site.id}:${route.slug}:${actualView}`;
+  const defaultHomePreviewMode = canShowLiveHome ? "live" : "motion";
+  const [homePreviewState, setHomePreviewState] = useState(() => ({
+    key: homePreviewKey,
+    mode: defaultHomePreviewMode,
+  }));
+  const homePreviewMode = homePreviewState.key === homePreviewKey ? homePreviewState.mode : defaultHomePreviewMode;
+
+  function handleHomePreviewModeChange(nextMode) {
+    setHomePreviewState({
+      key: homePreviewKey,
+      mode: nextMode,
+    });
+  }
 
   return (
     <main className="site-main site-main--immersive" data-view={actualView}>
-      <PreviewToolbar viewMode={actualView} isMobileClient={isMobileClient} onViewChange={onViewChange} onBack={onBack} onContact={onContact} />
-      <ScreenStage site={site} route={route} actualView={actualView} isMobileClient={isMobileClient} onNavigate={onNavigate} />
+      <PreviewToolbar
+        viewMode={actualView}
+        isMobileClient={isMobileClient}
+        onViewChange={onViewChange}
+        onBack={onBack}
+        onContact={onContact}
+        showHomePreviewToggle={canShowLiveHome}
+        homePreviewMode={homePreviewMode}
+        onHomePreviewModeChange={handleHomePreviewModeChange}
+      />
+      <ScreenStage
+        site={site}
+        route={route}
+        actualView={actualView}
+        isMobileClient={isMobileClient}
+        onNavigate={onNavigate}
+        homePreviewMode={homePreviewMode}
+      />
     </main>
   );
 }
