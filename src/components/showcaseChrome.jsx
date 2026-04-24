@@ -915,6 +915,8 @@ function KineticSplitHome({ site, actualView, onNavigate }) {
 
 function BusinessCleanHome({ site, actualView, onNavigate }) {
   const model = getHomePreviewModel(site, onNavigate);
+  const statCards = model.stats.slice(0, 4);
+  const routeCards = model.routes.slice(0, 4);
 
   return (
     <ExperienceShell site={site} actualView={actualView}>
@@ -926,14 +928,37 @@ function BusinessCleanHome({ site, actualView, onNavigate }) {
           <HomeActions model={model} site={site} compact />
         </div>
         <div className="sample-home__business-dashboard">
-          <div className="sample-home__business-chart" aria-hidden="true">
-            {model.stats.map((item) => (
-              <span key={`${site.id}-chart-${item.label}`} />
+          <div className="sample-home__business-kpis">
+            {statCards.map((item) => (
+              <article key={`${site.id}-kpi-${item.label}`}>
+                <span>{item.label}</span>
+                <strong>{item.value}</strong>
+              </article>
             ))}
           </div>
-          <StatList model={model} limit={4} />
+          <div className="sample-home__business-board">
+            <div className="sample-home__business-chart" aria-hidden="true">
+              {statCards.map((item) => (
+                <span key={`${site.id}-chart-${item.label}`} />
+              ))}
+            </div>
+            <div className="sample-home__business-allocation">
+              <span>{site.homeMode}</span>
+              <strong>{site.hero.subtitle}</strong>
+              <p>{site.summary}</p>
+            </div>
+          </div>
         </div>
-        <RouteGrid model={model} className="sample-home__business-routes" limit={4} />
+        <div className="sample-home__business-routes">
+          {routeCards.map((item, index) => (
+            <button key={`${site.id}-business-${item.slug}`} type="button" onClick={() => model.openRoute(item)}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <strong>{item.label}</strong>
+              <em>{model.chips[index] ?? site.homeMode}</em>
+              <ChevronRight size={15} />
+            </button>
+          ))}
+        </div>
       </section>
     </ExperienceShell>
   );
@@ -941,6 +966,8 @@ function BusinessCleanHome({ site, actualView, onNavigate }) {
 
 function BeautyCounterHome({ site, actualView, onNavigate }) {
   const model = getHomePreviewModel(site, onNavigate);
+  const leadStat = model.stats[0];
+  const supportStats = model.stats.slice(1, 3);
 
   return (
     <ExperienceShell site={site} actualView={actualView}>
@@ -949,11 +976,23 @@ function BeautyCounterHome({ site, actualView, onNavigate }) {
           <span>{site.hero.eyebrow}</span>
           <h1>{site.brand}</h1>
           <p>{site.hero.title}</p>
+          <HomeActions model={model} site={site} compact />
         </div>
         <div className="sample-home__counter-shelf">
-          <img src={site.images.product} alt="" decoding="async" />
-          <img src={site.images.brand} alt="" decoding="async" />
-          <ChipList model={model} limit={4} />
+          <img src={site.images.scene} alt="" decoding="async" />
+          <div className="sample-home__counter-diagnosis">
+            <span>{leadStat?.label ?? site.homeMode}</span>
+            <strong>{leadStat?.value ?? site.hero.primary}</strong>
+            <p>{site.hero.subtitle}</p>
+            <div className="sample-home__counter-stats">
+              {supportStats.map((item) => (
+                <span key={`${site.id}-counter-${item.label}`}>
+                  {item.label}
+                  <strong>{item.value}</strong>
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
         <RouteGrid model={model} className="sample-home__counter-menu" limit={4} />
       </section>
@@ -1110,16 +1149,33 @@ function WorkflowMapHome({ site, actualView, onNavigate }) {
       <section className="sample-home__workflow">
         <div className="sample-home__workflow-copy">
           <span>{site.industry}</span>
-          <h1>{site.hero.title}</h1>
+          <h1>{site.brand}</h1>
+          <strong>{site.hero.title}</strong>
           <p>{site.summary}</p>
+          <HomeActions model={model} site={site} compact />
         </div>
-        <div className="sample-home__workflow-nodes">
-          {model.routes.slice(0, 5).map((item, index) => (
-            <button key={`${site.id}-flow-${item.slug}`} type="button" onClick={() => model.openRoute(item)}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              {item.label}
-            </button>
-          ))}
+        <div className="sample-home__workflow-canvas">
+          <div className="sample-home__workflow-nodes">
+            {model.routes.slice(0, 5).map((item, index) => (
+              <button key={`${site.id}-flow-${item.slug}`} type="button" onClick={() => model.openRoute(item)}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                {item.label}
+              </button>
+            ))}
+          </div>
+          <article className="sample-home__workflow-command">
+            <span>{site.homeMode}</span>
+            <strong>{site.hero.title}</strong>
+            <p>{site.hero.subtitle}</p>
+            <div className="sample-home__workflow-command-grid">
+              {model.stats.slice(0, 3).map((item) => (
+                <span key={`${site.id}-workflow-${item.label}`}>
+                  {item.label}
+                  <strong>{item.value}</strong>
+                </span>
+              ))}
+            </div>
+          </article>
         </div>
         <StatList model={model} className="sample-home__workflow-stats" limit={3} />
       </section>
@@ -1137,12 +1193,23 @@ function QuietCatalogHome({ site, actualView, onNavigate }) {
           <span>{site.hero.eyebrow}</span>
           <h1>{site.brand}</h1>
           <p>{site.hero.title}</p>
+          <HomeActions model={model} site={site} compact />
         </div>
         <div className="sample-home__quiet-shelf">
-          <img src={site.images.brand} alt="" decoding="async" />
-          <div>
-            <ChipList model={model} limit={5} />
-            <RouteGrid model={model} limit={3} />
+          <article className="sample-home__quiet-note">
+            <span>{site.homeMode}</span>
+            <strong>{site.hero.subtitle}</strong>
+            <p>{site.summary}</p>
+            <ChipList model={model} limit={4} />
+          </article>
+          <img src={site.images.scene} alt="" decoding="async" />
+          <div className="sample-home__quiet-stack">
+            {model.routes.slice(0, 3).map((item, index) => (
+              <button key={`${site.id}-quiet-${item.slug}`} type="button" onClick={() => model.openRoute(item)}>
+                <strong>{item.label}</strong>
+                <span>{model.stats[index]?.value ?? model.chips[index] ?? site.hero.secondary}</span>
+              </button>
+            ))}
           </div>
         </div>
       </section>
@@ -1160,14 +1227,30 @@ function KitTableHome({ site, actualView, onNavigate }) {
           <span>{site.industry}</span>
           <h1>{site.brand}</h1>
           <p>{site.hero.title}</p>
+          <HomeActions model={model} site={site} compact />
         </div>
         <div className="sample-home__kit-table">
-          {[site.images.product, site.images.brand, site.images.scene].map((src, index) => (
-            <button key={`${site.id}-kit-${index}`} type="button" onClick={() => model.openRoute(model.routes[index] ?? model.primaryRoute)}>
-              <img src={src} alt="" decoding="async" />
-              <span>{model.chips[index] ?? site.homeMode}</span>
-            </button>
-          ))}
+          <button type="button" className="sample-home__kit-hero" onClick={() => model.openRoute(model.primaryRoute)}>
+            <img src={site.images.product} alt="" decoding="async" />
+            <span>{model.chips[0] ?? site.homeMode}</span>
+          </button>
+          <article className="sample-home__kit-swatches">
+            {model.chips.slice(0, 4).map((item, index) => (
+              <span key={`${site.id}-swatch-${item}`} data-index={index}>{item}</span>
+            ))}
+          </article>
+          <button type="button" className="sample-home__kit-detail" onClick={() => model.openRoute(model.routes[1] ?? model.secondaryRoute)}>
+            <img src={site.images.scene} alt="" decoding="async" />
+            <span>{model.chips[1] ?? site.hero.secondary}</span>
+          </button>
+          <article className="sample-home__kit-summary">
+            {model.stats.slice(0, 3).map((item) => (
+              <span key={`${site.id}-kit-stat-${item.label}`}>
+                {item.label}
+                <strong>{item.value}</strong>
+              </span>
+            ))}
+          </article>
         </div>
       </section>
     </ExperienceShell>
@@ -1187,6 +1270,14 @@ function StorefrontWindowHome({ site, actualView, onNavigate }) {
           <span>{site.homeMode}</span>
           <h1>{site.brand}</h1>
           <p>{site.hero.title}</p>
+          <div className="sample-home__storefront-stats">
+            {model.stats.slice(0, 3).map((item) => (
+              <span key={`${site.id}-store-${item.label}`}>
+                {item.label}
+                <strong>{item.value}</strong>
+              </span>
+            ))}
+          </div>
           <RouteGrid model={model} limit={4} />
         </div>
       </section>
@@ -1205,8 +1296,17 @@ function LuxuryLoungeHome({ site, actualView, onNavigate }) {
           <span>{site.industry}</span>
           <h1>{site.brand}</h1>
           <p>{site.hero.title}</p>
+          <div className="sample-home__lounge-offers">
+            {model.routes.slice(0, 3).map((item, index) => (
+              <button key={`${site.id}-offer-${item.slug}`} type="button" onClick={() => model.openRoute(item)}>
+                <strong>{item.label}</strong>
+                <span>{model.chips[index] ?? site.homeMode}</span>
+              </button>
+            ))}
+          </div>
         </div>
         <div className="sample-home__lounge-card">
+          <span>{site.homeMode}</span>
           <StatList model={model} limit={3} />
           <HomeActions model={model} site={site} compact />
         </div>
@@ -1227,6 +1327,15 @@ function MinimalStatementHome({ site, actualView, onNavigate }) {
           <h1>{site.brand}</h1>
           <p>{site.hero.title}</p>
           <HomeActions model={model} site={site} compact />
+        </div>
+        <div className="sample-home__minimal-notes">
+          {model.stats.slice(0, 3).map((item, index) => (
+            <article key={`${site.id}-note-${item.label}`}>
+              <span>{model.chips[index] ?? item.label}</span>
+              <strong>{item.value}</strong>
+              <p>{item.label}</p>
+            </article>
+          ))}
         </div>
       </section>
     </ExperienceShell>

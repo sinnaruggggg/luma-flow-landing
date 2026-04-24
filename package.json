@@ -10,6 +10,7 @@
     "preview": "vite preview",
     "generate:images": "node scripts/generate-gemini-images.mjs",
     "generate:gallery-thumbs": "node scripts/generate-gallery-thumbs.mjs",
+    "audit:samples": "node scripts/audit-sample-routes.mjs",
     "generate:lumaflow-logos": "node scripts/generate-lumaflow-logo-pack.mjs",
     "generate:industry-images": "node scripts/generate-industry-images.mjs",
     "stitch:init": "node scripts/stitch-init.mjs",
