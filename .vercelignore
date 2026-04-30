@@ -2,7 +2,9 @@ node_modules
 dist
 dist-ssr
 tmp
-.vercel
+.vercel/project.json
+.vercel/README.txt
+.vercel/.env*
 .env
 .env.*
 *.local
