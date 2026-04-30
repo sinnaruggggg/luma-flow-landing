@@ -1,0 +1,28 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="600" y1="0" x2="600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06111A"/>
+      <stop offset="1" stop-color="#05080E"/>
+    </linearGradient>
+    <linearGradient id="object" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#F0F7FF"/>
+      <stop offset="0.46" stop-color="#B8CCE3"/>
+      <stop offset="1" stop-color="#5D7799"/>
+    </linearGradient>
+    <pattern id="checkers" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="#0B1622"/>
+      <rect width="20" height="20" fill="#0E1B29"/>
+      <rect x="20" y="20" width="20" height="20" fill="#0E1B29"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect x="208" y="164" width="784" height="572" rx="44" fill="url(#checkers)" stroke="white" stroke-opacity="0.12"/>
+  <ellipse cx="600" cy="454" rx="252" ry="252" fill="#89A6CB" fill-opacity="0.1"/>
+  <path d="M508 258C508 229.281 531.281 206 560 206H640C668.719 206 692 229.281 692 258V286C692 301.464 679.464 314 664 314H536C520.536 314 508 301.464 508 286V258Z" fill="url(#object)"/>
+  <path d="M404 366C404 323.072 438.793 288.279 481.721 288.279H718.279C761.207 288.279 796 323.072 796 366V596.279C796 653.697 749.697 700 692.279 700H507.721C450.303 700 404 653.697 404 596.279V366Z" fill="url(#object)"/>
+  <rect x="464" y="384" width="272" height="148" rx="34" fill="white" fill-opacity="0.12" stroke="white" stroke-opacity="0.26"/>
+  <path d="M502 586H698" stroke="white" stroke-opacity="0.32" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="510" cy="446" r="28" fill="white" fill-opacity="0.22"/>
+  <rect x="182" y="132" width="110" height="44" rx="22" fill="white" fill-opacity="0.08"/>
+  <rect x="908" y="132" width="110" height="44" rx="22" fill="white" fill-opacity="0.08"/>
+</svg>

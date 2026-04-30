@@ -1,0 +1,22 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="600" y1="0" x2="600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07111B"/>
+      <stop offset="0.56" stop-color="#0B1622"/>
+      <stop offset="1" stop-color="#050910"/>
+    </linearGradient>
+    <radialGradient id="sky" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(586 222) rotate(90) scale(234 460)">
+      <stop stop-color="#B8D0EB" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#B8D0EB" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <ellipse cx="586" cy="222" rx="420" ry="220" fill="url(#sky)"/>
+  <ellipse cx="270" cy="238" rx="210" ry="140" fill="#8FAACD" fill-opacity="0.12"/>
+  <ellipse cx="950" cy="252" rx="250" ry="170" fill="#728FB5" fill-opacity="0.12"/>
+
+  <path d="M0 596C128 542 236 576 328 538C432 496 494 402 600 402C718 402 772 478 902 494C1026 510 1118 476 1200 438V900H0V596Z" fill="#0A131D"/>
+  <path d="M0 674C136 620 232 654 346 626C462 598 526 520 628 520C716 520 792 574 902 586C1010 598 1116 570 1200 532V900H0V674Z" fill="#08111A"/>
+  <path d="M0 748C156 694 286 714 420 686C544 660 644 624 750 636C912 654 1024 696 1200 640V900H0V748Z" fill="#060C13"/>
+  <ellipse cx="600" cy="692" rx="352" ry="68" fill="#A6BEDC" fill-opacity="0.12"/>
+</svg>

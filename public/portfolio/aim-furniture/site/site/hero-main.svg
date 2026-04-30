@@ -1,0 +1,82 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="800" y1="0" x2="800" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06101A"/>
+      <stop offset="0.55" stop-color="#0A1521"/>
+      <stop offset="1" stop-color="#04070D"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(440 250) rotate(49.2) scale(420 310)">
+      <stop stop-color="#B2CAE6" stop-opacity="0.48"/>
+      <stop offset="1" stop-color="#B2CAE6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1180 280) rotate(39.8) scale(360 280)">
+      <stop stop-color="#7E9BC1" stop-opacity="0.36"/>
+      <stop offset="1" stop-color="#7E9BC1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="beam" x1="296" y1="176" x2="1306" y2="898" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D6E5F7" stop-opacity="0"/>
+      <stop offset="0.45" stop-color="#D6E5F7" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#D6E5F7" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="orb" x1="1022" y1="291" x2="1224" y2="615" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E8F2FF"/>
+      <stop offset="0.45" stop-color="#8BA5C4"/>
+      <stop offset="1" stop-color="#27384B"/>
+    </linearGradient>
+    <linearGradient id="plate" x1="690" y1="623" x2="1049" y2="930" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A2330"/>
+      <stop offset="1" stop-color="#0A1019"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#C8D8ED" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#C8D8ED" stop-opacity="0.03"/>
+    </linearGradient>
+    <filter id="blur" x="120" y="0" width="1360" height="1200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+  <g filter="url(#blur)">
+    <ellipse cx="438" cy="248" rx="326" ry="220" fill="url(#glowA)"/>
+    <ellipse cx="1180" cy="280" rx="290" ry="210" fill="url(#glowB)"/>
+  </g>
+
+  <path d="M215 172L1390 922" stroke="url(#beam)" stroke-width="120" stroke-linecap="round"/>
+  <path d="M0 870C250 818 394 860 545 828C729 789 850 694 1022 690C1174 686 1310 762 1600 650V1200H0V870Z" fill="#09111B"/>
+  <path d="M0 912C258 840 432 890 600 864C801 833 928 736 1112 735C1254 734 1360 784 1600 710V1200H0V912Z" fill="#060C14"/>
+
+  <ellipse cx="1090" cy="448" rx="154" ry="154" fill="url(#orb)"/>
+  <ellipse cx="1090" cy="448" rx="178" ry="178" stroke="white" stroke-opacity="0.12"/>
+  <ellipse cx="1045" cy="398" rx="40" ry="22" fill="white" fill-opacity="0.56"/>
+
+  <path d="M698 641C698 617 717 598 741 598H1005C1029 598 1048 617 1048 641V869C1048 893 1029 912 1005 912H741C717 912 698 893 698 869V641Z" fill="url(#plate)" stroke="white" stroke-opacity="0.08"/>
+  <rect x="730" y="628" width="286" height="16" rx="8" fill="white" fill-opacity="0.08"/>
+  <rect x="756" y="678" width="224" height="128" rx="28" fill="white" fill-opacity="0.05" stroke="white" stroke-opacity="0.1"/>
+  <rect x="779" y="705" width="178" height="14" rx="7" fill="white" fill-opacity="0.08"/>
+  <rect x="779" y="734" width="140" height="14" rx="7" fill="white" fill-opacity="0.06"/>
+
+  <rect x="240" y="272" width="246" height="320" rx="36" fill="url(#card)" stroke="white" stroke-opacity="0.12"/>
+  <rect x="277" y="313" width="172" height="14" rx="7" fill="white" fill-opacity="0.12"/>
+  <rect x="277" y="344" width="126" height="14" rx="7" fill="white" fill-opacity="0.08"/>
+  <rect x="277" y="400" width="172" height="132" rx="26" fill="white" fill-opacity="0.06"/>
+
+  <rect x="1176" y="182" width="188" height="246" rx="30" fill="url(#card)" stroke="white" stroke-opacity="0.12"/>
+  <rect x="1208" y="217" width="124" height="12" rx="6" fill="white" fill-opacity="0.1"/>
+  <rect x="1208" y="246" width="96" height="12" rx="6" fill="white" fill-opacity="0.08"/>
+  <circle cx="1270" cy="323" r="48" fill="white" fill-opacity="0.07"/>
+
+  <g opacity="0.28">
+    <path d="M160 160H1440" stroke="white" stroke-opacity="0.16"/>
+    <path d="M160 244H1440" stroke="white" stroke-opacity="0.08"/>
+    <path d="M160 328H1440" stroke="white" stroke-opacity="0.08"/>
+    <path d="M160 412H1440" stroke="white" stroke-opacity="0.08"/>
+    <path d="M160 496H1440" stroke="white" stroke-opacity="0.08"/>
+    <path d="M160 580H1440" stroke="white" stroke-opacity="0.08"/>
+    <path d="M160 664H1440" stroke="white" stroke-opacity="0.08"/>
+    <path d="M160 748H1440" stroke="white" stroke-opacity="0.08"/>
+    <path d="M160 832H1440" stroke="white" stroke-opacity="0.08"/>
+    <path d="M160 916H1440" stroke="white" stroke-opacity="0.08"/>
+    <path d="M160 1000H1440" stroke="white" stroke-opacity="0.08"/>
+  </g>
+</svg>

@@ -1763,7 +1763,7 @@ function ScreenStage({ site, route, actualView, isMobileClient, onNavigate }) {
     <section className={`screen-stage screen-stage--${actualView}`} aria-label={title}>
       <div className={frameClass}>
         {stage.html ? (
-          <iframe ref={frameRef} title={title} src={stage.html} loading="lazy" style={{ height: "100dvh" }} />
+          <iframe ref={frameRef} title={title} src={stage.html} loading="lazy" style={{ height: "100%" }} />
         ) : (
           <img src={stage.image} alt={stage.alt} loading="lazy" />
         )}
