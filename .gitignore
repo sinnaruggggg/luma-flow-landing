@@ -29,6 +29,10 @@ dist-ssr
 .vercel
 .env*.local
 
+# Local source/export folders not used by the root Vite deployment
+serene-market-shop/
+에임가구/
+
 # Stitch local artifacts
 .stitch/designs/
 design/stitch/*/screens/
