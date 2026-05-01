@@ -1,4 +1,5 @@
-﻿import { getBlueprintForSite, getRouteDescription, getStageHeight, siteCatalog } from "./siteCatalog";
+import { getBlueprintForSite, getRouteDescription, getStageHeight, siteCatalog } from "./siteCatalog";
+import { withBasePath } from "../lib/appPaths";
 
 const stitchImages = import.meta.glob("../../design/stitch/*/screens/*.{png,jpg,jpeg,webp}", {
   eager: true,
@@ -79,7 +80,7 @@ function buildGalleryThumb(site, device) {
   const stitchedImage = findAsset(stitchImages, site.id, "home", device);
 
   return {
-    src: `/generated/thumbs/${site.id}-home-${device}.webp`,
+    src: withBasePath(`/generated/thumbs/${site.id}-home-${device}.webp`),
     fallbackSrc: stitchedImage ?? getFallbackImage(site, "home", device),
     alt: `${site.brand} home ${device} card preview`,
   };

@@ -1,3 +1,5 @@
+import { withBasePath } from "./appPaths";
+
 const styleDescriptors = {
   neo: {
     promptStyle: "neo-brutalist commercial art direction with thick borders, raw confidence, loud color blocking, and poster-like hierarchy",
@@ -286,7 +288,7 @@ export function getIndustryImageSpecs(sample, industry) {
   return mode.gallery.map((entry) => ({
     ...entry,
     fileName: `pages/${sample.id}--${industry.id}--${entry.key}.png`,
-    src: `/generated/pages/${sample.id}--${industry.id}--${entry.key}.png`,
+    src: withBasePath(`/generated/pages/${sample.id}--${industry.id}--${entry.key}.png`),
   }));
 }
 

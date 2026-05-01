@@ -3,6 +3,7 @@ import { AnimatePresence, motion as Motion } from "framer-motion";
 import { parseSitePath } from "./content/siteRegistry";
 import { AdminConsole } from "./components/adminConsole";
 import { trackSiteVisit } from "./lib/inquiryApi";
+import { stripBasePath, withBasePath } from "./lib/appPaths";
 import { useIsMobileClient } from "./lib/showcaseUtils";
 import { ADMIN_PATH, buildManagedPortfolioItems, buildManagedSites, useAdminState } from "./lib/adminStore";
 import { GalleryHome, NotFound, PortfolioEmbedView, PortfolioIndexView, SiteStaging, SiteView } from "./components/showcaseChrome";
@@ -10,7 +11,7 @@ import "./site-app.css";
 
 function readLocationState() {
   return {
-    pathname: window.location.pathname || "/",
+    pathname: stripBasePath(window.location.pathname || "/"),
     search: window.location.search || "",
   };
 }
@@ -45,9 +46,10 @@ export default function App() {
   }, []);
 
   const navigate = (nextPath) => {
-    const nextUrl = new URL(nextPath || "/", window.location.origin);
+    const targetPath = withBasePath(nextPath || "/");
+    const nextUrl = new URL(targetPath, window.location.origin);
     const nextLocation = {
-      pathname: nextUrl.pathname || "/",
+      pathname: stripBasePath(nextUrl.pathname || "/"),
       search: nextUrl.search || "",
     };
 
@@ -59,7 +61,7 @@ export default function App() {
       setViewMode("desktop");
     }
 
-    window.history.pushState({}, "", `${nextLocation.pathname}${nextLocation.search}`);
+    window.history.pushState({}, "", `${nextUrl.pathname}${nextUrl.search}`);
     window.scrollTo(0, 0);
     setLocationState(nextLocation);
   };
@@ -80,9 +82,9 @@ export default function App() {
         return { kind: "portfolio", portfolioId: decodeURIComponent(portfolioId) };
       }
 
-      return parseSitePath(locationState.pathname);
+      return parseSitePath(normalizedPath);
     },
-    [locationState.pathname, normalizedPath],
+    [normalizedPath],
   );
   const site = useMemo(
     () => (routeState.kind === "site" || routeState.kind === "staging" ? sitesById[routeState.siteId] : null),
