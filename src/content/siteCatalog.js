@@ -1,4 +1,4 @@
-import { withBasePath } from "../lib/appPaths";
+import { withBasePath } from "../lib/appPaths.js";
 
 const buildImage = (style, siteId, kind) => withBasePath(`/generated/pages/${style}--${siteId}--${kind}.png`);
 const buildImageV2 = (siteId, kind) => withBasePath(`/generated/pages-v2/${siteId}-${kind}.png`);

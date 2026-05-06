@@ -80,7 +80,7 @@ function patchStageRouteLinks(frame, site, onNavigate) {
       element.dataset.webforgeRoute = matchedRoute.slug;
 
       if (element.tagName === "A") {
-        element.setAttribute("href", buildSitePath(site.id, matchedRoute.slug));
+        element.setAttribute("href", withBasePath(buildSitePath(site.id, matchedRoute.slug)));
       }
 
       element.style.cursor = "pointer";

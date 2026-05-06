@@ -1,4 +1,4 @@
-const RAW_BASE_URL = import.meta.env.BASE_URL || "/";
+const RAW_BASE_URL = import.meta.env?.BASE_URL || "/";
 
 export const APP_BASE_PATH = RAW_BASE_URL === "/"
   ? ""
