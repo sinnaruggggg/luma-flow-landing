@@ -41,9 +41,16 @@ export default async function handler(req, res) {
       ...validation.data,
     };
 
-    await appendVisitRecord(record);
-
-    return sendJson(res, 200, { ok: true });
+    try {
+      await appendVisitRecord(record);
+      return sendJson(res, 200, { ok: true, stored: true });
+    } catch (error) {
+      console.warn("Visit storage failed", {
+        name: error?.name,
+        message: error?.message,
+      });
+      return sendJson(res, 200, { ok: true, stored: false });
+    }
   } catch {
     return sendJson(res, 500, { message: "사이트 접속 기록 저장에 실패했습니다." });
   }
