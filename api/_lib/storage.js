@@ -179,3 +179,37 @@ export async function appendInquiryRecord(record) {
 
   throw new Error("문의 저장이 동시에 충돌해서 다시 시도해 주세요.");
 }
+
+// 문의 한 건의 상태·메모를 바꿉니다. 동시에 저장되면 최신 내용을 다시 읽어 재시도합니다.
+export async function updateInquiryRecord(id, patch) {
+  const apply = (records) => {
+    let updated = null;
+    const next = records.map((record) => {
+      if (record.id !== id) return record;
+      updated = { ...record, ...patch, updatedAt: new Date().toISOString() };
+      return updated;
+    });
+    return { next, updated };
+  };
+
+  if (getStorageMode() !== "vercel-blob") {
+    const { next, updated } = apply(await readFileInquiryRecords());
+    if (updated) await writeFileInquiryRecords(next);
+    return updated;
+  }
+
+  for (let attempt = 0; attempt < BLOB_WRITE_RETRIES; attempt += 1) {
+    const { records, etag } = await readBlobInquiryState();
+    const { next, updated } = apply(records);
+    if (!updated) return null;
+    try {
+      await writeBlobInquiryRecords(next, etag);
+      return updated;
+    } catch (error) {
+      if (isBlobWriteConflict(error)) continue;
+      throw error;
+    }
+  }
+
+  throw new Error("문의 수정이 동시에 충돌해서 다시 시도해 주세요.");
+}

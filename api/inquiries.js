@@ -1,6 +1,6 @@
 import crypto from "node:crypto";
 import { readJsonBody, sendJson, sendMethodNotAllowed } from "./_lib/http.js";
-import { appendInquiryRecord, getStorageMeta } from "./_lib/storage.js";
+import { appendInquiryRecord } from "./_lib/storage.js";
 
 function sanitizeText(value, maxLength = 4000) {
   return String(value ?? "").trim().slice(0, maxLength);
@@ -57,6 +57,8 @@ export default async function handler(req, res) {
     const record = {
       id: crypto.randomUUID(),
       createdAt: new Date().toISOString(),
+      status: "new",
+      memo: "",
       ...validation.data,
     };
 
@@ -64,9 +66,8 @@ export default async function handler(req, res) {
 
     return sendJson(res, 200, {
       ok: true,
-      inquiry: record,
-      storage: getStorageMeta(),
-      message: "문의가 서버에 저장되었습니다.",
+      id: record.id,
+      message: "문의가 접수되었습니다.",
     });
   } catch {
     return sendJson(res, 500, { message: "문의 저장 중 오류가 발생했습니다." });

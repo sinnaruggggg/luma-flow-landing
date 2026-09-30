@@ -9,7 +9,11 @@ if (pathname.startsWith('/samples')) window.location.replace(withBasePath('/proj
 const isEditorial = pathname === '/' || pathname === '/index.html' || pathname === '/projects' || pathname.startsWith('/projects/')
 // 포트폴리오 시안 사이트(/sites/...)는 에이전시 스타일과 섞이지 않도록 따로 불러옵니다.
 const isSites = pathname === '/sites' || pathname.startsWith('/sites/')
-const { default: App } = isSites
+// 문의 관리자(/admin)도 별도 화면으로 불러옵니다.
+const isAdmin = pathname === '/admin'
+const { default: App } = isAdmin
+  ? await import('./admin/AdminApp.jsx')
+  : isSites
   ? await import('./sites/SitesApp.jsx')
   : isEditorial
   ? await import('./editorial/EditorialApp.jsx')

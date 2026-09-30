@@ -1,9 +1,11 @@
 import crypto from "node:crypto";
 import { sendJson } from "./http.js";
 
-const ADMIN_USERNAME = process.env.ADMIN_USERNAME ?? "sinnaruggggg";
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? "ljw8533!";
-const ADMIN_SESSION_SECRET = process.env.ADMIN_SESSION_SECRET ?? "sinnaruggggg_admin_session_v1";
+// 관리자 계정·비밀값은 코드에 두지 않고 Vercel 환경 변수에서만 읽습니다.
+// 셋 중 하나라도 없으면 관리자 로그인은 꺼집니다. (세션 비밀값은 32자 이상)
+const ADMIN_USERNAME = (process.env.ADMIN_USERNAME ?? "").trim();
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? "";
+const ADMIN_SESSION_SECRET = process.env.ADMIN_SESSION_SECRET ?? "";
 const SESSION_TTL_SECONDS = 60 * 60 * 24 * 7;
 
 function toBase64Url(value) {
@@ -21,17 +23,27 @@ function timingSafeEqualText(left, right) {
   return crypto.timingSafeEqual(leftBuffer, rightBuffer);
 }
 
+export function isAdminConfigured() {
+  return Boolean(ADMIN_USERNAME && ADMIN_PASSWORD && ADMIN_SESSION_SECRET.length >= 32);
+}
+
 function signTokenPayload(encodedPayload) {
+  if (!isAdminConfigured()) {
+    throw new Error("Admin auth is not configured");
+  }
   return crypto
     .createHmac("sha256", ADMIN_SESSION_SECRET)
     .update(encodedPayload)
     .digest("base64url");
 }
 
-export function createAdminToken() {
+// 웹 관리자 7일, 알림 앱은 백그라운드 확인이 끊기지 않도록 90일
+export const APP_SESSION_TTL_SECONDS = 60 * 60 * 24 * 90;
+
+export function createAdminToken(ttlSeconds = SESSION_TTL_SECONDS) {
   const payload = {
     sub: ADMIN_USERNAME,
-    exp: Math.floor(Date.now() / 1000) + SESSION_TTL_SECONDS,
+    exp: Math.floor(Date.now() / 1000) + ttlSeconds,
   };
   const encodedPayload = toBase64Url(JSON.stringify(payload));
   const signature = signTokenPayload(encodedPayload);
@@ -39,7 +51,7 @@ export function createAdminToken() {
 }
 
 export function verifyAdminToken(token) {
-  if (!token || typeof token !== "string") {
+  if (!isAdminConfigured() || !token || typeof token !== "string") {
     return null;
   }
 
@@ -65,6 +77,9 @@ export function verifyAdminToken(token) {
 }
 
 export function isValidAdminCredentials(username, password) {
+  if (!isAdminConfigured()) {
+    return false;
+  }
   return timingSafeEqualText(username ?? "", ADMIN_USERNAME) && timingSafeEqualText(password ?? "", ADMIN_PASSWORD);
 }
 
