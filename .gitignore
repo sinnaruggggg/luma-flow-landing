@@ -65,3 +65,8 @@ _workspace/
 .claude/
 _archive/
 assets-src/
+
+# 안드로이드 앱 빌드 결과물
+apps/android/.gradle/
+apps/android/**/build/
+apps/android/local.properties

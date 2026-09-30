@@ -1,0 +1,52 @@
+/* 히어로 테크 연출 — HeroTech.jsx 전용 */
+.hero3d .hero3d__stage{--lr:130px;--xray:#6fe6ff;--lx:-999px;--ly:-999px}
+
+/* 입자 별자리: 무대 배경 바로 위, 3D 화면들 아래 */
+.htech__field{position:absolute;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none}
+
+/* X-ray 렌즈: 원 안에서만 설계도 레이어가 보입니다 */
+.htech__lens{position:absolute;inset:0;z-index:3;overflow:hidden;pointer-events:none;background-color:#10181b;background-image:linear-gradient(rgba(111,230,255,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(111,230,255,.1) 1px,transparent 1px);background-size:24px 24px;opacity:calc(1 - var(--intro,0) * 1.6);-webkit-mask-image:radial-gradient(circle var(--lr) at var(--lx) var(--ly),#000 97%,transparent 100%);mask-image:radial-gradient(circle var(--lr) at var(--lx) var(--ly),#000 97%,transparent 100%)}
+.htech__code{position:absolute;inset:0;margin:0;padding:48px 6vw;overflow:hidden;font-family:ui-monospace,'Cascadia Code',Consolas,monospace;font-size:12px;line-height:1.75;color:rgba(111,230,255,.26);white-space:pre;columns:2 520px;column-gap:8vw}
+.htech__ring{position:absolute;left:0;top:0;z-index:3;width:calc(var(--lr) * 2);height:calc(var(--lr) * 2);border:1px solid rgba(111,230,255,.75);border-radius:50%;box-shadow:0 0 0 6px rgba(111,230,255,.08),0 0 48px rgba(111,230,255,.28);transform:translate(calc(var(--lx) - var(--lr)),calc(var(--ly) - var(--lr)));opacity:calc(1 - var(--intro,0) * 1.6);pointer-events:none}
+.htech__ring:before,.htech__ring:after{content:'';position:absolute;background:rgba(111,230,255,.8)}
+.htech__ring:before{left:50%;top:-8px;width:1px;height:16px}
+.htech__ring:after{top:50%;left:-8px;width:16px;height:1px}
+.htech__ring span{position:absolute;left:50%;bottom:-30px;transform:translateX(-50%);padding:3px 8px;background:#10181b;color:var(--xray);font-family:ui-monospace,Consolas,monospace;font-size:10px;letter-spacing:.08em;white-space:nowrap}
+
+/* 렌즈 속 문구: 같은 배치를 윤곽선·태그로 보여 줍니다 */
+.htech__xray.hero3d__copy{opacity:1;transform:translateY(calc(var(--intro,0) * -70px))}
+.htech__xray.hero3d__copy:before{display:none}
+.htech__xray .hero3d__kicker{color:rgba(245,245,242,.7)}
+.htech__xray .hero3d__title,.htech__xray .hero3d__title em{color:transparent;-webkit-text-stroke:1.2px var(--xray)}
+.htech__xray .hero3d__title em{-webkit-text-stroke-color:#ff7a5c}
+.htech__xray .hero3d__lead{color:rgba(111,230,255,.85)}
+.htech__xray .btn{border:1px dashed var(--xray);background:transparent;color:var(--xray)}
+.htech__xray [data-tag]{position:relative}
+.htech__xray [data-tag]:before{content:attr(data-tag);position:absolute;left:0;top:-4px;transform:translateY(-100%);padding:1px 6px;background:rgba(111,230,255,.14);color:var(--xray);font-family:ui-monospace,Consolas,monospace;font-size:11px;font-weight:400;line-height:1.5;letter-spacing:0;-webkit-text-stroke:0;white-space:nowrap}
+.htech__xray .hero3d__actions[data-tag]:before{left:50%;transform:translate(-50%,-100%)}
+.hero3d[data-past] .htech__lens,.hero3d[data-past] .htech__ring{visibility:hidden}
+
+/* HUD: 위쪽 모서리 */
+.htech__hud{position:absolute;left:32px;right:32px;top:18px;z-index:5;display:flex;justify-content:space-between;gap:20px;font-family:ui-monospace,'Cascadia Code',Consolas,monospace;font-size:11px;letter-spacing:.04em;color:var(--muted);pointer-events:none;opacity:calc(1 - var(--end,0) * 2)}
+.htech__term{display:flex;align-items:center;min-width:0;white-space:nowrap}
+.htech__term span{overflow:hidden;text-overflow:ellipsis}
+.htech__term i{flex:none;width:7px;height:13px;margin-left:3px;background:var(--accent,#d9492f);animation:htech-caret 1s steps(2) infinite}
+.htech__metrics{display:flex;gap:16px;white-space:pre}
+.htech__metrics span:first-child{color:var(--ink)}
+@keyframes htech-caret{50%{opacity:0}}
+
+/* 떠 있는 샘플 화면에 스캔 라인이 지나갑니다 */
+.hero3d__screen{overflow:hidden}
+.hero3d__screen:after{content:'';position:absolute;left:0;right:0;top:0;height:38%;background:linear-gradient(transparent,rgba(111,230,255,.18) 80%,rgba(111,230,255,.55) 99%,transparent);transform:translateY(-110%);animation:htech-scan 4.2s cubic-bezier(.5,0,.5,1) infinite;pointer-events:none}
+.hero3d__screen:nth-child(3n+1):after{animation-delay:-1.4s}
+.hero3d__screen:nth-child(3n+2):after{animation-delay:-2.8s}
+@keyframes htech-scan{to{transform:translateY(290%)}}
+
+@media(max-width:760px){
+  .hero3d .hero3d__stage{--lr:86px}
+  .htech__hud{left:18px;right:18px;top:12px;font-size:10px}
+  .htech__metrics span:not(:first-child){display:none}
+  .htech__code{padding:28px 18px;font-size:10px;columns:1}
+  .htech__xray [data-tag]:before{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){.hero3d__screen:after{display:none}}

@@ -17,7 +17,7 @@
 .hero3d[data-past] .hero3d__copy{visibility:hidden}
 .hero3d__kicker{display:flex;align-items:center;gap:14px;margin-bottom:26px;font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--ink)}
 .hero3d__kicker:before,.hero3d__kicker:after{content:'';width:36px;height:1px;background:currentColor}
-.hero3d__title{display:grid;font-family:var(--sans);font-size:clamp(56px,9.2vw,168px);font-weight:850;line-height:.98;letter-spacing:-.065em;color:var(--ink);word-break:keep-all}
+.hero3d .hero3d__title{display:grid;font-family:var(--sans);font-size:clamp(56px,9.2vw,168px);font-weight:850;line-height:.98;letter-spacing:-.065em;color:var(--ink);word-break:keep-all}
 .hero3d__line{display:block}
 .hero3d__line--1{transform:translateX(calc(var(--intro,0) * -26vw))}
 .hero3d__line--2{transform:translateX(calc(var(--intro,0) * 26vw))}
@@ -64,7 +64,7 @@
   .hero3d .hero3d__stage{min-height:520px}
   .hero3d__kicker{gap:10px;margin-bottom:20px;font-size:12px}
   .hero3d__kicker:before,.hero3d__kicker:after{width:18px}
-  .hero3d__title{font-size:clamp(44px,14vw,76px)}
+  .hero3d .hero3d__title{font-size:clamp(44px,14vw,76px);line-height:1.02}
   .hero3d__lead{margin-top:22px;font-size:15px}
   .hero3d__actions{display:grid;grid-template-columns:1fr 1fr;width:100%;max-width:380px;gap:8px;margin-top:28px}
   .hero3d__actions .btn{min-height:52px;padding:0 14px;font-size:14px}

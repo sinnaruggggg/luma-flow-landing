@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { withBasePath } from '../../lib/appPaths.js';
 import { HERO_AUDIENCES, HERO_SCREENS } from '../data/homeContent.js';
+import { HeroTech } from './HeroTech.jsx';
+import { useDecodeTitle } from './useDecodeTitle.js';
 import './hero-3d.css';
 
 // 스크롤 진행도(p: 0~1)에 따라 세 장면이 이어집니다.
@@ -10,6 +12,27 @@ const range = (p, start, end) => clamp01((p - start) / (end - start));
 const easeInOut = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 const MOBILE_SCREEN_COUNT = 9;
 
+// 첫 장면 문구. xray=true 는 X-ray 렌즈 속 복제본(설계도 모양, 링크·제목 태그 없음)입니다.
+function HeroCopy({ xray = false, titleRef }) {
+  const Title = xray ? 'div' : 'h1';
+  const Action = xray ? 'span' : 'a';
+  const tag = (value) => (xray ? value : undefined);
+  return (
+    <div className={`hero3d__copy${xray ? ' htech__xray' : ''}`}>
+      <p className="hero3d__kicker"><span>웹사이트 기획 · 디자인 · 개발 스튜디오</span></p>
+      <Title ref={titleRef} id={xray ? undefined : 'hero-title'} className="hero3d__title" data-tag={tag('<h1> weight 850 · tracking -0.065em')}>
+        <span className="hero3d__line hero3d__line--1">생각을</span>
+        <span className="hero3d__line hero3d__line--2"><em>작동하는</em> 웹으로.</span>
+      </Title>
+      <p className="hero3d__lead" data-tag={tag('<p.lead> 17px / 1.75')}>개인 포트폴리오부터 스타트업, 기업, 비영리 단체까지.{' '}<br />목적에 맞는 구조를 설계하고, 화면을 디자인하고, 직접 개발합니다.</p>
+      <div className="hero3d__actions" data-tag={tag('<nav> CTA × 2 · magnetic')}>
+        <Action className="btn btn--solid" href={xray ? undefined : '#contact'} data-magnetic={xray ? undefined : ''}>프로젝트 문의하기 <span aria-hidden="true">→</span></Action>
+        <Action className="btn btn--line" href={xray ? undefined : '#work'} data-magnetic={xray ? undefined : ''}>작업 보기</Action>
+      </div>
+    </div>
+  );
+}
+
 export function Hero3D() {
   const root = useRef(null);
   const stage = useRef(null);
@@ -17,6 +40,7 @@ export function Hero3D() {
   const screenNodes = useRef([]);
   const wordNodes = useRef([]);
   const pausedRef = useRef(false);
+  const titleRef = useRef(null);
   const [paused, setPaused] = useState(false);
   const [reduced, setReduced] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
@@ -28,6 +52,7 @@ export function Hero3D() {
   }, []);
 
   useEffect(() => { pausedRef.current = paused; }, [paused]);
+  useDecodeTitle(titleRef, !reduced);
 
   useEffect(() => {
     const el = root.current;
@@ -171,18 +196,10 @@ export function Hero3D() {
           </div>
         </div>
 
-        <div className="hero3d__copy">
-          <p className="hero3d__kicker"><span>웹사이트 기획 · 디자인 · 개발 스튜디오</span></p>
-          <h1 id="hero-title" className="hero3d__title">
-            <span className="hero3d__line hero3d__line--1">생각을</span>
-            <span className="hero3d__line hero3d__line--2"><em>작동하는</em> 웹으로.</span>
-          </h1>
-          <p className="hero3d__lead">개인 포트폴리오부터 스타트업, 기업, 비영리 단체까지.<br />목적에 맞는 구조를 설계하고, 화면을 디자인하고, 직접 개발합니다.</p>
-          <div className="hero3d__actions">
-            <a className="btn btn--solid" href="#contact" data-magnetic>프로젝트 문의하기 <span aria-hidden="true">→</span></a>
-            <a className="btn btn--line" href="#work" data-magnetic>작업 보기</a>
-          </div>
-        </div>
+        <HeroCopy titleRef={titleRef} />
+        <HeroTech rootRef={root} stageRef={stage} paused={paused} reduced={reduced}>
+          <HeroCopy xray />
+        </HeroTech>
 
         <div className="hero3d__mid" aria-hidden="true">
           <p>누구의 웹사이트든,</p>

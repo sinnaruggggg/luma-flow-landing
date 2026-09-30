@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">나나웹</string>
+    <string name="channel_name">새 문의 알림</string>
+    <string name="channel_desc">홈페이지로 새 문의가 들어오면 알려 줍니다.</string>
+</resources>
