@@ -1,46 +1,104 @@
-# 디자인 시스템: TABLE WARM
-**사이트 ID:** local-cafe
+# TABLE WARM Design
 
-## 1. 정체성
-- 업종: 카페 예약
-- 요약: 오늘의 메뉴와 좌석 현황, 예약 진입이 실제 매장처럼 바로 보이는 카페 사이트.
-- 첫 화면 문법: 카페 윈도우
-- 모바일 규칙: 첫 두 블록 안에서 오늘의 메뉴와 좌석 예약을 바로 처리할 수 있어야 한다.
+## Source of truth
+- Status: Active
+- Last refreshed: 2026-06-22
+- Site ID: `local-cafe`
+- Brand: TABLE WARM
+- Surface refreshed in this pass: `home-desktop`
+- Stitch project: `7135745222730086952`
+- Latest desktop screen: `056259e30b4945d99fc0ad250579ade2`
+- Evidence reviewed:
+  - `.stitch/SITE.md`
+  - `design/stitch/local-cafe/brief.md`
+  - `design/stitch/local-cafe/metadata.json`
+  - `design/stitch/local-cafe/screens/home-desktop.html`
+  - User screenshot rejecting dark split-panel ?WARM MOMENT? direction.
 
-## 2. 비주얼 방향
-- 계열: Warm storefront booking
-- 첫 화면: Storefront hero with today's menu board and reservation module visible immediately.
-- 배경: Big cafe imagery, paper menu notes, and gentle hand-crafted depth.
-- 모션: Menu plates and reservation notes lift softly over the storefront image.
-- 분위기: 동네 가게의 온기와 생활감 있는 유용함.
+## Brand
+- Personality: warm, practical, premium but familiar, Korean local cafe reservation service.
+- Trust signals: visible seats, waiting time, opening hours, today?s menu, direct reservation CTA.
+- Avoid: dark mood panels, giant English hero title, portfolio/mockup feeling, boxed accordion stacks in the first viewport.
 
-## 3. 팔레트
-- 배경: #f4ead9
-- 표면: #fff8ef
-- 패널: rgba(255, 248, 239, 0.86)
-- 본문: #2b221a
-- 보조: #6a5c4f
-- 강조: #5d3b24
-- 보조 강조: #e8c498
+## Product goals
+- Goals:
+  - Make desktop home feel like a real cafe homepage.
+  - Make booking/menu/status immediately understandable.
+  - Use a full PC first viewport instead of a framed preview composition.
+- Non-goals:
+  - Do not redesign mobile/subpages in this pass.
+  - Do not replace the React app shell.
+- Success signals:
+  - First viewport has Korean headline, primary CTA, status chips, and reservation/menu widgets.
 
-## 4. 타이포그래피
-- 짧은 라벨과 읽기 쉬운 계층을 섞어 쓴다.
-- 카피는 짧고 기능적으로 유지한다.
-- 기본 콘텐츠 언어는 한국어다.
+## Personas and jobs
+- Primary personas: cafe visitor, small cafe owner reviewing a template, site buyer comparing samples.
+- User jobs: check today?s availability, view menu, reserve seat, find visit info.
+- Key contexts of use: desktop preview and sales review first; mobile later.
 
-## 5. 컴포넌트
-- 메뉴와 예약 블록은 손으로 올려놓은 듯하지만 정돈돼야 한다.
-- 공용 primitive는 버튼, 배지, 입력, 단순 카드 정도로 제한한다.
-- 첫 화면 문법은 이 사이트만의 구조여야 한다.
+## Information architecture
+- Primary navigation: ??, ?? ??, ??, ??? ?, CTA ????.
+- Core routes/screens: home, menu, visit, reserve, info.
+- Content hierarchy: hero headline ? CTA ? status chips ? visual reservation/menu widgets ? 3-column service preview.
 
-## 6. 금지 패턴
-- 공통 히어로 템플릿 금지.
-- 공통 섹션 조립기 금지.
-- 반복적인 이미지 박스 + 텍스트 박스 + CTA 블록 금지.
+## Design principles
+- Principle 1: Real service flow over atmosphere-only design.
+- Principle 2: Bright mainstream landing trend over dark editorial split-panel.
+- Tradeoffs: Keep the generated Stitch HTML integration and only replace the desktop home asset now.
 
-## 7. 라우트 목표
-- 홈 (home): 운영형 홈페이지처럼 설계한다. 커버 페이지가 아니라 실제 사용 흐름이 바로 보여야 한다.
-- 메뉴 (menu): 필터, 카테고리, 빠른 탐색이 가능한 목록형 구조로 설계한다.
-- 방문 (visit): 상품, 객실, 프로그램, 서비스의 핵심 판단 정보가 첫 화면에서 보여야 한다.
-- 예약 (reserve): 예약 흐름, 가능 시간, 선택 옵션, 신청 행동이 위쪽에서 바로 보여야 한다.
-- 정보 (info): 방문 안내, 규칙, FAQ, 맵, 준비 사항을 스캔하기 쉽게 정리한다.
+## Visual language
+- Color:
+  - Canvas: #FFF8F1.
+  - Surface: #FFFFFF.
+  - Primary action: #4B2E1F.
+  - Accent: #E8D4B8.
+  - Status: #6F8F72.
+  - Text: #1F1B16.
+- Typography: Korean-first bold sans-serif headline; readable Korean body copy.
+- Spacing/layout rhythm: 1440px+ desktop full-screen hero, large margins, 12-column balance.
+- Shape/radius/elevation: 20?28px rounded cards, pill CTAs, soft shadow `0 20px 60px rgba(31,27,22,0.10)`.
+- Motion: subtle only; no CTA-hiding animation.
+- Imagery/iconography: bright cafe interior/food imagery with useful overlaid UI cards.
+
+## Components
+- Existing components to reuse: repo `SiteView` embeds Stitch HTML/PNG through `siteRegistry`.
+- New/changed components: generated desktop home Stitch asset only.
+- Variants and states: desktop changed; mobile unchanged.
+- Token/component ownership: this file owns TABLE WARM direction; generated HTML owns per-screen exact CSS.
+
+## Accessibility
+- Target standard: WCAG 2.1 AA where implemented.
+- Keyboard/focus behavior: CTAs and nav should remain semantic links/buttons in future implementation.
+- Contrast/readability: charcoal on ivory/white; do not use low-contrast beige body text.
+- Screen-reader semantics: preserve logical heading and button labels.
+- Reduced motion and sensory considerations: keep motion subtle.
+
+## Responsive behavior
+- Supported breakpoints/devices: desktop 1440px+ first; mobile separate generated screen remains unchanged.
+- Layout adaptations: desktop uses hero text + visual widgets; mobile should stack in future refresh.
+- Touch/hover differences: no hover-only essential information.
+
+## Interaction states
+- Loading: use existing repo fallback behavior when HTML/image is unavailable.
+- Empty: show status/menu modules with safe default values.
+- Error: route should fall back through existing not-found/staging patterns.
+- Success: reservation CTA should imply clear next step.
+- Disabled: unavailable seats/time slots should be visibly muted in future reserve screen.
+- Offline/slow network, if applicable: keep PNG fallback available.
+
+## Content voice
+- Tone: warm, direct, practical Korean.
+- Terminology: ??? ??, ?? ??, ?? ??, ????, ??? ?.
+- Microcopy rules: mention concrete quantities/times instead of abstract mood labels.
+
+## Implementation constraints
+- Framework/styling system: static Stitch HTML/PNG consumed by React/Vite.
+- Design-token constraints: no new JS/CSS token library.
+- Performance constraints: keep image count modest, no heavy scripts.
+- Compatibility constraints: preserve `design/stitch/local-cafe/screens/home-desktop.html` and `.png` paths.
+- Test/screenshot expectations: run Vite build and inspect `/local-cafe` PC view.
+
+## Open questions
+- [ ] Apply this style to mobile home? / owner: user / impact: PC/mobile consistency.
+- [ ] Refresh menu/visit/reserve/info pages to match? / owner: user / impact: route consistency.
+- [ ] Replace all cafe imagery with user-owned photos? / owner: user / impact: licensing/brand authenticity.

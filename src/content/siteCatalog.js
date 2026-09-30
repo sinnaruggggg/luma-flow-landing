@@ -2,6 +2,35 @@ import { withBasePath } from "../lib/appPaths.js";
 
 const buildImage = (style, siteId, kind) => withBasePath(`/generated/pages/${style}--${siteId}--${kind}.png`);
 const buildImageV2 = (siteId, kind) => withBasePath(`/generated/pages-v2/${siteId}-${kind}.png`);
+const buildPagecraftAsset = (variant, file) => withBasePath(`/pagecraft/site-assets-v4/${variant}-${file}.webp`);
+
+const PAGECRAFT_IMAGE_OVERRIDES = {
+  "pagecraft-business": {
+    brand: buildPagecraftAsset("business", "hero"),
+    product: buildPagecraftAsset("business", "detail-a"),
+    scene: buildPagecraftAsset("business", "detail-b"),
+  },
+  "pagecraft-premium": {
+    brand: buildPagecraftAsset("premium", "hero"),
+    product: buildPagecraftAsset("premium", "detail-a"),
+    scene: buildPagecraftAsset("premium", "detail-b"),
+  },
+  "pagecraft-emotion": {
+    brand: buildPagecraftAsset("emotion", "hero"),
+    product: buildPagecraftAsset("emotion", "detail-a"),
+    scene: buildPagecraftAsset("emotion", "detail-b"),
+  },
+  "pagecraft-event": {
+    brand: buildPagecraftAsset("event", "hero"),
+    product: buildPagecraftAsset("event", "detail-a"),
+    scene: buildPagecraftAsset("event", "detail-b"),
+  },
+  "pagecraft-saas": {
+    brand: buildPagecraftAsset("saas", "hero"),
+    product: buildPagecraftAsset("saas", "detail-a"),
+    scene: buildPagecraftAsset("saas", "detail-b"),
+  },
+};
 
 const themes = {
   neoSun: { bg: "#f7e45d", surface: "#fffdf4", panel: "rgba(255, 252, 241, 0.84)", text: "#121212", muted: "#5d5649", accent: "#ff6b6b", accentSoft: "#7dd3fc", line: "rgba(18, 18, 18, 0.16)", shadow: "10px 10px 0 rgba(18, 18, 18, 0.88)", buttonText: "#121212" },
@@ -37,7 +66,7 @@ const routeLabels = {
   pricing: "요금",
   contact: "문의",
   programs: "프로그램",
-  scan: "AI 진단",
+  scan: "진단",
   booking: "예약",
   clinic: "클리닉",
   works: "프로젝트",
@@ -146,7 +175,7 @@ const localizedSites = {
     mobileRule: "커뮤니티나 브랜드 설명보다 번들 스펙, 가격, 구매 버튼을 먼저 노출한다.",
   },
   "ai-saas": {
-    industry: "AI 워크플로 SaaS",
+    industry: "자동화 SaaS",
     summary: "플로우 보드, 활용 사례, 요금 비교가 한 흐름으로 이어지는 워크플로 자동화 SaaS.",
     homeMode: "워크플로 보드",
     mobileRule: "데스크톱 보드를 줄이지 말고 상태 카드, KPI, 주 CTA를 모바일 전용 순서로 재배치한다.",
@@ -262,6 +291,7 @@ const statLabels = {
 };
 
 const route = (slug, label, kind) => ({ slug, label: routeLabels[slug] ?? label, kind, legacyLabel: label });
+const plainRoute = (slug, label, kind) => ({ slug, label, kind, legacyLabel: label });
 const stat = (label, value) => ({ label, value });
 
 const routeKindDescriptions = {
@@ -292,6 +322,11 @@ const stageHeights = {
 };
 
 const motionPresets = {
+  "pagecraft-business": { profile: "pagecraft-business", layout: "dashboard", homeVariant: "pagecraft-business-partner", homeExperience: "business-clean", tempo: "slow" },
+  "pagecraft-premium": { profile: "pagecraft-premium", layout: "gallery", homeVariant: "pagecraft-premium-brand", homeExperience: "gallery-focus", tempo: "slow" },
+  "pagecraft-emotion": { profile: "pagecraft-emotion", layout: "storefront", homeVariant: "pagecraft-emotional-brand", homeExperience: "storefront-window", tempo: "slow" },
+  "pagecraft-event": { profile: "pagecraft-event", layout: "event", homeVariant: "pagecraft-event-seminar", homeExperience: "poster-world", tempo: "medium" },
+  "pagecraft-saas": { profile: "pagecraft-saas", layout: "dashboard", homeVariant: "pagecraft-service-saas", homeExperience: "workflow-map", tempo: "slow" },
   "sneaker-drop": { profile: "poster-split", layout: "poster", homeVariant: "drop-poster-wall", homeExperience: "dynamic-launch", tempo: "fast" },
   "supplement-brand": { profile: "routine-stack", layout: "commerce", homeVariant: "routine-product-stack", homeExperience: "retail-browse", tempo: "medium" },
   "boxing-gym": { profile: "kinetic-ring", layout: "booking", homeVariant: "fight-schedule-split", homeExperience: "kinetic-split", tempo: "fast" },
@@ -315,6 +350,91 @@ const motionPresets = {
 };
 
 const rawSites = [
+  {
+    id: "pagecraft-business",
+    brand: "브릿지파트너스",
+    industry: "기업 상담형",
+    category: "business",
+    summary: "서비스 소개, 사례, 문의 동선을 한 화면 흐름으로 정리한 기업형 홈페이지입니다.",
+    backdrop: "minimal",
+    themeKey: "monoStone",
+    imageStyle: "bold-minimal",
+    homeMode: "서비스 소개",
+    mobileRule: "첫 화면에서 서비스, 사례, 문의 버튼이 바로 보이도록 구성합니다.",
+    hero: { eyebrow: "기업 홈페이지", title: "상담으로 이어지는 기업 소개", subtitle: "서비스와 사례를 먼저 보여주고 문의로 자연스럽게 연결합니다.", primary: "서비스 보기", secondary: "문의하기" },
+    routes: [plainRoute("home", "홈", "home"), plainRoute("strategy", "소개", "features"), plainRoute("services", "서비스", "services"), plainRoute("cases", "사례", "cases"), plainRoute("contact", "문의", "contact")],
+    stats: [stat("문의 동선", "간단"), stat("서비스 소개", "명확"), stat("모바일", "대응")],
+    chips: ["서비스 소개", "사례 카드", "문의 버튼"],
+    design: { family: "PageCraft 기업 상담형", heroMode: "서비스 소개, 사례, 문의를 첫 화면에서 바로 이해하는 기업형 홈페이지.", background: "밝은 배경과 정돈된 정보 카드, 명확한 문의 동선.", motion: "서비스 카드와 문의 버튼이 차분하게 정렬됩니다.", keywords: ["기업 홈페이지", "서비스 소개", "상담 문의"] },
+  },
+  {
+    id: "pagecraft-premium",
+    brand: "루미에르",
+    industry: "고급 브랜드형",
+    category: "brand",
+    summary: "제품 사진, 컬렉션, 1:1 상담을 절제된 분위기로 보여주는 브랜드형 홈페이지입니다.",
+    backdrop: "retro",
+    themeKey: "ringNight",
+    imageStyle: "warm-editorial",
+    homeMode: "컬렉션 소개",
+    mobileRule: "대표 제품, 컬렉션, 상담 버튼을 첫 화면 안에서 확인할 수 있게 합니다.",
+    hero: { eyebrow: "브랜드 홈페이지", title: "제품이 먼저 보이는 브랜드 소개", subtitle: "대표 이미지와 컬렉션, 상담 동선을 간결하게 정리합니다.", primary: "컬렉션 보기", secondary: "상담 문의" },
+    routes: [plainRoute("home", "홈", "home"), plainRoute("collection", "컬렉션", "browse"), plainRoute("journal", "브랜드", "brand"), plainRoute("benefits", "혜택", "detail"), plainRoute("contact", "문의", "contact")],
+    stats: [stat("제품 초점", "선명"), stat("상담", "1:1"), stat("구성", "간결")],
+    chips: ["대표 제품", "컬렉션", "상담 문의"],
+    design: { family: "PageCraft 고급 브랜드형", heroMode: "대표 제품과 컬렉션, 상담 동선이 명확한 브랜드 홈페이지.", background: "어두운 쇼룸 톤과 절제된 포인트, 큰 제품 이미지.", motion: "제품 패널이 갤러리처럼 차분하게 정렬됩니다.", keywords: ["고급 브랜드", "제품 소개", "상담 문의"] },
+  },
+  {
+    id: "pagecraft-emotion",
+    brand: "온유스튜디오",
+    industry: "공간 예약형",
+    category: "booking",
+    summary: "공간 분위기, 프로그램, 예약 버튼을 쉽게 찾을 수 있는 예약형 홈페이지입니다.",
+    backdrop: "grain",
+    themeKey: "cafeWarm",
+    imageStyle: "warm-editorial",
+    homeMode: "예약 안내",
+    mobileRule: "분위기 사진 다음에 프로그램, 예약, 오시는길이 바로 이어지게 합니다.",
+    hero: { eyebrow: "예약 홈페이지", title: "방문 예약이 쉬운 공간 소개", subtitle: "공간과 프로그램을 보고 바로 예약할 수 있게 구성합니다.", primary: "예약하기", secondary: "공간 보기" },
+    routes: [plainRoute("home", "홈", "home"), plainRoute("space", "공간", "browse"), plainRoute("program", "프로그램", "detail"), plainRoute("reserve", "예약", "reserve"), plainRoute("contact", "오시는길", "contact")],
+    stats: [stat("예약", "간단"), stat("분위기", "따뜻함"), stat("방문 안내", "명확")],
+    chips: ["공간 사진", "프로그램", "예약 버튼"],
+    design: { family: "PageCraft 공간 예약형", heroMode: "공간 분위기와 예약 동선이 바로 보이는 로컬 브랜드 홈페이지.", background: "따뜻한 사진과 크림 톤 배경, 단순한 예약 카드.", motion: "예약 카드가 종이처럼 차분하게 정렬됩니다.", keywords: ["공간 예약", "프로그램 안내", "오시는길"] },
+  },
+  {
+    id: "pagecraft-event",
+    brand: "컨퍼런스데이",
+    industry: "행사 신청형",
+    category: "event",
+    summary: "행사 소개, 일정, 연사, 신청 버튼을 한눈에 보여주는 이벤트형 홈페이지입니다.",
+    backdrop: "retro",
+    themeKey: "signalNight",
+    imageStyle: "neo-brutal",
+    homeMode: "행사 안내",
+    mobileRule: "행사명, 날짜, 신청 버튼을 설명문보다 먼저 보여줍니다.",
+    hero: { eyebrow: "이벤트 홈페이지", title: "일정과 신청이 바로 보이는 행사 페이지", subtitle: "프로그램과 연사 정보를 짧게 정리하고 신청 버튼을 분명하게 배치합니다.", primary: "일정 보기", secondary: "신청하기" },
+    routes: [plainRoute("home", "홈", "home"), plainRoute("program", "소개", "browse"), plainRoute("speakers", "연사", "detail"), plainRoute("schedule", "일정", "schedule"), plainRoute("register", "신청", "reserve")],
+    stats: [stat("신청", "바로가기"), stat("세션", "4개"), stat("일정", "명확")],
+    chips: ["행사 소개", "일정표", "신청 버튼"],
+    design: { family: "PageCraft 행사 신청형", heroMode: "일정, 연사, 신청 동선이 분명한 이벤트 홈페이지.", background: "선명한 포스터 톤과 읽기 쉬운 일정 카드.", motion: "행사 카드가 명확한 순서로 쌓입니다.", keywords: ["행사 안내", "일정표", "참가 신청"] },
+  },
+  {
+    id: "pagecraft-saas",
+    brand: "플로우업",
+    industry: "SaaS 소개형",
+    category: "saas",
+    summary: "기능, 요금, 고객사례, 데모 문의를 빠르게 비교할 수 있는 서비스형 홈페이지입니다.",
+    backdrop: "chrome",
+    themeKey: "chromePearl",
+    imageStyle: "bold-minimal",
+    homeMode: "기능 소개",
+    mobileRule: "핵심 기능, 요금, 데모 문의 버튼을 첫 화면 흐름 안에 배치합니다.",
+    hero: { eyebrow: "서비스 홈페이지", title: "기능과 요금이 바로 보이는 SaaS 소개", subtitle: "제품 가치, 요금, 데모 문의를 한 흐름으로 확인할 수 있습니다.", primary: "기능 보기", secondary: "데모 문의" },
+    routes: [plainRoute("home", "홈", "home"), plainRoute("features", "기능", "features"), plainRoute("pricing", "요금", "pricing"), plainRoute("cases", "고객사례", "cases"), plainRoute("contact", "데모문의", "contact")],
+    stats: [stat("기능", "4개"), stat("요금", "명확"), stat("데모", "문의")],
+    chips: ["기능 소개", "요금 비교", "데모 문의"],
+    design: { family: "PageCraft SaaS 소개형", heroMode: "기능, 요금, 고객사례, 데모 문의가 명확한 서비스 홈페이지.", background: "밝은 카드형 화면과 정돈된 제품 정보.", motion: "기능 카드가 실제 서비스 소개 흐름처럼 정리됩니다.", keywords: ["SaaS 소개", "요금 안내", "데모 문의"] },
+  },
   {
     id: "sneaker-drop",
     brand: "RIFT/01",
@@ -395,7 +515,7 @@ const rawSites = [
     homeMode: "Clinic stack",
     mobileRule: "Pin diagnosis CTA and open consult slots above every editorial section.",
     hero: { eyebrow: "Diagnosis First", title: "Lead with diagnosis and booking, not a generic beauty campaign.", subtitle: "The site should feel like a premium clinic with an active intake flow.", primary: "Start Diagnosis", secondary: "Book Visit" },
-    routes: [route("home", "Home", "home"), route("programs", "Programs", "browse"), route("scan", "AI Scan", "detail"), route("booking", "Booking", "reserve"), route("clinic", "Clinic", "guide")],
+    routes: [route("home", "Home", "home"), route("programs", "Programs", "browse"), route("scan", "진단", "detail"), route("booking", "Booking", "reserve"), route("clinic", "Clinic", "guide")],
     stats: [stat("Diagnosis fee", "29,000원"), stat("Consult type", "1:1"), stat("Return rate", "96%")],
     chips: ["Clinic calm", "Intake form", "Doctor trust"],
     design: { family: "Premium clinical booking", heroMode: "Treatment space photo with diagnosis CTA column and open-slot widget.", background: "Large clinic photography with soft shadowed cards floating upward.", motion: "Treatment cards and booking rows appear as layered translucent sheets.", keywords: ["clinic booking", "diagnosis-led", "soft layered panels"] },
@@ -505,19 +625,19 @@ const rawSites = [
   {
     id: "ai-saas",
     brand: "SIGNAL GRID",
-    industry: "AI Workflow SaaS",
+    industry: "자동화 SaaS",
     category: "saas",
-    summary: "Workflow automation SaaS structured around flow boards, use cases, and pricing clarity.",
+    summary: "업무 자동화 흐름, 활용 사례, 요금 안내를 명확하게 보여주는 SaaS 홈페이지입니다.",
     backdrop: "retro",
     themeKey: "signalNight",
     imageStyle: "retrofuture",
-    homeMode: "Workflow board",
-    mobileRule: "Foreground workflow states, KPI cards, and a single product CTA instead of shrinking the desktop board.",
-    hero: { eyebrow: "Workflow Board", title: "Open into an active AI workflow board instead of a startup headline stack.", subtitle: "Users should understand the product by glancing at the interface first.", primary: "Explore Flows", secondary: "See Pricing" },
+    homeMode: "서비스 흐름",
+    mobileRule: "핵심 기능, 활용 사례, 요금 버튼을 모바일에서도 먼저 확인할 수 있게 합니다.",
+    hero: { eyebrow: "서비스 소개", title: "자동화 흐름이 한눈에 보이는 SaaS 소개", subtitle: "제품 화면을 먼저 보여주고 기능과 요금으로 자연스럽게 이어갑니다.", primary: "기능 보기", secondary: "요금 보기" },
     routes: [route("home", "Home", "home"), route("flows", "Flows", "features"), route("cases", "Cases", "cases"), route("pricing", "Pricing", "pricing"), route("contact", "Contact", "contact")],
     stats: [stat("Starter", "월 39,000원"), stat("Saved hours", "128h"), stat("Close rate", "31%")],
-    chips: ["Workflow graph", "KPI tiles", "Mesh depth"],
-    design: { family: "AI product board", heroMode: "Workflow-board homepage with logic nodes, KPI tiles, and action chips.", background: "Responsive mesh and aura depth rather than stock imagery.", motion: "Node clusters, metric chips, and CTA rails animate at different layers with restraint.", keywords: ["workflow SaaS", "graph board", "technical glow"] },
+    chips: ["업무 흐름", "성과 카드", "요금 안내"],
+    design: { family: "자동화 서비스형", heroMode: "기능, 사례, 요금이 명확한 SaaS 소개 홈페이지.", background: "정돈된 제품 카드와 절제된 기술형 배경.", motion: "기능 카드와 CTA가 차분한 순서로 나타납니다.", keywords: ["자동화 SaaS", "서비스 소개", "요금 안내"] },
   },
   {
     id: "indie-bookstore",
@@ -671,7 +791,7 @@ export const siteCatalog = rawSites.map((site) => {
       product: buildImage(site.imageStyle, site.id, "product"),
       scene: buildImage(site.imageStyle, site.id, "scene"),
     },
-    images: {
+    images: PAGECRAFT_IMAGE_OVERRIDES[site.id] ?? {
       brand: buildImageV2(site.id, "brand"),
       product: buildImageV2(site.id, "product"),
       scene: buildImageV2(site.id, "scene"),

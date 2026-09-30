@@ -2,6 +2,7 @@ node_modules
 dist
 dist-ssr
 tmp
+.omx
 .vercel/project.json
 .vercel/README.txt
 .vercel/.env*
@@ -10,10 +11,30 @@ tmp
 *.local
 
 docs
-serene-market-shop
+/serene-market-shop
 에임가구
 
 .stitch/designs
 design/stitch/*/metadata.json
 design/stitch/*/prompts
 data/*.json
+
+# 작업용 자료 (배포에 불필요)
+.claude
+.codex-remote-attachments
+.npm-cache
+_workspace
+artifacts
+concepts
+dist-agency-check
+tmp-*.png
+tmp-*.log
+.tmp-*
+코덱스스킬설명.html
+코덱스하네스.md
+
+# 폐기한 옛 샘플 보관 폴더 (배포 제외)
+_archive
+
+# GPT 원본 이미지 (웹용 WebP는 public/sites에 있음)
+assets-src

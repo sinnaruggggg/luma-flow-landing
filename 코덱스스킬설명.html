@@ -1,0 +1,413 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>코덱스 스킬 설명</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --ink: #111827;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --accent: #2563eb;
+      --accent-soft: #eff6ff;
+      --good: #059669;
+      --warn: #d97706;
+      --danger: #dc2626;
+      --radius: 18px;
+      --shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", Arial, sans-serif;
+      background: radial-gradient(circle at top left, #e0ecff 0, transparent 34%), var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+
+    header {
+      padding: 56px 24px 32px;
+      text-align: center;
+    }
+
+    header .eyebrow {
+      display: inline-flex;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(32px, 5vw, 56px);
+      letter-spacing: -0.06em;
+      line-height: 1.08;
+    }
+
+    header p {
+      max-width: 780px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    main {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto 80px;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .summary article,
+    .section {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .summary article { padding: 18px; }
+    .summary strong { display: block; font-size: 26px; letter-spacing: -0.04em; }
+    .summary span { color: var(--muted); font-size: 13px; font-weight: 700; }
+
+    .section {
+      padding: 28px;
+      margin-top: 22px;
+    }
+
+    .section h2 {
+      margin: 0 0 6px;
+      font-size: 25px;
+      letter-spacing: -0.04em;
+    }
+
+    .section > p {
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .skill {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      background: #fff;
+    }
+
+    .skill h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing: -0.03em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #f3f4f6;
+      color: #374151;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .tag.workflow { background: #ecfeff; color: #0e7490; }
+    .tag.plugin { background: #f5f3ff; color: #6d28d9; }
+    .tag.system { background: #f0fdf4; color: #047857; }
+    .tag.warn { background: #fffbeb; color: #b45309; }
+
+    .skill p { margin: 0; color: #4b5563; }
+    .skill ul { margin: 10px 0 0; padding-left: 20px; color: #4b5563; }
+
+    .notice {
+      border-left: 5px solid var(--accent);
+      background: var(--accent-soft);
+      padding: 16px 18px;
+      border-radius: 14px;
+      color: #1e3a8a;
+      margin: 20px 0 0;
+      font-weight: 700;
+    }
+
+    .table-wrap { overflow-x: auto; border-radius: 16px; border: 1px solid var(--line); }
+    table { width: 100%; border-collapse: collapse; min-width: 760px; background: #fff; }
+    th, td { padding: 13px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { background: #f9fafb; font-size: 13px; color: #374151; }
+    td:first-child { font-weight: 900; white-space: nowrap; }
+    tr:last-child td { border-bottom: 0; }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 32px 16px 56px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .summary { grid-template-columns: repeat(2, 1fr); }
+      .grid { grid-template-columns: 1fr; }
+      .section { padding: 20px; }
+    }
+
+    @media (max-width: 520px) {
+      .summary { grid-template-columns: 1fr; }
+      header { padding-top: 38px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="eyebrow">Codex Skills Guide</span>
+    <h1>코덱스에서 보이는 스킬/워크플로 설명</h1>
+    <p>
+      채팅창에서 <strong>/</strong> 또는 스킬 목록을 볼 때 나오는 기능들을 초보자 기준으로 정리한 문서입니다.
+      각 스킬은 “언제 쓰는지”, “무슨 일을 하는지”, “주의할 점” 중심으로 설명했습니다.
+    </p>
+  </header>
+
+  <main>
+    <section class="summary">
+      <article><strong>기본</strong><span>스킬 생성/설치/문서/이미지</span></article>
+      <article><strong>OMX</strong><span>계획·분석·검증·팀 작업</span></article>
+      <article><strong>플러그인</strong><span>브라우저·컴퓨터·문서·시트·발표</span></article>
+      <article><strong>주의</strong><span>배포/삭제/외부 권한은 신중히</span></article>
+    </section>
+
+    <section class="section">
+      <h2>먼저 알아둘 점</h2>
+      <p>스킬은 코덱스가 특정 작업을 더 안정적으로 수행하기 위한 “작업 방식 묶음”입니다.</p>
+      <div class="notice">
+        단순 질문은 그냥 물어보면 되고, 복잡한 작업은 “분석해줘”, “계획 세워줘”, “검증해줘”, “브라우저로 확인해줘”처럼 목적을 말하면 알맞은 스킬이 적용됩니다.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>자주 쓰는 핵심 스킬</h2>
+      <p>실제 프로젝트 수정, 오류 해결, 화면 확인 때 가장 자주 쓰는 기능입니다.</p>
+      <div class="grid">
+        <article class="skill">
+          <h3>analyze <span class="tag workflow">OMX</span></h3>
+          <p>코드를 수정하기 전에 원인과 구조를 읽기 전용으로 분석합니다. “왜 안 돼?”, “원인 찾아줘”, “어디가 문제야?” 같은 요청에 적합합니다.</p>
+        </article>
+        <article class="skill">
+          <h3>plan / ralplan <span class="tag workflow">OMX</span></h3>
+          <p>수정 전에 작업 순서, 위험 지점, 테스트 방법을 정리합니다. 큰 기능 추가나 여러 파일 변경 전에 좋습니다.</p>
+        </article>
+        <article class="skill">
+          <h3>ralph <span class="tag workflow">OMX</span></h3>
+          <p>목표가 끝날 때까지 구현→검증→수정 루프를 반복하는 지속 작업 모드입니다. 다만 프로젝트 환경에 따라 계획 문서가 먼저 필요할 수 있습니다.</p>
+        </article>
+        <article class="skill">
+          <h3>team / swarm <span class="tag workflow">OMX</span></h3>
+          <p>여러 에이전트를 나눠서 작업시키는 팀 작업 모드입니다. 큰 기능, 디자인+구현+검증을 병렬로 처리할 때 씁니다.</p>
+        </article>
+        <article class="skill">
+          <h3>ultraqa <span class="tag workflow">OMX</span></h3>
+          <p>공격적으로 테스트 케이스를 만들고, 깨질 만한 시나리오를 확인하는 QA 스킬입니다. 배포 전 검증에 유용합니다.</p>
+        </article>
+        <article class="skill">
+          <h3>code-review <span class="tag workflow">OMX</span></h3>
+          <p>수정된 코드가 안전한지, 버그 가능성은 없는지, 유지보수하기 쉬운지 리뷰합니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>브라우저/화면 확인 스킬</h2>
+      <p>웹사이트 화면, 로컬 서버, 콘솔 오류, 클릭 동작 등을 확인할 때 사용합니다.</p>
+      <div class="grid">
+        <article class="skill">
+          <h3>browser:control-in-app-browser <span class="tag plugin">Browser</span></h3>
+          <p>코덱스 안의 브라우저로 localhost, 배포 사이트, 현재 페이지를 열고 클릭/입력/스크린샷/콘솔 확인을 합니다.</p>
+          <ul><li>프론트엔드 수정 후 실제 화면 검증에 필수입니다.</li></ul>
+        </article>
+        <article class="skill">
+          <h3>visual-ralph <span class="tag workflow">OMX</span></h3>
+          <p>목표 디자인이나 스크린샷을 기준으로 화면이 맞을 때까지 수정과 시각 검증을 반복합니다.</p>
+        </article>
+        <article class="skill">
+          <h3>stitch-design <span class="tag workflow">Design</span></h3>
+          <p>Stitch 디자인 작업, 화면 생성, 디자인 시스템 정리를 돕는 스킬입니다.</p>
+        </article>
+        <article class="skill">
+          <h3>stitch-loop <span class="tag workflow">Design</span></h3>
+          <p>Stitch로 웹사이트를 반복 생성·수정하는 루프형 작업 방식입니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>이미지/문서/자료 생성 스킬</h2>
+      <p>코드가 아니라 이미지, 문서, 발표자료, 스프레드시트 같은 산출물을 만들 때 씁니다.</p>
+      <div class="grid">
+        <article class="skill">
+          <h3>imagegen <span class="tag system">System</span></h3>
+          <p>새 이미지 생성, 기존 이미지 편집, 썸네일/비주얼 에셋 제작에 사용합니다. HTML/CSS로 만들 수 있는 벡터나 UI는 코드로 만드는 편이 낫습니다.</p>
+        </article>
+        <article class="skill">
+          <h3>documents <span class="tag plugin">Documents</span></h3>
+          <p>Word 문서, .docx 파일을 만들거나 수정하고 렌더링해서 레이아웃까지 확인합니다.</p>
+        </article>
+        <article class="skill">
+          <h3>presentations <span class="tag plugin">Presentations</span></h3>
+          <p>PowerPoint/PPTX 발표자료를 만들고 시각적으로 검증합니다.</p>
+        </article>
+        <article class="skill">
+          <h3>spreadsheets <span class="tag plugin">Spreadsheets</span></h3>
+          <p>엑셀, CSV, 표, 수식, 차트, 데이터 분석용 파일을 만들거나 수정합니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>조사/문서 기반 답변 스킬</h2>
+      <p>외부 공식 문서, 최신 API, 라이브러리 사용법이 필요할 때 사용합니다.</p>
+      <div class="grid">
+        <article class="skill">
+          <h3>openai-docs <span class="tag system">System</span></h3>
+          <p>OpenAI API, ChatGPT, Codex, 모델 선택, 프롬프트 업그레이드 같은 질문에 공식 문서 기준으로 답합니다.</p>
+        </article>
+        <article class="skill">
+          <h3>best-practice-research <span class="tag workflow">OMX</span></h3>
+          <p>공식 문서와 신뢰 가능한 근거를 우선으로 모아 모범 사례를 정리합니다.</p>
+        </article>
+        <article class="skill">
+          <h3>autoresearch / autoresearch-goal <span class="tag workflow">OMX</span></h3>
+          <p>조사 목표를 세우고 검증자 관점으로 반복 조사하는 스킬입니다. 시간이 걸리지만 근거 중심 결과에 좋습니다.</p>
+        </article>
+        <article class="skill">
+          <h3>ask <span class="tag workflow">OMX</span></h3>
+          <p>Claude/Gemini 같은 외부 조언자 CLI에 질문하고, 재사용 가능한 답변 아티팩트를 남기는 기능입니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>프로젝트 관리/상태 관리 스킬</h2>
+      <p>작업 기록, 설치 상태, 진행 상황, 워크플로 제어에 관련된 기능입니다.</p>
+      <div class="grid">
+        <article class="skill">
+          <h3>cancel <span class="tag warn">Control</span></h3>
+          <p>진행 중인 OMX 모드나 워크플로를 취소합니다. 작업 중단 요청이 있을 때 사용합니다.</p>
+        </article>
+        <article class="skill">
+          <h3>doctor <span class="tag workflow">OMX</span></h3>
+          <p>oh-my-codex 설치 상태와 문제를 진단하고 고칩니다.</p>
+        </article>
+        <article class="skill">
+          <h3>hud <span class="tag workflow">OMX</span></h3>
+          <p>OMX 상태 표시줄/HUD를 보여주거나 설정합니다.</p>
+        </article>
+        <article class="skill">
+          <h3>wiki <span class="tag workflow">OMX</span></h3>
+          <p>프로젝트용 지속 문서 위키를 만들고 검색/기록합니다. 다음 AI가 이어받기 좋게 합니다.</p>
+        </article>
+        <article class="skill">
+          <h3>pipeline <span class="tag workflow">OMX</span></h3>
+          <p>여러 작업 단계를 순서대로 실행하는 파이프라인을 구성합니다.</p>
+        </article>
+        <article class="skill">
+          <h3>ultragoal / performance-goal <span class="tag workflow">OMX</span></h3>
+          <p>큰 목표를 여러 하위 목표로 나누거나 성능 최적화 목표를 장기적으로 관리합니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>스킬/플러그인 만들기와 설치</h2>
+      <p>코덱스 자체 기능을 확장할 때 사용하는 관리용 스킬입니다.</p>
+      <div class="grid">
+        <article class="skill">
+          <h3>skill-creator <span class="tag system">System</span></h3>
+          <p>새 스킬을 만들거나 기존 스킬을 개선할 때 안내합니다.</p>
+        </article>
+        <article class="skill">
+          <h3>skill-installer <span class="tag system">System</span></h3>
+          <p>큐레이션된 스킬이나 GitHub 저장소의 스킬을 설치합니다.</p>
+        </article>
+        <article class="skill">
+          <h3>plugin-creator <span class="tag system">System</span></h3>
+          <p>Codex 플러그인 디렉터리와 manifest를 스캐폴딩합니다.</p>
+        </article>
+        <article class="skill">
+          <h3>skill <span class="tag workflow">OMX</span></h3>
+          <p>로컬 스킬을 검색, 추가, 제거, 편집, 설정하는 관리 기능입니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>전체 스킬 빠른 표</h2>
+      <p>현재 세션에서 보이는 주요 스킬을 한 줄씩 요약했습니다.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>스킬명</th><th>주요 기능</th><th>추천 상황</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>ai-slop-cleaner</td><td>지저분한 코드/과한 구조를 정리</td><td>리팩터링, 코드 단순화</td></tr>
+            <tr><td>analyze</td><td>읽기 전용 심층 분석</td><td>원인 파악, 구조 분석</td></tr>
+            <tr><td>autopilot</td><td>인터뷰→계획→목표 실행→검증 루프</td><td>큰 작업을 자동 진행</td></tr>
+            <tr><td>browser</td><td>웹페이지 열기, 클릭, 콘솔/화면 확인</td><td>프론트엔드 검증</td></tr>
+            <tr><td>cancel</td><td>진행 중인 모드 취소</td><td>작업 중단</td></tr>
+            <tr><td>code-review</td><td>코드 리뷰</td><td>수정 후 안전성 점검</td></tr>
+            <tr><td>computer-use</td><td>Windows 앱 조작</td><td>데스크톱 앱 제어 필요</td></tr>
+            <tr><td>deep-interview</td><td>요구사항을 깊게 질문</td><td>목표가 애매할 때</td></tr>
+            <tr><td>design / design-md</td><td>디자인 기준 문서화</td><td>디자인 시스템 정리</td></tr>
+            <tr><td>doctor</td><td>OMX 설치 진단</td><td>환경 문제 해결</td></tr>
+            <tr><td>documents</td><td>문서 파일 생성/수정</td><td>Word/.docx 작업</td></tr>
+            <tr><td>imagegen</td><td>이미지 생성/편집</td><td>비주얼 에셋 필요</td></tr>
+            <tr><td>openai-docs</td><td>OpenAI 공식 문서 기반 답변</td><td>API/모델/Codex 질문</td></tr>
+            <tr><td>plan / ralplan</td><td>작업 계획 수립</td><td>구현 전 계획 필요</td></tr>
+            <tr><td>presentations</td><td>PPTX 발표자료 제작</td><td>슬라이드 작업</td></tr>
+            <tr><td>ralph</td><td>완료까지 반복 실행</td><td>지속 구현/검증</td></tr>
+            <tr><td>spreadsheets</td><td>엑셀/CSV/표/차트 작업</td><td>데이터 문서 작업</td></tr>
+            <tr><td>stitch-design</td><td>Stitch 디자인 생성/편집</td><td>UI 시안/화면 제작</td></tr>
+            <tr><td>team / swarm</td><td>여러 에이전트 병렬 작업</td><td>큰 작업 분담</td></tr>
+            <tr><td>ultraqa</td><td>강한 QA/테스트</td><td>배포 전 검증</td></tr>
+            <tr><td>visual-ralph</td><td>시각 기준으로 반복 수정</td><td>스크린샷과 맞추기</td></tr>
+            <tr><td>wiki</td><td>프로젝트 위키 기록</td><td>장기 유지보수</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>어떻게 말하면 좋을까?</h2>
+      <div class="grid">
+        <article class="skill"><h3>분석 요청</h3><p>“이 오류 원인 분석해줘. 수정하지 말고 먼저 어디가 문제인지 알려줘.”</p></article>
+        <article class="skill"><h3>수정 요청</h3><p>“기존 잘 되는 코드는 건드리지 말고 최소 수정으로 고쳐줘. 빌드까지 확인해줘.”</p></article>
+        <article class="skill"><h3>화면 검증</h3><p>“브라우저로 열어서 PC/모바일 화면 깨짐과 콘솔 에러 확인해줘.”</p></article>
+        <article class="skill"><h3>배포 확인</h3><p>“배포 후 실제 주소에서 대표 경로 2~3개 열어서 확인해줘.”</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    작성 파일: 코덱스스킬설명.html · 목적: Codex 스킬/워크플로 기능 설명
+  </footer>
+</body>
+</html>

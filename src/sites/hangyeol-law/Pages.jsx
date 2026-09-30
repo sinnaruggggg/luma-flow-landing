@@ -1,0 +1,510 @@
+import { useMemo, useState } from 'react';
+import { ArrowRight, Briefcase, Building2, Check, ChevronRight, HeartHandshake, MapPin, Phone, Scale, ScrollText, ShieldAlert, TrainFront, Car, Video, Users } from 'lucide-react';
+import { Link } from '../_kit/SiteProvider.jsx';
+import { resolvePhoto } from '../_kit/media.js';
+import { dateAfter, useMockForm } from '../_kit/hooks.js';
+import { AREAS, ARTICLES, FACTS, FIRM, HISTORY, LAWYERS, PHOTOS, PRINCIPLES, PROCESS } from './content.js';
+
+const ICONS = { Scale, Building2, HeartHandshake, ScrollText, ShieldAlert, Briefcase };
+const lawyerById = (id) => LAWYERS.find((item) => item.id === id);
+
+function AreaIcon({ name, size = 22 }) {
+  const Icon = ICONS[name] || Scale;
+  return <Icon size={size} strokeWidth={1.6} aria-hidden="true" />;
+}
+
+function Photo({ name, className = '', eager = false }) {
+  const { src, alt } = resolvePhoto('hangyeol-law', PHOTOS[name]);
+  return <img className={className} src={src} alt={alt} loading={eager ? 'eager' : 'lazy'} decoding="async" />;
+}
+
+function PageHero({ crumbs = [], title, lead, photo = 'glass' }) {
+  return (
+    <section className="hg-pagehero">
+      <Photo name={photo} className="hg-pagehero__bg" eager />
+      <div className="hg-wrap hg-pagehero__inner">
+        <nav className="hg-crumbs" aria-label="현재 위치">
+          <Link to="">홈</Link>
+          {crumbs.map(([to, label]) => <span key={label}><ChevronRight size={14} aria-hidden="true" />{to ? <Link to={to}>{label}</Link> : <b aria-current="page">{label}</b>}</span>)}
+        </nav>
+        <h1>{title}</h1>
+        {lead ? <p>{lead}</p> : null}
+      </div>
+    </section>
+  );
+}
+
+function SectionTitle({ eyebrow, title, action }) {
+  return (
+    <div className="hg-sectitle" data-reveal>
+      <div>
+        <p className="hg-eyebrow">{eyebrow}</p>
+        <h2>{title}</h2>
+      </div>
+      {action}
+    </div>
+  );
+}
+
+function LawyerCard({ lawyer, compact = false }) {
+  return (
+    <article className={`hg-lawyer${compact ? ' is-compact' : ''}`} data-reveal>
+      <div className="hg-lawyer__mono" aria-hidden="true">{lawyer.initial}</div>
+      <div>
+        <p className="hg-lawyer__role">{lawyer.role}</p>
+        <h3>{lawyer.name}</h3>
+        <p className="hg-lawyer__areas">{lawyer.areas.join(' · ')}</p>
+        {!compact ? (
+          <>
+            <blockquote>“{lawyer.message}”</blockquote>
+            <ul>{lawyer.career.map((line) => <li key={line}>{line}</li>)}</ul>
+          </>
+        ) : null}
+      </div>
+    </article>
+  );
+}
+
+function CtaBand() {
+  return (
+    <section className="hg-ctaband">
+      <Photo name="consult" className="hg-ctaband__bg" />
+      <div className="hg-wrap hg-ctaband__inner" data-reveal>
+        <div>
+          <p className="hg-eyebrow hg-eyebrow--light">첫 상담 안내</p>
+          <h2>혼자 고민하지 마시고,<br />먼저 상황을 들려주세요.</h2>
+        </div>
+        <div className="hg-ctaband__actions">
+          <Link to="contact" className="hg-btn hg-btn--brass">온라인 상담 예약 <ArrowRight size={18} aria-hidden="true" /></Link>
+          <a className="hg-btn hg-btn--ghost" href={`tel:${FIRM.phone.replace(/-/g, '')}`}><Phone size={18} aria-hidden="true" /> {FIRM.phone}</a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function HomePage() {
+  return (
+    <>
+      <section className="hg-hero">
+        <div className="hg-hero__panel">
+          <div className="hg-hero__copy">
+            <p className="hg-eyebrow hg-eyebrow--light">서초동 · 2014년 개소</p>
+            <h1>복잡한 문제일수록,<br />원칙대로 풀어갑니다.</h1>
+            <p className="hg-hero__lead">한결은 첫 상담부터 변호사가 직접 듣고, 비용과 기간을 먼저 말씀드립니다. 개인과 중소기업의 민사·가사·형사 사건을 끝까지 함께합니다.</p>
+            <div className="hg-hero__actions">
+              <Link to="contact" className="hg-btn hg-btn--brass">상담 예약하기 <ArrowRight size={18} aria-hidden="true" /></Link>
+              <Link to="practice" className="hg-btn hg-btn--ghost">업무 분야 보기</Link>
+            </div>
+          </div>
+          <ul className="hg-hero__ways" aria-label="상담 방식">
+            <li><Users size={18} aria-hidden="true" /><b>방문 상담</b><span>서초동 사무소</span></li>
+            <li><Phone size={18} aria-hidden="true" /><b>전화 상담</b><span>예약 시간 연결</span></li>
+            <li><Video size={18} aria-hidden="true" /><b>화상 상담</b><span>지방·해외 거주</span></li>
+          </ul>
+        </div>
+        <div className="hg-hero__photo"><Photo name="hero" eager /></div>
+      </section>
+
+      <section className="hg-quick" aria-labelledby="hg-quick-title">
+        <div className="hg-wrap">
+          <h2 id="hg-quick-title" className="sr-only">분야별 바로가기</h2>
+          <ul className="hg-quick__grid">
+            {AREAS.map((area, index) => (
+              <li key={area.slug} data-reveal style={{ '--d': `${index * 60}ms` }}>
+                <Link to={`practice/${area.slug}`}>
+                  <AreaIcon name={area.icon} size={26} />
+                  <b>{area.title}</b>
+                  <ArrowRight size={16} aria-hidden="true" className="hg-quick__arrow" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="hg-section">
+        <div className="hg-wrap">
+          <SectionTitle eyebrow="한결의 원칙" title={<>결과만큼 과정도<br />분명해야 합니다.</>} />
+          <ol className="hg-principles">
+            {PRINCIPLES.map(([number, title, text], index) => (
+              <li key={number} data-reveal style={{ '--d': `${index * 90}ms` }}>
+                <span className="hg-serif-num">{number}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className="hg-facts" aria-label="한결 법률사무소 소개 숫자">
+        <div className="hg-wrap">
+          <dl>
+            {FACTS.map(([value, label]) => <div key={label} data-reveal><dt>{label}</dt><dd>{value}</dd></div>)}
+          </dl>
+        </div>
+      </section>
+
+      <section className="hg-section">
+        <div className="hg-wrap">
+          <SectionTitle eyebrow="구성원" title="사건마다 전담 변호사가 배정됩니다." action={<Link to="people" className="hg-textlink">구성원 전체 보기 <ArrowRight size={16} aria-hidden="true" /></Link>} />
+          <div className="hg-people-preview">
+            {LAWYERS.slice(0, 3).map((lawyer) => <LawyerCard key={lawyer.id} lawyer={lawyer} compact />)}
+          </div>
+        </div>
+      </section>
+
+      <section className="hg-section hg-section--tint">
+        <div className="hg-wrap">
+          <SectionTitle eyebrow="상담 절차" title="예약부터 방향 안내까지 네 단계." />
+          <ol className="hg-steps">
+            {PROCESS.map(([title, text], index) => (
+              <li key={title} data-reveal style={{ '--d': `${index * 80}ms` }}>
+                <span>STEP {String(index + 1).padStart(2, '0')}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className="hg-section">
+        <div className="hg-wrap">
+          <SectionTitle eyebrow="법률 칼럼" title="알아 두면 덜 불안한 이야기." action={<Link to="insights" className="hg-textlink">칼럼 더 보기 <ArrowRight size={16} aria-hidden="true" /></Link>} />
+          <div className="hg-articles">
+            {ARTICLES.slice(0, 3).map((article) => <ArticleCard key={article.slug} article={article} />)}
+          </div>
+        </div>
+      </section>
+      <CtaBand />
+    </>
+  );
+}
+
+function ArticleCard({ article }) {
+  return (
+    <article className="hg-article-card" data-reveal>
+      <Link to={`insights/${article.slug}`}>
+        <p className="hg-article-card__meta"><span>{article.category}</span><time>{article.date}</time></p>
+        <h3>{article.title}</h3>
+        <p>{article.excerpt}</p>
+        <span className="hg-textlink">읽기 <ArrowRight size={16} aria-hidden="true" /></span>
+      </Link>
+    </article>
+  );
+}
+
+export function AboutPage() {
+  const owner = LAWYERS[0];
+  return (
+    <>
+      <PageHero crumbs={[[null, '사무소 소개']]} title="사무소 소개" lead="서초동에서 12년, 의뢰인의 일상을 지키는 법률 파트너." photo="building" />
+      <section className="hg-section">
+        <div className="hg-wrap hg-greeting">
+          <div data-reveal>
+            <p className="hg-eyebrow">대표변호사 인사말</p>
+            <h2>“한결같이, 처음 상담하던<br />그 마음으로 끝까지.”</h2>
+          </div>
+          <div className="hg-greeting__body" data-reveal>
+            <p>법률 문제를 안고 사무소를 찾는 분들은 대부분 처음 겪는 일 앞에서 막막해하십니다. 한결은 그 막막함을 줄이는 것에서 일을 시작합니다.</p>
+            <p>사건의 가능성과 한계를 솔직하게 말씀드리고, 비용과 일정을 미리 정리해 드립니다. 이기는 것만큼 의뢰인이 과정을 이해하고 납득하는 것이 중요하다고 믿기 때문입니다.</p>
+            <p>2014년 작은 사무실에서 시작한 한결은 이제 여섯 명의 변호사가 함께합니다. 규모가 커져도 첫 상담은 변호사가 직접 한다는 원칙은 바꾸지 않겠습니다.</p>
+            <p className="hg-sign">대표변호사 <b>{owner.name}</b></p>
+          </div>
+        </div>
+      </section>
+      <section className="hg-gallery" aria-label="사무소 사진">
+        <div className="hg-wrap hg-gallery__grid">
+          <Photo name="office" /><Photo name="corridor" /><Photo name="hall" />
+        </div>
+      </section>
+      <section className="hg-section">
+        <div className="hg-wrap hg-split">
+          <SectionTitle eyebrow="연혁" title="한 걸음씩 넓혀 온 길." />
+          <ol className="hg-timeline">
+            {HISTORY.map(([year, text]) => <li key={year} data-reveal><span className="hg-serif-num">{year}</span><p>{text}</p></li>)}
+          </ol>
+        </div>
+      </section>
+      <section className="hg-section hg-section--tint" id="location">
+        <div className="hg-wrap">
+          <SectionTitle eyebrow="오시는 길" title="서초동 한결빌딩 9층" />
+          <div className="hg-location">
+            <div className="hg-map" role="img" aria-label="사무소 위치를 표현한 약도">
+              <i className="r1" /><i className="r2" /><i className="r3" /><i className="r4" />
+              <span className="hg-map__station">○○역</span>
+              <span className="hg-map__pin"><MapPin size={22} aria-hidden="true" /> 한결빌딩</span>
+            </div>
+            <ul className="hg-location__info">
+              <li><MapPin size={20} aria-hidden="true" /><div><b>주소</b><p>{FIRM.address}</p></div></li>
+              <li><TrainFront size={20} aria-hidden="true" /><div><b>지하철</b><p>{FIRM.subway}</p></div></li>
+              <li><Car size={20} aria-hidden="true" /><div><b>주차</b><p>{FIRM.parking}</p></div></li>
+              <li><Phone size={20} aria-hidden="true" /><div><b>대표전화</b><p>{FIRM.phone} · {FIRM.hours}</p></div></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <CtaBand />
+    </>
+  );
+}
+
+export function PracticePage() {
+  return (
+    <>
+      <PageHero crumbs={[[null, '업무 분야']]} title="업무 분야" lead="개인과 중소기업이 가장 자주 마주하는 여섯 가지 분야에 집중합니다." photo="library" />
+      <section className="hg-section">
+        <div className="hg-wrap">
+          <ul className="hg-arealist">
+            {AREAS.map((area, index) => (
+              <li key={area.slug} data-reveal>
+                <Link to={`practice/${area.slug}`}>
+                  <span className="hg-arealist__no">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="hg-arealist__icon"><AreaIcon name={area.icon} size={28} /></span>
+                  <div>
+                    <h2>{area.title}</h2>
+                    <p>{area.summary}</p>
+                    <ul>{area.cases.slice(0, 3).map((item) => <li key={item}>{item}</li>)}</ul>
+                  </div>
+                  <span className="hg-arealist__go">자세히 <ArrowRight size={18} aria-hidden="true" /></span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+      <CtaBand />
+    </>
+  );
+}
+
+export function AreaPage({ area }) {
+  const others = AREAS.filter((item) => item.slug !== area.slug);
+  return (
+    <>
+      <PageHero crumbs={[['practice', '업무 분야'], [null, area.title]]} title={area.title} lead={area.summary} photo="corridor" />
+      <section className="hg-section">
+        <div className="hg-wrap hg-detail">
+          <div className="hg-detail__main">
+            <p className="hg-detail__intro" data-reveal>{area.intro}</p>
+            <h2 className="hg-h2" data-reveal>이런 경우 상담하세요</h2>
+            <ul className="hg-checks">{area.cases.map((item) => <li key={item} data-reveal><Check size={18} aria-hidden="true" />{item}</li>)}</ul>
+            <h2 className="hg-h2" data-reveal>진행 절차</h2>
+            <ol className="hg-flow">{area.steps.map((step, index) => <li key={step} data-reveal><span>{index + 1}</span>{step}</li>)}</ol>
+            <h2 className="hg-h2" data-reveal>상담 전 준비하면 좋은 자료</h2>
+            <ul className="hg-docs" data-reveal>{area.documents.map((item) => <li key={item}>{item}</li>)}</ul>
+            <h2 className="hg-h2" data-reveal>자주 묻는 질문</h2>
+            <div className="hg-faq">
+              {area.faq.map(([question, answer]) => (
+                <details key={question} data-reveal><summary>{question}</summary><p>{answer}</p></details>
+              ))}
+            </div>
+          </div>
+          <aside className="hg-detail__aside">
+            <div className="hg-aside-card hg-aside-card--navy">
+              <p className="hg-eyebrow hg-eyebrow--light">{area.title} 상담</p>
+              <p className="hg-aside-card__title">첫 상담 40분,<br />변호사가 직접 진행합니다.</p>
+              <Link to="contact" className="hg-btn hg-btn--brass">상담 예약하기</Link>
+              <a className="hg-aside-card__tel" href={`tel:${FIRM.phone.replace(/-/g, '')}`}><Phone size={16} aria-hidden="true" /> {FIRM.phone}</a>
+            </div>
+            <div className="hg-aside-card">
+              <p className="hg-eyebrow">담당 변호사</p>
+              {area.lawyers.map((id) => <LawyerCard key={id} lawyer={lawyerById(id)} compact />)}
+            </div>
+            <nav className="hg-aside-card" aria-label="다른 업무 분야">
+              <p className="hg-eyebrow">다른 업무 분야</p>
+              <ul className="hg-otherlinks">{others.map((item) => <li key={item.slug}><Link to={`practice/${item.slug}`}>{item.title}<ChevronRight size={16} aria-hidden="true" /></Link></li>)}</ul>
+            </nav>
+          </aside>
+        </div>
+      </section>
+    </>
+  );
+}
+
+export function PeoplePage() {
+  return (
+    <>
+      <PageHero crumbs={[[null, '구성원']]} title="구성원" lead="분야별 전담 변호사가 사건의 처음과 끝을 함께합니다. (표시된 인물은 가상 인물입니다)" photo="hall" />
+      <section className="hg-section">
+        <div className="hg-wrap hg-people">
+          {LAWYERS.map((lawyer) => <LawyerCard key={lawyer.id} lawyer={lawyer} />)}
+        </div>
+      </section>
+      <CtaBand />
+    </>
+  );
+}
+
+export function InsightsPage() {
+  const categories = useMemo(() => ['전체', ...new Set(ARTICLES.map((item) => item.category))], []);
+  const [active, setActive] = useState('전체');
+  const list = active === '전체' ? ARTICLES : ARTICLES.filter((item) => item.category === active);
+  return (
+    <>
+      <PageHero crumbs={[[null, '법률 칼럼']]} title="법률 칼럼" lead="자주 받는 질문을 변호사가 직접 정리했습니다." photo="documents" />
+      <section className="hg-section">
+        <div className="hg-wrap">
+          <div className="hg-tabs" role="group" aria-label="칼럼 분류">
+            {categories.map((category) => (
+              <button key={category} type="button" aria-pressed={active === category} onClick={() => setActive(category)}>{category}</button>
+            ))}
+          </div>
+          <p className="hg-count" aria-live="polite">{list.length}개의 글</p>
+          <div className="hg-articles hg-articles--list">
+            {list.map((article) => <ArticleCard key={article.slug} article={article} />)}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+export function ArticlePage({ article }) {
+  const related = ARTICLES.filter((item) => item.slug !== article.slug).slice(0, 2);
+  return (
+    <>
+      <PageHero crumbs={[['insights', '법률 칼럼'], [null, article.category]]} title={article.title} lead={`${article.category} · ${article.date}`} photo="glass" />
+      <section className="hg-section">
+        <div className="hg-wrap hg-reading">
+          <article>
+            <p className="hg-reading__lead">{article.excerpt}</p>
+            {article.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            <p className="hg-reading__note">이 글은 일반적인 정보를 정리한 것으로, 개별 사건에 대한 법률 자문이 아닙니다. 구체적인 판단은 상담을 통해 확인하세요.</p>
+          </article>
+          <aside>
+            <p className="hg-eyebrow">함께 읽으면 좋은 글</p>
+            {related.map((item) => <ArticleCard key={item.slug} article={item} />)}
+            <Link to="insights" className="hg-textlink">목록으로 <ArrowRight size={16} aria-hidden="true" /></Link>
+          </aside>
+        </div>
+      </section>
+      <CtaBand />
+    </>
+  );
+}
+
+const TIMES = ['10:00', '11:00', '13:30', '14:30', '15:30', '16:30'];
+const METHODS = [['visit', '방문 상담'], ['phone', '전화 상담'], ['video', '화상 상담']];
+const INITIAL = Object.freeze({ area: '', method: 'visit', date: '', time: '', name: '', phone: '', message: '', agree: false });
+
+function validate(values) {
+  return {
+    area: values.area ? '' : '상담 분야를 선택해 주세요.',
+    date: values.date ? '' : '희망 날짜를 선택해 주세요.',
+    time: values.time ? '' : '희망 시간을 선택해 주세요.',
+    name: values.name.trim() ? '' : '성함을 입력해 주세요.',
+    phone: /^[0-9-]{9,13}$/.test(values.phone.trim()) ? '' : '연락처를 숫자와 - 로 입력해 주세요.',
+    agree: values.agree ? '' : '개인정보 수집에 동의해 주세요.',
+  };
+}
+
+function FieldError({ message, id }) {
+  return message ? <p className="hg-error" id={id}>{message}</p> : null;
+}
+
+export function ContactPage() {
+  const form = useMockForm(INITIAL, validate);
+  const { values, errors, status, update, submit, reset, formRef } = form;
+  const areaLabel = AREAS.find((item) => item.slug === values.area)?.title;
+  const methodLabel = METHODS.find(([value]) => value === values.method)?.[1];
+  return (
+    <>
+      <PageHero crumbs={[[null, '상담 예약']]} title="상담 예약" lead="원하는 날짜와 방식을 선택하시면 담당 직원이 확인 연락을 드립니다." photo="consult" />
+      <section className="hg-section">
+        <div className="hg-wrap hg-contact">
+          {status === 'done' ? (
+            <div className="hg-done" role="status">
+              <span className="hg-done__icon"><Check size={28} aria-hidden="true" /></span>
+              <h2>상담 예약 요청이 정리되었습니다.</h2>
+              <dl>
+                <div><dt>분야</dt><dd>{areaLabel}</dd></div>
+                <div><dt>방식</dt><dd>{methodLabel}</dd></div>
+                <div><dt>희망 일시</dt><dd>{values.date} {values.time}</dd></div>
+                <div><dt>성함</dt><dd>{values.name}</dd></div>
+              </dl>
+              <p className="hg-done__note">※ 이 사이트는 시안이므로 실제로 예약이 접수되거나 연락이 가지 않습니다.</p>
+              <button type="button" className="hg-btn hg-btn--navy" onClick={reset}>다시 작성하기</button>
+            </div>
+          ) : (
+            <form ref={formRef} className="hg-form" noValidate onSubmit={submit}>
+              <fieldset>
+                <legend>1. 상담 내용</legend>
+                <label>상담 분야 <b aria-hidden="true">*</b>
+                  <select name="area" value={values.area} onChange={update} aria-invalid={Boolean(errors.area)} aria-describedby="err-area">
+                    <option value="">선택해 주세요</option>
+                    {AREAS.map((area) => <option key={area.slug} value={area.slug}>{area.title}</option>)}
+                  </select>
+                </label>
+                <FieldError id="err-area" message={errors.area} />
+                <div className="hg-radios" role="radiogroup" aria-label="상담 방식">
+                  {METHODS.map(([value, label]) => (
+                    <label key={value} className={values.method === value ? 'is-on' : ''}>
+                      <input type="radio" name="method" value={value} checked={values.method === value} onChange={update} />{label}
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>2. 희망 일시</legend>
+                <div className="hg-row">
+                  <label>날짜 <b aria-hidden="true">*</b>
+                    <input type="date" name="date" min={dateAfter(1)} value={values.date} onChange={update} aria-invalid={Boolean(errors.date)} aria-describedby="err-date" />
+                  </label>
+                  <label>시간 <b aria-hidden="true">*</b>
+                    <select name="time" value={values.time} onChange={update} aria-invalid={Boolean(errors.time)} aria-describedby="err-time">
+                      <option value="">선택</option>
+                      {TIMES.map((time) => <option key={time}>{time}</option>)}
+                    </select>
+                  </label>
+                </div>
+                <FieldError id="err-date" message={errors.date} />
+                <FieldError id="err-time" message={errors.time} />
+              </fieldset>
+              <fieldset>
+                <legend>3. 연락처</legend>
+                <div className="hg-row">
+                  <label>성함 <b aria-hidden="true">*</b><input name="name" value={values.name} onChange={update} autoComplete="name" aria-invalid={Boolean(errors.name)} aria-describedby="err-name" /></label>
+                  <label>연락처 <b aria-hidden="true">*</b><input name="phone" inputMode="tel" placeholder="010-0000-0000" value={values.phone} onChange={update} autoComplete="tel" aria-invalid={Boolean(errors.phone)} aria-describedby="err-phone" /></label>
+                </div>
+                <FieldError id="err-name" message={errors.name} />
+                <FieldError id="err-phone" message={errors.phone} />
+                <label>상황 설명 (선택)<textarea name="message" rows={5} value={values.message} onChange={update} placeholder="간단한 경위와 궁금한 점을 적어 주세요. 민감한 내용은 상담 때 말씀하셔도 됩니다." /></label>
+                <label className="hg-agree"><input type="checkbox" name="agree" checked={values.agree} onChange={update} aria-invalid={Boolean(errors.agree)} aria-describedby="err-agree" /><span>상담 예약을 위한 개인정보(성함, 연락처) 수집·이용에 동의합니다.</span></label>
+                <FieldError id="err-agree" message={errors.agree} />
+              </fieldset>
+              <button type="submit" className="hg-btn hg-btn--navy hg-form__submit" disabled={status === 'pending'}>{status === 'pending' ? '확인 중…' : '상담 예약 요청'}</button>
+            </form>
+          )}
+          <aside className="hg-contact__side">
+            <div className="hg-aside-card hg-aside-card--navy">
+              <p className="hg-eyebrow hg-eyebrow--light">전화 상담 예약</p>
+              <a className="hg-bigtel" href={`tel:${FIRM.phone.replace(/-/g, '')}`}>{FIRM.phone}</a>
+              <p>{FIRM.hours}<br />{FIRM.after}</p>
+            </div>
+            <div className="hg-aside-card">
+              <p className="hg-eyebrow">오시는 길</p>
+              <p>{FIRM.address}</p>
+              <p className="hg-muted">{FIRM.subway}</p>
+              <Link to="about#location" className="hg-textlink">약도 보기 <ArrowRight size={16} aria-hidden="true" /></Link>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </>
+  );
+}
+
+export function NotFoundPage() {
+  return (
+    <section className="hg-section">
+      <div className="hg-wrap hg-notfound">
+        <p className="hg-eyebrow">404</p>
+        <h1>요청하신 페이지를 찾을 수 없습니다.</h1>
+        <Link to="" className="hg-btn hg-btn--navy">홈으로</Link>
+      </div>
+    </section>
+  );
+}

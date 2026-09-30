@@ -1,0 +1,74 @@
+/* 3D 스크롤 히어로 — Hero3D.jsx 전용 */
+.hero3d{--hdr:76px;--accent:#d9492f;--sw:clamp(220px,23vw,380px);position:relative;height:340vh;background:var(--paper)}
+.hero3d .hero3d__stage{position:sticky;top:var(--hdr);height:calc(100svh - var(--hdr));min-height:540px;overflow:hidden;background:var(--paper);isolation:isolate;border:0}
+
+/* 3D 공간 */
+.hero3d__space{position:absolute;inset:0;perspective:1100px;perspective-origin:50% 42%;pointer-events:none}
+.hero3d__world{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
+.hero3d__floor{position:absolute;left:-60%;right:-60%;top:58%;height:140%;transform-origin:50% 0;transform:rotateX(80deg);background-image:linear-gradient(rgba(23,32,35,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(23,32,35,.13) 1px,transparent 1px);background-size:80px 80px;background-position:0 var(--drift,0);-webkit-mask-image:linear-gradient(#000,transparent 55%);mask-image:linear-gradient(#000,transparent 55%)}
+.hero3d__screen{position:absolute;left:50%;top:50%;width:var(--sw);margin:calc(var(--sw) * -.37) 0 0 calc(var(--sw) / -2);background:#fff;border:1px solid rgba(23,32,35,.16);box-shadow:0 44px 80px -34px rgba(23,32,35,.5);opacity:0;will-change:transform,opacity;backface-visibility:hidden}
+.hero3d__chrome{display:flex;gap:4px;align-items:center;height:14px;padding:0 7px;background:#eceeea;border-bottom:1px solid rgba(23,32,35,.1)}
+.hero3d__chrome i{width:5px;height:5px;background:rgba(23,32,35,.28)}
+.hero3d__screen img{width:100%;aspect-ratio:1440/1000;object-fit:cover}
+
+/* 1장면: 소개 문구 */
+.hero3d__copy{position:absolute;inset:0;z-index:3;display:grid;place-content:center;justify-items:center;gap:0;padding:0 24px 40px;text-align:center;opacity:calc(1 - var(--intro,0));transform:translateY(calc(var(--intro,0) * -70px))}
+.hero3d__copy:before{content:'';position:absolute;left:50%;top:48%;z-index:-1;width:min(980px,96vw);height:min(620px,78%);transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(245,245,242,.94) 55%,rgba(245,245,242,0));pointer-events:none}
+.hero3d[data-past] .hero3d__copy{visibility:hidden}
+.hero3d__kicker{display:flex;align-items:center;gap:14px;margin-bottom:26px;font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--ink)}
+.hero3d__kicker:before,.hero3d__kicker:after{content:'';width:36px;height:1px;background:currentColor}
+.hero3d__title{display:grid;font-family:var(--sans);font-size:clamp(56px,9.2vw,168px);font-weight:850;line-height:.98;letter-spacing:-.065em;color:var(--ink);word-break:keep-all}
+.hero3d__line{display:block}
+.hero3d__line--1{transform:translateX(calc(var(--intro,0) * -26vw))}
+.hero3d__line--2{transform:translateX(calc(var(--intro,0) * 26vw))}
+.hero3d__title em{font-style:normal;color:var(--accent)}
+.hero3d__lead{max-width:600px;margin-top:30px;font-size:17px;line-height:1.75;color:var(--muted);word-break:keep-all}
+.hero3d__actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:34px}
+
+/* 2장면: 대상 고객 */
+.hero3d__mid{position:absolute;inset:0;z-index:3;display:grid;place-content:center;justify-items:center;gap:18px;text-align:center;opacity:var(--mid,0);pointer-events:none}
+.hero3d__mid:before{content:'';position:absolute;left:50%;top:50%;z-index:-1;width:min(1300px,110vw);height:min(560px,70%);transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(245,245,242,.95) 60%,rgba(245,245,242,0));pointer-events:none}
+.hero3d__mid p{font-size:clamp(16px,1.6vw,22px);font-weight:650;color:var(--muted)}
+.hero3d__words{position:relative;width:min(1200px,94vw);height:1.12em;font-size:clamp(60px,12vw,210px);font-weight:850;line-height:1.1;letter-spacing:-.065em;perspective:900px}
+.hero3d__words span{position:absolute;inset:0;opacity:0;transform-origin:50% 100%;white-space:nowrap;color:var(--ink)}
+.hero3d__words span:nth-child(even){color:var(--accent)}
+
+/* 3장면: 잉크 패널 전환 */
+.hero3d__end{position:absolute;inset:0;z-index:4;display:grid;place-items:center;background:var(--ink);color:#f5f5f2;opacity:calc(var(--end,0) * 10);clip-path:inset(calc((1 - var(--end,0)) * 44%) calc((1 - var(--end,0)) * 38%));pointer-events:none}
+.hero3d__end-inner{display:grid;gap:26px;padding:0 24px;text-align:center;opacity:calc((var(--end,0) - .22) * 2.2);transform:translateY(calc((1 - var(--end,0)) * 60px))}
+.hero3d__end-inner strong{font-size:clamp(36px,5.8vw,98px);font-weight:850;line-height:1.08;letter-spacing:-.06em;word-break:keep-all}
+.hero3d__end-meta{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:rgba(245,245,242,.62)}
+
+/* 하단 HUD */
+.hero3d__hud{position:absolute;left:32px;right:32px;bottom:22px;z-index:5;display:flex;align-items:center;gap:22px;color:var(--ink)}
+.hero3d[data-dark] .hero3d__hud{color:#f5f5f2}
+.hero3d .motion-control{position:static;right:auto;bottom:auto;z-index:auto;min-height:40px;padding:0 16px;border:1px solid currentColor;background:transparent;color:inherit;font-size:12px;font-weight:700;white-space:nowrap}
+.hero3d .motion-control:hover:not(:disabled){background:currentColor}
+.hero3d .motion-control:hover:not(:disabled){color:var(--paper)}
+.hero3d[data-dark] .motion-control:hover:not(:disabled){color:var(--ink)}
+.hero3d .motion-control:disabled{opacity:.55}
+.hero3d__progress{position:relative;flex:1;height:1px;background:currentColor;opacity:.35}
+.hero3d__progress i{position:absolute;inset:-1px 0;background:var(--accent);transform-origin:0 50%;transform:scaleX(var(--p,0))}
+.hero3d__scroll{display:flex;flex:none;align-items:center;gap:10px;font-size:12px;font-weight:700;opacity:calc(1 - var(--p,0) * 10)}
+.hero3d__scroll:after{content:'';width:1px;height:26px;background:currentColor;animation:hero3d-scroll 1.8s ease-in-out infinite;transform-origin:50% 0}
+@keyframes hero3d-scroll{0%{transform:scaleY(0)}50%{transform:scaleY(1);transform-origin:50% 0}51%{transform-origin:50% 100%}100%{transform:scaleY(0);transform-origin:50% 100%}}
+
+/* 동작 줄이기: 스크롤 연출 없이 첫 장면만 정적으로 */
+.hero3d.is-reduced{height:auto}
+.hero3d.is-reduced .hero3d__stage{position:relative;top:0}
+.hero3d.is-reduced .hero3d__mid,.hero3d.is-reduced .hero3d__end,.hero3d.is-reduced .hero3d__scroll{display:none}
+
+@media(max-width:1100px){.hero3d{height:300vh}.hero3d__lead br{display:none}}
+@media(max-width:760px){
+  .hero3d{--hdr:66px;--sw:44vw;height:270vh}
+  .hero3d .hero3d__stage{min-height:520px}
+  .hero3d__kicker{gap:10px;margin-bottom:20px;font-size:12px}
+  .hero3d__kicker:before,.hero3d__kicker:after{width:18px}
+  .hero3d__title{font-size:clamp(44px,14vw,76px)}
+  .hero3d__lead{margin-top:22px;font-size:15px}
+  .hero3d__actions{display:grid;grid-template-columns:1fr 1fr;width:100%;max-width:380px;gap:8px;margin-top:28px}
+  .hero3d__actions .btn{min-height:52px;padding:0 14px;font-size:14px}
+  .hero3d__hud{left:18px;right:18px;bottom:16px;gap:14px}
+  .hero3d .motion-control{min-height:44px;padding:0 12px}
+}
+@media(max-width:380px){.hero3d__actions{grid-template-columns:1fr}}

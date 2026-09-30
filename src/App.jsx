@@ -58,7 +58,9 @@ export default function App() {
     }
 
     if (nextLocation.pathname === "/") {
-      setViewMode("desktop");
+      // The studio homepage has an isolated entry and stylesheet.
+      window.location.assign(`${nextUrl.pathname}${nextUrl.search}${nextUrl.hash}`);
+      return;
     }
 
     window.history.pushState({}, "", `${nextUrl.pathname}${nextUrl.search}`);
@@ -73,8 +75,12 @@ export default function App() {
         return { kind: "admin" };
       }
 
-      if (normalizedPath === "/portfolio") {
+      if (normalizedPath === "/" || normalizedPath === "/portfolio") {
         return { kind: "portfolio-index" };
+      }
+
+      if (normalizedPath === "/templates") {
+        return { kind: "gallery" };
       }
 
       if (normalizedPath.startsWith("/portfolio/")) {
@@ -91,7 +97,7 @@ export default function App() {
     [routeState, sitesById],
   );
   const selectedContactSiteId = routeState.kind === "gallery" ? new URLSearchParams(locationState.search).get("contact") ?? "" : "";
-  const contactPathForSite = (siteId) => `/?contact=${siteId}`;
+  const contactPathForSite = (siteId) => `/templates?contact=${siteId}`;
 
   useEffect(() => {
     if (routeState.kind !== "site" || !site) {
@@ -144,7 +150,8 @@ export default function App() {
             content={adminState.content}
             inquirySettings={adminState.inquiry}
             onOpen={navigate}
-            onOpenPortfolioIndex={() => navigate("/portfolio")}
+            onOpenPortfolioIndex={() => navigate("/")}
+            onNavigate={navigate}
             onContactSample={(siteId) => navigate(contactPathForSite(siteId))}
             selectedContactSiteId={selectedContactSiteId}
           />
@@ -161,7 +168,7 @@ export default function App() {
         >
           <PortfolioIndexView
             items={managedPortfolioItems}
-            onBack={() => navigate("/")}
+            onOpenTemplates={() => navigate("/templates")}
             onOpen={(portfolioId) => navigate(`/portfolio/${portfolioId}`)}
           />
         </Motion.div>

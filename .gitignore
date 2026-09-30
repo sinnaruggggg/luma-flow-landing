@@ -42,8 +42,26 @@ tmp/
 data/*.json
 
 # Local assistant docs
+.npm-cache/
+dist-agency-check/
 AGENTS.md
 코덱스하네스.md
 
 .vercel
 .env*.local
+
+.vercel
+.env*
+
+# 작업용 임시 파일·보관 폴더 (저장소 제외)
+tmp-*.png
+tmp-*.log
+.tmp-*
+artifacts/
+concepts/
+_workspace/
+.codex-remote-attachments/
+.omx/
+.claude/
+_archive/
+assets-src/

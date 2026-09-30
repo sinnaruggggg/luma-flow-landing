@@ -48,7 +48,7 @@ const modeDescriptors = {
     contactTitle: "구매 전환 안내",
     contactBody: "결제, 배송, 재고, 사이즈 또는 옵션 선택까지 실제 판매 페이지처럼 바로 이어지는 흐름입니다.",
     contactRows: [
-      ["응답 채널", "챗봇 + 카카오 상담"],
+      ["응답 채널", "카카오 상담 + 문의 폼"],
       ["운영 시간", "매일 10:00 - 20:00"],
       ["전환 목표", "장바구니 / 즉시 구매"],
     ],
@@ -86,7 +86,7 @@ const modeDescriptors = {
     contactTitle: "예약 안내",
     contactBody: "예약, 상담, 방문 시간 선택까지 실제 운영 페이지처럼 확인할 수 있는 구조입니다.",
     contactRows: [
-      ["응답 채널", "상담 챗봇 + 예약 문의"],
+      ["응답 채널", "상담 안내 + 예약 문의"],
       ["운영 시간", "평일 10:00 - 19:00"],
       ["전환 목표", "상담 / 체험 예약"],
     ],
@@ -124,7 +124,7 @@ const modeDescriptors = {
     contactTitle: "가입 안내",
     contactBody: "멤버십 비교, 혜택 선택, 참여 신청까지 실제 가입 플로우처럼 설계합니다.",
     contactRows: [
-      ["응답 채널", "운영팀 챗봇 + 이메일"],
+      ["응답 채널", "운영팀 안내 + 이메일"],
       ["운영 시간", "평일 11:00 - 18:00"],
       ["전환 목표", "가입 / 멤버십 신청"],
     ],
@@ -162,7 +162,7 @@ const modeDescriptors = {
     contactTitle: "예매 안내",
     contactBody: "티켓 옵션, 일정, 현장 동선, 예매 결정까지 실제 이벤트 페이지처럼 이어집니다.",
     contactRows: [
-      ["응답 채널", "예매 챗봇 + 운영 FAQ"],
+      ["응답 채널", "예매 안내 + 운영 FAQ"],
       ["운영 시간", "매일 10:00 - 22:00"],
       ["전환 목표", "티켓 예매"],
     ],
@@ -200,7 +200,7 @@ const modeDescriptors = {
     contactTitle: "도입 안내",
     contactBody: "실시간 데모, 플랜 판단, 도입 상담까지 실제 SaaS 도입 페이지처럼 보이게 구성합니다.",
     contactRows: [
-      ["응답 채널", "데모 챗봇 + 영업 문의"],
+      ["응답 채널", "데모 안내 + 영업 문의"],
       ["운영 시간", "평일 09:00 - 18:00"],
       ["전환 목표", "데모 시작 / 상담"],
     ],
@@ -238,7 +238,7 @@ const modeDescriptors = {
     contactTitle: "프로젝트 문의 안내",
     contactBody: "브리프 입력, 범위 판단, 상담 접수까지 실제 프로젝트 페이지처럼 구성합니다.",
     contactRows: [
-      ["응답 채널", "프로젝트 챗봇 + 이메일"],
+      ["응답 채널", "프로젝트 안내 + 이메일"],
       ["운영 시간", "평일 10:00 - 19:00"],
       ["전환 목표", "문의 / 제안 요청"],
     ],
@@ -302,7 +302,7 @@ export function buildIndustryExperience(sample, industry) {
       { id: "about", label: "회사 소개" },
       { id: "catalog", label: "구성" },
       { id: "gallery", label: "이미지" },
-      { id: "ai", label: "AI 기능" },
+      { id: "features", label: "핵심 기능" },
       { id: "contact", label: "문의" },
     ],
     gallery,

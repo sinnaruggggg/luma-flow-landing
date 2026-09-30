@@ -7,6 +7,7 @@ import { defineConfig, globalIgnores } from 'eslint/config'
 export default defineConfig([
   globalIgnores([
     'dist',
+    '_archive',
     '.vercel',
     'tmp',
     '에임가구',

@@ -1,4 +1,5 @@
 import { getBlueprintForSite, getRouteDescription, getStageHeight, siteCatalog } from "./siteCatalog";
+import { isPagecraftSample } from "./pagecraftSamples";
 import { withBasePath } from "../lib/appPaths";
 
 const stitchImages = import.meta.glob("../../design/stitch/*/screens/*.{png,jpg,jpeg,webp}", {
@@ -78,10 +79,11 @@ function buildRouteAssets(site, routes) {
 
 function buildGalleryThumb(site, device) {
   const stitchedImage = findAsset(stitchImages, site.id, "home", device);
+  const fallbackSrc = stitchedImage ?? getFallbackImage(site, "home", device);
 
   return {
-    src: withBasePath(`/generated/thumbs/${site.id}-home-${device}.webp`),
-    fallbackSrc: stitchedImage ?? getFallbackImage(site, "home", device),
+    src: isPagecraftSample(site.id) ? fallbackSrc : withBasePath(`/generated/thumbs/${site.id}-home-${device}.webp`),
+    fallbackSrc,
     alt: `${site.brand} home ${device} card preview`,
   };
 }

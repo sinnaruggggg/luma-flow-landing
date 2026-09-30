@@ -3,15 +3,15 @@
   "brand": "TABLE WARM",
   "projectId": "7135745222730086952",
   "projectTitle": "TABLE WARM Stitch",
-  "updatedAt": "2026-04-14T04:09:07.883Z",
+  "updatedAt": "2026-06-22T10:41:46.000Z",
   "screens": {
     "home:desktop": {
-      "screenId": "347717c0417c413fba88937393f1c6fd",
+      "screenId": "056259e30b4945d99fc0ad250579ade2",
       "pageSlug": "home",
       "deviceType": "DESKTOP",
       "htmlPath": "design/stitch/local-cafe/screens/home-desktop.html",
       "imagePath": "design/stitch/local-cafe/screens/home-desktop.png",
-      "updatedAt": "2026-04-13T23:40:17.493Z"
+      "updatedAt": "2026-06-22T10:41:46.000Z"
     },
     "home:mobile": {
       "screenId": "f0035b724a054c89a56f747688554a00",

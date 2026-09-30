@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { ArrowLeft, LogOut, RefreshCw, RotateCcw, Save } from "lucide-react";
 import { createDefaultAdminState, buildManagedSites, getVisibleGallerySites, sanitizeAdminState } from "../lib/adminStore";
+import { TEMPLATE_CATEGORIES, getTemplateMeta } from "../content/templateCatalog";
 import { clearAdminToken, fetchAdminInquiries, fetchAdminVisits, getAdminToken, loginAdmin, setAdminToken } from "../lib/inquiryApi";
 import { useBackdropPointer } from "../lib/showcaseUtils";
 import { BrandMark, SceneBackdrop } from "./showcaseAtoms";
@@ -178,6 +179,25 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
   const previewSites = useMemo(() => buildManagedSites(draft), [draft]);
   const visibleSites = useMemo(() => getVisibleGallerySites(previewSites), [previewSites]);
   const hiddenCount = previewSites.length - visibleSites.length;
+  const templateVisibilityStats = useMemo(() => {
+    const categories = TEMPLATE_CATEGORIES.filter((category) => category.id !== "all").map((category) => {
+      const sites = previewSites.filter((site) => getTemplateMeta(site.id).category === category.id);
+      const visible = sites.filter((site) => site.admin?.visible !== false).length;
+
+      return {
+        ...category,
+        total: sites.length,
+        visible,
+      };
+    });
+
+    return {
+      total: previewSites.length,
+      visible: visibleSites.length,
+      hidden: hiddenCount,
+      categories,
+    };
+  }, [hiddenCount, previewSites, visibleSites.length]);
   const fullyReadyCount = previewSites.filter((site) => site.gallery.publicReady).length;
   const partialReadyCount = previewSites.filter((site) => !site.gallery.publicReady && site.gallery.stitchedRoutes > 0).length;
   const emptyChannelState = draft.inquiry.externalChannels.length === 0;
@@ -376,6 +396,27 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
         },
       },
     }));
+  }
+
+  function updateTemplateVisibilityByCategory(categoryId, visible) {
+    setDraft((current) => {
+      const nextSamples = { ...current.samples };
+
+      previewSites.forEach((site) => {
+        const meta = getTemplateMeta(site.id);
+        if (categoryId !== "all" && meta.category !== categoryId) return;
+
+        nextSamples[site.id] = {
+          ...nextSamples[site.id],
+          visible,
+        };
+      });
+
+      return {
+        ...current,
+        samples: nextSamples,
+      };
+    });
   }
 
   function updatePortfolio(index, key, value) {
@@ -961,6 +1002,40 @@ export function AdminConsole({ adminState, onSave, onReset, onBack }) {
                   <span className="hub-section__eyebrow">Samples</span>
                   <h2 id="admin-samples-heading">샘플</h2>
                   <p>노출, 순서, 브랜드 정보만 빠르게 조정합니다.</p>
+                </div>
+                <div className="admin-panel admin-template-visibility">
+                  <div className="admin-panel__header admin-panel__header--spread">
+                    <div>
+                      <strong>{"\ud15c\ud50c\ub9bf \ub178\ucd9c \uad00\ub9ac"}</strong>
+                      <p>{"\uba54\uc778 \ud15c\ud50c\ub9bf \uc120\ud0dd \ud654\uba74\uc5d0 \ubcf4\uc77c \uc5c5\uc885\ubcc4 \ud15c\ud50c\ub9bf\uc744 \ube60\ub974\uac8c \ucf1c\uace0 \ub044\ub294 \uad00\ub9ac \uc601\uc5ed\uc785\ub2c8\ub2e4."}</p>
+                    </div>
+                    <div className="admin-template-visibility__actions">
+                      <button type="button" className="admin-button admin-button--secondary" onClick={() => updateTemplateVisibilityByCategory("all", true)}>
+                        {"\uc804\uccb4 \ub178\ucd9c"}
+                      </button>
+                      <button type="button" className="admin-button admin-button--ghost" onClick={() => updateTemplateVisibilityByCategory("all", false)}>
+                        {"\uc804\uccb4 \uc228\uae40"}
+                      </button>
+                    </div>
+                  </div>
+                  <div className="admin-template-visibility__grid">
+                    {templateVisibilityStats.categories.map((category) => (
+                      <article key={category.id} className="admin-template-visibility__card">
+                        <div>
+                          <strong>{category.label}</strong>
+                          <span>{category.visible}/{category.total} {"\ub178\ucd9c"}</span>
+                        </div>
+                        <div>
+                          <button type="button" className="admin-button admin-button--secondary" onClick={() => updateTemplateVisibilityByCategory(category.id, true)}>
+                            {"\ub178\ucd9c"}
+                          </button>
+                          <button type="button" className="admin-button admin-button--ghost" onClick={() => updateTemplateVisibilityByCategory(category.id, false)}>
+                            {"\uc228\uae40"}
+                          </button>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
                 </div>
                 <div className="admin-sample-grid">
                   {previewSites.map((site) => (

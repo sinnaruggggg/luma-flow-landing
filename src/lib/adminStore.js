@@ -7,7 +7,24 @@ export const ADMIN_PATH = "/sinnaruggggg_admin";
 
 const STORAGE_KEY = "webforge_admin_state_v1";
 const STORAGE_EVENT = "webforge:admin-state-updated";
-const PRIORITY_SITE_IDS = ["indie-bookstore", "stationery-shop", "local-cafe", "boutique-hotel"];
+const FORCED_PORTFOLIO_IDS = new Set(["ibhip"]);
+const FORCED_PORTFOLIO_OVERRIDES = Object.fromEntries(
+  DEFAULT_PORTFOLIO_ITEMS
+    .filter((item) => FORCED_PORTFOLIO_IDS.has(item.id))
+    .map((item) => [item.id, item]),
+);
+const LIVE_PREVIEW_EMBED_SRCS = new Set(["https://ibhip.vercel.app"]);
+const PRIORITY_SITE_IDS = [
+  "pagecraft-business",
+  "pagecraft-premium",
+  "pagecraft-emotion",
+  "pagecraft-event",
+  "pagecraft-saas",
+  "indie-bookstore",
+  "stationery-shop",
+  "local-cafe",
+  "boutique-hotel",
+];
 
 function cloneState(value) {
   return JSON.parse(JSON.stringify(value));
@@ -150,6 +167,41 @@ function sanitizePortfolioItem(item, index, fallbackItem) {
   };
 }
 
+function normalizeEmbedSrc(value = "") {
+  return sanitizeText(value)
+    .trim()
+    .toLowerCase()
+    .replace(/\/+$/g, "");
+}
+
+function applyLivePreviewRule(item) {
+  if (!LIVE_PREVIEW_EMBED_SRCS.has(normalizeEmbedSrc(item.embedSrc))) {
+    return item;
+  }
+
+  return {
+    ...item,
+    desktopImage: "",
+    mobileImage: "",
+  };
+}
+
+function dedupePortfolioItems(items) {
+  const seen = new Set();
+
+  return items.filter((item) => {
+    const embedSrc = normalizeEmbedSrc(item.embedSrc);
+    const uniqueKey = embedSrc ? `embed:${embedSrc}` : `id:${item.id}`;
+
+    if (seen.has(uniqueKey)) {
+      return false;
+    }
+
+    seen.add(uniqueKey);
+    return true;
+  });
+}
+
 function sanitizePortfolioItems(value, fallback = DEFAULT_PORTFOLIO_ITEMS) {
   const source = Array.isArray(value) ? value : fallback;
   const normalized = source.map((item, index) => (
@@ -249,15 +301,32 @@ export function sanitizeAdminState(value, baseSites = siteRegistry) {
 }
 
 export function buildManagedPortfolioItems(adminState) {
-  return sanitizePortfolioItems(adminState?.portfolio ?? DEFAULT_PORTFOLIO_ITEMS)
+  const sortedItems = sanitizePortfolioItems(adminState?.portfolio ?? DEFAULT_PORTFOLIO_ITEMS)
+    .map((item) => {
+      const resolvedItem = FORCED_PORTFOLIO_IDS.has(item.id)
+        ? { ...item, ...FORCED_PORTFOLIO_OVERRIDES[item.id], visible: true, order: Number.MAX_SAFE_INTEGER }
+        : item;
+
+      return applyLivePreviewRule(resolvedItem);
+    })
     .filter((item) => item.visible !== false)
     .sort((left, right) => {
+      const leftForced = FORCED_PORTFOLIO_IDS.has(left.id);
+      const rightForced = FORCED_PORTFOLIO_IDS.has(right.id);
+
+      if (leftForced || rightForced) {
+        if (leftForced && rightForced) return 0;
+        return leftForced ? -1 : 1;
+      }
+
       if (left.order !== right.order) {
-        return left.order - right.order;
+        return right.order - left.order;
       }
 
       return left.title.localeCompare(right.title);
     });
+
+  return dedupePortfolioItems(sortedItems);
 }
 
 export function loadAdminState(baseSites = siteRegistry) {

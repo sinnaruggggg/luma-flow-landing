@@ -1,382 +1,264 @@
 <!DOCTYPE html>
 
-<html class="light" lang="ko"><head>
+<html lang="ko"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;family=Work+Sans:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<title>TABLE WARM - 오늘의 자리와 메뉴를 한눈에</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
-                    "colors": {
-                        "secondary-container": "#f3dfce",
-                        "on-tertiary-fixed-variant": "#5b4220",
-                        "surface-container-low": "#fdf2e1",
-                        "on-secondary-fixed-variant": "#514438",
-                        "tertiary": "#3d2808",
-                        "on-tertiary": "#ffffff",
-                        "inverse-surface": "#353025",
-                        "primary-container": "#5d3b24",
-                        "surface-container-highest": "#ebe1d1",
-                        "on-surface-variant": "#50443e",
-                        "primary-fixed-dim": "#eebc9d",
-                        "tertiary-fixed": "#ffddb5",
-                        "inverse-primary": "#eebc9d",
-                        "on-primary": "#ffffff",
-                        "surface-tint": "#7c563d",
-                        "surface-variant": "#ebe1d1",
-                        "surface-container": "#f7eddc",
-                        "surface-container-high": "#f1e7d6",
-                        "primary": "#432510",
-                        "tertiary-fixed-dim": "#e4c195",
-                        "on-tertiary-container": "#ccaa7f",
-                        "on-secondary-container": "#706255",
-                        "on-primary-fixed-variant": "#613f27",
-                        "surface-container-lowest": "#ffffff",
-                        "surface-bright": "#fff8f1",
-                        "on-error": "#ffffff",
-                        "on-tertiary-fixed": "#2a1800",
-                        "secondary-fixed-dim": "#d6c3b3",
-                        "surface": "#fff8f1",
-                        "outline": "#82746c",
-                        "secondary": "#6a5c4f",
-                        "on-primary-container": "#d6a688",
-                        "error": "#ba1a1a",
-                        "on-surface": "#1f1b11",
-                        "background": "#fff8f1",
-                        "outline-variant": "#d4c3ba",
-                        "secondary-fixed": "#f3dfce",
-                        "on-secondary-fixed": "#231a10",
-                        "primary-fixed": "#ffdbc7",
-                        "on-primary-fixed": "#2f1503",
-                        "on-secondary": "#ffffff",
-                        "on-error-container": "#93000a",
-                        "surface-dim": "#e2d9c8",
+                    colors: {
+                        "on-secondary-fixed": "#241a08",
+                        "tertiary-fixed-dim": "#adcfaf",
+                        "on-tertiary-fixed-variant": "#304d35",
+                        "inverse-surface": "#34302a",
+                        "on-primary-fixed-variant": "#5f3f2f",
+                        "surface-variant": "#eae1d8",
+                        "on-primary-fixed": "#2d1508",
+                        "on-surface-variant": "#50443f",
+                        "surface-bright": "#fff8f3",
                         "error-container": "#ffdad6",
-                        "tertiary-container": "#563e1d",
-                        "inverse-on-surface": "#faf0de",
-                        "on-background": "#1f1b11"
+                        "primary-fixed-dim": "#eabda7",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f9efe6",
+                        "background": "#fff8f3",
+                        "on-background": "#1f1b16",
+                        "secondary": "#6b5c46",
+                        "secondary-fixed-dim": "#d7c4a8",
+                        "tertiary-fixed": "#c9ebca",
+                        "surface-tint": "#795645",
+                        "inverse-primary": "#eabda7",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f6ece4",
+                        "secondary-fixed": "#f4e0c3",
+                        "on-tertiary-container": "#85a687",
+                        "on-secondary-container": "#71624c",
+                        "surface-container-highest": "#eae1d8",
+                        "secondary-container": "#f4e0c3",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#4b2e1f",
+                        "primary": "#32190c",
+                        "on-surface": "#1f1b16",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#d4c3bc",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#FFFFFF",
+                        "on-tertiary-fixed": "#03210c",
+                        "on-secondary-fixed-variant": "#524530",
+                        "on-primary-container": "#be9581",
+                        "canvas": "#FFF8F1",
+                        "tertiary": "#072510",
+                        "outline": "#82746e",
+                        "surface-container-low": "#fcf2e9",
+                        "tertiary-container": "#1e3b24",
+                        "text-muted": "#6B655E",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#ffdbcb",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#f0e7de",
+                        "surface-dim": "#e2d8d0"
                     },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "2xl": "1.5rem"
                     },
-                    "fontFamily": {
-                        "headline": ["Noto Serif"],
-                        "body": ["Be Vietnam Pro"],
-                        "label": ["Work Sans"]
+                    spacing: {
+                        "gutter": "24px",
+                        "section-gap": "160px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "margin-desktop": "80px"
+                    },
+                    fontFamily: {
+                        "label-sm": ["Hanken Grotesk"],
+                        "display-lg-mobile": ["Hanken Grotesk"],
+                        "body-lg": ["Noto Sans KR"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-md": ["Noto Sans KR"]
+                    },
+                    fontSize: {
+                        "label-sm": ["14px", { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "display-lg-mobile": ["40px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "body-lg": ["20px", { lineHeight: "1.7", fontWeight: "400" }],
+                        "display-lg": ["72px", { lineHeight: "1.1", letterSpacing: "-0.04em", fontWeight: "800" }],
+                        "headline-md": ["32px", { lineHeight: "1.3", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "headline-lg": ["48px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }]
+                    },
+                    boxShadow: {
+                        'whisper': '0 20px 60px rgba(31, 27, 22, 0.1)',
                     }
-                },
-            },
+                }
+            }
         }
     </script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
-        .reservation-notch {
-            mask-image: radial-gradient(circle at 100% 50%, transparent 10px, black 10px);
-            -webkit-mask-image: radial-gradient(circle at 100% 50%, transparent 10px, black 10px);
-        }
-        .glass-panel {
-            background: rgba(255, 248, 239, 0.86);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+        body {
+            background-color: theme('colors.canvas');
+            color: theme('colors.on-background');
         }
     </style>
 </head>
-<body class="bg-background text-on-background font-body antialiased">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-[#fff8f1]/80 dark:bg-stone-950/80 backdrop-blur-md">
-<div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6">
-<div class="font-serif text-2xl font-bold text-[#432510] dark:text-[#f7eddc]">TABLE WARM</div>
-<div class="hidden md:flex items-center gap-10 font-serif text-lg tracking-tight">
-<a class="text-[#432510] font-bold border-b-2 border-[#5d3b24] pb-1" href="#">홈</a>
-<a class="text-[#2b221a]/60 dark:text-[#f7eddc]/60 hover:text-[#432510] transition-opacity duration-300" href="#">메뉴</a>
-<a class="text-[#2b221a]/60 dark:text-[#f7eddc]/60 hover:text-[#432510] transition-opacity duration-300" href="#">방문</a>
-<a class="text-[#2b221a]/60 dark:text-[#f7eddc]/60 hover:text-[#432510] transition-opacity duration-300" href="#">예약</a>
-<a class="text-[#2b221a]/60 dark:text-[#f7eddc]/60 hover:text-[#432510] transition-opacity duration-300" href="#">정보</a>
-</div>
-<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-full font-label font-semibold hover:opacity-90 transition-all scale-95 duration-200 ease-in-out">
-                예약하기
-            </button>
-</div>
-</nav>
-<main class="pt-24">
-<!-- Hero Section: Cafe Window -->
-<section class="relative min-h-[921px] flex items-center justify-center overflow-hidden px-8">
-<div class="absolute inset-0 z-0">
-<img alt="warm and cozy cafe interior with sun streaming through large windows onto wooden furniture" class="w-full h-full object-cover brightness-75" data-alt="Cinematic wide shot of a sun-drenched cafe interior, golden afternoon light hitting rustic wooden tables, steaming coffee, and linen textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANdJ9muf0MxG2TrCAUCVZd4Lvyq_Susr9lr4bwkv0o_cZcGKa_8a-nhB5FO5R7fqrdewfaYzE4aKqtQiC3K2cpnfWxUwGtIWpotmR2t2vIOQASSASfNY9YX-ubRVcfGeBdqUw2GwymU8ZmRATeFd3OITwvPnQYRLZqQ98jwbXsDgrQDDBbyzPZxtrlTOclqmKlqfDQn969qGAMSU1N0U53Oo2w5u2sHN6N7VqauW6n6Rr6sqrJx-HeHSugb5dfTsOG0o4WTzAqrCU"/>
-<div class="absolute inset-0 bg-gradient-to-b from-transparent to-background/40"></div>
-</div>
-<div class="relative z-10 max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-<!-- Left: Title & Concept -->
-<div class="lg:col-span-5 space-y-6 self-center">
-<h1 class="font-headline text-5xl md:text-7xl text-white leading-tight drop-shadow-lg">
-                        따뜻한 테이블,<br/>
-<span class="font-bold">TABLE WARM</span>
-</h1>
-<p class="text-white/90 text-lg md:text-xl font-light tracking-wide max-w-md">
-                        당신만을 위해 정성스럽게 비워둔 한 자리. 오늘 하루의 따뜻한 조각을 여기서 만나보세요.
-                    </p>
-</div>
-<!-- Right: Floating Blocks -->
-<div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
-<!-- Today's 메뉴 Board -->
-<div class="glass-panel p-8 rounded-xl shadow-2xl shadow-primary/10 border border-white/20 transform md:rotate-[-1deg]">
-<div class="flex justify-between items-end mb-8">
-<h2 class="font-headline text-2xl text-primary border-b-2 border-primary-container/20 pb-2">오늘의 추천 메뉴</h2>
-<span class="font-label text-xs tracking-widest text-primary/60 uppercase">Daily Special</span>
-</div>
-<ul class="space-y-6">
-<li class="flex justify-between items-baseline group">
-<div class="flex flex-col">
-<span class="text-lg font-medium text-primary">시그니처 바닐라 빈 라떼</span>
-<span class="text-sm text-primary/60">Signature Vanilla Bean Latte</span>
-</div>
-<span class="font-serif text-lg text-primary">6,500</span>
-</li>
-<li class="flex justify-between items-baseline">
-<div class="flex flex-col">
-<span class="text-lg font-medium text-primary">무화과 크림치즈 휘낭시에</span>
-<span class="text-sm text-primary/60">Fig Creamcheese Financier</span>
-</div>
-<span class="font-serif text-lg text-primary">3,800</span>
-</li>
-<li class="flex justify-between items-baseline">
-<div class="flex flex-col">
-<span class="text-lg font-medium text-primary">잠봉뵈르 샌드위치</span>
-<span class="text-sm text-primary/60">Jambon Beurre Sandwich</span>
-</div>
-<span class="font-serif text-lg text-primary">12,500</span>
-</li>
-</ul>
-</div>
-<!-- Quick Reservation Module -->
-<div class="bg-surface-container-lowest p-8 rounded-xl shadow-2xl shadow-primary/5 transform md:translate-y-12 md:rotate-[1deg]">
-<div class="flex items-center gap-3 mb-6">
-<span class="material-symbols-outlined text-primary" data-icon="event_available">event_available</span>
-<h2 class="font-headline text-2xl text-primary">지금 예약하기</h2>
-</div>
-<div class="space-y-4">
-<div class="p-4 bg-surface-container-low rounded-lg reservation-notch">
-<p class="text-sm text-on-surface-variant font-label mb-1 uppercase tracking-tighter">Current Status</p>
-<div class="flex justify-between items-center">
-<span class="text-xl font-bold text-primary">현재 좌석 현황</span>
-<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold">6 테이블 가능</span>
+<body class="antialiased selection:bg-primary-container selection:text-white">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-white/70 dark:bg-surface/70 backdrop-blur-md border-b-[0.5px] border-secondary-fixed dark:border-outline-variant shadow-sm flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
+<div class="flex items-center gap-12">
+<a class="font-headline-md text-headline-md font-bold tracking-tight text-primary dark:text-primary-fixed-dim" href="#">TABLE WARM</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-secondary dark:text-secondary-fixed-dim font-body-md text-body-md hover:text-primary transition-colors" href="#">메뉴</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-body-md text-body-md hover:text-primary transition-colors" href="#">좌석 현황</a>
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary pb-1" href="#">예약</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-body-md text-body-md hover:text-primary transition-colors" href="#">오시는 길</a>
 </div>
 </div>
-<form class="space-y-3">
-<div>
-<label class="block text-xs font-label text-primary/60 mb-1 uppercase tracking-widest">Date &amp; Time</label>
-<input class="w-full bg-transparent border-b border-outline-variant py-2 focus:outline-none focus:border-primary transition-colors text-primary" type="datetime-local"/>
-</div>
-<div>
-<label class="block text-xs font-label text-primary/60 mb-1 uppercase tracking-widest">Guests</label>
-<select class="w-full bg-transparent border-b border-outline-variant py-2 focus:outline-none focus:border-primary transition-colors text-primary">
-<option>2명</option>
-<option>3명</option>
-<option>4명</option>
-<option>단체(문의)</option>
-</select>
-</div>
-<button class="w-full mt-4 bg-primary text-on-primary py-4 rounded-full font-bold hover:bg-primary-container transition-all" type="button">
-                                    남은 좌석 확인
-                                </button>
-</form>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Operational Trust Section -->
-<section class="py-24 bg-surface-container-low">
-<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-16">
-<div class="space-y-4">
-<span class="material-symbols-outlined text-primary text-4xl" data-icon="schedule">schedule</span>
-<h3 class="font-headline text-2xl text-primary">영업 시간</h3>
-<div class="space-y-1 text-on-surface-variant">
-<p class="flex justify-between"><span>월 - 금</span> <span>09:00 - 21:00</span></p>
-<p class="flex justify-between"><span>토 - 일</span> <span>10:00 - 22:00</span></p>
-<p class="text-sm opacity-60 mt-2">* 라스트 오더: 마감 30분 전</p>
-</div>
-</div>
-<div class="space-y-4">
-<span class="material-symbols-outlined text-primary text-4xl" data-icon="location_on">location_on</span>
-<h3 class="font-headline text-2xl text-primary">찾아오시는 길</h3>
-<p class="text-on-surface-variant leading-relaxed">
-                        서울시 종로구 삼청로 12길 34<br/>
-                        안국역 2번 출구에서 도보 10분 거리
-                    </p>
-<a class="inline-block text-primary font-bold border-b border-primary pb-1 text-sm" href="#">지도로 보기</a>
-</div>
-<div class="space-y-4">
-<span class="material-symbols-outlined text-primary text-4xl" data-icon="verified_user">verified_user</span>
-<h3 class="font-headline text-2xl text-primary">실시간 현황</h3>
-<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/30">
-<div class="flex items-center gap-4 mb-4">
-<div class="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
-<span class="font-medium text-primary">쾌적한 이용 가능</span>
-</div>
-<p class="text-sm text-on-surface-variant">
-                            현재 대기 팀 없이 바로 입장이 가능합니다. 테라스 좌석이 인기리에 운영 중입니다.
-                        </p>
-</div>
-</div>
-</div>
-</section>
-<!-- Today's Signature Section -->
-<section class="py-24 px-8 overflow-hidden">
-<div class="max-w-7xl mx-auto">
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-<div>
-<h2 class="font-headline text-4xl text-primary mb-4">오늘의 시그니처</h2>
-<p class="text-on-surface-variant max-w-md">테이블 웜의 전문 파티시에가 매일 아침 구워내는 가장 신선하고 따뜻한 맛.</p>
-</div>
-<button class="font-label text-sm font-semibold tracking-widest text-primary flex items-center gap-2 group">
-                        전체 메뉴 보기 <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_right_alt">arrow_right_alt</span>
+<div class="flex items-center">
+<button class="bg-primary-container text-white px-6 py-2.5 rounded-full font-label-sm text-label-sm hover:opacity-90 transition-opacity">예약하기</button>
+<button class="md:hidden ml-4 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu</span>
 </button>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-<!-- Signature Item 1 -->
-<div class="group">
-<div class="aspect-[4/5] overflow-hidden rounded-2xl mb-6 relative">
-<img alt="close-up of caffe latte with intricate latte art heart on a rustic wooden table" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close-up of a perfectly poured creamy caffe latte with detailed heart latte art in a ceramic mug on a warm wood surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB3dy3U8fBXL90Wyp3-wvVtspGXKUdbNKrwkAq_kRzFdFK_CQk9WnrOPW9aLoIGR1L2Swi2UJsOpyCiuDoVbRi0qgAN648wFtPqBcRpMgNG1d9344_IoJBx70LKBshwOzhOxjpPt2Bz14qsy8t8lyDmeFgYMceSKGpZMnGg1zB81r7VpBwNzf-LFCsSfkSjlBRiPm-RON7dBhGg7W-4K1uX5i7aKekKrAwhMRJ72FK2_ObnJTufSKLDZ_rdhlgilFzxzyxnzoYnv0"/>
-<div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
-<span class="font-serif text-primary font-bold italic">Signature</span>
+</nav>
+<!-- Main Canvas -->
+<main class="pt-20">
+<!-- Section 1: Hero (100vh approximate) -->
+<section class="min-h-[calc(100vh-80px)] flex items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-20">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter w-full">
+<!-- Left: Content -->
+<div class="flex flex-col justify-center gap-8 pr-0 md:pr-12">
+<!-- Status Chips -->
+<div class="flex flex-wrap gap-3">
+<span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-tertiary-fixed-dim/20 text-tertiary font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+                            오늘 잔여 좌석 7석
+                        </span>
+<span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-surface-variant/50 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                            평균 대기 12분
+                        </span>
+<span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-surface-variant/50 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">storefront</span>
+                            오전 9시 오픈
+                        </span>
 </div>
+<!-- Headlines -->
+<div class="space-y-6">
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary tracking-tight leading-tight">
+                            오늘의 자리와 메뉴를 한눈에
+                        </h1>
+<p class="font-body-lg text-body-lg text-text-muted max-w-lg leading-relaxed">
+                            테이블 웜에서 제안하는 따뜻한 환대의 공간을 지금 예약하세요. 여유로운 시간과 정성스러운 메뉴가 당신을 기다립니다.
+                        </p>
 </div>
-<div class="flex justify-between items-start">
-<div>
-<h4 class="text-xl font-bold text-primary mb-1">카페 라떼</h4>
-<p class="text-sm text-on-surface-variant">깊고 진한 에스프레소와 부드러운 우유의 완벽한 조화</p>
-</div>
-<span class="bg-surface-container p-3 font-serif text-lg text-primary rounded-lg">5,500원</span>
-</div>
-</div>
-<!-- Signature Item 2 -->
-<div class="group">
-<div class="aspect-[4/5] overflow-hidden rounded-2xl mb-6 relative">
-<img alt="stack of freshly baked almond croissants with powdered sugar dusting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Artisanal flaky croissants stacked on a wire rack, dusted with powdered sugar, warm bakery lighting with golden brown crusts." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn5v6gCarQQDbohao0fc1GF3eSJkbrLbkfWsGibwXu-i8-1NAKdBfCwQ78hxX4FJIPoQNlze1hDaM4hPOQBzEhGd6iWFOrQOqIWMTZEVVjvBgXg00w6E2VC9yHiseWLTBRcsXZlwlBg_Prcj7n5B-76yxHCsOwVl-1xV2m6OSORvppPKgjjEsWbSTXP4FyNJH8wfbAKFhlTpffuiWIZ3io4Dm_SE-XWGhbSGDlR5UmtaPmr3DVVVfL7qS5XTF_y62uz95FVEx11jw"/>
-</div>
-<div class="flex justify-between items-start">
-<div>
-<h4 class="text-xl font-bold text-primary mb-1">크루아상 플래터</h4>
-<p class="text-sm text-on-surface-variant">프랑스산 고메 버터로 결을 살려 구운 고소한 맛</p>
-</div>
-<span class="bg-surface-container p-3 font-serif text-lg text-primary rounded-lg">7,800원</span>
-</div>
-</div>
-<!-- Signature Item 3 -->
-<div class="group">
-<div class="aspect-[4/5] overflow-hidden rounded-2xl mb-6 relative">
-<img alt="chocolate brownie topped with vanilla ice cream and berry sauce" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Rich dark chocolate brownie melting with a scoop of vanilla bean ice cream, drizzled with warm cocoa sauce on a stone plate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqfpspWvKvCdcJQo7B2rm8-0Hf9-432yHH7dJy_TbFkL49gQbh2tX3qLLSbNn1gffmTgn_DKrsoVUUBsyNzVxY5omQLud30D72hgWZfnmeaV72FWJDYgHlGcz03JNiv2W9GIqFwmcHHVVjVLr20zNx0AVst5s99rNwbeOIYFX6lkWHetwWlhpzUq2ylRhtwJz1ZObpxjdbcSsVHcaRo6HgHZ1jx7H5N9X7OrM3qsXXpcXYAoNG_oqGIXvmg3s9xmWaCC_UeivtE_o"/>
-</div>
-<div class="flex justify-between items-start">
-<div>
-<h4 class="text-xl font-bold text-primary mb-1">멜팅 브라우니</h4>
-<p class="text-sm text-on-surface-variant">바닐라 아이스크림을 곁들인 진한 다크 초콜릿</p>
-</div>
-<span class="bg-surface-container p-3 font-serif text-lg text-primary rounded-lg">8,500원</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- 예약 Journey Preview -->
-<section class="py-24 bg-surface">
-<div class="max-w-7xl mx-auto px-8">
-<div class="bg-surface-container rounded-[2rem] p-12 md:p-20 relative overflow-hidden">
-<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-32 -mt-32"></div>
-<div class="relative z-10 text-center mb-16">
-<h2 class="font-headline text-4xl text-primary mb-4">예약 진행 과정</h2>
-<p class="text-on-surface-variant">세 번의 클릭으로 당신의 자리를 약속하세요.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 relative">
-<!-- Step 1 -->
-<div class="flex flex-col items-center text-center px-6 relative">
-<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg mb-6 z-10">
-<span class="material-symbols-outlined text-primary text-3xl" data-icon="calendar_month">calendar_month</span>
-</div>
-<h4 class="font-bold text-lg text-primary mb-2">Select Time</h4>
-<p class="text-sm text-on-surface-variant">원하시는 날짜와<br/>방문 시간을 선택하세요.</p>
-<div class="hidden md:block absolute top-8 left-1/2 w-full border-t-2 border-dashed border-primary/10 -z-0"></div>
-</div>
-<!-- Step 2 -->
-<div class="flex flex-col items-center text-center px-6 relative">
-<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg mb-6 z-10">
-<span class="material-symbols-outlined text-primary text-3xl" data-icon="chair">chair</span>
-</div>
-<h4 class="font-bold text-lg text-primary mb-2">Choose Seat</h4>
-<p class="text-sm text-on-surface-variant">홀, 창가, 테라스 중<br/>선호하는 좌석을 선택합니다.</p>
-<div class="hidden md:block absolute top-8 left-1/2 w-full border-t-2 border-dashed border-primary/10 -z-0"></div>
-</div>
-<!-- Step 3 -->
-<div class="flex flex-col items-center text-center px-6 relative">
-<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg mb-6 z-10">
-<span class="material-symbols-outlined text-on-primary text-3xl" data-icon="check_circle">check_circle</span>
-</div>
-<h4 class="font-bold text-lg text-primary mb-2">Done</h4>
-<p class="text-sm text-on-surface-variant">예약 확정 메시지를<br/>확인하면 끝!</p>
-</div>
-</div>
-<div class="mt-20 text-center">
-<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-bold shadow-xl shadow-primary/20 hover:scale-105 transition-transform">
-                            지금 바로 예약 시작하기
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="bg-primary-container text-white px-8 py-4 rounded-full font-label-sm text-label-sm hover:opacity-90 transition-opacity flex justify-center items-center gap-2">
+                            지금 예약하기
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button class="bg-surface text-on-surface border border-surface-variant px-8 py-4 rounded-full font-label-sm text-label-sm hover:bg-surface-variant transition-colors flex justify-center items-center">
+                            오늘 메뉴 보기
                         </button>
 </div>
 </div>
+<!-- Right: Visual Composition -->
+<div class="relative h-[500px] md:h-[650px] w-full mt-12 md:mt-0">
+<img class="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-whisper" data-alt="A warm, sun-drenched Korean premium cafe interior featuring modern light-wood furniture, lush hanging green plants, and a clean ivory curved wall. Large floor-to-ceiling windows flood the spacious, minimalist room with soft natural light, highlighting the high-end 'Warm Minimalism' aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzA4BwOmvEpozuxIPxhJvJ8B9ntTIEm_gC5uj4--E4iVU8qOu-OkKkHORpKdBwMI1a5BGA8eE7M0U-5foIfKOiIaDsJNgULy6vD4LPlyBo6AR0czSLDd3oe3BUtlPXVxLL1OJb_CtOCE_OxbzDXdM5PvX0_TT61Cq_F29pCdSJpyJOszKJbl3ZykCjvERdqGGPGjHyxICTTsMRPBxY1Oj05v3hgZhHUb_1i8PvQ_zdUpjzMMlYInr0kjkKdX2X8hPuOhR_mI3aKjI"/>
+<!-- Floating Card 1 -->
+<div class="absolute top-8 right-8 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-whisper flex items-center gap-4 animate-[bounce_3s_ease-in-out_infinite]">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed-dim/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">deck</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-text-muted">Today's Status</p>
+<p class="font-body-md text-body-md font-bold text-primary">6 Tables Available</p>
+</div>
+</div>
+<!-- Floating Card 2 (Mini Menu) -->
+<div class="absolute bottom-12 left-[-20px] md:left-[-40px] bg-white p-3 rounded-xl shadow-whisper flex items-center gap-4 w-64 transform -rotate-2 hover:rotate-0 transition-transform duration-300">
+<img class="w-16 h-16 object-cover rounded-lg" data-alt="A close-up shot of a beautifully crafted signature vanilla bean latte in an artisanal ceramic cup, placed on a rustic wooden table next to a delicate fruit tart. Soft, warm natural light gently illuminates the creamy texture of the coffee and the fresh figs on the tart, embodying a premium cafe experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeJEVxz3ggHld6pjt2rIhh8f4V5c6f0WH3ycgY9yLJbC8_KZEJzFI8n3QTt7rBRFuloAtJeuVs-lH922rd-VeZQ66gGK3zLvogFE6tGC9MPo8x-JRiJzizMc5T_CnYuiFif8-JAIKPTUOtybUFaKxVhLwq5ra_RVagUulDGb897eWz38zChtTfKC_nnCKJA5Sb59N1WN04NLtSQ8ykAMd_gT0IqW-yfAsi4f2_MrfFq04zkgRNte5LtBYoDKUK-__006Pc6p0Sb5w"/>
+<div>
+<p class="font-label-sm text-label-sm text-text-muted mb-1">인기 메뉴</p>
+<p class="font-body-md text-body-md font-bold text-primary leading-tight">시그니처 바닐라 빈 라떼</p>
+</div>
+</div>
+</div>
 </div>
 </section>
-<!-- Social/Atmosphere Gallery -->
-<section class="py-24 px-8 bg-surface-bright">
-<div class="max-w-7xl mx-auto">
+<!-- Section 2: 3-Column Grid -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <div class="text-center mb-16">
-<span class="font-label text-sm tracking-widest text-primary/60 uppercase">Atmosphere</span>
-<h2 class="font-headline text-4xl text-primary mt-2">공간의 조각들</h2>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">테이블 웜 이용 안내</h2>
+<p class="font-body-lg text-body-lg text-text-muted">편안한 방문을 위한 필수 정보를 확인하세요.</p>
 </div>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 h-[600px]">
-<div class="col-span-2 row-span-2 rounded-2xl overflow-hidden shadow-xl">
-<img alt="rustic cafe interior with brick walls and warm lighting" class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" data-alt="Atmospheric wide shot of a cafe with exposed brick walls, vintage incandescent lighting, and cozy corner seating with plants." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe1e3S2JT-2kE9vgC0hLKKcoHNocS6VDgEbnV8laTjqs7a7gw98v4hZK5JN7NDV5ZmjjwXzxSuJUUpQwNjn5jhK6qfxnr7GK8MyKABn6Hd4px0aIaWROjEPkJWr_nvTPzCMW3WbbdL413fliEVrmz3NU1ukMjzqscC1EOPUmB4bpbhkKEUt1LI_RBj5XJQ-sJK1FcIXQgWl85afoVay6GVEIoYUVQYoKvlnfZeYi8nqAT18g2LJ7ZfkhEWTiCj5yGGGQYpV_6v86U"/>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface rounded-2xl p-10 shadow-whisper hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center text-center">
+<div class="w-16 h-16 mb-6 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[32px] font-light">restaurant_menu</span>
 </div>
-<div class="rounded-2xl overflow-hidden shadow-xl">
-<img alt="close-up of hand-dripped coffee being poured" class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" data-alt="Macro shot of artisanal hand-pour coffee dripping into a glass carafe, steam rising in soft morning light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK_MNXBmvr_QIIdlsTJ8ottmDA9Z2D56Ke___eOy1JwbSHSDrWmWiMuI0Kj1NYWchf9fYcvC4y565LLVTvHmbkNS4e5zZEaBcmhmZqpvL0O13VFENtV9kRjyCM5FOYDDgbfsNpsw3igzTIM2u3-w37oTjl5R7Ey40tN8NCY0X8uo7UQHAzEqpJKpg4uzo3GtHYXTfSWHytEx6rX8G3jWreKXlSTwH9ZoOummhutl9zd6iP13O5L24c73GjD_blZSljIo9ZSmD6hMQ"/>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">오늘의 메뉴</h3>
+<p class="font-body-md text-body-md text-text-muted mb-8 flex-grow">
+                        매일 아침 엄선된 재료로 준비하는 테이블 웜만의 특별한 브런치와 시그니처 음료를 확인하세요.
+                    </p>
+<button class="font-label-sm text-label-sm text-primary-container border-b border-primary-container pb-1 hover:text-primary transition-colors">
+                        메뉴 전체보기
+                    </button>
 </div>
-<div class="rounded-2xl overflow-hidden shadow-xl">
-<img alt="books and coffee on a wooden table" class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" data-alt="Quiet lifestyle shot of an open book next to a ceramic cup of coffee and a small linen napkin on a wooden table." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0CfZGpwf2e7m7PFKHIhblL3kfPsxqT_cN--POSpG2XJaWKTdR5UNwzMdf5dYh8ZwyBUXnKCE4u3V4CjkB8vtmQ-SyNvGi7iCc_DTZfppgm17sNB9dqzSeoVdABnuEOg4YhEnLT5VWXOcCaO5Lg6yjh2Q5WbAQE3tS7uxgz62-UHlc0g7idEQYYJ62Ntgt6c9IZsdlzONaqsraXIOV9wjjpi1l4yztgIuvpWeYUgLLxXd0whcn3X5tnW-wOYrluvRMNP4m9-ajF-g"/>
+<!-- Card 2 -->
+<div class="bg-surface rounded-2xl p-10 shadow-whisper hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center text-center">
+<div class="w-16 h-16 mb-6 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[32px] font-light">event_seat</span>
 </div>
-<div class="col-span-2 rounded-2xl overflow-hidden shadow-xl">
-<img alt="outdoor cafe terrace seating with greenery" class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" data-alt="Inviting outdoor cafe terrace with small round tables, green potted plants, and sun-dappled shadows on stone floor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfZWRVrOWj-tWuGpjcDjhwM0I_5_7Xu-ei1ziWEeS9gVkpodpgvCdfmKDe5U29OQeszIyrmquZoMn5uOp4nqJGzd5A3gudJzfp2BvN2rMVTtlpQ2InMuC8gog1aLIDtshVuCPSNS9RkLQUHV1m1Up5HM4KgzV9T0h5vMo8XDHuTzfgX8-emUpf2HNAbjsk_7byDyanPV7ff5m7YQhDDVZI7JiHkZErRbYGtGTpoJPhTsJBPYb-pO_4-xfSdE0exx4yEMSAfo_eRPI"/>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">좌석 현황</h3>
+<p class="font-body-md text-body-md text-text-muted mb-8 flex-grow">
+                        실시간으로 업데이트되는 매장 내 좌석 여유 상황을 확인하고, 원하시는 자리를 선점하세요.
+                    </p>
+<button class="font-label-sm text-label-sm text-primary-container border-b border-primary-container pb-1 hover:text-primary transition-colors">
+                        실시간 현황 보기
+                    </button>
 </div>
+<!-- Card 3 -->
+<div class="bg-surface rounded-2xl p-10 shadow-whisper hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center text-center">
+<div class="w-16 h-16 mb-6 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[32px] font-light">location_on</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">방문 안내</h3>
+<p class="font-body-md text-body-md text-text-muted mb-8 flex-grow">
+                        주차 공간, 대중교통 이용 방법 및 영업 시간 등 방문 전 필요한 모든 정보를 안내해 드립니다.
+                    </p>
+<button class="font-label-sm text-label-sm text-primary-container border-b border-primary-container pb-1 hover:text-primary transition-colors">
+                        상세 정보 보기
+                    </button>
 </div>
 </div>
 </section>
 </main>
-<!-- Footer -->
-<footer class="bg-[#f7eddc] dark:bg-stone-900 w-full py-12 px-8 mt-12">
-<div class="flex flex-col md:flex-row justify-between items-center w-full max-w-7xl mx-auto gap-8">
-<div class="flex flex-col items-center md:items-start gap-4">
-<div class="font-serif text-xl font-bold text-[#432510]">TABLE WARM</div>
-<p class="font-sans text-sm tracking-wide text-[#2b221a]/70 dark:text-[#f7eddc]/70">© 2024 TABLE WARM. 모든 권리 보유.</p>
+<!-- Footer (Shared Component) -->
+<footer class="bg-canvas dark:bg-surface-dim w-full py-8 border-t border-surface-variant dark:border-outline-variant flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="mb-4 md:mb-0">
+<span class="font-label-sm text-label-sm font-bold text-primary dark:text-primary-fixed-dim">TABLE WARM</span>
 </div>
-<div class="flex gap-8 font-sans text-sm tracking-wide">
-<a class="text-[#2b221a]/70 dark:text-[#f7eddc]/70 hover:text-[#5d3b24] transition-all" href="#">이용약관</a>
-<a class="text-[#2b221a]/70 dark:text-[#f7eddc]/70 hover:text-[#5d3b24] transition-all" href="#">개인정보처리방침</a>
-<a class="text-[#2b221a]/70 dark:text-[#f7eddc]/70 hover:text-[#5d3b24] transition-all" href="#">문의하기</a>
+<div class="flex gap-6 mb-4 md:mb-0">
+<a class="text-text-muted dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim font-body-md text-body-md transition-colors duration-200" href="#">이용약관</a>
+<a class="text-text-muted dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim font-body-md text-body-md transition-colors duration-200" href="#">개인정보처리방침</a>
+<a class="text-text-muted dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim font-body-md text-body-md transition-colors duration-200" href="#">문의하기</a>
 </div>
-<div class="flex gap-4">
-<a class="text-[#432510] hover:opacity-80 transition-opacity" href="#">
-<span class="material-symbols-outlined" data-icon="language">language</span>
-</a>
-<a class="text-[#432510] hover:opacity-80 transition-opacity" href="#">
-<span class="material-symbols-outlined" data-icon="share">share</span>
-</a>
-</div>
+<div>
+<p class="font-body-md text-body-md text-text-muted dark:text-secondary-fixed-dim">
+                © 2024 TABLE WARM. All rights reserved.
+            </p>
 </div>
 </footer>
 </body></html>

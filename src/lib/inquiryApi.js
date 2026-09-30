@@ -78,7 +78,7 @@ export async function fetchAdminVisits(token) {
 }
 
 export async function trackSiteVisit(payload) {
-  if (typeof window === "undefined") {
+  if (typeof window === "undefined" || import.meta.env.DEV) {
     return;
   }
 

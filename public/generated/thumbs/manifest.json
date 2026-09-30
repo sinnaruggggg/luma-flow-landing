@@ -1,7 +1,77 @@
 {
-  "generatedAt": "2026-04-24T01:10:20.359Z",
-  "totalSites": 20,
+  "generatedAt": "2026-06-07T16:23:15.833Z",
+  "totalSites": 25,
   "items": [
+    {
+      "siteId": "pagecraft-business",
+      "device": "desktop",
+      "status": "generated",
+      "source": "pagecraft-html-capture",
+      "output": "C:\\www\\mypages\\public\\generated\\thumbs\\pagecraft-business-home-desktop.webp"
+    },
+    {
+      "siteId": "pagecraft-business",
+      "device": "mobile",
+      "status": "generated",
+      "source": "pagecraft-html-capture",
+      "output": "C:\\www\\mypages\\public\\generated\\thumbs\\pagecraft-business-home-mobile.webp"
+    },
+    {
+      "siteId": "pagecraft-premium",
+      "device": "desktop",
+      "status": "generated",
+      "source": "pagecraft-html-capture",
+      "output": "C:\\www\\mypages\\public\\generated\\thumbs\\pagecraft-premium-home-desktop.webp"
+    },
+    {
+      "siteId": "pagecraft-premium",
+      "device": "mobile",
+      "status": "generated",
+      "source": "pagecraft-html-capture",
+      "output": "C:\\www\\mypages\\public\\generated\\thumbs\\pagecraft-premium-home-mobile.webp"
+    },
+    {
+      "siteId": "pagecraft-emotion",
+      "device": "desktop",
+      "status": "generated",
+      "source": "pagecraft-html-capture",
+      "output": "C:\\www\\mypages\\public\\generated\\thumbs\\pagecraft-emotion-home-desktop.webp"
+    },
+    {
+      "siteId": "pagecraft-emotion",
+      "device": "mobile",
+      "status": "generated",
+      "source": "pagecraft-html-capture",
+      "output": "C:\\www\\mypages\\public\\generated\\thumbs\\pagecraft-emotion-home-mobile.webp"
+    },
+    {
+      "siteId": "pagecraft-event",
+      "device": "desktop",
+      "status": "generated",
+      "source": "pagecraft-html-capture",
+      "output": "C:\\www\\mypages\\public\\generated\\thumbs\\pagecraft-event-home-desktop.webp"
+    },
+    {
+      "siteId": "pagecraft-event",
+      "device": "mobile",
+      "status": "generated",
+      "source": "pagecraft-html-capture",
+      "output": "C:\\www\\mypages\\public\\generated\\thumbs\\pagecraft-event-home-mobile.webp"
+    },
+    {
+      "siteId": "pagecraft-saas",
+      "device": "desktop",
+      "status": "generated",
+      "source": "pagecraft-html-capture",
+      "output": "C:\\www\\mypages\\public\\generated\\thumbs\\pagecraft-saas-home-desktop.webp"
+    },
+    {
+      "siteId": "pagecraft-saas",
+      "device": "mobile",
+      "status": "generated",
+      "source": "pagecraft-html-capture",
+      "output": "C:\\www\\mypages\\public\\generated\\thumbs\\pagecraft-saas-home-mobile.webp"
+    },
     {
       "siteId": "sneaker-drop",
       "device": "desktop",
