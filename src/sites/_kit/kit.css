@@ -24,3 +24,7 @@ ul,ol{padding:0}
 .nw-loading{display:grid;place-items:center;min-height:100vh;font:500 14px Pretendard,system-ui,sans-serif;color:#777}
 @media(max-width:640px){.nw-badge{left:8px;bottom:8px;padding:2px;font-size:11px;opacity:.88}.nw-badge a,.nw-badge button{min-height:28px;padding:0 8px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important}}
+/* 이미지 준비 전 자리표시: 사이트가 --ph-a, --ph-b로 색을 정함 */
+.nw-ph{background:linear-gradient(135deg,var(--ph-a,#e7e4dd),var(--ph-b,#cfcac0));background-size:200% 200%;animation:nw-ph 6s ease-in-out infinite alternate}
+@keyframes nw-ph{to{background-position:100% 100%}}
+@media(prefers-reduced-motion:reduce){.nw-ph{animation:none}}

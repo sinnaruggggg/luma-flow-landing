@@ -6,4 +6,7 @@ export const SITE_LOADERS = Object.freeze({
   'ondo-coffee': () => import('./ondo-coffee/Site.jsx'),
   'stay-yeobaek': () => import('./stay-yeobaek/Site.jsx'),
   movelab: () => import('./movelab/Site.jsx'),
+  'objet-market': () => import('./objet-market/Site.jsx'),
+  'saebom-english': () => import('./saebom-english/Site.jsx'),
+  'dasom-tax': () => import('./dasom-tax/Site.jsx'),
 });

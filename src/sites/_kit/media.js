@@ -19,8 +19,13 @@ export function siteImage(siteId, file) {
 
 // 사이트 content.js의 PHOTOS 값 하나를 { src, alt }로 바꿉니다.
 // 문자열이면 보유 사진 키, { file, alt } 객체면 public/sites/<siteId>/ 안의 사이트 전용 이미지입니다.
-export function resolvePhoto(siteId, value) {
-  if (value && typeof value === 'object') return { src: siteImage(siteId, value.file), alt: value.alt || '' };
+// ready: 실제로 폴더에 들어온 파일명 목록(선택). 목록에 없으면 fallback(보유 사진 키)을 쓰고, 그것도 없으면 src가 null입니다.
+export function resolvePhoto(siteId, value, ready) {
+  if (value && typeof value === 'object') {
+    if (!ready || ready.includes(value.file)) return { src: siteImage(siteId, value.file), alt: value.alt || '' };
+    if (value.fallback) return { src: stock(value.fallback), alt: value.alt || stockAlt(value.fallback) };
+    return { src: null, alt: value.alt || '' };
+  }
   return { src: stock(value), alt: stockAlt(value) };
 }
 
