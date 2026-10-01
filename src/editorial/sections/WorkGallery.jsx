@@ -103,9 +103,9 @@ export function WorkGallery({ projects }) {
                 <div className="wg-win">
                   <div className="wg-bar" aria-hidden="true"><i /><i /><i /><span>nanaweb.kr{project.siteUrl}</span></div>
                   <div className="wg-shot">
-                    <img src={project.thumbnail} alt={`${project.title} 웹사이트 첫 화면`} loading={index < 3 ? 'eager' : 'lazy'} decoding="async" />
+                    <img src={project.thumbnail} alt={`${project.title} 웹사이트 첫 화면`} fetchPriority={index < 2 ? 'auto' : 'low'} decoding="async" />
                     <div className="wg-xray" aria-hidden="true">
-                      <img src={project.thumbnail} alt="" loading="lazy" decoding="async" />
+                      <img src={project.thumbnail} alt="" fetchPriority="low" decoding="async" />
                       <span>X-RAY · {project.format === 'landing' ? 'LANDING' : 'MULTI-PAGE'}</span>
                     </div>
                   </div>

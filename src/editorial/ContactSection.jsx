@@ -87,6 +87,22 @@ export function ContactSection() {
   const dialogRef = useRef(null);
   const closeButtonRef = useRef(null);
 
+  // 비용 섹션 견적 계산기에서 "이 구성으로 상담하기"를 누르면 예산·문의 내용을 채웁니다. (이미 쓴 내용은 지우지 않음)
+  useEffect(() => {
+    const onEstimate = (event) => {
+      const { budget, details } = event.detail ?? {};
+      setForm((current) => ({
+        ...current,
+        budget: budget || current.budget,
+        details: current.details.trim() ? `${current.details.trim()}
+
+${details}` : details,
+      }));
+    };
+    window.addEventListener('nanaweb:estimate', onEstimate);
+    return () => window.removeEventListener('nanaweb:estimate', onEstimate);
+  }, []);
+
   const signature = useMemo(() => JSON.stringify({
     name: form.contactName.trim().toLowerCase(),
     phone: normalizePhone(form.phone),

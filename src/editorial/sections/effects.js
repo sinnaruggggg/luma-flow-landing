@@ -95,6 +95,8 @@ export function useActiveStep(ref) {
       let active = -1;
       items.forEach((item, index) => { if (item.getBoundingClientRect().top < line) active = index; });
       items.forEach((item, index) => item.toggleAttribute('data-active', index === active));
+      // [data-steps] 조상에 지금 단계 번호를 알려 줍니다. (제작 과정 시안 조립용)
+      list.closest('[data-steps]')?.setAttribute('data-step', String(Math.max(active, 0)));
     };
     const onScroll = () => { if (!frame) frame = requestAnimationFrame(update); };
     update();

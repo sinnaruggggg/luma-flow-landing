@@ -1,0 +1,58 @@
+/* 견적 계산기 — QuoteEstimator.jsx 전용 */
+.quote{--accent:#d9492f;--mono:ui-monospace,'Cascadia Code',Consolas,monospace;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);margin-top:clamp(56px,7vw,110px);border:1px solid var(--ink);background:var(--paper)}
+.quote__form{padding:clamp(28px,3.4vw,56px)}
+.quote__kicker{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:12px;color:var(--accent)}
+.quote__kicker:before{content:'';width:8px;height:8px;background:currentColor;animation:quote-blink 1.4s steps(2) infinite}
+.quote__title{margin-top:14px;font-size:clamp(26px,2.6vw,40px);font-weight:800;line-height:1.15;letter-spacing:-.05em;word-break:keep-all}
+.quote__group{margin:clamp(28px,3vw,40px) 0 0;padding:0;border:0}
+.quote__group legend{padding:0;margin-bottom:14px;font-size:14px;font-weight:800}
+.quote__group legend small{margin-left:8px;font-size:12px;font-weight:500;color:var(--muted)}
+.quote input{position:absolute;opacity:0;pointer-events:none}
+.quote__bases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.quote__base{position:relative;display:grid;gap:4px;padding:16px 18px;border:1px solid rgba(23,32,35,.22);background:#fff;cursor:pointer;transition:border-color .2s,background .2s,color .2s,transform .3s cubic-bezier(.2,.7,.2,1)}
+.quote__base:hover{border-color:var(--ink);transform:translateY(-2px)}
+.quote__base.is-on{border-color:var(--ink);background:var(--ink);color:#f5f5f2}
+.quote__base-name{font-size:15px;font-weight:750;letter-spacing:-.02em}
+.quote__base-price{font-family:var(--mono);font-size:12px;opacity:.7}
+.quote__chips{display:flex;flex-wrap:wrap;gap:8px}
+.quote__chip{position:relative;display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 14px;border:1px solid rgba(23,32,35,.22);background:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:border-color .2s,background .2s,color .2s}
+.quote__chip b{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--accent)}
+.quote__chip:hover{border-color:var(--ink)}
+.quote__chip.is-on{border-color:var(--accent);background:var(--accent);color:#fff}
+.quote__chip.is-on b{color:#fff}
+.quote__chip.is-included b{color:#2f8a57}
+.quote__chip.is-on.is-included{border-color:#2f8a57;background:#2f8a57}
+.quote__care{position:relative;display:flex;align-items:center;gap:12px;margin-top:22px;font-size:14px;font-weight:600;cursor:pointer}
+.quote__care:before{content:'';flex:none;width:20px;height:20px;border:1px solid var(--ink);background:#fff;transition:background .2s}
+.quote__care.is-on:before{background:var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3.2 3L15 6.5' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E")}
+.quote__care small{margin-left:6px;font-weight:500;color:var(--muted)}
+.quote label:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:3px}
+
+/* 오른쪽 견적서 */
+.quote__receipt{position:relative;display:flex;flex-direction:column;padding:clamp(28px,3.4vw,52px);background:var(--ink);color:#f5f5f2;font-family:var(--mono)}
+.quote__receipt:before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(111,230,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(111,230,255,.06) 1px,transparent 1px);background-size:24px 24px;pointer-events:none}
+.quote__receipt>*{position:relative}
+.quote__receipt-head{display:flex;justify-content:space-between;gap:12px;padding-bottom:16px;border-bottom:1px dashed rgba(245,245,242,.3);font-size:11px;letter-spacing:.06em;color:rgba(245,245,242,.6)}
+.quote__receipt-head span:last-child{color:#6fe6ff}
+.quote__lines{display:grid;gap:2px;margin:16px 0 0;padding:0;list-style:none;font-size:13px}
+.quote__lines li{display:flex;justify-content:space-between;gap:16px;padding:6px 0}
+.quote__lines li span{color:rgba(245,245,242,.82);font-family:var(--sans);word-break:keep-all}
+.quote__lines li b{font-weight:400;white-space:nowrap}
+.quote__lines li.is-new{animation:quote-line .45s cubic-bezier(.2,.7,.2,1)}
+.quote__line-care b{color:#8fe0b6}
+.quote__total{margin-top:auto;padding-top:22px;border-top:1px dashed rgba(245,245,242,.3)}
+.quote__total-label{font-size:11px;letter-spacing:.06em;color:rgba(245,245,242,.6)}
+.quote__total-value{display:flex;align-items:baseline;gap:6px;margin-top:6px;font-family:var(--sans);font-variant-numeric:tabular-nums}
+.quote__total-value strong{font-size:clamp(44px,4.4vw,72px);font-weight:800;line-height:1;letter-spacing:-.05em}
+.quote__total-value i{font-size:clamp(26px,2.4vw,40px);font-style:normal;opacity:.5}
+.quote__total-value small{margin-left:4px;font-size:16px;font-weight:700}
+.quote__weeks{margin-top:10px;font-size:12px;color:rgba(245,245,242,.7)}
+.quote__weeks b{margin-left:6px;font-weight:400;color:#6fe6ff}
+.quote__cta{width:100%;margin-top:24px;font-family:var(--sans)}
+.quote__note{margin-top:14px;font-family:var(--sans);font-size:12px;line-height:1.6;color:rgba(245,245,242,.55);word-break:keep-all}
+@keyframes quote-line{from{opacity:0;transform:translateX(-12px);background:rgba(111,230,255,.18)}to{opacity:1;transform:none;background:transparent}}
+@keyframes quote-blink{50%{opacity:.2}}
+
+@media(max-width:1000px){.quote{grid-template-columns:1fr}}
+@media(max-width:560px){.quote__bases{grid-template-columns:1fr}.quote__chip{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.quote__lines li.is-new,.quote__kicker:before{animation:none}.quote__base{transition:none}}

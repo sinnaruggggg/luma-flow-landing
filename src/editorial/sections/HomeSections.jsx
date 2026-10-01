@@ -7,6 +7,8 @@ import {
 } from '../data/homeContent.js';
 import { useActiveStep, useCountUp, usePointerVars } from './effects.js';
 import { WorkGallery } from './WorkGallery.jsx';
+import { QuoteEstimator } from './QuoteEstimator.jsx';
+import { BuildPreview, ScoreGauges } from './BuildVisuals.jsx';
 import './home-sections.css';
 
 const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -186,6 +188,7 @@ export function QualitySpec() {
             <div className="spec-scan" />
           </div>
         </div>
+        <ScoreGauges />
       </div>
     </section>
   );
@@ -196,26 +199,29 @@ export function Process() {
   useActiveStep(list);
   return (
     <section className="sx sx--process" id="approach" aria-labelledby="approach-title">
-      <div className="sx-inner process">
-        <div className="process__side">
-          <SectionHead index="05" label="제작 과정" title={<>무엇을 만들지부터<br />함께 정리합니다.</>} titleId="approach-title">
-            <p className="sx-lead">사업의 성격과 방문자의 목적을 먼저 살핍니다. 보기 좋은 화면을 넘어 다음 행동으로 이어지는 구조를 설계합니다.</p>
-          </SectionHead>
-        </div>
-        <div className="process__track" ref={list}>
-          <span className="process__rail" aria-hidden="true"><i /></span>
-          <ol className="process__list">
-          {PROCESS_STEPS.map((step) => (
-            <li key={step.number} data-reveal>
-              <span className="process__no">{step.number}</span>
-              <div>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
-                <dl><div><dt>산출물</dt><dd>{step.output}</dd></div><div><dt>기간</dt><dd>{step.period}</dd></div></dl>
-              </div>
-            </li>
-          ))}
-          </ol>
+      <div className="sx-inner">
+        <SectionHead index="05" label="제작 과정" title={<>무엇을 만들지부터<br />함께 정리합니다.</>} titleId="approach-title">
+          <p className="sx-lead">사업의 성격과 방문자의 목적을 먼저 살핍니다. 보기 좋은 화면을 넘어 다음 행동으로 이어지는 구조를 설계합니다.</p>
+        </SectionHead>
+        <div className="process" data-steps>
+          <div className="process__side">
+            <BuildPreview steps={PROCESS_STEPS} />
+          </div>
+          <div className="process__track" ref={list}>
+            <span className="process__rail" aria-hidden="true"><i /></span>
+            <ol className="process__list">
+            {PROCESS_STEPS.map((step) => (
+              <li key={step.number} data-reveal>
+                <span className="process__no">{step.number}</span>
+                <div>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                  <dl><div><dt>산출물</dt><dd>{step.output}</dd></div><div><dt>기간</dt><dd>{step.period}</dd></div></dl>
+                </div>
+              </li>
+            ))}
+            </ol>
+          </div>
         </div>
       </div>
     </section>
@@ -247,6 +253,7 @@ export function Pricing() {
             </li>
           ))}
         </ul>
+        <QuoteEstimator />
         <ul className="pricing__notes">{PRICING_NOTES.map((note) => <li key={note}>{note}</li>)}</ul>
       </div>
     </section>

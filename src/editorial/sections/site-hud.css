@@ -1,5 +1,5 @@
 /* 섹션 HUD + 커서 격자 — SiteHud.jsx 전용. 밝은/어두운 섹션 모두에서 보이도록 difference 혼합을 씁니다. */
-.site-hud{position:fixed;left:22px;top:50%;z-index:12;display:none;transform:translate(-12px,-50%);opacity:0;mix-blend-mode:difference;color:#fff;font-family:ui-monospace,'Cascadia Code',Consolas,monospace;font-size:11px;letter-spacing:.04em;pointer-events:none;transition:opacity .4s ease,transform .4s cubic-bezier(.2,.7,.2,1)}
+.site-hud{position:fixed;left:14px;top:50%;z-index:12;display:none;transform:translate(-12px,-50%);opacity:0;mix-blend-mode:difference;color:#fff;font-family:ui-monospace,'Cascadia Code',Consolas,monospace;font-size:11px;letter-spacing:.04em;pointer-events:none;transition:opacity .4s ease,transform .4s cubic-bezier(.2,.7,.2,1)}
 .site-hud.is-on{opacity:1;transform:translate(0,-50%);pointer-events:auto}
 .site-hud ol{display:grid;gap:2px;margin:0;padding:0;list-style:none}
 .site-hud button{display:flex;align-items:center;gap:10px;min-height:28px;padding:0;border:0;background:none;color:inherit;font:inherit;letter-spacing:inherit;opacity:.45;transition:opacity .25s ease}

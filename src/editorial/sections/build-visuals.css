@@ -1,0 +1,97 @@
+/* 품질 점수 게이지 + 제작 과정 조립 시안 — BuildVisuals.jsx 전용 */
+
+/* ---------- 점수 게이지 (어두운 품질 섹션 안) ---------- */
+.scores{grid-column:1/-1;margin-top:clamp(40px,5vw,80px);padding-top:clamp(28px,3vw,44px);border-top:1px solid rgba(245,245,242,.18)}
+.scores__head{display:flex;flex-wrap:wrap;align-items:center;gap:14px;font-size:13px;color:rgba(245,245,242,.64)}
+.scores__head span{padding:3px 9px;border:1px solid #8fe0b6;font-family:ui-monospace,Consolas,monospace;font-size:11px;letter-spacing:.1em;color:#8fe0b6}
+.scores ul{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin:28px 0 0;padding:0;list-style:none}
+.scores li{display:grid;grid-template-areas:'ring' 'label';justify-items:center;gap:12px}
+.scores svg,.scores strong{grid-area:ring}
+.scores svg{width:clamp(96px,9vw,132px);height:auto;transform:rotate(-90deg)}
+.scores circle{fill:none;stroke-width:6}
+.scores__track{stroke:rgba(245,245,242,.1)}
+.scores__ring{stroke:#8fe0b6;stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:calc(100 - var(--v));filter:drop-shadow(0 0 6px rgba(143,224,182,.5))}
+.scores strong{align-self:center;font-size:clamp(28px,2.6vw,40px);font-weight:800;letter-spacing:-.04em;color:#f5f5f2;font-variant-numeric:tabular-nums}
+.scores__label{grid-area:label;font-size:14px;font-weight:700;color:rgba(245,245,242,.82)}
+.reveal-ready .scores .scores__ring{stroke-dashoffset:100;transition:stroke-dashoffset 1.6s cubic-bezier(.2,.7,.2,1) calc(.2s + var(--i) * .15s)}
+.reveal-ready .scores.is-in .scores__ring{stroke-dashoffset:calc(100 - var(--v))}
+
+/* ---------- 제작 과정 조립 시안 ---------- */
+.build{--mono:ui-monospace,Consolas,monospace;width:100%;max-width:540px;margin-top:clamp(28px,3vw,44px);border:1px solid rgba(23,32,35,.2);background:#fff;box-shadow:0 40px 80px -46px rgba(23,32,35,.5)}
+.build__bar{display:flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-bottom:1px solid rgba(23,32,35,.1);background:#eceeea}
+.build__bar>i{width:8px;height:8px;border-radius:50%;background:rgba(23,32,35,.22)}
+.build__url{display:flex;align-items:center;gap:6px;flex:1;margin:0 10px 0 14px;padding:3px 10px;background:#fff;font-family:var(--mono);font-size:11px;color:#6a716f}
+.build__lock{width:8px;height:8px;border:1.5px solid currentColor;border-radius:2px;transition:color .4s}
+.build__live{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;font-weight:700;color:#2f8a57;opacity:0;transform:scale(.7);transition:opacity .4s,transform .5s cubic-bezier(.3,1.6,.5,1)}
+.build__live:before{content:'';width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 0 3px rgba(47,138,87,.2);animation:build-pulse 1.4s ease-in-out infinite}
+.build__body{position:relative;overflow:hidden;aspect-ratio:16/10;background:#fafaf7}
+
+/* 1단계: 사이트맵 */
+.build__map{position:absolute;inset:0;transition:opacity .5s,transform .6s cubic-bezier(.2,.7,.2,1)}
+.build__map:before,.build__map:after{content:'';position:absolute;background:rgba(23,32,35,.35)}
+.build__map:before{left:50%;top:30%;width:1px;height:15%}
+.build__map:after{left:22%;right:22%;top:45%;height:1px}
+.build__map span{position:absolute;display:grid;place-items:center;height:16%;border:1px solid var(--ink);background:#fff;font-size:12px;font-weight:700;animation:build-pop .5s cubic-bezier(.3,1.6,.5,1) both}
+.build__map .m-root{left:38%;top:14%;width:24%;background:var(--ink);color:#fff;font-family:var(--mono);font-size:11px}
+.build__map .m-a,.build__map .m-b,.build__map .m-c{top:58%;width:22%}
+.build__map .m-a{left:11%;animation-delay:.15s}
+.build__map .m-b{left:39%;animation-delay:.25s}
+.build__map .m-c{left:67%;animation-delay:.35s}
+
+/* 2단계 이후: 화면. 처음엔 회색 와이어프레임 */
+.build__page{position:absolute;inset:0;opacity:0;transform:scale(.96);transition:opacity .5s,transform .6s cubic-bezier(.2,.7,.2,1)}
+.build__page i{position:absolute;background:rgba(23,32,35,.07);outline:1px dashed rgba(23,32,35,.35);outline-offset:-1px;transition:background .7s ease,outline-color .7s ease,box-shadow .7s ease}
+.b-nav{left:6%;top:6%;width:88%;height:7%}
+.b-t1{left:6%;top:24%;width:40%;height:9%}
+.b-t2{left:6%;top:36%;width:28%;height:9%}
+.b-btn{left:6%;top:52%;width:17%;height:9%}
+.b-hero{left:54%;top:22%;width:40%;height:40%}
+.build__page .b-card{top:70%;width:27%;height:22%;left:6%}
+.build__page .b-card:nth-child(7){left:36.5%}
+.build__page .b-card:nth-child(8){left:67%}
+
+/* 3단계: 디자인 입히기 + 코드 + 검수 */
+.build__code{position:absolute;right:0;top:0;bottom:0;width:48%;margin:0;padding:14px 12px;overflow:hidden;background:#10181b;color:#6fe6ff;font-family:var(--mono);font-size:10px;line-height:1.7;white-space:pre;transform:translateX(101%);transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.build__checks{position:absolute;left:6%;bottom:5%;display:flex;flex-wrap:wrap;gap:4px;max-width:48%}
+.build__checks span{padding:2px 6px;background:#2f8a57;color:#fff;font-family:var(--mono);font-size:10px;font-weight:700;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .4s cubic-bezier(.3,1.6,.5,1)}
+
+/* 4단계: 공개 + 실시간 방문 그래프 */
+.build__stats{position:absolute;right:4%;bottom:6%;display:grid;gap:6px;width:40%;height:42%;padding:10px 12px;border:1px solid rgba(23,32,35,.14);background:#fff;box-shadow:0 20px 40px -24px rgba(23,32,35,.5);opacity:0;transform:translateY(16px);transition:opacity .4s,transform .6s cubic-bezier(.2,.7,.2,1)}
+.build__stats span{font-family:var(--mono);font-size:10px;color:#6a716f}
+.build__stats p{display:flex;align-items:flex-end;gap:5%;height:100%;margin:0}
+.build__stats i{flex:1;height:4%;background:var(--accent,#d9492f);transition:height .8s cubic-bezier(.2,.7,.2,1) calc(.3s + var(--i) * .06s)}
+
+/* 아래 단계 표시 */
+.build__steps{display:grid;grid-template-columns:repeat(4,1fr);margin:0;padding:0;list-style:none;border-top:1px solid rgba(23,32,35,.1)}
+.build__steps li{display:grid;gap:2px;padding:10px 12px;font-size:12px;font-weight:700;color:rgba(23,32,35,.35);transition:color .3s,background .3s}
+.build__steps li+li{border-left:1px solid rgba(23,32,35,.1)}
+.build__steps b{font-family:var(--mono);font-size:10px;font-weight:400}
+
+/* ---------- 단계별 상태 (.process[data-step]) ---------- */
+.process[data-step="1"] .build__map,.process[data-step="2"] .build__map,.process[data-step="3"] .build__map{opacity:0;transform:scale(1.06)}
+.process:is([data-step="1"],[data-step="2"],[data-step="3"]) .build__page{opacity:1;transform:none}
+.process:is([data-step="2"],[data-step="3"]) .build__page i{outline-color:transparent}
+.process:is([data-step="2"],[data-step="3"]) .b-nav{background:var(--ink)}
+.process:is([data-step="2"],[data-step="3"]) .b-t1,.process:is([data-step="2"],[data-step="3"]) .b-t2{background:var(--ink)}
+.process:is([data-step="2"],[data-step="3"]) .b-btn{background:var(--accent,#d9492f)}
+.process:is([data-step="2"],[data-step="3"]) .b-hero{background:linear-gradient(135deg,#f4c3b3,#d9492f 55%,#172023)}
+.process:is([data-step="2"],[data-step="3"]) .build__page .b-card{background:#fff;box-shadow:0 10px 24px -14px rgba(23,32,35,.5)}
+.process[data-step="2"] .build__code{transform:none}
+.process[data-step="2"] .build__checks span{opacity:1;transform:none}
+.process[data-step="2"] .build__checks span:nth-child(2){transition-delay:.25s}
+.process[data-step="2"] .build__checks span:nth-child(3){transition-delay:.4s}
+.process[data-step="2"] .build__checks span:nth-child(4){transition-delay:.55s}
+.process[data-step="3"] .build__live{opacity:1;transform:none}
+.process[data-step="3"] .build__lock{color:#2f8a57}
+.process[data-step="3"] .build__stats{opacity:1;transform:none}
+.process[data-step="3"] .build__stats i{height:var(--h)}
+.process:not([data-step]) .build__steps li:nth-child(1),.process[data-step="0"] .build__steps li:nth-child(1),.process[data-step="1"] .build__steps li:nth-child(2),.process[data-step="2"] .build__steps li:nth-child(3),.process[data-step="3"] .build__steps li:nth-child(4){color:var(--ink);background:rgba(217,73,47,.08)}
+
+@keyframes build-pop{from{opacity:0;transform:scale(.6)}}
+@keyframes build-pulse{50%{box-shadow:0 0 0 6px rgba(47,138,87,0)}}
+
+/* 시안은 왼쪽 열에 고정(.process__side 가 sticky). 화면이 낮으면 그만큼 작게 */
+.process[data-steps] .build{margin-top:0;max-width:min(540px,calc((100vh - 220px) * 1.2))}
+@media(max-width:760px){.process[data-steps] .process__side{display:none}}
+@media(max-width:760px){.scores ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 12px}}
+@media(prefers-reduced-motion:reduce){.build *,.build *:before{animation:none!important;transition:none!important}}
