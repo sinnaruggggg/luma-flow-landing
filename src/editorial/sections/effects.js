@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { decodeText } from '../hero/useDecodeTitle.js';
 
 // 홈 하단의 작은 인터랙션 모음. 모두 '동작 줄이기' 설정이면 꺼집니다.
 const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -138,4 +139,51 @@ export function useCountUp(ref) {
       nodes.forEach((node) => { node.textContent = Number(node.dataset.count).toLocaleString('ko-KR'); });
     };
   }, [ref]);
+}
+
+// 섹션 제목(.sx-head h2)이 화면에 들어오면 히어로처럼 글자 해독 효과를 한 번 실행합니다.
+export function useDecodeHeadings() {
+  useEffect(() => {
+    if (reducedMotion() || !('IntersectionObserver' in window)) return undefined;
+    const cancels = [];
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        observer.unobserve(entry.target);
+        cancels.push(decodeText(entry.target, 900));
+      });
+    }, { rootMargin: '0px 0px -12% 0px' });
+    document.querySelectorAll('#main .sx-head h2').forEach((node) => observer.observe(node));
+    return () => {
+      observer.disconnect();
+      cancels.forEach((cancel) => cancel());
+    };
+  }, []);
+}
+
+// 커서 위치를 화면 좌표(--mx/--my)와 페이지 좌표 글자로 넘깁니다. (커서 주변 격자용, 마우스 환경에서만)
+export function useCursorGrid(ref, tagRef) {
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || reducedMotion() || !finePointer()) return undefined;
+    let frame = 0;
+    let x = 0;
+    let y = 0;
+    const paint = () => {
+      frame = 0;
+      el.style.setProperty('--mx', `${x}px`);
+      el.style.setProperty('--my', `${y}px`);
+      if (tagRef.current) tagRef.current.textContent = `X ${String(Math.round(x)).padStart(4, '0')} · Y ${String(Math.round(y + window.scrollY)).padStart(5, '0')}`;
+    };
+    const onMove = (event) => {
+      x = event.clientX;
+      y = event.clientY;
+      if (!frame) frame = requestAnimationFrame(paint);
+    };
+    window.addEventListener('pointermove', onMove, { passive: true });
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener('pointermove', onMove);
+    };
+  }, [ref, tagRef]);
 }

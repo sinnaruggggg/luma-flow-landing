@@ -5,6 +5,7 @@ import { ProjectGrid } from './components/ProjectGrid.jsx';
 import { ProjectFinderCTA } from './components/ProjectFinderCTA.jsx';
 import { FilterPanel } from './components/FilterPanel.jsx';
 import { Hero3D } from './hero/Hero3D.jsx';
+import { SiteHud } from './sections/SiteHud.jsx';
 import { Audience, CapabilityTicker, Faq, Pricing, Process, QualitySpec, Services, WorkSection } from './sections/HomeSections.jsx';
 import { useReveal } from './sections/useReveal.js';
 import { useMagnetic, usePageProgress } from './sections/effects.js';
@@ -79,6 +80,7 @@ function Footer() {
 function Home({ onOpen }) {
   useReveal();
   return <><Hero3D />
+    <SiteHud />
     <CapabilityTicker />
     <ProjectFinderCTA onOpen={onOpen} />
     <WorkSection projects={PROJECTS.slice(0, 6)} />

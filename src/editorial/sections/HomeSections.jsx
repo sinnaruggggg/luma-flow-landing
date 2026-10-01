@@ -6,6 +6,7 @@ import {
   PROCESS_STEPS, QUALITY_SPECS, SERVICES, SPEC_LAYERS,
 } from '../data/homeContent.js';
 import { useActiveStep, useCountUp, usePointerVars } from './effects.js';
+import { WorkGallery } from './WorkGallery.jsx';
 import './home-sections.css';
 
 const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -61,13 +62,18 @@ export function CapabilityTicker() {
 }
 
 export function WorkSection({ projects }) {
+  // 동작 줄이기 설정이면 움직이는 갤러리 대신 기존 그리드를 보여 줍니다.
+  const [reduced] = useState(prefersReducedMotion);
   return (
     <section className="sx sx--work" id="work" aria-labelledby="work-title">
       <div className="sx-inner">
         <SectionHead index="01" label="작업" title={<>서로 다른 사업,<br />각자의 얼굴.</>} titleId="work-title">
           <a className="sx-link" href={withBasePath('/projects')}>전체 사례 보기 <span aria-hidden="true">↗</span></a>
         </SectionHead>
-        <ProjectGrid projects={projects} variant="featured" />
+        {reduced ? <ProjectGrid projects={projects} variant="featured" /> : null}
+      </div>
+      {reduced ? null : <WorkGallery projects={projects} />}
+      <div className="sx-inner">
         <p className="section-note">디자인 방향을 보여 주기 위한 가상 프로젝트입니다. 표시된 예산은 예시 범위이며 실제 견적과 다릅니다.</p>
       </div>
     </section>
@@ -115,7 +121,7 @@ export function Services() {
 
 export function Audience() {
   return (
-    <section className="sx sx--audience" aria-labelledby="audience-title">
+    <section className="sx sx--audience" id="audience" aria-labelledby="audience-title">
       <div className="sx-inner">
         <SectionHead index="03" label="함께하는 분들" title={<>개인부터 기관까지,<br />규모보다 목적에 맞춥니다.</>} titleId="audience-title" />
         <ul className="audience">

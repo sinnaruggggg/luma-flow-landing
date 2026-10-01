@@ -1,0 +1,63 @@
+/* 작업 갤러리 — WorkGallery.jsx 전용 */
+.wg{--accent:#d9492f;--xray:#6fe6ff;position:relative}
+.wg-defs{position:absolute;width:0;height:0;overflow:hidden}
+.wg__sticky{position:sticky;top:76px;display:flex;flex-direction:column;justify-content:center;gap:clamp(22px,3vh,40px);height:calc(100vh - 76px);height:calc(100svh - 76px);overflow:hidden;overflow:clip}
+.wg__track{--end-w:clamp(280px,26vw,420px);display:flex;align-items:center;gap:clamp(28px,3.4vw,64px);width:max-content;padding:0 calc(50vw - var(--end-w) / 2) 0 max(76px,calc((100% - 1448px) / 2));will-change:transform}
+
+/* 카드: 가운데에서 멀수록(--d) 기울고 뒤로 물러납니다 */
+.wg-card{--d:0;flex:none;width:clamp(420px,44vw,720px);transform:perspective(1600px) rotateY(calc(var(--d) * -22deg)) translateZ(calc(var(--d) * var(--d) * -260px)) scale(calc(1 - var(--d) * var(--d) * .08));transform-origin:50% 50%;opacity:calc(1 - var(--d) * var(--d) * .55);transition:opacity .2s linear}
+.wg-card>a{display:block;color:inherit;text-decoration:none}
+.wg-win{position:relative;border:1px solid rgba(23,32,35,.18);background:#fff;box-shadow:0 50px 90px -50px rgba(23,32,35,.55);transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s}
+.wg-card a:hover .wg-win,.wg-card a:focus-visible .wg-win{transform:translateY(-10px);box-shadow:0 70px 110px -50px rgba(23,32,35,.6)}
+.wg-bar{display:flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-bottom:1px solid rgba(23,32,35,.1);background:#eceeea}
+.wg-bar i{width:8px;height:8px;border-radius:50%;background:rgba(23,32,35,.22)}
+.wg-bar i:first-child{background:var(--accent)}
+.wg-bar span{flex:1;overflow:hidden;margin:0 40px 0 16px;padding:3px 10px;background:#fff;color:#6a716f;font-family:ui-monospace,Consolas,monospace;font-size:11px;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+.wg-shot{position:relative;overflow:hidden;aspect-ratio:1440/1000;background:#e3e5dd}
+.wg-shot>img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.wg-card a:hover .wg-shot>img{transform:scale(1.03)}
+
+/* X-ray 렌즈: 커서 주변만 윤곽선(설계도) 화면으로 */
+.wg-xray{position:absolute;inset:0;opacity:0;background-color:#0e1518;background-image:linear-gradient(rgba(111,230,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(111,230,255,.12) 1px,transparent 1px);background-size:22px 22px;-webkit-mask-image:radial-gradient(circle 150px at var(--px,50%) var(--py,50%),#000 96%,transparent 100%);mask-image:radial-gradient(circle 150px at var(--px,50%) var(--py,50%),#000 96%,transparent 100%);transition:opacity .3s ease;pointer-events:none}
+.wg-xray img{width:100%;height:100%;object-fit:cover;filter:url(#wg-edge);mix-blend-mode:screen}
+.wg-xray span{position:absolute;left:calc(var(--px,50%) - 60px);top:calc(var(--py,50%) + 112px);padding:2px 8px;background:var(--xray);color:#0e1518;font-family:ui-monospace,Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:.06em;white-space:nowrap}
+.wg-card a:hover .wg-xray{opacity:1}
+
+/* 캡션 */
+.wg-cap{display:grid;grid-template-columns:auto 1fr auto;align-items:start;gap:18px;padding:22px 2px 0}
+.wg-no{padding-top:3px;font-family:ui-monospace,Consolas,monospace;font-size:13px;color:var(--accent)}
+.wg-meta{font-family:ui-monospace,Consolas,monospace;font-size:11px;color:var(--muted)}
+.wg-title{margin-top:4px;font-size:clamp(20px,1.8vw,28px);font-weight:750;letter-spacing:-.04em}
+.wg-go{display:grid;place-items:center;width:44px;height:44px;border:1px solid currentColor;font-size:18px;transition:background .25s,color .25s,transform .4s cubic-bezier(.2,.7,.2,1)}
+.wg-card a:hover .wg-go{background:var(--ink);color:#fff;transform:rotate(45deg)}
+
+/* 마지막 "전체 보기" 카드 */
+.wg-card--end{width:var(--end-w)}
+.wg-card--end a{display:flex;flex-direction:column;justify-content:space-between;aspect-ratio:3/4;padding:clamp(24px,2.4vw,40px);background:var(--ink);color:#f5f5f2;transition:background .3s}
+.wg-card--end a:hover{background:var(--accent)}
+.wg-end__kicker{font-family:ui-monospace,Consolas,monospace;font-size:11px;letter-spacing:.1em;opacity:.7}
+.wg-card--end strong{font-size:clamp(34px,3.4vw,56px);font-weight:800;line-height:1.05;letter-spacing:-.05em}
+.wg-end__go{font-size:44px;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.wg-card--end a:hover .wg-end__go{transform:translateX(12px)}
+
+/* 아래 진행 표시 */
+.wg__hud{display:flex;align-items:center;gap:20px;width:calc(100% - 152px);max-width:1448px;margin:0 auto;font-family:ui-monospace,Consolas,monospace;font-size:12px;color:var(--muted)}
+.wg__bar{position:relative;flex:1;height:1px;background:rgba(23,32,35,.2)}
+.wg__bar b{position:absolute;inset:-1px 0;background:var(--accent);transform-origin:0 50%;transform:scaleX(var(--wp,0))}
+.wg__hint{opacity:calc(1 - var(--wp,0) * 6)}
+.wg__hint--touch{display:none}
+
+/* 좁은 화면: 고정 없이 손가락으로 넘기는 슬라이드 */
+@media(max-width:760px){
+  .wg__sticky{position:static;height:auto;overflow:visible}
+  .wg__track{width:auto;overflow-x:auto;padding:4px 22px 18px;gap:16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .wg__track::-webkit-scrollbar{display:none}
+  .wg-card{width:82vw;transform:none;opacity:1;scroll-snap-align:center}
+  .wg-card--end{width:60vw}
+  .wg-bar span{margin-right:0}
+  .wg__hud{width:calc(100% - 44px)}
+  .wg__bar,.wg__hud>span:first-child{display:none}
+  .wg__hint{display:none}
+  .wg__hint--touch{display:inline}
+}
+@media(pointer:coarse){.wg-xray{display:none}}
