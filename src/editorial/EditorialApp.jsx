@@ -11,6 +11,7 @@ import { useReveal } from './sections/useReveal.js';
 import { useMagnetic, usePageProgress } from './sections/effects.js';
 import { AGENCY_CONFIG } from './data/agencyConfig.js';
 import ContactSection from './ContactSection.jsx';
+import { PrivacyPolicy } from './PrivacyPolicy.jsx';
 import './editorial.css';
 import './components/finder.css';
 import './agency-shell.css';
@@ -72,7 +73,7 @@ function Footer() {
       <div><h3>사업자 정보</h3><ul><li>상호 {companyName}</li><li>사업자등록번호 {business.registration}</li></ul></div>
     </div>
     <FooterWord text={brandName} />
-    <div className="studio-footer__bottom"><span>© {new Date().getFullYear()} {companyName} · {brandName} · 웹사이트 기획·디자인·개발</span><a href="#top">맨 위로 ↑</a></div>
+    <div className="studio-footer__bottom"><span>© {new Date().getFullYear()} {companyName} · {brandName} · 웹사이트 기획·디자인·개발</span><a className="studio-footer__privacy" href={withBasePath('/privacy')}>개인정보 처리방침</a><a href="#top">맨 위로 ↑</a></div>
   </footer>;
 }
 
@@ -117,15 +118,16 @@ export default function EditorialApp() {
   const filters = parseFilters(route.search);
   const isResults = route.path === '/projects';
   const isDetail = route.path.startsWith('/projects/');
+  const isPrivacy = route.path === '/privacy';
   useEffect(() => {
     const onPop = () => { setFinderTrigger(null); setRoute(readLocation()); };
     window.addEventListener('popstate', onPop);
     return () => window.removeEventListener('popstate', onPop);
   }, []);
   useEffect(() => {
-    document.title = isResults ? '제작 사례 찾기 — 나나웹' : isDetail ? '프로젝트 상세 — 나나웹' : '나나웹 — 홈페이지 제작';
+    document.title = isPrivacy ? '개인정보 처리방침 — 나나웹' : isResults ? '제작 사례 찾기 — 나나웹' : isDetail ? '프로젝트 상세 — 나나웹' : '나나웹 — 홈페이지 제작';
     document.querySelector('meta[name="description"]')?.setAttribute('content', '브랜드의 이야기를 정돈하는 웹사이트 디자인과 개발. 예산, 업종, 스타일에 맞는 제작 사례를 살펴보세요.');
-  }, [isResults, isDetail, route.path]);
+  }, [isResults, isDetail, isPrivacy, route.path]);
   function submit(selection) {
     const params = new URLSearchParams();
     GROUPS.forEach(key => params.set(key, selection[key]));
@@ -136,5 +138,5 @@ export default function EditorialApp() {
     // A result navigation moves focus to the new page, unlike cancel/close.
     setTimeout(() => resultFocus.current?.focus({ preventScroll: true }), 50);
   }
-  return <><a className="skip-link" href="#main">본문으로 이동</a><div className="wrap" id="top"><Header /><main id="main" tabIndex={-1} ref={resultFocus}>{isDetail ? <Detail id={projectIdFromPath(route.path)} /> : isResults ? <Results filters={filters} onOpen={setFinderTrigger} /> : <Home onOpen={setFinderTrigger} />}</main><Footer /></div>{finderTrigger ? <FilterPanel selection={filters} trigger={finderTrigger} onClose={() => setFinderTrigger(null)} onSubmit={submit} /> : null}</>;
+  return <><a className="skip-link" href="#main">본문으로 이동</a><div className="wrap" id="top"><Header /><main id="main" tabIndex={-1} ref={resultFocus}>{isPrivacy ? <PrivacyPolicy /> : isDetail ? <Detail id={projectIdFromPath(route.path)} /> : isResults ? <Results filters={filters} onOpen={setFinderTrigger} /> : <Home onOpen={setFinderTrigger} />}</main><Footer /></div>{finderTrigger ? <FilterPanel selection={filters} trigger={finderTrigger} onClose={() => setFinderTrigger(null)} onSubmit={submit} /> : null}</>;
 }

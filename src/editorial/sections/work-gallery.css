@@ -5,7 +5,7 @@
 .wg__track{--end-w:clamp(280px,26vw,420px);display:flex;align-items:center;gap:clamp(28px,3.4vw,64px);width:max-content;padding:0 calc(50vw - var(--end-w) / 2) 0 max(76px,calc((100% - 1448px) / 2));will-change:transform}
 
 /* 카드: 가운데에서 멀수록(--d) 기울고 뒤로 물러납니다 */
-.wg-card{--d:0;flex:none;width:clamp(420px,44vw,720px);transform:perspective(1600px) rotateY(calc(var(--d) * -22deg)) translateZ(calc(var(--d) * var(--d) * -260px)) scale(calc(1 - var(--d) * var(--d) * .08));transform-origin:50% 50%;opacity:calc(1 - var(--d) * var(--d) * .55);transition:opacity .2s linear}
+.wg-card{--d:0;flex:none;width:clamp(420px,44vw,720px);transform:perspective(1600px) rotateY(calc(var(--d) * -22deg)) translateZ(calc(var(--d) * var(--d) * -260px)) scale(calc(1 - var(--d) * var(--d) * .08));transform-origin:50% 50%}
 .wg-card>a{display:block;color:inherit;text-decoration:none}
 .wg-win{position:relative;border:1px solid rgba(23,32,35,.18);background:#fff;box-shadow:0 50px 90px -50px rgba(23,32,35,.55);transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s}
 .wg-card a:hover .wg-win,.wg-card a:focus-visible .wg-win{transform:translateY(-10px);box-shadow:0 70px 110px -50px rgba(23,32,35,.6)}
@@ -25,7 +25,7 @@
 
 /* 캡션 */
 .wg-cap{display:grid;grid-template-columns:auto 1fr auto;align-items:start;gap:18px;padding:22px 2px 0}
-.wg-no{padding-top:3px;font-family:ui-monospace,Consolas,monospace;font-size:13px;color:var(--accent)}
+.wg-no{padding-top:3px;font-family:ui-monospace,Consolas,monospace;font-size:13px;color:#b8371f}
 .wg-meta{font-family:ui-monospace,Consolas,monospace;font-size:11px;color:var(--muted)}
 .wg-title{margin-top:4px;font-size:clamp(20px,1.8vw,28px);font-weight:750;letter-spacing:-.04em}
 .wg-go{display:grid;place-items:center;width:44px;height:44px;border:1px solid currentColor;font-size:18px;transition:background .25s,color .25s,transform .4s cubic-bezier(.2,.7,.2,1)}
@@ -52,7 +52,7 @@
   .wg__sticky{position:static;height:auto;overflow:visible}
   .wg__track{width:auto;overflow-x:auto;padding:4px 22px 18px;gap:16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .wg__track::-webkit-scrollbar{display:none}
-  .wg-card{width:82vw;transform:none;opacity:1;scroll-snap-align:center}
+  .wg-card{width:82vw;transform:none;scroll-snap-align:center}
   .wg-card--end{width:60vw}
   .wg-bar span{margin-right:0}
   .wg__hud{width:calc(100% - 44px)}

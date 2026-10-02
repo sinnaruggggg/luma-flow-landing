@@ -1,7 +1,7 @@
 // 홈 화면 문구·가격·FAQ를 한곳에서 관리합니다.
 // 문구를 바꿀 때는 이 파일만 수정하면 됩니다.
 
-const preview = (id) => `/agency-assets/sites/${id}.jpg`;
+const preview = (id) => `/agency-assets/sites/${id}.webp`;
 
 // 히어로 3D 공간에 떠 있는 샘플 화면 (모바일은 앞의 9개만 사용)
 export const HERO_SCREENS = Object.freeze([

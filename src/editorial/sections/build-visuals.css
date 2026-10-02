@@ -63,7 +63,7 @@
 
 /* 아래 단계 표시 */
 .build__steps{display:grid;grid-template-columns:repeat(4,1fr);margin:0;padding:0;list-style:none;border-top:1px solid rgba(23,32,35,.1)}
-.build__steps li{display:grid;gap:2px;padding:10px 12px;font-size:12px;font-weight:700;color:rgba(23,32,35,.35);transition:color .3s,background .3s}
+.build__steps li{display:grid;gap:2px;padding:10px 12px;font-size:12px;font-weight:700;color:rgba(23,32,35,.62);transition:color .3s,background .3s}
 .build__steps li+li{border-left:1px solid rgba(23,32,35,.1)}
 .build__steps b{font-family:var(--mono);font-size:10px;font-weight:400}
 

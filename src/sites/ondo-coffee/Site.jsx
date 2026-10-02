@@ -9,7 +9,7 @@ import { ALL_PHOTO_KEYS, BEANS, BRAND, CADENCES, CONTENTS, GRINDS, PHOTOS, QUIZ,
 import './site.css';
 
 const FONTS = [
-  'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css',
+  'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css',
   'https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&display=swap',
 ];
 const won = (value) => `${Math.round(value / 100) * 100 > 0 ? (Math.round(value / 100) * 100).toLocaleString('ko-KR') : 0}원`;

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { withBasePath } from '../lib/appPaths.js';
 import { AGENCY_CONFIG } from './data/agencyConfig.js';
+import { INQUIRY_CONSENT } from './data/privacyPolicy.js';
 import './contact-section.css';
 
 const EMPTY_FORM = Object.freeze({
@@ -29,7 +30,7 @@ function validate(form) {
   if (form.email.trim() && !EMAIL_PATTERN.test(form.email.trim())) errors.email = '이메일 형식을 확인해 주세요.';
   if (form.phone.trim() && normalizePhone(form.phone).length < 9) errors.phone = '연락처를 확인해 주세요.';
   if (!form.details.trim()) errors.details = '문의 내용을 입력해 주세요.';
-  if (!form.privacy) errors.privacy = '개인정보 안내를 확인하고 동의해 주세요.';
+  if (!form.privacy) errors.privacy = '개인정보 수집·이용에 동의해 주세요.';
   return errors;
 }
 
@@ -75,6 +76,17 @@ function downloadBrief(form) {
   anchor.click();
   anchor.remove();
   URL.revokeObjectURL(url);
+}
+
+// 폼 위 터미널 명령줄: 입력한 값이 옵션처럼 실시간으로 붙습니다. (화면 장식용, 길면 자름)
+function commandArgs(form) {
+  const short = (value, max = 14) => (value.length > max ? `${value.slice(0, max)}…` : value);
+  return [
+    form.contactName.trim() && ` --name "${short(form.contactName.trim())}"`,
+    form.company.trim() && ` --brand "${short(form.company.trim())}"`,
+    form.budget && ` --budget "${form.budget}"`,
+    form.details.trim() && ` --brief "${short(form.details.trim().split('\n')[0], 18)}"`,
+  ].filter(Boolean).join('');
 }
 
 export function ContactSection() {
@@ -180,7 +192,7 @@ ${details}` : details,
       const payload = await response.json();
       if (!response.ok || payload?.ok !== true) throw new Error(payload?.message || '문의 접수가 완료되지 않았습니다.');
       lastAcceptedRef.current = signature;
-      setState({ type: 'success', message: '접수되었습니다. 담당자가 확인 후 연락드리겠습니다.' });
+      setState({ type: 'success', message: '접수되었습니다. 담당자가 확인 후 연락드리겠습니다.', id: String(payload.id ?? '') });
       setForm(EMPTY_FORM);
       setErrors({});
     } catch (error) {
@@ -210,6 +222,10 @@ ${details}` : details,
     </div>
 
     <form className="agency-contact__form" noValidate onSubmit={handleSubmit} aria-describedby="contact-form-status">
+      <div className="contact-term" aria-hidden="true">
+        <div className="contact-term__bar"><i /><i /><i /><span>new-project.request</span><b>● online</b></div>
+        <p className="contact-term__cmd"><span>$</span> nanaweb request{commandArgs(form)}<i /></p>
+      </div>
       <div className="agency-contact__row">
         <label><span>회사·브랜드</span><input name="company" value={form.company} onChange={updateField} autoComplete="organization" placeholder="선택 입력" /></label>
         <label><span>담당자 이름 <b aria-hidden="true">*</b></span><input name="contactName" value={form.contactName} onChange={updateField} autoComplete="name" aria-invalid={Boolean(errors.contactName)} aria-describedby={errors.contactName ? 'contact-name-error' : undefined} /></label>
@@ -232,10 +248,17 @@ ${details}` : details,
       <label><span>문의 내용 <b aria-hidden="true">*</b></span><textarea name="details" value={form.details} onChange={updateField} rows="6" maxLength="4000" aria-invalid={Boolean(errors.details)} aria-describedby={errors.details ? 'contact-details-error' : undefined} placeholder="필요한 페이지, 기능, 참고 사이트, 현재 고민을 자유롭게 적어 주세요." /></label>
       {errors.details ? <p className="agency-contact__error" id="contact-details-error">{errors.details}</p> : null}
 
-      <label className="agency-contact__privacy">
-        <input type="checkbox" name="privacy" checked={form.privacy} onChange={updateField} aria-invalid={Boolean(errors.privacy)} aria-describedby={errors.privacy ? 'contact-privacy-error' : 'contact-privacy-help'} />
-        <span><strong>개인정보 처리 안내를 확인했습니다.</strong><small id="contact-privacy-help">{AGENCY_CONFIG.inquiryEnabled ? '이름과 연락처, 문의 내용은 상담 확인과 회신에 사용됩니다.' : '현재는 서버로 전송하지 않으며, 저장 버튼을 누르면 입력 내용이 내 기기에만 내려받아집니다.'}</small></span>
-      </label>
+      <div className="agency-contact__consent">
+        <label className="agency-contact__privacy">
+          <input type="checkbox" name="privacy" checked={form.privacy} onChange={updateField} aria-invalid={Boolean(errors.privacy)} aria-describedby={errors.privacy ? 'contact-privacy-error' : 'contact-privacy-help'} />
+          <span><strong>개인정보 수집·이용에 동의합니다. <em>(필수)</em></strong><small id="contact-privacy-help">{AGENCY_CONFIG.inquiryEnabled ? '아래 안내를 확인해 주세요. 상담 확인과 회신에만 사용합니다.' : '현재는 서버로 전송하지 않으며, 저장 버튼을 누르면 입력 내용이 내 기기에만 내려받아집니다.'}</small></span>
+        </label>
+        <details className="agency-contact__terms">
+          <summary>수집·이용 안내 보기</summary>
+          <dl>{INQUIRY_CONSENT.map(([term, text]) => <div key={term}><dt>{term}</dt><dd>{text}</dd></div>)}</dl>
+          <a href={withBasePath('/privacy')} target="_blank" rel="noopener">개인정보 처리방침 전문 보기 ↗</a>
+        </details>
+      </div>
       {errors.privacy ? <p className="agency-contact__error" id="contact-privacy-error">{errors.privacy}</p> : null}
 
       <div className="agency-contact__actions">
@@ -248,6 +271,15 @@ ${details}` : details,
       <div>
         <span className="eyebrow">상담 접수</span>
         <h3 id="contact-result-title">{state.type === 'duplicate' ? '이미 접수된 내용입니다.' : '문의가 접수되었습니다.'}</h3>
+        {state.type === 'success' ? (
+          <ol className="contact-log" aria-hidden="true">
+            <li>$ nanaweb inquiry submit</li>
+            <li>✓ 입력 내용 확인</li>
+            <li>✓ 담당자에게 알림 전송</li>
+            {state.id ? <li>✓ 접수 번호 NW-{state.id.slice(0, 6).toUpperCase()}</li> : null}
+            <li className="contact-log__done">● 접수 완료</li>
+          </ol>
+        ) : null}
         <p>{state.message}</p>
         <button ref={closeButtonRef} type="button" onClick={closeDialog}>확인하고 닫기</button>
       </div>

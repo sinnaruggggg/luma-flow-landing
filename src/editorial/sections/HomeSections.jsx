@@ -8,6 +8,7 @@ import {
 import { useActiveStep, useCountUp, usePointerVars } from './effects.js';
 import { WorkGallery } from './WorkGallery.jsx';
 import { QuoteEstimator } from './QuoteEstimator.jsx';
+import { ServiceBuild } from './ServiceBuild.jsx';
 import { BuildPreview, ScoreGauges } from './BuildVisuals.jsx';
 import './home-sections.css';
 
@@ -107,14 +108,7 @@ export function Services() {
               </li>
             ))}
           </ol>
-          <div className="services__preview" aria-hidden="true">
-            <div className="services__frame">
-              {SERVICES.map((service, index) => (
-                <img key={service.id} src={withBasePath(service.image)} alt="" loading="lazy" decoding="async" className={active === index ? 'is-active' : ''} />
-              ))}
-            </div>
-            <span className="services__caption">{SERVICES[active].title} · 샘플 화면</span>
-          </div>
+          <ServiceBuild services={SERVICES} active={active} />
         </div>
       </div>
     </section>

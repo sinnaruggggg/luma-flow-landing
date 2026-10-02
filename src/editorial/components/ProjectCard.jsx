@@ -10,7 +10,7 @@ export function ProjectCard({ project }) {
   ].join(' / ');
 
   return (
-    <article className="project-card" role="listitem">
+    <div className="project-card" role="listitem">
       <a
         className="project-card-link"
         href={withBasePath(`${project.url}${query ? `?${query}` : ''}`)}
@@ -33,7 +33,7 @@ export function ProjectCard({ project }) {
           <p className="project-summary">{project.summary}</p>
         </div>
       </a>
-    </article>
+    </div>
   );
 }
 

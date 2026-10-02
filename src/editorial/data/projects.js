@@ -55,7 +55,7 @@ export const PROJECTS = Object.freeze(READY_SITES.map((site) => Object.freeze({
   id: site.id,
   title: site.name,
   summary: site.summary,
-  thumbnail: withBasePath(`/agency-assets/sites/${site.id}.jpg`),
+  thumbnail: withBasePath(`/agency-assets/sites/${site.id}.webp`),
   budgetRange: TIER_OVERRIDE[site.id] || TIER_OF_FORMAT[site.format],
   industry: INDUSTRY_OF[site.id] || 'other',
   style: STYLE_OF_MOOD[site.mood] || 'editorial',

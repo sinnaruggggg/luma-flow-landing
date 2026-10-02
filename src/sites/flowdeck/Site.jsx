@@ -7,7 +7,7 @@ import { BOARD, FAQS, FEATURES, INTEGRATIONS, NAV, PLANS, PRODUCT, SECURITY, STE
 import './site.css';
 
 const FONTS = [
-  'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css',
+  'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css',
   'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap',
 ];
 const ICONS = { Mail, CalendarDays, MessageSquare, HardDrive, FileText, Webhook, Lock, ShieldCheck, History, Server };

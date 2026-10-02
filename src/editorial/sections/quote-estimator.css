@@ -18,7 +18,7 @@
 .quote__chip{position:relative;display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 14px;border:1px solid rgba(23,32,35,.22);background:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:border-color .2s,background .2s,color .2s}
 .quote__chip b{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--accent)}
 .quote__chip:hover{border-color:var(--ink)}
-.quote__chip.is-on{border-color:var(--accent);background:var(--accent);color:#fff}
+.quote__chip.is-on{border-color:#c43e25;background:#c43e25;color:#fff}
 .quote__chip.is-on b{color:#fff}
 .quote__chip.is-included b{color:#2f8a57}
 .quote__chip.is-on.is-included{border-color:#2f8a57;background:#2f8a57}

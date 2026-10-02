@@ -1,5 +1,5 @@
 /* 나나웹 문의 관리자 */
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css');
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:#f3f3ef;color:#172023;font-family:Pretendard,'Malgun Gothic',sans-serif;font-size:15px;line-height:1.6}
 button,input,textarea{font:inherit;color:inherit}

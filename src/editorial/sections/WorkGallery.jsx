@@ -98,7 +98,7 @@ export function WorkGallery({ projects }) {
       <div className="wg__sticky">
         <div ref={trackRef} className="wg__track" role="list">
           {projects.map((project, index) => (
-            <article className="wg-card" role="listitem" key={project.id}>
+            <div className="wg-card" role="listitem" key={project.id}>
               <a href={withBasePath(project.url)} aria-label={`${project.title} 프로젝트 자세히 보기`}>
                 <div className="wg-win">
                   <div className="wg-bar" aria-hidden="true"><i /><i /><i /><span>nanaweb.kr{project.siteUrl}</span></div>
@@ -119,15 +119,15 @@ export function WorkGallery({ projects }) {
                   <span className="wg-go" aria-hidden="true">↗</span>
                 </div>
               </a>
-            </article>
+            </div>
           ))}
-          <article className="wg-card wg-card--end" role="listitem">
+          <div className="wg-card wg-card--end" role="listitem">
             <a href={withBasePath('/projects')}>
               <span className="wg-end__kicker">ALL PROJECTS</span>
               <strong>전체 사례<br />모두 보기</strong>
               <span className="wg-end__go" aria-hidden="true">→</span>
             </a>
-          </article>
+          </div>
         </div>
         <div className="wg__hud" aria-hidden="true">
           <span ref={countRef}>01 / {String(projects.length + 1).padStart(2, '0')}</span>

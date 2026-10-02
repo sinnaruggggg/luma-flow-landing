@@ -46,7 +46,7 @@
   .hero3d .hero3d__stage{--lr:86px}
   .htech__hud{left:18px;right:18px;top:12px;font-size:10px}
   .htech__metrics span:not(:first-child){display:none}
-  .htech__code{padding:28px 18px;font-size:10px;columns:1}
+  .htech__code{padding:28px 18px;font-size:12px;columns:1}
   .htech__xray [data-tag]:before{font-size:9px}
 }
 @media(prefers-reduced-motion:reduce){.hero3d__screen:after{display:none}}

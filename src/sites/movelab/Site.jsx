@@ -8,7 +8,7 @@ import { CLASS_TYPES, COACHES, GOALS, GYM, IMAGES, NAV, PRICES, PROGRAMS, SCHEDU
 import './site.css';
 
 const FONTS = [
-  'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css',
+  'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css',
   'https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Anton&display=swap',
 ];
 const DAYS = ['월', '화', '수', '목', '금', '토'];

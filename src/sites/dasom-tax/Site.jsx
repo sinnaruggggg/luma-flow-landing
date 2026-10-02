@@ -10,7 +10,7 @@ import { ALL_PHOTO_KEYS, CHECKLISTS, DEADLINES, FEES, NAV, OFFICE, PHOTOS, READY
 import './site.css';
 
 const FONTS = [
-  'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css',
+  'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css',
   'https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&display=swap',
 ];
 

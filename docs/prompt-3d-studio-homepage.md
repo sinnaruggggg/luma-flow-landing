@@ -48,7 +48,7 @@ SCREEN_IMAGES = {{내 작업/샘플 사이트 첫 화면 캡처 12장, 1440×100
   --mono:'Courier New',monospace;
 }
 ```
-Pretendard 폰트는 `https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css`로 불러온다.
+Pretendard 폰트는 `https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css`로 불러온다.
 
 ### 규칙
 - **금지**: 둥근 모서리 카드, 장식용 그라데이션, 네온, 글래스모피즘 남용, 커스텀 커서
