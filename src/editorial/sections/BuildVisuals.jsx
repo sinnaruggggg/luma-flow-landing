@@ -5,7 +5,7 @@ import './build-visuals.css';
 // 품질 기준 섹션: 이 사이트를 실제로 잰 Lighthouse 점수. 화면에 들어오면 원이 차오르고 숫자가 올라갑니다.
 // 다시 측정하면 아래 숫자와 날짜를 고쳐 주세요. (측정: Lighthouse 12, 데스크톱 기준)
 const MEASURED = '2026.10.02';
-const SCORES = [['성능', 91], ['접근성', 100], ['권장사항', 100], ['검색 최적화', 100]];
+const SCORES = [['성능', 95], ['접근성', 100], ['권장사항', 100], ['검색 최적화', 100]];
 
 export function ScoreGauges() {
   const ref = useRef(null);
