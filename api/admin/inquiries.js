@@ -32,7 +32,8 @@ export default async function handler(req, res) {
       const updated = await updateInquiryRecord(id, patch);
       if (!updated) return sendJson(res, 404, { message: "문의를 찾을 수 없습니다." });
       return sendJson(res, 200, { inquiry: updated });
-    } catch {
+    } catch (error) {
+      console.error("[admin/inquiries PATCH]", error);
       return sendJson(res, 500, { message: "문의를 수정하지 못했습니다." });
     }
   }
@@ -44,7 +45,8 @@ export default async function handler(req, res) {
       const deleted = await deleteInquiryRecord(id);
       if (!deleted) return sendJson(res, 404, { message: "문의를 찾을 수 없습니다." });
       return sendJson(res, 200, { ok: true, id });
-    } catch {
+    } catch (error) {
+      console.error("[admin/inquiries DELETE]", error);
       return sendJson(res, 500, { message: "문의를 지우지 못했습니다." });
     }
   }
@@ -66,7 +68,8 @@ export default async function handler(req, res) {
       storage: getStorageMeta(),
       admin: { username: session.sub },
     });
-  } catch {
+  } catch (error) {
+    console.error("[admin/inquiries GET]", error);
     return sendJson(res, 500, { message: "문의 내역을 불러오지 못했습니다." });
   }
 }

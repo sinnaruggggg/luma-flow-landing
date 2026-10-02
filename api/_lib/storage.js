@@ -102,7 +102,8 @@ async function writeFileInquiryRecords(records) {
 }
 
 async function readBlobInquiryState() {
-  const result = await get(getBlobPathname(), { access: BLOB_ACCESS });
+  // 저장 직전에 읽는 값이므로 CDN 캐시를 거치지 않고 최신 내용을 읽습니다.
+  const result = await get(getBlobPathname(), { access: BLOB_ACCESS, useCache: false });
 
   if (!result || result.statusCode !== 200 || !result.stream) {
     return { records: [], etag: null };
@@ -113,7 +114,9 @@ async function readBlobInquiryState() {
 
   return {
     records: Array.isArray(parsed) ? parsed : [],
-    etag: result.blob.etag ?? null,
+    // 파일이 1KB를 넘으면 압축 전송되며 ETag가 약한 형태(W/"...")로 오는데,
+    // 조건부 저장(ifMatch)은 강한 형태("...")만 받으므로 앞의 W/ 를 떼어 냅니다.
+    etag: result.blob.etag ? result.blob.etag.replace(/^W\//, "") : null,
   };
 }
 

@@ -69,7 +69,8 @@ export default async function handler(req, res) {
       id: record.id,
       message: "문의가 접수되었습니다.",
     });
-  } catch {
+  } catch (error) {
+    console.error("[inquiries POST]", error);
     return sendJson(res, 500, { message: "문의 저장 중 오류가 발생했습니다." });
   }
 }
