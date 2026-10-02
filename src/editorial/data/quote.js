@@ -2,14 +2,18 @@
 // 금액은 가격표(라이트 27 / 스타터 54 / 스탠다드 90 / 프리미엄 150 만원부터)와 맞춘 대략값이며, 실제 견적은 상담 후 확정합니다.
 // 금액·설명을 바꿀 때는 이 파일만 고치면 됩니다. (scripts/quote.test.mjs 가 가격표와 맞는지 확인)
 
+// 가격 원칙: 기본 구성 가격 = 페이지·디자인 범위 + 포함 기능.
+// 페이지·디자인 범위는 라이트 27 < 스타터 54 < 스탠다드 72(=90-18) < 프리미엄 102(=150-48) 순으로 커져야 합니다.
+// 그래야 같은 기능을 골랐을 때 큰 구성이 항상 더 비쌉니다. (scripts/quote.test.mjs 가 확인)
+
 // 모든 구성에 기본으로 들어가는 것 (계산기에 "기본 포함"으로 표시)
 export const BASIC_INCLUDED = Object.freeze(['PC·모바일 반응형', '보안 연결(HTTPS)', '문의 폼', '지도·오시는 길', '카카오톡 상담 버튼', '검색 등록(네이버·구글)']);
 
 export const BASES = Object.freeze([
   { id: 'landing', label: '랜딩 1페이지', price: 27, weeks: '1~2주', plan: '라이트', desc: '한 페이지에 핵심만 담아 문의로 연결해요.', forWho: '이벤트·신규 서비스·개인 브랜드', includes: [] },
   { id: 'intro', label: '소개형 3~5페이지', price: 54, weeks: '2~3주', plan: '스타터', desc: '소개·서비스·오시는 길·문의를 나눠 보여 줘요.', forWho: '카페·병원·학원·소규모 사업장', includes: [] },
-  { id: 'brand', label: '기업·브랜드 5~10페이지', price: 90, weeks: '4~6주', plan: '스탠다드', desc: '브랜드 이야기, 소식·채용까지 담고 직접 관리해요.', forWho: '기업·스타트업·기관', includes: ['admin', 'motion', 'analytics'] },
-  { id: 'platform', label: '기능형 플랫폼', price: 150, weeks: '6주~', plan: '프리미엄', desc: '예약·결제·회원이 핵심인 서비스를 만들어요.', forWho: '예약 서비스·회원제·플랫폼', includes: ['admin', 'motion', 'analytics', 'booking', 'payment', 'member'] },
+  { id: 'brand', label: '기업·브랜드 5~10페이지', price: 90, weeks: '4~6주', plan: '스탠다드', desc: '브랜드 이야기, 소식·채용까지 담고 게시판으로 직접 관리해요.', forWho: '기업·스타트업·기관', includes: ['admin'] },
+  { id: 'platform', label: '기능형 플랫폼', price: 150, weeks: '6주~', plan: '프리미엄', desc: '회원·관리자 기반의 서비스 구조를 만들어요. 예약·결제는 골라 더해요.', forWho: '예약 서비스·회원제·플랫폼', includes: ['admin', 'member', 'analytics'] },
 ]);
 
 export const CATEGORIES = Object.freeze([

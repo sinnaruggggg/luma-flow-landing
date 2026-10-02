@@ -98,7 +98,7 @@ export const PRICING_PLANS = Object.freeze([
     for: '스타트업 · 브랜드 · 기업',
     price: '90',
     period: '4~6주',
-    items: ['5~10페이지 맞춤 디자인', '관리자 페이지(게시판)', '인터랙션·모션', '웹 접근성 점검'],
+    items: ['5~10페이지 맞춤 디자인', '관리자 페이지(게시판)', '기본 인터랙션·모션', '웹 접근성 점검'],
     featured: true,
   },
   {
@@ -106,7 +106,7 @@ export const PRICING_PLANS = Object.freeze([
     for: '기능 개발 · 플랫폼',
     price: '150',
     period: '6주~',
-    items: ['예약·결제·회원 기능', '외부 API·데이터 연동', '3D·고급 인터랙션', '확장형 설계'],
+    items: ['회원·로그인·관리자', '외부 API·데이터 연동', '방문 통계·확장형 설계', '예약·결제는 선택 추가'],
   },
 ]);
 
