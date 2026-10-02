@@ -5,6 +5,7 @@ import { MenuDrawer } from '../_kit/MenuDrawer.jsx';
 import { siteImage } from '../_kit/media.js';
 import { useFonts, useMockForm, useReveal, useScrolled } from '../_kit/hooks.js';
 import { CLASS_TYPES, COACHES, GOALS, GYM, IMAGES, NAV, PRICES, PROGRAMS, SCHEDULE, SLOTS, WORDS } from './content.js';
+import { Routine } from './Routine.jsx';
 import './site.css';
 
 const FONTS = [
@@ -23,6 +24,37 @@ function useScrollVar(ref) {
     const update = () => { frame = 0; el.style.setProperty('--sy', String(Math.round(window.scrollY))); };
     const onScroll = () => { if (!frame) frame = requestAnimationFrame(update); };
     update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => { cancelAnimationFrame(frame); window.removeEventListener('scroll', onScroll); };
+  }, [ref]);
+}
+
+// 스크롤 속도를 --vel(-1~1)로 넘깁니다. 빨리 내릴수록 큰 글자가 기울고 늘어났다가, 멈추면 천천히 돌아옵니다.
+function useKinetic(ref) {
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
+    let lastY = window.scrollY;
+    let lastT = performance.now();
+    let vel = 0;
+    let target = 0;
+    let frame = 0;
+    const loop = () => {
+      vel += (target - vel) * 0.18;
+      target *= 0.86;
+      el.style.setProperty('--vel', vel.toFixed(3));
+      frame = Math.abs(vel) > 0.004 || Math.abs(target) > 0.004 ? requestAnimationFrame(loop) : 0;
+      if (!frame) el.style.setProperty('--vel', '0');
+    };
+    const onScroll = () => {
+      const now = performance.now();
+      const dy = window.scrollY - lastY;
+      const dt = Math.max(16, now - lastT);
+      lastY = window.scrollY;
+      lastT = now;
+      target = Math.max(-1, Math.min(1, dy / dt / 3));
+      if (!frame) frame = requestAnimationFrame(loop);
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => { cancelAnimationFrame(frame); window.removeEventListener('scroll', onScroll); };
   }, [ref]);
@@ -158,6 +190,7 @@ export default function Site() {
   const root = useReveal([]);
   const strip = useRef(null);
   useScrollVar(strip);
+  useKinetic(root);
   return (
     <div className="ml" ref={root} id="top">
       <Header />
@@ -256,6 +289,8 @@ export default function Site() {
             <p className="ml-fine">부가세 포함 · 3개월 이상 등록 시 개인 락커 무료 · 환불은 체육시설법 기준에 따릅니다.</p>
           </div>
         </section>
+
+        <Routine />
 
         <Trial />
       </main>

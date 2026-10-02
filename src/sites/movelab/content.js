@@ -72,3 +72,16 @@ export const PRICES = Object.freeze([
 
 export const GOALS = Object.freeze(['체중 감량', '근력 향상', '체형 교정', '체력 회복']);
 export const SLOTS = Object.freeze(['새벽 (06–09시)', '점심 (11–14시)', '저녁 (18–23시)', '주말']);
+
+// "30초 따라 하기" 미니 루틴 (Routine.jsx). [동작 이름, 영문, 설명, 초]
+export const ROUTINE = Object.freeze({
+  kicker: 'TRY IT · 30 SEC',
+  title: '지금 30초만 따라 해 보세요',
+  lead: '무브랩 첫 수업의 워밍업을 그대로 옮겼어요. 시작을 누르면 10초마다 동작이 바뀝니다.',
+  moves: [
+    ['점핑잭', 'JUMPING JACK', '팔과 다리를 크게 벌렸다가 모아요.', 10],
+    ['에어 스쿼트', 'AIR SQUAT', '엉덩이를 뒤로 빼며 앉았다 일어나요.', 10],
+    ['플랭크', 'PLANK', '팔꿈치로 버티며 머리부터 발끝까지 일자로.', 10],
+  ],
+  done: '30초 완료! 이 느낌 그대로, 진짜 수업은 무료 체험으로.',
+});

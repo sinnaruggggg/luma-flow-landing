@@ -231,3 +231,53 @@ html:has(.fd){scroll-behavior:smooth;scroll-padding-top:80px;background:#08090e}
   .fd-teams__track{animation:none;flex-wrap:wrap;justify-content:center;width:auto}
   .fd-teams__track span[aria-hidden=true]{display:none}
 }
+
+/* ---------- 대표 장면: 흩어진 요청 → 하나의 보드 (Converge.jsx) ---------- */
+.fd-converge{--p:0;position:relative;height:260vh}
+.fd-converge__sticky{position:sticky;top:0;display:flex;align-items:center;height:100vh;height:100svh;padding-top:64px;overflow:hidden}
+.fd-converge__sticky{justify-content:center}
+.fd-converge__head{display:grid;justify-items:center;gap:10px;text-align:center}
+.fd-converge__head h2{display:grid;font-size:clamp(28px,4.4vw,56px);font-weight:800;line-height:1.12;letter-spacing:-.04em}
+.fd-converge__head h2>span{grid-area:1/1}
+.fd-converge__before{color:var(--muted);opacity:clamp(0,calc(1 - (var(--p) - .32) * 5),1);transform:translateY(calc(clamp(0,(var(--p) - .32) * 5,1) * -16px))}
+.fd-converge__after{background:linear-gradient(90deg,#fff,var(--violet-2) 60%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent;opacity:clamp(0,calc((var(--p) - .42) * 5),1);transform:translateY(calc((1 - clamp(0,(var(--p) - .42) * 5,1)) * 16px))}
+.fd-converge__count{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.fd-converge__count b{color:var(--cyan);font-weight:500}
+.fd-converge__stage{position:relative;height:min(470px,56vh);margin-top:clamp(20px,3vh,36px)}
+.fd-converge__board{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;opacity:clamp(.15,calc(var(--p) * 2.4 - .25),1)}
+.fd-converge__board>div{position:relative;margin:0 6px;border:1px dashed var(--line-2);border-radius:16px;background:rgba(255,255,255,.015)}
+.fd-converge__board span{position:absolute;left:16px;top:12px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.fd-converge__items{position:absolute;inset:0;margin:0;padding:0;list-style:none}
+.fd-req{position:absolute;left:0;top:0;width:min(260px,30%);padding:12px 14px;border:1px solid var(--line-2);border-radius:18px 18px 18px 4px;background:var(--surface-2);box-shadow:0 18px 40px -18px rgba(0,0,0,.8);will-change:transform;transition:border-radius .45s,background .45s,border-color .45s,box-shadow .45s}
+.fd-req p{margin:4px 0 0;font-size:14px;font-weight:600;line-height:1.45}
+.fd-req__source{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:var(--src,#fff);transition:opacity .3s}
+.fd-req--chat{--src:#ffd84d}
+.fd-req--mail{--src:var(--cyan)}
+.fd-req--sheet{--src:#3ddc97}
+.fd-req--phone{--src:#ff9f5a}
+.fd-req__meta{display:flex;align-items:center;gap:6px;max-height:0;margin-top:0;overflow:hidden;opacity:0;font-size:11px;transition:max-height .4s,opacity .4s,margin .4s}
+.fd-req__meta em{padding:1px 7px;border-radius:999px;background:rgba(255,107,138,.16);color:var(--danger);font-style:normal;font-weight:700}
+.fd-req__meta b{padding:1px 7px;border-radius:999px;background:rgba(124,92,255,.18);color:var(--violet-2)}
+.fd-req__meta i{margin-left:auto;font-style:normal;color:var(--muted)}
+.fd-req[data-card]{border-color:rgba(124,92,255,.55);border-radius:12px;background:var(--surface);box-shadow:0 12px 30px -16px rgba(124,92,255,.6),inset 3px 0 0 var(--violet)}
+.fd-req[data-card] .fd-req__source{opacity:.5}
+.fd-req[data-card] .fd-req__meta{max-height:24px;margin-top:8px;opacity:1}
+
+/* 카드 위 커서 빛 (Site.jsx 의 useGlow) */
+.fd-plan,.fd-feature,.fd-steps li,.fd-security li{background-image:radial-gradient(420px circle at var(--gx,-999px) var(--gy,-999px),rgba(124,92,255,.14),transparent 60%)}
+
+@media(max-width:760px){
+  .fd-converge{height:240vh}
+  .fd-converge__stage{height:min(520px,62vh)}
+  .fd-req{width:31%;padding:8px 8px;border-radius:12px 12px 12px 3px}
+  .fd-req p{font-size:11px}
+  .fd-req__source{font-size:9px}
+  .fd-req__meta{font-size:9px}
+  .fd-req__meta i{display:none}
+  .fd-converge__board span{left:8px;font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){
+  .fd-converge{height:auto}
+  .fd-converge__sticky{position:relative;height:auto;padding:80px 0}
+  .fd-req{transition:none}
+}

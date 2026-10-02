@@ -1,9 +1,10 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { ArrowRight, CalendarDays, Check, FileText, HardDrive, History, Lock, Mail, Menu, MessageSquare, Server, ShieldCheck, Sparkles, Webhook, X, Zap } from 'lucide-react';
 import { usePageTitle } from '../_kit/siteContext.js';
 import { MenuDrawer } from '../_kit/MenuDrawer.jsx';
 import { useFonts, useMockForm, useReveal, useScrolled } from '../_kit/hooks.js';
 import { BOARD, FAQS, FEATURES, INTEGRATIONS, NAV, PLANS, PRODUCT, SECURITY, STEPS, TEAMS } from './content.js';
+import { Converge } from './Converge.jsx';
 import './site.css';
 
 const FONTS = [
@@ -12,6 +13,23 @@ const FONTS = [
 ];
 const ICONS = { Mail, CalendarDays, MessageSquare, HardDrive, FileText, Webhook, Lock, ShieldCheck, History, Server };
 const won = (value) => value.toLocaleString('ko-KR');
+
+// 카드 위에서 커서를 따라다니는 은은한 빛 (마우스 환경에서만)
+function useGlow(root) {
+  useEffect(() => {
+    const el = root.current;
+    if (!el || !window.matchMedia('(pointer: fine)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
+    const onMove = (event) => {
+      const card = event.target.closest?.('.fd-plan,.fd-feature,.fd-steps li,.fd-security li');
+      if (!card) return;
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--gx', `${event.clientX - rect.left}px`);
+      card.style.setProperty('--gy', `${event.clientY - rect.top}px`);
+    };
+    el.addEventListener('pointermove', onMove, { passive: true });
+    return () => el.removeEventListener('pointermove', onMove);
+  }, [root]);
+}
 
 function Logo() {
   return <a href="#top" className="fd-logo" aria-label="FlowDeck 처음으로"><span aria-hidden="true"><i /><i /><i /></span>FlowDeck</a>;
@@ -191,6 +209,7 @@ export default function Site() {
   useFonts(FONTS);
   usePageTitle(`${PRODUCT.name} — ${PRODUCT.tagline}`);
   const root = useReveal([]);
+  useGlow(root);
   return (
     <div className="fd" ref={root} id="top">
       <Header />
@@ -211,6 +230,8 @@ export default function Site() {
           <p>요청이 많은 모든 팀을 위해</p>
           <div className="fd-teams__track">{[...TEAMS, ...TEAMS].map((team, index) => <span key={`${team}-${index}`} aria-hidden={index >= TEAMS.length}>{team}</span>)}</div>
         </section>
+
+        <Converge />
 
         <section className="fd-section fd-compare" aria-labelledby="fd-compare-title">
           <div className="fd-wrap">

@@ -64,3 +64,20 @@ export const OPTIONS = Object.freeze([
 ]);
 
 export const EXTRA_GUEST = 30000; // 기준 인원 초과 1인 1박
+
+// 낮·밤 전환 (Site.jsx 의 TimeToggle). 첫 화면 문구가 시간에 따라 바뀝니다.
+export const HERO_COPY = Object.freeze({
+  night: ['머무는 동안,', '아무것도 하지', '않아도 되는 곳.'],
+  day: ['아침 햇살이', '먼저 깨워 주는', '바다 앞의 방.'],
+});
+
+// "여백의 장면" 끌어서 넘기는 갤러리. [사진 키(PHOTOS), 설명]
+export const SCENES = Object.freeze([
+  ['hero', '해 질 녘, 블루아워의 스테이'],
+  ['bath', '파도 소리를 듣는 노천탕'],
+  ['roomDark', '통창 너머 저녁 바다'],
+  ['details', '빛이 머무는 돌 세면대'],
+  ['breakfast', '원목 트레이에 차린 아침'],
+  ['soop1', '숲 쪽으로 열린 방'],
+  ['dal2', '달빛이 드는 마당'],
+]);

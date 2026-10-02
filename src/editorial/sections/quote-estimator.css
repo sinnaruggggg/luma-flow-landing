@@ -18,12 +18,12 @@
 .quote__mode-text b{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:17px;font-weight:800;letter-spacing:-.03em;word-break:keep-all}
 .quote__mode-text b em{padding:1px 6px;background:var(--acc-strong);color:#fff;font-size:11px;font-style:normal;font-weight:800}
 .quote__mode-text span{font-size:13px;line-height:1.5;opacity:.75;word-break:keep-all}
-.quote__mode-time{grid-column:2;justify-self:start;font-family:var(--mono);font-size:11px;opacity:.6}
+.quote__mode-time{grid-column:2;justify-self:start;font-family:var(--mono);font-size:11px;opacity:.85}
 .quote__mode.is-on{border-color:var(--ink);background:var(--ink);color:#f5f5f2;box-shadow:0 24px 40px -28px rgba(23,32,35,.8)}
 .quote__mode.is-on .quote__mode-icon{background:var(--acc-strong);color:#fff}
 .quote__mode.is-on:after{content:'';position:absolute;left:50%;bottom:-9px;width:16px;height:16px;margin-left:-8px;background:var(--ink);transform:rotate(45deg)}
 .quote__switch{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 10px;margin-top:18px;font-size:14px;color:var(--muted)}
-.quote__switch button{min-height:44px;padding:0 4px;border:0;background:none;color:var(--acc-strong);font-weight:800;text-decoration:underline;text-underline-offset:4px}
+.quote__switch button{min-height:44px;padding:0 4px;border:0;background:none;color:#a3331d;font-weight:800;text-decoration:underline;text-underline-offset:4px}
 
 /* ---------- 1분 질문 ---------- */
 .qw{padding:clamp(24px,3vw,44px);border:1px solid var(--ink);background:#fff}

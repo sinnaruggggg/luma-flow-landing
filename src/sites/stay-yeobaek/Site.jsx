@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { ArrowRight, Menu, X } from 'lucide-react';
 import { usePageTitle, useSite } from '../_kit/siteContext.js';
 import { Link } from '../_kit/SiteProvider.jsx';
@@ -6,7 +6,7 @@ import { MenuDrawer } from '../_kit/MenuDrawer.jsx';
 import { PhotoCredits } from '../_kit/SampleBadge.jsx';
 import { resolvePhoto } from '../_kit/media.js';
 import { useFonts, useReveal, useScrolled } from '../_kit/hooks.js';
-import { ALL_PHOTO_KEYS, EXPERIENCES, NAV, PHOTOS, ROOMS, STAY } from './content.js';
+import { ALL_PHOTO_KEYS, EXPERIENCES, NAV, PHOTOS, ROOMS, STAY, HERO_COPY, SCENES } from './content.js';
 import { Booking } from './Booking.jsx';
 import './site.css';
 
@@ -21,7 +21,7 @@ function Photo({ name, className = '', eager = false }) {
   return <img className={className} src={src} alt={alt} loading={eager ? 'eager' : 'lazy'} decoding="async" />;
 }
 
-function Header({ overHero }) {
+function Header({ overHero, time, onTime }) {
   const scrolled = useScrolled(60);
   const [open, setOpen] = useState(false);
   const close = useCallback(() => setOpen(false), []);
@@ -30,6 +30,9 @@ function Header({ overHero }) {
       <div className="sy-wrap sy-header__inner">
         <Link to="" className="sy-logo" aria-label={`${STAY.name} 홈`}><span>여백</span><small>{STAY.english}</small></Link>
         <nav className="sy-nav" aria-label="주 메뉴">{NAV.slice(1).map(([to, label]) => <Link key={to} to={to}>{label}</Link>)}</nav>
+        <button type="button" className="sy-time" aria-pressed={time === 'day'} onClick={onTime} aria-label={time === 'day' ? '밤 분위기로 보기' : '아침 분위기로 보기'}>
+          <span className={time === 'night' ? 'is-on' : ''}>☾ 밤</span><span className={time === 'day' ? 'is-on' : ''}>☀ 아침</span>
+        </button>
         <button type="button" className="sy-burger" aria-label="메뉴 열기" aria-expanded={open} onClick={() => setOpen(true)}><Menu aria-hidden="true" /></button>
       </div>
       <MenuDrawer open={open} onClose={close} className="sy-drawer">
@@ -70,19 +73,94 @@ function RoomRow({ room, index }) {
   );
 }
 
+// 대표 장면: 처음엔 창문만 한 사진이 "여 · 백" 사이에 걸려 있다가, 스크롤하면 화면 가득 열립니다.
+function OpeningHero() {
+  const ref = useRef(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return undefined;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { el.style.setProperty('--o', '1'); return undefined; }
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const total = Math.max(1, el.offsetHeight - window.innerHeight);
+      const o = Math.min(1, Math.max(0, -el.getBoundingClientRect().top / (total * 0.8)));
+      el.style.setProperty('--o', (1 - Math.pow(1 - o, 2)).toFixed(3));
+    };
+    const onScroll = () => { if (!frame) frame = requestAnimationFrame(update); };
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => { cancelAnimationFrame(frame); window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', onScroll); };
+  }, []);
+  return (
+    <section className="sy-open" ref={ref}>
+      <div className="sy-hero">
+        <Photo name="hero" className="sy-hero__img" eager />
+        <div className="sy-hero__shade" />
+        <span className="sy-open__char sy-open__char--l" aria-hidden="true">여</span>
+        <span className="sy-open__char sy-open__char--r" aria-hidden="true">백</span>
+        <div className="sy-wrap sy-hero__text">
+          <p className="sy-eyebrow">{STAY.place}</p>
+          <h1>
+            <span className="sy-time-night">{HERO_COPY.night.map((line, i) => <span key={line}>{line}{i < HERO_COPY.night.length - 1 ? <br /> : null}</span>)}</span>
+            <span className="sy-time-day">{HERO_COPY.day.map((line, i) => <span key={line}>{line}{i < HERO_COPY.day.length - 1 ? <br /> : null}</span>)}</span>
+          </h1>
+          <Link to="booking" className="sy-btn">예약하기</Link>
+        </div>
+        <p className="sy-open__hint" aria-hidden="true">SCROLL TO OPEN</p>
+      </div>
+    </section>
+  );
+}
+
+// 끌어서(또는 화살표로) 넘기는 "여백의 장면" 사진 띠
+function SceneGallery() {
+  const track = useRef(null);
+  const drag = useRef(null);
+  const onDown = (event) => {
+    if (event.pointerType !== 'mouse') return;
+    drag.current = { x: event.clientX, left: track.current.scrollLeft, moved: false };
+    track.current.setPointerCapture(event.pointerId);
+    track.current.classList.add('is-dragging');
+  };
+  const onMove = (event) => {
+    if (!drag.current) return;
+    const dx = event.clientX - drag.current.x;
+    if (Math.abs(dx) > 4) drag.current.moved = true;
+    track.current.scrollLeft = drag.current.left - dx;
+  };
+  const onUp = () => { drag.current = null; track.current?.classList.remove('is-dragging'); };
+  const step = (dir) => {
+    const card = track.current?.querySelector('li');
+    track.current?.scrollBy({ left: dir * ((card?.offsetWidth ?? 400) + 24), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  };
+  return (
+    <section className="sy-section sy-scenes" aria-labelledby="sy-scenes-title">
+      <div className="sy-wrap sy-scenes__head">
+        <div className="sy-head" data-reveal><p className="sy-eyebrow">SCENES</p><h2 id="sy-scenes-title">여백의 장면</h2></div>
+        <div className="sy-scenes__nav">
+          <span aria-hidden="true">끌어서 넘겨 보세요</span>
+          <button type="button" aria-label="이전 장면" onClick={() => step(-1)}>←</button>
+          <button type="button" aria-label="다음 장면" onClick={() => step(1)}>→</button>
+        </div>
+      </div>
+      <ul className="sy-scenes__track" ref={track} onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={onUp}>
+        {SCENES.map(([key, caption], index) => (
+          <li key={key}>
+            <Photo name={key} />
+            <p><span>{String(index + 1).padStart(2, '0')}</span>{caption}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 function HomePage() {
   return (
     <>
-      <section className="sy-hero">
-        <Photo name="hero" className="sy-hero__img" eager />
-        <div className="sy-hero__shade" />
-        <div className="sy-wrap sy-hero__text">
-          <p className="sy-eyebrow">{STAY.place}</p>
-          <h1>머무는 동안,<br />아무것도 하지<br />않아도 되는 곳.</h1>
-          <Link to="booking" className="sy-btn">예약하기</Link>
-        </div>
-        <p className="sy-hero__scroll" aria-hidden="true">SCROLL</p>
-      </section>
+      <OpeningHero />
 
       <section className="sy-section sy-intro">
         <div className="sy-wrap">
@@ -112,6 +190,8 @@ function HomePage() {
           </ol>
         </div>
       </section>
+
+      <SceneGallery />
 
       <section className="sy-closing">
         <Photo name="bath" className="sy-closing__img sy-parallax" />
@@ -211,9 +291,11 @@ export default function Site() {
   const { Page, props, title, hero } = resolvePage(page);
   usePageTitle(title);
   const root = useReveal([page]);
+  // 낮·밤 전환: 사이트 전체 색과 첫 화면 문구가 아침/밤 분위기로 바뀝니다.
+  const [time, setTime] = useState('night');
   return (
-    <div className="sy" ref={root}>
-      <Header overHero={hero} />
+    <div className="sy" ref={root} data-time={time}>
+      <Header overHero={hero} time={time} onTime={() => setTime((value) => (value === 'night' ? 'day' : 'night'))} />
       <main id="site-main" tabIndex={-1}><Page key={page} {...props} /></main>
       <Footer />
     </div>
