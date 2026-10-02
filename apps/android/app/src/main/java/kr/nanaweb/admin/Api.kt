@@ -53,6 +53,11 @@ object Api {
         return InquiryList(items, counts)
     }
 
+    // 문의 한 건 삭제 (웹 관리자와 같은 API)
+    suspend fun delete(token: String, id: String) {
+        request("DELETE", "/api/admin/inquiries?id=" + URLEncoder.encode(id, "UTF-8"), token, null)
+    }
+
     suspend fun update(token: String, id: String, status: String? = null, memo: String? = null): Inquiry {
         val body = JSONObject().put("id", id)
         if (status != null) body.put("status", status)

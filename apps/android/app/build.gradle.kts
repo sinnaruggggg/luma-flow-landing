@@ -12,8 +12,8 @@ android {
         applicationId = "kr.nanaweb.admin"
         minSdk = 26
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = 2
+        versionName = "1.1.0"
 
         // 서버 주소. 로컬 테스트 때만 -PnanawebBaseUrl=http://... 로 바꿉니다.
         val baseUrl = (project.findProperty("nanawebBaseUrl") as String?) ?: "https://nanaweb-nine.vercel.app"

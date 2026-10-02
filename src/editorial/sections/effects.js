@@ -163,6 +163,9 @@ export function useDecodeHeadings() {
   }, []);
 }
 
+// 글·카드·버튼·이미지 위에서는 격자를 숨겨 글이 어지럽게 보이지 않게 합니다. (빈 배경에서만 보임)
+const CONTENT_SELECTOR = 'p,h1,h2,h3,h4,h5,li,dt,dd,a,button,label,input,select,textarea,img,svg,figure,pre,table,summary,details,[role="tab"],[role="listitem"],.btn,.quote__calc,.qw,.services__preview,.spec__visual,.build,.wg__sticky,.agency-contact,.pricing,.scores,.audience>*';
+
 // 커서 위치를 화면 좌표(--mx/--my)와 페이지 좌표 글자로 넘깁니다. (커서 주변 격자용, 마우스 환경에서만)
 export function useCursorGrid(ref, tagRef) {
   useEffect(() => {
@@ -180,6 +183,7 @@ export function useCursorGrid(ref, tagRef) {
     const onMove = (event) => {
       x = event.clientX;
       y = event.clientY;
+      el.toggleAttribute('data-over-content', Boolean(event.target.closest?.(CONTENT_SELECTOR)));
       if (!frame) frame = requestAnimationFrame(paint);
     };
     window.addEventListener('pointermove', onMove, { passive: true });

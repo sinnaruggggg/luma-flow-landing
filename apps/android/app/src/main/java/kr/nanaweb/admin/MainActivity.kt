@@ -46,6 +46,7 @@ import androidx.compose.material.icons.automirrored.filled.ExitToApp
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -57,6 +58,7 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -269,12 +271,12 @@ private fun InboxScreen(token: String, prefs: Prefs, openId: String?, onOpened: 
             onBack = { selectedId = null },
             onSaved = { updated ->
                 items = items.map { if (it.id == updated.id) updated else it }
-                counts = Counts(
-                    total = items.size,
-                    new = items.count { it.status == "new" },
-                    progress = items.count { it.status == "progress" },
-                    done = items.count { it.status == "done" },
-                )
+                counts = recount(items)
+            },
+            onDeleted = { id ->
+                items = items.filter { it.id != id }
+                counts = recount(items)
+                selectedId = null
             },
         )
         return
@@ -336,7 +338,8 @@ private fun InboxScreen(token: String, prefs: Prefs, openId: String?, onOpened: 
 }
 
 @Composable
-private fun DetailScreen(item: Inquiry, token: String, onBack: () -> Unit, onSaved: (Inquiry) -> Unit) {
+private fun DetailScreen(item: Inquiry, token: String, onBack: () -> Unit, onSaved: (Inquiry) -> Unit, onDeleted: (String) -> Unit) {
+    var askDelete by remember { mutableStateOf(false) }
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
     var memo by remember(item.id) { mutableStateOf(item.memo) }
@@ -414,7 +417,40 @@ private fun DetailScreen(item: Inquiry, token: String, onBack: () -> Unit, onSav
             enabled = saving.isEmpty() && memo != item.memo,
             shape = RoundedCornerShape(10.dp),
         ) { Text(if (saving == "memo") "저장 중…" else "메모 저장", fontWeight = FontWeight.Bold) }
+        HorizontalDivider(color = Line)
+        Text("고객이 삭제를 요청했거나 스팸·테스트 문의일 때 지웁니다. 접수 후 1년이 지난 문의는 자동으로 삭제됩니다.", color = Muted, fontSize = 13.sp)
+        OutlinedButton(
+            onClick = { askDelete = true },
+            enabled = saving.isEmpty(),
+            shape = RoundedCornerShape(10.dp),
+            colors = ButtonDefaults.outlinedButtonColors(contentColor = Color(0xFFC43E25)),
+        ) { Text(if (saving == "delete") "삭제 중…" else "이 문의 삭제", fontWeight = FontWeight.Bold) }
         Spacer(Modifier.height(24.dp))
+    }
+
+    if (askDelete) {
+        AlertDialog(
+            onDismissRequest = { askDelete = false },
+            title = { Text("문의를 삭제할까요?") },
+            text = { Text("${item.contactName}님의 문의를 삭제합니다. 삭제하면 되돌릴 수 없습니다.") },
+            confirmButton = {
+                TextButton(onClick = {
+                    askDelete = false
+                    saving = "delete"
+                    scope.launch {
+                        try {
+                            Api.delete(token, item.id)
+                            Toast.makeText(context, "삭제했습니다.", Toast.LENGTH_SHORT).show()
+                            onDeleted(item.id)
+                        } catch (e: ApiException) {
+                            Toast.makeText(context, e.message, Toast.LENGTH_LONG).show()
+                            saving = ""
+                        }
+                    }
+                }) { Text("삭제", color = Color(0xFFC43E25), fontWeight = FontWeight.Bold) }
+            },
+            dismissButton = { TextButton(onClick = { askDelete = false }) { Text("취소") } },
+        )
     }
 }
 
@@ -425,6 +461,13 @@ private fun Field(label: String, value: String) {
         Text(value)
     }
 }
+
+private fun recount(items: List<Inquiry>) = Counts(
+    total = items.size,
+    new = items.count { it.status == "new" },
+    progress = items.count { it.status == "progress" },
+    done = items.count { it.status == "done" },
+)
 
 private val timeFormat = DateTimeFormatter.ofPattern("M월 d일 a h:mm", Locale.KOREA)
 

@@ -14,6 +14,7 @@
 /* 커서 주변에만 보이는 격자 */
 .cursor-grid{position:fixed;inset:0;z-index:8;opacity:0;pointer-events:none;mix-blend-mode:difference;background-image:linear-gradient(rgba(255,255,255,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.16) 1px,transparent 1px);background-size:40px 40px;-webkit-mask-image:radial-gradient(circle 190px at var(--mx,-999px) var(--my,-999px),#000,transparent 100%);mask-image:radial-gradient(circle 190px at var(--mx,-999px) var(--my,-999px),#000,transparent 100%);transition:opacity .5s ease}
 .cursor-grid.is-on{opacity:1}
+.cursor-grid.is-on[data-over-content]{opacity:0;transition-duration:.2s}
 .cursor-grid__tag{position:absolute;left:0;top:0;transform:translate(calc(var(--mx,-999px) + 18px),calc(var(--my,-999px) + 18px));color:#fff;font-family:ui-monospace,Consolas,monospace;font-size:10px;letter-spacing:.06em;white-space:pre;opacity:.75}
 
 @media(min-width:1180px) and (pointer:fine){.site-hud{display:block}}

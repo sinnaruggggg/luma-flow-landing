@@ -1,13 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, lazy, startTransition, useEffect, useRef, useState } from 'react';
 import { stripBasePath, withBasePath } from '../lib/appPaths.js';
 import { PROJECTS, parseFilters, filterProjects, recommendProjects, labelFor } from './data/projects.js';
 import { ProjectGrid } from './components/ProjectGrid.jsx';
-import { ProjectFinderCTA } from './components/ProjectFinderCTA.jsx';
 import { FilterPanel } from './components/FilterPanel.jsx';
 import { Hero3D } from './hero/Hero3D.jsx';
-import { SiteHud } from './sections/SiteHud.jsx';
-import { QuoteFab } from './sections/QuoteFab.jsx';
-import { Audience, CapabilityTicker, Faq, Pricing, Process, QualitySpec, Services, WorkSection } from './sections/HomeSections.jsx';
 import { useReveal } from './sections/useReveal.js';
 import { useMagnetic, usePageProgress } from './sections/effects.js';
 import { AGENCY_CONFIG } from './data/agencyConfig.js';
@@ -17,6 +13,9 @@ import './editorial.css';
 import './components/finder.css';
 import './agency-shell.css';
 import './studio-shell.css';
+
+// 히어로 아래 섹션들은 따로 불러와 첫 화면이 먼저 뜨게 합니다.
+const HomeBelow = lazy(() => import('./sections/HomeBelow.jsx'));
 
 const readLocation = () => ({ path: stripBasePath(location.pathname).replace(/\/$/, '') || '/', search: location.search });
 const GROUPS = ['budget', 'industry', 'style'];
@@ -81,19 +80,14 @@ function Footer() {
 
 function Home({ onOpen }) {
   useReveal();
+  const [below, setBelow] = useState(false);
+  // 첫 화면(히어로)을 먼저 그린 뒤, 아래 섹션은 다음 프레임부터 잘게 나눠 그립니다. (모바일 첫 반응 속도 개선)
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => startTransition(() => setBelow(true)));
+    return () => cancelAnimationFrame(frame);
+  }, []);
   return <><Hero3D />
-    <SiteHud />
-    <QuoteFab />
-    <CapabilityTicker />
-    <ProjectFinderCTA onOpen={onOpen} />
-    <WorkSection projects={PROJECTS.slice(0, 6)} />
-    <Services />
-    <Audience />
-    <QualitySpec />
-    <Process />
-    <Pricing />
-    <Faq />
-    <Contact /></>;
+    {below ? <Suspense fallback={null}><HomeBelow onOpen={onOpen} contact={<Contact />} /></Suspense> : null}</>;
 }
 
 function Results({ filters, onOpen }) {
