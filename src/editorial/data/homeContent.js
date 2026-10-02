@@ -82,21 +82,21 @@ export const PRICING_PLANS = Object.freeze([
   {
     name: '라이트',
     for: '개인 · 소상공인',
-    price: '45',
+    price: '27',
     period: '1~2주',
     items: ['1페이지 랜딩', '반응형 디자인', '문의 폼 연결', '기본 검색 최적화'],
   },
   {
     name: '스타터',
     for: '개인 · 소규모 · 비영리',
-    price: '90',
+    price: '54',
     period: '2~3주',
     items: ['3~5페이지 구성', '맞춤 디자인', '문의 폼·지도 연결', '기본 검색 최적화'],
   },
   {
     name: '스탠다드',
     for: '스타트업 · 브랜드 · 기업',
-    price: '150',
+    price: '90',
     period: '4~6주',
     items: ['5~10페이지 맞춤 디자인', '관리자 페이지(게시판)', '인터랙션·모션', '웹 접근성 점검'],
     featured: true,
@@ -104,7 +104,7 @@ export const PRICING_PLANS = Object.freeze([
   {
     name: '프리미엄',
     for: '기능 개발 · 플랫폼',
-    price: '250',
+    price: '150',
     period: '6주~',
     items: ['예약·결제·회원 기능', '외부 API·데이터 연동', '3D·고급 인터랙션', '확장형 설계'],
   },

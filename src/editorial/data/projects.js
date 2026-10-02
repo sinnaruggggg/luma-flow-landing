@@ -6,10 +6,10 @@ import { FORMATS, MOODS, READY_SITES } from '../../sites/catalog.js';
 
 export const OPTIONS = Object.freeze({
   budget: Object.freeze([
-    { value: 'light', label: '라이트 · 45만원부터' },
-    { value: 'starter', label: '스타터 · 90만원부터' },
-    { value: 'standard', label: '스탠다드 · 150만원부터' },
-    { value: 'premium', label: '프리미엄 · 250만원부터' },
+    { value: 'light', label: '라이트 · 27만원부터' },
+    { value: 'starter', label: '스타터 · 54만원부터' },
+    { value: 'standard', label: '스탠다드 · 90만원부터' },
+    { value: 'premium', label: '프리미엄 · 150만원부터' },
     { value: 'consult', label: '상담 후 결정' },
   ]),
   industry: Object.freeze([

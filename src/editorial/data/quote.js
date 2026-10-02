@@ -1,15 +1,15 @@
 // 홈 비용 섹션 "견적 계산기 + 간단 질문 추천"의 기준값과 계산 함수.
-// 금액은 가격표(라이트 45 / 스타터 90 / 스탠다드 150 / 프리미엄 250 만원부터)와 맞춘 대략값이며, 실제 견적은 상담 후 확정합니다.
+// 금액은 가격표(라이트 27 / 스타터 54 / 스탠다드 90 / 프리미엄 150 만원부터)와 맞춘 대략값이며, 실제 견적은 상담 후 확정합니다.
 // 금액·설명을 바꿀 때는 이 파일만 고치면 됩니다. (scripts/quote.test.mjs 가 가격표와 맞는지 확인)
 
 // 모든 구성에 기본으로 들어가는 것 (계산기에 "기본 포함"으로 표시)
 export const BASIC_INCLUDED = Object.freeze(['PC·모바일 반응형', '보안 연결(HTTPS)', '문의 폼', '지도·오시는 길', '카카오톡 상담 버튼', '검색 등록(네이버·구글)']);
 
 export const BASES = Object.freeze([
-  { id: 'landing', label: '랜딩 1페이지', price: 45, weeks: '1~2주', plan: '라이트', desc: '한 페이지에 핵심만 담아 문의로 연결해요.', forWho: '이벤트·신규 서비스·개인 브랜드', includes: [] },
-  { id: 'intro', label: '소개형 3~5페이지', price: 90, weeks: '2~3주', plan: '스타터', desc: '소개·서비스·오시는 길·문의를 나눠 보여 줘요.', forWho: '카페·병원·학원·소규모 사업장', includes: [] },
-  { id: 'brand', label: '기업·브랜드 5~10페이지', price: 150, weeks: '4~6주', plan: '스탠다드', desc: '브랜드 이야기, 소식·채용까지 담고 직접 관리해요.', forWho: '기업·스타트업·기관', includes: ['admin', 'motion', 'analytics'] },
-  { id: 'platform', label: '기능형 플랫폼', price: 250, weeks: '6주~', plan: '프리미엄', desc: '예약·결제·회원이 핵심인 서비스를 만들어요.', forWho: '예약 서비스·회원제·플랫폼', includes: ['admin', 'motion', 'analytics', 'booking', 'payment', 'member'] },
+  { id: 'landing', label: '랜딩 1페이지', price: 27, weeks: '1~2주', plan: '라이트', desc: '한 페이지에 핵심만 담아 문의로 연결해요.', forWho: '이벤트·신규 서비스·개인 브랜드', includes: [] },
+  { id: 'intro', label: '소개형 3~5페이지', price: 54, weeks: '2~3주', plan: '스타터', desc: '소개·서비스·오시는 길·문의를 나눠 보여 줘요.', forWho: '카페·병원·학원·소규모 사업장', includes: [] },
+  { id: 'brand', label: '기업·브랜드 5~10페이지', price: 90, weeks: '4~6주', plan: '스탠다드', desc: '브랜드 이야기, 소식·채용까지 담고 직접 관리해요.', forWho: '기업·스타트업·기관', includes: ['admin', 'motion', 'analytics'] },
+  { id: 'platform', label: '기능형 플랫폼', price: 150, weeks: '6주~', plan: '프리미엄', desc: '예약·결제·회원이 핵심인 서비스를 만들어요.', forWho: '예약 서비스·회원제·플랫폼', includes: ['admin', 'motion', 'analytics', 'booking', 'payment', 'member'] },
 ]);
 
 export const CATEGORIES = Object.freeze([
@@ -21,30 +21,30 @@ export const CATEGORIES = Object.freeze([
 
 // icon 은 SitePreview/QuoteIcon 에서 그림으로 바꿉니다. week 는 늘어나는 제작 기간(주).
 export const ADDONS = Object.freeze([
-  { id: 'alert', cat: 'connect', icon: 'bell', label: '문의 알림 (카톡·문자)', desc: '문의가 오면 사장님 휴대폰으로 바로 알려 드려요. (발송비 별도)', price: 20 },
-  { id: 'chat', cat: 'connect', icon: 'chat', label: '실시간 채팅 상담', desc: '사이트 구석의 채팅창으로 바로 대화해요.', price: 10 },
-  { id: 'chatbot', cat: 'connect', icon: 'bot', label: 'AI 상담 챗봇', desc: '자주 묻는 질문에 24시간 자동으로 답해요.', price: 60, week: 1 },
-  { id: 'admin', cat: 'content', icon: 'board', label: '게시판·공지·소식', desc: '공지·소식·블로그 글을 직접 올리고 고쳐요.', price: 30 },
-  { id: 'gallery', cat: 'content', icon: 'image', label: '갤러리·포트폴리오', desc: '작업 사진·시공 사례를 직접 올려요.', price: 20 },
-  { id: 'review', cat: 'content', icon: 'star', label: '후기·리뷰', desc: '고객 후기와 별점을 보여 줘요.', price: 20 },
-  { id: 'popup', cat: 'content', icon: 'popup', label: '팝업·배너 관리', desc: '휴무 안내·이벤트 팝업을 직접 켜고 꺼요.', price: 15 },
-  { id: 'recruit', cat: 'content', icon: 'person', label: '채용·지원서 접수', desc: '채용 공고를 올리고 지원서를 받아요.', price: 30 },
-  { id: 'booking', cat: 'sales', icon: 'calendar', label: '예약·신청', desc: '고객이 날짜와 시간을 골라 예약해요.', price: 40, week: 1 },
-  { id: 'payment', cat: 'sales', icon: 'card', label: '온라인 결제', desc: '카드·간편결제로 바로 결제해요. (PG 계약 필요)', price: 50, week: 1 },
-  { id: 'shop', cat: 'sales', icon: 'cart', label: '쇼핑몰', desc: '상품 등록, 장바구니, 주문·배송 관리까지.', price: 100, week: 2 },
-  { id: 'subscription', cat: 'sales', icon: 'repeat', label: '정기결제·구독', desc: '구독 상품·회원권을 매달 자동 결제해요.', price: 80, week: 1 },
-  { id: 'member', cat: 'sales', icon: 'user', label: '회원·로그인', desc: '회원가입, 마이페이지, 회원 전용 글.', price: 40, week: 1 },
-  { id: 'social', cat: 'sales', icon: 'key', label: '카카오·네이버 간편 로그인', desc: '아이디 없이 소셜 계정으로 가입해요.', price: 20 },
-  { id: 'coupon', cat: 'sales', icon: 'ticket', label: '쿠폰·포인트', desc: '할인 쿠폰과 적립금을 줘요.', price: 40 },
-  { id: 'app', cat: 'growth', icon: 'phone', label: '앱으로 만들기', desc: '안드로이드 앱 + 푸시 알림, 스토어 등록까지 도와드려요.', price: 80, week: 2 },
-  { id: 'motion', cat: 'growth', icon: 'spark', label: '3D·고급 인터랙션', desc: '이 사이트 첫 화면처럼 움직이는 연출.', price: 40 },
-  { id: 'i18n', cat: 'growth', icon: 'globe', label: '다국어', desc: '영문 등 다른 언어 버전과 전환 버튼.', price: 30 },
-  { id: 'analytics', cat: 'growth', icon: 'chart', label: '방문 통계', desc: '구글·네이버 애널리틱스로 방문자를 분석해요.', price: 10 },
-  { id: 'instagram', cat: 'growth', icon: 'camera', label: '인스타그램 피드 연동', desc: '인스타 게시물이 사이트에 자동으로 보여요.', price: 15 },
-  { id: 'newsletter', cat: 'growth', icon: 'mail', label: '뉴스레터·소식 구독', desc: '이메일 구독을 받고 소식을 보내요.', price: 20 },
-  { id: 'content', cat: 'growth', icon: 'pen', label: '문구·사진 정리 도움', desc: '소개 글을 다듬고 사진을 골라 보정해요.', price: 20 },
-  { id: 'migrate', cat: 'growth', icon: 'move', label: '기존 사이트 이전', desc: '옛 사이트의 글·사진을 옮겨 와요.', price: 20 },
-  { id: 'logo', cat: 'growth', icon: 'logo', label: '로고·브랜드 디자인', desc: '로고와 대표 색을 함께 정해요.', price: 40 },
+  { id: 'alert', cat: 'connect', icon: 'bell', label: '문의 알림 (카톡·문자)', desc: '문의가 오면 사장님 휴대폰으로 바로 알려 드려요. (발송비 별도)', price: 12 },
+  { id: 'chat', cat: 'connect', icon: 'chat', label: '실시간 채팅 상담', desc: '사이트 구석의 채팅창으로 바로 대화해요.', price: 6 },
+  { id: 'chatbot', cat: 'connect', icon: 'bot', label: 'AI 상담 챗봇', desc: '자주 묻는 질문에 24시간 자동으로 답해요.', price: 36, week: 1 },
+  { id: 'admin', cat: 'content', icon: 'board', label: '게시판·공지·소식', desc: '공지·소식·블로그 글을 직접 올리고 고쳐요.', price: 18 },
+  { id: 'gallery', cat: 'content', icon: 'image', label: '갤러리·포트폴리오', desc: '작업 사진·시공 사례를 직접 올려요.', price: 12 },
+  { id: 'review', cat: 'content', icon: 'star', label: '후기·리뷰', desc: '고객 후기와 별점을 보여 줘요.', price: 12 },
+  { id: 'popup', cat: 'content', icon: 'popup', label: '팝업·배너 관리', desc: '휴무 안내·이벤트 팝업을 직접 켜고 꺼요.', price: 9 },
+  { id: 'recruit', cat: 'content', icon: 'person', label: '채용·지원서 접수', desc: '채용 공고를 올리고 지원서를 받아요.', price: 18 },
+  { id: 'booking', cat: 'sales', icon: 'calendar', label: '예약·신청', desc: '고객이 날짜와 시간을 골라 예약해요.', price: 24, week: 1 },
+  { id: 'payment', cat: 'sales', icon: 'card', label: '온라인 결제', desc: '카드·간편결제로 바로 결제해요. (PG 계약 필요)', price: 30, week: 1 },
+  { id: 'shop', cat: 'sales', icon: 'cart', label: '쇼핑몰', desc: '상품 등록, 장바구니, 주문·배송 관리까지.', price: 60, week: 2 },
+  { id: 'subscription', cat: 'sales', icon: 'repeat', label: '정기결제·구독', desc: '구독 상품·회원권을 매달 자동 결제해요.', price: 48, week: 1 },
+  { id: 'member', cat: 'sales', icon: 'user', label: '회원·로그인', desc: '회원가입, 마이페이지, 회원 전용 글.', price: 24, week: 1 },
+  { id: 'social', cat: 'sales', icon: 'key', label: '카카오·네이버 간편 로그인', desc: '아이디 없이 소셜 계정으로 가입해요.', price: 12 },
+  { id: 'coupon', cat: 'sales', icon: 'ticket', label: '쿠폰·포인트', desc: '할인 쿠폰과 적립금을 줘요.', price: 24 },
+  { id: 'app', cat: 'growth', icon: 'phone', label: '앱으로 만들기', desc: '안드로이드 앱 + 푸시 알림, 스토어 등록까지 도와드려요.', price: 48, week: 2 },
+  { id: 'motion', cat: 'growth', icon: 'spark', label: '3D·고급 인터랙션', desc: '이 사이트 첫 화면처럼 움직이는 연출.', price: 24 },
+  { id: 'i18n', cat: 'growth', icon: 'globe', label: '다국어', desc: '영문 등 다른 언어 버전과 전환 버튼.', price: 18 },
+  { id: 'analytics', cat: 'growth', icon: 'chart', label: '방문 통계', desc: '구글·네이버 애널리틱스로 방문자를 분석해요.', price: 6 },
+  { id: 'instagram', cat: 'growth', icon: 'camera', label: '인스타그램 피드 연동', desc: '인스타 게시물이 사이트에 자동으로 보여요.', price: 9 },
+  { id: 'newsletter', cat: 'growth', icon: 'mail', label: '뉴스레터·소식 구독', desc: '이메일 구독을 받고 소식을 보내요.', price: 12 },
+  { id: 'content', cat: 'growth', icon: 'pen', label: '문구·사진 정리 도움', desc: '소개 글을 다듬고 사진을 골라 보정해요.', price: 12 },
+  { id: 'migrate', cat: 'growth', icon: 'move', label: '기존 사이트 이전', desc: '옛 사이트의 글·사진을 옮겨 와요.', price: 12 },
+  { id: 'logo', cat: 'growth', icon: 'logo', label: '로고·브랜드 디자인', desc: '로고와 대표 색을 함께 정해요.', price: 24 },
 ]);
 
 // 함께 있어야 하는 기능 (쇼핑몰을 고르면 결제도 자동 선택 등)

@@ -10,10 +10,10 @@ test('기본 구성 가격이 가격표 시작가와 같다', () => {
 });
 
 test('추가 기능은 더해지고, 이미 포함된 기능은 0원', () => {
-  assert.equal(estimate('intro', []).min, 90);
-  assert.equal(estimate('intro', ['admin', 'booking']).min, 160);
-  assert.equal(estimate('brand', ['admin', 'motion']).min, 150);
-  assert.equal(estimate('platform', ['payment', 'i18n']).min, 280);
+  assert.equal(estimate('intro', []).min, 54);
+  assert.equal(estimate('intro', ['admin', 'booking']).min, 96);
+  assert.equal(estimate('brand', ['admin', 'motion']).min, 90);
+  assert.equal(estimate('platform', ['payment', 'i18n']).min, 168);
 });
 
 test('범위 상한은 하한보다 크고 5만원 단위, 기간은 무거운 기능만큼 늘어난다', () => {
