@@ -2,7 +2,7 @@
 // 실행: node --test scripts/inquiry-api.test.mjs
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, rm } from 'node:fs/promises';
+import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -74,6 +74,35 @@ test('로그인 → 목록 → 상태·메모 변경 → since 필터', async ()
   const future = new Date(Date.now() + 60000).toISOString();
   const none = await call(admin, { token: auth.token, url: `/api/admin/inquiries?since=${encodeURIComponent(future)}` });
   assert.equal(none.payload.inquiries.length, 0);
+});
+
+test('문의 삭제: 로그인 필요, 없는 문의는 404, 지우면 목록에서 사라짐', async () => {
+  const { payload: auth } = await call(login, { method: 'POST', body: { username: 'tester', password: process.env.ADMIN_PASSWORD } });
+  await call(submit, { method: 'POST', body: { ...sample, contactName: '삭제대상' } });
+  const before = (await call(admin, { token: auth.token })).payload.inquiries;
+  const target = before.find((item) => item.contactName === '삭제대상');
+  assert.ok(target);
+  assert.equal((await call(admin, { method: 'DELETE', url: `/api/admin/inquiries?id=${target.id}` })).status, 401);
+  assert.equal((await call(admin, { method: 'DELETE', token: auth.token, url: '/api/admin/inquiries?id=nope' })).status, 404);
+  assert.equal((await call(admin, { method: 'DELETE', token: auth.token, url: '/api/admin/inquiries' })).status, 400);
+  assert.equal((await call(admin, { method: 'DELETE', token: auth.token, url: `/api/admin/inquiries?id=${target.id}` })).status, 200);
+  const after = (await call(admin, { token: auth.token })).payload.inquiries;
+  assert.equal(after.length, before.length - 1);
+  assert.equal(after.some((item) => item.id === target.id), false);
+});
+
+test('보관 기간(1년)이 지난 문의는 목록을 읽을 때 자동으로 지워진다', async () => {
+  const file = process.env.INQUIRY_STORAGE_FILE;
+  const records = JSON.parse(await readFile(file, 'utf8'));
+  const old = new Date(Date.now() - 366 * 24 * 60 * 60 * 1000).toISOString();
+  const recent = new Date(Date.now() - 300 * 24 * 60 * 60 * 1000).toISOString();
+  await writeFile(file, JSON.stringify([{ ...records[0], id: 'old-1', createdAt: old }, { ...records[0], id: 'recent-1', createdAt: recent }, ...records]));
+  const { payload: auth } = await call(login, { method: 'POST', body: { username: 'tester', password: process.env.ADMIN_PASSWORD } });
+  const list = (await call(admin, { token: auth.token })).payload.inquiries;
+  assert.equal(list.some((item) => item.id === 'old-1'), false, '1년 지난 문의는 지워짐');
+  assert.equal(list.some((item) => item.id === 'recent-1'), true, '1년 안 된 문의는 남음');
+  const saved = JSON.parse(await readFile(file, 'utf8'));
+  assert.equal(saved.some((item) => item.id === 'old-1'), false, '저장 파일에서도 지워짐');
 });
 
 test.after(() => rm(dir, { recursive: true, force: true }));

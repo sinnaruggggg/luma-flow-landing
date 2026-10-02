@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { ArrowLeft, Copy, LogOut, Mail, Phone, RefreshCw, Search } from 'lucide-react';
+import { ArrowLeft, Copy, LogOut, Mail, Phone, RefreshCw, Search, Trash2 } from 'lucide-react';
 import { withBasePath } from '../lib/appPaths.js';
 import './admin.css';
 
@@ -63,7 +63,7 @@ function Login({ onLogin }) {
   );
 }
 
-function Detail({ item, token, onSaved, onBack }) {
+function Detail({ item, token, onSaved, onDeleted, onBack }) {
   const [memo, setMemo] = useState(item.memo || '');
   const [saving, setSaving] = useState('');
   const [copied, setCopied] = useState(false);
@@ -75,6 +75,18 @@ function Detail({ item, token, onSaved, onBack }) {
     } catch (error) {
       window.alert(error.message);
     } finally {
+      setSaving('');
+    }
+  };
+  const remove = async () => {
+    if (!window.confirm(`${item.contactName}님의 문의를 삭제할까요?
+삭제하면 되돌릴 수 없습니다.`)) return;
+    setSaving('delete');
+    try {
+      await api(`/api/admin/inquiries?id=${encodeURIComponent(item.id)}`, { token, method: 'DELETE' });
+      onDeleted(item.id);
+    } catch (error) {
+      window.alert(error.message);
       setSaving('');
     }
   };
@@ -114,6 +126,11 @@ function Detail({ item, token, onSaved, onBack }) {
         <h3>메모</h3>
         <textarea value={memo} onChange={(event) => setMemo(event.target.value)} rows={4} placeholder="통화 내용, 다음 할 일 등을 적어 두세요." />
         <button type="button" className="ad-btn" disabled={Boolean(saving) || memo === (item.memo || '')} onClick={() => save({ memo }, 'memo')}>{saving === 'memo' ? '저장 중…' : '메모 저장'}</button>
+      </section>
+      <section className="ad-danger">
+        <h3>삭제</h3>
+        <p className="ad-muted">고객이 삭제를 요청했거나 스팸·테스트 문의일 때 지웁니다. 접수 후 1년이 지난 문의는 자동으로 삭제됩니다.</p>
+        <button type="button" className="ad-btn ad-btn--danger" disabled={Boolean(saving)} onClick={remove}><Trash2 size={16} aria-hidden="true" />{saving === 'delete' ? '삭제 중…' : '이 문의 삭제'}</button>
       </section>
     </article>
   );
@@ -157,6 +174,15 @@ function Dashboard({ token, onLogout }) {
   }, [data.inquiries, filter, query]);
   const selected = data.inquiries.find((item) => item.id === selectedId);
 
+  const recount = (inquiries) => {
+    const counts = { total: inquiries.length, new: 0, progress: 0, done: 0 };
+    inquiries.forEach((item) => { counts[item.status] = (counts[item.status] || 0) + 1; });
+    return { inquiries, counts };
+  };
+  const onDeleted = (id) => {
+    setSelectedId('');
+    setData((current) => recount(current.inquiries.filter((item) => item.id !== id)));
+  };
   const onSaved = (updated) => {
     setData((current) => {
       const inquiries = current.inquiries.map((item) => (item.id === updated.id ? updated : item));
@@ -203,7 +229,7 @@ function Dashboard({ token, onLogout }) {
           )}
         </section>
         <section className="ad-panel" aria-live="polite">
-          {selected ? <Detail key={selected.id} item={selected} token={token} onSaved={onSaved} onBack={() => setSelectedId('')} /> : <p className="ad-empty">왼쪽에서 문의를 선택하세요.</p>}
+          {selected ? <Detail key={selected.id} item={selected} token={token} onSaved={onSaved} onDeleted={onDeleted} onBack={() => setSelectedId('')} /> : <p className="ad-empty">왼쪽에서 문의를 선택하세요.</p>}
         </section>
       </div>
     </div>

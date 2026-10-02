@@ -9,6 +9,8 @@ const BLOB_ACCESS = "private";
 const BLOB_CONTENT_TYPE = "application/json; charset=utf-8";
 const BLOB_CACHE_MAX_AGE = 60;
 const BLOB_WRITE_RETRIES = 4;
+// 문의 보관 기간(일). 개인정보 처리방침(src/editorial/data/privacyPolicy.js)의 "1년"과 맞춰야 합니다.
+export const INQUIRY_RETENTION_DAYS = 365;
 
 function hasBlobStorage() {
   return Boolean(process.env.BLOB_READ_WRITE_TOKEN);
@@ -156,14 +158,14 @@ export async function writeInquiryRecords(records) {
 export async function appendInquiryRecord(record) {
   if (getStorageMode() !== "vercel-blob") {
     const current = await readFileInquiryRecords();
-    const next = [record, ...current];
+    const next = [record, ...current.filter(isWithinRetention)];
     await writeFileInquiryRecords(next);
     return next;
   }
 
   for (let attempt = 0; attempt < BLOB_WRITE_RETRIES; attempt += 1) {
     const { records, etag } = await readBlobInquiryState();
-    const next = [record, ...records];
+    const next = [record, ...records.filter(isWithinRetention)];
 
     try {
       await writeBlobInquiryRecords(next, etag);
@@ -212,4 +214,51 @@ export async function updateInquiryRecord(id, patch) {
   }
 
   throw new Error("문의 수정이 동시에 충돌해서 다시 시도해 주세요.");
+}
+
+// 보관 기간 안의 문의인지 (날짜가 이상한 기록은 지우지 않고 남겨 둡니다)
+export function isWithinRetention(record, now = Date.now()) {
+  const created = Date.parse(record?.createdAt ?? "");
+  return !Number.isFinite(created) || now - created < INQUIRY_RETENTION_DAYS * 24 * 60 * 60 * 1000;
+}
+
+// 기록 전체를 읽어 change(records) → { next, result } 로 바꾼 뒤 저장합니다.
+// next 가 null 이면 저장하지 않습니다. 동시에 저장되면 최신 내용을 다시 읽어 재시도합니다.
+async function mutateInquiryRecords(change) {
+  if (getStorageMode() !== "vercel-blob") {
+    const { next, result } = change(await readFileInquiryRecords());
+    if (next) await writeFileInquiryRecords(next);
+    return result;
+  }
+
+  for (let attempt = 0; attempt < BLOB_WRITE_RETRIES; attempt += 1) {
+    const { records, etag } = await readBlobInquiryState();
+    const { next, result } = change(records);
+    if (!next) return result;
+    try {
+      await writeBlobInquiryRecords(next, etag);
+      return result;
+    } catch (error) {
+      if (isBlobWriteConflict(error)) continue;
+      throw error;
+    }
+  }
+
+  throw new Error("문의 저장이 동시에 충돌해서 다시 시도해 주세요.");
+}
+
+// 문의 한 건을 지웁니다. 지웠으면 true, 없으면 false.
+export function deleteInquiryRecord(id) {
+  return mutateInquiryRecords((records) => {
+    const next = records.filter((record) => record.id !== id);
+    return next.length === records.length ? { next: null, result: false } : { next, result: true };
+  });
+}
+
+// 보관 기간이 지난 문의를 지우고, 남은 문의 목록을 돌려줍니다. (지울 게 없으면 저장하지 않음)
+export function purgeExpiredInquiries(now = Date.now()) {
+  return mutateInquiryRecords((records) => {
+    const kept = records.filter((record) => isWithinRetention(record, now));
+    return { next: kept.length === records.length ? null : kept, result: kept };
+  });
 }

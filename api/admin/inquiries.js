@@ -1,14 +1,16 @@
 import { requireAdminAuth } from "../_lib/auth.js";
 import { readJsonBody, sendJson, sendMethodNotAllowed } from "../_lib/http.js";
-import { getStorageMeta, readInquiryRecords, updateInquiryRecord } from "../_lib/storage.js";
+import { deleteInquiryRecord, getStorageMeta, purgeExpiredInquiries, updateInquiryRecord } from "../_lib/storage.js";
 
 const STATUSES = new Set(["new", "progress", "done"]);
 
 // GET   : 문의 목록 (최신순). ?since=ISO 날짜를 주면 그 이후 문의만 돌려줍니다. (알림 앱용)
+//         목록을 읽을 때 보관 기간(1년)이 지난 문의는 자동으로 지웁니다.
 // PATCH : { id, status?, memo? } 로 상태·메모를 바꿉니다.
+// DELETE: ?id=문의ID 로 문의 한 건을 지웁니다.
 export default async function handler(req, res) {
-  if (req.method !== "GET" && req.method !== "PATCH") {
-    return sendMethodNotAllowed(res, ["GET", "PATCH"]);
+  if (!["GET", "PATCH", "DELETE"].includes(req.method)) {
+    return sendMethodNotAllowed(res, ["GET", "PATCH", "DELETE"]);
   }
 
   const session = requireAdminAuth(req, res);
@@ -35,10 +37,22 @@ export default async function handler(req, res) {
     }
   }
 
+  if (req.method === "DELETE") {
+    try {
+      const id = new URL(req.url, "http://localhost").searchParams.get("id") ?? "";
+      if (!id) return sendJson(res, 400, { message: "지울 문의를 알려 주세요." });
+      const deleted = await deleteInquiryRecord(id);
+      if (!deleted) return sendJson(res, 404, { message: "문의를 찾을 수 없습니다." });
+      return sendJson(res, 200, { ok: true, id });
+    } catch {
+      return sendJson(res, 500, { message: "문의를 지우지 못했습니다." });
+    }
+  }
+
   try {
     const url = new URL(req.url, "http://localhost");
     const since = Date.parse(url.searchParams.get("since") ?? "");
-    const all = (await readInquiryRecords()).map((record) => ({ status: "new", memo: "", ...record }));
+    const all = (await purgeExpiredInquiries()).map((record) => ({ status: "new", memo: "", ...record }));
     const inquiries = Number.isFinite(since) ? all.filter((record) => Date.parse(record.createdAt) > since) : all;
 
     return sendJson(res, 200, {
