@@ -2,15 +2,17 @@ import { useRef } from 'react';
 import { useCountUp } from './effects.js';
 import './build-visuals.css';
 
-// 품질 기준 섹션: 공개 전 목표 점수 게이지. 화면에 들어오면 원이 차오르고 숫자가 올라갑니다.
-const SCORES = [['성능', 95], ['접근성', 100], ['권장사항', 100], ['검색 최적화', 100]];
+// 품질 기준 섹션: 이 사이트를 실제로 잰 Lighthouse 점수. 화면에 들어오면 원이 차오르고 숫자가 올라갑니다.
+// 다시 측정하면 아래 숫자와 날짜를 고쳐 주세요. (측정: Lighthouse 12, 데스크톱 기준)
+const MEASURED = '2026.10.02';
+const SCORES = [['성능', 91], ['접근성', 100], ['권장사항', 100], ['검색 최적화', 100]];
 
 export function ScoreGauges() {
   const ref = useRef(null);
   useCountUp(ref);
   return (
     <div className="scores" ref={ref} data-reveal>
-      <p className="scores__head"><span>LIGHTHOUSE</span>공개 전 목표 점수 · 이 기준을 넘겨야 공개합니다</p>
+      <p className="scores__head"><span>LIGHTHOUSE</span>이 사이트 실측 점수 · 데스크톱 · {MEASURED}</p>
       <ul>
         {SCORES.map(([label, value], index) => (
           <li key={label} style={{ '--v': value, '--i': index }}>

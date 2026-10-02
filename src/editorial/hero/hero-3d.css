@@ -18,7 +18,7 @@
 .hero3d__kicker{display:flex;align-items:center;gap:14px;margin-bottom:26px;font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--ink)}
 .hero3d__kicker:before,.hero3d__kicker:after{content:'';width:36px;height:1px;background:currentColor}
 .hero3d .hero3d__title{display:grid;font-family:var(--sans);font-size:clamp(56px,9.2vw,168px);font-weight:850;line-height:.98;letter-spacing:-.065em;color:var(--ink);word-break:keep-all}
-.hero3d__line{display:block}
+.hero3d__line{display:block;white-space:nowrap}
 .hero3d__line--1{transform:translateX(calc(var(--intro,0) * -26vw))}
 .hero3d__line--2{transform:translateX(calc(var(--intro,0) * 26vw))}
 .hero3d__title em{font-style:normal;color:var(--accent)}
