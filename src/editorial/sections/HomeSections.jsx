@@ -232,22 +232,23 @@ export function Pricing() {
         <SectionHead index="06" label="비용" title={<>대략의 기준을 먼저,<br />자세한 건 상담으로.</>} titleId="pricing-title">
           <p className="sx-lead">프로젝트마다 범위가 다르기 때문에 시작가로 안내합니다. 상담에서 필요한 것만 골라 정확한 견적을 드립니다.</p>
         </SectionHead>
-        <ul className="pricing" ref={list}>
-          {PRICING_PLANS.map((plan, index) => (
-            <li key={plan.name} className={plan.featured ? 'is-featured' : ''} data-reveal style={{ '--d': `${index * 90}ms` }}>
-              <div className="pricing__top">
-                <h3>{plan.name}</h3>
-                {plan.featured ? <span className="pricing__badge">가장 많이 선택</span> : null}
-              </div>
-              <p className="pricing__for">{plan.for}</p>
-              <p className="pricing__price"><strong><span data-count={plan.price.replace(/,/g, '')} aria-hidden="true">{plan.price}</span><span className="sr-only">{plan.price}</span></strong><span>만원부터</span></p>
-              <p className="pricing__period">제작 기간 {plan.period}</p>
-              <ul className="pricing__items">{plan.items.map((item) => <li key={item}>{item}</li>)}</ul>
-              <a className={`btn ${plan.featured ? 'btn--accent' : 'btn--line'}`} href="#contact" data-magnetic>이 구간으로 상담하기 <span className="btn__arrow" aria-hidden="true">→</span></a>
-            </li>
-          ))}
-        </ul>
-        <QuoteEstimator />
+        <QuoteEstimator plansView={(
+    <ul className="pricing" ref={list}>
+      {PRICING_PLANS.map((plan, index) => (
+        <li key={plan.name} className={plan.featured ? 'is-featured' : ''} data-reveal style={{ '--d': `${index * 90}ms` }}>
+          <div className="pricing__top">
+            <h3>{plan.name}</h3>
+            {plan.featured ? <span className="pricing__badge">가장 많이 선택</span> : null}
+          </div>
+          <p className="pricing__for">{plan.for}</p>
+          <p className="pricing__price"><strong><span data-count={plan.price.replace(/,/g, '')} aria-hidden="true">{plan.price}</span><span className="sr-only">{plan.price}</span></strong><span>만원부터</span></p>
+          <p className="pricing__period">제작 기간 {plan.period}</p>
+          <ul className="pricing__items">{plan.items.map((item) => <li key={item}>{item}</li>)}</ul>
+          <a className={`btn ${plan.featured ? 'btn--accent' : 'btn--line'}`} href="#contact" data-magnetic>이 구간으로 상담하기 <span className="btn__arrow" aria-hidden="true">→</span></a>
+        </li>
+      ))}
+    </ul>
+        )} />
         <ul className="pricing__notes">{PRICING_NOTES.map((note) => <li key={note}>{note}</li>)}</ul>
       </div>
     </section>

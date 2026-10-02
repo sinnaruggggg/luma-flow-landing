@@ -133,7 +133,7 @@ export function useCountUp(ref) {
         else nodes.forEach((node) => { node.textContent = Number(node.dataset.count).toLocaleString('ko-KR'); });
       };
       frame = requestAnimationFrame(tick);
-    }, { threshold: 0.35 });
+    }, { threshold: 0, rootMargin: '0px 0px -15% 0px' });
     observer.observe(root);
     return () => {
       observer.disconnect();

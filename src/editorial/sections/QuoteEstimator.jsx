@@ -33,7 +33,16 @@ function useTween(target) {
 
 const scrollIntoViewSmooth = (el) => el?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
 
-export function QuoteEstimator() {
+// 비용을 확인하는 3가지 방법. 하나만 골라 보면 되도록 탭으로 보여 줍니다.
+const MODES = [
+  { id: 'plans', icon: 'board', title: '가격표 보기', desc: '구간별 시작 가격을 한눈에', time: '10초' },
+  { id: 'wizard', icon: 'chat', title: '1분 질문으로 추천받기', desc: '업종·예산만 답하면 맞는 구성 3개', time: '1분', badge: '처음이라면' },
+  { id: 'calc', icon: 'spark', title: '직접 골라 계산하기', desc: '기능을 하나씩 골라 정확하게', time: '3분' },
+];
+
+export function QuoteEstimator({ plansView }) {
+  const [mode, setMode] = useState('plans');
+  const tabsRef = useRef(null);
   const [baseId, setBaseId] = useState('intro');
   const [picked, setPicked] = useState(['admin']);
   const [extras, setExtras] = useState([]);
@@ -68,7 +77,28 @@ export function QuoteEstimator() {
     return () => observer.disconnect();
   }, []);
 
+  // 화면 오른쪽 "내 사이트 견적내기" 버튼 등에서 특정 방법을 바로 열 수 있게 합니다.
+  useEffect(() => {
+    const onOpen = (event) => {
+      setMode(event.detail?.mode ?? 'wizard');
+      window.setTimeout(() => scrollIntoViewSmooth(tabsRef.current), 30);
+    };
+    window.addEventListener('nanaweb:quote-open', onOpen);
+    return () => window.removeEventListener('nanaweb:quote-open', onOpen);
+  }, []);
+
+  const onTabKey = (event) => {
+    const index = MODES.findIndex((item) => item.id === mode);
+    const next = event.key === 'ArrowRight' ? index + 1 : event.key === 'ArrowLeft' ? index - 1 : null;
+    if (next === null) return;
+    event.preventDefault();
+    const target = MODES[(next + MODES.length) % MODES.length];
+    setMode(target.id);
+    document.getElementById(`quote-tab-${target.id}`)?.focus();
+  };
+
   const applyPlan = (plan, summary) => {
+    setMode('calc');
     setBaseId(plan.baseId);
     setPicked(plan.picked);
     setFromWizard({ title: plan.title, summary });
@@ -100,9 +130,31 @@ export function QuoteEstimator() {
 
   return (
     <div className="quote">
-      <QuoteWizard onApply={applyPlan} />
+      <div className="quote__modes" ref={tabsRef}>
+        <p className="quote__modes-head"><b>비용을 확인하는 3가지 방법</b><span>편한 방법 하나만 고르세요. 모두 할 필요는 없어요.</span></p>
+        <div className="quote__mode-list" role="tablist" aria-label="비용 확인 방법" onKeyDown={onTabKey}>
+          {MODES.map((item, index) => (
+            <button key={item.id} id={`quote-tab-${item.id}`} type="button" role="tab" aria-selected={mode === item.id} aria-controls={`quote-panel-${item.id}`} tabIndex={mode === item.id ? 0 : -1} className={`quote__mode${mode === item.id ? ' is-on' : ''}`} onClick={() => setMode(item.id)}>
+              <span className="quote__mode-no">0{index + 1}</span>
+              <span className="quote__mode-icon"><QuoteIcon name={item.icon} /></span>
+              <span className="quote__mode-text"><b>{item.title}{item.badge ? <em>{item.badge}</em> : null}</b><span>{item.desc}</span></span>
+              <span className="quote__mode-time">약 {item.time}</span>
+            </button>
+          ))}
+        </div>
+      </div>
 
-      <div className="quote__calc" ref={calcRef} id="quote-calc">
+      <div id="quote-panel-plans" role="tabpanel" aria-labelledby="quote-tab-plans" hidden={mode !== 'plans'}>
+        {plansView}
+        <p className="quote__switch">내 사이트에 맞는 금액이 궁금하다면? <button type="button" onClick={() => setMode('wizard')}>1분 질문으로 추천받기 →</button></p>
+      </div>
+
+      <div id="quote-panel-wizard" role="tabpanel" aria-labelledby="quote-tab-wizard" hidden={mode !== 'wizard'}>
+        <QuoteWizard onApply={applyPlan} />
+        <p className="quote__switch">원하는 기능을 이미 알고 있다면? <button type="button" onClick={() => setMode('calc')}>직접 골라 계산하기 →</button></p>
+      </div>
+
+      <div className="quote__calc" ref={calcRef} id="quote-panel-calc" role="tabpanel" aria-labelledby="quote-tab-calc" hidden={mode !== 'calc'}>
         <div className="quote__form">
           <p className="quote__kicker">직접 골라 계산하기</p>
           <h3 className="quote__title">필요한 것만 골라<br />예상 비용을 확인하세요.</h3>
