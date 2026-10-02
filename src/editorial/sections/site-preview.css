@@ -1,0 +1,90 @@
+/* 견적 계산기 "내 사이트 미리보기" — SitePreview.jsx 전용. 어두운 견적서 패널 위에 놓입니다. */
+.spv{--ink:#172023;--acc:#d9492f;position:relative;padding:14px 26px 22px 14px;font-family:var(--sans,Pretendard,sans-serif)}
+.spv-browser{position:relative;z-index:1;overflow:hidden;border:1px solid rgba(255,255,255,.18);background:#fbfbf8;color:var(--ink);box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+.spv-bar{display:flex;align-items:center;gap:4px;height:22px;padding:0 8px;background:#e9ebe6}
+.spv-bar>i{width:6px;height:6px;border-radius:50%;background:rgba(23,32,35,.25)}
+.spv-bar>i:first-child{background:var(--acc)}
+.spv-bar span{flex:1;margin:0 8px;padding:1px 6px;background:#fff;font-family:ui-monospace,Consolas,monospace;font-size:9px;color:#6a716f;text-align:center}
+.spv-stat{display:inline-flex;align-items:center;gap:2px;font-size:9px;color:#2f8a57;animation:spv-in .4s ease both}
+.spv-page{position:relative;display:grid;gap:8px;min-height:248px;padding:8px 10px 10px}
+
+.spv-nav{display:flex;align-items:center;gap:6px;height:16px}
+.spv-logo{width:18px;height:10px;background:var(--ink)}
+.spv-logo.is-brand{width:22px;height:12px;border-radius:50% 2px;background:linear-gradient(135deg,var(--acc),#f2a28f)}
+.spv-menu{display:flex;gap:4px;flex:1}
+.spv-menu i{width:14px;height:3px;background:rgba(23,32,35,.3)}
+.spv-chip{padding:1px 4px;border:1px solid var(--ink);font-size:7px;font-weight:700;line-height:1.3;animation:spv-in .4s ease both}
+.spv-chip--dark{background:var(--ink);color:#fff}
+.spv-cart{display:grid;place-items:center;animation:spv-in .4s ease both}
+
+.spv-hero{display:grid;grid-template-columns:1fr 38%;gap:8px;align-items:center;height:62px;padding:8px;background:#eef0ea}
+.spv-hero div{display:grid;gap:4px;justify-items:start}
+.spv-hero div i{width:80%;height:6px;background:rgba(23,32,35,.22)}
+.spv-hero div i+i{width:55%}
+.spv-hero.is-filled div i{background:var(--ink)}
+.spv-hero em{display:grid;place-items:center;height:100%;background:linear-gradient(135deg,#d6dad2,#c3c9c0);color:#fff;transition:transform .6s cubic-bezier(.2,.7,.2,1),background .6s}
+.spv-hero.is-filled em{background:linear-gradient(135deg,#f4c3b3,var(--acc) 60%,#172023)}
+.spv.has-motion .spv-hero em{transform:perspective(200px) rotateY(-18deg) rotateX(6deg);background:linear-gradient(135deg,#6fe6ff,#2b6f86 55%,#172023);box-shadow:0 10px 20px -8px rgba(43,111,134,.7)}
+.spv.has-motion .spv-hero em .q-icon{animation:spv-spin 3s linear infinite}
+
+.spv-btn{display:inline-block;padding:2px 6px;background:var(--acc);color:#fff;font-size:7px;font-weight:700;line-height:1.4}
+.spv-btn--line{background:transparent;border:1px solid var(--ink);color:var(--ink)}
+
+/* 기능 블록 */
+.spv-blocks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.spv-b{display:flex;flex-wrap:wrap;align-items:center;gap:4px;min-height:44px;padding:6px;border:1px solid rgba(23,32,35,.12);background:#fff;font-size:8px;animation:spv-in .45s cubic-bezier(.2,.7,.2,1) both}
+.spv-b b{font-size:8px;font-weight:800}
+.spv-b--booking{display:grid;grid-template-columns:1fr auto;align-content:start}
+.spv-b--booking .spv-cal{grid-column:1/-1;display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.spv-b--booking .spv-cal i{height:5px;background:rgba(23,32,35,.12)}
+.spv-b--booking .spv-cal i.is-on{background:var(--acc);animation:spv-blink 1.6s ease-in-out infinite}
+.spv-b--booking .spv-btn{grid-row:1;grid-column:2}
+.spv-goods{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;width:100%}
+.spv-goods i{display:grid;gap:2px}
+.spv-goods em{height:16px;background:linear-gradient(135deg,#e8d6c8,#c9a68c)}
+.spv-goods small{height:3px;width:70%;background:rgba(23,32,35,.3)}
+.spv-b--pay{justify-content:space-between}
+.spv-b--sub{gap:6px;color:#2f8a57}
+.spv-b--gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.spv-b--gallery i{height:30px;background:linear-gradient(160deg,#b9c7c9,#5f7b80)}
+.spv-b--gallery i:nth-child(2){background:linear-gradient(160deg,#e5c9b5,#a8796a)}
+.spv-b--review{display:grid;gap:3px}
+.spv-b--review span{color:#e2a93b;font-size:9px;letter-spacing:1px}
+.spv-b--review i{height:3px;background:rgba(23,32,35,.2)}
+.spv-b--review i+i{width:60%}
+.spv-b--board{display:grid;gap:3px;align-content:start}
+.spv-b--board p{display:flex;align-items:center;gap:4px;margin:0}
+.spv-b--board p i{flex:1;height:3px;background:rgba(23,32,35,.25)}
+.spv-b--board em{padding:0 3px;background:var(--acc);color:#fff;font-size:6px;font-style:normal;font-weight:800}
+.spv-b--recruit{justify-content:space-between}
+.spv-b--coupon{justify-content:center;gap:6px;border:1px dashed var(--acc);color:var(--acc)}
+.spv-b--coupon b{font-size:13px}
+.spv-b--insta{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.spv-b--insta i{aspect-ratio:1;background:linear-gradient(45deg,#f6c86b,#e1306c 55%,#833ab4)}
+.spv-b--news{flex-wrap:nowrap}
+.spv-b--news i{flex:1;height:12px;border:1px solid rgba(23,32,35,.25)}
+.spv-b--more,.spv-b--empty{justify-content:center;border-style:dashed;color:#6a716f;font-size:8px;text-align:center;line-height:1.4}
+
+/* 겹쳐 뜨는 것들 */
+.spv-popup{position:absolute;left:50%;top:44%;display:grid;gap:4px;width:42%;padding:8px;background:#fff;border:1px solid var(--ink);box-shadow:0 12px 24px -10px rgba(0,0,0,.45);font-size:8px;transform:translate(-50%,-50%);animation:spv-pop-c .45s cubic-bezier(.3,1.5,.5,1) both}
+.spv-popup i{height:3px;background:rgba(23,32,35,.25)}
+.spv-popup span{justify-self:end;font-size:7px;color:#6a716f}
+.spv-chat{position:absolute;right:8px;bottom:8px;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--acc);color:#fff;box-shadow:0 6px 14px -4px rgba(217,73,47,.7);animation:spv-pop .45s cubic-bezier(.3,1.5,.5,1) both}
+.spv-tag{position:absolute;left:8px;bottom:8px;padding:1px 5px;background:#2f8a57;color:#fff;font-size:7px;font-weight:700;animation:spv-in .4s ease both}
+.spv-admin{position:absolute;left:0;top:0;z-index:0;display:grid;gap:4px;align-content:start;width:40%;height:60%;padding:6px;border:1px solid rgba(255,255,255,.25);background:#2a3a3e;animation:spv-in .5s ease both}
+.spv-admin span{font-size:8px;font-weight:700;color:#6fe6ff}
+.spv-admin i{height:4px;background:rgba(255,255,255,.25)}
+.spv-admin~.spv-browser{margin:16px 0 0 18px}
+
+.spv-phone{position:absolute;right:4px;bottom:4px;z-index:2;width:74px;height:132px;padding:14px 5px;border:2px solid #f5f5f2;border-radius:14px;background:#10181b;box-shadow:0 20px 40px -14px rgba(0,0,0,.8);animation:spv-pop .5s cubic-bezier(.3,1.5,.5,1) both}
+.spv-phone__screen{position:absolute;inset:14px 5px;background:linear-gradient(180deg,#22343a,#10181b)}
+.spv-noti{position:relative;z-index:1;display:grid;gap:1px;padding:4px;border-radius:5px;background:#f5f5f2;color:var(--ink);font-size:6.5px;line-height:1.3;animation:spv-drop .6s .2s cubic-bezier(.2,.7,.2,1) both}
+.spv-noti b{font-size:6.5px;color:var(--acc)}
+
+@keyframes spv-in{from{opacity:0;transform:translateY(6px)}}
+@keyframes spv-pop{from{opacity:0;transform:scale(.7)}}
+@keyframes spv-pop-c{from{opacity:0;transform:translate(-50%,-50%) scale(.7)}}
+@keyframes spv-drop{from{opacity:0;transform:translateY(-14px)}}
+@keyframes spv-spin{to{transform:rotate(360deg)}}
+@keyframes spv-blink{50%{opacity:.35}}
+@media(prefers-reduced-motion:reduce){.spv *{animation:none!important}}
