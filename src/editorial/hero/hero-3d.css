@@ -61,6 +61,8 @@
 @media(max-width:1100px){.hero3d{height:300vh}.hero3d__lead br{display:none}}
 @media(max-width:760px){
   .hero3d{--hdr:66px;--sw:44vw;height:270vh}
+  /* 글꼴이 늦게 와서 소개문 줄 수가 바뀌어도 제목이 위아래로 밀리지 않도록 위쪽 기준 배치 */
+  .hero3d__copy{align-content:start;padding-top:clamp(56px,14svh,130px)}
   .hero3d .hero3d__stage{min-height:520px}
   .hero3d__kicker{gap:10px;margin-bottom:20px;font-size:12px}
   .hero3d__kicker:before,.hero3d__kicker:after{width:18px}
