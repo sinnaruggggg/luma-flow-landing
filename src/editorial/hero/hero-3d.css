@@ -19,6 +19,9 @@
 .hero3d__kicker:before,.hero3d__kicker:after{content:'';width:36px;height:1px;background:currentColor}
 .hero3d .hero3d__title{display:grid;font-family:var(--sans);font-size:clamp(56px,9.2vw,168px);font-weight:850;line-height:.98;letter-spacing:-.065em;color:var(--ink);word-break:keep-all}
 .hero3d__line{display:block;white-space:nowrap}
+/* 글꼴이 늦게 와도 제목 상자의 위치·크기가 바뀌지 않도록: 위 작은 글줄은 한 줄 고정, 제목은 가로 꽉 채움 */
+.hero3d .hero3d__kicker{white-space:nowrap}
+.hero3d .hero3d__title{width:100%}
 .hero3d__line--1{transform:translateX(calc(var(--intro,0) * -26vw))}
 .hero3d__line--2{transform:translateX(calc(var(--intro,0) * 26vw))}
 .hero3d__title em{font-style:normal;color:var(--accent)}

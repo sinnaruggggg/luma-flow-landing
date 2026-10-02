@@ -12,7 +12,7 @@
 .quote__mode-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
 .quote__mode{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto auto;gap:4px 14px;align-items:center;min-height:96px;padding:18px 20px;border:1px solid rgba(23,32,35,.22);background:#fff;color:var(--ink);text-align:left;transition:border-color .2s,background .2s,color .2s,transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s}
 .quote__mode:hover{border-color:var(--ink);transform:translateY(-2px)}
-.quote__mode-no{position:absolute;right:14px;top:12px;font-family:var(--mono);font-size:11px;opacity:.45}
+.quote__mode-no{position:absolute;right:14px;top:12px;font-family:var(--mono);font-size:11px;opacity:.8}
 .quote__mode-icon{grid-row:1/3;display:grid;place-items:center;width:48px;height:48px;background:#f1efe8;color:var(--ink);transition:background .2s,color .2s}
 .quote__mode-text{display:grid;gap:3px}
 .quote__mode-text b{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:17px;font-weight:800;letter-spacing:-.03em;word-break:keep-all}
