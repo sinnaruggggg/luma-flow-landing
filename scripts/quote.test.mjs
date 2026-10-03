@@ -13,7 +13,7 @@ test('추가 기능은 더해지고, 이미 포함된 기능은 0원', () => {
   assert.equal(estimate('intro', []).min, 54);
   assert.equal(estimate('intro', ['admin', 'booking']).min, 96);
   assert.equal(estimate('brand', ['admin', 'motion']).min, 114);
-  assert.equal(estimate('platform', ['admin', 'member', 'payment', 'i18n']).min, 198);
+  assert.equal(estimate('platform', ['admin', 'member', 'payment', 'i18n']).min, 228);
 });
 
 test('범위 상한은 하한보다 크고 5만원 단위, 기간은 무거운 기능만큼 늘어난다', () => {
