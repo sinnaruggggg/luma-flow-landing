@@ -1,5 +1,13 @@
 # 작업 기록
 
+## 2026-10-09 — Codex 이미지 자동 연결 + 전용 이미지 9장 적용 (새봄영어·오브제마켓·다솜세무)
+
+- **이미지 자동 생성 연결**: 제가 요청문을 작성해 `codex exec`로 보내면 Codex(내장 imagegen)가 이미지를 만들고, 작업 완료 기록(turn.completed)이 나오면 제가 이어받아 WebP 변환·배치·연결·배포. Codex 샌드박스에서 프로젝트 폴더로의 저장 명령이 멈추므로 **생성만 시키고** 저장은 제가 함
+- 원본 위치: Codex 보관함 `~/.codex/generated_images/<대화ID>/exec-*.png` (실제 저장소 D:/CodexData/generated_images). 작업 스크립트(run-codex.mjs, place-images.mjs)는 세션 작업 폴더에 있음. 작업이 끝나도 프로세스가 안 꺼지므로 완료 기록 확인 후 직접 종료
+- 새 이미지 9장: 새봄영어 4(hero-classroom, reading, blocks, reading-corner), 오브제마켓 2(banner-table, banner-shelf), 다솜세무 3(hero-desk, consult, binders) → `public/sites/<id>/*.webp` (원본 2MB대 → 40~180KB), 원본 PNG는 `assets-src/sites/<id>/`(배포 제외)
+- 각 사이트 `content.js`의 `READY_IMAGES` 갱신, 메인 갤러리 썸네일 3장(`public/agency-assets/sites/*.webp`) 재촬영
+- 검증: 3개 사이트 PC·모바일 이미지 전부 로드·가로 넘침·콘솔 에러 없음, 테스트 19개, 빌드
+
 ## 2026-10-03 — 프리미엄 시작가 210만원 (예약·결제·3D 기본 포함)
 
 - 프리미엄(기능형 플랫폼) 150 → **210만원부터**. 포함: 관리자·회원·방문 통계 + **예약·결제·3D 인터랙션**(포함 기능 값 126, 페이지·디자인 값 84)

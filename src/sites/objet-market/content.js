@@ -12,7 +12,7 @@ export const SHOP = Object.freeze({
 });
 
 // GPT 이미지가 public/sites/objet-market/ 에 들어오면 파일명을 여기에 추가합니다.
-export const READY_IMAGES = Object.freeze([]);
+export const READY_IMAGES = Object.freeze(['banner-table.webp', 'banner-shelf.webp']);
 
 export const BANNERS = Object.freeze({
   table: { file: 'banner-table.webp', alt: '수공예 도자기가 차려진 식탁', fallback: 'retail/YI2YkyaREHk' },

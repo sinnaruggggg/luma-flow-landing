@@ -10,7 +10,7 @@ export const OFFICE = Object.freeze({
 });
 
 // GPT 이미지가 public/sites/dasom-tax/ 에 들어오면 파일명을 추가합니다.
-export const READY_IMAGES = Object.freeze([]);
+export const READY_IMAGES = Object.freeze(['hero-desk.webp', 'consult.webp', 'binders.webp']);
 
 export const PHOTOS = Object.freeze({
   hero: { file: 'hero-desk.webp', alt: '계산기와 영수증, 노트북이 놓인 밝은 책상', fallback: 'brand/hLM702Wwj8I' },

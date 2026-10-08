@@ -10,7 +10,7 @@ export const ACADEMY = Object.freeze({
 });
 
 // GPT 이미지가 public/sites/saebom-english/ 에 들어오면 파일명을 추가합니다.
-export const READY_IMAGES = Object.freeze([]);
+export const READY_IMAGES = Object.freeze(['hero-classroom.webp', 'reading.webp', 'blocks.webp', 'reading-corner.webp']);
 
 export const PHOTOS = Object.freeze({
   hero: { file: 'hero-classroom.webp', alt: '작은 원형 테이블이 있는 밝은 영어 교실', fallback: 'education/Qw6wa96IvvQ' },
