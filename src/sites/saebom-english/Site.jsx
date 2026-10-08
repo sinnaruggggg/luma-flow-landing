@@ -70,33 +70,33 @@ function LevelArt({ id }) {
       {id === 'sprout' ? (
         <>
           <path d="M60 106 V76" stroke="#3d8a55" strokeWidth="5" strokeLinecap="round" />
-          <path d="M60 78 C 40 78 32 62 34 50 C 50 50 60 62 60 78Z" fill="var(--tone)" />
-          <path d="M60 74 C 78 74 88 58 84 44 C 68 46 58 58 60 74Z" fill="var(--tone)" opacity=".75" />
+          <path d="M60 78 C 40 78 32 62 34 50 C 50 50 60 62 60 78Z" fill="var(--tone,var(--leaf))" />
+          <path d="M60 74 C 78 74 88 58 84 44 C 68 46 58 58 60 74Z" fill="var(--tone,var(--leaf))" opacity=".75" />
         </>
       ) : null}
       {id === 'leaf' ? (
         <>
           <path d="M60 106 V58" stroke="#3d8a55" strokeWidth="5" strokeLinecap="round" />
-          <path d="M60 86 C 38 88 26 72 28 58 C 46 56 60 68 60 86Z" fill="var(--tone)" />
-          <path d="M60 72 C 82 72 94 56 90 40 C 72 42 58 54 60 72Z" fill="var(--tone)" opacity=".75" />
-          <path d="M60 58 C 50 50 50 38 58 28 C 68 36 68 50 60 58Z" fill="var(--tone)" />
+          <path d="M60 86 C 38 88 26 72 28 58 C 46 56 60 68 60 86Z" fill="var(--tone,var(--leaf))" />
+          <path d="M60 72 C 82 72 94 56 90 40 C 72 42 58 54 60 72Z" fill="var(--tone,var(--leaf))" opacity=".75" />
+          <path d="M60 58 C 50 50 50 38 58 28 C 68 36 68 50 60 58Z" fill="var(--tone,var(--leaf))" />
         </>
       ) : null}
       {id === 'branch' ? (
         <>
           <path d="M60 106 V50 M60 80 L38 62 M60 66 L84 48" stroke="#8a6a3d" strokeWidth="5" strokeLinecap="round" fill="none" />
-          <circle cx="60" cy="40" r="16" fill="var(--tone)" />
-          <circle cx="36" cy="58" r="12" fill="var(--tone)" opacity=".8" />
-          <circle cx="86" cy="44" r="12" fill="var(--tone)" opacity=".8" />
+          <circle cx="60" cy="40" r="16" fill="var(--tone,var(--leaf))" />
+          <circle cx="36" cy="58" r="12" fill="var(--tone,var(--leaf))" opacity=".8" />
+          <circle cx="86" cy="44" r="12" fill="var(--tone,var(--leaf))" opacity=".8" />
           <circle cx="68" cy="34" r="4" fill="#fff" opacity=".7" />
         </>
       ) : null}
       {id === 'tree' ? (
         <>
           <path d="M54 106 V70 H66 V106Z" fill="#8a6a3d" />
-          <circle cx="60" cy="50" r="30" fill="var(--tone)" />
-          <circle cx="38" cy="62" r="16" fill="var(--tone)" opacity=".8" />
-          <circle cx="82" cy="62" r="16" fill="var(--tone)" opacity=".8" />
+          <circle cx="60" cy="50" r="30" fill="var(--tone,var(--leaf))" />
+          <circle cx="38" cy="62" r="16" fill="var(--tone,var(--leaf))" opacity=".8" />
+          <circle cx="82" cy="62" r="16" fill="var(--tone,var(--leaf))" opacity=".8" />
           <circle cx="52" cy="40" r="5" fill="#fff" opacity=".6" />
           <circle cx="70" cy="56" r="5" fill="#fff" opacity=".6" />
         </>
@@ -492,25 +492,22 @@ function PageTop({ kicker, title, lead }) {
 }
 
 function ProgramsPage() {
-  const [open, setOpen] = useState(LEVELS[0].id);
   return (
     <>
       <PageTop kicker="프로그램" title="아이의 속도에 맞춘 네 개의 반" lead="레벨테스트 결과와 학년을 함께 보고 반을 정해요. 중간에 반을 옮길 수도 있어요." />
       <section className="sb-section sb-section--tight">
         <div className="sb-wrap sb-levels">
           {LEVELS.map((level) => (
-            <article key={level.id} className={`sb-level sb-tone--${level.color}${open === level.id ? ' is-open' : ''}`} data-reveal>
-              <button type="button" aria-expanded={open === level.id} onClick={() => setOpen(open === level.id ? '' : level.id)}>
+            <article key={level.id} className={`sb-level sb-level--static sb-tone--${level.color}`} data-reveal>
+              <div className="sb-level__head">
                 <LevelArt id={level.id} />
                 <span className="sb-level__name">{level.name}</span><span className="sb-level__grade">{level.grade}</span><span className="sb-level__title">{level.title}</span>
-              </button>
-              {open === level.id ? (
-                <div className="sb-level__body">
-                  <p>{level.text}</p>
-                  <ul>{level.skills.map((skill) => <li key={skill}>{skill}</li>)}</ul>
-                  <p className="sb-level__time">수업 시간: {SCHEDULE[level.id].map(([days, time]) => `${days} ${time}`).join(' / ')}</p>
-                </div>
-              ) : null}
+              </div>
+              <div className="sb-level__body">
+                <p>{level.text}</p>
+                <ul>{level.skills.map((skill) => <li key={skill}>{skill}</li>)}</ul>
+                <p className="sb-level__time">수업 시간: {SCHEDULE[level.id].map(([days, time]) => `${days} ${time}`).join(' / ')}</p>
+              </div>
             </article>
           ))}
         </div>

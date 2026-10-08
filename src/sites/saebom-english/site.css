@@ -106,11 +106,11 @@
 .sb-pagetop p:last-child:not(.sb-kicker){color:var(--muted)}
 .sb-levels{display:grid;gap:14px}
 .sb-level{border-radius:var(--r);background:var(--tone-l);overflow:hidden}
-.sb-level>button{display:grid;grid-template-columns:auto auto 1fr;align-items:center;gap:14px;width:100%;padding:22px 26px;border:0;background:none;text-align:left}
+.sb-level>button,.sb-level__head{display:grid;grid-template-columns:auto auto 1fr;align-items:center;gap:14px;width:100%;padding:22px 26px;border:0;background:none;text-align:left}
 .sb-level__name{padding:6px 16px;border-radius:999px;background:var(--tone);color:#fff;font-weight:800}
 .sb-level__grade{font-weight:700;color:var(--muted)}
 .sb-level__title{justify-self:end;font-family:'Gowun Dodum',sans-serif;font-size:22px}
-.sb-level__body{padding:0 26px 24px;animation:sb-pop .35s ease}
+.sb-level__body{padding:0 26px 24px 120px;animation:sb-pop .35s ease}
 .sb-level__body ul{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;list-style:none}
 .sb-level__body li{padding:4px 14px;border-radius:999px;background:#fff;font-weight:700;font-size:14px}
 .sb-level__time{font-size:14px;color:var(--muted)}
@@ -160,7 +160,7 @@
 @media(max-width:640px){
   .sb-wrap{width:calc(100% - 32px)}
   .sb-finder__opts,.sb-form__row{grid-template-columns:1fr}
-  .sb-level>button{grid-template-columns:auto 1fr;gap:6px 12px}
+  .sb-level>button,.sb-level__head{grid-template-columns:auto 1fr;gap:6px 12px}
   .sb-level__title{grid-column:1/-1;justify-self:start}
   .sb-gallery{grid-template-columns:1fr 1fr}
   .sb-gallery>:first-child{grid-column:1/-1}
@@ -199,8 +199,7 @@
 .sb-stats small{font-size:13px;color:var(--muted);text-align:center}
 
 /* 반 찾기 결과의 식물 그림 */
-.sb-levelart{width:96px;height:96px;margin:0 auto 4px;--tone:var(--leaf)}
-.sb-tone--leaf .sb-levelart,.sb-tone--sky .sb-levelart,.sb-tone--sun .sb-levelart,.sb-tone--coral .sb-levelart{--tone:var(--tone)}
+.sb-levelart{width:96px;height:96px;margin:0 auto 4px}
 
 /* 단어 뒤집기 놀이 */
 .sb-play{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(240px,.7fr);gap:clamp(20px,4vw,48px);align-items:center;max-width:980px;margin:0 auto}
@@ -352,7 +351,7 @@
 .sb-timeline p{font-size:15px;color:var(--muted)}
 
 /* 반 카드의 식물 그림, 푸터, 약관 */
-.sb-level>button{grid-template-columns:auto auto auto 1fr}
+.sb-level>button,.sb-level__head{grid-template-columns:auto auto auto 1fr}
 .sb-level .sb-levelart{width:64px;height:64px;margin:0}
 .sb-footer__links{display:flex;gap:16px}
 .sb-footer__links button{padding:0;border:0;background:none;font:inherit;font-weight:700;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
@@ -378,7 +377,7 @@
   .sb-teacherrow a{padding:10px 8px 14px}
   .sb-teacherrow b{font-size:17px}
   .sb-teacherrow span:not(.sb-portrait-fallback){font-size:12px}
-  .sb-level>button{grid-template-columns:auto 1fr}
+  .sb-level>button,.sb-level__head{grid-template-columns:auto 1fr}
   .sb-level .sb-levelart{grid-row:1/3}
   .sb-level__name{justify-self:start}
   .sb-history li{grid-template-columns:64px 1fr}
@@ -387,3 +386,5 @@
   .sb-timeline li{grid-template-columns:1fr}
 }
 @media(prefers-reduced-motion:reduce){.sb-float,.sb-play__emoji,.sb-card.is-found,.sb-confetti i,.sb-report__play.is-on .sb-report__wave i{animation:none}.sb-card__inner{transition:none}.sb-float{transform:none}}
+
+@media (max-width:760px){.sb-level__body{padding:0 20px 22px}}
