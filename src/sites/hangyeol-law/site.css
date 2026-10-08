@@ -335,3 +335,163 @@
   .hg-timeline li{grid-template-columns:1fr;gap:2px}
   .hg-done{padding:28px 22px}
 }
+
+/* ───────────── 실제 운영 수준 보강 ───────────── */
+.hg-narrow{max-width:900px}
+.hg-more{margin-top:28px}
+
+/* 변호사 사진 */
+.hg-lawyer{grid-template-columns:150px 1fr}
+.hg-lawyer.is-compact{grid-template-columns:72px 1fr}
+.hg-lawyer__photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 16%;background:var(--tint)}
+.hg-people-preview .hg-lawyer{grid-template-columns:1fr;gap:0;padding:0;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.hg-people-preview .hg-lawyer:hover{transform:translateY(-4px);box-shadow:0 18px 36px -18px rgba(14,28,54,.35)}
+.hg-people-preview .hg-lawyer__photo,.hg-people-preview .hg-lawyer__mono{aspect-ratio:4/5}
+.hg-people-preview .hg-lawyer>div:last-child{padding:20px 22px 24px}
+.hg-aside-card .hg-lawyer__photo{aspect-ratio:3/4}
+
+/* 사무소 둘러보기 */
+.hg-office{background:var(--navy);color:#fff}
+.hg-office__grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);gap:clamp(32px,5vw,72px);align-items:center}
+.hg-office h2{margin:14px 0 18px;font-family:var(--serif);font-size:clamp(28px,3vw,40px);line-height:1.4;color:#fff}
+.hg-office p{color:rgba(255,255,255,.76)}
+.hg-office .hg-textlink{margin-top:22px;color:var(--brass-2)}
+.hg-office__photos{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:1fr 1fr;gap:12px}
+.hg-office__photos img{width:100%;height:100%;min-height:200px;object-fit:cover}
+.hg-office__photos img:first-child{grid-row:1/3}
+
+/* 내 상황 진단 */
+.hg-finder{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);gap:clamp(28px,4vw,64px);padding:clamp(28px,4vw,56px);background:#fff;border:1px solid var(--line);box-shadow:0 30px 60px -40px rgba(14,28,54,.35)}
+.hg-finder__head h2{margin:14px 0 24px;font-family:var(--serif);font-size:clamp(22px,2.2vw,30px);word-break:keep-all;line-height:1.4;color:var(--navy)}
+.hg-finder__steps{display:flex;gap:8px;list-style:none}
+.hg-finder__steps li{flex:1;padding:8px 0;border-top:3px solid var(--line);font-size:13px;font-weight:700;color:var(--muted)}
+.hg-finder__steps li.is-on{border-color:var(--brass);color:var(--navy)}
+.hg-finder__steps li.is-done{border-color:var(--navy);color:var(--navy)}
+.hg-finder__body{min-height:340px}
+.hg-finder__body h3{margin-bottom:18px;font-family:var(--serif);font-size:22px;color:var(--navy)}
+.hg-finder__body h3 small{margin-left:8px;font-family:Pretendard,sans-serif;font-size:13px;font-weight:600;color:var(--brass)}
+.hg-finder__opts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.hg-finder__opts--col{grid-template-columns:1fr}
+.hg-finder__opts button{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;align-items:center;padding:16px 18px;border:1px solid var(--line);background:#fff;text-align:left;transition:border-color .2s,transform .2s,background .2s}
+.hg-finder__opts button:hover{border-color:var(--brass);background:var(--paper);transform:translateY(-2px)}
+.hg-finder__opts button svg{grid-row:1/3;color:var(--brass)}
+.hg-finder__opts button b{color:var(--navy)}
+.hg-finder__opts button span{font-size:13px;color:var(--muted);line-height:1.5}
+.hg-finder__opts--col button{grid-template-columns:1fr;padding:20px}
+.hg-finder__opts--col button.is-urgent{border-left:4px solid #b4412e}
+.hg-finder__opts--col button.is-soon{border-left:4px solid var(--brass)}
+.hg-finder__opts--col button.is-calm{border-left:4px solid #5b8a72}
+.hg-finder__back{display:inline-flex;align-items:center;gap:6px;margin-top:18px;border:0;background:none;font-size:14px;font-weight:600;color:var(--muted)}
+.hg-finder__back:hover{color:var(--navy)}
+.hg-finder__tag{display:inline-block;margin-bottom:10px;padding:4px 12px;font-size:13px;font-weight:800;color:#fff}
+.hg-finder__tag.is-urgent{background:#b4412e}
+.hg-finder__tag.is-soon{background:var(--brass)}
+.hg-finder__tag.is-calm{background:#5b8a72}
+.hg-finder__result>p{color:var(--muted)}
+.hg-finder__result>p.hg-finder__tag{color:#fff}
+.hg-finder__cols{display:grid;grid-template-columns:1fr 1.2fr;gap:24px;margin:22px 0}
+.hg-finder__cols b{display:block;margin-bottom:10px;font-size:14px;color:var(--navy)}
+.hg-finder__lawyers{display:grid;gap:10px;list-style:none}
+.hg-finder__lawyers li{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--navy)}
+.hg-finder__lawyers small{display:block;font-weight:500;color:var(--muted)}
+.hg-finder__lawyers .hg-lawyer__photo{width:52px;height:52px;aspect-ratio:1;border-radius:50%}
+.hg-finder__lawyers .hg-lawyer__mono{width:52px;height:52px;aspect-ratio:1;border-radius:50%;font-size:20px}
+.hg-finder__docs{display:grid;gap:8px;list-style:none;font-size:14px}
+.hg-finder__docs li{display:flex;gap:8px;align-items:flex-start;color:#303848}
+.hg-finder__docs svg{flex:none;margin-top:5px;color:var(--brass)}
+.hg-finder__actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px}
+.hg-finder__actions .hg-finder__back{margin-top:0}
+
+/* 기한 계산기 */
+.hg-deadline{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.2fr);gap:clamp(28px,5vw,72px);align-items:start}
+.hg-deadline__intro h2{margin:14px 0 18px;font-family:var(--serif);font-size:clamp(26px,3vw,38px);line-height:1.4;color:var(--navy)}
+.hg-deadline__intro p:not(.hg-eyebrow){color:var(--muted)}
+.hg-deadline__panel{display:grid;gap:18px;padding:clamp(24px,3vw,40px);background:#fff;border:1px solid var(--line)}
+.hg-deadline__panel label{display:grid;gap:8px;font-size:14px;font-weight:700;color:var(--navy)}
+.hg-deadline__panel input[type=date]{min-height:52px;padding:0 14px;border:1px solid var(--line);font:inherit;color:var(--ink)}
+.hg-deadline__empty{padding:22px;border:1px dashed var(--line);text-align:center;color:var(--muted)}
+.hg-deadline__result{padding:22px 24px;border-left:5px solid #5b8a72;background:var(--paper)}
+.hg-deadline__result.is-soon{border-color:var(--brass)}
+.hg-deadline__result.is-late{border-color:#b4412e}
+.hg-deadline__label{font-size:13px;font-weight:700;color:var(--muted)}
+.hg-deadline__date{margin:6px 0;font-family:var(--serif);font-size:clamp(20px,2.4vw,28px);font-weight:700;color:var(--navy)}
+.hg-deadline__status{font-weight:700;color:#303848}
+.hg-deadline__note{font-size:14px;color:var(--muted)}
+.hg-deadline .hg-btn{justify-self:start}
+
+/* 업무 사례 */
+.hg-cases{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.hg-cases--one{grid-template-columns:1fr;margin-top:16px}
+.hg-case{display:grid;gap:14px;align-content:start;padding:28px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--brass)}
+.hg-case__meta{display:flex;justify-content:space-between;font-size:13px;font-weight:700;color:var(--brass)}
+.hg-case__meta b{color:var(--muted);font-weight:600}
+.hg-case h3{font-family:var(--serif);font-size:20px;line-height:1.45;color:var(--navy)}
+.hg-case dl{display:grid;gap:12px;font-size:15px}
+.hg-case dt{font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--brass)}
+.hg-case dd{margin:2px 0 0;color:#303848;line-height:1.7}
+.hg-case-note{margin-top:20px;font-size:13px;color:var(--muted)}
+
+/* FAQ + 공지 */
+.hg-faqnotice{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px)}
+.hg-faqnotice .hg-sectitle{margin-bottom:28px}
+.hg-notices{list-style:none;border-top:2px solid var(--navy)}
+.hg-notices li{border-bottom:1px solid var(--line)}
+.hg-notices a{display:grid;grid-template-columns:auto 1fr auto;gap:8px 20px;align-items:start;padding:20px 8px;transition:background .2s}
+.hg-notices a:hover{background:var(--paper)}
+.hg-notice__tag{padding:3px 10px;border:1px solid var(--brass);font-size:12px;font-weight:800;color:var(--brass)}
+.hg-notices b{display:block;color:var(--navy);line-height:1.5}
+.hg-notices p{margin-top:4px;font-size:14px;color:var(--muted)}
+.hg-notices time{font-size:13px;color:var(--muted);white-space:nowrap}
+.hg-notices--compact a{grid-template-columns:auto 1fr;padding:16px 4px}
+.hg-notices--compact time{grid-column:2}
+.hg-notices--compact p{display:none}
+.hg-reading--solo{display:block}
+.hg-reading--solo article,.hg-reading--solo{max-width:none}
+.hg-reading--solo p{margin-bottom:22px;font-size:18px;line-height:1.95;color:#303848}
+.hg-notice-nav{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}
+.hg-notice-nav a{display:grid;gap:4px;padding:18px 20px;border:1px solid var(--line);font-weight:700;color:var(--navy);transition:border-color .2s}
+.hg-notice-nav a:hover{border-color:var(--brass)}
+.hg-notice-nav a:last-child{text-align:right}
+.hg-notice-nav small{font-weight:600;color:var(--muted)}
+
+/* 푸터·약관 */
+.hg-footer__legal{display:flex;flex-wrap:wrap;gap:8px 24px;padding:0 0 20px}
+.hg-footer__legal button{border:0;background:none;padding:0;font-size:13px;font-weight:700;color:rgba(255,255,255,.86);text-decoration:underline;text-underline-offset:3px}
+.hg-footer__legal button:hover{color:#fff}
+.hg-footer__bottom{padding-top:20px}
+.hg-dialog{width:min(560px,calc(100% - 32px));max-height:min(80vh,640px);padding:0;border:0;overflow:auto;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+.hg-dialog::backdrop{background:rgba(10,21,40,.6)}
+.hg-dialog>div{display:grid;gap:14px;padding:32px;font-size:15px;color:#303848}
+.hg-dialog h2{font-family:var(--serif);font-size:22px;color:var(--navy)}
+.hg-dialog .hg-btn{justify-self:start}
+
+/* 사무소 갤러리 4장 */
+.hg-gallery__grid{grid-template-columns:repeat(4,1fr)}
+
+@media(max-width:1100px){
+  .hg-cases{grid-template-columns:1fr 1fr}
+  .hg-finder{grid-template-columns:1fr}
+  .hg-finder__body{min-height:0}
+}
+@media(max-width:900px){
+  .hg-office__grid,.hg-deadline,.hg-faqnotice{grid-template-columns:1fr}
+  .hg-gallery__grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .hg-cases{grid-template-columns:1fr}
+  .hg-finder{padding:22px 18px}
+  .hg-finder__opts,.hg-finder__cols{grid-template-columns:1fr}
+  .hg-lawyer{grid-template-columns:96px 1fr;gap:16px}
+  .hg-lawyer.is-compact{grid-template-columns:64px 1fr}
+  .hg-office__photos{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .hg-office__photos img:first-child{grid-column:1/-1;grid-row:auto}
+  .hg-gallery__grid img:first-child{grid-column:auto}
+  .hg-notice-nav{grid-template-columns:1fr}
+  .hg-notice-nav a:last-child{text-align:left}
+  .hg-notices a{grid-template-columns:auto 1fr}
+  .hg-notices time{grid-column:2}
+  .hg-dialog>div{padding:24px 20px}
+}
+@media (prefers-reduced-motion:reduce){
+  .hg-people-preview .hg-lawyer,.hg-finder__opts button{transition:none}
+}

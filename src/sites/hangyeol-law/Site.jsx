@@ -1,12 +1,12 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Clock, Menu, Phone, X } from 'lucide-react';
 import { usePageTitle, useSite } from '../_kit/siteContext.js';
 import { Link } from '../_kit/SiteProvider.jsx';
 import { MenuDrawer } from '../_kit/MenuDrawer.jsx';
 import { PhotoCredits } from '../_kit/SampleBadge.jsx';
 import { useFonts, useReveal, useScrolled } from '../_kit/hooks.js';
-import { ALL_PHOTO_KEYS, AREAS, ARTICLES, FIRM, NAV } from './content.js';
-import { AboutPage, AreaPage, ArticlePage, ContactPage, HomePage, InsightsPage, NotFoundPage, PeoplePage, PracticePage } from './Pages.jsx';
+import { ALL_PHOTO_KEYS, AREAS, ARTICLES, FIRM, LEGAL, NAV, NOTICES } from './content.js';
+import { AboutPage, AreaPage, ArticlePage, ContactPage, HomePage, InsightsPage, NoticeDetailPage, NoticePage, NotFoundPage, PeoplePage, PracticePage } from './Pages.jsx';
 import './site.css';
 
 const FONTS = [
@@ -30,6 +30,11 @@ function resolvePage(page) {
   if (section === 'insights') {
     const article = ARTICLES.find((item) => item.slug === slug);
     if (article) return titled(ArticlePage, article.title, { article });
+  }
+  if (section === 'notice' && !slug) return titled(NoticePage, '공지사항');
+  if (section === 'notice') {
+    const notice = NOTICES.find((item) => item.id === slug);
+    if (notice) return titled(NoticeDetailPage, notice.title, { notice });
   }
   if (section === 'contact' && !slug) return titled(ContactPage, '상담 예약');
   return titled(NotFoundPage, '페이지를 찾을 수 없습니다');
@@ -60,7 +65,7 @@ function Header() {
         <div className="hg-wrap hg-header__inner">
           <Logo />
           <nav className="hg-nav" aria-label="주 메뉴">
-            {NAV.slice(0, 4).map(([to, label]) => <Link key={to} to={to}>{label}</Link>)}
+            {NAV.filter(([to]) => to !== 'contact').map(([to, label]) => <Link key={to} to={to}>{label}</Link>)}
           </nav>
           <Link to="contact" className="hg-btn hg-btn--navy hg-header__cta">상담 예약</Link>
           <button type="button" className="hg-burger" aria-label="전체 메뉴 열기" aria-expanded={open} onClick={() => setOpen(true)}><Menu aria-hidden="true" /></button>
@@ -81,7 +86,27 @@ function Header() {
   );
 }
 
-function Footer() {
+function LegalDialog({ kind, onClose }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    const dialog = ref.current;
+    if (!dialog) return;
+    if (kind && !dialog.open) dialog.showModal();
+    if (!kind && dialog.open) dialog.close();
+  }, [kind]);
+  const titles = { terms: '이용약관 (예시)', privacy: '개인정보 처리방침 (예시)', ad: '변호사 광고 고지 (예시)' };
+  return (
+    <dialog ref={ref} className="hg-dialog" onClose={onClose} aria-labelledby="hg-legal-title">
+      <div>
+        <h2 id="hg-legal-title">{titles[kind] || ''}</h2>
+        {kind ? LEGAL[kind].map((line) => <p key={line}>{line}</p>) : null}
+        <button type="button" className="hg-btn hg-btn--navy" onClick={onClose}>닫기</button>
+      </div>
+    </dialog>
+  );
+}
+
+function Footer({ onLegal }) {
   return (
     <footer className="hg-footer">
       <div className="hg-wrap hg-footer__grid">
@@ -93,11 +118,17 @@ function Footer() {
           <li>대표변호사 {FIRM.owner} · 광고책임변호사 {FIRM.owner}</li>
           <li>{FIRM.address}</li>
           <li>대표전화 {FIRM.phone} · {FIRM.hours}</li>
-          <li>사업자등록번호 000-00-00000</li>
+          <li>{FIRM.registration} · 사업자등록번호 {FIRM.business}</li>
+          <li>{FIRM.email} · FAX {FIRM.fax}</li>
         </ul>
         <nav aria-label="하단 메뉴">
           {NAV.map(([to, label]) => <Link key={to} to={to}>{label}</Link>)}
         </nav>
+      </div>
+      <div className="hg-wrap hg-footer__legal">
+        <button type="button" onClick={() => onLegal('terms')}>이용약관</button>
+        <button type="button" onClick={() => onLegal('privacy')}>개인정보 처리방침</button>
+        <button type="button" onClick={() => onLegal('ad')}>변호사 광고 고지</button>
       </div>
       <div className="hg-wrap hg-footer__bottom">
         <p>© 2026 {FIRM.name}. 이 사이트는 나나웹이 제작한 가상 업체 시안이며 법률 자문을 제공하지 않습니다.</p>
@@ -113,6 +144,7 @@ export default function Site() {
   const { Page, props, title } = resolvePage(page);
   usePageTitle(title);
   const root = useReveal([page]);
+  const [legal, setLegal] = useState(null);
   return (
     <div className="hg" ref={root}>
       <a className="hg-skip" href="#site-main">본문 바로가기</a>
@@ -120,7 +152,8 @@ export default function Site() {
       <main id="site-main" tabIndex={-1}>
         <Page key={page} {...props} />
       </main>
-      <Footer />
+      <Footer onLegal={setLegal} />
+      <LegalDialog kind={legal} onClose={() => setLegal(null)} />
     </div>
   );
 }

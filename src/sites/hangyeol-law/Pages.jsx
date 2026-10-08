@@ -1,9 +1,9 @@
 import { useMemo, useState } from 'react';
-import { ArrowRight, Briefcase, Building2, Check, ChevronRight, HeartHandshake, MapPin, Phone, Scale, ScrollText, ShieldAlert, TrainFront, Car, Video, Users } from 'lucide-react';
+import { ArrowRight, Briefcase, Building2, CalendarClock, Check, ChevronRight, HeartHandshake, MapPin, Phone, RotateCcw, Scale, ScrollText, ShieldAlert, TrainFront, Car, Video, Users } from 'lucide-react';
 import { Link } from '../_kit/SiteProvider.jsx';
 import { resolvePhoto } from '../_kit/media.js';
 import { dateAfter, useMockForm } from '../_kit/hooks.js';
-import { AREAS, ARTICLES, FACTS, FIRM, HISTORY, LAWYERS, PHOTOS, PRINCIPLES, PROCESS } from './content.js';
+import { AREAS, ARTICLES, CASES, DEADLINES, FACTS, FINDER_STATES, FIRM, HISTORY, LAWYERS, LAWYER_PHOTOS, NOTICES, OFFICE_FAQS, PHOTOS, PRINCIPLES, PROCESS } from './content.js';
 
 const ICONS = { Scale, Building2, HeartHandshake, ScrollText, ShieldAlert, Briefcase };
 const lawyerById = (id) => LAWYERS.find((item) => item.id === id);
@@ -46,10 +46,15 @@ function SectionTitle({ eyebrow, title, action }) {
   );
 }
 
+function LawyerPhoto({ lawyer }) {
+  const { src, alt } = resolvePhoto('hangyeol-law', LAWYER_PHOTOS[lawyer.photo]);
+  return src ? <img className="hg-lawyer__photo" src={src} alt={alt} loading="lazy" decoding="async" /> : <div className="hg-lawyer__mono" aria-hidden="true">{lawyer.initial}</div>;
+}
+
 function LawyerCard({ lawyer, compact = false }) {
   return (
     <article className={`hg-lawyer${compact ? ' is-compact' : ''}`} data-reveal>
-      <div className="hg-lawyer__mono" aria-hidden="true">{lawyer.initial}</div>
+      <LawyerPhoto lawyer={lawyer} />
       <div>
         <p className="hg-lawyer__role">{lawyer.role}</p>
         <h3>{lawyer.name}</h3>
@@ -80,6 +85,182 @@ function CtaBand() {
         </div>
       </div>
     </section>
+  );
+}
+
+// 진단 결과로 고른 분야를 상담 예약 화면에서 미리 선택해 둡니다. (저장이 막힌 환경에서도 화면은 정상 동작)
+const PICK_KEY = 'hg-pick-area';
+const savePick = (slug) => { try { window.sessionStorage.setItem(PICK_KEY, slug); } catch { /* 저장 불가 시 무시 */ } };
+const readPick = () => { try { return window.sessionStorage.getItem(PICK_KEY) || ''; } catch { return ''; } };
+
+// 대표 연출 ①: 내 상황 진단 — 분야와 급한 정도를 고르면 분야·담당 변호사·준비 자료·예약 링크를 보여 줍니다.
+function CaseFinder() {
+  const [areaSlug, setAreaSlug] = useState('');
+  const [stateId, setStateId] = useState('');
+  const area = AREAS.find((item) => item.slug === areaSlug);
+  const state = FINDER_STATES.find((item) => item.id === stateId);
+  const step = !area ? 1 : !state ? 2 : 3;
+  const reset = () => { setAreaSlug(''); setStateId(''); };
+  return (
+    <div className="hg-finder" data-reveal>
+      <div className="hg-finder__head">
+        <p className="hg-eyebrow">내 상황 진단</p>
+        <h2>어느 분야 상담이 필요한지,<br />두 번의 선택으로 알려 드려요.</h2>
+        <ol className="hg-finder__steps" aria-label="진행 단계">
+          {[1, 2, 3].map((n) => <li key={n} className={n === step ? 'is-on' : n < step ? 'is-done' : ''}>{n === 3 ? '결과' : `${n}단계`}</li>)}
+        </ol>
+      </div>
+      <div className="hg-finder__body" aria-live="polite">
+        {step === 1 ? (
+          <>
+            <h3>1. 어떤 일로 고민하고 계신가요?</h3>
+            <div className="hg-finder__opts">
+              {AREAS.map((item) => (
+                <button key={item.slug} type="button" onClick={() => setAreaSlug(item.slug)}><AreaIcon name={item.icon} size={22} /><b>{item.title}</b><span>{item.cases[0]}</span></button>
+              ))}
+            </div>
+          </>
+        ) : null}
+        {step === 2 ? (
+          <>
+            <h3>2. 지금 상황은 어디쯤인가요? <small>선택: {area.title}</small></h3>
+            <div className="hg-finder__opts hg-finder__opts--col">
+              {FINDER_STATES.map((item) => <button key={item.id} type="button" className={`is-${item.tone}`} onClick={() => setStateId(item.id)}><b>{item.label}</b></button>)}
+            </div>
+            <button type="button" className="hg-finder__back" onClick={reset}><RotateCcw size={14} aria-hidden="true" /> 처음부터</button>
+          </>
+        ) : null}
+        {step === 3 ? (
+          <div className="hg-finder__result">
+            <p className={`hg-finder__tag is-${state.tone}`}>{state.tone === 'urgent' ? '서둘러 상담하세요' : state.tone === 'soon' ? '이번 주 안에 상담하세요' : '편하게 예약하세요'}</p>
+            <h3>{area.title} 상담을 권해 드려요</h3>
+            <p>{state.message}</p>
+            <div className="hg-finder__cols">
+              <div>
+                <b>담당 변호사</b>
+                <ul className="hg-finder__lawyers">
+                  {area.lawyers.map((id) => { const lawyer = lawyerById(id); return <li key={id}><LawyerPhoto lawyer={lawyer} /><span>{lawyer.name}<small>{lawyer.role}</small></span></li>; })}
+                </ul>
+              </div>
+              <div>
+                <b>상담 전 준비하면 좋은 자료</b>
+                <ul className="hg-finder__docs">{area.documents.map((doc) => <li key={doc}><Check size={14} aria-hidden="true" />{doc}</li>)}</ul>
+              </div>
+            </div>
+            <div className="hg-finder__actions">
+              <Link to="contact" className="hg-btn hg-btn--navy" onClick={() => savePick(area.slug)}>{area.title}로 상담 예약 <ArrowRight size={18} aria-hidden="true" /></Link>
+              <Link to={`practice/${area.slug}`} className="hg-textlink">분야 자세히 보기 <ArrowRight size={16} aria-hidden="true" /></Link>
+              <button type="button" className="hg-finder__back" onClick={reset}><RotateCcw size={14} aria-hidden="true" /> 다시 진단</button>
+            </div>
+          </div>
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+// 대표 연출 ②: 기한 계산기 — 날짜를 넣으면 법에서 정한 기한을 달력에 표시합니다. (참고용)
+const parseDate = (value) => new Date(`${value}T00:00:00`);
+const WEEKDAYS = ['일', '월', '화', '수', '목', '금', '토'];
+const formatDate = (date) => `${date.getFullYear()}년 ${date.getMonth() + 1}월 ${date.getDate()}일 (${WEEKDAYS[date.getDay()]})`;
+function addMonths(date, months) {
+  const target = new Date(date.getFullYear(), date.getMonth() + months, 1);
+  const last = new Date(target.getFullYear(), target.getMonth() + 1, 0).getDate();
+  target.setDate(Math.min(date.getDate(), last));
+  return target;
+}
+const daysBetween = (from, to) => Math.round((to - from) / 86400000);
+
+function DeadlineResult({ rule, base }) {
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  if (rule.kind === 'after') {
+    const end = addMonths(base, rule.months);
+    const left = daysBetween(today, end);
+    const tone = left < 0 ? 'late' : left <= 14 ? 'soon' : 'ok';
+    return (
+      <div className={`hg-deadline__result is-${tone}`}>
+        <p className="hg-deadline__label">{rule.rule}</p>
+        <p className="hg-deadline__date">{formatDate(end)}</p>
+        <p className="hg-deadline__status">{left < 0 ? `기한이 ${-left}일 지났을 수 있습니다. 예외가 있을 수 있으니 바로 상담하세요.` : left === 0 ? '오늘이 마지막 날일 수 있습니다. 지금 전화 주세요.' : `남은 기간 약 ${left}일`}</p>
+      </div>
+    );
+  }
+  const from = addMonths(base, -rule.fromMonths);
+  const to = addMonths(base, -rule.toMonths);
+  const state = today < from ? 'before' : today <= to ? 'in' : 'late';
+  return (
+    <div className={`hg-deadline__result is-${state === 'in' ? 'soon' : state === 'late' ? 'late' : 'ok'}`}>
+      <p className="hg-deadline__label">{rule.rule}</p>
+      <p className="hg-deadline__date">{formatDate(from)} ~ {formatDate(to)}</p>
+      <p className="hg-deadline__status">{state === 'before' ? `요구 가능 기간 시작까지 약 ${daysBetween(today, from)}일` : state === 'in' ? `지금이 요구 가능한 기간입니다. 마감까지 약 ${daysBetween(today, to)}일` : '요구 가능한 기간이 지났을 수 있습니다. 상담으로 확인하세요.'}</p>
+    </div>
+  );
+}
+
+function DeadlineTool() {
+  const [ruleId, setRuleId] = useState(DEADLINES[0].id);
+  const [value, setValue] = useState('');
+  const rule = DEADLINES.find((item) => item.id === ruleId);
+  const base = value ? parseDate(value) : null;
+  const valid = base && !Number.isNaN(base.getTime());
+  return (
+    <div className="hg-deadline" data-reveal>
+      <div className="hg-deadline__intro">
+        <p className="hg-eyebrow"><CalendarClock size={16} aria-hidden="true" /> 기한 계산기</p>
+        <h2>놓치면 되돌리기 어려운<br />기한을 먼저 확인하세요.</h2>
+        <p>날짜 하나만 넣으면 법에서 정한 기한을 달력으로 보여 드립니다. 참고용이며, 말일이 공휴일이면 다음 날까지로 보는 등 예외가 있어 정확한 날짜는 상담에서 확인합니다.</p>
+      </div>
+      <div className="hg-deadline__panel">
+        <div className="hg-tabs" role="group" aria-label="기한 종류">
+          {DEADLINES.map((item) => <button key={item.id} type="button" aria-pressed={ruleId === item.id} onClick={() => setRuleId(item.id)}>{item.label}</button>)}
+        </div>
+        <label>{rule.inputLabel}
+          <input type="date" value={value} onChange={(event) => setValue(event.target.value)} />
+        </label>
+        {valid ? <DeadlineResult rule={rule} base={base} /> : <p className="hg-deadline__empty">날짜를 고르면 결과가 여기에 나타납니다.</p>}
+        <p className="hg-deadline__note">{rule.note}</p>
+        <Link to="contact" className="hg-btn hg-btn--navy" onClick={() => savePick(ruleId === 'renewal' ? 'real-estate' : 'inheritance')}>이 기한으로 상담 예약 <ArrowRight size={18} aria-hidden="true" /></Link>
+      </div>
+    </div>
+  );
+}
+
+function CaseCard({ item }) {
+  const area = AREAS.find((entry) => entry.slug === item.area);
+  return (
+    <article className="hg-case" data-reveal>
+      <p className="hg-case__meta"><span>{area.title}</span><b>{item.period}</b></p>
+      <h3>{item.title}</h3>
+      <dl>
+        <div><dt>상황</dt><dd>{item.situation}</dd></div>
+        <div><dt>진행</dt><dd>{item.process}</dd></div>
+        <div><dt>결과</dt><dd>{item.result}</dd></div>
+      </dl>
+    </article>
+  );
+}
+
+function CaseNotice() {
+  return <p className="hg-case-note">※ 가상의 사례를 익명으로 요약한 것입니다. 사건마다 사정이 달라 같은 결과를 보장하지 않습니다.</p>;
+}
+
+function FaqList({ items = OFFICE_FAQS }) {
+  return (
+    <div className="hg-faq">
+      {items.map(([question, answer]) => <details key={question} data-reveal><summary>{question}</summary><p>{answer}</p></details>)}
+    </div>
+  );
+}
+
+function NoticeRow({ notice }) {
+  return (
+    <li data-reveal>
+      <Link to={`notice/${notice.id}`}>
+        <span className="hg-notice__tag">{notice.tag}</span>
+        <div><b>{notice.title}</b><p>{notice.summary}</p></div>
+        <time>{notice.date}</time>
+      </Link>
+    </li>
   );
 }
 
@@ -123,6 +304,10 @@ export function HomePage() {
         </div>
       </section>
 
+      <section className="hg-section hg-section--tint">
+        <div className="hg-wrap"><CaseFinder /></div>
+      </section>
+
       <section className="hg-section">
         <div className="hg-wrap">
           <SectionTitle eyebrow="한결의 원칙" title={<>결과만큼 과정도<br />분명해야 합니다.</>} />
@@ -157,6 +342,28 @@ export function HomePage() {
 
       <section className="hg-section hg-section--tint">
         <div className="hg-wrap">
+          <SectionTitle eyebrow="업무 사례" title="이런 일을 이렇게 풀어 왔습니다." action={<Link to="practice" className="hg-textlink">업무 분야 보기 <ArrowRight size={16} aria-hidden="true" /></Link>} />
+          <div className="hg-cases">{CASES.slice(0, 3).map((item) => <CaseCard key={item.id} item={item} />)}</div>
+          <CaseNotice />
+        </div>
+      </section>
+
+      <section className="hg-section hg-office">
+        <div className="hg-wrap hg-office__grid">
+          <div className="hg-office__copy" data-reveal>
+            <p className="hg-eyebrow">사무소 둘러보기</p>
+            <h2>편하게 이야기할 수 있는<br />공간을 만들었습니다.</h2>
+            <p>첫 상담이 이뤄지는 상담실은 외부 소리가 들리지 않게 방음했고, 대기 라운지는 다른 의뢰인과 마주치지 않도록 동선을 나눴습니다.</p>
+            <Link to="about" className="hg-textlink">사무소 소개 <ArrowRight size={16} aria-hidden="true" /></Link>
+          </div>
+          <div className="hg-office__photos" data-reveal>
+            <Photo name="reception" /><Photo name="consultRoom" /><Photo name="partner" />
+          </div>
+        </div>
+      </section>
+
+      <section className="hg-section">
+        <div className="hg-wrap">
           <SectionTitle eyebrow="상담 절차" title="예약부터 방향 안내까지 네 단계." />
           <ol className="hg-steps">
             {PROCESS.map(([title, text], index) => (
@@ -170,11 +377,29 @@ export function HomePage() {
         </div>
       </section>
 
+      <section className="hg-section hg-section--tint">
+        <div className="hg-wrap"><DeadlineTool /></div>
+      </section>
+
       <section className="hg-section">
         <div className="hg-wrap">
           <SectionTitle eyebrow="법률 칼럼" title="알아 두면 덜 불안한 이야기." action={<Link to="insights" className="hg-textlink">칼럼 더 보기 <ArrowRight size={16} aria-hidden="true" /></Link>} />
           <div className="hg-articles">
             {ARTICLES.slice(0, 3).map((article) => <ArticleCard key={article.slug} article={article} />)}
+          </div>
+        </div>
+      </section>
+
+      <section className="hg-section hg-section--tint">
+        <div className="hg-wrap hg-faqnotice">
+          <div>
+            <SectionTitle eyebrow="자주 묻는 질문" title="상담 전에 궁금하신 점" />
+            <FaqList items={OFFICE_FAQS.slice(0, 5)} />
+            <p className="hg-more"><Link to="contact#faq" className="hg-textlink">질문 더 보기 <ArrowRight size={16} aria-hidden="true" /></Link></p>
+          </div>
+          <div>
+            <SectionTitle eyebrow="공지사항" title="사무소 소식" action={<Link to="notice" className="hg-textlink">전체 보기 <ArrowRight size={16} aria-hidden="true" /></Link>} />
+            <ul className="hg-notices hg-notices--compact">{NOTICES.slice(0, 4).map((notice) => <NoticeRow key={notice.id} notice={notice} />)}</ul>
           </div>
         </div>
       </section>
@@ -200,7 +425,7 @@ export function AboutPage() {
   const owner = LAWYERS[0];
   return (
     <>
-      <PageHero crumbs={[[null, '사무소 소개']]} title="사무소 소개" lead="서초동에서 12년, 의뢰인의 일상을 지키는 법률 파트너." photo="building" />
+      <PageHero crumbs={[[null, '사무소 소개']]} title="사무소 소개" lead="서초동에서 12년, 의뢰인의 일상을 지키는 법률 파트너." photo="exterior" />
       <section className="hg-section">
         <div className="hg-wrap hg-greeting">
           <div data-reveal>
@@ -217,7 +442,7 @@ export function AboutPage() {
       </section>
       <section className="hg-gallery" aria-label="사무소 사진">
         <div className="hg-wrap hg-gallery__grid">
-          <Photo name="office" /><Photo name="corridor" /><Photo name="hall" />
+          <Photo name="reception" /><Photo name="consultRoom" /><Photo name="lounge" /><Photo name="scales" />
         </div>
       </section>
       <section className="hg-section">
@@ -282,6 +507,7 @@ export function PracticePage() {
 
 export function AreaPage({ area }) {
   const others = AREAS.filter((item) => item.slug !== area.slug);
+  const areaCases = CASES.filter((item) => item.area === area.slug);
   return (
     <>
       <PageHero crumbs={[['practice', '업무 분야'], [null, area.title]]} title={area.title} lead={area.summary} photo="corridor" />
@@ -296,11 +522,14 @@ export function AreaPage({ area }) {
             <h2 className="hg-h2" data-reveal>상담 전 준비하면 좋은 자료</h2>
             <ul className="hg-docs" data-reveal>{area.documents.map((item) => <li key={item}>{item}</li>)}</ul>
             <h2 className="hg-h2" data-reveal>자주 묻는 질문</h2>
-            <div className="hg-faq">
-              {area.faq.map(([question, answer]) => (
-                <details key={question} data-reveal><summary>{question}</summary><p>{answer}</p></details>
-              ))}
-            </div>
+            <FaqList items={area.faq} />
+            {areaCases.length ? (
+              <>
+                <h2 className="hg-h2" data-reveal>이 분야의 업무 사례</h2>
+                <div className="hg-cases hg-cases--one">{areaCases.map((item) => <CaseCard key={item.id} item={item} />)}</div>
+                <CaseNotice />
+              </>
+            ) : null}
           </div>
           <aside className="hg-detail__aside">
             <div className="hg-aside-card hg-aside-card--navy">
@@ -406,7 +635,7 @@ function FieldError({ message, id }) {
 }
 
 export function ContactPage() {
-  const form = useMockForm(INITIAL, validate);
+  const form = useMockForm({ ...INITIAL, area: readPick() }, validate);
   const { values, errors, status, update, submit, reset, formRef } = form;
   const areaLabel = AREAS.find((item) => item.slug === values.area)?.title;
   const methodLabel = METHODS.find(([value]) => value === values.method)?.[1];
@@ -493,6 +722,49 @@ export function ContactPage() {
           </aside>
         </div>
       </section>
+      <section className="hg-section hg-section--tint" id="faq">
+        <div className="hg-wrap hg-narrow">
+          <SectionTitle eyebrow="자주 묻는 질문" title="상담 전에 궁금하신 점" />
+          <FaqList />
+        </div>
+      </section>
+    </>
+  );
+}
+
+export function NoticePage() {
+  return (
+    <>
+      <PageHero crumbs={[[null, '공지사항']]} title="공지사항" lead="휴무, 상담 시간, 세미나 등 사무소 소식을 알려 드립니다." photo="library" />
+      <section className="hg-section">
+        <div className="hg-wrap hg-narrow">
+          <ul className="hg-notices">{NOTICES.map((notice) => <NoticeRow key={notice.id} notice={notice} />)}</ul>
+        </div>
+      </section>
+    </>
+  );
+}
+
+export function NoticeDetailPage({ notice }) {
+  const index = NOTICES.findIndex((item) => item.id === notice.id);
+  const prev = NOTICES[index + 1];
+  const next = NOTICES[index - 1];
+  return (
+    <>
+      <PageHero crumbs={[['notice', '공지사항'], [null, notice.tag]]} title={notice.title} lead={`${notice.tag} · ${notice.date}`} photo="glass" />
+      <section className="hg-section">
+        <div className="hg-wrap hg-narrow">
+          <article className="hg-reading hg-reading--solo">
+            {notice.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          </article>
+          <nav className="hg-notice-nav" aria-label="이전·다음 공지">
+            {next ? <Link to={`notice/${next.id}`}><small>다음 글</small>{next.title}</Link> : <span />}
+            {prev ? <Link to={`notice/${prev.id}`}><small>이전 글</small>{prev.title}</Link> : <span />}
+          </nav>
+          <p className="hg-more"><Link to="notice" className="hg-textlink">목록으로 <ArrowRight size={16} aria-hidden="true" /></Link></p>
+        </div>
+      </section>
+      <CtaBand />
     </>
   );
 }
