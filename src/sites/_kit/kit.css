@@ -11,7 +11,7 @@ ul,ol{padding:0}
 
 /* 스크롤 등장: 사이트가 --reveal-distance, --reveal-duration으로 조절 */
 .reveal-ready [data-reveal]{opacity:0;transform:translateY(var(--reveal-distance,20px));transition:opacity var(--reveal-duration,.7s) cubic-bezier(.2,.7,.2,1) var(--d,0ms),transform var(--reveal-duration,.7s) cubic-bezier(.2,.7,.2,1) var(--d,0ms)}
-.reveal-ready [data-reveal].is-in{opacity:1;transform:none}
+.reveal-ready [data-reveal].is-in,.reveal-ready [data-reveal][data-in]{opacity:1;transform:none}
 
 /* 가상 업체 시안 배지 */
 .nw-badge{position:fixed;left:12px;bottom:12px;z-index:9990;display:flex;flex-wrap:wrap;align-items:center;gap:2px;max-width:min(360px,calc(100vw - 24px));padding:4px;background:rgba(20,22,26,.86);color:#fff;font:600 12px/1.4 Pretendard,'Malgun Gothic',system-ui,sans-serif;border-radius:6px;box-shadow:0 8px 24px rgba(0,0,0,.2);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}

@@ -24,15 +24,24 @@ export function useReveal(deps = []) {
     const root = ref.current;
     if (!root || reducedMotion() || !('IntersectionObserver' in window)) return undefined;
     root.classList.add('reveal-ready');
+    // 등장 표시는 data-in 속성으로 합니다. (React가 className을 다시 쓰는 재렌더에도 지워지지 않게)
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-in');
+        entry.target.setAttribute('data-in', '');
         observer.unobserve(entry.target);
       });
     }, { rootMargin: '0px 0px -6% 0px' });
-    root.querySelectorAll('[data-reveal]:not(.is-in)').forEach((node) => observer.observe(node));
-    return () => observer.disconnect();
+    const watch = (node) => { if (!node.hasAttribute('data-in')) observer.observe(node); };
+    root.querySelectorAll('[data-reveal]').forEach(watch);
+    // 페이지 안에서 나중에 생기는 요소(결과 화면 등)도 등장시킵니다.
+    const mutations = new MutationObserver((records) => records.forEach((record) => record.addedNodes.forEach((node) => {
+      if (node.nodeType !== 1) return;
+      if (node.hasAttribute('data-reveal')) watch(node);
+      node.querySelectorAll?.('[data-reveal]').forEach(watch);
+    })));
+    mutations.observe(root, { childList: true, subtree: true });
+    return () => { observer.disconnect(); mutations.disconnect(); };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
   return ref;
