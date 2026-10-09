@@ -6,8 +6,9 @@ import { MenuDrawer } from '../_kit/MenuDrawer.jsx';
 import { PhotoCredits } from '../_kit/SampleBadge.jsx';
 import { resolvePhoto } from '../_kit/media.js';
 import { useFonts, useReveal, useScrolled } from '../_kit/hooks.js';
-import { ALL_PHOTO_KEYS, CLINIC, DOCTORS, HOURS, NAV, PHOTOS, PROMISES, TREATMENTS } from './content.js';
+import { ALL_PHOTO_KEYS, CLINIC, DOCTOR_PHOTOS, DOCTORS, FAQS, HOURS, NAV, NOTICES, PHOTOS, PROMISES, TREATMENTS } from './content.js';
 import { Booking } from './Booking.jsx';
+import { FaqList, FirstVisit, LegalDialog, NoticeDetail, NoticeList, PriceBlock, ToothMap } from './Extras.jsx';
 import './site.css';
 
 const FONTS = ['https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css'];
@@ -47,7 +48,7 @@ function Header() {
     <header className={`od-header${scrolled ? ' is-scrolled' : ''}`}>
       <div className="od-wrap od-header__inner">
         <Logo />
-        <nav className="od-nav" aria-label="주 메뉴">{NAV.slice(0, 3).map(([to, label]) => <Link key={to} to={to}>{label}</Link>)}</nav>
+        <nav className="od-nav" aria-label="주 메뉴">{NAV.filter(([to]) => to !== 'booking').map(([to, label]) => <Link key={to} to={to}>{label}</Link>)}</nav>
         <Link to="booking" className="od-btn od-btn--sm od-header__cta">진료 예약</Link>
         <button type="button" className="od-burger" aria-label="메뉴 열기" aria-expanded={open} onClick={() => setOpen(true)}><Menu aria-hidden="true" /></button>
       </div>
@@ -63,7 +64,7 @@ function Header() {
   );
 }
 
-function Footer() {
+function Footer({ onLegal }) {
   return (
     <footer className="od-footer">
       <div className="od-wrap od-footer__grid">
@@ -71,13 +72,19 @@ function Footer() {
         <ul>
           <li>{CLINIC.address}</li>
           <li>대표전화 {CLINIC.phone}</li>
-          <li>대표원장 윤하람 · 사업자등록번호 000-00-00000</li>
+          <li>대표원장 {CLINIC.owner} · 사업자등록번호 {CLINIC.business}</li>
+          <li>{CLINIC.registration} · {CLINIC.email}</li>
         </ul>
         <ul>{HOURS.slice(1).concat(HOURS[0]).map((item) => <li key={item.day}><b>{item.label.slice(0, 1)}</b> {item.time}</li>)}</ul>
       </div>
+      <div className="od-wrap od-footer__legal">
+        <button type="button" onClick={() => onLegal('terms')}>이용약관</button>
+        <button type="button" onClick={() => onLegal('privacy')}>개인정보 처리방침</button>
+        <button type="button" onClick={() => onLegal('ad')}>의료광고 고지</button>
+      </div>
       <div className="od-wrap od-footer__bottom">
         <p>© 2026 {CLINIC.name}. 나나웹이 제작한 가상 치과 시안이며, 의료 정보나 진료를 제공하지 않습니다. 치료 결과는 개인에 따라 다를 수 있습니다.</p>
-        <PhotoCredits keys={ALL_PHOTO_KEYS} />
+        <PhotoCredits keys={ALL_PHOTO_KEYS} extra="인물·공간 사진은 모두 AI로 생성한 가상 이미지입니다." />
       </div>
     </footer>
   );
@@ -115,6 +122,10 @@ function HomePage() {
           </div>
           <div className="od-hero__media">
             <Photo name="hero" className="od-hero__img" eager />
+            <div className="od-badge-ring" aria-hidden="true">
+              <svg viewBox="0 0 120 120"><defs><path id="od-ring" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0" /></defs><text><textPath href="#od-ring">THURSDAY NIGHT CLINIC · 목요일 밤 9시까지 · </textPath></text></svg>
+              <b>21:00</b>
+            </div>
             <div className="od-float"><b>첫 방문이신가요?</b><span>모니터로 구강 사진을 함께 보며<br />지금 상태부터 설명드려요.</span></div>
           </div>
         </div>
@@ -131,7 +142,14 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="od-section od-section--sand">
+      <section className="od-section od-section--sand" id="toothmap">
+        <div className="od-wrap">
+          <SectionHead kicker="아픈 곳 콕 찍기" title={<>그림에서 눌러 보세요.<br />맞는 진료를 찾아 드려요.</>} />
+          <ToothMap />
+        </div>
+      </section>
+
+      <section className="od-section">
         <div className="od-wrap">
           <SectionHead kicker="진료 안내" title="어디가 불편하신가요?" action={<Link to="care" className="od-textlink">전체 진료 보기 <ArrowRight size={16} aria-hidden="true" /></Link>} />
           <ul className="od-cards">
@@ -148,12 +166,19 @@ function HomePage() {
         </div>
       </section>
 
+      <section className="od-section od-section--sand">
+        <div className="od-wrap">
+          <SectionHead kicker="첫 방문 안내" title={<>처음 오시는 날,<br />이렇게 진행돼요.</>} />
+          <FirstVisit />
+        </div>
+      </section>
+
       <section className="od-section">
         <div className="od-wrap">
           <SectionHead kicker="진료실 둘러보기" title="밝고 조용한 공간에서 진료합니다." />
         </div>
         <div className="od-tour" tabIndex={0} aria-label="진료실 사진 (옆으로 넘겨 보기)">
-          {[['consult', '상담실'], ['room', '개별 진료실'], ['sterilization', '멸균실'], ['window', '창가 진료실'], ['waiting', '대기 공간']].map(([name, caption]) => (
+          {[['treatmentRoom', '개별 진료실'], ['consult', '상담실'], ['ctRoom', '3D CT실'], ['sterilization', '멸균실'], ['kidsCorner', '소아 진료 공간'], ['lounge', '대기 공간']].map(([name, caption]) => (
             <figure key={name}><Photo name={name} /><figcaption>{caption}</figcaption></figure>
           ))}
         </div>
@@ -163,6 +188,19 @@ function HomePage() {
         <div className="od-wrap">
           <SectionHead kicker="의료진" title="전문의가 분야별로 진료합니다." action={<Link to="doctors" className="od-textlink">의료진 소개 <ArrowRight size={16} aria-hidden="true" /></Link>} />
           <div className="od-doctors">{DOCTORS.map((doctor) => <DoctorCard key={doctor.name} doctor={doctor} />)}</div>
+        </div>
+      </section>
+
+      <section className="od-section">
+        <div className="od-wrap od-faqnotice">
+          <div>
+            <SectionHead kicker="자주 묻는 질문" title="치과 가기 전에 궁금한 것들" />
+            <FaqList items={FAQS.slice(0, 5)} />
+          </div>
+          <div>
+            <SectionHead kicker="공지사항" title="오르다 소식" action={<Link to="notice" className="od-textlink">전체 보기 <ArrowRight size={16} aria-hidden="true" /></Link>} />
+            <NoticeList items={NOTICES.slice(0, 4)} compact />
+          </div>
         </div>
       </section>
 
@@ -177,10 +215,15 @@ function HomePage() {
   );
 }
 
+function DoctorPhoto({ doctor }) {
+  const { src, alt } = resolvePhoto('orda-dental', DOCTOR_PHOTOS[doctor.id]);
+  return src ? <img className="od-doctor__photo" src={src} alt={alt} loading="lazy" decoding="async" /> : <span className="od-doctor__mono" aria-hidden="true">{doctor.initial}</span>;
+}
+
 function DoctorCard({ doctor, full = false }) {
   return (
     <article className="od-doctor" data-reveal>
-      <span className="od-doctor__mono" aria-hidden="true">{doctor.initial}</span>
+      <DoctorPhoto doctor={doctor} />
       <p className="od-doctor__role">{doctor.role} · {doctor.field}</p>
       <h3>{doctor.name}</h3>
       <p className="od-doctor__words">“{doctor.words}”</p>
@@ -313,16 +356,38 @@ function GuidePage() {
               <li><Clock size={18} aria-hidden="true" />{CLINIC.parking}</li>
             </ul>
           </div>
-          <div className="od-panel od-panel--wide" data-reveal>
-            <h2>비용과 보험 안내</h2>
-            <ul className="od-checks">
-              <li>치료 전에 건강보험 적용 여부와 예상 비용을 먼저 안내합니다.</li>
-              <li>비급여 항목의 비용은 원내에 게시하고, 상담 시 서면으로 드립니다.</li>
-              <li>실손보험 청구에 필요한 서류는 진료 당일 요청하시면 발급해 드립니다.</li>
-            </ul>
-          </div>
         </div>
       </section>
+      <section className="od-section od-section--sand" id="price">
+        <div className="od-wrap">
+          <SectionHead kicker="비용과 보험" title="치료 전에 비용부터 알려 드려요." />
+          <PriceBlock />
+        </div>
+      </section>
+      <section className="od-section" id="faq">
+        <div className="od-wrap od-narrow">
+          <SectionHead kicker="자주 묻는 질문" title="치과 가기 전에 궁금한 것들" />
+          <FaqList />
+        </div>
+      </section>
+    </>
+  );
+}
+
+function NoticePage() {
+  return (
+    <>
+      <PageTop kicker="공지사항" title="오르다 소식" lead="휴진, 진료 시간, 새 장비 소식을 알려 드립니다." />
+      <section className="od-section od-section--tight"><div className="od-wrap od-narrow"><NoticeList /></div></section>
+    </>
+  );
+}
+
+function NoticeDetailPage({ notice }) {
+  return (
+    <>
+      <PageTop kicker={`${notice.tag} · ${notice.date}`} title={notice.title} />
+      <section className="od-section od-section--tight"><div className="od-wrap od-narrow"><NoticeDetail notice={notice} /></div></section>
     </>
   );
 }
@@ -353,6 +418,11 @@ function resolvePage(page) {
   }
   if (section === 'doctors' && !slug) return make(DoctorsPage, '의료진');
   if (section === 'guide' && !slug) return make(GuidePage, '이용 안내');
+  if (section === 'notice' && !slug) return make(NoticePage, '공지사항');
+  if (section === 'notice') {
+    const notice = NOTICES.find((item) => item.id === slug);
+    if (notice) return make(NoticeDetailPage, notice.title, { notice });
+  }
   if (section === 'booking' && (!slug || TREATMENTS.some((item) => item.slug === slug))) return make(BookingPage, '진료 예약', { treatment: slug || '' });
   return make(NotFoundPage, '페이지를 찾을 수 없습니다');
 }
@@ -363,11 +433,13 @@ export default function Site() {
   const { Page, props, title } = resolvePage(page);
   usePageTitle(title);
   const root = useReveal([page]);
+  const [legal, setLegal] = useState(null);
   return (
     <div className="od" ref={root}>
       <Header />
       <main id="site-main" tabIndex={-1}><Page key={page} {...props} /></main>
-      <Footer />
+      <Footer onLegal={setLegal} />
+      <LegalDialog kind={legal} onClose={() => setLegal(null)} />
     </div>
   );
 }

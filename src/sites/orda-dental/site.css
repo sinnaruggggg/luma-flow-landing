@@ -260,3 +260,137 @@
   .od-panel{padding:22px}
 }
 @media(prefers-reduced-motion:reduce){.od-float,.od-status i{animation:none}}
+
+/* ───────────── 실제 운영 수준 보강 ───────────── */
+.od-narrow{max-width:880px}
+.od-hero{overflow:hidden}
+
+/* 히어로: 목요일 야간 진료 회전 배지 */
+.od-badge-ring{position:absolute;right:-18px;top:28px;display:grid;place-items:center;width:128px;height:128px;border-radius:50%;background:var(--sage-d);color:#fff;box-shadow:0 18px 40px -16px rgba(33,48,42,.5)}
+.od-badge-ring svg{position:absolute;inset:0;width:100%;height:100%;animation:od-spin 18s linear infinite}
+.od-badge-ring text{fill:#fff;font-size:10.5px;font-weight:600;letter-spacing:.14em}
+.od-badge-ring b{font-size:24px;font-weight:300;letter-spacing:-.02em}
+@keyframes od-spin{to{transform:rotate(360deg)}}
+
+/* 의료진 사진 */
+.od-doctor{overflow:hidden;padding:0;transition:transform .3s,box-shadow .3s}
+.od-doctor:hover{transform:translateY(-4px);box-shadow:0 24px 48px -28px rgba(33,48,42,.45)}
+.od-doctor__photo{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;background:var(--sage-l)}
+.od-doctor .od-doctor__mono{margin:32px 32px 0}
+.od-doctor>p,.od-doctor>h3,.od-doctor>ul{margin-left:28px;margin-right:28px}
+.od-doctor>.od-doctor__role{margin-top:22px}
+.od-doctor>:last-child{margin-bottom:28px}
+
+/* 대표 연출: 치아 지도 */
+.od-toothmap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.od-toothmap__board{position:relative;display:grid;gap:18px;padding:clamp(24px,3vw,40px);border-radius:var(--r);background:#fff;box-shadow:0 30px 60px -40px rgba(33,48,42,.4)}
+.od-toothmap__hint{text-align:center;font-weight:600;color:var(--sage-d);min-height:1.75em}
+.od-arch{position:relative;width:100%;aspect-ratio:2.1/1}
+.od-arch__label{position:absolute;left:50%;transform:translateX(-50%);font-size:12px;font-weight:600;color:var(--muted)}
+.od-arch.is-up .od-arch__label{bottom:4px}
+.od-arch.is-down .od-arch__label{top:4px}
+.od-tooth{position:absolute;width:var(--s,26px);height:calc(var(--s,26px) * 1.15);margin:calc(var(--s,26px) / -2) 0 0 calc(var(--s,26px) / -2);padding:0;border:1.5px solid #cfd8d2;border-radius:46% 46% 40% 40%;background:linear-gradient(180deg,#fff,#f3f6f3);transform:rotate(var(--r));cursor:pointer;transition:background .2s,border-color .2s,transform .2s,box-shadow .2s}
+.od-tooth.is-sm{--s:clamp(18px,2.4vw,26px)}
+.od-tooth.is-md{--s:clamp(22px,2.8vw,30px)}
+.od-tooth.is-lg{--s:clamp(26px,3.3vw,36px);border-radius:38%}
+.od-tooth:hover{border-color:var(--sage);transform:rotate(var(--r)) scale(1.12)}
+.od-tooth.is-on{border-color:var(--sage-d);background:radial-gradient(circle at 50% 40%,#ffd9c7,#f08a6b);box-shadow:0 0 0 6px rgba(240,138,107,.22);animation:od-throb 1.2s ease-in-out infinite}
+@keyframes od-throb{50%{box-shadow:0 0 0 11px rgba(240,138,107,.08)}}
+.od-toothmap__side{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+.od-toothmap__panel{min-height:340px}
+.od-toothmap__panel h3{margin:8px 0 18px;font-size:clamp(22px,2.4vw,30px);font-weight:400;line-height:1.4;letter-spacing:-.03em}
+.od-toothmap__empty ol{display:grid;gap:10px;padding-left:0;list-style:none;counter-reset:o}
+.od-toothmap__empty li{display:flex;gap:12px;align-items:center;color:var(--muted)}
+.od-toothmap__empty li:before{counter-increment:o;content:counter(o);display:grid;place-items:center;flex:none;width:28px;height:28px;border-radius:50%;background:var(--sage-l);color:var(--sage-d);font-weight:700;font-size:13px}
+.od-symptoms{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.od-symptoms button{min-height:56px;padding:10px 14px;border:1px solid var(--line);border-radius:16px;background:#fff;text-align:left;font-weight:600;transition:border-color .2s,background .2s,transform .2s}
+.od-symptoms button:hover{border-color:var(--sage);background:var(--sage-l);transform:translateY(-2px)}
+.od-reset{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:0;border:0;background:none;font-size:14px;font-weight:600;color:var(--muted)}
+.od-reset:hover{color:var(--sage-d)}
+.od-toothmap__result>p:not(.od-kicker):not(.od-hint){color:var(--muted)}
+.od-toothmap__result dl{display:grid;gap:8px;margin:18px 0;padding:18px 20px;border-radius:18px;background:#fff}
+.od-toothmap__result dl div{display:grid;grid-template-columns:84px 1fr;gap:12px;font-size:14px}
+.od-toothmap__result dt{font-weight:700;color:var(--sage-d)}
+.od-toothmap__result dd{margin:0;color:var(--ink)}
+.od-toothmap__actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin-bottom:12px}
+.od-toothmap__actions .od-reset{margin-top:0}
+
+/* 첫 방문 흐름: 시간 비율 막대 */
+.od-visit{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;padding:0;list-style:none}
+.od-visit li{position:relative;padding:26px 22px 22px;border-radius:22px;background:#fff}
+.od-visit li:after{content:'';position:absolute;left:22px;right:22px;bottom:14px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--sage) var(--w),var(--sage-l) var(--w))}
+.od-visit__no{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--sage-d);color:#fff;font-weight:700}
+.od-visit h3{margin:16px 0 6px;font-size:18px;font-weight:600}
+.od-visit p{font-size:14px;color:var(--muted)}
+.od-visit small{display:block;margin:12px 0 10px;font-size:13px;font-weight:700;color:var(--sage-d)}
+.od-visit__total{margin-top:22px;color:var(--muted)}
+.od-visit__total b{color:var(--sage-d)}
+
+/* 비용·보험 */
+.od-prices{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.od-prices .od-panel{background:#fff}
+.od-panel h2 small{font-size:13px;font-weight:500;color:var(--muted)}
+.od-pricelist{display:grid}
+.od-pricelist div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.od-pricelist dt{font-weight:500}
+.od-pricelist dd{margin:0;font-weight:700;color:var(--sage-d);text-align:right;white-space:nowrap}
+.od-prices .od-hint{margin-top:14px}
+
+/* FAQ · 공지 */
+.od-faqnotice{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px)}
+.od-faq details{border-bottom:1px solid var(--line)}
+.od-faq summary{display:flex;justify-content:space-between;gap:16px;align-items:center;min-height:62px;font-weight:600;cursor:pointer;list-style:none}
+.od-faq summary::-webkit-details-marker{display:none}
+.od-faq summary:after{content:'+';display:grid;place-items:center;flex:none;width:28px;height:28px;border-radius:50%;background:var(--sage-l);color:var(--sage-d);font-size:18px;font-weight:400;transition:transform .25s}
+.od-faq details[open] summary:after{transform:rotate(45deg)}
+.od-faq p{padding:0 0 20px;color:var(--muted)}
+.od-notices{padding:0;list-style:none;border-top:1px solid var(--ink)}
+.od-notices li{border-bottom:1px solid var(--line)}
+.od-notices a{display:grid;grid-template-columns:auto 1fr auto;gap:6px 16px;align-items:center;padding:18px 6px;transition:background .2s}
+.od-notices a:hover{background:var(--sage-l)}
+.od-notices__tag{padding:2px 10px;border-radius:999px;background:var(--sage-l);font-size:12px;font-weight:700;color:var(--sage-d)}
+.od-notices p{grid-column:2/-1;font-size:14px;color:var(--muted)}
+.od-notices time{font-size:13px;color:var(--muted)}
+.od-notices.is-compact a{grid-template-columns:auto 1fr}
+.od-notices.is-compact time{grid-column:2}
+.od-article p{margin-bottom:20px;font-size:17px;line-height:1.95}
+.od-article__nav{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px 0 24px}
+.od-article__nav a{display:grid;gap:4px;padding:16px 18px;border:1px solid var(--line);border-radius:18px;font-weight:600}
+.od-article__nav a:hover{border-color:var(--sage)}
+.od-article__nav a:last-child{text-align:right}
+.od-article__nav small{font-weight:500;color:var(--muted)}
+
+/* 푸터·약관 */
+.od-footer__legal{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:28px}
+.od-footer__legal button{padding:0;border:0;background:none;font-size:13px;font-weight:700;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.od-footer__bottom{margin-top:18px}
+.od-dialog{width:min(540px,calc(100% - 32px));padding:0;border:0;border-radius:24px;box-shadow:0 30px 80px rgba(0,0,0,.3)}
+.od-dialog::backdrop{background:rgba(33,48,42,.45)}
+.od-dialog>div{display:grid;gap:12px;padding:30px;font-size:15px;color:var(--muted)}
+.od-dialog h2{font-size:22px;font-weight:600;color:var(--ink)}
+.od-dialog .od-btn{justify-self:start}
+
+/* 진료실 사진 확대 */
+.od-tour img,.od-cards img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.od-tour figure{overflow:hidden;border-radius:var(--r)}
+.od-tour figure:hover img{transform:scale(1.05)}
+
+@media(max-width:1000px){
+  .od-toothmap,.od-faqnotice,.od-prices{grid-template-columns:1fr}
+  .od-toothmap__panel{min-height:0}
+  .od-visit{grid-template-columns:1fr 1fr}
+  .od-badge-ring{right:12px;top:12px;width:104px;height:104px}
+}
+@media(max-width:640px){
+  .od-visit{grid-template-columns:1fr}
+  .od-symptoms{grid-template-columns:1fr}
+  .od-badge-ring{width:88px;height:88px}
+  .od-badge-ring b{font-size:19px}
+  .od-article__nav{grid-template-columns:1fr}
+  .od-article__nav a:last-child{text-align:left}
+  .od-notices a{grid-template-columns:auto 1fr}
+  .od-notices time{grid-column:2}
+  .od-pricelist div{flex-direction:column;gap:2px}
+  .od-pricelist dd{text-align:left}
+}
+@media(prefers-reduced-motion:reduce){.od-badge-ring svg,.od-tooth.is-on{animation:none}}
