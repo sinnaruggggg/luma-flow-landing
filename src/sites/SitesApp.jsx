@@ -4,6 +4,8 @@ import { FORMATS, MOODS, SITES, getSite } from './catalog.js';
 import { SITE_LOADERS } from './registry.js';
 import { SiteProvider } from './_kit/SiteProvider.jsx';
 import { SampleBadge } from './_kit/SampleBadge.jsx';
+import { FloatingDock } from './_kit/FloatingDock.jsx';
+import { DOCKS } from './docks.js';
 import { usePageTitle } from './_kit/siteContext.js';
 import './_kit/kit.css';
 import './sites-index.css';
@@ -58,6 +60,7 @@ export default function SitesApp() {
         <Site />
       </Suspense>
       <SampleBadge />
+      <FloatingDock config={DOCKS[id]} />
     </SiteProvider>
   );
 }

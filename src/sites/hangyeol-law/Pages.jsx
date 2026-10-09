@@ -18,7 +18,7 @@ function Photo({ name, className = '', eager = false }) {
   return <img className={className} src={src} alt={alt} loading={eager ? 'eager' : 'lazy'} decoding="async" />;
 }
 
-function PageHero({ crumbs = [], title, lead, photo = 'glass' }) {
+function PageHero({ crumbs = [], title, lead, photo = 'library' }) {
   return (
     <section className="hg-pagehero">
       <Photo name={photo} className="hg-pagehero__bg" eager />
@@ -197,8 +197,8 @@ function DeadlineResult({ rule, base }) {
   );
 }
 
-function DeadlineTool() {
-  const [ruleId, setRuleId] = useState(DEADLINES[0].id);
+function DeadlineTool({ initial = DEADLINES[0].id }) {
+  const [ruleId, setRuleId] = useState(initial);
   const [value, setValue] = useState('');
   const rule = DEADLINES.find((item) => item.id === ruleId);
   const base = value ? parseDate(value) : null;
@@ -264,6 +264,8 @@ function NoticeRow({ notice }) {
   );
 }
 
+const SLOTS = [['화', '14:30 · 16:30'], ['목', '10:00 · 13:30'], ['토', '10:00 (화상)']];
+
 export function HomePage() {
   return (
     <>
@@ -284,7 +286,14 @@ export function HomePage() {
             <li><Video size={18} aria-hidden="true" /><b>화상 상담</b><span>지방·해외 거주</span></li>
           </ul>
         </div>
-        <div className="hg-hero__photo"><Photo name="hero" eager /></div>
+        <div className="hg-hero__photo">
+          <Photo name="hero" eager />
+          <aside className="hg-hero__card" aria-label="이번 주 상담 가능 시간">
+            <p className="hg-hero__card-label"><span aria-hidden="true" /> 이번 주 상담 가능 시간</p>
+            <ul>{SLOTS.map(([day, time]) => <li key={day}><b>{day}</b>{time}</li>)}</ul>
+            <Link to="contact" className="hg-hero__card-link">시간 골라 예약하기 <ArrowRight size={14} aria-hidden="true" /></Link>
+          </aside>
+        </div>
       </section>
 
       <section className="hg-quick" aria-labelledby="hg-quick-title">
@@ -305,7 +314,10 @@ export function HomePage() {
       </section>
 
       <section className="hg-section hg-section--tint">
-        <div className="hg-wrap"><CaseFinder /></div>
+        <div className="hg-wrap">
+          <CaseFinder />
+          <p className="hg-finder__teaser"><CalendarClock size={16} aria-hidden="true" /> 상속·전세처럼 기한이 정해진 일인가요? <Link to="insights#deadline" className="hg-textlink">기한 계산기로 날짜 확인하기 <ArrowRight size={14} aria-hidden="true" /></Link></p>
+        </div>
       </section>
 
       <section className="hg-section">
@@ -320,18 +332,13 @@ export function HomePage() {
               </li>
             ))}
           </ol>
-        </div>
-      </section>
-
-      <section className="hg-facts" aria-label="한결 법률사무소 소개 숫자">
-        <div className="hg-wrap">
-          <dl>
+          <dl className="hg-facts-inline" aria-label="한결 법률사무소 소개 숫자">
             {FACTS.map(([value, label]) => <div key={label} data-reveal><dt>{label}</dt><dd>{value}</dd></div>)}
           </dl>
         </div>
       </section>
 
-      <section className="hg-section">
+      <section className="hg-section hg-section--tint">
         <div className="hg-wrap">
           <SectionTitle eyebrow="구성원" title="사건마다 전담 변호사가 배정됩니다." action={<Link to="people" className="hg-textlink">구성원 전체 보기 <ArrowRight size={16} aria-hidden="true" /></Link>} />
           <div className="hg-people-preview">
@@ -340,7 +347,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="hg-section hg-section--tint">
+      <section className="hg-section">
         <div className="hg-wrap">
           <SectionTitle eyebrow="업무 사례" title="이런 일을 이렇게 풀어 왔습니다." action={<Link to="practice" className="hg-textlink">업무 분야 보기 <ArrowRight size={16} aria-hidden="true" /></Link>} />
           <div className="hg-cases">{CASES.slice(0, 3).map((item) => <CaseCard key={item.id} item={item} />)}</div>
@@ -375,10 +382,6 @@ export function HomePage() {
             ))}
           </ol>
         </div>
-      </section>
-
-      <section className="hg-section hg-section--tint">
-        <div className="hg-wrap"><DeadlineTool /></div>
       </section>
 
       <section className="hg-section">
@@ -510,7 +513,7 @@ export function AreaPage({ area }) {
   const areaCases = CASES.filter((item) => item.area === area.slug);
   return (
     <>
-      <PageHero crumbs={[['practice', '업무 분야'], [null, area.title]]} title={area.title} lead={area.summary} photo="corridor" />
+      <PageHero crumbs={[['practice', '업무 분야'], [null, area.title]]} title={area.title} lead={area.summary} photo="consultRoom" />
       <section className="hg-section">
         <div className="hg-wrap hg-detail">
           <div className="hg-detail__main">
@@ -549,6 +552,11 @@ export function AreaPage({ area }) {
           </aside>
         </div>
       </section>
+      {area.slug === 'inheritance' || area.slug === 'real-estate' ? (
+        <section className="hg-section hg-section--tint">
+          <div className="hg-wrap"><DeadlineTool initial={area.slug === 'real-estate' ? 'renewal' : 'renounce'} /></div>
+        </section>
+      ) : null}
     </>
   );
 }
@@ -556,7 +564,7 @@ export function AreaPage({ area }) {
 export function PeoplePage() {
   return (
     <>
-      <PageHero crumbs={[[null, '구성원']]} title="구성원" lead="분야별 전담 변호사가 사건의 처음과 끝을 함께합니다. (표시된 인물은 가상 인물입니다)" photo="hall" />
+      <PageHero crumbs={[[null, '구성원']]} title="구성원" lead="분야별 전담 변호사가 사건의 처음과 끝을 함께합니다. (표시된 인물은 가상 인물입니다)" photo="partner" />
       <section className="hg-section">
         <div className="hg-wrap hg-people">
           {LAWYERS.map((lawyer) => <LawyerCard key={lawyer.id} lawyer={lawyer} />)}
@@ -573,7 +581,10 @@ export function InsightsPage() {
   const list = active === '전체' ? ARTICLES : ARTICLES.filter((item) => item.category === active);
   return (
     <>
-      <PageHero crumbs={[[null, '법률 칼럼']]} title="법률 칼럼" lead="자주 받는 질문을 변호사가 직접 정리했습니다." photo="documents" />
+      <PageHero crumbs={[[null, '법률 칼럼']]} title="법률 칼럼" lead="자주 받는 질문을 변호사가 직접 정리했습니다." photo="scales" />
+      <section className="hg-section hg-section--tint" id="deadline">
+        <div className="hg-wrap"><DeadlineTool /></div>
+      </section>
       <section className="hg-section">
         <div className="hg-wrap">
           <div className="hg-tabs" role="group" aria-label="칼럼 분류">
@@ -595,7 +606,7 @@ export function ArticlePage({ article }) {
   const related = ARTICLES.filter((item) => item.slug !== article.slug).slice(0, 2);
   return (
     <>
-      <PageHero crumbs={[['insights', '법률 칼럼'], [null, article.category]]} title={article.title} lead={`${article.category} · ${article.date}`} photo="glass" />
+      <PageHero crumbs={[['insights', '법률 칼럼'], [null, article.category]]} title={article.title} lead={`${article.category} · ${article.date}`} photo="documents" />
       <section className="hg-section">
         <div className="hg-wrap hg-reading">
           <article>
@@ -735,7 +746,7 @@ export function ContactPage() {
 export function NoticePage() {
   return (
     <>
-      <PageHero crumbs={[[null, '공지사항']]} title="공지사항" lead="휴무, 상담 시간, 세미나 등 사무소 소식을 알려 드립니다." photo="library" />
+      <PageHero crumbs={[[null, '공지사항']]} title="공지사항" lead="휴무, 상담 시간, 세미나 등 사무소 소식을 알려 드립니다." photo="reception" />
       <section className="hg-section">
         <div className="hg-wrap hg-narrow">
           <ul className="hg-notices">{NOTICES.map((notice) => <NoticeRow key={notice.id} notice={notice} />)}</ul>
@@ -751,7 +762,7 @@ export function NoticeDetailPage({ notice }) {
   const next = NOTICES[index - 1];
   return (
     <>
-      <PageHero crumbs={[['notice', '공지사항'], [null, notice.tag]]} title={notice.title} lead={`${notice.tag} · ${notice.date}`} photo="glass" />
+      <PageHero crumbs={[['notice', '공지사항'], [null, notice.tag]]} title={notice.title} lead={`${notice.tag} · ${notice.date}`} photo="lounge" />
       <section className="hg-section">
         <div className="hg-wrap hg-narrow">
           <article className="hg-reading hg-reading--solo">

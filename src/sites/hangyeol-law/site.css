@@ -495,3 +495,81 @@
 @media (prefers-reduced-motion:reduce){
   .hg-people-preview .hg-lawyer,.hg-finder__opts button{transition:none}
 }
+
+/* ───────────── 디자인 보강 2차 ───────────── */
+/* 히어로: 사진 위 상담 가능 시간 카드 + 황동 라인 */
+.hg-hero__copy h1{position:relative}
+.hg-hero__copy h1:after{content:'';display:block;width:64px;height:2px;margin-top:26px;background:var(--brass-2);transform-origin:left;animation:hg-line 1.1s .3s cubic-bezier(.2,.7,.2,1) backwards}
+@keyframes hg-line{from{transform:scaleX(0)}}
+.hg-hero__photo img{animation:hg-zoom 14s ease-out both}
+@keyframes hg-zoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+.hg-hero__card{position:absolute;z-index:2;left:clamp(16px,3vw,40px);bottom:clamp(16px,3vw,40px);width:min(300px,calc(100% - 32px));padding:20px 22px;background:rgba(255,255,255,.94);color:var(--ink);box-shadow:0 24px 50px -20px rgba(0,0,0,.5);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);animation:hg-card .7s .5s cubic-bezier(.2,.7,.2,1) backwards}
+@keyframes hg-card{from{opacity:0;transform:translateY(16px)}}
+.hg-hero__card-label{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:800;color:var(--navy)}
+.hg-hero__card-label span{width:8px;height:8px;border-radius:50%;background:#3fae6a;box-shadow:0 0 0 0 rgba(63,174,106,.5);animation:hg-pulse 2s infinite}
+@keyframes hg-pulse{70%{box-shadow:0 0 0 8px rgba(63,174,106,0)}100%{box-shadow:0 0 0 0 rgba(63,174,106,0)}}
+.hg-hero__card ul{display:grid;gap:6px;margin:12px 0 14px;list-style:none;font-size:14px}
+.hg-hero__card li{display:flex;gap:12px;padding-bottom:6px;border-bottom:1px dashed var(--line)}
+.hg-hero__card li b{width:20px;color:var(--brass)}
+.hg-hero__card-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:800;color:var(--navy)}
+.hg-hero__card-link:hover{color:var(--brass)}
+
+/* 진단 아래 기한 계산기 안내 */
+.hg-finder__teaser{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:20px;font-size:15px;color:var(--muted)}
+.hg-finder__teaser svg{color:var(--brass)}
+
+/* 원칙 아래 숫자 (한 섹션으로 합침) */
+.hg-facts-inline{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(40px,5vw,64px);background:var(--navy);color:#fff}
+.hg-facts-inline div{display:flex;flex-direction:column-reverse;gap:4px;padding:32px 20px;text-align:center}
+.hg-facts-inline div+div{border-left:1px solid rgba(255,255,255,.14)}
+.hg-facts-inline dt{font-size:13px;color:rgba(255,255,255,.66)}
+.hg-facts-inline dd{margin:0;font-family:var(--serif);font-size:clamp(30px,3vw,42px);font-weight:700;line-height:1.1;color:var(--brass-2)}
+
+/* 업무 분야 바로가기: 아래 황동 라인이 차오름 */
+.hg-quick__grid a:before{content:'';position:absolute;left:0;bottom:0;width:100%;height:3px;background:var(--brass);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.hg-quick__grid a:hover:before{transform:scaleX(1)}
+
+/* 상담 절차: 번호 원과 연결선 */
+.hg-steps{position:relative;gap:28px}
+.hg-steps:before{content:'';position:absolute;left:0;right:0;top:27px;height:1px;background:linear-gradient(90deg,var(--brass),var(--line))}
+.hg-steps li{padding:0;background:none;border:0}
+.hg-steps span{position:relative;display:grid;place-items:center;width:56px;height:56px;margin-bottom:20px;border:1px solid var(--brass);border-radius:50%;background:#fff;font-family:var(--serif);font-size:0;letter-spacing:0}
+.hg-steps li:nth-child(1) span:after{content:'01'}.hg-steps li:nth-child(2) span:after{content:'02'}.hg-steps li:nth-child(3) span:after{content:'03'}.hg-steps li:nth-child(4) span:after{content:'04'}
+.hg-steps span:after{font-size:18px;font-weight:700;color:var(--navy)}
+.hg-steps li:hover span{background:var(--navy);border-color:var(--navy)}
+.hg-steps li:hover span:after{color:var(--brass-2)}
+
+/* 사무소 사진 확대 효과 */
+.hg-office__photos{overflow:hidden}
+.hg-office__photos img,.hg-gallery__grid img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.hg-office__photos img:hover,.hg-gallery__grid img:hover{transform:scale(1.04)}
+.hg-case{transition:transform .3s,box-shadow .3s}
+.hg-case:hover{transform:translateY(-4px);box-shadow:0 20px 40px -24px rgba(14,28,54,.4)}
+
+@media(max-width:900px){
+  .hg-hero__card{left:16px;bottom:16px;width:240px;padding:14px 16px}
+  .hg-hero__card ul{font-size:13px}
+  .hg-facts-inline{grid-template-columns:1fr 1fr}
+  .hg-facts-inline div:nth-child(3){border-left:0}
+  .hg-facts-inline div:nth-child(n+3){border-top:1px solid rgba(255,255,255,.14)}
+  .hg-steps:before{display:none}
+}
+@media(max-width:640px){
+  .hg-hero__card{display:none}
+  /* 모바일 구성원: 큰 사진 카드를 옆으로 넘겨 보기 */
+  .hg-people-preview{display:flex;gap:14px;margin:0 -24px;padding:0 24px 8px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .hg-people-preview .hg-lawyer{flex:0 0 72%;grid-template-columns:1fr;scroll-snap-align:start}
+  .hg-people-preview .hg-lawyer__photo{aspect-ratio:4/5}
+  /* 모바일 진단: 분야를 2열 칩으로 */
+  .hg-finder__opts:not(.hg-finder__opts--col){grid-template-columns:1fr 1fr;gap:8px}
+  .hg-finder__opts:not(.hg-finder__opts--col) button{grid-template-columns:1fr;gap:6px;padding:14px 12px;text-align:center;justify-items:center}
+  .hg-finder__opts:not(.hg-finder__opts--col) button span{display:none}
+  .hg-finder__opts:not(.hg-finder__opts--col) button svg{grid-row:auto}
+  .hg-finder__head h2{font-size:22px;margin-bottom:16px}
+  .hg-steps{grid-template-columns:1fr 1fr;gap:20px 14px}
+  .hg-steps span{width:44px;height:44px;margin-bottom:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  .hg-hero__copy h1:after,.hg-hero__photo img,.hg-hero__card,.hg-hero__card-label span{animation:none}
+}
+.hg-hero{overflow:hidden}

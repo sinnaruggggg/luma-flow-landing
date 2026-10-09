@@ -30,11 +30,6 @@ export const PHOTOS = Object.freeze({
   lounge: { file: 'lounge.webp', alt: '네이비 소파가 있는 의뢰인 대기 라운지' },
   exterior: { file: 'building.webp', alt: '서초동 한결빌딩 외관' },
   scales: { file: 'scales-detail.webp', alt: '책상 위 황동 저울과 법전' },
-  office: 'brand/p2u7eu00DCA',
-  glass: 'brand/NAAzLhJEN8s',
-  corridor: 'brand/JaaIpp-5s5M',
-  building: 'brand/4G6DOKSwO8U',
-  hall: 'brand/3V1gu8_sMF0',
 });
 
 export const NAV = Object.freeze([

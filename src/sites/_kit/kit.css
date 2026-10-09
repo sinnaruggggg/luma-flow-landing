@@ -22,9 +22,88 @@ ul,ol{padding:0}
 .nw-credits ul{display:grid;gap:4px;margin-top:8px;list-style:none}
 .nw-credits p{margin-top:8px}
 .nw-loading{display:grid;place-items:center;min-height:100vh;font:500 14px Pretendard,system-ui,sans-serif;color:#777}
-@media(max-width:640px){.nw-badge{left:8px;bottom:8px;padding:2px;font-size:11px;opacity:.88}.nw-badge a,.nw-badge button{min-height:28px;padding:0 8px}}
+@media(max-width:640px){.nw-badge{left:8px;bottom:8px;padding:2px;font-size:11px;opacity:.9}.nw-badge:not(.is-open){border-radius:999px}.nw-badge a,.nw-badge button{min-height:28px;padding:0 8px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important}}
 /* 이미지 준비 전 자리표시: 사이트가 --ph-a, --ph-b로 색을 정함 */
 .nw-ph{background:linear-gradient(135deg,var(--ph-a,#e7e4dd),var(--ph-b,#cfcac0));background-size:200% 200%;animation:nw-ph 6s ease-in-out infinite alternate}
 @keyframes nw-ph{to{background-position:100% 100%}}
 @media(prefers-reduced-motion:reduce){.nw-ph{animation:none}}
+
+/* 페이지 전환: 새 화면이 살짝 떠오르며 나타납니다 */
+#site-main>*{animation:nw-page-in .45s cubic-bezier(.2,.7,.2,1) backwards}
+@keyframes nw-page-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){#site-main>*{animation:none}}
+
+/* 시안 배지 (작게 접힌 상태가 기본) */
+.nw-badge__dot{width:7px;height:7px;margin-right:6px;border-radius:50%;background:#7ee08a;box-shadow:0 0 0 3px rgba(126,224,138,.25)}
+
+/* 오른쪽 아래 연락 채널 + AI 상담 */
+.nw-dock{position:fixed;right:16px;bottom:16px;z-index:9980;font:500 14px/1.5 Pretendard,'Malgun Gothic',system-ui,sans-serif;color:#1d2129}
+.nw-dock__stack{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.nw-dock__channels{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.nw-dock__btn{position:relative;display:grid;place-items:center;width:46px;height:46px;padding:0;border:0;border-radius:50%;background:#fff;color:#1d2129;box-shadow:0 6px 18px rgba(0,0,0,.16);cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.nw-dock__btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.22)}
+.nw-dock__btn svg{width:22px;height:22px}
+.nw-dock__btn.is-kakao{background:#fee500;color:#3c1e1e}
+.nw-dock__btn.is-insta{background:radial-gradient(circle at 30% 110%,#ffd776 0%,#f9543a 40%,#d22a8a 65%,#7c3ad6 100%);color:#fff}
+.nw-dock__btn.is-blog{background:#03c75a;color:#fff}
+.nw-dock__btn.is-phone{background:#fff;color:var(--dock-accent)}
+.nw-dock__btn[data-tip]:after{content:attr(data-tip);position:absolute;right:56px;top:50%;padding:5px 10px;border-radius:6px;background:rgba(20,22,26,.9);color:#fff;font-size:12px;font-weight:600;white-space:nowrap;opacity:0;transform:translate(6px,-50%);pointer-events:none;transition:opacity .2s,transform .2s}
+.nw-dock__btn[data-tip]:hover:after,.nw-dock__btn[data-tip]:focus-visible:after{opacity:1;transform:translate(0,-50%)}
+.nw-dock__more{display:none}
+.nw-dock__top{opacity:0;transform:translateY(8px) scale(.9);pointer-events:none;transition:opacity .25s,transform .25s}
+.nw-dock__top.is-on{opacity:1;transform:none;pointer-events:auto}
+.nw-dock__chat{display:inline-flex;align-items:center;gap:8px;height:54px;padding:0 20px 0 16px;border:0;border-radius:999px;background:var(--dock-accent);color:var(--dock-ink);font-weight:800;font-size:15px;box-shadow:0 10px 28px rgba(0,0,0,.25);cursor:pointer;transition:transform .2s}
+.nw-dock__chat:hover{transform:translateY(-2px)}
+.nw-dock :focus-visible{outline:3px solid #4c8dff;outline-offset:3px}
+.nw-dock__toast{position:absolute;right:0;bottom:calc(100% + 10px);width:max-content;max-width:min(300px,calc(100vw - 32px));padding:10px 14px;border-radius:10px;background:rgba(20,22,26,.92);color:#fff;font-size:13px;box-shadow:0 10px 24px rgba(0,0,0,.2);animation:nw-page-in .25s both}
+.nw-dock.is-chat .nw-dock__toast{display:none}
+
+.nw-chat{position:absolute;right:0;bottom:70px;display:flex;flex-direction:column;width:min(370px,calc(100vw - 32px));height:min(560px,calc(100vh - 120px));overflow:hidden;border-radius:18px;background:#fff;box-shadow:0 24px 60px rgba(0,0,0,.28);animation:nw-chat-in .28s cubic-bezier(.2,.8,.2,1) both;transform-origin:100% 100%}
+@keyframes nw-chat-in{from{opacity:0;transform:translateY(12px) scale(.96)}to{opacity:1;transform:none}}
+.nw-chat__head{display:flex;align-items:center;gap:10px;padding:14px 14px 14px 16px;background:var(--dock-accent);color:var(--dock-ink)}
+.nw-chat__head div{display:grid;flex:1;line-height:1.3}
+.nw-chat__head small{display:flex;align-items:center;gap:6px;font-size:12px;opacity:.8}
+.nw-chat__head small i{width:7px;height:7px;border-radius:50%;background:#5be37b}
+.nw-chat__head button{display:grid;place-items:center;width:34px;height:34px;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:inherit;cursor:pointer}
+.nw-chat__avatar{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.18)}
+.nw-chat__log{flex:1;display:flex;flex-direction:column;gap:10px;padding:16px;overflow-y:auto;background:#f5f6f8;overscroll-behavior:contain}
+.nw-chat__msg{display:grid;gap:6px;max-width:86%}
+.nw-chat__msg p{padding:10px 13px;border-radius:14px;background:#fff;color:#1d2129;font-size:14px;line-height:1.6;box-shadow:0 1px 2px rgba(0,0,0,.06);word-break:keep-all}
+.nw-chat__msg.is-bot p{border-top-left-radius:4px}
+.nw-chat__msg.is-me{align-self:flex-end}
+.nw-chat__msg.is-me p{border-top-right-radius:4px;background:var(--dock-accent);color:var(--dock-ink)}
+.nw-chat__link{justify-self:start;padding:7px 12px;border:1px solid var(--dock-accent);border-radius:999px;background:#fff;color:#1d2129;font-size:13px;font-weight:700;cursor:pointer}
+.nw-chat__link:hover{background:var(--dock-accent);color:var(--dock-ink)}
+.nw-chat__typing{display:flex;gap:4px;padding:14px 16px!important}
+.nw-chat__typing i{width:6px;height:6px;border-radius:50%;background:#9aa0a8;animation:nw-dot 1s infinite}
+.nw-chat__typing i:nth-child(2){animation-delay:.15s}.nw-chat__typing i:nth-child(3){animation-delay:.3s}
+@keyframes nw-dot{0%,80%,100%{opacity:.3;transform:none}40%{opacity:1;transform:translateY(-3px)}}
+.nw-chat__quick{display:flex;gap:6px;padding:10px 12px;overflow-x:auto;border-top:1px solid #eceef1;background:#fff;scrollbar-width:none}
+.nw-chat__quick button{flex:none;padding:6px 12px;border:1px solid #dfe2e7;border-radius:999px;background:#fff;color:#1d2129;font-size:13px;cursor:pointer}
+.nw-chat__quick button:hover{border-color:var(--dock-accent)}
+.nw-chat__form{display:flex;gap:8px;padding:10px 12px 6px;background:#fff}
+.nw-chat__form input{flex:1;min-width:0;height:42px;padding:0 14px;border:1px solid #dfe2e7;border-radius:999px;background:#f8f9fa;color:#1d2129;font-size:14px}
+.nw-chat__form button{display:grid;place-items:center;width:42px;height:42px;border:0;border-radius:50%;background:var(--dock-accent);color:var(--dock-ink);cursor:pointer}
+.nw-chat__form button:disabled{opacity:.4;cursor:default}
+.nw-chat__note{padding:0 14px 10px;background:#fff;font-size:11px;color:#8a9099;text-align:center}
+
+@media(max-width:760px){
+  .nw-dock{right:12px;bottom:12px}
+  .nw-dock__more{display:grid;background:#fff;transition:transform .25s}
+  .nw-dock.is-more .nw-dock__more{transform:rotate(45deg)}
+  .nw-dock__channels{display:none}
+  .nw-dock.is-more .nw-dock__channels{display:flex;animation:nw-page-in .2s both}
+  .nw-dock__btn{width:44px;height:44px}
+  .nw-dock__btn[data-tip]:after{display:none}
+  .nw-dock__chat{width:54px;padding:0;justify-content:center}
+  .nw-dock__chat span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+  .nw-chat{position:fixed;left:8px;right:8px;bottom:76px;width:auto;height:min(72vh,560px)}
+}
+@media(prefers-reduced-motion:reduce){.nw-chat,.nw-dock__toast,.nw-dock.is-more .nw-dock__channels{animation:none}.nw-chat__typing i{animation:none}}
+/* 모바일 첫 화면에서 숨김 → 스크롤하면 나타남 */
+.nw-dock,.nw-badge{transition:opacity .3s,transform .3s}
+.nw-dock.is-hidden,.nw-badge.is-hidden{opacity:0;transform:translateY(12px);pointer-events:none}
+.nw-dock__top:not(.is-on){display:none}
+/* 챗봇이 열리면 채널 버튼은 숨겨 창을 가리지 않게 */
+.nw-dock.is-chat .nw-dock__channels,.nw-dock.is-chat .nw-dock__more,.nw-dock.is-chat .nw-dock__top{display:none!important}

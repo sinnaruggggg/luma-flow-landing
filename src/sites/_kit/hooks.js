@@ -105,3 +105,16 @@ export function dateAfter(days = 1) {
   date.setDate(date.getDate() + days);
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
 }
+
+// 모바일 첫 화면에서는 떠 있는 버튼이 히어로 버튼을 가리지 않도록, 조금 스크롤한 뒤에 보여 줍니다.
+export function useFloatingReady() {
+  const [ready, setReady] = useState(() => typeof window === 'undefined' || window.innerWidth > 760);
+  useEffect(() => {
+    const update = () => setReady(window.innerWidth > 760 || window.scrollY > window.innerHeight * 0.3);
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    return () => { window.removeEventListener('scroll', update); window.removeEventListener('resize', update); };
+  }, []);
+  return ready;
+}

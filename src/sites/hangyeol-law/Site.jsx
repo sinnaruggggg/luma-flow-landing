@@ -132,7 +132,7 @@ function Footer({ onLegal }) {
       </div>
       <div className="hg-wrap hg-footer__bottom">
         <p>© 2026 {FIRM.name}. 이 사이트는 나나웹이 제작한 가상 업체 시안이며 법률 자문을 제공하지 않습니다.</p>
-        <PhotoCredits keys={ALL_PHOTO_KEYS} className="hg-credits" />
+        <PhotoCredits keys={ALL_PHOTO_KEYS} className="hg-credits" extra="인물·공간 사진은 모두 AI로 생성한 가상 이미지입니다." />
       </div>
     </footer>
   );
