@@ -557,7 +557,7 @@
 @media(max-width:640px){
   .hg-hero__card{display:none}
   /* 모바일 구성원: 큰 사진 카드를 옆으로 넘겨 보기 */
-  .hg-people-preview{display:flex;gap:14px;margin:0 -24px;padding:0 24px 8px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .hg-people-preview{display:flex;gap:14px;margin:0 calc((100% - 100vw) / 2);padding:0 calc((100vw - 100%) / 2) 8px;scroll-padding-inline:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
   .hg-people-preview .hg-lawyer{flex:0 0 72%;grid-template-columns:1fr;scroll-snap-align:start}
   .hg-people-preview .hg-lawyer__photo{aspect-ratio:4/5}
   /* 모바일 진단: 분야를 2열 칩으로 */
