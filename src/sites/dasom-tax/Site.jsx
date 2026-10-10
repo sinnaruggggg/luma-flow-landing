@@ -1,12 +1,13 @@
 import { useCallback, useState } from 'react';
-import { ArrowRight, CalendarClock, Check, Menu, Phone, Printer, X } from 'lucide-react';
+import { ArrowRight, CalendarClock, Car, Check, Clock, MapPin, Menu, Phone, Printer, TrainFront, X } from 'lucide-react';
 import { usePageTitle, useSite } from '../_kit/siteContext.js';
 import { Link } from '../_kit/SiteProvider.jsx';
 import { MenuDrawer } from '../_kit/MenuDrawer.jsx';
 import { PhotoCredits } from '../_kit/SampleBadge.jsx';
 import { SitePhoto } from '../_kit/SitePhoto.jsx';
 import { useFonts, useMockForm, useReveal, useScrolled } from '../_kit/hooks.js';
-import { ALL_PHOTO_KEYS, CHECKLISTS, DEADLINES, FEES, NAV, OFFICE, PHOTOS, READY_IMAGES, SERVICES, STEPS } from './content.js';
+import { ALL_PHOTO_KEYS, CHECKLISTS, DEADLINES, FAQS, FEES, INDUSTRIES, NAV, NOTICES, OFFICE, PHOTOS, READY_IMAGES, SERVICES, STEPS, TEAM } from './content.js';
+import { CaseList, FaqList, LegalDialog, NoticeDetail, NoticeList, ReportCard, TaxCalendar, TaxSimulator, TeamCard, TrustBand } from './Extras.jsx';
 import './site.css';
 
 const FONTS = [
@@ -52,7 +53,7 @@ function Header() {
     <header className={`dt-header${scrolled ? ' is-scrolled' : ''}`}>
       <div className="dt-wrap dt-header__inner">
         <Logo />
-        <nav className="dt-nav" aria-label="주 메뉴">{NAV.slice(0, 3).map(([to, label]) => <Link key={to} to={to}>{label}</Link>)}</nav>
+        <nav className="dt-nav" aria-label="주 메뉴">{NAV.filter(([to]) => to !== 'contact').map(([to, label]) => <Link key={to} to={to}>{label}</Link>)}</nav>
         <a className="dt-header__tel" href={`tel:${OFFICE.phone.replace(/-/g, '')}`}><Phone size={16} aria-hidden="true" />{OFFICE.phone}</a>
         <Link to="contact" className="dt-btn dt-btn--sm dt-header__cta">상담 신청</Link>
         <button type="button" className="dt-burger" aria-label="메뉴 열기" aria-expanded={open} onClick={() => setOpen(true)}><Menu aria-hidden="true" /></button>
@@ -84,54 +85,114 @@ function DeadlineCard() {
   );
 }
 
+function SectionHead({ kicker, title, lead, action, light = false }) {
+  return (
+    <div className={`dt-head${light ? ' is-light' : ''}`} data-reveal>
+      <div><p className={`dt-kicker${light ? ' dt-kicker--light' : ''}`}>{kicker}</p><h2>{title}</h2>{lead ? <p className="dt-head__lead">{lead}</p> : null}</div>
+      {action}
+    </div>
+  );
+}
+
 function HomePage() {
   return (
     <>
       <section className="dt-hero">
+        <div className="dt-hero__grid-bg" aria-hidden="true" />
         <div className="dt-wrap dt-hero__grid">
           <div className="dt-hero__text">
-            <p className="dt-kicker">개인사업자 · 소규모 법인 전문</p>
+            <p className="dt-kicker dt-kicker--light">개인사업자 · 소규모 법인 전문 세무회계</p>
             <h1>세금 걱정은 덜고,<br /><em>사업에만</em> 집중하세요.</h1>
             <p>신고 일정은 먼저 알려 드리고, 아낄 수 있는 세금은 숫자로 보여 드립니다. 영수증 정리부터 절세 상담까지 한곳에서.</p>
             <div className="dt-hero__actions">
-              <Link to="contact" className="dt-btn">무료 세무 진단 신청 <ArrowRight size={18} aria-hidden="true" /></Link>
-              <Link to="fees" className="dt-btn dt-btn--line">수수료 보기</Link>
+              <Link to="contact" className="dt-btn dt-btn--gold">무료 세무 진단 신청 <ArrowRight size={18} aria-hidden="true" /></Link>
+              <Link to="#simulator" className="dt-btn dt-btn--ghost">개인 vs 법인 세금 비교</Link>
             </div>
+            <ul className="dt-hero__badges">
+              <li><Check size={14} aria-hidden="true" /> 첫 달 기장료 무료</li>
+              <li><Check size={14} aria-hidden="true" /> 1영업일 내 답변</li>
+              <li><Check size={14} aria-hidden="true" /> 방문 없이 계약</li>
+            </ul>
           </div>
           <div className="dt-hero__media">
-            <Photo name="hero" className="dt-hero__img" eager />
+            <ReportCard />
             <DeadlineCard />
           </div>
         </div>
       </section>
+
+      <section className="dt-trustwrap"><div className="dt-wrap"><TrustBand /></div></section>
+
       <section className="dt-section">
         <div className="dt-wrap">
-          <div className="dt-head" data-reveal><p className="dt-kicker">업무 안내</p><h2>사업의 모든 단계에서 필요한 세무</h2></div>
+          <SectionHead kicker="업무 안내" title="사업의 모든 단계에서 필요한 세무" action={<Link to="services" className="dt-textlink">전체 업무 보기 <ArrowRight size={16} aria-hidden="true" /></Link>} />
           <ul className="dt-services">
             {SERVICES.map((service, index) => (
               <li key={service.id} data-reveal style={{ '--d': `${index * 70}ms` }}>
                 <span className="dt-services__no">{String(index + 1).padStart(2, '0')}</span>
                 <h3>{service.title}</h3>
                 <p>{service.text}</p>
+                <ul>{service.points.slice(0, 2).map((point) => <li key={point}>{point}</li>)}</ul>
               </li>
             ))}
           </ul>
         </div>
       </section>
-      <section className="dt-section dt-section--green">
-        <div className="dt-wrap dt-steps">
-          <div data-reveal><p className="dt-kicker dt-kicker--light">진행 과정</p><h2>처음이라도 네 단계면 됩니다.</h2></div>
-          <ol>{STEPS.map(([title, text], index) => <li key={title} data-reveal style={{ '--d': `${index * 90}ms` }}><span>{index + 1}</span><b>{title}</b><p>{text}</p></li>)}</ol>
+
+      <section className="dt-section dt-section--dark" id="simulator">
+        <div className="dt-wrap"><TaxSimulator /></div>
+      </section>
+
+      <section className="dt-section">
+        <div className="dt-wrap">
+          <SectionHead kicker="세무 캘린더" title="1년 신고 일정, 저희가 먼저 챙깁니다." lead="기한 2주 전에 필요한 자료를 요청드리고, 예상 세액을 미리 알려 드립니다." />
+          <TaxCalendar />
         </div>
       </section>
-      <section className="dt-section">
-        <div className="dt-wrap dt-split">
-          <Photo name="consult" className="dt-split__img" />
+
+      <section className="dt-section dt-section--ivory">
+        <div className="dt-wrap dt-industry">
           <div data-reveal>
-            <p className="dt-kicker">다솜의 방식</p>
-            <h2>전문 용어 대신<br />대표님의 말로 설명합니다.</h2>
-            <p>“이번 달에 세금이 왜 이만큼 나왔는지”를 한 장짜리 리포트로 드립니다. 궁금한 점은 담당 세무사에게 바로 물어보세요.</p>
-            <Link to="services" className="dt-textlink">업무 자세히 보기 <ArrowRight size={16} aria-hidden="true" /></Link>
+            <p className="dt-kicker">업종별 전문 관리</p>
+            <h2>업종마다 놓치기 쉬운<br />공제가 다릅니다.</h2>
+            <Photo name="report" className="dt-industry__img" />
+          </div>
+          <ul>{INDUSTRIES.map(([name, text], index) => <li key={name} data-reveal style={{ '--d': `${index * 60}ms` }}><b>{name}</b><p>{text}</p></li>)}</ul>
+        </div>
+      </section>
+
+      <section className="dt-section">
+        <div className="dt-wrap">
+          <SectionHead kicker="구성원" title="담당 세무사가 끝까지 함께합니다." action={<Link to="about" className="dt-textlink">사무소 소개 <ArrowRight size={16} aria-hidden="true" /></Link>} />
+          <div className="dt-team">{TEAM.map((person) => <TeamCard key={person.id} person={person} />)}</div>
+        </div>
+      </section>
+
+      <section className="dt-section dt-section--ivory">
+        <div className="dt-wrap">
+          <SectionHead kicker="고객 사례" title="숫자로 확인한 변화" />
+          <CaseList />
+        </div>
+      </section>
+
+      <section className="dt-section">
+        <div className="dt-wrap dt-faqnotice">
+          <div><SectionHead kicker="자주 묻는 질문" title="세무사무소, 처음이라면" /><FaqList items={FAQS.slice(0, 5)} /></div>
+          <div><SectionHead kicker="공지사항" title="신고 안내와 소식" action={<Link to="notice" className="dt-textlink">전체 보기 <ArrowRight size={16} aria-hidden="true" /></Link>} /><NoticeList items={NOTICES.slice(0, 4)} compact /></div>
+        </div>
+      </section>
+
+      <section className="dt-cta">
+        <div className="dt-wrap dt-cta__inner" data-reveal>
+          <Photo name="handshake" className="dt-cta__img" />
+          <div>
+            <p className="dt-kicker dt-kicker--light">무료 세무 진단</p>
+            <h2>지난 신고부터 같이 보겠습니다.</h2>
+            <p>빠진 공제와 아낄 수 있는 세금을 정리해 한 장으로 드립니다.</p>
+            <div className="dt-hero__actions">
+              <Link to="contact" className="dt-btn dt-btn--gold">상담 신청하기 <ArrowRight size={18} aria-hidden="true" /></Link>
+              <a className="dt-btn dt-btn--ghost" href={`tel:${OFFICE.phone.replace(/-/g, '')}`}><Phone size={16} aria-hidden="true" /> {OFFICE.phone}</a>
+            </div>
           </div>
         </div>
       </section>
@@ -156,6 +217,12 @@ function ServicesPage() {
               <ul>{service.points.map((point) => <li key={point}><Check size={16} aria-hidden="true" />{point}</li>)}</ul>
             </article>
           ))}
+        </div>
+      </section>
+      <section className="dt-section dt-section--dark">
+        <div className="dt-wrap dt-steps">
+          <div data-reveal><p className="dt-kicker dt-kicker--light">진행 과정</p><h2>처음이라도 네 단계면 됩니다.</h2></div>
+          <ol>{STEPS.map(([title, text], index) => <li key={title} data-reveal style={{ '--d': `${index * 90}ms` }}><span>{index + 1}</span><b>{title}</b><p>{text}</p></li>)}</ol>
         </div>
       </section>
     </>
@@ -217,6 +284,9 @@ function FeesPage() {
           <p className="dt-fine">종합소득세·법인세 신고 조정료는 별도이며, 첫 달 기장료는 무료입니다.</p>
         </div>
       </section>
+      <section className="dt-section dt-section--ivory" id="faq">
+        <div className="dt-wrap dt-narrow"><SectionHead kicker="자주 묻는 질문" title="계약 전에 궁금한 것들" /><FaqList /></div>
+      </section>
     </>
   );
 }
@@ -262,37 +332,101 @@ function ContactPage() {
   );
 }
 
+function AboutPage() {
+  return (
+    <>
+      <PageTop kicker="사무소 소개" title="숫자를 쉬운 말로 설명하는 세무사무소" lead="2014년 문을 연 다솜세무회계는 개인사업자와 소규모 법인 320여 곳을 관리합니다. (표시된 인물은 가상 인물입니다)" />
+      <section className="dt-section dt-section--tight">
+        <div className="dt-wrap dt-team dt-team--full">{TEAM.map((person) => <TeamCard key={person.id} person={person} full />)}</div>
+      </section>
+      <section className="dt-section dt-section--ivory">
+        <div className="dt-wrap">
+          <SectionHead kicker="사무소" title="편하게 상담할 수 있는 공간" />
+          <div className="dt-gallery" data-reveal><Photo name="reception" /><Photo name="meeting" /><Photo name="workspace" /><Photo name="lounge" /></div>
+        </div>
+      </section>
+      <section className="dt-section" id="location">
+        <div className="dt-wrap dt-location">
+          <div className="dt-map" role="img" aria-label="사무소 위치 약도">
+            <svg viewBox="0 0 400 260" aria-hidden="true">
+              <path d="M0 150h400M0 70h400M120 0v260M290 0v260" stroke="#d8d2c4" strokeWidth="14" />
+              <path d="M0 210c120-30 260-20 400-60" stroke="#cfe3d8" strokeWidth="22" fill="none" />
+              <circle cx="120" cy="150" r="14" fill="#7a5ea8" />
+              <text x="120" y="155" textAnchor="middle" fontSize="12" fill="#fff" fontWeight="700">5</text>
+              <path d="M134 150h140" stroke="#c49a3c" strokeWidth="4" strokeDasharray="8 8" />
+              <rect x="262" y="108" width="56" height="42" rx="8" fill="#14372c" />
+              <text x="290" y="134" textAnchor="middle" fontSize="12" fill="#fff" fontWeight="700">다솜</text>
+            </svg>
+          </div>
+          <ul className="dt-location__info">
+            <li><MapPin size={18} aria-hidden="true" /><div><b>주소</b><p>{OFFICE.address}</p></div></li>
+            <li><TrainFront size={18} aria-hidden="true" /><div><b>지하철</b><p>{OFFICE.subway}</p></div></li>
+            <li><Car size={18} aria-hidden="true" /><div><b>주차</b><p>{OFFICE.parking}</p></div></li>
+            <li><Clock size={18} aria-hidden="true" /><div><b>업무 시간</b><p>{OFFICE.hours}</p></div></li>
+          </ul>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function NoticePage() {
+  return (
+    <>
+      <PageTop kicker="공지사항" title="신고 안내와 사무소 소식" lead="신고 기한, 연말정산, 휴무 소식을 알려 드립니다." />
+      <section className="dt-section dt-section--tight"><div className="dt-wrap dt-narrow"><NoticeList /></div></section>
+    </>
+  );
+}
+
+function NoticeDetailPage({ notice }) {
+  return (
+    <>
+      <PageTop kicker={`${notice.tag} · ${notice.date}`} title={notice.title} />
+      <section className="dt-section dt-section--tight"><div className="dt-wrap dt-narrow"><NoticeDetail notice={notice} /></div></section>
+    </>
+  );
+}
+
 function NotFoundPage() {
   return <PageTop kicker="404" title="페이지를 찾을 수 없습니다." />;
 }
 
 function resolvePage(page) {
   const [section, slug] = page.split('/');
-  const make = (Page, title) => ({ Page, title: `${title} — ${OFFICE.name}` });
+  const make = (Page, title, props = {}) => ({ Page, props, title: `${title} — ${OFFICE.name}` });
+  if (section === 'notice' && slug) {
+    const notice = NOTICES.find((item) => item.id === slug);
+    return notice ? make(NoticeDetailPage, notice.title, { notice }) : make(NotFoundPage, '페이지를 찾을 수 없습니다');
+  }
   if (slug) return make(NotFoundPage, '페이지를 찾을 수 없습니다');
-  if (!section) return { Page: HomePage, title: `${OFFICE.name} — 세금 걱정은 덜고 사업에 집중하세요` };
-  const pages = { services: [ServicesPage, '업무 안내'], checklist: [ChecklistPage, '서류 체크리스트'], fees: [FeesPage, '수수료'], contact: [ContactPage, '상담 신청'] };
+  if (!section) return { Page: HomePage, props: {}, title: `${OFFICE.name} — 세금 걱정은 덜고 사업에 집중하세요` };
+  const pages = { services: [ServicesPage, '업무 안내'], checklist: [ChecklistPage, '서류 체크리스트'], fees: [FeesPage, '수수료'], about: [AboutPage, '사무소 소개'], notice: [NoticePage, '공지사항'], contact: [ContactPage, '상담 신청'] };
   return pages[section] ? make(...pages[section]) : make(NotFoundPage, '페이지를 찾을 수 없습니다');
 }
 
 export default function Site() {
   useFonts(FONTS);
   const { page } = useSite();
-  const { Page, title } = resolvePage(page);
+  const { Page, props, title } = resolvePage(page);
   usePageTitle(title);
   const root = useReveal([page]);
+  const [legal, setLegal] = useState(null);
   return (
     <div className="dt" ref={root}>
       <Header />
-      <main id="site-main" tabIndex={-1}><Page key={page} /></main>
+      <main id="site-main" tabIndex={-1}><Page key={page} {...props} /></main>
       <footer className="dt-footer">
         <div className="dt-wrap dt-footer__inner">
           <Logo />
-          <p>{OFFICE.address} · 대표 세무사 ○○○ · 사업자등록번호 000-00-00000 · {OFFICE.phone}</p>
+          <p>{OFFICE.address} · 대표세무사 {OFFICE.owner} · {OFFICE.registration} · 사업자등록번호 {OFFICE.business}</p>
+          <p>대표전화 {OFFICE.phone} · {OFFICE.email} · {OFFICE.hours}</p>
+          <p className="dt-footer__legal"><button type="button" onClick={() => setLegal('terms')}>이용약관</button><button type="button" onClick={() => setLegal('privacy')}>개인정보 처리방침</button><button type="button" onClick={() => setLegal('ad')}>사례·계산기 안내</button></p>
           <p>© 2026 {OFFICE.name}. 나나웹이 제작한 가상 세무사무소 시안이며 세무 자문을 제공하지 않습니다.</p>
-          <PhotoCredits keys={ALL_PHOTO_KEYS} extra="" />
+          <PhotoCredits keys={ALL_PHOTO_KEYS} extra="인물·공간 사진은 모두 AI로 생성한 가상 이미지입니다." />
         </div>
       </footer>
+      <LegalDialog kind={legal} onClose={() => setLegal(null)} />
     </div>
   );
 }
