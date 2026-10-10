@@ -24,8 +24,20 @@ export function SiteProvider({ siteId, children }) {
     const onPop = (event) => {
       setPage(readPage(siteId));
       const y = event.state?.y ?? 0;
-      // 새 화면이 그려진 뒤에 위치를 되돌립니다.
-      requestAnimationFrame(() => requestAnimationFrame(() => window.scrollTo(0, y)));
+      // 새 화면이 그려진 뒤 위치를 되돌리고, 사진·장식이 늦게 자리 잡아 밀리면 0.8초 동안 다시 맞춥니다.
+      // (사용자가 직접 스크롤하면 바로 멈춥니다)
+      const until = performance.now() + 800;
+      let stop = false;
+      const cancel = () => { stop = true; };
+      window.addEventListener('wheel', cancel, { once: true, passive: true });
+      window.addEventListener('touchstart', cancel, { once: true, passive: true });
+      const settle = () => {
+        if (stop) return;
+        if (Math.abs(window.scrollY - y) > 2) window.scrollTo(0, y);
+        if (performance.now() < until) requestAnimationFrame(settle);
+        else { window.removeEventListener('wheel', cancel); window.removeEventListener('touchstart', cancel); }
+      };
+      requestAnimationFrame(() => requestAnimationFrame(settle));
     };
     window.addEventListener('popstate', onPop);
     return () => window.removeEventListener('popstate', onPop);
