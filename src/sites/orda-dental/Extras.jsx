@@ -14,6 +14,9 @@ const toothName = (no) => `${SIDE[Math.floor(no / 10)]} ${KIND[(no % 10) - 1]} (
 function Arch({ order, upper, selected, onPick }) {
   return (
     <div className={`od-arch ${upper ? 'is-up' : 'is-down'}`}>
+      <svg className="od-arch__gum" viewBox="0 0 100 48" preserveAspectRatio="none" aria-hidden="true">
+        <path d={upper ? 'M2 46 A48 42 0 0 1 98 46 L88 46 A38 32 0 0 0 12 46 Z' : 'M2 2 A48 42 0 0 0 98 2 L88 2 A38 32 0 0 1 12 2 Z'} />
+      </svg>
       {order.map((no, index) => {
         const theta = Math.PI * (1 - index / (order.length - 1));
         const x = 50 + 45 * Math.cos(theta);

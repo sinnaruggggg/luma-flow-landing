@@ -394,3 +394,152 @@
   .od-pricelist dd{text-align:left}
 }
 @media(prefers-reduced-motion:reduce){.od-badge-ring svg,.od-tooth.is-on{animation:none}}
+
+/* ═══════════ 디자인 3차: "한눈에 치과" — 민트·틸·코랄, 곡선, 반짝임 ═══════════ */
+.od{--ink:#0f2e2c;--muted:#58716e;--line:#d6ebe8;--sand:#eaf8f5;--sage:#14a39a;--sage-d:#0b6e6a;--sage-l:#dcf5f1;--coral:#ff8a7a;--coral-l:#ffe6e1;--sun:#ffc94d;--sky:#d4f1f6;overflow-x:clip}
+.od h1,.od h2,.od h3{letter-spacing:-.03em}
+.od-head h2{font-weight:700;font-size:clamp(28px,3.4vw,46px)}
+.od-kicker{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:999px;background:var(--sage-l);font-weight:700;color:var(--sage-d)}
+.od-kicker:before{content:'';width:6px;height:6px;border-radius:50%;background:var(--coral)}
+.od-btn{background:linear-gradient(135deg,var(--sage),var(--sage-d));border-color:transparent;box-shadow:0 12px 24px -12px rgba(11,110,106,.7)}
+.od-btn:hover:not(:disabled){background:linear-gradient(135deg,var(--sage-d),#084f4c)}
+.od-btn--line{background:#fff;border-color:var(--sage);box-shadow:none}
+.od-btn--white{background:#fff;color:var(--sage-d)!important;box-shadow:0 12px 30px -12px rgba(0,0,0,.35)}
+
+/* 물결 경계: 민트 섹션 위아래를 곡선으로 */
+.od-section--sand{position:relative;background:linear-gradient(180deg,var(--sand),#f3fbfa)}
+.od-section--sand:before,.od-section--sand:after{content:'';position:absolute;left:0;right:0;height:clamp(28px,4vw,56px);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0 0h1440v22c-120 26-240 38-360 30S840 18 720 22 480 52 360 54 120 40 0 22Z' fill='%23ffffff'/%3E%3C/svg%3E") center/100% 100% no-repeat;pointer-events:none}
+.od-section--sand:before{top:-1px}
+.od-section--sand:after{bottom:-1px;transform:scaleY(-1)}
+
+/* 히어로 */
+.od-hero{position:relative;background:radial-gradient(60% 70% at 85% 30%,#d9f5f0 0,rgba(217,245,240,0) 70%),radial-gradient(40% 50% at 8% 90%,#ffe9e4 0,rgba(255,233,228,0) 70%)}
+.od-hero h1{font-weight:800;letter-spacing:-.045em}
+.od-hero h1 em{position:relative;font-style:normal;color:var(--sage-d);background:linear-gradient(transparent 64%,#bdeee6 64%,#bdeee6 92%,transparent 92%)}
+.od-h1-spark{position:absolute;right:-30px;top:-14px;color:var(--sun);animation:od-twinkle 2.4s ease-in-out infinite}
+.od-hero__img{border-radius:58% 42% 52% 48% / 46% 52% 48% 54%;animation:od-morph 14s ease-in-out infinite;box-shadow:0 40px 80px -40px rgba(11,110,106,.5)}
+@keyframes od-morph{50%{border-radius:44% 56% 40% 60% / 56% 42% 58% 44%}}
+.od-float{border:2px solid var(--sage-l)}
+.od-herotooth{position:absolute;left:-36px;top:38%;width:clamp(110px,12vw,170px);filter:drop-shadow(0 18px 24px rgba(11,110,106,.25));animation:od-bob 5s ease-in-out infinite}
+.od-herotooth svg{display:block;width:100%}
+.od-herotooth .od-sparkle{position:absolute;color:var(--sun)}
+.od-herotooth .s1{right:-14px;top:-10px;animation:od-twinkle 2s ease-in-out infinite}
+.od-herotooth .s2{left:-6px;top:20%;color:var(--sage);animation:od-twinkle 2.6s .5s ease-in-out infinite}
+.od-herotooth .s3{right:6px;bottom:6%;color:var(--coral);animation:od-twinkle 3s 1s ease-in-out infinite}
+@keyframes od-bob{50%{transform:translateY(-12px) rotate(-4deg)}}
+@keyframes od-twinkle{0%,100%{transform:scale(.6) rotate(0);opacity:.5}50%{transform:scale(1.1) rotate(20deg);opacity:1}}
+.od-hero__facts{border-top:2px dashed var(--line)}
+.od-hero__facts li{padding:10px 14px;border-radius:16px;background:rgba(255,255,255,.75)}
+
+/* 거품 */
+.od-bubbles{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.od-bubbles i{position:absolute;bottom:-40px;left:var(--x);width:var(--s);height:var(--s);border-radius:50%;background:radial-gradient(circle at 32% 30%,#fff 0,rgba(255,255,255,.4) 35%,rgba(20,163,154,.12) 70%);border:1px solid rgba(20,163,154,.28);animation:od-bubble var(--t) linear var(--d) infinite}
+@keyframes od-bubble{0%{transform:translate(0,0);opacity:0}10%{opacity:1}50%{transform:translate(14px,-45vh)}100%{transform:translate(-8px,-95vh);opacity:0}}
+.od-hero .od-wrap{position:relative;z-index:1}
+
+/* 흐르는 띠 */
+.od-marquee{position:relative;z-index:2;margin:-8px 0 0;padding:16px 0;background:linear-gradient(90deg,var(--sage-d),var(--sage));color:#fff;transform:rotate(-1.6deg) scale(1.03);box-shadow:0 18px 30px -20px rgba(11,110,106,.6);overflow:hidden}
+.od-marquee__track{display:flex;width:max-content;animation:od-marquee 32s linear infinite}
+.od-marquee span{display:inline-flex;align-items:center;gap:22px;padding-right:22px;font-size:clamp(18px,2vw,26px);font-weight:800;white-space:nowrap}
+.od-marquee span:nth-child(even){font-weight:300;font-style:italic;letter-spacing:.08em;color:#c8f3ec}
+.od-marquee .od-sparkle{color:var(--sun)}
+@keyframes od-marquee{to{transform:translateX(-50%)}}
+
+/* 약속 카드 */
+.od-promises li{position:relative;overflow:hidden;border:0;background:#fff;box-shadow:0 20px 50px -34px rgba(11,110,106,.55)}
+.od-promises li:after{content:'';position:absolute;right:-30px;bottom:-30px;width:120px;height:120px;border-radius:50%;background:var(--sage-l);transition:transform .4s}
+.od-promises li:nth-child(2):after{background:var(--coral-l)}
+.od-promises li:nth-child(3):after{background:var(--sky)}
+.od-promises li:hover:after{transform:scale(1.5)}
+.od-promises li>*{position:relative;z-index:1}
+.od-promises span{width:52px;height:56px;border-radius:46% 46% 40% 40%;background:linear-gradient(160deg,#fff,var(--sage-l));border:2px solid var(--sage);font-size:18px}
+
+/* 숫자 띠 */
+.od-numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:clamp(36px,5vw,56px);padding:0;list-style:none}
+.od-numbers li{display:grid;gap:2px;padding:24px 22px;border-radius:24px;background:linear-gradient(140deg,#f2fbf9,#fff);border:1px solid var(--line);text-align:center}
+.od-numbers b{font-size:clamp(40px,4.4vw,60px);font-weight:800;line-height:1;background:linear-gradient(135deg,var(--sage),var(--sage-d));-webkit-background-clip:text;background-clip:text;color:transparent}
+.od-numbers small{font-size:.4em;font-weight:700;-webkit-text-fill-color:var(--sage-d)}
+.od-numbers span{font-size:14px;font-weight:600;color:var(--muted)}
+
+/* 진료 카드: 아이콘 일러스트 */
+.od-cards{gap:20px}
+.od-cards a.od-treat{grid-template-columns:1fr;gap:16px;align-content:start;padding:26px 26px 24px;border-radius:30px;border:1px solid var(--line);background:#fff;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s}
+.od-cards a.od-treat:hover{transform:translateY(-6px) rotate(-.6deg);border-color:transparent;box-shadow:0 30px 60px -30px rgba(11,110,106,.5)}
+.od-treat__icon{display:grid;place-items:center;width:96px;height:96px;border-radius:32% 68% 58% 42% / 44% 40% 60% 56%;background:var(--sage-l);color:var(--sage-d);transition:border-radius .6s,transform .4s}
+.od-treat--1 .od-treat__icon{background:var(--coral-l);color:#c4513f}
+.od-treat--2 .od-treat__icon{background:var(--sky);color:#16708a}
+.od-treat:hover .od-treat__icon{border-radius:60% 40% 38% 62% / 56% 58% 42% 44%;transform:scale(1.06) rotate(-6deg)}
+.od-treaticon{width:66px;height:66px;overflow:visible}
+.od-treat h3{font-size:21px;font-weight:700}
+.od-treat small{display:inline-block;margin-top:10px;padding:3px 10px;border-radius:999px;background:var(--sand);font-size:12px;font-weight:700;color:var(--sage-d)}
+.od-cards a.od-treat .od-cards__go{top:26px;right:26px;opacity:1;color:var(--line);transition:color .3s,transform .3s}
+.od-cards a.od-treat:hover .od-cards__go{color:var(--sage);transform:translate(3px,-3px)}
+
+/* 치아 지도: 잇몸 + 민트 보드 */
+.od-toothmap__board{background:radial-gradient(80% 60% at 50% 50%,#fff 0,#f2fbf9 100%);border:1px solid var(--line)}
+.od-arch__gum{position:absolute;left:0;right:0;width:100%;height:100%;pointer-events:none}
+.od-arch.is-up .od-arch__gum{top:0}
+.od-arch.is-down .od-arch__gum{top:0}
+.od-arch__gum path{fill:#ffd9d3;opacity:.7}
+.od-tooth{z-index:1;border-color:#d8e6e3;box-shadow:0 2px 0 #e3efec}
+.od-tooth.is-on{background:radial-gradient(circle at 50% 40%,#ffe0d6,var(--coral))}
+
+/* 첫 방문 */
+.od-visit li{border:1px solid var(--line);transition:transform .3s,box-shadow .3s}
+.od-visit li:hover{transform:translateY(-4px);box-shadow:0 22px 40px -28px rgba(11,110,106,.5)}
+.od-visit__no{width:40px;height:44px;border-radius:46% 46% 40% 40%;background:linear-gradient(160deg,var(--sage),var(--sage-d))}
+
+/* 진료실 둘러보기 */
+.od-tour figure{position:relative}
+.od-tour figcaption{position:absolute;left:16px;bottom:16px;margin:0;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.92);font-weight:700;color:var(--ink)}
+
+/* 의료진 */
+.od-doctor{border-radius:32px;border:1px solid var(--line)}
+.od-doctor__photo{background:linear-gradient(180deg,var(--sage-l),#fff)}
+.od-doctor__role{display:inline-block;padding:3px 12px;border-radius:999px;background:var(--sage-l);font-weight:700;color:var(--sage-d)!important}
+.od-doctor h3{font-weight:800}
+
+/* CTA */
+.od-cta__inner{position:relative;overflow:hidden;background:linear-gradient(135deg,#0b6e6a 0,#14a39a 60%,#46c7b6 100%);box-shadow:0 40px 80px -40px rgba(11,110,106,.7)}
+.od-cta__inner>*{position:relative;z-index:1}
+.od-cta__inner .od-bubbles{z-index:0}
+.od-cta__inner .od-bubbles i{border-color:rgba(255,255,255,.4);background:radial-gradient(circle at 32% 30%,rgba(255,255,255,.9) 0,rgba(255,255,255,.15) 60%)}
+.od-cta h2{font-weight:800}
+.od-cta__smile{position:absolute!important;left:50%;bottom:-36px;z-index:0!important;width:min(520px,90%);color:rgba(255,255,255,.14);transform:translateX(-50%)}
+
+/* 헤더 로고 */
+.od-logo circle{fill:var(--sage-l);stroke:var(--sage)}
+.od-header.is-scrolled{box-shadow:0 8px 24px -16px rgba(11,110,106,.4)}
+
+@media(max-width:1000px){
+  .od-numbers{grid-template-columns:1fr 1fr}
+  .od-herotooth{left:8px;top:auto;bottom:-20px;width:110px}
+}
+@media(max-width:640px){
+  .od-marquee{transform:rotate(-1.6deg) scale(1.06)}
+  .od-numbers li{padding:18px 12px}
+  .od-cards a.od-treat{grid-template-columns:80px 1fr;align-items:center;padding:18px}
+  .od-treat__icon{width:80px;height:80px}
+  .od-treaticon{width:54px;height:54px}
+  .od-h1-spark{right:-24px;top:-10px}
+}
+@media(prefers-reduced-motion:reduce){
+  .od-hero__img,.od-herotooth,.od-herotooth .od-sparkle,.od-h1-spark,.od-bubbles i,.od-marquee__track{animation:none}
+  .od-bubbles{display:none}
+}
+/* 3차 다듬기 */
+.od-hero__facts b{white-space:nowrap}
+.od-hero__facts{grid-template-columns:repeat(3,max-content)}
+.od-footer ul{align-content:start}
+.od-toothmap__panel h3{font-weight:700}
+@media(max-width:1000px){.od-herotooth{left:auto;right:10px;bottom:-34px;width:96px}}
+@media(max-width:640px){
+  .od-hero__facts{grid-template-columns:1fr}
+  .od-cards{grid-template-columns:1fr 1fr;gap:12px}
+  .od-cards a.od-treat{grid-template-columns:1fr;gap:10px;padding:16px 14px;border-radius:24px}
+  .od-treat__icon{width:64px;height:64px}
+  .od-treaticon{width:44px;height:44px}
+  .od-treat h3{font-size:17px}
+  .od-treat p{font-size:13px}
+  .od-cards a.od-treat .od-cards__go{top:16px;right:14px}
+}

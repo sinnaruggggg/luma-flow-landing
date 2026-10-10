@@ -8,6 +8,7 @@ import { resolvePhoto } from '../_kit/media.js';
 import { useFonts, useReveal, useScrolled } from '../_kit/hooks.js';
 import { ALL_PHOTO_KEYS, CLINIC, DOCTOR_PHOTOS, DOCTORS, FAQS, HOURS, NAV, NOTICES, PHOTOS, PROMISES, TREATMENTS } from './content.js';
 import { Booking } from './Booking.jsx';
+import { Bubbles, HeroTooth, Marquee, NumberBand, Sparkle, TreatIcon } from './Decor.jsx';
 import { FaqList, FirstVisit, LegalDialog, NoticeDetail, NoticeList, PriceBlock, ToothMap } from './Extras.jsx';
 import './site.css';
 
@@ -105,10 +106,11 @@ function HomePage() {
   return (
     <>
       <section className="od-hero">
+        <Bubbles count={12} />
         <div className="od-wrap od-hero__grid">
           <div className="od-hero__copy">
             <p className={`od-status${status.open ? ' is-open' : ''}`}><i aria-hidden="true" />{status.text}</p>
-            <h1>치과가 조금 덜<br />무서워지도록.</h1>
+            <h1>치과가 조금 덜<br /><em>무서워지도록<Sparkle className="od-h1-spark" size={28} /></em></h1>
             <p className="od-hero__lead">사진으로 먼저 보여드리고, 필요한 만큼만 치료합니다.<br />분당 ○○역 앞, 목요일은 밤 9시까지 진료해요.</p>
             <div className="od-hero__actions">
               <Link to="booking" className="od-btn">진료 예약하기 <ArrowRight size={18} aria-hidden="true" /></Link>
@@ -122,6 +124,7 @@ function HomePage() {
           </div>
           <div className="od-hero__media">
             <Photo name="hero" className="od-hero__img" eager />
+            <HeroTooth />
             <div className="od-badge-ring" aria-hidden="true">
               <svg viewBox="0 0 120 120"><defs><path id="od-ring" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0" /></defs><text><textPath href="#od-ring">THURSDAY NIGHT CLINIC · 목요일 밤 9시까지 · </textPath></text></svg>
               <b>21:00</b>
@@ -131,6 +134,8 @@ function HomePage() {
         </div>
       </section>
 
+      <Marquee />
+
       <section className="od-section">
         <div className="od-wrap">
           <SectionHead kicker="오르다의 약속" title={<>설명은 충분히,<br />치료는 필요한 만큼.</>} />
@@ -139,6 +144,7 @@ function HomePage() {
               <li key={title} data-reveal style={{ '--d': `${index * 90}ms` }}><span>{index + 1}</span><h3>{title}</h3><p>{text}</p></li>
             ))}
           </ol>
+          <NumberBand />
         </div>
       </section>
 
@@ -155,9 +161,9 @@ function HomePage() {
           <ul className="od-cards">
             {TREATMENTS.map((item, index) => (
               <li key={item.slug} data-reveal style={{ '--d': `${index * 60}ms` }}>
-                <Link to={`care/${item.slug}`}>
-                  <Photo name={item.photo} />
-                  <div><h3>{item.title}</h3><p>{item.short}</p></div>
+                <Link to={`care/${item.slug}`} className={`od-treat od-treat--${index % 3}`}>
+                  <span className="od-treat__icon"><TreatIcon slug={item.slug} /></span>
+                  <div><h3>{item.title}</h3><p>{item.short}</p><small>1회 약 {item.minutes}분</small></div>
                   <ArrowUpRight size={20} aria-hidden="true" className="od-cards__go" />
                 </Link>
               </li>
@@ -206,6 +212,8 @@ function HomePage() {
 
       <section className="od-cta">
         <div className="od-wrap od-cta__inner" data-reveal>
+          <Bubbles count={8} />
+          <svg className="od-cta__smile" viewBox="0 0 400 120" aria-hidden="true"><path d="M20 20c60 100 300 100 360 0" fill="none" stroke="currentColor" strokeWidth="14" strokeLinecap="round" /></svg>
           <h2>예약은 1분이면 충분합니다.</h2>
           <p>진료, 날짜, 시간만 고르시면 확인 문자를 보내드려요.</p>
           <Link to="booking" className="od-btn od-btn--white">지금 예약하기 <ArrowRight size={18} aria-hidden="true" /></Link>
