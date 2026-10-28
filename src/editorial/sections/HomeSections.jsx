@@ -77,7 +77,7 @@ export function WorkSection({ projects }) {
       </div>
       {reduced ? null : <WorkGallery projects={projects} />}
       <div className="sx-inner">
-        <p className="section-note">디자인 방향을 보여 주기 위한 가상 프로젝트입니다. 표시된 예산은 예시 범위이며 실제 견적과 다릅니다.</p>
+        <p className="section-note">고객사가 실제로 운영 중인 사이트입니다. 전체 사례에서 업종별 디자인 시안도 함께 볼 수 있습니다.</p>
       </div>
     </section>
   );

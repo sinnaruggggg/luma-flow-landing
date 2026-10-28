@@ -1,5 +1,6 @@
 import { withBasePath } from '../../lib/appPaths.js';
 import { FORMATS, MOODS, READY_SITES } from '../../sites/catalog.js';
+import { CLIENT_WORKS } from './clientWorks.js';
 
 // 포트폴리오 목록은 새 시안 사이트 목록(src/sites/catalog.js)에서 만들어집니다.
 // 사이트가 'ready'가 되면 자동으로 홈·목록·검색에 나타납니다.
@@ -51,7 +52,7 @@ const STYLE_OF_MOOD = Object.freeze({
   luxury: 'photography', friendly: 'minimal', commerce: 'photography', interactive: 'impact',
 });
 
-export const PROJECTS = Object.freeze(READY_SITES.map((site) => Object.freeze({
+const SAMPLE_PROJECTS = READY_SITES.map((site) => Object.freeze({
   id: site.id,
   title: site.name,
   summary: site.summary,
@@ -64,7 +65,28 @@ export const PROJECTS = Object.freeze(READY_SITES.map((site) => Object.freeze({
   mood: site.mood,
   siteUrl: `/sites/${site.id}`,
   url: `/projects/${site.id}`,
-})));
+  kind: 'sample',
+}));
+
+// 실제 제작 사례 (외부 사이트로 연결)
+const CLIENT_PROJECTS = CLIENT_WORKS.map((work) => Object.freeze({
+  id: work.id,
+  title: work.title,
+  summary: work.summary,
+  thumbnail: withBasePath(`/agency-assets/clients/${work.id}.webp`),
+  budgetRange: work.budget,
+  industry: work.industry,
+  style: work.style,
+  meta: `${work.field} / ${work.mood} / ${work.format}`,
+  format: 'homepage',
+  mood: work.mood,
+  siteUrl: work.url,
+  url: `/projects/${work.id}`,
+  kind: 'client',
+}));
+
+// 실제 제작 사례를 먼저, 그 뒤에 디자인 시안을 보여 줍니다.
+export const PROJECTS = Object.freeze([...CLIENT_PROJECTS, ...SAMPLE_PROJECTS]);
 
 export function labelFor(group, value) {
   return OPTIONS[group]?.find((option) => option.value === value)?.label ?? '';

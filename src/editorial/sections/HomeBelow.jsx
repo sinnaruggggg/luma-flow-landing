@@ -22,7 +22,7 @@ export default function HomeBelow({ onOpen, contact }) {
       <QuoteFab />
       <CapabilityTicker />
       <ProjectFinderCTA onOpen={onOpen} />
-      <WorkSection projects={PROJECTS.slice(0, 6)} />
+      <WorkSection projects={PROJECTS.slice(0, 7)} />
       <Services />
       <Audience />
       <QualitySpec />

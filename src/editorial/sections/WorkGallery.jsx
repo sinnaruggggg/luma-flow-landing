@@ -101,7 +101,7 @@ export function WorkGallery({ projects }) {
             <div className="wg-card" role="listitem" key={project.id}>
               <a href={withBasePath(project.url)} aria-label={`${project.title} 프로젝트 자세히 보기`}>
                 <div className="wg-win">
-                  <div className="wg-bar" aria-hidden="true"><i /><i /><i /><span>nanaweb.kr{project.siteUrl}</span></div>
+                  <div className="wg-bar" aria-hidden="true"><i /><i /><i /><span>{project.kind === 'client' ? project.siteUrl.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '') : `nanaweb.kr${project.siteUrl}`}</span></div>
                   <div className="wg-shot">
                     <img src={project.thumbnail} alt={`${project.title} 웹사이트 첫 화면`} fetchPriority={index < 2 ? 'auto' : 'low'} decoding="async" />
                     <div className="wg-xray" aria-hidden="true">
@@ -113,7 +113,7 @@ export function WorkGallery({ projects }) {
                 <div className="wg-cap">
                   <span className="wg-no">{String(index + 1).padStart(2, '0')}</span>
                   <div>
-                    <p className="wg-meta">{project.meta}</p>
+                    <p className="wg-meta">{project.kind === 'client' ? <b className="wg-real">실제 제작</b> : null}{project.meta}</p>
                     <h3 className="wg-title">{project.title}</h3>
                   </div>
                   <span className="wg-go" aria-hidden="true">↗</span>

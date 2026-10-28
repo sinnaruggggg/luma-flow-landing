@@ -2,25 +2,33 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { OPTIONS, PROJECTS, parseFilters, filterProjects, recommendProjects } from '../src/editorial/data/projects.js';
 import { SITES, READY_SITES } from '../src/sites/catalog.js';
+import { CLIENT_WORKS } from '../src/editorial/data/clientWorks.js';
+import { existsSync } from 'node:fs';
 
 test('options: 4 price tiers + consult, 8 industries, 6 styles', () => {
   assert.deepEqual(Object.values(OPTIONS).map(items => items.length), [5, 8, 6]);
 });
-test('every ready site becomes one complete project record', () => {
-  assert.equal(PROJECTS.length, READY_SITES.length);
-  assert.ok(PROJECTS.length >= 6);
+test('every ready site and client work becomes one complete project record', () => {
+  const samples = PROJECTS.filter(p => p.kind === 'sample');
+  const clients = PROJECTS.filter(p => p.kind === 'client');
+  assert.equal(samples.length, READY_SITES.length);
+  assert.equal(clients.length, CLIENT_WORKS.length);
+  assert.equal(samples.length + clients.length, PROJECTS.length);
   assert.equal(new Set(PROJECTS.map(p => p.id)).size, PROJECTS.length);
   for (const project of PROJECTS) {
     for (const key of ['id', 'title', 'thumbnail', 'budgetRange', 'industry', 'style', 'summary', 'url', 'siteUrl', 'meta']) assert.ok(project[key], `${project.id}.${key}`);
     assert.equal(project.url, `/projects/${project.id}`);
-    assert.equal(project.siteUrl, `/sites/${project.id}`);
+    if (project.kind === 'sample') assert.equal(project.siteUrl, `/sites/${project.id}`);
+    else assert.match(project.siteUrl, /^https:\/\//);
+    assert.ok(existsSync(new URL(`../public${project.thumbnail}`, import.meta.url)), `${project.id} thumbnail file`);
     for (const group of ['industry', 'style']) assert.ok(OPTIONS[group].some(o => o.value === project[group]), `${project.id} ${group}`);
     assert.ok(OPTIONS.budget.some(o => o.value === project.budgetRange));
   }
 });
 test('catalogue ids are unique and planned sites stay hidden', () => {
   assert.equal(new Set(SITES.map(s => s.id)).size, SITES.length);
-  assert.ok(PROJECTS.every(p => READY_SITES.some(s => s.id === p.id)));
+  assert.ok(PROJECTS.filter(p => p.kind === 'sample').every(p => READY_SITES.some(s => s.id === p.id)));
+  assert.ok(!PROJECTS.some(p => SITES.some(s => s.id === p.id && s.status !== 'ready')));
 });
 test('query validation drops unknowns and injected strings', () => {
   assert.deepEqual(parseFilters('?budget=premium&industry=medical&style=minimal'), { budget: 'premium', industry: 'medical', style: 'minimal' });

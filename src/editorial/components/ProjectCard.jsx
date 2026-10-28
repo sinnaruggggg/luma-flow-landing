@@ -19,10 +19,11 @@ export function ProjectCard({ project }) {
         <div className="project-image">
           <img
             src={project.thumbnail}
-            alt={`${project.title} 콘셉트 프로젝트 이미지`}
+            alt={`${project.title} ${project.kind === 'client' ? '웹사이트' : '콘셉트 프로젝트'} 이미지`}
             loading="lazy"
             decoding="async"
           />
+          {project.kind === 'client' ? <span className="project-badge">실제 제작</span> : null}
           <span className="project-hover-title" aria-hidden="true">
             {project.title}
           </span>
