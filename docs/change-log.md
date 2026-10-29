@@ -1,5 +1,12 @@
 # 작업 기록
 
+## 2026-10-29 — 카페24 의류 스킨 "헤이즐(HAZEL)" 시안 + 적용 파일
+
+- 데모(포트폴리오): `src/sites/hazel-closet/` → `/sites/hazel-closet`. 메인(히어로·혜택 띠·NEW·룩북·BEST 탭·쇼룸·리뷰), 상품 목록(분류·정렬), 상세(색상·사이즈 옵션, 수량, 합계, 사이즈표·리뷰·배송 탭), 장바구니·주문 완료까지 동작. 샘플 상품 8개
+- 카페24 적용 파일: `cafe24-skins/hazel/` (hazel.css, layout_head.html, main_index.html, 이미지 11장, 샘플 상품 CSV, README 적용 순서). 상품 모듈 문법은 실제 운영 중인 명당연구소 카페24 스킨과 동일하게 맞춤
+- Codex 이미지 11장(상품 8·룩북 3). 이미지 작업 도구를 임시 폴더에서 `scripts/image-tools/`(run-codex.mjs, place-images.mjs, common-prompt.txt)로 옮겨 다시 지워지지 않게 함
+- 포트폴리오 목록·챗봇(docks.js)에 등록
+
 ## 2026-10-28 — 실제 제작 사이트 7곳을 포트폴리오에 등록
 
 - `src/editorial/data/clientWorks.js`(신규): PCCM, 법무법인 덕송, 명당연구소, 쇼츠닷컴, 디와이디해운항공(리뉴얼 시안), 달드라(카페24), 라인앤코너

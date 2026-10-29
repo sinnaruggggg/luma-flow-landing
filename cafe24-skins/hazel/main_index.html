@@ -1,0 +1,124 @@
+<!-- HAZEL 메인 (스마트디자인 편집 > index.html 의 맨 위 레이아웃 선언 줄은 그대로 두고, 그 아래 본문을 이 내용으로 교체)
+     · 이미지·CSS: 파일 업로드로 /web/upload/hazel/ 에 올리면 아래 경로를 그대로 쓸 수 있습니다.
+     · NEW ARRIVALS = 메인 진열 1번(신상품), WEEKLY BEST = 메인 진열 2번(추천/베스트)
+       → 관리자 > 상품 > 메인 진열 관리 에서 진열할 상품을 고르면 자동으로 채워집니다.
+     · 상품 모듈 문법은 실제 운영 중인 카페24 스킨(명당연구소)에서 검증된 것과 같습니다: product_listmain_N, {$image_medium}, {$product_name}, {$disp_product_price}, /product/detail.html{$param} -->
+
+<div class="hz">
+  <!-- 메인 비주얼 -->
+  <section class="hz-hero">
+    <img src="/web/upload/hazel/lookbook-hero.webp" alt="창가에서 아이보리 코트를 입은 모델">
+    <div class="hz-hero__copy">
+      <p class="hz-eyebrow">2026 WINTER COLLECTION</p>
+      <h2>오래 입는 옷,<br>조용한 계절.</h2>
+      <p>매일 손이 가는 기본을 더 좋은 원단으로 다시 만들었습니다.</p>
+      <a class="hz-btn" href="/category/outer/24/">아우터 보러 가기</a><!-- 카테고리 번호(24)는 쇼핑몰마다 다릅니다 -->
+    </div>
+  </section>
+
+  <!-- 혜택 띠 -->
+  <ul class="hz-benefits">
+    <li><b>무료배송</b><span>50,000원 이상</span></li>
+    <li><b>신규 10%</b><span>첫 구매 쿠폰</span></li>
+    <li><b>무료 교환</b><span>사이즈 교환 1회</span></li>
+    <li><b>오후 2시</b><span>이전 주문 당일 출고</span></li>
+  </ul>
+
+  <!-- NEW ARRIVALS : 메인 진열 1번 -->
+  <section class="hz-sec">
+    <div class="hz-head"><h2>NEW ARRIVALS</h2><a href="/product/list.html?cate_no=24">전체 보기 &gt;</a></div>
+    <div module="product_listmain_1">
+      <!--
+        $count = 8
+        $basket_result = /product/add_basket.html
+        $basket_option = /product/basket_option.html
+        $moreview = no
+        $cache = yes
+      -->
+      <ul class="hz-grid">
+        <li>
+          <a class="thumb" href="/product/detail.html{$param}"><img src="{$image_medium}" alt="{$seo_alt_tag}" loading="lazy"></a>
+          <div class="desc">
+            <p class="name"><a href="/product/detail.html{$param}">{$product_name}</a></p>
+            <p class="price {$product_price_display|display}">{$disp_product_price}</p>
+          </div>
+        </li>
+        <li>
+          <a class="thumb" href="/product/detail.html{$param}"><img src="{$image_medium}" alt="{$seo_alt_tag}" loading="lazy"></a>
+          <div class="desc">
+            <p class="name"><a href="/product/detail.html{$param}">{$product_name}</a></p>
+            <p class="price {$product_price_display|display}">{$disp_product_price}</p>
+          </div>
+        </li>
+      </ul>
+            <div class="icon">{$soldout_icon} {$recommend_icon} {$new_icon} {$product_icons}</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 룩북 (고정 이미지 + 상품 링크) -->
+  <section class="hz-split">
+    <img src="/web/upload/hazel/lookbook-knit.webp" alt="오트밀 가디건과 크림 터틀넥을 입은 모델">
+    <div>
+      <p class="hz-eyebrow">LOOKBOOK 01</p>
+      <h2>니트 위에 니트,<br>부드럽게 겹치는 법.</h2>
+      <p>오트밀 케이블 가디건에 크림 터틀넥을 받쳐 입었습니다. 같은 계열의 톤을 겹치면 따뜻하고 단정해 보입니다.</p>
+      <a class="hz-btn" href="/product/list.html?cate_no=25">니트 보러 가기</a>
+    </div>
+  </section>
+
+  <!-- WEEKLY BEST : 메인 진열 2번 -->
+  <section class="hz-sec">
+    <div class="hz-head"><h2>WEEKLY BEST</h2></div>
+    <div module="product_listmain_2">
+      <!--
+        $count = 4
+        $basket_result = /product/add_basket.html
+        $basket_option = /product/basket_option.html
+        $moreview = no
+        $cache = yes
+      -->
+      <ul class="hz-grid">
+        <li>
+          <a class="thumb" href="/product/detail.html{$param}"><img src="{$image_medium}" alt="{$seo_alt_tag}" loading="lazy"></a>
+          <div class="desc">
+            <p class="name"><a href="/product/detail.html{$param}">{$product_name}</a></p>
+            <p class="price {$product_price_display|display}">{$disp_product_price}</p>
+          </div>
+        </li>
+        <li>
+          <a class="thumb" href="/product/detail.html{$param}"><img src="{$image_medium}" alt="{$seo_alt_tag}" loading="lazy"></a>
+          <div class="desc">
+            <p class="name"><a href="/product/detail.html{$param}">{$product_name}</a></p>
+            <p class="price {$product_price_display|display}">{$disp_product_price}</p>
+          </div>
+        </li>
+      </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 쇼룸 배너 -->
+  <section class="hz-banner">
+    <img src="/web/upload/hazel/store-rack.webp" alt="원목 행거에 옷이 걸린 쇼룸">
+    <div class="hz-banner__copy">
+      <p class="hz-eyebrow">SHOWROOM</p>
+      <h2>성수 쇼룸에서 직접 입어 보세요.</h2>
+      <p>서울특별시 성동구 ○○로 00, 2층 · 화–토 12:00 – 19:00</p>
+    </div>
+  </section>
+</div>
+
+<!-- 푸터 사업자 정보 (기존 레이아웃 푸터를 바꾸고 싶을 때 layout.html 의 푸터 자리에 사용)
+     값은 관리자 > 쇼핑몰 설정 > 기본 정보에서 자동으로 들어갑니다. -->
+<!--
+<div class="hz-footer" module="Layout_footer">
+  <p>상호 {$company_name} · 대표 {$president_name} · 사업자등록번호 {$company_regno} · 통신판매업신고 {$network_regno} {$biz_no_link}</p>
+  <p>주소 {$mall_zipcode} {$mall_addr1} {$mall_addr2} · 고객센터 {$phone} · 개인정보보호책임자 {$cpo_name} ({$cpo_email})</p>
+  <p>© {$mall_name}. All rights reserved. Hosting by Cafe24 Corp.</p>
+</div>
+-->

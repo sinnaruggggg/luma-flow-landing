@@ -34,6 +34,7 @@ export const SITES = Object.freeze([
   site(2, 'gyeol-hair', '결 헤어', '헤어·뷰티', 'luxury', 'landing', 1, '디자이너 선택과 시술 가격표를 담은 헤어 살롱 랜딩.'),
   site(2, 'saebom-english', '새봄영어', '학원', 'friendly', 'homepage', 5, '레벨 안내와 시간표, 레벨테스트 신청을 갖춘 영어학원 홈페이지.', 'ready'),
   site(2, 'monohouse', '모노하우스', '인테리어', 'interactive', 'homepage', 5, '시공 사례와 전후 비교 슬라이더를 갖춘 인테리어 스튜디오.'),
+  site(2, 'hazel-closet', '헤이즐', '의류 쇼핑몰', 'commerce', 'feature', 4, '카페24에 바로 옮길 수 있는 미니멀 의류 쇼핑몰 스킨. 상품 목록·옵션 선택·장바구니까지 실제처럼 동작합니다.', 'ready'),
   site(2, 'objet-market', '오브제마켓', '리빙 쇼핑몰', 'commerce', 'feature', 4, '상품 목록·상세·장바구니 흐름을 갖춘 리빙 쇼핑몰.', 'ready'),
   site(2, 'seoyoon-photo', '서윤 스튜디오', '사진작가', 'calm', 'landing', 1, '갤러리 확대 보기와 촬영 문의를 담은 사진작가 포트폴리오.'),
   site(2, 'dasom-tax', '다솜세무회계', '세무·회계', 'corporate', 'homepage', 5, '업무별 안내와 필요 서류 체크리스트를 갖춘 세무사무소 홈페이지.', 'ready'),

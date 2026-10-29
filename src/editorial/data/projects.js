@@ -42,7 +42,7 @@ const INDUSTRY_OF = Object.freeze({
   'daesung-precision': 'brand', 'gyeol-hair': 'other', 'saebom-english': 'education', monohouse: 'other', 'objet-market': 'retail', 'seoyoon-photo': 'other',
   'dasom-tax': 'brand', 'sum-pilates': 'other', 'together-walk': 'other', 'soopgyeol-clinic': 'medical', 'yeon-dining': 'food', pinda: 'it',
   'green-energy': 'brand', 'momo-illust': 'other', 'haru-pet': 'medical', 'bloom-wedding': 'other', 'hanbit-realty': 'other', 'kkeut-clean': 'other',
-  autofit: 'other', kkotsaem: 'retail', 'maum-rest': 'medical', codingsoop: 'education', 'haneulbit-church': 'other', 'jecheol-farm': 'retail',
+  autofit: 'other', 'hazel-closet': 'retail', kkotsaem: 'retail', 'maum-rest': 'medical', codingsoop: 'education', 'haneulbit-church': 'other', 'jecheol-farm': 'retail',
   'sonkkeut-atelier': 'education', 'coach-lee': 'other',
 });
 const TIER_OF_FORMAT = Object.freeze({ landing: 'starter', homepage: 'standard', feature: 'premium' });

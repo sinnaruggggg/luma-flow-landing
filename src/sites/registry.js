@@ -9,4 +9,5 @@ export const SITE_LOADERS = Object.freeze({
   'objet-market': () => import('./objet-market/Site.jsx'),
   'saebom-english': () => import('./saebom-english/Site.jsx'),
   'dasom-tax': () => import('./dasom-tax/Site.jsx'),
+  'hazel-closet': () => import('./hazel-closet/Site.jsx'),
 });
