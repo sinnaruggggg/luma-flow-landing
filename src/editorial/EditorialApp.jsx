@@ -25,7 +25,7 @@ function projectIdFromPath(path) {
 }
 
 function Header() {
-  return <header className="site-header"><a className="wordmark" href={withBasePath('/')} aria-label="나나웹 홈">나나웹</a><nav className="site-nav" aria-label="주요 메뉴"><a className="nav-link" href={withBasePath('/projects')}>프로젝트</a><a className="nav-link nav-link--wide" href={withBasePath('/#services')}>서비스</a><a className="nav-link nav-link--wide" href={withBasePath('/#approach')}>과정</a><a className="nav-link nav-link--wide" href={withBasePath('/#pricing')}>비용</a><a className="nav-link nav-link--wide" href={withBasePath('/#faq')}>FAQ</a><a className="nav-cta" href={withBasePath('/#contact')} data-magnetic>프로젝트 문의</a></nav><span className="scroll-progress" aria-hidden="true" /></header>;
+  return <header className="site-header"><a className="wordmark" href={withBasePath('/')} aria-label="나나웹 홈"><svg className="wordmark__mark" viewBox="0 0 464 273" aria-hidden="true"><rect width="92" height="178" rx="16" /><rect y="187" width="218" height="86" rx="16" /><rect x="236" width="92" height="178" rx="16" /><rect x="236" y="187" width="228" height="86" rx="16" fill="#d9452a" /></svg>나나웹</a><nav className="site-nav" aria-label="주요 메뉴"><a className="nav-link" href={withBasePath('/projects')}>프로젝트</a><a className="nav-link nav-link--wide" href={withBasePath('/#services')}>서비스</a><a className="nav-link nav-link--wide" href={withBasePath('/#approach')}>과정</a><a className="nav-link nav-link--wide" href={withBasePath('/#pricing')}>비용</a><a className="nav-link nav-link--wide" href={withBasePath('/#faq')}>FAQ</a><a className="nav-cta" href={withBasePath('/#contact')} data-magnetic>프로젝트 문의</a></nav><span className="scroll-progress" aria-hidden="true" /></header>;
 }
 
 function Contact() {
