@@ -39,4 +39,9 @@ export const CLIENT_WORKS = Object.freeze([
     summary: '욕실·아파트 프리미엄 줄눈 시공 브랜드. 시공 포트폴리오와 자재 안내, 카카오톡 실시간 문의로 연결됩니다.',
     industry: 'other', style: 'photography', budget: 'starter', field: '인테리어 시공', mood: '모던 다크', format: '브랜드 홈페이지',
   },
+  {
+    id: 'together-gift', title: '투게더기프트', url: 'https://together-gift-sian.vercel.app/site/index.html',
+    summary: '기업 판촉물·사은품 쇼핑몰 시안. 카테고리·가격대·소량 주문으로 고르고, 무료 시안과 견적 문의로 바로 이어지게 했습니다.',
+    industry: 'retail', style: 'minimal', budget: 'standard', field: '판촉물·B2B 커머스', mood: '갤러리 미니멀', format: '쇼핑몰 (시안)',
+  },
 ]);

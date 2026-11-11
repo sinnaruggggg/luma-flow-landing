@@ -1,5 +1,10 @@
 # 작업 기록
 
+## 2026-11-11 — 실제 제작 사례에 "투게더기프트" 추가
+
+- `src/editorial/data/clientWorks.js`: 투게더기프트(기업 판촉물·사은품 쇼핑몰 시안, https://together-gift-sian.vercel.app/site/index.html) 등록 — 쇼핑몰·리테일 / 미니멀 / 스탠다드
+- 썸네일: 첫 화면(1440×1000)을 찍어 `public/agency-assets/clients/together-gift.webp`(1000px)로 저장
+
 ## 2026-10-29 — 카페24 의류 스킨 "헤이즐(HAZEL)" 시안 + 적용 파일
 
 - 데모(포트폴리오): `src/sites/hazel-closet/` → `/sites/hazel-closet`. 메인(히어로·혜택 띠·NEW·룩북·BEST 탭·쇼룸·리뷰), 상품 목록(분류·정렬), 상세(색상·사이즈 옵션, 수량, 합계, 사이즈표·리뷰·배송 탭), 장바구니·주문 완료까지 동작. 샘플 상품 8개
